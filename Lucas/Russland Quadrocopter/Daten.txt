@@ -1,0 +1,48 @@
+---------------- Denis Kariakin - Quadrocopter 10km altitude -----------------------------
+
+
+
+Batterie: 18650 liion pack
+	12 cells in type 4s3p
+	overall / total capacity around 9 amps
+	isolated, contains heat
+	min battery 11.5V
+	max current = 40A
+	7.5Amps spend
+	
+
+
+on average 23/24Amps I
+
+
+
+
+
+link : https://www.youtube.com/watch?v=yi6tBl4AAiY
+
+
+motor	(https://www.dronematters.com/cm2206-1400-multirotor-motors.html)
+
+Cobra CM-2206/30 Motor Specifications 
+
+ Stator Diameter  22.0 mm (0.866 in) 
+ Stator Thickness  6.0 mm (0.236 in) 
+ Number of Stator Slots  12 
+ Number of Magnet Poles  14 
+ Motor Wind  30 Turn Delta 
+ Motor Kv Value  1400 RPM per Volt 
+ No Load Current (Io)  0.52 Amps @ 12 Volts 
+ Motor Resistance (Rm) per Phase  0.185 Ohms 
+ Motor Resistance (Rm) Phase to Phase  0.123 Ohms 
+ Maximum Continuous Current  17 Amps 
+ Max Continuous Power (3-cell Li-Po)  190 Watts 
+ Max Continuous Power (4-cell Li-Po)  250 Watts 
+ Motor Weight  36.5 grams (1.29 oz.) 
+ Outside Diameter  27.0 mm (1.063 in.) 
+ Motor Shaft Diameter  3.00 mm (0.118 in.) 
+ Prop Shaft Diameter  5.00 mm (0.197 in.) 
+ Motor Body Length  16.5 mm (0.650 in.) 
+ Overall Shaft Length  35.3 mm (1.390 in.) 
+ Motor Timing  5-10 degrees 
+ PWM Frequency  8-20 KHz 
+
