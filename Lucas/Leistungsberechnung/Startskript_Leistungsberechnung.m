@@ -38,12 +38,12 @@ I_max = 40;             % Max Current
 m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '9x4';    % Propellerbezeichnung
+prop_name = '7x3.8';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                  % Propellerdurchmesser in inch
 %P_75 = 8;             % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
-a = 5;                  % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
+a_alpha = 5;                  % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
 
 % Batterie
@@ -53,7 +53,7 @@ U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 3.4;   % minimale Spannung pro Batteriezelle
 P_Bat = 1.05;           % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 50;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-m_Bat = 1;           % Batteriemasse in kg
+m_Bat = 0.55;           % Batteriemasse in kg
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,9 +70,13 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Quadroc
 
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-epsilon = 1/38;          % reziproke Gleitzahl
-m_flugzeug = 15;          % Flächenflugzeug Leermasse in kg
-
+epsilon = 1/10;                 % reziproke Gleitzahl
+m_flugzeug = 15;                % Flächenflugzeug Leermasse in kg
+t_zul = 150;                    % zulässige Höchstemperatur der Flugzeugzelle in °C
+q_zul = 1000;                   % zulässige Grenzwert für Kräfte und Momente im Horizontalflug auf die Flugzeugstruktur in N/m^2
+S = 1;                          % Flügelfläche in m^2
+c_A_plane_max = 1.92;           % maximale Auftriebsbeiwert
+c_W_plane = 0.06;               % Widerstandsbeiwert
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -91,8 +95,9 @@ Delta_H = 100;                              % Inkrementweite in m
 H_max = 20000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
-
+p_0 = 101325;                                % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
+kappa = 1.4;                                % Adiabatenexponent
 
 u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 

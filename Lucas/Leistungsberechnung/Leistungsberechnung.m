@@ -13,14 +13,13 @@ Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität,
 
 % Propeller
 
-D = str2double(prop_name(1:strfind(prop_name,'x')-1));
-P_75 = prop_name(strfind(prop_name,'x')+1:end);
-for i = length(P_75):-1:1
-    if isnan(str2double(P_75(i))) == 1
-        P_75(i) = [];
-    end
-end         
-P_75 = str2double(P_75);   
+%Entnahme des Durchmessers und des Pitches aus dem Propellernahmen
+D = str2double(prop_name(1:strfind(prop_name,'x')-1));      % Durchmesser extrahieren
+P_75 = prop_name(strfind(prop_name,'x')+1:end);             % Pitch extrahieren
+while isnan(str2double(P_75)) == 1
+        P_75(end) = [];
+end
+P_75 = str2double(P_75);		    % Pitch festlegen
 R = D * 0.0254 / 2;                         % Propellerradius in Meter
 F = pi * R^2;                               % Fläche eines Propellers in Quadratmeter
 Theta_75 = atan( 4*P_75 / (3*pi * D) );     % geometrischer Anstellwinkel des Propellers bei 75% des Radius
@@ -34,7 +33,7 @@ Theta_75 = atan( 4*P_75 / (3*pi * D) );     % geometrischer Anstellwinkel des Pr
 
 T_11 = T_0 - 0.0065 *(11000-H_0);                   % T in 11000m Höhe                     
 rho_11 = rho_0 * (1 - 0.0065*(11000/T_0))^4.256;    % Dichte in 11000m Höhe
-
+p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 
 
 
@@ -54,7 +53,7 @@ Theta = zeros(lengthi,1);
 rho = zeros(lengthi,1);
 I_bat_ges = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
-
+M_tip = zeros(lengthi,1);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,36 +62,54 @@ PWM = zeros(lengthi,1);
 i = 1;                                      % Zähler intialisiern
 for h = H_0:Delta_H:H_max
     
+    %% Umgebungsparameter als Funktion der Höhe
     % Berechnung der Flughöhe für iterative Schritte und der mittleren
     % Dichte zwischen den Diskretisierungspunkten
     
     H_unten = h;
     H_oben = h + Delta_H;
+    H_mitte = (H_oben + H_unten)/2;
     
-    
-    % Berechnung der Dichte an den Intevallgrenzen
+    % Berechnung der Dichte an den Intevallgrenzen nach Normatmosphärenbedingungen
     
     if H_oben <= 11000
         
         rho_unten = rho_0 *(1-0.0065*(H_unten/T_0))^4.256;
         rho_oben = rho_0 *(1-0.0065*(H_oben/T_0))^4.256;
         
+        p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
+        p_oben = p_0 *(1-0.0065*(H_oben/T_0))^5.256;
+        
     elseif H_unten <= 11000 && H_oben >11000
         
         rho_unten = rho_0 *(1 - 0.0065*(H_unten/T_0))^4.256;
         rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
+        
+        p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
+        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
         
     else
         
         rho_unten = rho_11 * exp(-g/(287*T_11)*(H_unten-11000));
         rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
         
+        p_unten = p_11 * exp(-g/(287.1*T_11)*(H_unten-11000));
+        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
+        
     end
     
+    if H_mitte <= 11000                                             % mittlere Temperatur im Intervall
+        T = T_0 - 0.0065 * H_mitte;        
+    else        
+        T = T_11;
+    end
     
     rho(i) = rho_unten + (rho_oben - rho_unten)/2;                  % Berechnung der mittleren Dichte im Intervall
+    p = (p_oben + p_unten)/2;                                       % mittlerer Druck im Intervall
+    a = sqrt(kappa*p/rho(i));                                       % Schallgeschwindigkeit in m/s
     
-    
+
+    % Dichte an der oberen (_2) und unteren (_1) Intervallgrenze
     if i == 1
         rho_1 = rho_0;
         rho_2 = rho(i);
@@ -106,7 +123,7 @@ for h = H_0:Delta_H:H_max
     P_map = P_map * rho(i)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
     TAU_map = TAU_map * rho(i)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
-    
+    %% Beginn der Leistungsberechnung für Flugsysteme
     % Steiggeschwindigkeitsprofil vorgeben
     %if H_unten < 300
     %    V_Kg = V_Profil(1);
@@ -168,6 +185,11 @@ for h = H_0:Delta_H:H_max
         
         [Omega(i),tau(i)] = Propeller(V_A, alpha(i), Thrust(i), RPM_map, V_map, T_map, TAU_map);
         
+        
+        % Wie groß ist die Blattspitzengeschwindigkeit?
+            
+        M_tip(i) = (Omega(i) * R)/a;                               % Blattspitzengeschwindigkeit in Ma
+        
         % Motorzustand berechnen
         
         [U_mot(i),I_mot(i)] = Motor(tau(i),K_V,I_0,R_i,Omega(i));
@@ -191,10 +213,48 @@ for h = H_0:Delta_H:H_max
     
     % Werden Grenzen ueberschritten?
     
+    % Flugbereichsgrenzen für das Flächenflugzeug innerhalb der
+    % Flugenvellope
+    
+    if Abfrage_Flugsystem == 0
+        
+        % aerodynamische Grenze
+        % herausnahmen, Annahme Flug mit V* und nicht V_min, i.e. epsilon_opt
+         n_z = cos(atan(epsilon));
+         V_min = sqrt(2*n_z*m*g/(c_A_plane_max*S*rho(i)));
+        
+        % Leistungsgrenze
+        
+        % c_A = C_A0 + alpha * C_Aalpha;
+        % c_W = c_W0 + k * C_A^2
+         W = V_A^2 * rho(i)/2 * S * c_W_plane;
+         T_erf = W; 
+        
+        % Temperaturgrenze
+        
+        T_zul = 273.15 + t_zul;
+        % T_max = 2 * T_zul / ((kappa - 1) * (V_A/a)^2 +2);
+        V_max_T = sqrt((T_zul-T)*2/(T*(kappa-1))) * a;
+        
+        % Begrenzung durch Festigkeit
+        
+        q_max = rho(i)/2 * V_A^2;
+        V_max_q = sqrt(q_zul * 2 /rho(i));
+        
+        if  V_A > V_max_q || V_A >= V_max_T || V_min > V_A || T_erf > max(max(T_map)) % || T_max > T_zul 
+            C_Rest_V(i) = NaN;
+            Omega(i) = NaN;
+            U_mot(i) = NaN;
+            I_mot(i) = NaN;
+            I_bat_ges(i) = NaN;
+            PWM(i) = NaN;
+        end
+    end
+    
     
     % Wenn Grenzen ueberschritten werden, Resultate entfernen
     
-    if C_Rest_V(i) < 0.0 || U_mot(i) > U_Bat_nom || U_mot(i) <= 0 || C_Rate(i) > C_Rate_max || I_mot(i) > I_max || alpha(i) > alpha_stall
+    if C_Rest_V(i) < 0.0 || U_mot(i) > U_Bat_nom || U_mot(i) <= 0 || C_Rate(i) > C_Rate_max || I_mot(i) > I_max || alpha(i) > alpha_stall || M_tip(i) >= 1
         C_Rest_V(i) = NaN;
         Omega(i) = NaN;
         U_mot(i) = NaN;
@@ -204,7 +264,7 @@ for h = H_0:Delta_H:H_max
     end
     
     
-    H(i) = H_oben;
+    H(i) = H_oben;			% Speichern der Höhe im Vektor
     i = i+1;
 end
 
@@ -212,13 +272,15 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% plot
 
+% Darstellung der Ergenisse in Diagrammen
+
 % Restladung über der Höhe
 figure(figure_C_Rest_V)
 plot(H,C_Rest_V*100,'LineWidth',2);
 grid on
 hold on
 xlabel('Höhe [m]')
-ylabel('Restladung [%]')
+ylabel('Restladung der Batterie [%]')
 
 
 % Drehzahl über der Höhe
@@ -262,9 +324,19 @@ xlabel('Höhe [m]')
 ylabel('PWM [%]')
 
 %% Datei abspeichern
-%ImageSizeX = 14;
-%ImageSizeY = 24;
-%figure(figure_C_Rest_V)
+%ImageSizeX = 40;
+%ImageSizeY = 30;
+figure(figure_C_Rest_V)
 %set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
 %set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
-%saveas(gcf,Dateiname, 'pdf'); 
+saveas(gcf,'C_Rest_V', 'jpg'); 
+figure(figure_omega)
+saveas(gcf,'omega', 'jpg');
+figure(figure_I_mot)
+saveas(gcf,'I_mot', 'jpg');
+figure(figure_U_mot)
+saveas(gcf,'U_mot', 'jpg');
+figure(figure_I_Bat)
+saveas(gcf,'I_Bat', 'jpg');
+figure(figure_PWM)
+saveas(gcf,'PWM', 'jpg');

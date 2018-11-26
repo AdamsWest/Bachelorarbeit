@@ -26,7 +26,7 @@ figure_I_mot = figure;
 figure_U_mot = figure;
 figure_I_Bat = figure;
 figure_PWM = figure;
-
+figure_Pitch = figure;
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -40,7 +40,7 @@ m_Mot = 0.0365;         % Motorgewicht in kg
 % Propeller
 %prop_name = '9x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 14;                  % Propellerdurchmesser in inch
+D = 9;                  % Propellerdurchmesser in inch
 %P_75 = 8;             % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a = 5;                  % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung

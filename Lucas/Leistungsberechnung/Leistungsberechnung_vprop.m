@@ -43,7 +43,7 @@ d = 1;
 while ind < len
     
     prop_name = DATA{ind,1};
-    pitch = prop_name(strfind(prop_name,'x')+1:end);
+    pitch_all = prop_name(strfind(prop_name,'x')+1:end);
     ind = find(strcmp(DATA(:,1),prop_name));
     
     
@@ -53,7 +53,7 @@ while ind < len
     
     
     % nicht passende Propeller werden entfernt (-E, 3- and 4-blade, -SF, etc.)
-    if isnan(str2double(pitch)) == 1
+    if isnan(str2double(pitch_all)) == 1
         
         for d = ind_oben:-1:ind_unten
             DATA(d,:) = [];
@@ -70,7 +70,7 @@ while ind < len
         % Die Daten für RPM, V, T, usw. werden fortlaufenden Vektoren
         % zugewiesen
         assignin ('base',['prop_name' num2str(counter)], prop_name);
-        assignin ('base',['pitch_' num2str(counter)], pitch);
+        assignin ('base',['pitch_' num2str(counter)], pitch_all);
         assignin ('base',['RPM_' num2str(counter)], RPM);
         assignin ('base',['T_' num2str(counter)], T);
         assignin ('base',['P_' num2str(counter)], P);
@@ -104,7 +104,7 @@ Theta = zeros(lengthi,1);
 rho = zeros(lengthi,1);
 I_bat_ges = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
-
+Pitch = zeros(lengthi,1);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,11 +206,14 @@ for h = H_0:Delta_H:H_max
     
     
     
-    if Thrust(i) > max(max(T_1))                                  % wenn Schub zu gross (Ergebnis verwerfen)
+    if Thrust(i) > max(max(T_1))            % !!!!!!!!!!!!! Abändern                      % wenn Schub zu gross (Ergebnis verwerfen)
         Omega(i) = NaN;
         I_mot(i) = NaN;
         C_Rate(i) = NaN;
         C_Rest_V(i) = NaN;
+        I_bat_ges(i) = NaN;
+        PWM(i) = NaN;
+        Pitch(i) = NaN;
     else
         
         
@@ -223,21 +226,22 @@ for h = H_0:Delta_H:H_max
         
         %% Bestimmung des Pitches mit der geringsten Leistung
         % Theoretisch in gleicher While-Schleife möglich wie in
-        pitch = zeros(counter,1);
-        for i = 1:counter
-            RPM = evalin('base',['RPM_' num2str(i)]) * rho(i)/rho_1;
-            T = evalin('base',['T_' num2str(i)]) * rho(i)/rho_1;
-            Tau = evalin('base',['Tau_' num2str(i)]) * rho(i)/rho_1;
+        pitch_all = zeros(counter,1);
+        for n = 1:counter
+            RPM = evalin('base',['RPM_' num2str(n)]);
+            T = evalin('base',['T_' num2str(n)]) * rho_2/rho_1;
+            Tau = evalin('base',['Tau_' num2str(n)]) * rho_2/rho_1;
             
-            a = str2double(evalin('base',['pitch_' num2str(i)]));
-            pitch(i) = a;
+            a = str2double(evalin('base',['pitch_' num2str(n)]));
+            pitch_all(n) = a;
             
-            [omega(i),TAU(i)] = Propeller(V_A, alpha(i), Thrust(i), RPM, V, T, Tau);
+            [omega(n),TAU(n)] = Propeller(V_A, alpha(n), Thrust(n), RPM, V, T, Tau);
         end
         
         tau(i) = min(TAU);
         mintorqueind = find(TAU == tau(i));
         Omega(i) = omega(mintorqueind);
+        Pitch(i) = pitch_all(mintorqueind);
         %mintorquepitch = evalin('base',['pitch_' num2str(mintorqueind)]);
         
         
@@ -275,6 +279,7 @@ for h = H_0:Delta_H:H_max
         I_mot(i) = NaN;
         I_bat_ges(i) = NaN;
         PWM(i) = NaN;
+        Pitch(i) = NaN;
     end
     
     
@@ -334,6 +339,14 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('PWM [%]')
+
+% Verwendeter Pitch
+figure(figure_Pitch)
+plot(H,Pitch,'rx')
+grid on
+hold on
+xlabel('Höhe [m]')
+ylabel('Pitch [in]')
 
 %% Datei abspeichern
 %ImageSizeX = 14;
