@@ -150,7 +150,7 @@ for h = H_0:Delta_H:H_max
     if Abfrage_Flugsystem == 1                                      % handelt es sich um Multicopter oder Flächenflugzeug
         
         % MULTICOPTER
-        m = m_copter + m_Bat + m_Mot * n_Prop;                     % Gesamtmasse des Quadrocopters
+        m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
         
         % Aerodynamik berechnen
         
@@ -159,7 +159,7 @@ for h = H_0:Delta_H:H_max
     else
         
         % FLÄCHENFLUGZEUG
-        m = m_flugzeug + m_Bat + m_Mot * n_Prop;                  % Gesamtmasse des Flächenflugzeugs
+        m = m_flugzeug + m_Bat + m_Mot * n_Prop + m_nutz;                  % Gesamtmasse des Flächenflugzeugs
         
         % Aerodynamik
         

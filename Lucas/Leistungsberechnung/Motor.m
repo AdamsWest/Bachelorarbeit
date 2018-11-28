@@ -24,7 +24,7 @@ function [U_mot,I_mot] = Motor(tau,K_V,I_0,R_i,Omega)
 %    [ values, derivatives ] = Untitled( x, myStruct.y, 2 )
 %    [ values, ~ ] = Untitled( [ 1:.1:100 ] , myStruct.y, 1 )
 %
-% See also: PROPELLER,  PWM,  BATTERIE
+% See also: PROPELLER,  ESC,  BATTERIE
 
 %   Copyright 2018 TU-Braunschweig
 % ******************************************************************************

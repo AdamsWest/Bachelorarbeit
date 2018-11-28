@@ -1,0 +1,5 @@
+--------------------------- TO DO ----------------------------------------
+	
+
+	-	für den 06.12. : Windgeschwindigkeit anpassen auf 100km/h, Rest_C_V auf minimal 30% setzen, Nutzlast auf 250gramm
+			       : Geschwindigkeit anpassen
