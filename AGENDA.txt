@@ -3,3 +3,8 @@
 
 	-	für den 06.12. : Windgeschwindigkeit anpassen auf 100km/h, Rest_C_V auf minimal 30% setzen, Nutzlast auf 250gramm
 			       : Geschwindigkeit anpassen
+			       : Wirkungsgrad ausgeben lassen zum Abgleich der beiden Modelle
+
+	- 	Zeitplan aktualisieren und Yannic schicken
+	-	Batteriemodell im Code implementieren und in die Leistungsberechnung einbringen
+	- 	Literaturrecherche
