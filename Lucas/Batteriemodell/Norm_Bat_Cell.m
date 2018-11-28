@@ -83,5 +83,5 @@ for j = 1:length(Elektromodellflug)
 end
 
 Eo_comp = sum_12 / length(Elektromodellflug);
-A_test = sum_22 / length(Elektromodellflug);
-K_test = sum_32 / length(Elektromodellflug);
+A_comp = sum_22 / length(Elektromodellflug);
+K_comp = sum_32 / length(Elektromodellflug);
