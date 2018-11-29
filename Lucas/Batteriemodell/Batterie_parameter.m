@@ -1,4 +1,4 @@
-function [Eo, A, K] = batterie_parametres(points)
+function [Eo, A, K] = Batterie_parameter(points)
 
 % the experimental points on the discharge curve
 Q = points(1);

@@ -55,6 +55,8 @@ Vnom = sum_6 / length(Elektromodellflug_norm);
 i = sum_7 / length(Elektromodellflug_norm);
 R = sum_8 / length(Elektromodellflug_norm);
 
+% Cnom wurde eingefügt --> beachten              
+%                                                |                                                  |
 M_A = [1, 1, 0 ; 1, exp(-3), -Q/(Q-Qexp)*(Qexp*Cnom+i) ; 1, exp(-3*Qnom/Qexp), -Q/(Q-Qnom)*(Qnom*Cnom + i)];
 b = [Vfull + R*i ; Vexp + R*i ; Vnom + R*i];
 x = M_A\b;
@@ -74,7 +76,7 @@ for j = 1:length(Elektromodellflug)
     
     
     points = Elektromodellflug{j,3};
-    [Eo, A, K] = batterie_parametres(points);
+    [Eo, A, K] = Batterie_parameter(points);
     
     sum_12 = sum_12 + Eo;
     sum_22 = sum_22 + A;
