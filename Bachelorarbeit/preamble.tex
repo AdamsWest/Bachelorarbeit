@@ -1,0 +1,551 @@
+% ******************************************************************************
+%
+% Laden der Dokumentenklasse Report
+\documentclass[%
+    a4paper,        % Papiergroesse
+    nexus,          % Schriftart [nexus,arial]
+    11pt,           % Schriftgroesse
+    lnum,           % Die Paket-/Klassenoption lnum wählt für das Dokument einen
+                    % Schriftschnitt mit Versalziffern.
+    smallchapters,  % Stellt kleinere Chapter Ueberschriften ein.
+    oneside,        %
+    %halfparskip,   %
+    %fleqn,         % Gleichungen werden links ausgerichtet
+    %style=screen,   % Für die bessere Darstellung auf dem Bildschirm. Fuer den
+                    % Druck entfernen.
+    %monochrome,
+    rgb,
+    svgnames,       % Laden von Farbnamen vordefinierter Farben aus xcolor
+    parskip=full,	% Absaetze statt Einzug
+]{tubsreprt}        % Definition der Dokumentenklasse
+% ******************************************************************************
+%
+% Laden der noetigen Latex Pakete, sowie Einstellungen im Praeamble, die fuer
+% das Dokument benoetigt werden. Dort wird auch das Paket mit den eigenen Makros
+% geladen.
+% ******************************************************************************
+%
+% Es ist zu beachten, dass bei einer Vielzahl an geladenen Paketen der Compiler
+% folgende Fehlermeldung "! No room for a new \dimen ." ausgibt, wenn ein
+% Zaehler 233 Register allokiert hat. Zuerst muss das Paket morewrites and etex
+% geladen werden, um eine hoehere Anzahl Schreibregister zu ermoeglichen, da
+% ansonsten nur 256 Register bereitstehen. Mit etex stehen 32768 Register zur
+% Verfuegung. Siehe hierzu:
+% http://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen
+\usepackage{morewrites}
+% see http://www.tex.ac.uk/cgi-bin/texfaq2html?label=noroom
+% After update for LaTeX released after 2015 not rquired anymore. Activate for
+% previous version.
+% For more Informationi see:
+% https://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen
+%\usepackage{etex}
+%\reserveinserts{28}
+% ******************************************************************************
+%
+% Pruefung des Textes mit neuer deutscher Rechtschreibung
+\usepackage[ngerman]{babel}
+%
+% Uebersetzt unterschiedliche Begriffe, die in LaTeX vorhanden sind bei der
+% Ausgabe in das Deutsche.
+% Beispielsweise: \SI{1.234}{\metre}
+\usepackage[ngerman]{translator}
+% ******************************************************************************
+%
+% Das inputenc-Paket ermoeglicht die direkte Eingabe von Sonderzeichen.
+\usepackage[utf8]{inputenc}
+% ******************************************************************************
+%
+% Biber Paket fuer die Literaturliste
+%\usepackage{multibib}
+\usepackage[backend=biber]{biblatex}
+%\usepackage[
+%    backend=biber,
+%    style=authoryear-icomp,
+%    sortlocale=de_DE,
+%    natbib=true,
+%    url=false,
+%    doi=true,
+%    eprint=false,
+%    bibencoding=utf8,safeinputenc=true
+%]{biblatex}
+\addbibresource{dummy_bibliography.bib}
+% ******************************************************************************
+%
+% Textsatz
+%
+% Das microtype-Paket bringt optischen Randausgleich und minimale Skalierung der
+% Buchstaben. Diese »font-expansion« verbessert den Zeilenumbruch, reduziert
+% Trennstellen und erhoeht den Grauwert der Seite. Es werden Wortzwischenraeume
+% im Blocksatz gleichmaessiger. Die Zeit eines bei der Erstellung der tex
+% Dokumentes verlaengert sich, da die Schriftart-Varianten berechnet werden
+% muessen. Seit 2007 kann das Paket sich auch automatisch um die leichte
+% Sperrung von Kapitaelchen kuemmern. Mit diesem Paket wird die Anzahl von
+% "under-" und "overfull box" Warnungen innerhalb der Kompilierungs Logdateien
+% verringert.
+\usepackage{microtype}
+%
+% Das winzige Paket ellipsis kuemmert sich um den Leerraum rund um die
+% Auslassungspunkte. Es kann bedenkenlos immer geladen werden.
+\usepackage{ellipsis}
+%
+% Schusterjungen und Witwenregelung
+% Verhindert einzelne erste Zeilen unten
+\clubpenalty = 10000
+% Verhindert einzelne letzte Zeilen oben
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+%
+% Dieses Paket hilft die Zeilenabstaende dynamisch anzupassen. Eine andere Art
+% um Zeilenabstaende im Text zu definieren. Mit \onehalfspacing wird
+% Zeilenabstand auf 1.5 gesetzt.
+%\usepackage{setspace}
+%
+% Mit dem \parskip Befehl und einer Laengenangabe ist es moeglich die Groesse
+% eines Absatzes zu bestimmen.
+%\usepackage{parskip}
+% ******************************************************************************
+%
+% Formatierungen
+%
+% Erscheinungsbild der Bild- und Tabellenbeschriftung anpassen
+\usepackage[hang,small,bf]{caption}
+%
+% Entfernt das Einbinden der ToC (Table of Contents)
+\usepackage[nottoc]{tocbibind}
+% ******************************************************************************
+%
+% Pakete, die fuer die Darstellung mathematischer Gleichungen notwendig sind
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%
+\usepackage{commath}
+%
+\usepackage{bm}
+%
+% Streichen von Termen zu einem Wert, beispielsweise ->0
+%\usepackage[
+%    smaller,
+%    %makeroom
+%]{cancel}
+%
+% Ermoeglicht die fleqn Umgebung, um einzelne Gleichungen linksbuendig
+% darzustellen.
+% Aufgrund von einem zuvor definierten \nr Makro, steht es im Konflikt mit
+% dem Paket nccmath.
+%\let\oldnr=\nr
+%\let\nr\undefined
+%
+%\usepackage{nccmath}
+%
+% Erlaube Zerilenumbrueche in Formeln
+%\allowdisplaybreaks
+%
+% Erzeuge einen Operator Rang
+%\DeclareMathOperator{\Rang}{Rang}
+% Vektorpfeil mit \vv{} darstellen
+%\usepackage{esvect}
+%\MakeRobust{\vv}
+% ******************************************************************************
+%
+% Paket, um Werte und Einheiten darzustellen und Tabellen mit Ziffern zu
+% Formatieren.
+\usepackage{siunitx}
+%
+% Einstellungen fuer eine deutsche Ausgabe
+\sisetup{output-decimal-marker = {,}}
+\sisetup{locale = DE}
+\sisetup{per-mode = symbol}
+%
+% Laden von Abkuerzungen
+\sisetup{load-configurations = abbreviations}
+%\sisetup{load=prefixed}
+% ******************************************************************************
+%
+% Das Paket ermoeglicht das erstellen von Glossaries und Abkuerzungen, sowie
+% Abkuerzungen von Formelzeichen.
+\usepackage[
+    nonumberlist,   % keine Seitenzahlen anzeigen
+    acronym,        % ein Abkuerzungsverzeichnis erstellen
+    %toc,           % Eintraege im Inhaltsverzeichnis
+    %nottoc,
+    section,        % Im Inhaltsverzeichnis auf section-Ebene erscheinen
+    %footnote        % Erklaerungen und ausgeschriebene Abkürzungen beim ersten
+                    % erscheinen als Fußnote
+]{glossaries}
+% ******************************************************************************
+%
+% Sonderzeichen
+%
+% Erlaubt dei Verwendung von Sonderzeichen. Importiert beispielsweise das
+% Promill Zeichen.
+%\usepackage{textcomp}
+%
+% Dieses Paket laedt erweiterte Symbole
+%\usepackage{latexsym}
+%
+% Weitere Sonderzeichen und Symbole
+%\usepackage{pifont}
+%
+% @ wird als Buchstabe interpretiert
+%\makeatletter
+% ******************************************************************************
+%
+% Allgemein benoetigte Pakete
+%
+% Internetadressen direkt verlinken. Einfuegen von URLs mit:
+% \url{http://www.Seitennahme.de/}
+%\usepackage{url}
+%
+% Erlaubt Unterstreichen mit \uline, \uuline \uwave usw.
+%\usepackage{ulem}
+%EXAMPLE UNDERLINE
+%\underline{\smash{The quick brown fox jumped over the lazy dog.}}
+%\setul{5pt}{.4pt}% 5pt below contents
+%\ul{The quick brown fox jumped over the lazy dog.} \par
+%\setul{1pt}{.4pt}% 1pt below contents
+%\ul{The quick brown fox jumped over the lazy dog.} \par
+%
+% Dieses Paket wird benoetigt, um stellenweise Querformat nutzen zu koennen.
+% Genutzt wird das Querformat mit:
+% \begin{landscape} Text \end{landscape}.
+%\usepackage{lscape}
+%
+% Um Tabellen auf die breite der Seite zu bekommen, werden mit "X" markierte
+% Spalten gestaucht, die anderen nicht
+%\usepackage{tabularx}
+%
+% Erlaubt in Tabellen die Zusammenfassung mehrerer Spalten einer Zeile zu einer.
+% Fuer die zusammengafsste Spalte ist im Gegensatz zu \multirow{}{}{} kein
+% Leerfeld mittels "&" zu setzten.
+%\usepackage{array,multicol}
+%
+% Aufzaehlungen
+%\usepackage{enumitem}
+%
+% drehen Tab,Fig:\begin{sideways},\begin{rotate}{30}
+\usepackage{rotating}
+%\usepackage{hvfloat}
+% ******************************************************************************
+%
+% Erweiterung zu color mit Zugriff auf verschiedene Arten
+%\usepackage[svgnames,table]{xcolor}
+% ******************************************************************************
+%
+% Allgemeine Darstellungen von Grafiken
+%
+% Wird benoetigt fuer die Darstellung von Grafiken.
+\usepackage{graphicx}
+%
+% Stelle die Pfade fuer Grafiken zur Verfuegung
+\graphicspath{{images/}{images/}}
+%
+% Mit diesem Paket und dem Befehl '\begin{figure}[H]' bzw. der Position [H],
+% koennen Bilder genau an die Stelle im Text gesetzt werden, wo das Bild
+% eingefuegt wird.
+\usepackage{float}
+%
+% Ermoeglicht das darstellen von vielen (unter) Bildern als ein Bild.
+%\usepackage{subfigure}
+\usepackage{subfig}
+% ******************************************************************************
+%
+% Ermoeglicht das Einbinden von PDF Dateien.
+\usepackage{pdfpages}
+% ******************************************************************************
+%
+% Dieses Paket ermoeglicht PGF plots innerhalb der TIKZ Umgebung
+\usepackage{pgf}
+%
+% Ermoeglicht eine Darstellung von (vielen) Werte in einem Diagramm mit
+% unterschiedlichen Eigenschaften und vielen Funktionen.
+\usepackage{pgfplots}
+%
+% Wahl der PGF Version.
+\pgfplotsset{compat=newest}
+%
+%\usepgfplotslibrary{external}
+%
+% Einstellen des Gleitzahltrennzeichens in PGF plots als Komma (deutsch)
+\pgfplotsset{/pgf/number format/set decimal separator={,}}
+%
+\pgfplotsset{
+    every axis/.append style={
+        %line width=1pt,
+        grid style={line width=1.0pt},
+        tick style={line width=1.0pt, black}
+    }
+}
+%
+% Ermoeglicht den Zugriff auf das Paket \usepackage{siunitx} und die Verwendung
+% von Einheiten innerhalb PGF Plots.
+\usepgfplotslibrary{units}
+%\usepgfplotslibrary{external}
+%\tikzexternalize
+%
+% Spezieller Befehl, der eine Transformation von XY-Koordinaten des PGF
+% Koordinatensystems in das Plot Koordinatensystem ermoeglicht.
+%\makeatletter
+%    \newcommand\transformxdimension[1]{
+%        \pgfmathparse{%
+%            ((#1/\pgfplots@x@veclength)+\pgfplots@data@scale@trafo@SHIFT@x)/%
+%        10^\pgfplots@data@scale@trafo@EXPONENT@x}
+%    }
+%    \newcommand\transformydimension[1]{
+%        \pgfmathparse{%
+%            ((#1/\pgfplots@y@veclength)+\pgfplots@data@scale@trafo@SHIFT@y)/%
+%       10^\pgfplots@data@scale@trafo@EXPONENT@y}
+%    }
+%\makeatother
+% ******************************************************************************
+%
+% Tikz ermoeglicht das erstellen von Grafiken und Funktionsgraphen
+% unterschiedlicher Art.
+%
+% Laden des Tikz Bild Format Paketes mit entsprechenden Bibliotheken.
+\usepackage{tikz}
+\usetikzlibrary{% Laden von unterschiedlichen TIKZ Bibliotheken.
+    %shapes,
+    %backgrounds,
+    %shadows,
+    %arrows,
+    %matrix,
+    %calc,
+    positioning,
+    %decorations.pathreplacing,
+    %snakes,
+%    intersections,
+    %through,
+    %patterns,
+%    decorations.markings,
+    %spy,                            % Ermoeglicht ein Zoomen in TIKZ Bildern
+    %3d,
+    %quotes,
+    %angles,
+    plotmarks
+}
+\tikzset{every picture/.append style={font=\small}}
+\tikzset{
+    every picture/.append style={
+        line width=1.0pt,
+        %thick,
+        mark size=3pt
+    }
+}
+%
+% Erstelle die Tikz Bilder separat
+% Nutze für pdflatex:  -shell-escape
+%\usetikzlibrary{external}
+%\tikzexternalize[prefix=figures/externalized/,shell escape=-enable-write18]
+%\tikzset{external/system call={pdflatex
+%     \tikzexternalcheckshellescape -halt-on-error -synctex=1
+%     -file-line-error-style --shell-escape -extra-mem-top=20000000
+%     -output-directory=build -interaction=batchmode -jobname "\image" "\texsource"}
+%     }
+%\tikzexternalize[prefix=fig_externalized/,
+%	optimize=true, optimize command away=\includepdf,
+%	%up to date check=diff,
+%	up to date check=md5,
+%]
+%\tikzset{external/force remake}
+%\tikzexternalize
+%  *****************************************************************************
+% Custom legend
+% argument #1: any options
+%\makeatletter
+%\newenvironment{customlegend}[1][]{%
+%    \begingroup
+%    % inits/clears the lists (which might be populated from previous
+%    % axes):
+%    \pgfplots@init@cleared@structures
+%    \pgfplotsset{#1}%
+%}{%
+%    % draws the legend:
+%    \pgfplots@createlegend
+%    \endgroup
+%}%
+%
+%% makes \addlegendimage available (typically only available within an
+%% axis environment):
+%\def\addlegendimage{\pgfplots@addlegendimage}
+%\makeatother
+%  *****************************************************************************
+%
+% Werkzeuge zum Zeichnen euklidischer Geometrie.
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+%
+% Tikz spezifisch Einstellungen
+%
+% Spy on plots
+%\tikzset{%
+%    new spy style/.style={%
+%        spy scope={%
+%            magnification=5,
+%            size=1.25cm,
+%            connect spies,
+%            every spy on node/.style={%
+%                rectangle,
+%                draw,
+%            },
+%            every spy in node/.style={%
+%                draw,
+%                rectangle,
+%                fill=gray!40,
+%            }
+%        }
+%    }
+%}
+%
+% Get X and Y out of an point in TIKZ
+%\makeatletter
+%\newcommand{\gettikzxy}[3]{%
+%    \tikz@scan@one@point\pgfutil@firstofone#1\relax
+%    \edef#2{\the\pgf@x}%
+%    \edef#3{\the\pgf@y}%
+%}
+%
+% ******************************************************************************
+% Some default plotting lengths for figure sizes
+%\makeatletter
+%\newcommand{\figureheight}{%
+%    \pagegoal \advance-\pagetotal
+%}
+%\def\@figureheight{
+%    \dimexpr\pagegoal
+    %\addtolength{\figureheight}{-\pagetotal}
+    %\addtolength{\figureheight}{-\footskip}
+%}
+%\makeatother
+\newlength\figurewidth
+%\setlength{\figurewidth}{0.75\textwidth}
+\setlength{\figurewidth}{0.9\textwidth}
+\newlength\figureheigth
+\setlength{\figureheigth}{0.75\textheight}
+%
+% twofigurewidth besitzt die laenge 0.5*(\textwidth-90pt)
+% 90pt wird genutzt, da der pgf Plot zwei Axen mit jeweils einer Beschriftung
+% haben kann.
+\newlength\twofigurewidth
+\setlength{\twofigurewidth}{\textwidth}
+\addtolength{\twofigurewidth}{-45pt}
+\setlength{\twofigurewidth}{0.5\twofigurewidth}
+\newlength\twofigureheight
+\setlength{\twofigureheight}{\textheight}
+%\addtolength{\twofigureheight}{-45pt}
+\setlength{\twofigureheight}{0.5\twofigureheight}
+%
+% twofigurewidth besitzt die laenge 0.5*(\textwidth-90pt)
+% 90pt wird genutzt, da der pgf Plot zwei Axen mit jeweils einer Beschriftung
+% haben kann.
+\newlength\twofigurewidthxx
+\setlength{\twofigurewidthxx}{\textwidth}
+\addtolength{\twofigurewidthxx}{-45pt}
+\setlength{\twofigurewidthxx}{0.5\twofigurewidthxx}
+\newlength\twofigureheightxx
+\setlength{\twofigureheightxx}{\textheight}
+\addtolength{\twofigureheightxx}{-45pt}
+\setlength{\twofigureheightxx}{0.5\twofigureheightxx}
+%
+% twofigurewidth besitzt die laenge 0.8*\twofigurewidth
+\newlength\twofigurewidths
+\setlength{\twofigurewidths}{0.80\twofigurewidth}
+\newlength\twofigureheights
+\setlength{\twofigureheight}{0.80\twofigureheight}
+\newlength\threefigureheights
+\setlength{\threefigureheights}{0.75\twofigureheight}
+% ******************************************************************************
+%
+% Verlinkungen innerhalb des Dokumentes
+%
+\usepackage[
+    breaklinks=true,
+    colorlinks=false,
+    %frenchlinks=false,
+    %bookmarksnumbered=true
+]{hyperref}                 % Package fuer Lesezeichen und Verlinkungen
+% Beschreibung der Parameter
+% breaklinks=boolean        : Gibt an, ob Links umgebrochen werden duerfen
+% colorlinks=boolean        : Links eingefaerbt
+% linkcolor=color           : Farbe der Dokument-internen Links
+% citecolor=color           : Farbe der Links zum Literaturverzeichnis
+% filecolor=color           : Farbe der Links auf lokale Dateien
+% urlcolor=color            : Farbe der Links zu externe URLs
+% frenchlinks=booelean      : Links werden als smallcaps, anstatt farbig
+%                             dargestellt
+% bookmarksnumbered=boolean : Kapitelnummern werden im Inhaltsverzeichnis
+%                             angezeigt
+\hypersetup{
+    pdftitle    = {Berechnung von Pi},
+    pdfsubject  = {Um was geht es \ldots},
+    pdfauthor   = {Max Mustermann},
+    pdfkeywords = {Rocket, Aerothermodynamics, Aerodynamics, flow Control},
+    pdfcreator  = {pdflatex},
+    pdfproducer = {LaTeX with hyperref}
+}
+% ******************************************************************************
+%
+% Einbinden von Tabellen
+%
+%\usepackage{csvsimple}
+%
+% Ermoeglicht das Erstellen von Tabellen ueber mehrere Seiten.
+%\usepackage{longtable}
+%
+% Erstellen von Tabellen mit PGF
+%\usepackage{pgfplotstable}
+%
+% Ermoeglicht den Import von *.csv Tabellen
+%\usepackage{csvtools}
+% Use ; seperators
+%\setcsvseparator{,}
+% Use tab seperators
+%\setcsvseparator{^^I}
+%
+% Zusammenfassung mehrerer Reihen in einer Tabellenspalte
+%\usepackage{multirow}
+%
+% Zusammenfassung mehrerer Spalten in einer Tabellenreihe
+%\usepackage{multicolumn}
+%
+% Erzeugt hochwertigere horizontale Striche in Tabellen
+%\usepackage{booktabs}
+% ******************************************************************************
+%
+% Einstellungen fuer die Darstellung von Quelltexten
+%
+% ******************************************************************************
+%
+% Dieses Paket stellt die Befehle fuer die Gesamtzahl der Seiten, Abbildungen
+% und Tabellen zur Verfuegung.
+\usepackage[figure,table]{totalcount}
+\usepackage{lastpage}
+% ******************************************************************************
+%
+% Einbinden von eigenen Makros
+%
+\usepackage{my_macropackage}
+% ******************************************************************************
+%
+% Ermoeglicht das erstellen von zu erledigenden TODO Notizen.
+%
+% Bei Fertigstellung sollte dieses Paket AUSKOMMENTIERT werden!
+\usepackage{todonotes}
+% ******************************************************************************
+%
+% Package for fenerating dummy text/blindtext
+\usepackage{blindtext}
+% ******************************************************************************
+%
+% Deklaration von Schriftarten für Formeln
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
+\DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
+% ******************************************************************************

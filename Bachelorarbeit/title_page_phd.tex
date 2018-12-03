@@ -1,0 +1,70 @@
+% ******************************************************************************
+% Datei       : title_page.tex
+% ******************************************************************************
+\begin{titlepage}
+% ******************************************************************************
+    \makeatletter
+    \showtubslogo[left]
+    \showlogo{\tubs@tp@logo}
+    \showtopline
+    % **************************************************************************
+    \begin{titlerow}{1}
+        \begin{center}
+            %\sffamily%
+            {\usekomafont{chapter}\@title\par}%
+        \end{center}
+    \end{titlerow}
+    %\begin{titlerow}{1}
+    %\end{titlerow}
+    \begin{titlerow}{3}
+        \begin{center}
+            \sffamily%
+            {\usekomafont{subheadlinesmall}\par}\bigskip%
+            \vfill%
+            {\usekomafont{subheadlinesmall}\@subtitle}\bigskip%
+            \vfill\vfill%
+		{{\usekomafont{subheadlinesmall}von} \\
+			\vspace{.5cm}
+			{\usekomafont{author}\@author} \\
+			\vspace{.5cm}
+			{\usekomafont{subheadlinesmall}aus\\
+			\vspace{.5cm}
+			\Geburtsort}
+		}\bigskip%%
+            \vfill
+            {\noindent\usekomafont{date}\@date}%
+        \end{center}
+    \end{titlerow}
+    % **************************************************************************
+    \begin{titlerow}{1}
+        \begin{minipage}{0.6\textwidth}
+            \begin{flushleft}
+		\begin{tabular}{ll}
+			Vorsitzender: & \chairman\\
+			Prüfer der Dissertation: & \examinera\\
+			& \examinerb
+		\end{tabular}
+                %\traddress
+                %\tubs@tp@address
+            \end{flushleft}
+        \end{minipage}
+    \end{titlerow}
+    % **************************************************************************
+    \begin{titlerow}{2}
+        % **********************************************************************
+        %\begin{minipage}{0.3\textwidth}
+            \begin{flushright}
+                \begin{tabular}{lr}
+                    Seiten: & \pageref{LastPage} \\
+                    Abbildungen: & \totalfigures \\
+                    Tabellen:  & \totaltables\\
+                \end{tabular}
+            \end{flushright}
+        %\end{minipage}
+    % **************************************************************************
+    \end{titlerow}
+    %\showdesignhelper
+    \makeatother
+%% ******************************************************************************
+\end{titlepage}
+% ******************************************************************************

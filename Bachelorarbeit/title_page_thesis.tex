@@ -1,0 +1,62 @@
+% ******************************************************************************
+% Datei       : title_page.tex
+% ******************************************************************************
+\begin{titlepage}
+% ******************************************************************************
+    \makeatletter
+    \showtubslogo[left]
+    \showlogo{\tubs@tp@logo}
+    \showtopline
+    % **************************************************************************
+    \begin{titlerow}{1}
+        \begin{center}
+            %\sffamily%
+            {\usekomafont{title}\typeOfThesis\par}%
+        \end{center}
+    \end{titlerow}
+    \begin{titlerow}{2}
+        \begin{center}
+            \sffamily%
+            {\usekomafont{chapter}\@title\par}\bigskip%
+            \vfill%
+            {\usekomafont{subtitle}\@subtitle}\bigskip%
+            \vfill\vfill%
+            {\usekomafont{author}\@author}\bigskip%%
+            \vfill
+            {\noindent\usekomafont{date}\@date}%
+        \end{center}
+    \end{titlerow}
+    \begin{titlerow}{1}
+    \end{titlerow}
+    % **************************************************************************
+    \begin{titlerow}{1}
+        \begin{tabular}{ll}
+        Prüfer: & \examiner\\
+        Betreuer: & \supervisor
+        \end{tabular}
+    \end{titlerow}
+    % **************************************************************************
+    \begin{titlerow}{2}
+        \begin{minipage}{0.6\textwidth}
+            \begin{flushleft}
+                %\traddress
+                \tubs@tp@address
+            \end{flushleft}
+        \end{minipage}
+        % **********************************************************************
+        \begin{minipage}{0.3\textwidth}
+            \begin{flushright}
+                \begin{tabular}{lr}
+                    Seiten: & \pageref{LastPage} \\
+                    Abbildungen: & \totalfigures \\
+                    Tabellen:  & \totaltables\\
+                \end{tabular}
+            \end{flushright}
+        \end{minipage}
+    % **************************************************************************
+    \end{titlerow}
+    %\showdesignhelper
+    \makeatother
+%% ******************************************************************************
+\end{titlepage}
+% ******************************************************************************

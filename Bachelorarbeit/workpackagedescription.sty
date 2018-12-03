@@ -1,0 +1,88 @@
+\ProvidesPackage{workpackagedescription}[2014/02/23 v1.0 package for work package descriptions]
+% Author      : Alexander Kuzolap
+% Date        : 02/09/14
+% Email       : akuzolap@tu-braunschweig.de
+% Copyright   : Copyright (C) ILR 2014
+%               Institut fuer Luft- und Raumfahrtsysteme
+%               Hermann-Blenk-Str.23
+%               D-38108 Braunschweig
+%               Fon +49 (0)531 391-9961
+%               Fax +49 (0)531 391-9966
+%
+%               All Rights Reserved. No part of this Software may be
+%               reproduced without ILR's express consent. Permission to use,
+%               copy, modify, and distribute this software and its
+%               documentation is only permitted for educational and research
+%               use.
+%---------------------------------------------------------------------------------------------------
+% Work Package Description command
+% Call the subroutine with the following command
+%
+%   \begin{wpd}{PackageTitle}{Title}{Version}{PersonResponsible}{Date}{StartDate}{EndDate}{length}{Operator}
+%       Your aims
+%       \begin{itemize}
+%           \item a
+%           \item b
+%       \end{itemize}
+%       \dots
+%   \end{wpd}
+%
+%\newcounter{wpdPage}
+\newtotcounter{wpdPage}
+%\newtotcounter{wpdPage}
+%\newtotcounter{wpdPage}
+\newcommand{\wpdtitle}[1]{%
+\def\thewpdtitle{#1}%
+}%
+%
+% Define the new enviroment
+\newenvironment{wpd}[9]{%
+%
+\@ifundefined{c@wpdStartPage}{%
+    \newcounter{wpdStartPage}%
+    \setcounter{wpdStartPage}{\value{page}-1}%
+    }{}%
+\ifundef{\thewpdtitle}{%
+	\message{you have to define the wpdtitle!}%
+	\def\thewpdtitle{}%
+	}{}%
+%\@ifundefined{c@wpdPage}{%
+%    \newcounter{wpdPage}%
+%    \setcounter{wpdPage}{\value{page}-\value{wpdStartPage}}%
+%    }{}%
+%page:\arabic{page}\\
+%Start page:\arabic{wpdStartPage}\\
+%wpd page:\arabic{wpdPage}\\
+%
+    \begin{table}[!h]
+        \begin{center}%\label{tab:wpd\thewpdCurrentPage}
+            \begin{tabular}{|p{40mm}||p{70mm}||p{40mm}|}%
+                \hline%
+                \rowcolor{tubsGray20}%
+                \multicolumn{2}{|p{115mm}||}{\textbf{\thewpdtitle}} & \multicolumn{1}{c|}{\textbf{#1}}\\
+                \hline\hline%
+                %
+                \setcounter{wpdPage}{\value{page}-\value{wpdStartPage}}%
+                %
+                \textbf{Titel} & \textbf{#2} & \textbf{Seite:} \arabic{wpdPage} von \total{wpdPage}\\
+                \hline%
+                \textbf{Verantwortlicher} & #4 & \textbf{Version:} #3\\
+                \hline%
+                \multicolumn{2}{|l||}{} & \textbf{Datum:} #5\\
+                \hline\hline%
+                \textbf{Start} & #6 & \\
+                \hline%
+                \textbf{Ende} & #7 & \textbf{Dauer}: #8\\
+                \hline\hline%
+                \textbf{Bearbeiter} & \multicolumn{2}{l|}{#9}\\
+                \hline\hline%
+                \multicolumn{3}{|p{150mm}|}%
+                }{%
+                \\
+                \hline%
+            \end{tabular}
+        \end{center}
+    \end{table}
+    %
+}
+
