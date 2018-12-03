@@ -19,7 +19,7 @@ P_75 = prop_name(strfind(prop_name,'x')+1:end);             % Pitch extrahieren
 while isnan(str2double(P_75)) == 1
         P_75(end) = [];
 end
-P_75 = str2double(P_75);		    % Pitch festlegen
+P_75 = str2double(P_75);                    % Pitch festlegen
 R = D * 0.0254 / 2;                         % Propellerradius in Meter
 F = pi * R^2;                               % Fl‰che eines Propellers in Quadratmeter
 Theta_75 = atan( 4*P_75 / (3*pi * D) );     % geometrischer Anstellwinkel des Propellers bei 75% des Radius
@@ -54,6 +54,7 @@ rho = zeros(lengthi,1);
 I_bat_ges = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
+eta_prop = zeros(lengthi,1);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,9 +146,9 @@ for h = H_0:Delta_H:H_max
     %    V_Kg = 3;
     %end
        
-    t_Flug = Delta_H / V_Kg;                                        % Fluggeschwindigkeit
+    t_Flug = Delta_H / V_Kg;                                                % Flugzeit
         
-    if Abfrage_Flugsystem == 1                                      % handelt es sich um Multicopter oder Fl‰chenflugzeug
+    if Abfrage_Flugsystem == 1                                              % handelt es sich um Multicopter oder Fl‰chenflugzeug
         
         % MULTICOPTER
         m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
@@ -159,7 +160,7 @@ for h = H_0:Delta_H:H_max
     else
         
         % FLƒCHENFLUGZEUG
-        m = m_flugzeug + m_Bat + m_Mot * n_Prop + m_nutz;                  % Gesamtmasse des Fl‰chenflugzeugs
+        m = m_flugzeug + m_Bat + m_Mot * n_Prop + m_nutz;                   % Gesamtmasse des Fl‰chenflugzeugs
         
         % Aerodynamik
         
@@ -169,11 +170,11 @@ for h = H_0:Delta_H:H_max
     end
     
     
-    Thrust(i) = Thrust(i) / n_Prop;                                 % Schub auf n Propeller verteilen
+    Thrust(i) = Thrust(i) / n_Prop;                                         % Schub auf n Propeller verteilen
     
     
     
-    if Thrust(i) > max(max(T_map))                                  % wenn Schub zu gross (Ergebnis verwerfen)
+    if Thrust(i) > max(max(T_map))                                          % wenn Schub zu gross (Ergebnis verwerfen)
         Omega(i) = NaN;
         I_mot(i) = NaN;
         C_Rate(i) = NaN;
@@ -185,10 +186,15 @@ for h = H_0:Delta_H:H_max
         
         [Omega(i),tau(i)] = Propeller(V_A, alpha(i), Thrust(i), RPM_map, V_map, T_map, TAU_map);
         
+        % Wirkungsgrad des Propellers
+       
+        v_i0 = sqrt(m*g / ( 2*rho(i)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
+        eta_prop(i) = (Thrust(i) * (v_i0))/(tau(i) .* Omega(i));            % Figure of Merit des Rotors, Bezug auf van der Wall 2015 (S.122)
+        
         
         % Wie groﬂ ist die Blattspitzengeschwindigkeit?
             
-        M_tip(i) = (Omega(i) * R)/a;                               % Blattspitzengeschwindigkeit in Ma
+        M_tip(i) = (Omega(i) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
         
         % Motorzustand berechnen
         

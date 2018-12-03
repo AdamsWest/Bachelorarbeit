@@ -1,10 +1,7 @@
 % Ablauf in Leistungsberechnung
 
 %% Intialisierungen
-
-% Batterie-Vektor mit Daten belegen
-Batterie_data = zeros(11,1);            % normierte Daten aus der Datenbank, Initialisierung
-% 
+  
 Q = 1.0618;                   % Q
 Qnom = 0.9102;                % Qnom
 Qexp = 0.2083;                % Qexp
@@ -13,9 +10,9 @@ Vexp = 3.7783;                % Vexp
 Vnom = 3.5181;                % Vnom
 i = 29.7754;                  % i
 R_bat = 0.0142;               % R_bat
-Batterie_data = (Q Qnom Qexp Vfull Vexp Vnom i R_bat 0 0 0);
+Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R_bat 0 0 0];
 [Eo,A,K] = Batterie_parameter(Batterie_data);
-Batterie_data = (Q Qnom Qexp Vfull Vexp Vnom i R_bat Eo A K);       % vollständiger Vektor
+Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R_bat Eo A K];       % vollständiger Vektor
 
 
 % Initialisierungen

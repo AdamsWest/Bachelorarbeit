@@ -27,6 +27,7 @@ figure_U_mot = figure;
 figure_I_Bat = figure;
 figure_U_Bat = figure;
 figure_PWM = figure;
+figure_Entladungskurve = figure;
 
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,7 +50,7 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 
 % Batterie
 E_Dichte = 750000;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 12;         % Anzahl der Batteriezellen
+N_Bat_cell = 4;         % Anzahl der Batteriezellen
 U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 3.4;   % minimale Spannung pro Batteriezelle
 P_Bat = 1.05;           % Peukert-Konstante (Schaetzung)    
@@ -85,7 +86,7 @@ c_W_plane = 0.06;               % Widerstandsbeiwert
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Bahngeschwindigkeit
-V_Kg = 5;                                  % Steiggeschwindigkeitin m/s
+V_Kg = 10;                                  % Steiggeschwindigkeitin m/s
 %V_Profil = [11 13 14.5 12 10 7 2 3];        % Geschwindigkeitsprofil für den Steigflug (Russland)
 gamma = 90 * pi/180;                        % Bahnanstellwinkel für den Multicopter    
 

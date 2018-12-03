@@ -67,7 +67,7 @@ U_Bat = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
 i_int = zeros(lengthi,1);
-
+flight_time = zeros(lengthi,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Programmanfang
@@ -281,7 +281,12 @@ for h = H_0:Delta_H:H_max
         PWM(i) = NaN;
     end
     
-    
+    if i == 1
+        flight_time(i) =  t_Flug;
+    else
+        flight_time(i) = flight_time(i-1) + t_Flug;
+    end
+        
     H(i) = H_oben;			% Speichern der Höhe im Vektor
     i = i+1;
 end
@@ -348,6 +353,14 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('PWM [%]')
+
+% Capacity over flight time
+figure(figure_Entladungskurve)
+plot(flight_time,U_Bat,'LineWidth',2)
+grid on
+hold on
+xlabel('Flugzeit [s]')
+ylabel('U_{Bat} [V]')
 
 %% Datei abspeichern
 %ImageSizeX = 40;
