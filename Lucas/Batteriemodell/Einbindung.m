@@ -10,7 +10,7 @@ Vexp = 3.7783;                % Vexp
 Vnom = 3.5181;                % Vnom
 i = 29.7754;                  % i
 R_bat = 0.0142;               % R_bat
-Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R_bat 0 0 0];
+Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R_bat 0 0 0];        % Zwischenbelegung
 [Eo,A,K] = Batterie_parameter(Batterie_data);
 Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R_bat Eo A K];       % vollständiger Vektor
 
