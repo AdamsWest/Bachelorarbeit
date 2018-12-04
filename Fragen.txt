@@ -9,5 +9,5 @@ To clarify
 		- Weiteres Vorgehen klären
 		- Programm dokumentieren
 		- Welches Programm für Nassi-Schneidermann-Diagramm? einfaches Tool verfügbar?
-		- 
+		- Auslegung mit Nutzlast von 250g durchführen
 
