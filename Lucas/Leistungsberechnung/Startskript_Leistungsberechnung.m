@@ -26,6 +26,7 @@ figure_I_mot = figure;
 figure_U_mot = figure;
 figure_I_Bat = figure;
 figure_PWM = figure;
+figure_eta = figure;
 
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,12 +52,12 @@ E_Dichte = 750000;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;        % Anzahl der Batteriezellen
 U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 3.4;   % minimale Spannung pro Batteriezelle
-P_Bat = 1.05;           % Peukert-Konstante (Schaetzung)    
+P_Bat_Peukert = 1.05;           % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 50;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 m_Bat = 0.55;           % Batteriemasse in kg
 
 % Missionsparameter
-m_nutz = 0;          % Nutzlast in kg           
+m_nutz = 0.250;          % Nutzlast in kg           
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,7 +103,7 @@ p_0 = 101325;                                % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
 
-u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
+u_Wg = 100/3.6;                                  % Seitenwindgeschwindigkeit in m/s
 
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%

@@ -7,19 +7,18 @@ load('Elektromodellflug.mat');
 
 id_bat = 26;
 PWM = 0.80;
-eta_PWM = 10.7;
+eta_PWM = 0.7;
 I_mot = 10;
 n_Prop = 4;
 
 BDD_b = evalin('base','Elektromodellflug');
 [Eo, A, K] = Batterie_parameter(cell2mat(BDD_b(id_bat,3)));  
 
-%temps_vol = batterie_curbe_de_decharge(BDD_b,id_bat,i_m,v_m,V_bat_min,Eo,A,K)
 
 
 %% set time step delta t in seconds
 step_dt = 1; 
-%%
+
 
 % battery parameters
 Q = BDD_b{id_bat,3}(1);
@@ -58,24 +57,27 @@ x = 1:2800;
 plot(x,V_bat)
 hold on
 
-
+%%
 %% for comparison
+%%
 
+Cnom = 4;                       % Cnom
 Q = 1.0618;                   % Q
 Qnom = 0.9102;                % Qnom
 Qexp = 0.2083;                % Qexp
 Vfull = 4.0399;               % Vfull
 Vexp = 3.7783;                % Vexp
 Vnom = 3.5181;                % Vnom
-i = 29.7754;                  % i
-R = 0.0142;               % R_bat
+i = 1/100;                  % i
+R = 0.0142;                   % R_bat
 B = 3/Qexp;
 Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R 0 0 0];        % Zwischenbelegung
-[Eo,A,K] = Batterie_parameter(Batterie_data);
+[Eo,A,K] = Batterie_parameter_2(Batterie_data);
 Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R Eo A K];       % vollständiger Vektor
 
 
 I_bat = PWM * I_mot / eta_PWM * n_Prop;
+I_bat = I_bat/(Cnom);
 
 i_int = 0;
 for i = 1:2800

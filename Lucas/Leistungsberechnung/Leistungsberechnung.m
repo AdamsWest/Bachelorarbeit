@@ -51,11 +51,12 @@ alpha = zeros(lengthi,1);
 C_Rest_V = zeros(lengthi,1);
 Theta = zeros(lengthi,1);
 rho = zeros(lengthi,1);
-I_bat_ges = zeros(lengthi,1);
+I_Bat = zeros(lengthi,1);
+P_Bat = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
 eta_prop = zeros(lengthi,1);
-
+eta_ges = zeros(lengthi,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Programmanfang
@@ -186,15 +187,11 @@ for h = H_0:Delta_H:H_max
         
         [Omega(i),tau(i)] = Propeller(V_A, alpha(i), Thrust(i), RPM_map, V_map, T_map, TAU_map);
         
-        % Wirkungsgrad des Propellers
-       
-        v_i0 = sqrt(m*g / ( 2*rho(i)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
-        eta_prop(i) = (Thrust(i) * (v_i0))/(tau(i) .* Omega(i));            % Figure of Merit des Rotors, Bezug auf van der Wall 2015 (S.122)
-        
         
         % Wie groß ist die Blattspitzengeschwindigkeit?
-            
+        
         M_tip(i) = (Omega(i) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
+        
         
         % Motorzustand berechnen
         
@@ -208,8 +205,33 @@ for h = H_0:Delta_H:H_max
         
         % Batteriezustand berechnen
         
-        [I_Bat,C_Rate(i),Delta_C_Bat,C_Rest_V(i)] = Batterie(PWM(i),eta_PWM,I_mot(i),n_Prop,C_Bat,P_Bat,Delta_C_Bat,t_Flug);
-        I_bat_ges(i) = I_Bat;
+        [I_Bat(i),C_Rate(i),Delta_C_Bat,C_Rest_V(i)] = Batterie(PWM(i),eta_PWM,I_mot(i),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat,t_Flug);
+        
+        
+        % Gesamtwirkungsgrad       
+        
+        % Berechnung der induzierten Geschwindigkeiten nach van der Wall
+        % (Grundlagen der Hubschrauber-Aerodynamik) (2015) S. 153
+        
+        vi0 = sqrt(m*g / ( 2*rho(i)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0 
+        v = vi0;
+        mu_z = -V_A*sin(alpha(i));
+        mu = V_A*cos(alpha(i));
+        krit = 1;
+        while krit > 0.0005
+            f = v - mu_z - vi0^2 / sqrt(mu^2 + v^2);
+            fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
+            v_i_neu = v - f/fs;
+            krit = abs(v_i_neu - v) / v_i_neu;
+            v = v_i_neu;
+        end
+        vi_vi0 = (v - mu_z) / vi0;
+        vi = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
+      
+        % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
+        eta_prop(i) = (Thrust(i) * (V_A + vi))/(tau(i) .* Omega(i));  
+        
+        eta_ges(i) = (Thrust(i) * (mu_z + vi))/(I_Bat(i) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
         
         
     end
@@ -226,15 +248,15 @@ for h = H_0:Delta_H:H_max
         
         % aerodynamische Grenze
         % herausnahmen, Annahme Flug mit V* und nicht V_min, i.e. epsilon_opt
-         n_z = cos(atan(epsilon));
-         V_min = sqrt(2*n_z*m*g/(c_A_plane_max*S*rho(i)));
+        n_z = cos(atan(epsilon));
+        V_min = sqrt(2*n_z*m*g/(c_A_plane_max*S*rho(i)));
         
         % Leistungsgrenze
         
         % c_A = C_A0 + alpha * C_Aalpha;
         % c_W = c_W0 + k * C_A^2
-         W = V_A^2 * rho(i)/2 * S * c_W_plane;
-         T_erf = W; 
+        W = V_A^2 * rho(i)/2 * S * c_W_plane;
+        T_erf = W;
         
         % Temperaturgrenze
         
@@ -247,12 +269,12 @@ for h = H_0:Delta_H:H_max
         q_max = rho(i)/2 * V_A^2;
         V_max_q = sqrt(q_zul * 2 /rho(i));
         
-        if  V_A > V_max_q || V_A >= V_max_T || V_min > V_A || T_erf > max(max(T_map)) % || T_max > T_zul 
+        if  V_A > V_max_q || V_A >= V_max_T || V_min > V_A || T_erf > max(max(T_map)) % || T_max > T_zul
             C_Rest_V(i) = NaN;
             Omega(i) = NaN;
             U_mot(i) = NaN;
             I_mot(i) = NaN;
-            I_bat_ges(i) = NaN;
+            I_Bat(i) = NaN;
             PWM(i) = NaN;
         end
     end
@@ -265,7 +287,7 @@ for h = H_0:Delta_H:H_max
         Omega(i) = NaN;
         U_mot(i) = NaN;
         I_mot(i) = NaN;
-        I_bat_ges(i) = NaN;
+        I_Bat(i) = NaN;
         PWM(i) = NaN;
     end
     
@@ -315,7 +337,7 @@ ylabel('U_{mot} [V]')
 
 % Batteriestrom über der Höhe
 figure(figure_I_Bat)
-plot(H,I_bat_ges,'LineWidth',2)
+plot(H,I_Bat,'LineWidth',2)
 grid on
 hold on
 xlabel('Höhe [m]')
@@ -329,20 +351,28 @@ hold on
 xlabel('Höhe [m]')
 ylabel('PWM [%]')
 
+% Wirkungsgrad
+figure(figure_eta)
+plot(H,eta_ges*100,'LineWidth',2)
+grid on
+hold on
+xlabel('Höhe [m]')
+ylabel('eta_{ges} [%]')
+
 %% Datei abspeichern
 %ImageSizeX = 40;
 %ImageSizeY = 30;
-figure(figure_C_Rest_V)
+%figure(figure_C_Rest_V)
 %set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
 %set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
-saveas(gcf,'C_Rest_V', 'jpg'); 
-figure(figure_omega)
-saveas(gcf,'omega', 'jpg');
-figure(figure_I_mot)
-saveas(gcf,'I_mot', 'jpg');
-figure(figure_U_mot)
-saveas(gcf,'U_mot', 'jpg');
-figure(figure_I_Bat)
-saveas(gcf,'I_Bat', 'jpg');
-figure(figure_PWM)
-saveas(gcf,'PWM', 'jpg');
+%saveas(gcf,'C_Rest_V', 'jpg'); 
+%figure(figure_omega)
+%saveas(gcf,'omega', 'jpg');
+%figure(figure_I_mot)
+%saveas(gcf,'I_mot', 'jpg');
+%figure(figure_U_mot)
+%saveas(gcf,'U_mot', 'jpg');
+%figure(figure_I_Bat)
+%saveas(gcf,'I_Bat', 'jpg');
+%figure(figure_PWM)
+%saveas(gcf,'PWM', 'jpg');
