@@ -276,6 +276,7 @@ for h = H_0:Delta_H:H_max
             I_mot(i) = NaN;
             I_Bat(i) = NaN;
             PWM(i) = NaN;
+            eta_ges(i) = NaN;
         end
     end
     
@@ -289,6 +290,7 @@ for h = H_0:Delta_H:H_max
         I_mot(i) = NaN;
         I_Bat(i) = NaN;
         PWM(i) = NaN;
+        eta_ges(i) = NaN;
     end
     
     
