@@ -5,7 +5,6 @@
 			       : Geschwindigkeit anpassen
 			       : Wirkungsgrad ausgeben lassen zum Abgleich der beiden Modelle
 
-	- 	Zeitplan aktualisieren und Yannic schicken
 	-	Batteriemodell im Code implementieren und in die Leistungsberechnung einbringen
 	- 	Literaturrecherche
 	-	denis@strezhi.ru
