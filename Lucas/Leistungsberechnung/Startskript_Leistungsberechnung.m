@@ -103,7 +103,7 @@ p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
 
-u_Wg = 100/3.6;                                  % Seitenwindgeschwindigkeit in m/s
+u_Wg = 0;                                  % Seitenwindgeschwindigkeit in m/s
 
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%

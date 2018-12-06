@@ -2,8 +2,7 @@ To clarify
 		
 
 
-		- V_bat entspricht noch nicht dem Batteriemodell (Frage nach der Einheitszelle --> Unterschiede aufzeigen, Fehler in Funktion batterie_parameter)
-		- Was sollte alles vorbereitet werden? Wirkungsgrad? Abschätzung Gewicht bei 250g Nutzlast und 100km/h Wind? 
+		- V_bat entspricht noch nicht dem Batteriemodell (Frage nach der Einheitszelle --> Unterschiede aufzeigen, Fehler in Funktion batterie_parameter) 
 		- Aufzeigen der Ergebnisse aus Literaturrecherche. Koreaner zeigen
 		- E-Mail an Russen 
 		- Weiteres Vorgehen klären

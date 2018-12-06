@@ -44,19 +44,19 @@ H = zeros(lengthi,1);
 U_mot = zeros(lengthi,1);
 I_mot = zeros(lengthi,1);
 Thrust = zeros(lengthi,1);
-Omega_1 = zeros(lengthi,1);
+Omega_2 = zeros(lengthi,1);
 tau = zeros(lengthi,1);
 C_Rate = zeros(lengthi,1);
 alpha = zeros(lengthi,1);
-C_Rest_V_1 = zeros(lengthi,1);
+C_Rest_V_2 = zeros(lengthi,1);
 Theta = zeros(lengthi,1);
 rho = zeros(lengthi,1);
 I_Bat = zeros(lengthi,1);
 P_Bat = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
-M_tip_1 = zeros(lengthi,1);
+M_tip_2 = zeros(lengthi,1);
 eta_prop = zeros(lengthi,1);
-eta_ges_1 = zeros(lengthi,1);
+eta_ges_2 = zeros(lengthi,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Programmanfang
@@ -176,26 +176,26 @@ for h = H_0:Delta_H:H_max
     
     
     if Thrust(i) > max(max(T_map))                                          % wenn Schub zu gross (Ergebnis verwerfen)
-        Omega_1(i) = NaN;
+        Omega_2(i) = NaN;
         I_mot(i) = NaN;
         C_Rate(i) = NaN;
-        C_Rest_V_1(i) = NaN;
+        C_Rest_V_2(i) = NaN;
     else
         
         
         % Drehzahl und Drehmoment bestimmen
         
-        [Omega_1(i),tau(i)] = Propeller(V_A, alpha(i), Thrust(i), RPM_map, V_map, T_map, TAU_map);
+        [Omega_2(i),tau(i)] = Propeller(V_A, alpha(i), Thrust(i), RPM_map, V_map, T_map, TAU_map);
         
         
         % Wie groß ist die Blattspitzengeschwindigkeit?
         
-        M_tip_1(i) = (Omega_1(i) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
+        M_tip_2(i) = (Omega_2(i) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
         
         
         % Motorzustand berechnen
         
-        [U_mot(i),I_mot(i)] = Motor(tau(i),K_V,I_0,R_i,Omega_1(i));
+        [U_mot(i),I_mot(i)] = Motor(tau(i),K_V,I_0,R_i,Omega_2(i));
         
         
         % Zustand der Motorregler berechnen
@@ -205,7 +205,7 @@ for h = H_0:Delta_H:H_max
         
         % Batteriezustand berechnen
         
-        [I_Bat(i),C_Rate(i),Delta_C_Bat,C_Rest_V_1(i)] = Batterie(PWM(i),eta_PWM,I_mot(i),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat,t_Flug);
+        [I_Bat(i),C_Rate(i),Delta_C_Bat,C_Rest_V_2(i)] = Batterie(PWM(i),eta_PWM,I_mot(i),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat,t_Flug);
         
         
         % Gesamtwirkungsgrad       
@@ -229,9 +229,9 @@ for h = H_0:Delta_H:H_max
         vi = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
       
         % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
-        eta_prop(i) = (Thrust(i) * (V_A + vi))/(tau(i) .* Omega_1(i));  
+        eta_prop(i) = (Thrust(i) * (V_A + vi))/(tau(i) .* Omega_2(i));  
         
-        eta_ges_1(i) = (Thrust(i) * (mu_z + vi))/(I_Bat(i) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
+        eta_ges_2(i) = (Thrust(i) * (mu_z + vi))/(I_Bat(i) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
         
         
     end
@@ -270,29 +270,29 @@ for h = H_0:Delta_H:H_max
         V_max_q = sqrt(q_zul * 2 /rho(i));
         
         if  V_A > V_max_q || V_A >= V_max_T || V_min > V_A || T_erf > max(max(T_map)) % || T_max > T_zul
-            C_Rest_V_1(i) = NaN;
-            Omega_1(i) = NaN;
+            C_Rest_V_2(i) = NaN;
+            Omega_2(i) = NaN;
             U_mot(i) = NaN;
             I_mot(i) = NaN;
             I_Bat(i) = NaN;
             PWM(i) = NaN;
-            eta_ges_1(i) = NaN;
-            M_tip_1(i) = NaN
+            eta_ges_2(i) = NaN;
+            M_tip_2(i) = NaN
         end
     end
     
     
     % Wenn Grenzen ueberschritten werden, Resultate entfernen
     
-    if C_Rest_V_1(i) < 0.0 || U_mot(i) > U_Bat_nom || U_mot(i) <= 0 || C_Rate(i) > C_Rate_max || I_mot(i) > I_max || alpha(i) > alpha_stall || M_tip_1(i) >= 1
-        C_Rest_V_1(i) = NaN;
-        Omega_1(i) = NaN;
+    if C_Rest_V_2(i) < 0.3 || U_mot(i) > U_Bat_nom || U_mot(i) <= 0 || C_Rate(i) > C_Rate_max || I_mot(i) > I_max || alpha(i) > alpha_stall || M_tip_2(i) >= 1
+        C_Rest_V_2(i) = NaN;
+        Omega_2(i) = NaN;
         U_mot(i) = NaN;
         I_mot(i) = NaN;
         I_Bat(i) = NaN;
         PWM(i) = NaN;
-        eta_ges_1(i) = NaN;
-        M_tip_1(i) = NaN;
+        eta_ges_2(i) = NaN;
+        M_tip_2(i) = NaN;
     end
     
     
@@ -308,7 +308,7 @@ end
 
 % Restladung über der Höhe
 figure(figure_C_Rest_V)
-plot(H,C_Rest_V_1*100,'LineWidth',2);
+plot(H,C_Rest_V_2*100,'LineWidth',2);
 grid on
 hold on
 xlabel('Höhe [m]')
@@ -317,7 +317,7 @@ ylabel('Restladung der Batterie [%]')
 
 % Drehzahl über der Höhe
 figure(figure_omega)
-plot(H,Omega_1/(2*pi)*60,'LineWidth',2)
+plot(H,Omega_2/(2*pi)*60,'LineWidth',2)
 grid on
 hold on
 xlabel('Höhe [m]')
@@ -357,7 +357,7 @@ ylabel('PWM [%]')
 
 % Wirkungsgrad
 figure(figure_eta)
-plot(H,eta_ges_1*100,'LineWidth',2)
+plot(H,eta_ges_2*100,'LineWidth',2)
 grid on
 hold on
 xlabel('Höhe [m]')

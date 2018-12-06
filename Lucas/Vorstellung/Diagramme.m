@@ -33,7 +33,7 @@ grid on
 hold on
 plot(H,M_tip_2,'r-','LineWidth',2);
 xlabel('Höhe [m]')
-ylabel('M_tip')
+ylabel('M_{tip}')
 
 
 % Wirkungsgrad

@@ -215,8 +215,8 @@ for h = H_0:Delta_H:H_max
         
         vi0 = sqrt(m*g / ( 2*rho(i)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0 
         v = vi0;
-        mu_z = -V_A*sin(alpha(i));
-        mu = V_A*cos(alpha(i));
+        mu_z = -V_A*sin(alpha(i));                                          % Geschwindigkeit durch die Rotorebene
+        mu = V_A*cos(alpha(i));                                             % Geschwindigkeit entlang Rotorebene
         krit = 1;
         while krit > 0.0005
             f = v - mu_z - vi0^2 / sqrt(mu^2 + v^2);
@@ -231,7 +231,7 @@ for h = H_0:Delta_H:H_max
         % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
         eta_prop(i) = (Thrust(i) * (V_A + vi))/(tau(i) .* Omega(i));  
         
-        eta_ges(i) = (Thrust(i) * (mu_z + vi))/(I_Bat(i) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
+        eta_ges(i) = (n_Prop * Thrust(i) * (mu_z + vi))/(I_Bat(i) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
         
         
     end
