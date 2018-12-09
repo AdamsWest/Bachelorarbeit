@@ -63,13 +63,13 @@ m_nutz = 0.250;          % Nutzlast in kg
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Gesamtsystem
-m_copter = 0.5;                         % Quadrocopter Leermasse in kg
-A_copter = 0.1*0.1  + 0.1*0.02*4;       % obere Stirnflaeche des Quadrocopters in m^2
+m_copter = 0.5;                         % Multicopter Leermasse in kg
+A_copter = 0.1*0.1  + 0.1*0.02*4;       % obere Stirnflaeche des Multicopter in m^2
 %A_copter = 2 * A_copter;
-A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Quadrocopters in m^2
-c_W_copter_oben = 1;                    % Widerstandsbeiwert des Quadrocopters 
-c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Quadrocopters
-c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Quadrocopters (bei +/-45° Anstellwinkel)
+A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
+c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters 
+c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
+c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
 
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
