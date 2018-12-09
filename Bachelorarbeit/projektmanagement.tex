@@ -85,7 +85,7 @@
             \node (ap4100) [subabstract, rectangle split, rectangle split parts=2, below=of ap4000]
                {
                    \textbf{AP 4100}
-                   \nodepart{second}Festlegung der zu untersuchenden Parameter
+                   \nodepart{second}Festlegung der zu untersuchenden Parameter und wie diese zu variieren sind
                };
             \node (ap4200) [subabstract, rectangle split, rectangle split parts=2, below=of ap4100]
                {
@@ -134,8 +134,7 @@
             \draw[line] (ap4200.west) -- ++(-0.2,0);
             \draw[line] (ap4300.west) -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm] ap4000.west);
             \draw[line] (ap5000.west) -- ++(-0.19,0);
-            \draw[line] (ap5100.west) -- ++(-0.2,0);
-
+            \draw[line] (ap5100.west) -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm] ap5000.west);
             \draw[line] (ap6000.east) -- ++(+0.2,0) |- ([yshift=0.8cm, xshift=0.00cm] ap5000.north);
         \end{tikzpicture}
 %    \end{center}
@@ -179,7 +178,7 @@
   \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 3200: Diskussion der Flugleistungen}{2018-12-23}{2018-12-28}\\
 
   \ganttgroup{AP 4000: Parameteruntersuchung}{2019-01-02}{2019-02-07}\\
-  \ganttbar{AP 4100: Festlegung der zu untersuchenden Parameter}{2019-01-02}{2019-01-09}\\
+  \ganttbar{AP 4100: Festlegung der zu untersuchenden Parameter und wie diese zu variieren sind}{2019-01-02}{2019-01-09}\\
   \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 4200: Programmerweiterung}{2019-01-10}{2019-02-07}\\
   \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 4300: Einflussuntersuchung der Parameter}{2019-01-10}{2019-02-07}\\
 
@@ -287,7 +286,7 @@
     \textbf{Ergebnisse:}
     \begin{itemize}
         \item Ein geeignetes Programm für fortlaufende Untersuchungen und anschließende Programmerweiterung
-        \item Fertiges Matlab Programm zur Durchführung einer ersten Simulationen von elektrisch angetriebenen Flugsystemen mit einer Bandbreite von Parametern, sowie deren Auswertung
+        \item Fertiges Matlab Programm zur Durchführung einer ersten Simulationen von elektrisch angetriebenen Flugsystemen mit einer Bandbreite von Parametern sowie deren Auswertung
     \end{itemize}
     }
 \end{wpd}
@@ -346,7 +345,6 @@
     \textbf{Ergebnisse:}
     \begin{itemize}
         \item Nachgebildeter Flug im Programm
-        \item 
     \end{itemize}
     }
 \end{wpd}
@@ -386,7 +384,7 @@
 % WPD 4100
 
 \clearpage
-\begin{wpd}{AP 4100}{Festlegung der zu untersuchenden Parameter}{1.0}{Lucas Schreer}{26.11.2018}{02.01.2019}{09.01.2019}{1 Woche}{Lucas Schreer}
+\begin{wpd}{AP 4100}{Festlegung der zu untersuchenden Parameter und wie diese zu variieren sind}{1.0}{Lucas Schreer}{26.11.2018}{02.01.2019}{09.01.2019}{1 Woche}{Lucas Schreer}
     {
     \textbf{Ziele:}
     \begin{itemize}

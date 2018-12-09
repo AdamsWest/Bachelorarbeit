@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  3 DEC 2018 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  8 DEC 2018 18:03
 entering extended mode
 **./main.tex
 (main.tex
@@ -2226,8 +2226,11 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 \@quotelevel=\count544
 \@quotereset=\count545
 (main.aux (title_page_thesis.aux) (oath.aux) (abstract.aux) (introduction.aux)
-(chapter_n.aux) (programmbeschreibung.aux) (nachbildung.aux)
-(parameteruntersuchung.aux
+(programm.aux
+
+LaTeX Warning: Label `tab:prop_parameter' multiply defined.
+
+) (nachbildung.aux) (parameteruntersuchung.aux
 
 LaTeX Warning: Label `sec:stand_der_technik' multiply defined.
 
@@ -2699,7 +2702,7 @@ Overfull \hbox (10.95pt too wide) in paragraph at lines 57--57
 [] 
  []
 
-<TUBraunschweig_RGB.pdf, id=130, 199.1691pt x 73.97737pt>
+<TUBraunschweig_RGB.pdf, id=174, 199.1691pt x 73.97737pt>
 File: TUBraunschweig_RGB.pdf Graphic file (type pdf)
 <use TUBraunschweig_RGB.pdf>
 Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 61.
@@ -2712,7 +2715,7 @@ ut line 61.
 Package microtype Info: Character `AE ' is missing
 (microtype)             in font `LY1/NexusProSans-lnum/b/n/14'.
 (microtype)             Ignoring protrusion settings for this character.
-<images/TUBS_logo_inst_IFF.pdf, id=131, 520.354pt x 161.8848pt>
+<images/TUBS_logo_inst_IFF.pdf, id=175, 520.354pt x 161.8848pt>
 File: images/TUBS_logo_inst_IFF.pdf Graphic file (type pdf)
 <use images/TUBS_logo_inst_IFF.pdf>
 Package pdftex.def Info: images/TUBS_logo_inst_IFF.pdf  used on input line 61.
@@ -2865,7 +2868,7 @@ f>] (main.mw)
 \openout3 = `main.ist'.
 
 )
-<task_description.pdf, id=143, 597.55246pt x 845.07718pt>
+<task_description.pdf, id=187, 597.55246pt x 845.07718pt>
 File: task_description.pdf Graphic file (type pdf)
 <use task_description.pdf>
 Package pdftex.def Info: task_description.pdf  used on input line 89.
@@ -2874,7 +2877,7 @@ File: task_description.pdf Graphic file (type pdf)
 <use task_description.pdf>
 Package pdftex.def Info: task_description.pdf  used on input line 89.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<task_description.pdf, id=146, page=1, 597.55246pt x 845.07718pt>
+<task_description.pdf, id=190, page=1, 597.55246pt x 845.07718pt>
 File: task_description.pdf Graphic file (type pdf)
 <use task_description.pdf, page 1>
 Package pdftex.def Info: task_description.pdf , page1 used on input line 89.
@@ -2910,7 +2913,7 @@ Package babel Info: Redefining ngerman shorthand "~
  <./task_description.pdf>] (main.mw)
 \openout3 = `main.mw'.
 
-<task_description.pdf, id=174, page=2, 597.55246pt x 845.07718pt>
+<task_description.pdf, id=218, page=2, 597.55246pt x 845.07718pt>
 File: task_description.pdf Graphic file (type pdf)
 <use task_description.pdf, page 2>
 Package pdftex.def Info: task_description.pdf , page2 used on input line 89.
@@ -2980,10 +2983,30 @@ Package babel Info: Redefining ngerman shorthand "~
 
 Package tocbasic Info: character protrusion at toc deactivated on input line 99
 .
- (main.toc)
+ (main.toc
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 43.
+\openout3 = `main.mw'.
+
+[6
+
+
+] (main.mw)
+\openout3 = `main.mw'.
+
+)
 \tf@toc=\write29
 \openout3 = `main.toc'.
 
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
+(scrkbase)              on input line 100.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 100.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2994,10 +3017,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 100.
 \openout3 = `main.mw'.
 
- [6
-
-
-] (main.mw)
+ [7] (main.mw)
 \openout3 = `main.mw'.
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -3018,7 +3038,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 104.
 \openout3 = `main.mw'.
 
- [7
+ [8
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -3045,7 +3065,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 108.
 \openout3 = `main.mw'.
 
- [8
+ [9
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -3092,7 +3112,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 112.
 \openout3 = `main.mw'.
 
- [9
+ [10
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -3165,26 +3185,6 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 18.
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 26.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
-\openout3 = `main.mw'.
-
- [2] (main.mw)
-\openout3 = `main.mw'.
-
-\openout3 = `main.mw'.
-
-\openout3 = `main.mw'.
-
 )
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
@@ -3199,56 +3199,51 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 121.
 \openout3 = `main.mw'.
 
- [3] (main.mw)
+ [2] (main.mw)
 \openout3 = `main.mw'.
 
-\openout2 = `chapter_n.aux'.
+\openout3 = `main.mw'.
 
- (chapter_n.tex
+\openout3 = `main.mw'.
+
+\openout2 = `programm.aux'.
+
+ (programm.tex
 chapter 2.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 3.
-\openout3 = `main.mw'.
+(babel)             in language  on input line 4.
 
-\openout3 = `main.mw'.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 14.
+See the caption package documentation for explanation.
 
-
-LaTeX Warning: Citation 'Mustermann2017' on page 4 undefined on input line 9.
-
-LaTeX Font Info:    Font shape `LY1/NexusProSerif-lnum/bx/n' in size <10.95> no
-t available
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `LY1/NexusProSerif-lnum/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `LY1/NexusProSerif-lnum/bx/n' in size <10> not a
+vailable
 (Font)              Font shape `LY1/NexusProSerif-lnum/b/n' tried instead on in
-put line 9.
+put line 14.
 Package microtype Info: Character `AE ' is missing
-(microtype)             in font `LY1/NexusProSerif-lnum/b/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `LY1/NexusProSerif-lnum/m/n/8'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `LY1/NexusProSerif-lnum/m/n/6'.
+(microtype)             in font `LY1/NexusProSerif-lnum/b/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 30.
 \openout3 = `main.mw'.
 
-[4
+[3
 
 
 
@@ -3263,78 +3258,209 @@ Package babel Info: Redefining ngerman shorthand "~
 
 \openout3 = `main.mw'.
 
-\openout3 = `main.mw'.
 
-\openout3 = `main.mw'.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 33.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `LY1/NexusProSerif-lnum/m/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `LY1/NexusProSerif-lnum/bx/n' in size <10> not a
-vailable
-(Font)              Font shape `LY1/NexusProSerif-lnum/b/n' tried instead on in
-put line 35.
-Package microtype Info: Character `AE ' is missing
-(microtype)             in font `LY1/NexusProSerif-lnum/b/n/10'.
-(microtype)             Ignoring protrusion settings for this character.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 39.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 65.
+See the caption package documentation for explanation.
+
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 37.
+(scrkbase)              on input line 77.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 77.
 \openout3 = `main.mw'.
 
- [5] (main.mw)
+[4] (main.mw)
 \openout3 = `main.mw'.
 
-)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 83.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 83.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 94.
+See the caption package documentation for explanation.
+
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `LY1/NexusProSerif-lnum/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `LY1/NexusProSerif-lnum/m/n/5'.
+(microtype)             Ignoring protrusion settings for this character.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 110.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 110.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 112.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 122.
+(scrkbase)              on input line 121.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 121.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 121.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 121.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 121.
+\openout3 = `main.mw'.
+
+[5] (main.mw)
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 121.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 121.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 123.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 123.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 152.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 152.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 155.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 155.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
+(scrkbase)              on input line 158.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 158.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 158.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 158.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 158.
 \openout3 = `main.mw'.
 
  [6] (main.mw)
 \openout3 = `main.mw'.
 
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 162.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 162.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 172.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 172.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 175.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 175.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 176.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 176.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 177.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 177.
+)
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 122.
+(scrkbase)              on input line 123.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 123.
 \openout3 = `main.mw'.
 
  [7] (main.mw)
 \openout3 = `main.mw'.
 
-\openout2 = `programmbeschreibung.aux'.
+\openout3 = `main.mw'.
 
+\openout3 = `main.mw'.
 
-No file programmbeschreibung.tex.
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
+(scrkbase)              on input line 123.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 123.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 123.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 123.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 123.
+\openout3 = `main.mw'.
+
+ [8] (main.mw)
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
 \openout2 = `nachbildung.aux'.
 
-(nachbildung.tex
+ (nachbildung.tex
 chapter 3.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -3363,9 +3489,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 10.
 \openout3 = `main.mw'.
 
-[8
-
-
+[9
 
 
 
@@ -3398,7 +3522,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 124.
 \openout3 = `main.mw'.
 
- [9] (main.mw)
+ [10] (main.mw)
 \openout3 = `main.mw'.
 
 \openout3 = `main.mw'.
@@ -3435,7 +3559,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 10.
 \openout3 = `main.mw'.
 
-[10
+[11
 
 
 
@@ -3472,7 +3596,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 125.
 \openout3 = `main.mw'.
 
- [11] (main.mw)
+ [12] (main.mw)
 \openout3 = `main.mw'.
 
 \openout3 = `main.mw'.
@@ -3501,7 +3625,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 5.
 \openout3 = `main.mw'.
 
-[12
+[13
 
 
 
@@ -3534,7 +3658,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 126.
 \openout3 = `main.mw'.
 
- [13] (main.mw)
+ [14] (main.mw)
 \openout3 = `main.mw'.
 
 \openout3 = `main.mw'.
@@ -3559,7 +3683,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 6.
 \openout3 = `main.mw'.
 
-[14
+[15
 
 
 
@@ -3587,24 +3711,24 @@ Overfull \hbox (3.48819pt too wide) in paragraph at lines 48--49
  []
 
 
-Overfull \hbox (100.67831pt too wide) in paragraph at lines 140--143
+Overfull \hbox (100.67831pt too wide) in paragraph at lines 139--142
 [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 143.
+(scrkbase)              on input line 142.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 142.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 142.
 \openout3 = `main.mw'.
 
-[15
+[16
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -3614,28 +3738,35 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 148.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 148.
+(babel)             in language  on input line 147.
+LaTeX Font Info:    Font shape `LY1/NexusProSerif-lnum/bx/n' in size <10.95> no
+t available
+(Font)              Font shape `LY1/NexusProSerif-lnum/b/n' tried instead on in
+put line 192.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `LY1/NexusProSerif-lnum/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (10.97997pt too wide) in paragraph at lines 150--194
+Overfull \hbox (10.97997pt too wide) in paragraph at lines 149--193
 [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 194.
+(scrkbase)              on input line 193.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 \openout3 = `main.mw'.
 
-[16
+[17
 
 
 ] (main.mw)
@@ -3646,19 +3777,19 @@ Overfull \vbox (38.53568pt too high) has occurred while \output is active []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 194.
+(scrkbase)              on input line 193.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 193.
 \openout3 = `main.mw'.
 
 
-[17] (main.mw)
+[18] (main.mw)
 \openout3 = `main.mw'.
 
 \openout3 = `main.mw'.
@@ -3667,73 +3798,50 @@ Package babel Info: Redefining ngerman shorthand "~
 
 \c@wpdStartPage=\count554
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 202--230
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 201--229
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 234.
+(scrkbase)              on input line 233.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 233.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 234.
-\openout3 = `main.mw'.
-
-[18
-
-
-] (main.mw)
-\openout3 = `main.mw'.
-
- you have to define the wpdtitle!
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
-[]|\LY1/NexusProSerif-lnum/b/n/10.95 Zusammenhang ei-ner elek-tro-me-cha-ni-
- []
-
-
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 235--261
- [] 
- []
-
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 265.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 265.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 265.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 265.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 265.
+(babel)             in language  on input line 233.
 \openout3 = `main.mw'.
 
 [19
 
+
 ] (main.mw)
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 266--293
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]|\LY1/NexusProSerif-lnum/b/n/10.95 Zusammenhang ei-ner elek-tro-me-cha-ni-
+ []
+
+
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 234--260
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 297.
+(scrkbase)              on input line 264.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 297.
+(babel)             in language  on input line 264.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 297.
+(babel)             in language  on input line 264.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 297.
+(babel)             in language  on input line 264.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 297.
+(babel)             in language  on input line 264.
 \openout3 = `main.mw'.
 
 [20
@@ -3742,21 +3850,21 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 298--321
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 265--292
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 325.
+(scrkbase)              on input line 296.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 296.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 296.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 296.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 296.
 \openout3 = `main.mw'.
 
 [21
@@ -3765,27 +3873,21 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Underfull \hbox (badness 10000) in paragraph at lines 326--326
-[]|\LY1/NexusProSerif-lnum/b/n/10.95 Nachbildung ei-nes Qua-dro-co-pter-flu-ges
-
- []
-
-
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 326--352
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 297--320
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 356.
+(scrkbase)              on input line 324.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 356.
+(babel)             in language  on input line 324.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 356.
+(babel)             in language  on input line 324.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 356.
+(babel)             in language  on input line 324.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 356.
+(babel)             in language  on input line 324.
 \openout3 = `main.mw'.
 
 [22
@@ -3794,21 +3896,27 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 357--384
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
+[]|\LY1/NexusProSerif-lnum/b/n/10.95 Nachbildung ei-nes Qua-dro-co-pter-flu-ges
+
+ []
+
+
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 325--350
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 388.
+(scrkbase)              on input line 354.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 354.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 354.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 354.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 388.
+(babel)             in language  on input line 354.
 \openout3 = `main.mw'.
 
 [23
@@ -3817,21 +3925,21 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 389--418
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 355--382
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 422.
+(scrkbase)              on input line 386.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 422.
+(babel)             in language  on input line 386.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 422.
+(babel)             in language  on input line 386.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 422.
+(babel)             in language  on input line 386.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 422.
+(babel)             in language  on input line 386.
 \openout3 = `main.mw'.
 
 [24
@@ -3840,21 +3948,21 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 423--448
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 387--416
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 452.
+(scrkbase)              on input line 420.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 452.
+(babel)             in language  on input line 420.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 452.
+(babel)             in language  on input line 420.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 452.
+(babel)             in language  on input line 420.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 452.
+(babel)             in language  on input line 420.
 \openout3 = `main.mw'.
 
 [25
@@ -3863,21 +3971,21 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 453--478
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 421--446
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 482.
+(scrkbase)              on input line 450.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 482.
+(babel)             in language  on input line 450.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 482.
+(babel)             in language  on input line 450.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 482.
+(babel)             in language  on input line 450.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 482.
+(babel)             in language  on input line 450.
 \openout3 = `main.mw'.
 
 [26
@@ -3886,21 +3994,21 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 483--512
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 451--476
  [] 
  []
 
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
-(scrkbase)              on input line 544.
+(scrkbase)              on input line 480.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 544.
+(babel)             in language  on input line 480.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 544.
+(babel)             in language  on input line 480.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 544.
+(babel)             in language  on input line 480.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 544.
+(babel)             in language  on input line 480.
 \openout3 = `main.mw'.
 
 [27
@@ -3909,18 +4017,41 @@ Package babel Info: Redefining ngerman shorthand "~
 \openout3 = `main.mw'.
 
  you have to define the wpdtitle!
-LaTeX Font Info:    Try loading font information for LY1+cmr on input line 570.
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 481--510
+ [] 
+ []
 
-LaTeX Font Info:    No file LY1cmr.fd. on input line 570.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `pagehead' that is an alias of element `pageheadfoot'
+(scrkbase)              on input line 542.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 542.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 542.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 542.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 542.
+\openout3 = `main.mw'.
+
+[28
+
+] (main.mw)
+\openout3 = `main.mw'.
+
+ you have to define the wpdtitle!
+LaTeX Font Info:    Try loading font information for LY1+cmr on input line 568.
+
+LaTeX Font Info:    No file LY1cmr.fd. on input line 568.
 
 
 LaTeX Font Warning: Font shape `LY1/cmr/m/it' undefined
-(Font)              using `LY1/ptm/m/n' instead on input line 570.
+(Font)              using `LY1/ptm/m/n' instead on input line 568.
 
 ("C:\MiKTeX 2.9\tex\latex\microtype\mt-ptm.cfg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Overfull \hbox (5.4113pt too wide) in paragraph at lines 545--571
+Overfull \hbox (5.4113pt too wide) in paragraph at lines 543--569
  [] 
  []
 
@@ -3938,7 +4069,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 127.
 \openout3 = `main.mw'.
 
- [28
+ [29
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -3960,7 +4091,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 137.
 \openout3 = `main.mw'.
 
-[29
+[30
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -4085,7 +4216,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 156.
 \openout3 = `main.mw'.
 
-[30
+[31
 
 ] (main.mw)
 \openout3 = `main.mw'.
@@ -4164,7 +4295,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
 
 \openout3 = `main.mw'.
 
-) (chapter_n.aux
+) (programm.aux
 \openout3 = `main.mw'.
 
 \openout3 = `main.mw'.
@@ -4189,7 +4320,99 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
 
 \openout3 = `main.mw'.
 
-) (programmbeschreibung.aux) (nachbildung.aux
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+\openout3 = `main.mw'.
+
+) (nachbildung.aux
 \openout3 = `main.mw'.
 
 \openout3 = `main.mw'.
@@ -4300,21 +4523,13 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
 \openout3 = `main.out'.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B980A91136F44B0CA8EC2E95675293B5;1539.
+(rerunfilecheck)             Checksum: CD3F9FF2FA1663100B08E58FD95EE66A;2435.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
 
 \openout3 = `main.mw'.
 
@@ -4343,13 +4558,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 66120 strings out of 492970
- 1449612 string characters out of 3142029
- 2408019 words of memory out of 3000000
- 68526 multiletter control sequences out of 15000+200000
- 669792 words of font info for 217 fonts, out of 3000000 for 9000
+ 66027 strings out of 492970
+ 1447552 string characters out of 3142029
+ 2403866 words of memory out of 3000000
+ 68400 multiletter control sequences out of 15000+200000
+ 677881 words of font info for 230 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 80i,18n,136p,9153b,2267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,18n,136p,9153b,2512s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/MiKTeX 2.9/fonts/enc/dvips/Fontshop/a_cbf6z5.enc}{C:/MiKTeX 2.9/fonts/enc
 /dvips/ly1/texnansi.enc}{C:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/MiKTeX 2
 .9/fonts/enc/dvips/Fontshop/a_4o7za6.enc}{C:/MiKTeX 2.9/fonts/enc/dvips/Fontsho
@@ -4357,17 +4572,15 @@ p/a_3cgipr.enc}<C:/MiKTeX 2.9/fonts/type1/Nexus/NexusSansPro-Bold.pfb><C:/MiKTe
 X 2.9/fonts/type1/Nexus/NexusSansPro-Regular.pfb><C:/MiKTeX 2.9/fonts/type1/Nex
 us/NexusSerifPro-Bold.pfb><C:/MiKTeX 2.9/fonts/type1/Nexus/NexusSerifPro-Italic
 .pfb><C:/MiKTeX 2.9/fonts/type1/Nexus/NexusSerifPro-Regular.pfb><C:/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type
-1/public/mathpazo/fplmr.pfb><C:/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmri.p
-fb><C:/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb><C:/MiKTeX 2.9/fonts/typ
-e1/urw/palatino/uplbi8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
-<C:/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb><C:/MiKTeX 2.9/fonts/type1/
-urw/times/utmr8a.pfb>
-Output written on main.pdf (39 pages, 452904 bytes).
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/MiK
+TeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/MiKTeX 2.9/fonts/type1/publi
+c/txfonts/t1xtt.pfb><C:/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/MiKT
+eX 2.9/fonts/type1/urw/palatino/uplri8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/time
+s/utmr8a.pfb>
+Output written on main.pdf (41 pages, 451235 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 40792 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 555 PDF objects out of 1000 (max. 8388607)
+ 121 named destinations out of 1000 (max. 500000)
+ 43952 words of extra memory for PDF output out of 51595 (max. 10000000)
 

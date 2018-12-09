@@ -1,13 +1,177 @@
 \chapter{Programm}
 \label{chap:Programm}
 
-\section{Parameter}
-\label{sec:parameter}
-Hier kommen die wählbaren Parameter des Programms hin (motor, fluggerät, etc.
+\section{Parameter des Fluggeräts}
+\label{sec:parameter_fluggeraet}
+Bei der Auslegung des Fluggeräts werden nicht nur Multicopter betrachtet sondern auch Flächenflugzeuge, sogenannte fixed wing UAVs. Aus diesem Grund werden die Parameter Motor, Propeller, Batterie und Missionsparameter sowie Umgebungsparameter allgemein für beide Arten der UAVs festgelegt. Anschließend werden die Parameter des Multicopters oder des Flächenflugzeugs festgelegt, je nachdem, welches Fluggerät untersucht werden soll
+Das Programm und die diesem grundlegende Leistungsberechnung basieren auf der unveröffentlichten Arbeit "Leistungsberechnung von Multicoptern" von Y. Beyer (2016). Aus dieser wurden die Berechnung der Aerodynamik von Multicoptern, der Pulsweitenmodulation und der Batterieentladung übernommen. 
+Große Teile des Programms und der Leistungsberechnung basieren auf 
+
+\subsubsection{Motor}
+Die ersten drei Motorparameter sind notwendig, um die Motorspannung und den Motorstrom zu berechnen. Der letzte Parameter dint als technische Grenze, die für ein gut ausgelegtes System nicht überschritten werden. Die Motormasse fließt in Kombination mit der Anzahl der Propeller in die Gesamtmasse des Fluggerätes mit ein.
+
+\begin{center}
+	\captionof{table}{Motorparameter für technische Grenzen}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Einheit \\ \hline
+		 Innenwiderstand & \texttt{R\_i} & \ensuremath{\Omega} \\
+		 Geschwindigkeitskonstante & \texttt{K\_V} & \ensuremath{\frac{RPM}{V}} bzw. \ensuremath{\frac{U}{Vs}} \\
+		 Leerlaufstrom & \texttt{I\_O} & \ensuremath{A}  \\
+		 maximaler Dauerstrom & \texttt{I\_max} & \ensuremath{A} \\
+		 Motormasse & \texttt{m\_Mot} & \ensuremath{kg} \\ \hline
+	\end{tabular}	
+	\label{tab:mot_parameter}
+\end{center}
+
+\subsubsection{Propeller}
+Der Propellername wird in der Form 'Durchmesser x Pitch' angegeben. Der Name ist wichtig, um das Propellerkennfeld aus Propellerdatenbank von APC zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter werden benötigt
+\begin{description}
+	\item der Propellernahme besteht in der Form Durchmesser x Pitch (Pitch gleich die Höhek die der Prop erreicht, wenn er sich einmal in der Runde dreht <-- Verbessern)
+	\item der Propellername wird benötigt, um das Propellerkennfeld aus der Datenbank zu entnehmen
+	\item Mit der Anzahl der Props wird die Geometrie entscheidend beeinflusst und der benötigte Schub für das Gesamtsystem aufgeteilt
+	\item letzten dienen zur Bestimmung Anströmung und der Berücksichtigung der Blattelemententheorie 
+	\item 
+\end{description}
+
+
+
+\begin{center}
+	\captionof{table}{Propellerparameter für Schub, aerodynamische und technische Grenzen}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Einheit \\ \hline
+		 Propellername & \texttt{prop\_name} & - \\
+		 Anzahl der Propeller & \texttt{n\_Prop} & - \\
+		 Mittlerer Nullwiderstandsbeiwert & \texttt{c\_d0} & 0,05 \\
+		 Anstieg des Auftriebsbeiwerts & \texttt{a\_alpha} & 5 \\
+		 Maximaler Anstellwinkel & \texttt{alpha\_stall} & 10\textdegree \\ \hline
+	\end{tabular}	
+	\label{tab:prop_parameter}
+\end{center}
+
+\subsubsection{Batterie}
+\begin{itemize}
+	\item Energiedichte abhängig von verwendeter Batterie z.B. LiPO, LiIon
+	\item maximale C-Rate dient als weitere technische Begrenzung, in gut ausgelegtem Copter System unerreicht
+	\item Peukert Konstante dient zur Berechnung des Engergieverlustes der Batterie herangezogen
+	\item für LiPo Batterien zwischen 1,01 und 1,05
+	\item Wert von Temperatur abhängig
+	\item progressives Steigen der Werte für Temp., die deutlich unter Raumtemperatur liegen
+\end{itemize}
+
+
+
+
+\begin{center}
+	\captionof{table}{Batterieparameter zur Berechnung der verbleibenden Restladung sowie der technischen Grenzen}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Einheit \\ \hline
+		 Energiedichte & \texttt{E\_Dichte} & J/kg \\
+		 Anzahl der Batteriezellen & \texttt{N\_bat\_cell} & - \\
+		 nominale Spannung pro Batteriezelle & \texttt{U\_bat\_nom} & V \\
+		 minimale Spannung pro Batteriezelle & \texttt{U\_bat\_min} & V \\
+		 Peukert-Konstante & \texttt{P\_bat\_Peukert} & 1,05 \\
+		 Maximale C-Rate & \texttt{C\_Rate\_max} & - \\
+		 Batteriemasse & \texttt{m\_bat} & kg \\ \hline
+	\end{tabular}	
+	\label{tab:bat_parameter}
+\end{center}
+
+\subsubsection{Multicopter}
+
+\subsubsection{Flächenflugzeug}
+
+\section{Parameter der Mission}
+\label{sec:parameter_mission}
+
+\subsubsection{Flugparameter}
+
+\subsubsection{Umgebungsparameter}
+\begin{description}
+	\item Manche Umgebungsparameter als konstant angenommen
+\end{description}
+Die Erdbeschleunigung und der Adiabatenexponent werden als konstant über der Höhe angenommen. Mit Startwerten für die Höhe, die Temperatur, die Dichte und des Luftdrucks werden die Abflugbedingungen am Abflugort spezifiziert. Mit der Schrittweite der Höhe wird die Genauigkeit der Höhendiskretisierung festgelegt.
+\begin{center}
+	\captionof{table}{Umgebungsparameter}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Einheit \\ \hline
+		 Erdbeschleunigung & \texttt{g} & \SI{9,81}{m/s^2} \\
+		 Starthöhe & \texttt{H\_0} & \ensuremath{m} \\
+		 Schrittweite der Höhe  & \texttt{Delta\_H} & \ensuremath{m} \\
+		 maximale Höhe & \texttt{H\_max} & \ensuremath{m} \\
+		 Umgebungstemperatur am Start & \texttt{T\_0} & \ensuremath{K} \\
+		 Luftdruck am Start & \texttt{p\_0} & \ensuremath{N/m^2} \\
+		 Dichte am Start & \texttt{rho\_0} & \ensuremath{N/m^3} \\
+		 Adiabatenexponent & \texttt{kappa} & \SI{1,4}{} \\
+		 Windgeschwindigkeit & \texttt{u\_Wg} & \ensuremath{m/s} \\ \hline
+	\end{tabular}	
+	\label{tab:prop_parameter}
+\end{center}
+
+\section{Parameter der Mission}
+
 \section{Aufbau des Programms}
 \label{sec:aufbau_des_programms}
-\blindtext[1]
-\blindenumerate[3]
+Der Aufbau des \textsc{Matlab}-Skriptes wird im Struktogramm (abb. blabla) verdeutlicht.
+%\begin{figure}[H]
+%\centering
+%	\includegraphics{Struktogramm.pdf}
+%	\caption{Struktogramm des MATLAB-Skripts}
+%	\label{abb:struktogramm}
+%\end{figure}
 \section{Leistungsberechnung}
 \label{sec:leistungsberechnung}
-\blindtext[1]
+\subsection{Veränderung der Umgebungsparameter mit der Höhe}
+Für Leistungsuntersuchung wird die Internationale Standardatmosphäre vorausgesetzt. Hiernach ist der Temperaturkoeffizient bis zur Tropopause
+\begin{equation}
+	\frac{dT}{dH} = -0,0065\frac{K}{m}
+\end{equation}
+und danach in der unteren Stratosphäre bis zu einer Höhe von \SI{20000}{m}
+\begin{equation}
+	\frac{dT}{dH} = 0.
+\end{equation}
+Entsprechend kann der Verlauf der Temperatur, des Druckes und der Dichte mit
+\begin{equation}
+	T_{0-11} = T_0 - \frac{dT}{dH}\cdot H,
+\end{equation}
+\begin{equation}
+	p_{0-11} = p_0\cdot [1-0,0065\frac{K}{m}\cdot \frac{H}{T_0}]^{5,256},
+\end{equation}
+\begin{equation}
+	\rho_{0-11} = \rho_0 \cdot [1-\frac{dT}{dH}\cdot \frac{H}{T_0}]^{4,256}.
+\end{equation}
+beschrieben werden. Ab \SI{20000}{m} ist der Verlauf von Druck und Dichte durch die Gleichungen
+\begin{equation}
+	p = p_{11}\cdot e^{\frac{g}{R\cdot T_{11}}\cdot (H-H_{11})},
+\end{equation} 
+\begin{equation}
+	\rho = \rho_{11}\cdot e^{\frac{g}{R\cdot T_{11}}\cdot (H-H_{11})}
+\end{equation}
+beschrieben
+Um den Einfluss der Flughöhe in der Leistungsberechnung festzuhalten, werden für jedes Höhenintervall die Umgebungsparameter an den oberen und unteren Intervallgrenzen berechnet. Daraus ergibt sich  
+
+\subsection{Schub berechnen}
+\subsubsection{Multicopter}
+\subsubsection{Flächenflugzeug}
+\subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
+In der Propellerdatenbank von Hersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf uniforme Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
+Die Kennfelder wurden in Versuchen ermittelt, die keine ändernde Dichte berücksichtigen. Um den Einfluss der sich verringernden Dicht mit zunehmender Flughöhe trotzdem zu beachten, müssen die Kennfelder angepasst werden. Gemäß der Strahltheorie setzt sich der Schub aus dem Massenstrom und der Geschwindigkeit im voll ausgebildeten Abstromzylinder 
+\begin{equation}
+	T =  \dot{m}\cdot v_{\infty} = 
+\end{equation}
+
+\subsection{Motorzustand berechnen}
+Mit dem Drehmoment und der Drehzahl des Propellers berechnet sich der Motorzustand, genauer der Motorstrom und die Motorspannung. Dies erfolgt nach einem einfachen Motormodell (Drela 2007).
+Der Motorstrom berechnet sich aus 
+\begin{equation}
+	I_{Mot} = Q\cdot K_v + I_0.
+\end{equation}
+Mit dem Strom ergibt sich die Spannung nach
+\begin{equation}
+	U_{Mot} = \frac{\omega}{K_v} + R_i\cdot I_{Mot}.
+\end{equation}
+\subsection{Zustand der Motorregler}
+
+
+\subsection{Batteriezustand}
+\subsection{Werden Grenzen überschritten?}
+\section{Einschränkungen und Annahmen}

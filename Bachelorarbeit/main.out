@@ -5,21 +5,32 @@
 \BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.2}{Stand der Technik}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.3}{Ziel der Arbeit}{chapter.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Theoretische Grundlagen}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Einsatz von VIM}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Section 2}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Nachbildung des Quadrocopterfluges in Russland}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Komponenten des Quadrocopters}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Nachbildung im Programm}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 14
-\BOOKMARK [0][-]{chapter.4}{Parameteruntersuchung}{}% 15
-\BOOKMARK [1][-]{section.4.1}{Einleitung und Vorgehensweise}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.2}{Stand der Technik}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.3}{Ziel der Arbeit}{chapter.4}% 18
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 19
-\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 20
-\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 21
-\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 22
-\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 23
-\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 24
-\BOOKMARK [0][-]{appendix.A}{Blindtext im Anhang}{}% 25
+\BOOKMARK [0][-]{chapter.2}{Programm}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Parameter des Flugger\344ts}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Parameter der Mission}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Parameter der Mission}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Aufbau des Programms}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{Leistungsberechnung}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.5.1}{Ver\344nderung der Umgebungsparameter mit der H\366he}{section.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.5.2}{Schub berechnen}{section.2.5}% 15
+\BOOKMARK [2][-]{subsection.2.5.3}{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{section.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.5.4}{Motorzustand berechnen}{section.2.5}% 17
+\BOOKMARK [2][-]{subsection.2.5.5}{Zustand der Motorregler}{section.2.5}% 18
+\BOOKMARK [2][-]{subsection.2.5.6}{Batteriezustand}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.7}{Werden Grenzen \374berschritten?}{section.2.5}% 20
+\BOOKMARK [1][-]{section.2.6}{Einschr\344nkungen und Annahmen}{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{Nachbildung des Quadrocopterfluges in Russland}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Komponenten des Quadrocopters}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.2}{Nachbildung im Programm}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 25
+\BOOKMARK [0][-]{chapter.4}{Parameteruntersuchung}{}% 26
+\BOOKMARK [1][-]{section.4.1}{Einleitung und Vorgehensweise}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.2}{Stand der Technik}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.3}{Ziel der Arbeit}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 33
+\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 35
+\BOOKMARK [0][-]{appendix.A}{Blindtext im Anhang}{}% 36
