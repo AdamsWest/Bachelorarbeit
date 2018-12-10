@@ -48,7 +48,11 @@ for i = 1:length(Elektromodellflug_norm)
     % sum = sum + Elektromodellflug_norm{i,5}/(Elektromodellflug_norm{i,4}*3.6);
 
 end
-
+plot(capacity,resistance,'rx')
+hold on
+point_x = 1;
+point_y = 0.015;
+plot(point_x, point_y,'bx')
 
 % arithmetischer Mittelwert über alle Batterien
 % durchschnittliche Kapazität pro Zelle:
@@ -86,8 +90,8 @@ K = x(3);
 % % func = 10^(p2)./(10.^(p1 * vec));
 % plot(vec,func, capacity, resistance,'rx')
 
-plot(capacity, resistance,'rx');
-vec = 0.1:0.01:max(resistance);
-func = 1./vec;
-plot(vec,func);
+% plot(capacity, resistance,'rx')
+% vec = 0.1:0.01:max(resistance);
+% func = 1./vec;
+% plot(vec,func)
 
