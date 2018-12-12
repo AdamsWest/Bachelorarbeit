@@ -48,5 +48,53 @@ i_int = zeros(lengthi,1);
 % C_Rest_V = (C_bat_Peukert - Delta_C_bat) / C_bat_Peukert;   % Ladezustand als Verhältnis
 %%
 
+step_dt = t_Flug;               % ersetzen
+Cnom = Elektromodellflug{id_bat,5}/1000;                        % Cnom
+Q = 1.0618;                                                     % Q
+Qnom = 0.9102;                                                  % Qnom
+Qexp = 0.2083;                                                  % Qexp
+Vfull = 4.0399;                                                 % Vfull
+Vexp = 3.7783;                                                  % Vexp
+Vnom = 3.5181;                                                  % Vnom
+i = 1/100;                                                      % i
+R = 0.015;                                                      % R_bat
+B = 3/Qexp;
+Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R 0 0 0];        % Zwischenbelegung
+[Eo,A,K] = Batterie_parameter(Batterie_data);
+Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R Eo A K];       % vollständiger Vektor
+
+%% Schon in Funkt. vorhanden
+I_bat = PWM * I_mot / eta_PWM * n_Prop;                         % Batteriestrom
+I_bat = I_bat/(Cnom);                                           % Normierung des Batteriestroms
+i_int = 0;
+V_bat_2 = zeros(2800,1);
+%% 
+
+% for i = 1:2800
+    
+    
+    i_int = I_bat*t_Flug/3600 + i_int;   % integral of the current
+    
+    
+    % calculating the battery voltage (of one cell)
+    V_bat_2(i) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
+    % the battery voltage of all cells
+    V_bat_2(i) = N_el * V_bat_2(i)*1.0;  
+    
+    
+%     if V_bat_2(i) < 3.1 * N_el
+%         V_bat_2(i) = NaN;
+%         break
+%     end
+%     
+% end
+
+
+
+
+
+
+
+
 
 

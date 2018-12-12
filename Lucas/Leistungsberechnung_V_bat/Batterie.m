@@ -49,7 +49,7 @@ I_bat = PWM * I_mot / eta_PWM * n_Prop;                     % Batteriestrom
 i_int = I_bat*t_Flug + i_int_ante;                               % Integral des Stroms
 U_bat = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*i_star) ...
    + A * exp(-B*i_int);                                     % Batteriespannung pro Zelle
-U_bat = N_Bat_cell * U_bat;                                 % gesamt Batteriespannung
+U_bat = N_Bat_cell * U_bat;                                 % gesamte Batteriespannung
 
 C_rate = I_bat / (C_bat/3600);                              % C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 C_bat_Peukert = C_bat * (1/C_rate)^(P_bat-1);               % nutzbare Kapazitaet nach Peukert
