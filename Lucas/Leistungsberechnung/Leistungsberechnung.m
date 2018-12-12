@@ -364,17 +364,17 @@ ylabel('eta_{ges} [%]')
 %% Datei abspeichern
 %ImageSizeX = 40;
 %ImageSizeY = 30;
-%figure(figure_C_Rest_V)
+figure(figure_C_Rest_V)
 %set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
 %set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
-%saveas(gcf,'C_Rest_V', 'jpg'); 
-%figure(figure_omega)
-%saveas(gcf,'omega', 'jpg');
-%figure(figure_I_mot)
-%saveas(gcf,'I_mot', 'jpg');
-%figure(figure_U_mot)
-%saveas(gcf,'U_mot', 'jpg');
-%figure(figure_I_Bat)
-%saveas(gcf,'I_Bat', 'jpg');
-%figure(figure_PWM)
-%saveas(gcf,'PWM', 'jpg');
+saveas(gcf,'C_Rest_V', 'jpg'); 
+figure(figure_omega)
+saveas(gcf,'omega', 'jpg');
+figure(figure_I_mot)
+saveas(gcf,'I_mot', 'jpg');
+figure(figure_U_mot)
+saveas(gcf,'U_mot', 'jpg');
+figure(figure_I_Bat)
+saveas(gcf,'I_Bat', 'jpg');
+figure(figure_PWM)
+saveas(gcf,'PWM', 'jpg');
