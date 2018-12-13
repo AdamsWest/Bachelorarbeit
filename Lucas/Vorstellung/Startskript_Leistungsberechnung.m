@@ -38,7 +38,7 @@ I_max = 40;             % Max Current
 m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '7x3.8';    % Propellerbezeichnung
+prop_name = '9x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -53,7 +53,7 @@ U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 3.4;   % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 50;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-m_Bat = 0.55;           % Batteriemasse in kg
+m_Bat = 0.9;           % Batteriemasse in kg
 
 % Missionsparameter
 m_nutz = 0.250;          % Nutzlast in kg           
