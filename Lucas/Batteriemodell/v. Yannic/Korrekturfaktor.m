@@ -11,8 +11,8 @@
 
 
 %%
-clear
-close all
+% clear
+% close all
 clc
 
 %% Allgemeine Parameter
@@ -25,12 +25,13 @@ PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 8;
 n_Prop = 6;
-C_Rate = 20;
+C_Rate = 15;
 %% Initialisierung für Fehlertoleranz
 control =0;
 tolerance = zeros(length(Elektromodellflug),1);
 
-
+for k = 1:1:50
+    C_Rate = k;
 for n = 1:length(Elektromodellflug)
     
     id_bat = n;
@@ -170,6 +171,8 @@ end
 % Plotten der Abweichungen für jede Batterienummer
 x = 1:length(Elektromodellflug);
 plot(x,tolerance)
+grid on 
 xlabel('Batterienummer (Index in Matrix)');
 ylabel('Durchschnittliche Abweichung in %');           
 average_tolerance = mean(tolerance);        % durchschnittliche Abweichung in % aller Batterien
+end

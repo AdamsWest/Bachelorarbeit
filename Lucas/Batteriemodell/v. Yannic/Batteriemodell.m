@@ -17,7 +17,7 @@ load('Elektromodellflug.mat');
 
 
 
-id_bat = 42;    % Anmerkung: id_bat 33 zu geringe Spannung
+id_bat = 1;    % Anmerkung: id_bat 33 zu geringe Spannung
 PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 10;
@@ -80,21 +80,28 @@ hold on
 %% NORMZELLE
 
 % insert capacity later if needed
-Cnom = Elektromodellflug{id_bat,5}/1000;        % <-- HIER immer die Kapazität der Batterie einfügen, C_bat gemittelt skaliert mit 1Ah
-Q = 1.0618;                                                     % Q
-Qnom = 0.9102;                                                  % Qnom
-Qexp = 0.2083;                                                  % Qexp
-Vfull = 4.0399;                                                 % Vfull
-Vexp = 3.7783;                                                  % Vexp
-Vnom = 3.5181;                                                  % Vnom
-i = 1/100;                                                      % i
-R = 0.015;                                                      % R_bat
-B = 3/Qexp;
-Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R 0 0 0];        % Zwischenbelegung
-[Eo,A,K] = Batterie_parameter(Batterie_data);
+% Cnom = Elektromodellflug{id_bat,5}/1000;        % <-- HIER immer die Kapazität der Batterie einfügen, C_bat gemittelt skaliert mit 1Ah
+% Q = 1.0618;                                                     % Q
+% Qnom = 0.9102;                                                  % Qnom
+% Qexp = 0.2083;                                                  % Qexp
+% Vfull = 4.0399;                                                 % Vfull
+% Vexp = 3.7783;                                                  % Vexp
+% Vnom = 3.5181;                                                  % Vnom
+% i = 1/100;                                                      % i
+% R = 0.015;                                                      % R_bat
+% B = 3/Qexp;
+% Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R 0 0 0];        % Zwischenbelegung
+% [Eo,A,K] = Batterie_parameter(Batterie_data);
 %Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R Eo A K];       % vollständiger Vektor
 
+%% NORMZELLE ERZEUGEN
 
+run('Norm_Bat_Cell')
+Cnom = Elektromodellflug{id_bat,5}/1000;
+B = 3/Qexp;
+
+
+%%
 % I_bat = PWM * I_mot / eta_PWM * n_Prop;                         % Batteriestrom
 I_bat = C_Rate*C;
 I_bat = I_bat/(Cnom);                                           % Normierung des Batteriestroms
@@ -110,7 +117,7 @@ for i = 1:3600*1.5/C_Rate
     % calculating the battery voltage (of one cell)
     V_bat_2(i) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
     % the battery voltage of all cells
-    V_bat_2(i) = N_el * V_bat_2(i)*1.065;  % <-- KORREKTURFAKTOR VON DURCHSCHNITTLICH 5%
+    V_bat_2(i) = N_el * V_bat_2(i);  % <-- KORREKTURFAKTOR VON DURCHSCHNITTLICH 5%
     
     
     if V_bat_2 < 3.1 * N_el
