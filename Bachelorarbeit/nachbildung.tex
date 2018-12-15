@@ -1,11 +1,49 @@
 \chapter{Nachbildung des Quadrocopterfluges in Russland}
 \label{chap:nachbildung_des_quadrocopter}
-
+Mithilfe des Videos \textcolor{red}{Koriakin} und den in der Beschreibung gemachten Angaben, soll der Flug eines Quadrocopters auf \SI{10,2}{km} Höhe im erstellten Tool nachgebildet werden. Es soll dabei die Validität des Modells und die Glaubwürdigkeit des Fluges an sich überprüft werden. 
 \section{Komponenten des Quadrocopters}
 \label{sec:komponenten}
+Folglich sind alle für das Modell relevante Komponenten aufgelistet.
+\subsubsection{Motor}
+Als Motor wurden Cobra CM-2206/30 verwendet. Die technischen Spezifikation sind in \ref{tab:mot_cobra_parameter} aufgelistet.
+\begin{center}
+	\captionof{table}{Motorparameter des Cobra CM-2206/30}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Wert \\ \hline
+		 Innenwiderstand \ensuremath{R_i} & \texttt{R\_i} & \SI{0,123}{\ohm} \\
+		 Geschwindigkeitskonstante \ensuremath{K_v} & \texttt{K\_V} & \SI{1200}{RPM/V} \\
+		 Leerlaufstrom \ensuremath{I_0} & \texttt{I\_O} & \SI{0,52}{A}  \\
+		 maximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{40}{A} \\
+		 Motormasse \ensuremath{m_{Mot}} & \texttt{m\_Mot} & \SI{0,0365}{kg} \\ \hline
+	\end{tabular}	
+	\label{tab:mot_cobra_parameter}
+\end{center}
+\subsubsection{Propeller}
+Als Propeller wurden 4 Gemfan7038-Propeller eingesetzt. Das sind Propeller mit einem Durchmesser von \SI{7}{in} und einem Pitch von \SI{3,8}{in}. Für diesen Propeller wurden entsprechende Propeller aus der APC Datenbank mit den gleichen Abmessungen verwendet.
+\subsubsection{Batterie}
+Die Batterie ist eine selbst gebaute LiIon Batterie in der Bauform 4s3p. Die verwendeten Zellen waren Sony / Murata Konion US18650VTC6 3000mAh - 30A. Diese haben eine Kapazität von 3000mAh. Die  
+\begin{center}
+	\captionof{table}{Batterieparameter}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Einheit \\ \hline
+		 Energiedichte \ensuremath{\frac{E_{Bat}}{m_{Bat}}}& \texttt{E\_Dichte} & \SI{750000}{J/kg} \\
+		 Anzahl der Batteriezellen \ensuremath{N_{Bat,cell}} & \texttt{N\_bat\_cell} & \SI{4}{} \\
+		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \SI{3,7}{V} \\
+		 minimale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell,min}} & \texttt{U\_bat\_min} & \SI{3,1}{V} \\
+		 Peukert-Konstante \ensuremath{P}& \texttt{P\_bat\_Peukert} & \ensuremath{1,05} \\
+		 Maximale C-Rate \ensuremath{C_{rate,max}} & \texttt{C\_Rate\_max} & \SI{50}{} \\
+		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \SI{0,55}{kg} \\ \hline
+	\end{tabular}	
+	\label{tab:bat_4s3p_parameter}
+\end{center}
+\textcolor{red}{Batteriekapazität herausfinden} vermutlich 9 - 9,5 Ah im Video nur auf A bezogen (Frage,was das bedeutet) 
+\subsubsection{Qudrocopterabmaße}
 
 \section{Nachbildung im Programm}
 \label{sec:nachbildung_im_programm}
 
 \section{Ergebnisse}
 \label{sec:ergebnisse_quadrocopter}
+
+\section{Diskussion}
+\label{sec:nachbildung_diskussion}

@@ -16,34 +16,49 @@
 \contentsline {subsubsection}{Multicopter}{5}{subsubsection*.11}
 \contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{5}{subsubsection*.12}
 \contentsline {section}{\numberline {2.2}Parameter der Mission}{5}{section.2.2}
-\contentsline {subsubsection}{Flugparameter}{5}{subsubsection*.13}
-\contentsline {subsubsection}{Umgebungsparameter}{5}{subsubsection*.14}
+\contentsline {subsubsection}{Missionsparameter}{5}{subsubsection*.13}
+\contentsline {subsubsection}{Flugparameter}{5}{subsubsection*.14}
+\contentsline {subsubsection}{Umgebungsparameter}{6}{subsubsection*.15}
 \contentsline {section}{\numberline {2.3}Berechnung weiterer Parameter}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Parameter der Mission}{6}{section.2.4}
-\contentsline {section}{\numberline {2.5}Aufbau des Programms}{6}{section.2.5}
-\contentsline {section}{\numberline {2.6}Leistungsberechnung}{6}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Ver\IeC {\"a}nderung der Umgebungsparameter mit der H\IeC {\"o}he}{6}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Schub berechnen}{7}{subsection.2.6.2}
-\contentsline {subsubsection}{Multicopter}{7}{subsubsection*.15}
-\contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{7}{subsubsection*.16}
-\contentsline {subsection}{\numberline {2.6.3}Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{7}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Motorzustand berechnen}{8}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}Zustand der Motorregler}{8}{subsection.2.6.5}
-\contentsline {subsection}{\numberline {2.6.6}Batteriezustand}{8}{subsection.2.6.6}
-\contentsline {subsection}{\numberline {2.6.7}Werden Grenzen \IeC {\"u}berschritten?}{8}{subsection.2.6.7}
-\contentsline {section}{\numberline {2.7}Einschr\IeC {\"a}nkungen und Annahmen}{8}{section.2.7}
-\contentsline {chapter}{\numberline {3}Nachbildung des Quadrocopterfluges in Russland}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Komponenten des Quadrocopters}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Nachbildung im Programm}{9}{section.3.2}
-\contentsline {section}{\numberline {3.3}Ergebnisse}{9}{section.3.3}
-\contentsline {chapter}{\numberline {4}Parameteruntersuchung}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}Stand der Technik}{10}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ziel der Arbeit}{10}{section.4.3}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{11}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{11}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ausblick}{11}{section.5.2}
-\contentsline {chapter}{\numberline {6}Projektmanagement}{12}{chapter.6}
-\contentsline {section}{\numberline {6.1}Projektstrukturplan}{13}{section.6.1}
-\contentsline {section}{\numberline {6.2}Zeitplan}{15}{section.6.2}
-\contentsline {chapter}{\numberline {A}Blindtext im Anhang}{28}{appendix.A}
+\contentsline {section}{\numberline {2.5}Aufbau des Programms}{7}{section.2.5}
+\contentsline {section}{\numberline {2.6}Leistungsberechnung}{9}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Ver\IeC {\"a}nderung der Umgebungsparameter mit der H\IeC {\"o}he}{9}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Schub berechnen}{9}{subsection.2.6.2}
+\contentsline {subsubsection}{Multicopter}{9}{subsubsection*.17}
+\contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{11}{subsubsection*.18}
+\contentsline {subsection}{\numberline {2.6.3}Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{11}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Motorzustand berechnen}{12}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}Zustand der Motorregler}{12}{subsection.2.6.5}
+\contentsline {subsection}{\numberline {2.6.6}Batteriezustand}{12}{subsection.2.6.6}
+\contentsline {subsection}{\numberline {2.6.7}Wirkungsgrad \IeC {\"u}ber das Gesamtsystem}{13}{subsection.2.6.7}
+\contentsline {subsection}{\numberline {2.6.8}Werden Grenzen \IeC {\"u}berschritten?}{14}{subsection.2.6.8}
+\contentsline {section}{\numberline {2.7}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{14}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Einschr\IeC {\"a}nkungen}{14}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Vereinfachungen}{15}{subsection.2.7.2}
+\contentsline {subsubsection}{Schub}{15}{subsubsection*.19}
+\contentsline {subsubsection}{Kennfeld}{15}{subsubsection*.20}
+\contentsline {subsubsection}{Motor}{15}{subsubsection*.21}
+\contentsline {subsubsection}{Motorregler}{15}{subsubsection*.22}
+\contentsline {subsubsection}{Batterie}{15}{subsubsection*.23}
+\contentsline {subsubsection}{Wirkungsgrad}{15}{subsubsection*.24}
+\contentsline {chapter}{\numberline {3}Nachbildung des Quadrocopterfluges in Russland}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Komponenten des Quadrocopters}{17}{section.3.1}
+\contentsline {subsubsection}{Motor}{17}{subsubsection*.25}
+\contentsline {subsubsection}{Propeller}{17}{subsubsection*.26}
+\contentsline {subsubsection}{Batterie}{18}{subsubsection*.27}
+\contentsline {subsubsection}{Qudrocopterabma\IeC {\ss }e}{18}{subsubsection*.28}
+\contentsline {section}{\numberline {3.2}Nachbildung im Programm}{18}{section.3.2}
+\contentsline {section}{\numberline {3.3}Ergebnisse}{18}{section.3.3}
+\contentsline {section}{\numberline {3.4}Diskussion}{18}{section.3.4}
+\contentsline {chapter}{\numberline {4}Parameteruntersuchung}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Stand der Technik}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Ziel der Arbeit}{19}{section.4.3}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{20}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{20}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ausblick}{20}{section.5.2}
+\contentsline {chapter}{\numberline {6}Projektmanagement}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Projektstrukturplan}{22}{section.6.1}
+\contentsline {section}{\numberline {6.2}Zeitplan}{24}{section.6.2}
+\contentsline {chapter}{\numberline {A}Blindtext im Anhang}{37}{appendix.A}

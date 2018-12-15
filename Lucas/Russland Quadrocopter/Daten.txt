@@ -46,3 +46,44 @@ Cobra CM-2206/30 Motor Specifications
  Motor Timing  5-10 degrees 
  PWM Frequency  8-20 KHz 
 
+
+
+2 SONY KONION US18650VTC6 - 3000mAh - 3,7V - max. 30A Lithium-Ionen Akkus
+Der Sony Konion Akku hat einen Flat Top Pluspol und keine integrierte Schutzelektronik/Schutzschaltung. 
+Bei dem Sony Konion VTC6 handelt es sich um einen Li-Ion Akku, diese gelten als thermisch stabil und unterliegen nur einem geringen Memory Effekt.
+Sie erhalten bei diesem Angebot vier (2) leistungsstarke und bedingt hochstromfeste Akkuzellen aus dem Hause Sony. Alle Akkuzellen besitzen jeweils eine Kapazität von 3000mAh und eignen sich auch und besonders für den Mod oder Akkuträger einer eZigarette, bei welchen Sie bedingt auch im Sub-Ohm-Bereich einsetzbar sind und mit einem kurzzeitigen Entladestrom von max. 30A (< 80°C Zellentemperatur) überzeugen können!
+ 
+Technische Daten im Gesamtüberblick
+Max. Kapazität: 3120mAh
+Min. Kapazität: 2900mAh
+Nennspannung: 3,6 - 3,7 Volt
+Ladeschlussspannung: 4,2V ± 0,05 Volt
+Entladeschlussspannung: 2,0 Volt
+möglicher Ladestrom: 0,25 - 2,5 Ampere
+Max. Ladestrom kurzzeitig: 4 Ampere
+Max. kurzzeitige Stromabgabe: 30A (< 80°C Zellentemperatur)
+Chemische Zusammensetzung: LiNiMnCoO2
+Schutzschaltung: nein, Schutzelektronik erforderlich
+Ausführung Pluspol: flach
+Ladeverfahren: CC-CV
+Herstellerlinie: Sony > DC
+Durchmesser: 18,2mm ± 0,05mm
+Höhe: 65mm ± 0,15mm
+Gewicht: 45g ± 0,1g
+Hersteller:	Sony
+Kapazität:	3120 mAh
+Min. Kapazität:	3000 mAh
+Nennspannung:	3.6 V
+Ladeschlussspannung:	4,2 V
+Max. Stromabgabe:	30 A
+Max. Ladestrom:	5,0 A
+Schutzschaltung:	Nein (ungeschützt)
+Pluspol:	Flat Top
+Akku Typ:	18650
+System:	Lithium-Ionen (Li-Ion)
+Länge:	65.0mm ( ± 0,15 )
+ 
+ 
+Lieferumfang
+vier (2) ORIGINAL SONY KONION US18650VTC6 - 3000mAh - 3,7V - max. 30 A Lithium-Ionen-Akkus
+

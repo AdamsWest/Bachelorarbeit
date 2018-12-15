@@ -18,20 +18,24 @@
 \BOOKMARK [2][-]{subsection.2.6.4}{Motorzustand berechnen}{section.2.6}% 18
 \BOOKMARK [2][-]{subsection.2.6.5}{Zustand der Motorregler}{section.2.6}% 19
 \BOOKMARK [2][-]{subsection.2.6.6}{Batteriezustand}{section.2.6}% 20
-\BOOKMARK [2][-]{subsection.2.6.7}{Werden Grenzen \374berschritten?}{section.2.6}% 21
-\BOOKMARK [1][-]{section.2.7}{Einschr\344nkungen und Annahmen}{chapter.2}% 22
-\BOOKMARK [0][-]{chapter.3}{Nachbildung des Quadrocopterfluges in Russland}{}% 23
-\BOOKMARK [1][-]{section.3.1}{Komponenten des Quadrocopters}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.2}{Nachbildung im Programm}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 26
-\BOOKMARK [0][-]{chapter.4}{Parameteruntersuchung}{}% 27
-\BOOKMARK [1][-]{section.4.1}{Einleitung und Vorgehensweise}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.2}{Stand der Technik}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.3}{Ziel der Arbeit}{chapter.4}% 30
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 31
-\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 33
-\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 34
-\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 36
-\BOOKMARK [0][-]{appendix.A}{Blindtext im Anhang}{}% 37
+\BOOKMARK [2][-]{subsection.2.6.7}{Wirkungsgrad \374ber das Gesamtsystem}{section.2.6}% 21
+\BOOKMARK [2][-]{subsection.2.6.8}{Werden Grenzen \374berschritten?}{section.2.6}% 22
+\BOOKMARK [1][-]{section.2.7}{Vernachl\344ssigungen und Vereinfachungen}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.7.1}{Einschr\344nkungen}{section.2.7}% 24
+\BOOKMARK [2][-]{subsection.2.7.2}{Vereinfachungen}{section.2.7}% 25
+\BOOKMARK [0][-]{chapter.3}{Nachbildung des Quadrocopterfluges in Russland}{}% 26
+\BOOKMARK [1][-]{section.3.1}{Komponenten des Quadrocopters}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.2}{Nachbildung im Programm}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.3}{Ergebnisse}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.4}{Diskussion}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Parameteruntersuchung}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Einleitung und Vorgehensweise}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Stand der Technik}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Ziel der Arbeit}{chapter.4}% 34
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 35
+\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 37
+\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 38
+\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 40
+\BOOKMARK [0][-]{appendix.A}{Blindtext im Anhang}{}% 41
