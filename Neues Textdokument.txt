@@ -1,0 +1,41 @@
+
+______________________ Was habe ich gemacht _____________________________________________
+	- ich habe Skript formatiert. Hard coden entfernt, mglst. viele Funktionen verwendet etc. das übliche eben
+	- Matrix mit allen notwendigen und sinnvollen Inhalten gebildet
+	- Matrix leicht auswertbar. Erklären was zu sehen
+	--> Zeilen: id_bat, Spalten: C-Rate, Werte: Abweichungen des Normmodells von der originalen Zelle (Durchschnitt)
+	- je häufiger Durchschnitt genommen, desto ungenauer das Ergebnis!!! Vertretbar???
+	- Untersuchung, welche Ausreißer es gibt (id_bat 14, 30, 40 und 63, evtl 38) bezogen auf Durchschnittsabweichung
+	- Ausreißer entfernt und Untersuchung Einfluss auf Verhalten
+	- Finden Korrekturfaktor zur Annäherung Normzelle an Originalzelle, v.a Korrektur von Systematischer Abweichung
+	- korrigiert
+	- endloses iteratives untersuchen
+	
+
+
+
+
+__________ Fazit ________________________
+
+
+	- das ganze ist ein Optimierungsproblem
+	- Innerer Widerstand bleibt weitestgehend unbeinflusst durch herausnahme der Ausreißer
+		--> Schätzwert zwischen 0.015 und 0.016 (gemittelter Wert aus Zellen: mit allen 0.0142 und mit Herausnahme von id_bat 14,30,40,63 nur noch 0.0078
+		--> hier wäre automatische Regression schön
+	- Frage nach was als Ausreißer gilt? --> Annahme Ausreißer vom Mittelwert, alles andere systematische Abweichung, die mit Korrekturfaktor korrigiert werden kann
+	1. Abweichung vom Mittelwert oder von Null
+	2. systematische Abweichung in Richtung positiver Werte, d.h. Normodell im Durchschnitt kleiner als bei Originaler Zelle
+	- Optimierungsproblem unendlich weit treibbar. Überschreitet Grenzen der Arbeit. fast eigene Arbeit wert
+	- Problem: alles beeinflusst alles
+	- Tendenz steigender Abweichung mit zunehmender C-Rate
+	- Herausnahme von den oben genannten id_bat verbessert das Ergebnis
+	- nimmt man nur id_bat = 63 heraus und beanschlagt einen Korrekturfaktor von 1,04 auf V_bat_2 (V_bat des Normmodells) so wird die durchschnittlich Abweichung aller Zellen über der C-Rate minimiert
+	--> max -6% bis ca C-Rate von 45.
+	- alle herausgenommen --> stärkere Abweichung aller Zellen
+	- nimmt man gar keine Batterie heraus, dann weicht das Ergebnis bis C-Rate = 45 bei einem Korrekturfaktor von 1,04 - 1,045 auf V_bat_2 sehr gering über der ganzen Bandbreite von C_Rate ab
+	- allerdings starke einzelne Extrema für eine bestimmte C-Rate
+	- Gegensatz zur allgemeiner Abweichung und individueller Abweichung pro definierter C_Rate
+
+
+	- nimmt man alle Ausreißer heraus verringert sich die Abweichung pro Zelle auf max ca. -15 % und ca. 10 % 
+	- Korrekturfaktor von ca. 1,05
