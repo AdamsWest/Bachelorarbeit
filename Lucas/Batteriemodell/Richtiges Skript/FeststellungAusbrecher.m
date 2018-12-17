@@ -14,7 +14,7 @@ end
 % xlabel('Batterienummer (Batterie ID)')
 % ylabel('Fläche der Abweichung')
 
-% Darstellung der Durchscnittsabweichungen
+% Darstellung der Durchscnittsabweichungen über der C-Rate
 
 Durchschnitt = zeros(C_Rate_max,1);
 
@@ -26,9 +26,11 @@ end
 figure
 plot(1:C_Rate_max,Durchschnitt)
 xlabel('C-Rate');
-ylabel('durchschnt. Abweichung aller Zellen');
+ylabel('durchschnt. Abweichung aller Zellen in %');
 
 
+% quick and dirty copy and paste Bespiel Abweichung von C-Rate bei 20
+figure
 plot(1:length(DATA),tolerance_crate(1:end,21))
 hold on 
 bar = zeros(length(DATA),1);
@@ -36,3 +38,5 @@ for i = 1:length(DATA)
     bar(i) = mean(tolerance_crate(1:end,21));
 end
 plot(1:length(DATA),bar) 
+xlabel('Batterienummer (id\_bat)')
+ylabel('Abweichung in %')

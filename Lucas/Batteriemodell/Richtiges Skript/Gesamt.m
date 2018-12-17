@@ -32,13 +32,13 @@ PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 8;
 n_Prop = 6;
-C_Rate = 15;
+% C_Rate = 15;
 
 
 %% Initialisierung für Fehlertoleranz
 control =0;
 tolerance = zeros(length(DATA),1);
-C_Rate_max = 30;                                        % Maximal zu untersuchende C_Rate festlegen
+C_Rate_max = 50;                                        % Maximal zu untersuchende C_Rate festlegen
 tolerance_crate = [1:length(DATA)]';       % Sammeln aller Abweichungen aller Batterien für jede C_Rate in 1er Schritten
 
 for k = 1:1:C_Rate_max
@@ -129,7 +129,7 @@ for k = 1:1:C_Rate_max
             % calculating the battery voltage (of one cell)
             V_bat_2(n) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
             % the battery voltage of all cells
-            V_bat_2(n) = N_el * V_bat_2(n);  
+            V_bat_2(n) = N_el * V_bat_2(n)*1.0;  
             
             
             if V_bat_2(n) < 3.1*N_el
