@@ -14,7 +14,7 @@ R = points(8);
 % according to Trembley
 M_A = [1, 1, 0 ; 1, exp(-3), -Q/(Q-Qexp)*(Qexp+i) ; 1, exp(-3*Qnom/Qexp), -Q/(Q-Qnom)*(Qnom + i)];
 b = [Vfull + R*i ; Vexp + R*i ; Vnom + R*i];
-x = M_A\b;
+x = inv(M_A)*b;
 
 Eo = x(1);
 A = x(2);

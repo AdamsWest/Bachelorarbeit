@@ -1,8 +1,6 @@
 %% Batteriemodell
 % 
-% Hier kannst du dir eine Batterie aus der Datenbank heraussuchen (id_bat) 
-% und diese
-% miteinander vergleichen
+% Vergleich zweier Batterien (Originale Zelle zur normierten Zelle)
 % 
 % 
 
@@ -17,7 +15,7 @@ load('Elektromodellflug.mat');
 
 
 
-id_bat = 1;    % Anmerkung: id_bat 33 zu geringe Spannung
+id_bat = 10;    % Anmerkung: id_bat 33 zu geringe Spannung
 PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 10;

@@ -1,17 +1,18 @@
 % Normierung von Elektromodellflug
 % clear
 % close all
-clc
+% clc
 
 
 load('Elektromodellflug.mat');
 DATA = Elektromodellflug;
 
 % Löschen der Ausreißer
-DATA(14,:) = [];       % id_bat = 14
-DATA(29,:) = [];       % id_bat = 30
-DATA(38,:) = [];       % id_bat = 40
-DATA(60,:) = [];       % id_bat = 63
+% DATA(63,:) = [];       % id_bat = 63
+% DATA(40,:) = [];       % id_bat = 40
+% DATA(30,:) = [];       % id_bat = 30
+% DATA(14,:) = [];       % id_bat = 14
+% DATA(38,:) = [];       % id_bat = 38
 
 % Initialisierungen
 sum = 0;
@@ -47,8 +48,8 @@ for i = 1:length(DATA)
     % sum_7 = sum_7 + Elektromodellflug_norm{i,3}(7);
     sum_8 = sum_8 + DATA{i,3}(8);
     
-    capacity(i) = DATA{i,5}/1000;
-    resistance(i) = DATA{i,3}(8);
+%     capacity(i) = DATA{i,5}/1000;
+%     resistance(i) = DATA{i,3}(8);
     
     % sum = sum + Elektromodellflug_norm{i,5}/(Elektromodellflug_norm{i,4}*3.6);
 
@@ -57,8 +58,9 @@ end
 % hold on
 % 
 % point_x = 1;
-% point_y = 0.015;
+% point_y = 0.0160;
 % plot(point_x, point_y,'bx')
+% hold on
 
 % arithmetischer Mittelwert über alle Batterien
 % durchschnittliche Kapazität pro Zelle:
@@ -72,6 +74,7 @@ Vnom = sum_6 / length(DATA);
 i = 1/100;
 R = sum_8 / length(DATA);
 
+% plot(point_x,R,'gx')
 
 % Batterieparameter
 M_A = [1, 1, 0 ; 1, exp(-3), -Q/(Q-Qexp)*(Qexp+i) ; 1, exp(-3*Qnom/Qexp), -Q/(Q-Qnom)*(Qnom + i)];
