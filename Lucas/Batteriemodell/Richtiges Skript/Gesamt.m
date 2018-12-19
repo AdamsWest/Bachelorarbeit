@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear 
-% close all 
+close all 
 clc
 
 %Matrix laden
@@ -15,10 +15,10 @@ load('Elektromodellflug.mat');
 DATA = Elektromodellflug;
 
 % Löschen der Ausreißer
-DATA(63,:) = [];       % id_bat = 63
-DATA(40,:) = [];       % id_bat = 40
-DATA(30,:) = [];       % id_bat = 30
-DATA(14,:) = [];       % id_bat = 14
+% DATA(63,:) = [];       % id_bat = 63
+% DATA(40,:) = [];       % id_bat = 40
+% DATA(30,:) = [];       % id_bat = 30
+% DATA(14,:) = [];       % id_bat = 14
 % DATA(38,:) = [];       % id_bat = 38
 
 
@@ -142,25 +142,35 @@ for k = 1:1:C_Rate_max
             
         end
         
+        if k == 50 && l == 61
+            aaa = 1;
+        end
         % Berechnung der Toleranz nur bis zum ersten Mal, wenn V_bat unter
         % V_bat < 3.1 * N_el, ansonsten alle Ergebnisse entfernen
         flaeche1 = trapz(V_bat_1(~isnan(V_bat_1)));
         flaeche2 = trapz(V_bat_2(~isnan(V_bat_2)));
-        for n = floor(3600*1.5/C_Rate):-1:1
-            if isnan(V_bat_1(n)) == 1
-                V_bat_1(n) = 1;
-            end
-            if isnan(V_bat_2(n)) == 1
-                V_bat_2(n) = 1;
-            end
-        end
+%         for n = floor(3600*1.5/C_Rate):-1:1
+%             if isnan(V_bat_1(n)) == 1
+%                 V_bat_1(n) = 1;
+%             end
+%             if isnan(V_bat_2(n)) == 1
+%                 V_bat_2(n) = 1;
+%             end
+%         end
 
         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                
         %% TOLERANZ 
         
-        %     tolerance(n) = mean(abs((V_bat_2)./V_bat_1-1)*100);  % Durchschnittliche Abweichung in % für eine Batterie
-        tolerance(l) = (flaeche1-flaeche2)/flaeche2*100;
+        % Berechnung der Modellabweichung von der Originalzelle
+        % Beachte dabei die max. C-Rate
+        
+        if DATA{id_bat,6} < C_Rate                          % Wenn C-Rate zu groß
+            tolerance(l) = NaN;                               % Setze Abweichung auf 0
+        else
+            tolerance(l) = (flaeche1-flaeche2)/flaeche2*100;% ansonsten berechne Abweichung
+        end
+        
         
     end
     

@@ -50,7 +50,7 @@ R = sum_8 / length(DATA);
 
 % Abgeschätzter Innenwiderstand genauer Regression wäre schön an dieser
 % Stelle
-R = 0.0160;
+R = 0.016;
 
 
 end

@@ -51,7 +51,7 @@ end
 plot(capacity,resistance,'rx')
 hold on
 point_x = 1;
-point_y = 0.015;
+point_y = 0.016;
 plot(point_x, point_y,'bx')
 
 % arithmetischer Mittelwert über alle Batterien
