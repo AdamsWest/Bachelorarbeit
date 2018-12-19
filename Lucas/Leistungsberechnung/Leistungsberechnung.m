@@ -6,7 +6,8 @@
 
 U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
 U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
-C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
+% C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
+C_Bat = 9.5*3600;
 Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität, die nach jedem delta_h gebraucht wird
 
 
