@@ -31,12 +31,12 @@ DATA = Elektromodellflug;
 PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 8;
-n_Prop = 6;
+n_Prop = 4;
 % C_Rate = 15;
 
 
 %% Initialisierung für Fehlertoleranz
-control =0;
+control = 0;
 tolerance = zeros(length(DATA),1);
 C_Rate_max = 50;                                        % Maximal zu untersuchende C_Rate festlegen
 tolerance_crate = [1:length(DATA)]';       % Sammeln aller Abweichungen aller Batterien für jede C_Rate in 1er Schritten

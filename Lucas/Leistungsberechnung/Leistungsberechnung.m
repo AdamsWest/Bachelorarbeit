@@ -7,7 +7,7 @@
 U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
 U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
 % C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
-C_Bat = 9.5*3600;
+C_Bat = N_Bat_cell*C_Bat_cell*3600;
 Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität, die nach jedem delta_h gebraucht wird
 
 
@@ -128,25 +128,25 @@ for h = H_0:Delta_H:H_max
     
     %% Beginn der Leistungsberechnung für Flugsysteme
     % Steiggeschwindigkeitsprofil vorgeben
-    %if H_unten < 300
-    %    V_Kg = V_Profil(1);
-    %elseif H_unten >= 300 && H_unten < 1700
-    %    V_Kg = V_Profil(2);
-    %elseif H_unten >= 1700 && H_unten < 3100
-    %    V_Kg = V_Profil(3);
-    %elseif H_unten >= 3100 && H_unten < 5000
-    %    V_Kg = V_Profil(4);
-    %elseif H_unten >= 5000 && H_unten < 6000
-    %    V_Kg = V_Profil(5);
-    %elseif H_unten >= 6000 && H_unten < 7700
-    %    V_Kg = V_Profil(6);
-    %elseif H_unten >= 7700 && H_unten < 9800
-    %    V_Kg = V_Profil(7);
-    %elseif H_unten >= 9800 && H_unten < 10300
-    %    V_Kg = V_Profil(8);
-    %else
-    %    V_Kg = 3;
-    %end
+%     if H_unten < 300
+%        V_Kg = V_Profil(1);
+%     elseif H_unten >= 300 && H_unten < 1700
+%        V_Kg = V_Profil(2);
+%     elseif H_unten >= 1700 && H_unten < 3100
+%        V_Kg = V_Profil(3);
+%     elseif H_unten >= 3100 && H_unten < 5000
+%        V_Kg = V_Profil(4);
+%     elseif H_unten >= 5000 && H_unten < 6000
+%        V_Kg = V_Profil(5);
+%     elseif H_unten >= 6000 && H_unten < 7700
+%        V_Kg = V_Profil(6);
+%     elseif H_unten >= 7700 && H_unten < 9800
+%        V_Kg = V_Profil(7);
+%     elseif H_unten >= 9800 && H_unten < 10300
+%        V_Kg = V_Profil(8);
+%     else
+%        V_Kg = 3;
+%     end
        
     t_Flug = Delta_H / V_Kg;                                                % Flugzeit
         

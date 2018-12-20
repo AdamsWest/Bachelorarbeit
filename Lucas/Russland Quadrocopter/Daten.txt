@@ -87,3 +87,61 @@ Länge:	65.0mm ( ± 0,15 )
 Lieferumfang
 vier (2) ORIGINAL SONY KONION US18650VTC6 - 3000mAh - 3,7V - max. 30 A Lithium-Ionen-Akkus
 
+
+
+
+ANDERES DATENBLATT
+
+Produktinformationen für "Murata / Sony Konion US18650VTC6 - 3120mAh, 3,6V - 3,7V (Flat Top)"
+
+Eine von Sony entwickelte, hochwertige Hochstromzelle mit beeindruckenden Leistungsdaten. Durch die hohe Kapazität und gleichzeitig hohe Stromabgabe ist der Einsatz des VTC6 von Sony fast in allen Bereichen möglich. Besonders nennenswerte Einsatzbereiche: Powertools wie Akkubohrmaschinen, Bohrschrauber und diverse Industriebereiche. Auch die Verwendung in Pedelecs (E-Bikes), Akkuträger, Modellbau usw. wären ohne Probleme möglich. Gute und sichere Werte erreicht die Sony Zelle jedoch bis 20A Entladestrom.
+Sony Konion US18650 VTC6 bis zu 30A Entladestrom
+Typ. Kapazität		3120mAh	
+Min. Kapazität		3000mAh	
+Nennspannung		3,6V - 3,7V	
+Ladeschlussspannung		4,2V ± 0,05V	
+Entladeschlussspannung		2,0V	
+Empfohlene Ladestrom 		0,xx - 3A	
+Max. Ladestrom 		0,xx - 5A	
+max. Stromabgabe mit temperaturüberwachung bis 80°		30A	
+max. Stromabgabe ohne Temperaturüberwachung		15A	
+Schutzschaltung PCB		Nicht vorhanden	
+Pluspol		flach (Flat Top)	
+Durchmesser		18,35 mm ± 0,15 mm	
+Höhe		65,0 mm ± 0,2 mm	
+Gewicht		46,6 g ± 1,2 g	
+Ladeverfahren		CC-CV	
+Testergebnisse (Entladekurve)		Dampfakkus	
+Testergebnisse		Lygte-Info	
+Sicherheitshinweise:
+
+Lithium Zellen dürfen nur mit Schutzelektronik betrieben werden!
+Bitte beachten Sie, dass Lithium Zellen nur durch autorisiertes Fachpersonal verwendet werden dürfen.
+Bei falscher Handhabung bzw. Kurzschluss kann dies zur Brandentwicklung oder Explosion führen.
+Weitere Eigenschaften:
+
+
+
+Technische Daten:
+
+    Kapazität typisch: 3120mAh
+    Kapazität minimum: 3000mAh
+    Spannung: 3,6 - 3,7 Volt
+    maximaler konstanter Entladestrom: 30A
+    Schutzschaltung: nein
+    Ausführung Pluspol: flach
+    Hersteller: Sony
+    Durchmesser: 18,3mm ±  0,1 mm
+    Höhe: 65mm ± 0,2 mm
+     Gewicht: 46g
+    Ladeschlussspannung: 4,1-4,2V
+    Entladeschlusspannung: 2,5A
+    Innenwiderstand 17mOhm
+
+
+Lithium-Ionen Akkus sind thermisch stabil und unterliegen keinem Memory-Effekt.
+Sie arbeiten auf der Basis von Lithium und zeichnen sich durch eine hohe Energiedichte aus.
+
+
+
+

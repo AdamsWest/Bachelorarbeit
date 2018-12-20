@@ -180,10 +180,3 @@ x_5000 = lsqcurvefit(fun,x0,cratemax_5000,resist_5000);
 Q = 0:0.1:max(cratemax_5000);
 func_5000 = x_5000./Q.^(1/2);
 plot(Q,func_5000)
-
-
-
-
-
-
-

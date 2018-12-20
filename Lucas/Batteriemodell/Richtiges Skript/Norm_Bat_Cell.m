@@ -73,6 +73,7 @@ Vexp = sum_5 / length(DATA);
 Vnom = sum_6 / length(DATA);
 i = 1/100;
 R = sum_8 / length(DATA);
+R = 0.016;
 
 % plot(point_x,R,'gx')
 

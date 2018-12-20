@@ -15,10 +15,10 @@ load('Elektromodellflug.mat');
 
 
 
-id_bat = 4;    % Anmerkung: id_bat 33 zu geringe Spannung
+id_bat = 5;    % Anmerkung: id_bat 33 zu geringe Spannung
 PWM = 0.80;
 eta_PWM = 0.7;
-I_mot = 10;
+I_mot = 8;
 n_Prop = 4;
 C_Rate = 50;
   
@@ -49,15 +49,15 @@ bar = zeros(3600*1.5/C_Rate,1);
 
 control = 0;
 
-for i = 1:3600*1.5/C_Rate
+for n = 1:3600*1.5/C_Rate
     
     
     i_int = I_bat*step_dt + i_int;   % integral of the current
     
     
     % calculating the battery voltage (of one cell)
-    V_bat_1(i) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
-    V_bat_1(i) = N_el * V_bat_1(i);   % the battery voltage of all cells
+    V_bat_1(n) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
+    V_bat_1(n) = N_el * V_bat_1(n);   % the battery voltage of all cells
     
     
     if V_bat_1 < (3.1 * N_el)
@@ -67,16 +67,16 @@ for i = 1:3600*1.5/C_Rate
     
     
         
-    if V_bat_1(i) < 3.1*N_el
+    if V_bat_1(n) < 3.1*N_el
         control = 1;
     end
     if control == 1
-        V_bat_1(i) = NaN;
+        V_bat_1(n) = NaN;
     end
     
     
     
-    bar(i) = 3.1*N_el;
+    bar(n) = 3.1*N_el;
 end
 % Kurve der Batterie plotten
 x = 1:3600*1.5/C_Rate;
@@ -104,16 +104,16 @@ V_bat_2 = zeros(3600*1.5/C_Rate,1);
 control = 0;
 
 
-for i = 1:3600*1.5/C_Rate
+for n = 1:3600*1.5/C_Rate
     
     
     i_int = I_bat*step_dt/3600 + i_int;   % <-- HIER ist teilen durch 3600 notwendig, um auf eine Stunde zu skalieren, integral of the current
     
     
     % calculating the battery voltage (of one cell)
-    V_bat_2(i) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
+    V_bat_2(n) = Eo - R*I_bat - K * Q / (Q - i_int) * (i_int + I_bat*0) + A * exp(-B*i_int);
     % the battery voltage of all cells
-    V_bat_2(i) = N_el * V_bat_2(i);  % <-- KORREKTURFAKTOR VON DURCHSCHNITTLICH 5%
+    V_bat_2(n) = N_el * V_bat_2(n);  % <-- KORREKTURFAKTOR VON DURCHSCHNITTLICH 5%
     
     
     if V_bat_2 < 3.1 * N_el
@@ -122,11 +122,11 @@ for i = 1:3600*1.5/C_Rate
     end
     
     
-    if V_bat_2(i) < 3.1*N_el
+    if V_bat_2(n) < 3.1*N_el
         control = 1;
     end
     if control == 1
-        V_bat_2(i) = NaN;
+        V_bat_2(n) = NaN;
     end
     
     
@@ -146,7 +146,7 @@ flaeche2 = trapz(V_bat_2(~isnan(V_bat_2)));
 %     end
 % end
 
-
+tolerance = (flaeche1-flaeche2)/flaeche2*100;
 
 
 
