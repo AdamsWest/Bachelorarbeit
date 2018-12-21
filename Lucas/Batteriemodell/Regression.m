@@ -1,11 +1,13 @@
 clear
-% close all
+close all
 clc
 
 load('Elektromodellflug');
 % Herausnahme der Kapazität
 DATA = Elektromodellflug;
+DATA(63,:) = [];
 DATA(30,:) = [];
+
 
 capacity = zeros(length(DATA),1);
 resistance = zeros(length(DATA),1);
@@ -27,7 +29,7 @@ xlim([0 8]);
 ylim([0 50]);
 
 % surf(capacity,crate,resistance)
-
+figure
 plot(capacity,resistance,'rx')
 xlabel('Kapazität in 1/1000Ah')
 ylabel('Widerstand in mOhm')
@@ -69,6 +71,8 @@ end
 
 figure
 plot(cratemax_2200, resist_2200,'bx')
+xlabel('C-Rate (C = 2200mAh)')
+ylabel('Widerstand')
 hold on
 
 fun = @(x_2200,cratemax_2200) x_2200(1)./cratemax_2200.^(1/2); % Hier Funktion
@@ -83,7 +87,7 @@ plot(Q,func_2200)
 %% Kapazität von 3300
 DATA = Elektromodellflug;
 
-
+% Entfernen aller abweichenden Kapazitäten
 for i = length(DATA):-1:1
        
     if DATA{i,5} ~= 3300
@@ -94,7 +98,7 @@ dim = size(DATA);
 cratemax_3300 = zeros(dim(1),1);
 resist_3300 = zeros(dim(1),1);
 
-for i = 1:dim(1)
+for i = 1:dim(1)             
        
     cratemax_3300(i) = DATA{i,6};
     resist_3300(i) = DATA{i,3}(end);%/(x/(DATA{i,5}/1000));
@@ -103,6 +107,8 @@ end
 
 figure
 plot(cratemax_3300, resist_3300,'gx')
+xlabel('C-Rate (C = 3300mAh)')
+ylabel('Widerstand')
 hold on
 
 fun = @(x_3300,cratemax_3300) x_3300(1)./cratemax_3300.^(1/2); % Hier Funktion
@@ -139,6 +145,8 @@ end
 
 figure
 plot(cratemax_3700, resist_3700,'kx')
+xlabel('C-Rate (C = 3700mAh)')
+ylabel('Widerstand')
 hold on
 
 fun = @(x_3700,cratemax_3300) x_3700(1)./cratemax_3700.^(1/2); % Hier Funktion
@@ -174,6 +182,8 @@ end
 
 figure
 plot(cratemax_5000, resist_5000,'rx')
+xlabel('C-Rate (C = 5000mAh)')
+ylabel('Widerstand')
 hold on
 
 fun = @(x_5000,cratemax_5000) x_5000(1)./cratemax_5000.^(1/2); % Hier Funktion

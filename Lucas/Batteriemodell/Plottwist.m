@@ -4,15 +4,18 @@ close all
 
 faktor1 = x;
 faktor2 = (x_2200+x_3300+x_3700+x_5000)/4;
-kapa = 2200/1000;
-entlade = 30;
+faktor2 = faktor2;
+kapa = 8000/1000;
+entlade = 25;
 
 % Widerstandsberechnung
 
 punkt1 = faktor1/kapa;
-punkt2 = punkt1 + faktor2/entlade;
+punkt2 = (punkt1 + faktor2/entlade)/2;
 
 
+
+%%
 DATA = Elektromodellflug;
 DATA(30,:) = [];
 
@@ -28,7 +31,9 @@ for i = 1:length(DATA)
     
 end
 
-plot3(capacity,crate,resistance,'x')
+%%
+
+plot3(capacity,crate,resistance,'rx')
 xlabel('Kapazität in 1/1000Ah')
 ylabel('C-Rate')
 zlabel('Widerstand')
@@ -36,5 +41,8 @@ xlim([0 8]);
 ylim([0 50]);
 
 hold on 
+[X Y] = meshgrid(0:0.25:8,0:0.25:50);
+Z = (x./X + x_3700./Y.^(1/2))/2;
+surface(X,Y,Z)
 
-plot(kapa,entlade,punkt2,'rx')
+% plot(kapa,entlade,punkt2,'rx')
