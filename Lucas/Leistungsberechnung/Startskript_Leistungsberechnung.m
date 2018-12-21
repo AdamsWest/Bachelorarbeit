@@ -49,10 +49,11 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 
 % Batterie
 E_Dichte = 750000;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 3;         % Anzahl der Batteriezellen
-C_Bat_cell = 3.160;      % Kapazität einer Zelle in Ah
-U_Bat_cell = 5.03;       % nominale Spannung pro Batteriezelle
-U_Bat_cell_min = 3.1;   % minimale Spannung pro Batteriezelle
+N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
+C_Bat_cell = 3.160;     % Kapazität einer Zelle in Ah
+U_Bat_cell = 3.9;      % nominale Spannung pro Batteriezelle
+U_Bat_cell_min = 2.85;   % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 m_Bat = 0.56;           % Batteriemasse in kg
