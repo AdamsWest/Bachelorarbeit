@@ -8,7 +8,7 @@ load('Elektromodellflug.mat');
 
 
 
-id_bat = 25;    % Anmerkung: id_bat 33 zu geringe Spannung
+id_bat = 45;    % Anmerkung: id_bat 33 zu geringe Spannung
 PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 10;

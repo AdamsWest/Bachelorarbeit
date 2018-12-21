@@ -15,12 +15,12 @@ load('Elektromodellflug.mat');
 
 
 
-id_bat = 5;    % Anmerkung: id_bat 33 zu geringe Spannung
+id_bat = 30;    % Anmerkung: id_bat 33 zu geringe Spannung
 PWM = 0.80;
 eta_PWM = 0.7;
 I_mot = 8;
 n_Prop = 4;
-C_Rate = 50;
+C_Rate = 20;
   
 %% ORIGINALZELLE
 
@@ -92,7 +92,7 @@ hold on
 run('Norm_Bat_Cell')
 Cnom = Elektromodellflug{id_bat,5}/1000;
 B = 3/Qexp;
-
+R = 0.05;
 
 %%
 % I_bat = PWM * I_mot / eta_PWM * n_Prop;                         % Batteriestrom

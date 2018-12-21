@@ -1,5 +1,5 @@
 clear
-close all
+% close all
 clc
 
 load('Elektromodellflug');
@@ -23,6 +23,9 @@ plot3(capacity,crate,resistance,'x')
 xlabel('Kapazität in 1/1000Ah')
 ylabel('C-Rate')
 zlabel('Widerstand')
+xlim([0 8]);
+ylim([0 50]);
+
 % surf(capacity,crate,resistance)
 
 plot(capacity,resistance,'rx')
@@ -60,7 +63,7 @@ resist_2200 = zeros(length(DATA),1);
 for i = 1:length(DATA)
        
     cratemax_2200(i) = DATA{i,6};
-    resist_2200(i) = DATA{i,3}(end)/(x/(DATA{i,5}/1000));
+    resist_2200(i) = DATA{i,3}(end);%/(x/(DATA{i,5}/1000));
     
 end
 
@@ -94,7 +97,7 @@ resist_3300 = zeros(dim(1),1);
 for i = 1:dim(1)
        
     cratemax_3300(i) = DATA{i,6};
-    resist_3300(i) = DATA{i,3}(end)/(x/(DATA{i,5}/1000));
+    resist_3300(i) = DATA{i,3}(end);%/(x/(DATA{i,5}/1000));
     
 end
 
@@ -130,7 +133,7 @@ resist_3700 = zeros(dim(1),1);
 for i = 1:dim(1)
        
     cratemax_3700(i) = DATA{i,6};
-    resist_3700(i) = DATA{i,3}(end)/(x/(DATA{i,5}/1000));
+    resist_3700(i) = DATA{i,3}(end);%/(x/(DATA{i,5}/1000));
     
 end
 
@@ -165,7 +168,7 @@ resist_5000 = zeros(dim(1),1);
 for i = 1:dim(1)
        
     cratemax_5000(i) = DATA{i,6};
-    resist_5000(i) = DATA{i,3}(end)/(x/(DATA{i,5}/1000));
+    resist_5000(i) = DATA{i,3}(end);%/(x/(DATA{i,5}/1000));
     
 end
 
