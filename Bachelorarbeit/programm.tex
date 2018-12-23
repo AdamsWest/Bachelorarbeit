@@ -121,10 +121,24 @@ Die Erdbeschleunigung und der Adiabatenexponent werden als konstant über der H�
 		 Adiabatenexponent \ensuremath{\kappa} & \texttt{kappa} & \SI{1,4}{} \\
 		 Windgeschwindigkeit \ensuremath{u_{Wg}} & \texttt{u\_Wg} & \ensuremath{m/s} \\ \hline
 	\end{tabular}	
-	\label{tab:prop_parameter}
+	\label{tab:umgebungs_parameter}
 \end{center}
 
 \section{Berechnung weiterer Parameter}
+\begin{center}
+	\captionof{table}{Berechnung weiterer Parameter}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Gleichung\\ \hline
+		 Nominale Batteriespannung & \texttt{U\_Bat\_nom} & \ensuremath{U_{Bat,nom} = N_{Bat,cell}\cdot U_{Bat,cell}} \\
+		 Minimale Batteriespannung & \texttt{U\_Bat\_min} & \ensuremath{U_{Bat,min} = N_{Bat,cell}\cdot U_{Bat,cell,min}} \\
+		 Propellerradius & \texttt{R} & \ensuremath{R = D\cdot 0,0254/2} \\
+		 Fläche eines Propellers & F & \ensuremath{F = \pi\cdot R^2} \\
+		 Temperatur in \SI{11}{km} Höhe & \texttt{T\_11} & \ensuremath{T_{11} = T_0 - 0.0065\cdot(11000-H_0)} \\
+		 Dichte in \SI{11}{km} Höhe & \texttt{rho\_11} & \ensuremath{\rho_{11} = \rho_0\cdot\Big(1 - 0.0065\cdot\frac{11000}{T_0}\Big)^{4.256}} \\
+		 Druck in \SI{11}{km} Höhe & \texttt{p\_11} & \ensuremath{p_{11} = p_0\cdot\Big(1 - 0.0065\cdot\frac{11000}{T_0}\Big)^{5.256}} \\ \hline
+	\end{tabular}	
+	\label{tab:umgebungs_parameter}
+\end{center}
 
 
 
@@ -263,7 +277,7 @@ können die Gleichungen umgeformt werden zu
 
 
 \subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
-In der Propellerdatenbank von Hersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf uniforme Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
+In der Propellerdatenbank von Hersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
 Die Kennfelder wurden in Versuchen ermittelt, die keine ändernde Dichte berücksichtigen. Um den Einfluss der sich verringernden Dicht mit zunehmender Flughöhe trotzdem zu beachten, müssen die Kennfelder angepasst werden. Gemäß der Strahltheorie setzt sich der Schub aus dem Massenstrom und der Geschwindigkeit im voll ausgebildeten Abstromzylinder 
 \begin{equation}
 	T =  \dot{m}\cdot v_{\infty} = \rho\cdot A_{Propeller}\cdot v_i\cdot v_{\infty}
@@ -321,6 +335,52 @@ Die wesentliche Zustandsgröße der Batterie ist der Entladestrom \ensuremath{I_
 	Restladung_i[\%] = \frac{C_{bat,Peukert}-\Delta C_{Bat,i}}{C_{Bat,Peukert}}\cdot 100\%
 \end{equation}
 
+
+Bei Batterien und in diesem Fall vor allem Li-Ion und Li-Po ist die Batteriespannung abhängig von der Entladerate und der Zeit. Hierzu hat \textcolor{red}{Tremblay Blub} ein einfaches Modell aufgestellt, in welchem dieser Zusammenhang berücksichtigt wird \textcolor{red}{Vgl. Abb. Blub}. 
+\begin{center}
+	\includegraphics[scale=0.5]{images/Coming-Soon.jpg}
+\end{center}
+Die Batteriespannung errechnet sich nach 
+\begin{equation}
+	V_{bat} = E_0-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot\int_{}^{} I_{bat} dt - R\cdot I_{bat}+A\cdot e^{-3\cdot\int_{}^{} I_{bat} dt}-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot i^* .
+\end{equation}
+Danach können die unbekannten Parameter einfach mit 3 diskreten Punkten nach folgendem Schema
+\begin{equation}
+	\begin{pmatrix} E_0 \\ A \\ K \end{pmatrix} = A^{-1}\cdot \begin{pmatrix}
+	V_{full}+R\cdot I_{bat} \\ V_{exp}+R\cdot I_{bat} \\ V_{nom}+R\cdot i \end{pmatrix}
+\end{equation}
+mit
+\begin{equation}
+	A = \begin{pmatrix}
+	1 & 1 & 0 \\ 1 & e^{-3} & -\frac{Q\cdot (Q_{exp}+I_{bat})}{Q-Q_{exp}} \\ 1 & e^{-3\cdot\frac{Q_{nom}}{Q_{exp}}} & -\frac{Q\cdot (Q_{exp}+I_{bat})}{Q-Q_{exp}}
+	\end{pmatrix}
+\end{equation}
+bestimmt werden.
+Um eine möglichst einfache Handhabung zu gewährleisten und eine Batteriezellen unabhängig vom Hersteller, der Kapazität und der Entladerate verwenden zu können, ist die Erstellung einer Normzelle von Interesse. Aus \textcolor{red}{Beyer2016a Blub} existiert bereits eine Datenbank mit mehreren Batterien unterschiedlicher Herstellern, in der alle benötigten Daten zur Erstellung dieser Zelle vorhanden sind. Benötigt werden folgende Punkte: 
+\begin{itemize}
+	\item die Kapazität Q
+	\item die $Q_{exp} Q_{nom}, V_{full}, V_{exp}, V_{nom}$, R und i
+\end{itemize}
+Hierbei sind schon $V_{full}, V_{exp} und V_{nom}$ auf eine Zelle normiert, allerdings die anderen Parameter nicht. Aus diesem Grund werden alle übrigen Parameter mit \SI{1}{Ah} normiert und der arithmetische Mittelwert über alle Batterien gebildet. Der Entladestrom entspricht dabei \textcolor{red}{1/100 einer was?}. Für den auf \SI{1}{Ah} genormten Innenwiderstand lässt sich ein hyperbolischer Verlauf des Innenwiderstandes über der Kapazität feststellen. Mittels einer Regression kann der Innenwiderstand für eine Zelle mit \SI{1}{Ah} ermittelt werden. 
+Der Vergleich der berechneten Normzelle mit originalen Batterien teils starke Abweichungen von über 100\% von der ursprünglichen Batteriezelle. Zusätzlich wird der Einfluss der C-Rate auf diese Abweichungen mit berücksichtigt. Dabei kam heraus, dass gewisse Batterien signifikant von der angenäherten Zelle abweichen (z.B. Batterienummer 14,30,40 und 63). Diese wiesen deutliche Abweichungen von der mittleren Abweichung aller Zellen auf. Aus diesem Grund sind diese Batterien aus der Betrachtung entfernt und die Mittelwerte neu berechnet worden.
+
+
+
+
+\begin{itemize}
+	\item Es ist eine Datenbank von Elektromodellflug vorhanden, in der die lastabhängige Entladekurve verschiedener Batterien unterschiedlicher Hersteller und unterschiedlichen Kapazitäten, Massen etc. dargestellt sind
+	\item Ziel ist, unabhängig vom Hersteller, der Kapazität, der Masse, der max. Dauerentladerate, etc. ein Batteriemodell aufzustellen für eine Zelle
+	\item Dazu muss eine Normzelle hergestellt werden <-- anders formulieren
+	\item Enstsprechung wurden alle Batterien der Datenbank auf eine \SI{1}{Ah} normiert.
+	\item dazu arithmetischer Mittelwert von Q, Qexp und Qnom bezogen auf eine Ah, die Angaben V, Vexp,Vfull waren entsprechend genormt, nur Mittelwert berechnen
+	\item Der Strom i ist auf 1/100 der Kapazität oder Entladerate bezogen
+	\item für Innenwiderstand ist auch genormt auf 1Ah. Es lässt sich ein hyperbolischer Verlauf der des Widerstandes über der Kapazität feststellen.
+	\item --> Regression durch die Punkte legen mit lsqcurvefit. 
+	\item Vergleich aufgestellten Modells zu Originalzellen. 
+	\item Feststellung der Abweichungen des Modells von der Originalzelle, dazu Bestimmung starker Diskrepanzen einzelner Zellen von der Normzelle und Bestimmung einer Tendenz der Abweichung. 
+	\item Korrektur dieser durch Errechnung der Standardabweichung und Festlegung des Konfidenzintervalls  
+\end{itemize}
+
 \subsection{Wirkungsgrad über das Gesamtsystem}
 Zur Berechnung des Wirkungsgrads kann das Verhältnis der Leistung, die in Schub gewandelt wird zu der Leistung, die der Batterie entzogen wird, herangezogen werden
 \begin{equation}
@@ -366,6 +426,7 @@ Für den Fall, dass technisch und aerodynamisch unmögliche Flugzustände erreic
 \end{itemize}
 
 \section{Vernachlässigungen und Vereinfachungen}
+\label{sec:vernachlaessigungen_vereinfachungen}
 
 \subsection{Einschränkungen}
 Für die Leistungsberechnung sind mehrere Vernachlässigungen vorzunehmen. Zuerst wurden keinerlei dynamische Effekte und Verhalten berücksichtigt. Dies beinhaltet translatorische Beschleunigungen des Multicopters, Drehträgheiten der Rotoren sowie Beschleunigungen dieser und rotatorische Beschleunigungen des Multicopters durch den Regler. 
