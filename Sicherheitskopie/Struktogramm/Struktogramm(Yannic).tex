@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{struktex}
+\usepackage{geometry}
+\usepackage[ngerman]{babel}
+\geometry{a5paper, top=0mm, left=-0.5mm, right=5mm, bottom=10mm}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{struktogramm}(140,185)
+\assign{Dateinamen eingeben f\"ur PDF mit Diagrammen (im Startskript)}
+\assign{Initialisierung: Mission definieren (im Startskript)}
+\assign{Initialisierung der anpassbaren Parameter (im Startskript)}
+\assign{Aufruf des Hauptskripts: Leistungsberechnung starten}
+\assign{Initialisierung: Parameterberechnung}
+\while[1]{F\"ur alle 2. Bahngeschwindigkeiten (3 Durchl\"aufe)}
+\assign{Initialisierungen}
+\while[3]{F\"ur alle Batteriemassen}
+\assign{Initialisierungen}
+\assign{Masse und induzierte Geschwindigkeit im Schwebeflug berechnen}
+\while[2]{F\"ur alle 1. Bahngeschwindigkeiten}
+\assign{Initialisierungen}
+\while[1]{F\"ur alle Flugphasen}
+\assign{Erkennen der aktuellen Flugphase aus definierter Mission (if-Abfragen)}
+\while[1]{Solange Abbruchkriterium nicht erreicht}
+\assign{Aerodynamik berechnen}
+\whileend
+\assign{Schub berechnen}
+\ifthenelse[10]{1}{4}{Schub zu gro\ss{}?}{ja}{nein}
+	\assign{Ergebnis verwerfen (NaN)}
+	\change
+	\assign{Motorzustand aus Kennfeld im Schwebeflug interpolieren}
+	\while[1]{Solange Abbruchkriterium nicht erreicht}
+		\assign{Induzierte Geschwindigkeit berechnen}
+	\whileend
+	\while[1]{Solange Abbruchkriterium nicht erreicht (fsolve)}
+		\assign{Drehzahl neu bestimmen}
+	\whileend
+	\assign{Motorzustand durch Steiggeschwindigkeit neu bestimmen}
+	\assign{Zustand der Motorregler berechnen}
+	\assign{Batteriezustand neu berechnen}
+\ifend
+\whileend
+\ifthenelse[10]{1}{1}{Werden Grenzen \"uberschritten?}{ja}{nein}
+	\assign{Ergebnis verwerfen (NaN)}
+	\change
+	\assign{Ergebnis beibehalten}
+\ifend
+
+\whileend
+\assign{Diagramm f\"ur Restladung aktualisieren (Kurvenschar) + weitere Diagramme f\"ur Motordrehzahl, -strom und -spannung}
+\assign{Maximale Restladung finden und speichern}
+\whileend
+\assign{Maximale Restladung in Diagramm einzeichnen (Kurve) und speichern (3 Subplots + weitere Diagramme)}
+\whileend
+\assign{Speichern der 3 Diagramme f\"ur Restladung als PDF im DIN A4 Format}
+\end{struktogramm}
+
+\end{document}

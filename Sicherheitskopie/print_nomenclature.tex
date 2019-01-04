@@ -1,0 +1,24 @@
+% ******************************************************************************
+% Ausgabe der Nomenklatur
+%
+% Fuege das Kapitel als Nomenklatur hinzu.
+\addcontentsline{toc}{chapter}{Nomenklatur}
+\chapter*{Nomenklatur}
+%
+% Ausgabe des Glossars
+\printglossary[style=altlist,title=Glossar]
+%
+% Ausgabe der Abkuerzungen
+\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+\printglossary[type=\acronymtype,style=long]
+%
+% Ausgabe des Symbolverzeichnisses
+\printglossary[type=latin,style=symbol]
+\printglossary[type=greek,style=symbol]
+\printglossary[type=indices,style=indice_symbol]
+%
+% Korrektur des Tabellenzaehlers, da für die Darstellung der
+% Symbolverzeichnisses Tabellen verwendet werden, die jedoch nicht zu dem Inhalt
+% der Arbeit gehoeren.
+\addtocounter{table}{-4}
+% ******************************************************************************

@@ -1,0 +1,66 @@
+% ******************************************************************************
+% Formeln
+%
+% Ermoeglicht das Editieren des Vektorpfeils für das gesamte Dokument
+\newcommand{\vv}[1]{\vec{#1}}
+%
+\newcommand{\MM}[1]{\bm{#1}}
+%
+\newcommand{\bound}[1]{\overline{#1}}
+%
+% minimaler Eigenwert
+\newcommand{\maxEig}[1]{\overline{\lambda}\left( #1\right)}
+% Maximaler Eigenwert
+\newcommand{\minEig}[1]{\underline{\lambda}\left( #1\right)}
+% Maximaler Singulärwert
+\newcommand{\maxSig}[2]{\overline{\sigma}^{#2}\left( #1\right)}
+% Minimaler Singulärwert
+\newcommand{\minSig}[2]{\underline{\sigma}^{#2}\left( #1\right)}
+%
+% Text in einer Formel
+\newcommand{\TXT}[1]{\;\;\mbox{#1}\;\;}
+%
+% Darstellung des Exponenten mit mehr Abstand
+\newcommand{\EXP}[1]{\,e\mbox{\raisebox{1.3ex}{$\,#1$}}\,}
+%
+% Partielle Ableitung
+\newcommand{\pfrac}[2]{\frac{\partial #1}{\partial #2}}
+%
+% Partielle Ableitung zweiter Ordnung
+\newcommand{\pfracss}[2]{\frac{{\partial}^2 #1}{\partial {#2}^2}}
+%
+% Partielle Ableitung zweiter Ordnung
+\newcommand{\pfracs}[2]{\frac{{\partial}^2 #1}{\partial {#2}\;\partial {#2}}}
+%
+% Partielle Ableitung zweiter Ordnung nach verschiedenen Variablen
+\newcommand{\pfracsXY}[3]{%
+    \frac{{\partial}^2 #1}{\partial {#2}\;\partial {#3}}
+}
+%
+% Differentation
+\newcommand{\difffrac}[2]{\frac{d #1}{d #2}}
+%
+% Inverse Matrix
+\newcommand{\inv}[1]{{#1}^{-1}}
+%
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\tr}{tr}
+%
+\newcommand{\eqend}[1]{~\text{#1}}
+%
+% ******************************************************************************
+%
+% Weitere Bezeichnungen von Formelzeichen, die in anderen Literaturen zu finden
+% sind
+\newcommand{\lit}[1]{%
+In anderen Literaturen auch als $#1$ bezeichnet.
+}
+% ******************************************************************************
+%
+% Makros für eine erleichterte Eingabe wiederkehrender Befehle:
+% ******************************************************************************
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+% ******************************************************************************

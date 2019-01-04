@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{struktex}
+\usepackage{geometry}
+\usepackage[ngerman]{babel}
+\geometry{a5paper, top=0mm, left=-0.5mm, right=5mm, bottom=10mm}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{struktogramm}(140,185)
+\assign[2]{Flugger\"at ausw\"ahlen (im Startskript)}
+\assign[2]{Flugger\"atkomponenten definieren (im Startskript)}
+\assign[2]{Missionsparameter festlegen (im Startskript)}
+\assign[2]{Umgebungsparameter festlegen (im Startskript)}
+\assign[2]{Aufruf des Hauptskripts: Leistungsberechnung starten}
+\assign[2]{Initialisierung der Parameterberechnung}
+\while[5]{F\"ur alle Höhenabschnitte}
+	\assign[2]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
+	\assign[2]{arithmetische Mittelwert berechnen}
+	\assign[2]{Schub- und Leistungskennfeld anpassen}
+	\ifthenelse[15]{1}{1}{Flugger\"at?}{Multicopter (1)}{Fl\"achenflugzeug (0)}
+		\while[5]{Solange Abbruchkriterium nicht erreicht}
+			\assign{Aerodynamik berechnen}
+		\whileend
+		\assign[2]{Schub berechnen}
+		\change
+		\assign[2]{Bahnneigungswinkel aus reziproker Gleitzahl berechnen}
+		\assign[2]{Schub berechnen}
+	\ifend
+	\assign[2]{Schub auf Propeller verteilen}
+	\ifthenelse[10]{1}{4}{Schub zu gro\ss{}?}{ja}{nein}
+		\assign[2]{Ergebnis verwerfen (NaN)}
+		\change
+		\assign[2]{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
+		\assign[2]{Motorzustand berechnen}
+		\assign[2]{Zustand der Motorregler berechnen}
+		\assign[2]{Zustand der Batterie neu berechnen}
+	\ifend
+	\ifthenelse[10]{1}{1}{Werden Grenzen \"uberschritten?}{ja}{nein}
+	\assign[2]{Ergebnis verwerfen (NaN)}
+	\change
+	\assign[2]{Ergebnis beibehalten}
+	\ifend
+\whileend
+\assign[2]{Ergebnisse für Restladung, Drehzahl, Motorstrom und -spannung, PWM in Diagramme zeichnen}
+\assign[2]{Speichern der Diagramme als .jpg - Bilder}
+\end{struktogramm}
+
+\end{document}

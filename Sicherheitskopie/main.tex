@@ -1,0 +1,157 @@
+% ******************************************************************************
+%
+% Diese Hauptdatei beinhaltet  Kapitel der Dokumentation.
+% ******************************************************************************
+\input{preamble}
+%
+% Einbinden der Nomenklatur, bestehend aus einem Glossar, einem
+% Abkuerzungsverzeichnisses, sowie Formelverzeichnisses. Das Formelverzeichnis
+% besteht aus lateinischen, grichischen Bezeichnungen, sowie tief- und
+% hochgestellte Indizes. Informationen zur Kompilierung, bei die Einträge
+% innerhalb der einzelnen Nomenklaturkategorien alphabetisch sortiert werden,
+% können aus der entsprechenden Datei entnommen werden. Eine Verwendung des
+% Makefiles wird für die Erstellung des Dokumentes empfohlen.
+\input{nomenclature}
+% ******************************************************************************
+%
+
+%*******************************************************************************
+
+
+\usepackage{lscape}
+
+%
+% Dieses Paket ermoeglicht PGF plots innerhalb der TIKZ Umgebung
+\usepackage{pgf}
+\usepackage{pgfgantt}
+%
+% Ermoeglicht ein viel einfacheres erstellen von WPDs
+\usepackage{colortbl}
+\usepackage{totcount}
+\let\titleoriginal\title           % save original \title macro
+\renewcommand{\title}[1]{          % substitute for a new \title
+    \titleoriginal{#1}%               % define the real title
+    \newcommand{\otitle}{#1}        % define \otitle
+}
+\usepackage{workpackagedescription}
+
+\usepackage{tikz}
+
+\usetikzlibrary{ shapes, shadows, arrows}
+
+
+
+
+%*******************************************************************************
+
+
+% Aendern der Nummerierung von arabisch auf roemisch
+\pagenumbering{Roman}
+%
+% Der Textteil des LaTeX-Dokuments beginnt ab hier.
+\begin{document}
+    % **************************************************************************
+    %
+    % Einstellen und laden der Titelseite
+    %
+    % Titelseiten-Elemente
+    \newcommand{\typeOfThesis}{Bachelorarbeit}
+    \newcommand{\examiner}{Prof. Dr.-Ing. Peter Hecker}
+    \newcommand{\supervisor}{Yannic Beyer, M. Sc.}
+    \author{Lucas Schreer}
+    \title{%
+       Flugmechanische Untersuchung zum effizienten Aufstieg in die untere Stratosphäre mit elektrischen, propellergetriebenen Fluggeräten
+    }
+    \subtitle{}
+    \logo{
+        \includegraphics{TUBS_logo_inst_IFF}%
+    }
+    \titleabstract{\lipsum[2]}
+    %\titlepicture{infozentrum.jpg}
+    %
+    % Rückseiten-Elemente
+    \address{%
+	    Technische Universit\"{a}t Braunschweig\\
+        Institut f\"ur Flugf\"uhrung\\
+        Hermann-Blenk-Str. 27\\
+        D-38108 Braunschweig
+    }
+    \backpageinfo{%
+        here comes some backpageinfo
+    }
+    %
+    % Laden der Titelseite.
+%    \tikzexternalenable
+    %\include{title_page_report}
+    \include{title_page_thesis}
+%    \tikzexternaldisable
+    %
+    \includepdf[pages=-]{BA_Lucas_Schreer_Aufgabenstellung} 			% Hier die Aufgabenstellung einfügen
+    %
+    % Einbinden des Eids.
+    \include{oath}
+    %
+    % Einbinden der Uebersicht.
+    %\cleardoublepage
+    \include{abstract}
+    %
+    % Einfuegen des Inhaltsverzeichnises
+    \tableofcontents
+    \newpage
+    %
+    % Abbildungsverzeichnis
+    \listoffigures
+    \newpage
+    %
+    % Tabellenverzeichnis
+    \listoftables
+    \newpage
+    %
+    % Einbinden der Nomenklatur.
+    \input{print_nomenclature}
+    \newpage
+    %
+    % Aendern der Nummerierung von roemisch auf arabisch.
+    \newcounter{roemisch}
+    \setcounter{roemisch}{\value{page}}
+    \pagenumbering{arabic}
+% ******************************************************************************
+    %
+    % Einbinden der einzelnen Kapitel
+    \include{introduction}
+    % \include{chapter_n}
+    \include{programm}
+    \include{nachbildung}
+    \include{parameteruntersuchung}
+    \include{conclusion}
+    \include{projektmanagement}
+% ******************************************************************************
+    %
+    % Fuege alle definierten Nomenklatureintraege hinzu.
+    \glsaddall
+    % Fuege nur bestimmte Nomenklaturlisten hinzu.
+    %\glsaddall[types={latin,greek,indices}]
+    %
+    % Einfuegen des Literaturverzeichnisses.
+    \printbibliography
+    \newpage
+% ******************************************************************************
+    %
+    % Ausgabe der noch zu erledigenden Aufgaben.
+    %\listoftodos
+% ******************************************************************************
+    %
+    % Einbindne der einzelnen Anhaenge
+    %
+    % Aendern der Nummerierung von arabisch auf roemisch.
+%    \newcounter{totalPages}
+%    \setcounter{totalPages}{\value{page}}
+%    \pagenumbering{Roman}
+%    \setcounter{page}{\value{roemisch}}
+    \input{appendix}
+%    \newpage
+%    \pagenumbering{arabic}
+%    \setcounter{page}{\value{page}-1}
+%    \setcounter{page}{\value{totalPages}}
+\end{document}
+% ******************************************************************************

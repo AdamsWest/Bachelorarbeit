@@ -1,0 +1,237 @@
+% ******************************************************************************
+% Beispiele zur Nutzung des glossaries Paketes.
+%
+% Ein Beispiel, um ein eigenes Symbolverzeichnis zu erstellen:
+%\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
+%
+% Diese Befehle sortieren die Eintraege in den einzelnen Listen, wobei zuvor
+% pdflatex ausgefuehrt werden muss. Für die Erstellung und Sortierung der Listen
+% sollte das zur Verfuegung stehende Makefile verwendet werden.
+% pdflatex
+% makeindex -s datei.ist -t datei.llg -o datei.lyi datei.lyg
+% makeindex -s datei.ist -t datei.glg -o datei.gyi datei.gyg
+% makeindex -s datei.ist -t datei.ilg -o datei.iyi datei.iyg
+% makeindex -s datei.ist -t datei.slg -o datei.syi datei.syg
+% makeindex -s datei.ist -t datei.mlg -o datei.myi datei.myg
+% makeindex -s datei.ist -t datei.alg -o datei.acr datei.acn
+% makeindex -s datei.ist -t datei.glg -o datei.gls datei.glo
+% pdflatex
+% pdflatex
+%
+% Für das Programm TeXmaker ist folgender Befehl in den Optionen zu definieren:
+% pdflatex %.tex | makeindex -s %.ist -t %.llg -o %.lyi %.lyg | makeindex -s %.ist -t %.glg -o %.gyi %.gyg | makeindex -s %.ist -t %.ilg -o %.iyi %.iyg | makeindex -s %.ist -t %.slg -o %.syi %.syg | makeindex -s %.ist -t %.mlg -o %.myi %.myg | makeindex -s %.ist -t %.alg -o %.acr %.acn | makeindex -s %.ist -t %.glg -o %.gls %.glo | pdflatex %.tex | pdflatex %.tex
+%
+% Die coolen VIM Nutzer können die Makefile oder latexmk in die vim-latex-suite
+% einbinden.
+% ******************************************************************************
+%
+% Erstellen von verschiedenen Symbolverzeichnissen fuer diese Arbeit
+%
+% Lateinische Zeichen
+\newglossary[llg]{latin}{lyi}{lyg}{Lateinische Bezeichnungen}
+% Griechische Zeichen
+\newglossary[glg]{greek}{gyi}{gyg}{Griechische Bezeichnungen}
+% Indizes
+\newglossary[ilg]{indices}{iyi}{iyg}{Indizes}
+% ******************************************************************************
+%
+% Glossar Einstellungen
+%
+% Den Punkt am Ende jeder Beschreibung deaktivieren
+\renewcommand*{\glspostdescription}{}
+%
+% Ein dreispaltiges symbolverzeichnis definieren mit den Eintraegen:
+% Notation | Einheit | Beschreibung
+\newglossarystyle{symbol}{
+    \glossarystyle{long3colheader}
+    \renewenvironment{theglossary}{%
+        \begin{longtable}{lp{2.5cm}p{1.5\glsdescwidth}}
+    }{%
+        \end{longtable}
+    }
+    \renewcommand*{\glossaryheader}{%
+        \textbf{Notation} & \textbf{Einheit} & \textbf{Beschreibung}\\
+    }%
+    \renewcommand*{\glossaryentryfield}[5]{%
+        \glsentryitem{##1}\glstarget{##1}{##2} & ##4 & ##3  \\
+    }%
+}
+%
+% Ein zweispaltiges symbolverzeichnis definieren mit den Eintraegen:
+% Notation | Beschreibung
+\newglossarystyle{indice_symbol}{
+    \glossarystyle{longheader}
+    \renewenvironment{theglossary}{%
+        \begin{longtable}{p{2.5cm}p{1.7\glsdescwidth}}
+    }{%
+        \end{longtable}
+    }
+    \renewcommand*{\glossaryheader}{%
+        \textbf{Notation} & \textbf{Beschreibung}\\
+    }%
+    \renewcommand*{\glossaryentryfield}[5]{%
+        \glsentryitem{##1}\glstarget{##1}{##2} & ##3  \\
+    }%
+}
+%
+% Glossar-Befehle anschalten
+\makeglossaries
+% ******************************************************************************
+% Befehle für Symbole
+% ******************************************************************************
+%
+% Lateinische Bezeichnungen
+% ******************************************************************************
+\newglossaryentry{symb:x}{
+    name=$\vv{x}$,
+    description={Zustandsvektor eines Zustandsraummodells, der Form
+    \mbox{
+	    $\dot{\vec{x}} = \vec{f}(\vec{x}) + \vec{g}(\vec{x}) u
+	    \text{,}\quad
+    	y = h(\vec{x})$
+    }
+    },
+    symbol={-},
+    sort=symbolx,
+    type=latin
+}
+\newglossaryentry{symb:y}{
+    name=$y$,
+    description={Ausgangsgröße},
+    symbol={-},
+    sort=symboly,
+    type=latin
+}
+\newglossaryentry{symb:APQ_lyp}{
+	name={$\MM{A}, \MM{P}, \MM{Q}$},
+	description={Positiv definite Matrizen der linearen \textsc{Lyapunov}
+	Matrix-Gleichung
+	},
+    symbol={-},
+    sort=symbolAPQ,
+    type=latin
+}
+% ******************************************************************************
+%
+% Griechische Bezeichnungen
+% ******************************************************************************
+\newglossaryentry{symb:xi}{
+    name=$\vv{\xi}$,
+    description={Teilzustandsvektor der Zustände des transformierten Systems,
+	    auch als externe Dynamik bezeichnet
+    },
+    symbol={-},
+    sort=symbolxi,
+    type=greek
+}
+\newglossaryentry{symb:nu_ad}{
+	name=$\vv{\nu}_{ad}$,
+    description={Adaptiver Anteil der Pseudosteuergröße},
+    symbol={-},
+    sort=symbolnu_ad,
+    type=greek
+}
+\newglossaryentry{symb:sigmaSVD}{
+	name={$\overline{\sigma}, \underline{\sigma}$},
+    description={maximaler und minimaler Singulärwert},
+    symbol={-},
+    sort=symbolsigmamaxmin,
+    type=greek
+}
+\newglossaryentry{symb:betagamma}{
+	name={$\beta, \gamma$},
+    description={Funktionen bestimmter monotoner Klassen},
+    symbol={-},
+    sort=symbolbetagamma,
+    type=greek
+}
+% ******************************************************************************
+%
+% Indizes
+% ******************************************************************************
+\newglossaryentry{symb:inftyindex}{
+    name={$\infty$},
+    description={Größen der ungestörten Anströmung},
+    sort=symbol.infty,
+    type=indices
+}
+\newglossaryentry{symb:sub_latin}{
+    name={$i, j, k, l$},
+    description={Bezeichnen mit dem Index eine Komponente eines Tensors, während
+        bei doppelten Index eine Summation der Komponenten nach der
+        \textsc{Einstein}schen Summenkonvention erfolgt},
+    sort=symbol_ijkl,
+    type=indices
+}
+\newglossaryentry{symb:sub_greek}{
+    name={$\alpha , \beta , \gamma$},
+    description={Bezeichnen mit dem Index eine Komponente eines Tensors, auch
+        wenn ein doppelter Index vorliegt},
+    sort=symbol_alphabetagammadelta,
+    type=indices
+}
+\newglossaryentry{symb:invariant1}{
+    name={$\textrm{I}$},
+    description={Bezeichnen mit dem Index die erste Invariante des jeweiligen
+        Tensors
+    },
+    sort=symbol.1,
+    type=indices
+}
+\newglossaryentry{symb:invariant2}{
+    name={$\textrm{I}\textrm{I}$},
+    description={Bezeichnen mit dem Index die zweite Invariante des jeweiligen
+        Tensors
+    },
+    sort=symbol.2,
+    type=indices
+}
+\newglossaryentry{symb:invariant3}{
+    name={$\textrm{I}\textrm{I}\textrm{I}$},
+    description={Bezeichnen mit dem Index die dritte Invariante des jeweiligen
+        Tensors
+    },
+    sort=symbol.3,
+    type=indices
+}
+% ******************************************************************************
+%
+% Abkuerzungen
+% ******************************************************************************
+%\newacronym[description=So wie hier steht es im Verzeichnis]{abc}{abc}{So wie hier steht es im Text}
+%
+\newacronym{TU-Braunschweig}{TU-Braunschweig}{
+	Technischen Universit\"{a}t Braunschweig
+}
+\newacronym{IFF}{IFF}{Institut für Flugführung}
+\newacronym{NASA}{NASA}{National Aeronautics and Space Administration}
+% ******************************************************************************
+%
+% Abkurzunge mit Glossareintrag
+% ******************************************************************************
+\newacronym{SISO}{SISO}{Single Input Single Output}
+\newacronym{FAA}{FAA}{Federal Aviation Administration}
+\newacronym{VIM}{VIM}{\texttt{V}i \texttt{IM}proved}
+% ******************************************************************************
+%
+% Glossareintraege
+% ******************************************************************************
+\newglossaryentry{glos:SISO}{
+    name=Single Input Single Output,
+    description={Eingrößensystem
+    }
+}
+\newglossaryentry{glos:Deployment}{
+    name=Software Deployment,
+    description={Das Software Deployment umfasst die gesamten
+	    Entwicklungsaktivitäten die den Einsatz der Software ermöglichen.
+    }
+}
+\newglossaryentry{glos:VIM}{
+    name={\texttt{V}i \texttt{IM}proved},
+    description={Einer der essenziell wichtigsten Texteditoren des Universums.
+ 	\texttt{V}i \texttt{IM}prove dist eine Weiterentwicklung des Texteditors
+	vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
+    }
+}
+% ******************************************************************************

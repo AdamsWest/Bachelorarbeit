@@ -1,0 +1,570 @@
+\chapter{Projektmanagement}
+\label{projektmanagement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%WBS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{landscape}
+\section{Projektstrukturplan}
+% 	\captionof{Projektstrukturplan}
+\label{WBS}
+        \vspace{0.5cm}
+        \begin{tikzpicture}[node distance=0.7cm]
+            \tikzstyle{abstract}=[rectangle, draw=black, rounded corners, fill=blue!50, drop shadow,
+        text centered, anchor=north, text=white, text width=3.5cm]
+    \tikzstyle{topabstract}=[rectangle, draw=black, rounded corners, fill=blue!20, drop shadow,
+        text centered, anchor=north, text width=0.8\linewidth]
+    \tikzstyle{subabstract}=[rectangle, draw=black, rounded corners, fill=blue!20, drop shadow,
+        text centered, anchor=north, text width=3.5cm]
+    \tikzstyle{myarrow}=[->, >=open triangle 90, very thick]
+    \tikzstyle{line}=[-, very thick]
+            \node (title) [topabstract]
+            {\textbf{\Large \otitle }};
+
+            \node (AuxNode03) [text width=3.5cm, below=of title] {};
+            \node (AuxNode02) [text width=3.5cm, left=of AuxNode03] {};
+            \node (AuxNode01) [text width=3.5cm, left=of AuxNode02] {};
+            \node (AuxNode04) [text width=3.5cm, right=of AuxNode03] {};
+            \node (AuxNode05) [text width=3.5cm, right=of AuxNode04] {};
+            \node (AuxNode06) [text width=3.5cm, right=of AuxNode05] {};
+
+            \node (ap3000) [abstract, rectangle split, rectangle split parts=2, below=of AuxNode03]
+                {
+                    \textbf{AP 3000}
+                    \nodepart{second}Überprüfung und Valdierung des Programms
+                };
+            \node (ap2000) [abstract, rectangle split, rectangle split parts=2, below=of AuxNode02]
+                {
+                    \textbf{AP 2000}
+                    \nodepart{second}Programmaufbau
+                };
+            \node (ap1000) [abstract, rectangle split, rectangle split parts=2, below=of AuxNode01]
+                {
+                    \textbf{AP 1000}
+                    \nodepart{second}Literaturrecherche
+                };
+            \node (ap4000) [abstract, rectangle split, rectangle split parts=2, below=of AuxNode04]
+                {
+                    \textbf{AP 4000}
+                    \nodepart{second}Parameteruntersuchung
+                };
+            \node (ap5000) [abstract, rectangle split, rectangle split parts=2, below=of AuxNode05]
+                {
+                    \textbf{AP 5000}
+                    \nodepart{second}Auswertung
+                };
+            \node (ap1100) [subabstract, rectangle split, rectangle split parts=2, below=of ap1000]
+                {
+                    \textbf{AP 1100}
+                    \nodepart{second}Flugmechanik und Aerodynamik von Multicoptern und Flächenflugzeugen
+                };
+            \node (ap1200) [subabstract, rectangle split, rectangle split parts=2, below=of ap1100]
+                {
+                    \textbf{AP 1200}
+                    \nodepart{second}Zusammenhang einer elektromechanischen Antriebseinheit
+                };
+            \node (ap2100) [subabstract, rectangle split, rectangle split parts=2, below=of ap2000]
+                {
+                    \textbf{AP 2100}
+                    \nodepart{second}Erstellung eines Modells in Matlab
+                };
+            \node (ap2200) [subabstract, rectangle split, rectangle split parts=2, below=of ap2100]
+                {
+                    \textbf{AP 2200}
+                    \nodepart{second}Programmablauf
+                };
+            \node (ap3100) [subabstract, rectangle split, rectangle split parts=2, below=of ap3000]
+               {
+                   \textbf{AP 3100}
+                   \nodepart{second}Nachbildung eines Quadrocopterfluges im Programm
+               };
+               \node (ap3200) [subabstract, rectangle split, rectangle split parts=2, below=of ap3100]
+               {
+                   \textbf{AP 3200}
+                   \nodepart{second}Diskussion der Flugleistungen
+               };
+            \node (ap4100) [subabstract, rectangle split, rectangle split parts=2, below=of ap4000]
+               {
+                   \textbf{AP 4100}
+                   \nodepart{second}Festlegung der zu untersuchenden Parameter und wie diese zu variieren sind
+               };
+            \node (ap4200) [subabstract, rectangle split, rectangle split parts=2, below=of ap4100]
+               {
+                   \textbf{AP 4200}
+                   \nodepart{second}Programmerweiterung
+                   };
+            \node (ap4300) [subabstract, rectangle split, rectangle split parts=2, below=of ap4200]
+                {
+                    \textbf{AP 4300}
+                    \nodepart{second}Einflussuntersuchung der Parameter
+                };
+            \node (ap5100) [subabstract, rectangle split, rectangle split parts=2, below=of ap5000]
+                {
+                    \textbf{AP 5100}
+                    \nodepart{second}Diskussion der Ergebnisse
+                };
+%			 \node (ap5200) [subabstract, rectangle split, rectangle split parts=2, below=of ap5100]
+%                {
+%                    \textbf{AP 5200}
+%                    \nodepart{second}Ausblick
+%                };
+            \node (AuxNode06) [text width=3.5cm, below=of ap5100] {};
+            \node (ap6000) [abstract, rectangle split, rectangle split parts=2, below=of AuxNode06]
+                {
+                    \textbf{AP 6000}
+                    \nodepart{second}Dokumentation
+                };
+
+            \draw[myarrow]  (ap5000.north) -- ++(0,0.8) -| (title.south);
+            \draw[line] (ap5000.north) -- ++(0,0.8) -| (ap4000.north);
+            \draw[line] (ap5000.north) -- ++(0,0.8) -| (ap3000.north);
+            \draw[line] (ap5000.north) -- ++(0,0.8) -| (ap2000.north);
+            \draw[line] (ap5000.north) -- ++(0,0.8) -| (ap1000.north);
+            \draw[line] (ap5000.north) -- ++(0,0.8) -| (ap1000.north);
+            \draw[line] (ap1000.west)  -- ++(-0.19,0);
+            \draw[line] (ap1100.west)  -- ++(-0.2,0);
+            \draw[line] (ap1200.west)  -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm] ap1000.west);
+            \draw[line] (ap2000.west)  -- ++(-0.19,0);
+            \draw[line] (ap2100.west)  -- ++(-0.2,0);
+            \draw[line] (ap2200.west)  -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm]ap2000.west);
+			\draw[line] (ap3000.west) -- ++(-0.19,0);
+            \draw[line] (ap3100.west) -- ++(-0.2,0);
+            \draw[line] (ap3200.west) -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm]ap3000.west);
+            \draw[line] (ap4000.west) -- ++(-0.19,0);
+            \draw[line] (ap4100.west) -- ++(-0.2,0);
+            \draw[line] (ap4200.west) -- ++(-0.2,0);
+            \draw[line] (ap4300.west) -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm] ap4000.west);
+            \draw[line] (ap5000.west) -- ++(-0.19,0);
+            \draw[line] (ap5100.west) -- ++(-0.2,0) -- ([yshift=0.0cm, xshift=-0.19cm] ap5000.west);
+            \draw[line] (ap6000.east) -- ++(+0.2,0) |- ([yshift=0.8cm, xshift=0.00cm] ap5000.north);
+        \end{tikzpicture}
+%    \end{center}
+%\end{sidewaystable}
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitplan %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{landscape}
+\section{Zeitplan}
+\label{sec:zeitplan}
+\noindent\resizebox{\linewidth}{!}{	% Einfügen, falls zu groß
+\begin{ganttchart}[hgrid,
+                   time slot format = isodate,
+                   x unit=0.2cm,	% Zum komprimieren des Charts in x-Richtung
+                   y unit chart=1.05cm,
+                   %compress calendar,	% Komprimiert den Chart in der Breite
+                   calendar week text = {\currentweek},
+                   chart element start border = right,
+                   bar/.append style={fill=blue!40, rounded corners=2pt},
+                   bar incomplete/.append style={fill=blue!10},
+                   bar label node/.append style={align=left, text width=7cm},
+                   group label node/.append style={align=left, text width=8cm},
+                   milestone label node/.append style={align=left, text width=8cm},
+                   bar progress label node/.style={right=2mm},
+                   progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
+                  ]{2018-11-15}{2019-03-01}
+  \gantttitlecalendar{year, month=shortname, week}\\
+  %\gantttitle{2013}{59}\\
+  \ganttgroup{AP 1000: Literaturrecherche}{2018-11-27}{2018-12-04}\\
+  \ganttbar  {AP 1100: Flugmechanik und Aerodynamik von Multicoptern und Flächenflugzeugen}{2018-11-27}{2018-11-30}\\
+  \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3]{AP 1200: Zusammenhang einer elektromechanischen Antriebseinheit}{2018-12-01}{2018-12-04}\\
+  %\ganttbar[progress=100]{AP 1300: TEXT}{2013-01-01}{2013-01-30}\\	% Beispiel für Fortschrittsbalken!
+
+  \ganttgroup{AP 2000: Programmaufbau}{2018-12-05}{2018-12-20}\\
+  \ganttbar  {AP 2100: Erstellung eines Modells in Matlab}{2018-12-05}{2018-12-17}\\
+  \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 2200: Struktogramm}{2018-12-14}{2018-12-20}\\
+
+  \ganttgroup{AP 3000: Überprüfung und Valdierung des Programms}{2018-12-21}{2018-12-28}\\
+  \ganttbar  {AP 3100: Modellierung eines Quadrocopterfluges im Programm}{2018-12-21}{2018-12-22}\\
+  \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 3200: Diskussion der Flugleistungen}{2018-12-23}{2018-12-28}\\
+
+  \ganttgroup{AP 4000: Parameteruntersuchung}{2019-01-02}{2019-02-07}\\
+  \ganttbar{AP 4100: Festlegung der zu untersuchenden Parameter und wie diese zu variieren sind}{2019-01-02}{2019-01-09}\\
+  \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 4200: Programmerweiterung}{2019-01-10}{2019-02-07}\\
+  \ganttlinkedbar [link type=rdldr, link mid = 0.6, link bulge = 3] {AP 4300: Einflussuntersuchung der Parameter}{2019-01-10}{2019-02-07}\\
+
+  \ganttgroup{AP 5000: Auswertung}{2019-02-08}{2019-02-22}\\
+  \ganttbar  {AP 5100: Diskussion der Ergebnisse}{2019-02-08}{2019-02-22}\\
+
+  \ganttgroup{AP 6000: Dokumentation}{2018-12-04}{2019-02-22}\\
+  %\ganttmilestone{Meilenstein}{2013-02-20}\\
+
+ \end{ganttchart}
+}
+\end{landscape}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WPD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% WPD 1100
+
+\clearpage
+\begin{wpd}{AP 1100}{Flugmechanik und Aerodynamik von Multicoptern und Flächenflugzeugen}{1.0}{Lucas Schreer}{26.11.2018}{27.11.2018}{31.11.2018}{5 Tage}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item grundlegende Berechnung der Flugleistungen eines Multicopters
+        \item vereinfachte Berechnung der Flugleistungen eines Flächenflugzeugs
+        \item Kenntnis über flugmechanische Zusammenhänge
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Literaturrecherche bezüglich der Flugmechanik und Aerodynamik von Hubschraubern und Flächenflugzeugen
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 2100
+        \item AP 5200
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Literaturrecherche
+        \item Einlesen in die Thematik der Aerodynamik von Hubschraubern sowie Flächenflugzeugen
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Kenntnis über grundsätzliche flugmechanische und aerodynamische Zusammenhänge von Multicoptern bzw. Flächenflugzeugen
+        \item Wissen über die Genauigkeit der getroffenen Annahmen sowie die Grenzen der Genauigkeit
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 1200
+
+\clearpage
+\begin{wpd}{AP 1200}{Zusammenhang einer elektromechanischen Antriebseinheit}{1.0}{Lucas Schreer}{26.11.2018}{01.12.2018}{04.12.2018}{4 Tage}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Kenntnis über elektromechanische Antriebseinheiten
+        \item Wissen über die gegenseitige Beeinflussung der Antriebseinheiten
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Literaturrecherche bezüglich Brushlessmotoren, Reglern, Batterien , etc.
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 2100, AP 4000
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Auseinandersetzung mit der Thematik 
+        \item Kenntnis über die Grundlagen eines elektromechanischen Antriebs        
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Kenntnis über den Zusammenhang und die Berechnung einzelner Komponenten der elektrischen Antriebseinheit
+        \item Wissen über die Grenzen der elektromechanischen Einheiten
+    \end{itemize}
+    }
+\end{wpd}
+
+%WPD 2100
+
+\clearpage
+\begin{wpd}{AP 2100}{Erstellung eines Modells in Matlab}{1.0}{Lucas Schreer}{27.11.2018}{05.12.2018}{17.12.2018}{2 Wochen}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Implementierung der Flugmechanik und Aerodynamik von Multicoptern und Flächenflugzeugen in Matlab
+        \item Implementierung des elektromechanischen Antriebsstrangs
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 1100 und AP 1200
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 4300
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+    	\item Implementierung der Zusammenhänge zwischen Aerodynamik, Flugmechanik und der elektrischen Antriebseinheit
+    	\item Anfertigen eines organisierten Programmablaufs von der Aerodynamik zur Batterieentladung
+    	\item Darstellung der Ergebnisse in geeigneten Diagrammen
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Ein geeignetes Programm für fortlaufende Untersuchungen und anschließende Programmerweiterung
+        \item Fertiges Matlab Programm zur Durchführung einer ersten Simulationen von elektrisch angetriebenen Flugsystemen mit einer Bandbreite von Parametern sowie deren Auswertung
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 2200
+
+\clearpage
+\begin{wpd}{AP 2200}{Struktogramm}{1.0}{Lucas Schreer}{26.11.2018}{14.12.2018}{20.12.2018}{7 Tage}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Erstellen eines Struktogramms für das Programm zur Leistungsberechnung
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 2100
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 6000
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Erstellen eines Struktogramms für die einzelnen Programmabläufe
+        \item Überprüfung des Programmablaufs auf Optimierungspotenzial
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Strukturiertes Ablaufdiagramm, welches die entsprechenden Abläufe ohne Quelltext darstellt
+        \item Optimierung der Programmablaufstruktur
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 3100
+
+\clearpage
+\begin{wpd}{AP 3100}{Nachbildung eines Quadrocopterfluges im Programm}{1.0}{Lucas Schreer}{26.11.2018}{21.12.2018}{22.12.2018}{2 Tage}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Überprüfung der Validität des Quadrocopterfluges in Russland
+        \item Validierung des aufgestellten Modells
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 2100
+    \end{itemize}
+%    \textbf{Schnittstellen zu anderen APs:}
+%    \begin{itemize}
+%        \item AP 3200
+%    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Internetrecherche aller benötigten Parameter zur Nachbildung des Fluges im Programm
+        \item Darstellung der nachgebildeten Flugleistungen in Diagrammen
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Nachgebildeter Flug im Programm
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 3200
+
+\clearpage
+\begin{wpd}{AP 3200}{Diskussion der Flugleistungen}{1.0}{Lucas Schreer}{26.11.2018}{23.12.2018}{28.12.2018}{3 Tage}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Überprüfung der angegebenen Flugleistungen mit dem Programm
+        \item Validierung des aufgestellten Modells
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 3100
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 3100
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Abgleichen der Flugleistungen des Programms mit den im Video gezeigten
+        \item Logische Prüfung der Ergebnisse in Bezug auf die Umsetzung
+        \item Nachvollziehen und Klären der Plausibilität der im Video gezeigten Flugleistungen
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Aussagen zur Validität des aufgestellten Modells
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 4100
+
+\clearpage
+\begin{wpd}{AP 4100}{Festlegung der zu untersuchenden Parameter und wie diese zu variieren sind}{1.0}{Lucas Schreer}{26.11.2018}{02.01.2019}{09.01.2019}{1 Woche}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Liste mit allen zu untersuchenden und variierenden Parametern
+        \item Wissen um die Implementierung im Modell
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP100, AP 2000 und AP 3000
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 4200 und AP 4300
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Herausfiltern relevanter Parameter
+        \item Suchen nach Möglichkeiten zur Variation der Parameter
+        \item Vorabeinschätzung der Relevanz für die Flugleistungen
+        \item Klärung eventueller Interferenzen
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Anzahl an zu untersuchenden Parameter und sinnvolle Variation dieser
+        \item mögliche Zusammenhänge einzelner Parameter
+        \item grobe Programmablaufsequenzen zur Untersuchung der Parameter 
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 4200
+
+\clearpage
+\begin{wpd}{AP 4200}{Programmerweiterung}{1.0}{Lucas Schreer}{26.11.2018}{10.01.2019}{07.02.2019}{4 Wochen}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Erweiterung und Anpassung des Programms um neue Aspekte der Parameteruntersuchung
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 2000 und AP 4100
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 2100
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Einbau weiterer Programmstrukturen, die die Untersuchung der in AP 4100 aufgestellten Parameter ermöglichen
+        \item Erweiterung des Programms um Strukturen zur Visualisierung der Ergebnisse
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Erweitertes und an die Untersuchung angepasstes Programm 
+        \item Funktionen und Iterationen, die eine Parameteruntersuchung ermöglichen  
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 4300 
+
+\clearpage
+\begin{wpd}{AP 4300}{Einflussuntersuchung der Parameter}{1.0}{Lucas Schreer}{26.11.2018}{10.01.2019}{07.02.2019}{4 Wochen}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Untersuchung des Einflusses der in AP 4100 festgelegten Parameter
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 4100 und AP 4200
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 2000
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Untersuchung des Parametereinflusses auf die Flugleistungen des Flugsystems
+        \item Darstellung dieses Einflusses in dafür geeigneten Diagrammen, Graphen, Bildern, etc.
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Aufzeigen des Einflusses auf die Flugleistungen
+        \item Ermittlung des Optimums für die Flugleistung
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 5100 
+
+\clearpage
+\begin{wpd}{AP 5100}{Diskussion der Ergebnisse}{1.0}{Lucas Schreer}{26.11.2018}{08.02.2019}{22.02.2019}{2 Woche}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Festhalten der optimalen Parameter zur Erfüllung der Mission
+        \item Bewertung der Ergebnisse im Hinblick auf Korrektheit und technischer Realisierbarkeit
+        \item Empfehlungen für die optimale Auslegung eines Flugsystems für einen Steiglug auf \SI{10}{km} Höhe
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item Ergebnisse aus AP 4200 und AP 4300
+    \end{itemize}
+    \textbf{Schnittstellen zu anderen APs:}
+    \begin{itemize}
+        \item AP 4000
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}        
+        \item Kritische Betrachtung der Ergebnisse und der gemachten Angaben 
+        \item Auswertung der Ergebnisse im Hinblick auf die bestmöglichen Flugeigenschaften
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Aussagen über eine bestmögliche Konstellation der Flugsystemparameter zum Erreichen einer Höhe von \SI{10}{km} oder sogar \SI{15}{km}
+        \item Aussagen über die Realisierbarkeit 
+        \item Wissen um die Abweichungen von der Realität und deren Einfluss 
+        \item Ausblick auf zukünftige Entwicklungen
+    \end{itemize}
+    }
+\end{wpd}
+
+% WPD 5200
+
+%\clearpage
+%\begin{wpd}{AP 5200}{Ausblick}{1.0}{Lucas Schreer}{26.11.2019}{15.02.2019}{20.02.2019}{5 Tage}{Lucas Schreer}
+%    {
+%    \textbf{Ziele:}
+%    \begin{itemize}
+%        \item 
+%    \end{itemize}
+%    \textbf{Input:}
+%    \begin{itemize}
+%        \item Ergebnisse aus AP 5100 und AP 5300
+%    \end{itemize}
+%   	\textbf{Schnittstellen zu anderen APs:}
+%  	\begin{itemize}
+%        \item AP 5000
+%	\end{itemize}
+%    \textbf{Aufgaben:}
+%    \begin{itemize}
+%    	\item
+%    \end{itemize}
+%    \textbf{Ergebnisse:}
+%    \begin{itemize}
+%        \item Ausblick auf zukünftige Entwicklungen
+%    \end{itemize}
+%    }
+%\end{wpd}
+
+% WPD 6000
+
+\clearpage
+\begin{wpd}{AP 6000}{Dokumentation}{1.0}{Lucas Schreer}{26.11.2018}{04.12.2018}{22.02.2019}{11 Wochen}{Lucas Schreer}
+    {
+    \textbf{Ziele:}
+    \begin{itemize}
+        \item Schriftliche Dokumentation der Arbeit
+    \end{itemize}
+    \textbf{Input:}
+    \begin{itemize}
+        \item AP 1000
+        \item AP 2000
+        \item AP 3000
+        \item AP 4000
+        \item AP 5000
+    \end{itemize}
+    \textbf{Aufgaben:}
+    \begin{itemize}
+        \item Einarbeitung in Zeichensatzprogramme, wie \LaTeX, {\fontfamily{cmr}Ti{\em k}Z}, \emph{PGF} und \emph{Gnuplot}
+        \item Schriftliche Ausarbeitung der Arbeit
+    \end{itemize}
+    \textbf{Ergebnisse:}
+    \begin{itemize}
+        \item Bachelorarbeit
+    \end{itemize}
+    %\setcounter{wpdCurrentPage}{\value{wpdCurrentPage}-1}
+    %\refstepcounter{wpdCurrentPage}\label{cnt:wpdTotalPages}
+    }
+\end{wpd}
