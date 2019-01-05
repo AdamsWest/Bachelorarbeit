@@ -13,38 +13,6 @@
 % Makefiles wird für die Erstellung des Dokumentes empfohlen.
 \input{nomenclature}
 % ******************************************************************************
-%
-
-%*******************************************************************************
-
-
-\usepackage{lscape}
-
-%
-% Dieses Paket ermoeglicht PGF plots innerhalb der TIKZ Umgebung
-\usepackage{pgf}
-\usepackage{pgfgantt}
-%
-% Ermoeglicht ein viel einfacheres erstellen von WPDs
-\usepackage{colortbl}
-\usepackage{totcount}
-\let\titleoriginal\title           % save original \title macro
-\renewcommand{\title}[1]{          % substitute for a new \title
-    \titleoriginal{#1}%               % define the real title
-    \newcommand{\otitle}{#1}        % define \otitle
-}
-\usepackage{workpackagedescription}
-
-\usepackage{tikz}
-
-\usetikzlibrary{ shapes, shadows, arrows}
-
-
-
-
-%*******************************************************************************
-
-
 % Aendern der Nummerierung von arabisch auf roemisch
 \pagenumbering{Roman}
 %

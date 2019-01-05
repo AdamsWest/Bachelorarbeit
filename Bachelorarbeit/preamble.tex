@@ -68,7 +68,8 @@
 %    eprint=false,
 %    bibencoding=utf8,safeinputenc=true
 %]{biblatex}
-\addbibresource{dummy_bibliography.bib}
+\addbibresource{Literatur.bib}
+% \bibliography{Literatur}
 % ******************************************************************************
 %
 % Textsatz
@@ -549,3 +550,30 @@
 \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 \DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
 % ******************************************************************************
+%
+% Packages zum Erstellen von Struktogrammen
+\usepackage{struktex}
+%*******************************************************************************
+% Packages zum einfachen Erstellen einer Projektdokumentierung, Workpackagedescription, Workbreakdownstructure und Gantt-Chart
+
+\usepackage{lscape}
+
+%
+% Dieses Paket ermoeglicht PGF plots innerhalb der TIKZ Umgebung
+\usepackage{pgf}
+\usepackage{pgfgantt}
+%
+% Ermoeglicht ein viel einfacheres erstellen von WPDs
+\usepackage{colortbl}
+\usepackage{totcount}
+\let\titleoriginal\title           % save original \title macro
+\renewcommand{\title}[1]{          % substitute for a new \title
+    \titleoriginal{#1}%               % define the real title
+    \newcommand{\otitle}{#1}        % define \otitle
+}
+\usepackage{workpackagedescription}
+
+\usepackage{tikz}
+
+\usetikzlibrary{ shapes, shadows, arrows}
+%*******************************************************************************

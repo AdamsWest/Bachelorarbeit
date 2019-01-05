@@ -17,28 +17,27 @@
 \contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{5}{subsubsection*.12}
 \contentsline {section}{\numberline {2.2}Parameter der Mission}{5}{section.2.2}
 \contentsline {subsubsection}{Missionsparameter}{5}{subsubsection*.13}
-\contentsline {subsubsection}{Flugparameter}{5}{subsubsection*.14}
-\contentsline {subsubsection}{Umgebungsparameter}{6}{subsubsection*.15}
+\contentsline {subsubsection}{Flugparameter}{6}{subsubsection*.14}
+\contentsline {subsubsection}{Umgebungsparameter und Diskretisierung}{6}{subsubsection*.15}
 \contentsline {section}{\numberline {2.3}Berechnung weiterer Parameter}{6}{section.2.3}
-\contentsline {section}{\numberline {2.4}Parameter der Mission}{6}{section.2.4}
-\contentsline {section}{\numberline {2.5}Aufbau des Programms}{7}{section.2.5}
-\contentsline {section}{\numberline {2.6}Leistungsberechnung}{9}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Ver\IeC {\"a}nderung der Umgebungsparameter mit der H\IeC {\"o}he}{9}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Schub berechnen}{9}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.4}Aufbau des Programms}{8}{section.2.4}
+\contentsline {section}{\numberline {2.5}Leistungsberechnung}{9}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Ver\IeC {\"a}nderung der Umgebungsparameter mit der H\IeC {\"o}he}{9}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Schub berechnen}{9}{subsection.2.5.2}
 \contentsline {subsubsection}{Multicopter}{9}{subsubsection*.17}
 \contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{11}{subsubsection*.18}
-\contentsline {subsection}{\numberline {2.6.3}Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{12}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Motorzustand berechnen}{12}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}Zustand der Motorregler}{12}{subsection.2.6.5}
-\contentsline {subsection}{\numberline {2.6.6}Batteriezustand}{13}{subsection.2.6.6}
-\contentsline {subsection}{\numberline {2.6.7}Wirkungsgrad \IeC {\"u}ber das Gesamtsystem}{15}{subsection.2.6.7}
-\contentsline {subsection}{\numberline {2.6.8}Werden Grenzen \IeC {\"u}berschritten?}{16}{subsection.2.6.8}
-\contentsline {section}{\numberline {2.7}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{16}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Einschr\IeC {\"a}nkungen}{16}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Vereinfachungen}{17}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.5.3}Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{12}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Motorzustand berechnen}{12}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}Zustand der Motorregler}{13}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.6}Batteriezustand}{13}{subsection.2.5.6}
+\contentsline {subsection}{\numberline {2.5.7}Wirkungsgrad \IeC {\"u}ber das Gesamtsystem}{15}{subsection.2.5.7}
+\contentsline {subsection}{\numberline {2.5.8}Werden Grenzen \IeC {\"u}berschritten?}{16}{subsection.2.5.8}
+\contentsline {section}{\numberline {2.6}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{17}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Einschr\IeC {\"a}nkungen}{17}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Vereinfachungen}{17}{subsection.2.6.2}
 \contentsline {subsubsection}{Schub}{17}{subsubsection*.19}
-\contentsline {subsubsection}{Kennfeld}{17}{subsubsection*.20}
-\contentsline {subsubsection}{Motor}{17}{subsubsection*.21}
+\contentsline {subsubsection}{Propeller und Kennfeld}{17}{subsubsection*.20}
+\contentsline {subsubsection}{Motor}{18}{subsubsection*.21}
 \contentsline {subsubsection}{Motorregler}{18}{subsubsection*.22}
 \contentsline {subsubsection}{Batterie}{18}{subsubsection*.23}
 \contentsline {subsubsection}{Wirkungsgrad}{18}{subsubsection*.24}
@@ -51,15 +50,15 @@
 \contentsline {subsection}{\numberline {3.1.1}Missions und Umgebungsparameter}{20}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Nachbildung im Programm}{21}{section.3.2}
 \contentsline {section}{\numberline {3.3}Ergebnisse}{21}{section.3.3}
-\contentsline {section}{\numberline {3.4}Diskussion}{25}{section.3.4}
-\contentsline {chapter}{\numberline {4}Parameteruntersuchung}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Stand der Technik}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ziel der Arbeit}{27}{section.4.3}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{28}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{28}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ausblick}{28}{section.5.2}
-\contentsline {chapter}{\numberline {6}Projektmanagement}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Projektstrukturplan}{30}{section.6.1}
-\contentsline {section}{\numberline {6.2}Zeitplan}{32}{section.6.2}
+\contentsline {section}{\numberline {3.4}Diskussion}{24}{section.3.4}
+\contentsline {chapter}{\numberline {4}Parameteruntersuchung}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}Steiggeschwindigkeit}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Verstellpropeller}{26}{section.4.3}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ausblick}{27}{section.5.2}
+\contentsline {chapter}{\numberline {6}Projektmanagement}{28}{chapter.6}
+\contentsline {section}{\numberline {6.1}Projektstrukturplan}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Zeitplan}{31}{section.6.2}
 \contentsline {chapter}{\numberline {A}Blindtext im Anhang}{45}{appendix.A}
