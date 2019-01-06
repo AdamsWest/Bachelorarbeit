@@ -22,26 +22,40 @@ V_Kg_max = 30;
 for v_W_variabel = v_W_min:v_W_Delta:v_W_max;
 
 	v_W = v_W_variabel;	
+	
+	lenghtm = floor(abs(m_min-m_max) / m_Delta + 1);
+	m_flugsystem = zeros(lengthm,1);
+	h1 = zeros(lengthm,1);	
 
+
+	p = 1;
 
 	for m_variabel = m_min:m_Delta:m_max
 
-		m_flugsystem = m_variabel;
+		m_flugsystem(p) = m_variabel;
 		
 
-		m_
+		
 
 
 		lengthh = floor(abs(H_0 - H_max) / Delta_H + 1);
 		V_Kg_opt = zeros(lengthh,1);
+		C_Rest_V = zeros(lengthh,1);
+		U_mot = zeros(lengthh,1);
+		I_mot = zeros(lengthh,1);
+		Omega = zeros(lengthh,1);
+		C_Rate = zeros(lengthh,1);
+		I_Bat = zeros(lengthh,1);
+		PWM = zeros(lengthh,1);
+	
 
 		for h = H_0:Delta_H:H_max
 		
 
 			% ursprgl. Programm: Berechnung wichtiger Größen, Berechnung Schub
 		
-			lengthh = floor(abs(H_0 - H_max) / Delta_H + 1);
-			V_Kg = zeros(lengthh,1);
+			lengthvkg = floor(abs(V_Kg_min - V_Kg_max) / V_Kg_Delta + 1);
+			V_Kg = zeros(lengthvkg,1);
 			
 			% Hier Vektor der Variablen zum Auswählen der opt. Steiggeschw. speichert
 
@@ -52,7 +66,8 @@ for v_W_variabel = v_W_min:v_W_Delta:v_W_max;
 				V_Kg(z) = v_Kg_variabel;
 
 				t_Flug = Delta_H/V_Kg
-
+				
+				% Berechne hier alle weiteren Größen des Flugsystems
 
 				z = z + 1;
 
@@ -60,21 +75,69 @@ for v_W_variabel = v_W_min:v_W_Delta:v_W_max;
 		
 			% Hier Kriterium für optimale Steiggeschwindigkeit 
 
-			ind_opt = find();
+			ind_opt = find();			% Index der opt. Steiggeschw. finden
 
-			V_Kg_opt(h) = V_Kg(ind_opt);
+			V_Kg_opt(h) = V_Kg(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
 
 		end
 		
+		
+
 		% Plot Steiggeschwindigkeit über der Höhe (Kurvenschar)
 		figure(figure_V_Kg)
 		subplot(4,2,v_W_variabel/v_W_Delta)
-		plot(H,V_Kg_opt,'LineWidth',2)
+		h1(p) = plot(H,V_Kg_opt,'LineWidth',2);
+		legendInfo{p} = ['m_{Bat} = ' num2str(m_flugsystem) 'kg');		
 		grid on 
 		hold on 
+
+		% Plot Restladung über der Höhe (Kurvenschar)
+		figure(figure_C_Rest_V)
+		subplot(4,2,v_W_variabel/v_W_Delta)
+		plot(H,C_Rest_V,'LineWidth',2)
+		grid on 
+		hold on
+
+		% Plot Drehzahl über der Höhe (Kurvenschar)
+		figure(figure_omega)
+		subplot(4,2,v_W_variabel/v_W_Delta)
+		plot(H,omega,'LineWidth',2)
+		grid on 
+		hold on
+
+		% Plot PWM über der Höhe (Kurvenschar)
+		figure(figure_PWM)
+		subplot(4,2,v_W_variabel/v_W_Delta)
+		plot(H,PWM,'LineWidth',2)
+		grid on 
+		hold on
+
+		p = p + 1;
 
 	end
 	
 	% Beschriftung der Diagramme
 	
+	% Achenbeschriftung Steiggeschwindigkeit
+	figure(figure_V_Kg)
+	title([v_W = ' num2str(v_W_variabel) 'm/s']) % , m_{Fluggerät} = ' num2str(m]);
+	xlabel('Höhe [m]')
+	ylabel('Steiggeschwindigkeit [m/s]')
+
+	% Achenbeschriftung Restladung
+	figure(figure_C_Rest_V)
+	xlabel('Höhe [m]')
+	ylabel('Restladung [%]')
+
+	% Achenbeschriftung RPM
+	figure(figure_omega)
+	xlabel('Höhe [m]')
+	ylabel('Drehzahl [U/min]')
+
+	% Achenbeschriftung PWM
+	figure(figure_PWM)
+	xlabel('Höhe [m]')
+	ylabel('Pulsweitenmodulation [%]')
+
+
 end
