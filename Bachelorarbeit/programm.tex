@@ -366,7 +366,7 @@ die sich aus dem Spannungsverhältnis des ESCs zusammensetzt.
 
 
 \subsection{Batteriezustand}
-Die wesentliche Zustandsgröße der Batterie ist der Entladestrom \ensuremath{I_{Bat}}. Dieser setzt sich aus den Motorströmen zusammen und zusätzlich dem Wirkungsgrad der Pulsweitenmodulation.
+Die wesentliche Zustandsgröße der Batterie ist der Entladestrom \ensuremath{I_{Bat}}. Dieser setzt sich zusammen aus den Motorströmen und zusätzlich aus dem Wirkungsgrad der Pulsweitenmodulation (PWM).
 \begin{equation}
 	I_{Bat} = I_{Mot}\cdot \frac{PWM}{\eta_{PWM}}\cdot n_{Prop}.
 \end{equation}
@@ -389,18 +389,20 @@ Nach
 \begin{equation}
 	Restladung_i[\%] = \frac{C_{bat,Peukert}-\Delta C_{Bat,i}}{C_{Bat,Peukert}}\cdot 100\%
 \end{equation}
-berechnet sich die Restladung$_{i}$ nach der \ensuremath{i}-ten Flugphase. Diese ist vor allem für die erfliegbaren Grenzen interessant.
+berechnet sich die Restladung$_{i}$ nach der \ensuremath{i}-ten Flugphase. Diese ist vor allem für die Flugenveloppe interessant.
 
 
-Bei Batterien, hier vor allem Li-Ion und Li-Po, ist die Batteriespannung abhängig von der Entladerate und der Zeit. Hierzu hat \cite{Tremblay.2009} ein einfaches Modell aufgestellt, in welchem dieser Zusammenhang berücksichtigt wird \textcolor{red}{Vgl. Abb. Blub}. 
+Bei Batterien, hier vor allem Li-Ion und Li-Po, ist die Batteriespannung abhängig von der Entladerate und der Zeit. Hierzu beschreibt \cite{Tremblay.2009} ein einfaches Modell, in welchem dieser Zusammenhang berücksichtigt wird (Vgl. Abb.\ref{pic:discharge_curve}). 
 \begin{center}
-	\includegraphics[scale=0.2]{images/Coming-Soon.jpg}
+	\includegraphics[scale=0.5]{images/Discharge.PNG}
+	\label{pic:discharge_curve}
+	\captionof{figure}{typische Entladekurve für eine Batterie \cite{Tremblay.2009}}
 \end{center}
-Die Batteriespannung errechnet sich nach 
+Dazu errechnet sich die Batteriespannung für Li-Ion Batterien nach
 \begin{equation}
 	V_{bat} = E_0-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot\int_{}^{} I_{bat} dt - R\cdot I_{bat}+A\cdot e^{-3\cdot\int_{}^{} I_{bat} dt}-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot i^* .
 \end{equation}
-Danach können die unbekannten Batterieparameter einfach mit 3 diskreten Punkten nach folgendem Schema
+Diese weisen ein sehr ähnliches Verhalten wie Li-Po Batterien auf, weshalb beide nach der obigen Formel berechnet werden können. Die unbekannten Batterieparameter mit 3 diskreten Punkten nach folgendem Schema
 \begin{equation}
 	\begin{pmatrix} E_0 \\ A \\ K \end{pmatrix} = A^{-1}\cdot \begin{pmatrix}
 	V_{full}+R\cdot I_{bat} \\ V_{exp}+R\cdot I_{bat} \\ V_{nom}+R\cdot i \end{pmatrix}
@@ -412,12 +414,18 @@ mit
 	\end{pmatrix}
 \end{equation}
 bestimmt werden.
-Um eine möglichst einfache Handhabung zu gewährleisten und eine Batteriezellen unabhängig vom Hersteller, der Kapazität und der maximalen Entladerate verwenden zu können, ist die Erstellung einer Normzelle von Interesse. Aus \textcolor{red}{Beyer2016a Blub} existiert bereits eine Datenbank mit mehreren Batterien unterschiedlicher Herstellern, in der alle benötigten Daten zur Erstellung dieser Zelle vorhanden sind. Benötigt werden folgende Punkte: 
+Um eine möglichst einfache Handhabung zu gewährleisten und eine Batteriezellen unabhängig vom Hersteller, der Kapazität und der maximalen Entladerate verwenden zu können, ist die Erstellung einer Normzelle von Interesse. Aus \textcolor{red}{Beyer2016a Blub} existiert bereits eine Datenbank mit mehreren Batterien von unterschiedlichen Herstellern, in der alle benötigten Daten zur Erstellung dieser Zelle vorhanden sind. Benötigt werden folgende Punkte: 
 \begin{itemize}
 	\item die Kapazität Q
 	\item die $Q_{exp} Q_{nom}, V_{full}, V_{exp}, V_{nom}$, R und i
 \end{itemize}
 Hierbei sind schon $V_{full}, V_{exp} und V_{nom}$ auf eine Zelle normiert, allerdings die anderen Parameter nicht. Aus diesem Grund werden alle übrigen Parameter mit \SI{1}{Ah} normiert und der arithmetische Mittelwert über alle Batterien gebildet. Der Entladestrom entspricht dabei dem 1/100 der Batteriekapazität also \SI{1}{Ah}. Für den auf \SI{1}{Ah} genormten Innenwiderstand lässt sich ein hyperbolischer Verlauf über der Kapazität feststellen. Mittels einer Regression kann der Innenwiderstand für eine Zelle mit \SI{1}{Ah} ermittelt werden. 
+Einen bedeutenden Einfluss auf die Abweichungen hat der Innenwiderstand. Bedingt durch die Normierung kann im Vergleich zu den eigentlichen Batterien festgestellt werden, dass dieser vor allem bei den Zellen mit signifikanten Unterschieden abweicht. An dieser Stelle ist daher ein Modell für den Innenwiderstand sinnvoll. Beim Darstellen des Innenwiderstandes in Abhängigkeit der C-Rate und der Kapazität fällt auf, das beiden ein hyperbolisches Verhalten zugrunde gelegt werden kann. 
+Entsprechend werden die Datenpunkte mit der Funktion:
+\begin{equation}
+	R_I = finde\cdot heraus
+\end{equation}
+angenähert.
 Der Vergleich der berechneten Normzelle mit originalen Batterien teils starke Abweichungen von über 100\% von der ursprünglichen Batteriezelle. Zusätzlich wird der Einfluss der C-Rate auf diese Abweichungen mit berücksichtigt. Dabei kam heraus, dass gewisse Batterien signifikant von der angenäherten Zelle abweichen (z.B. Batterienummer 14,30,40 und 63). Diese wiesen deutliche Abweichungen von der mittleren Abweichung aller Zellen auf. Aus diesem Grund sind diese Batterien aus der Betrachtung entfernt und die Mittelwerte neu berechnet worden.
 
 

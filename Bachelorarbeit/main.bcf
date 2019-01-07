@@ -1974,26 +1974,28 @@
     <bcf:datasource type="file" datatype="bibtex">Literatur.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="2">Ostler.2006</bcf:citekey>
-    <bcf:citekey order="3">KARI.2017</bcf:citekey>
-    <bcf:citekey order="4">Drivecalc</bcf:citekey>
-    <bcf:citekey order="4">eCalc</bcf:citekey>
-    <bcf:citekey order="4">Flyeval</bcf:citekey>
-    <bcf:citekey order="5">PCUP.2017</bcf:citekey>
-    <bcf:citekey order="6">Quan.2017</bcf:citekey>
-    <bcf:citekey order="6">Shi.2017</bcf:citekey>
-    <bcf:citekey order="6">Stepaniak.2009</bcf:citekey>
-    <bcf:citekey order="7">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="8">Drela.2007</bcf:citekey>
-    <bcf:citekey order="9">Tremblay.2009</bcf:citekey>
-    <bcf:citekey order="10">Wall.2015</bcf:citekey>
-    <bcf:citekey order="11">Wall.2015</bcf:citekey>
-    <bcf:citekey order="12">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="13">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="14">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="2">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="3">Ostler.2006</bcf:citekey>
+    <bcf:citekey order="4">KARI.2017</bcf:citekey>
+    <bcf:citekey order="5">Drivecalc</bcf:citekey>
+    <bcf:citekey order="5">eCalc</bcf:citekey>
+    <bcf:citekey order="5">Flyeval</bcf:citekey>
+    <bcf:citekey order="6">PCUP.2017</bcf:citekey>
+    <bcf:citekey order="7">Quan.2017</bcf:citekey>
+    <bcf:citekey order="7">Shi.2017</bcf:citekey>
+    <bcf:citekey order="7">Stepaniak.2009</bcf:citekey>
+    <bcf:citekey order="8">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="9">Drela.2007</bcf:citekey>
+    <bcf:citekey order="10">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="11">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="12">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="13">Wall.2015</bcf:citekey>
+    <bcf:citekey order="14">Wall.2015</bcf:citekey>
     <bcf:citekey order="15">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="16">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="16">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="17">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="18">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="19">Tremblay.2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
