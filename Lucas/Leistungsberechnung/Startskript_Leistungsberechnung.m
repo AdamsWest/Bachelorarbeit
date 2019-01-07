@@ -99,7 +99,7 @@ H_0 = 0;                                    % Höhe des Abflugplatzes über Normal
 Delta_H = 50;                               % Inkrementweite in m 
 H_max = 20000;                              % Maximalhöhe in m
 
-T_0 = 288.15;                               % Temperatur in K am Flugplatz
+T_0 = 263.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent

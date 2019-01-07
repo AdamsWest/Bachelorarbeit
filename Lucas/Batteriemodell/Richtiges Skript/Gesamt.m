@@ -15,9 +15,9 @@ load('Elektromodellflug.mat');
 DATA = Elektromodellflug;
 
 % Löschen der Ausreißer
-% DATA(63,:) = [];       % id_bat = 63
+DATA(63,:) = [];       % id_bat = 63
 % DATA(40,:) = [];       % id_bat = 40
-% DATA(30,:) = [];       % id_bat = 30
+DATA(30,:) = [];       % id_bat = 30
 % DATA(14,:) = [];       % id_bat = 14
 % DATA(38,:) = [];       % id_bat = 38
 
@@ -107,6 +107,12 @@ for k = 1:1:C_Rate_max
         [Q,Qnom,Qexp,Vfull,Vexp,Vnom,i,R] = Normcell(DATA);             % Normzelle generieren
         Cnom = DATA{id_bat,5}/1000;                                     % Kapazität
         B = 3/Qexp;
+ 
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
+        R = 0.1824 /(Q*(0.06423*Q + 0.7362*C_Rate)^0.7725);             % MI MI MI hard coded
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+        
         
         Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R 0 0 0];        % Zwischenbelegung
         [Eo,A,K] = Batterie_parameter(Batterie_data);
