@@ -1,10 +1,8 @@
---------------------------- TO DO ----------------------------------------
-	
+--------------------------- TO DO ---------------------------------------
 
-	-	für den 06.12. : Windgeschwindigkeit anpassen auf 100km/h, Rest_C_V auf minimal 30% setzen, Nutzlast auf 250gramm
-			       : Geschwindigkeit anpassen
-			       : Wirkungsgrad ausgeben lassen zum Abgleich der beiden Modelle
 
-	-	Batteriemodell im Code implementieren und in die Leistungsberechnung einbringen
-	- 	Literaturrecherche
-	-	denis@strezhi.ru
+
+		Mi.09.01.19: bis Mittag: weitere Untersuchung des Batteriemodells 
+		- Beginn der Untersuchung mit Auswahl ob Flächenflugzeug oder Multicopter
+		- Implementierung von Steiggeschw. in Matlab
+		- etc. ...
