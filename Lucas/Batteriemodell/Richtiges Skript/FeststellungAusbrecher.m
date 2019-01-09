@@ -1,5 +1,5 @@
 % Die größten Abweichungen
-close all
+% close all
 run('Gesamt')
 
 

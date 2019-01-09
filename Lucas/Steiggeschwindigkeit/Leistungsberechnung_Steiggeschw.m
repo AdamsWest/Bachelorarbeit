@@ -143,6 +143,7 @@ for h_variabel = H_0:Delta_H:H_max
     U_mot_inter = zeros(lengthvkg,1);
     C_Rate_inter = zeros(lengthvkg,1);
     C_Rest_V_inter = zeros(lengthvkg,1);
+    I_Bat_inter = zeros(lengthvkg,1);
     tau_inter = zeros(lengthvkg,1);
     M_tip_inter = zeros(lengthvkg,1);
     PWM_inter = zeros(lengthvkg,1);
@@ -217,9 +218,14 @@ for h_variabel = H_0:Delta_H:H_max
             
             [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat(z),t_Flug);
             
-            P_Untersuchung(z) = I_Bat_inter(z) * U_Bat_nom; 
+            P_Untersuchung(z) = I_Bat_inter(z) * U_Bat_nom;
+            Delta_C_Bat(z)
             
-            % Gesamtwirkungsgrad
+            
+            
+            
+            
+            %% Gesamtwirkungsgrad
             
             % Berechnung der induzierten Geschwindigkeiten nach van der Wall
             % (Grundlagen der Hubschrauber-Aerodynamik) (2015) S. 153
@@ -240,7 +246,7 @@ for h_variabel = H_0:Delta_H:H_max
             vi = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
             
             % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
-            eta_ges(q) = (n_Prop * Thrust(q) * (mu_z + vi))/(I_Bat(q) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
+            eta_ges_inter(z) = (n_Prop * Thrust_inter(z) * (mu_z + vi))/(I_Bat_inter(z) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
             
             
         end
@@ -292,14 +298,14 @@ for h_variabel = H_0:Delta_H:H_max
         
         % Wenn Grenzen ueberschritten werden, Resultate entfernen
         
-        if C_Rest_V(q) < 0.0 || U_mot(q) > U_Bat_nom || U_mot(q) <= 0 || C_Rate(q) > C_Rate_max || I_mot(q) > I_max || alpha(q) > alpha_stall || M_tip(q) >= 1
-            C_Rest_V(q) = NaN;
-            Omega(q) = NaN;
-            U_mot(q) = NaN;
-            I_mot(q) = NaN;
-            I_Bat(q) = NaN;
-            PWM(q) = NaN;
-            eta_ges(q) = NaN;
+        if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat_nom || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1
+            C_Rest_V_inter(z) = NaN;
+            Omega_inter(z) = NaN;
+            U_mot_inter(z) = NaN;
+            I_mot_inter(z) = NaN;
+            I_Bat_inter(z) = NaN;
+            PWM_inter(z) = NaN;
+            eta_ges_inter(z) = NaN;
         end
         
         z = z+1;
@@ -308,11 +314,8 @@ for h_variabel = H_0:Delta_H:H_max
     end
     
     % Kriterium zur Auswahl der optimalen Steiggeschwindigkeit
-    
-    if q >= 315
-        aaa = 1;
-    end
-    if mean(isnan(P_Untersuchung)) ~= 1
+
+    if mean(isnan(P_Untersuchung)) ~= 1                                 % <-- hier noch anderes Krit zur Auswahl aussuchen
         
         % Kriterium für optimale Steiggeschwindigkeit
        
@@ -325,27 +328,50 @@ for h_variabel = H_0:Delta_H:H_max
         
         % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
         % Festlegen für entsprechenden Höhenschritt
-        %     Thrust_inter(ind_opt) = Thrust;
-        %     Theta_inter(ind_opt) = Theta(ind_opt);
-        %     alpha_inter(ind_opt) = alpha(ind_opt);
-        %     Omega_inter(ind_opt) = Omega(ind_opt);
-        %     I_mot_inter(ind_opt) = I_mot(ind_opt);
-        %     U_mot_inter(ind_opt) = U_mot(ind_opt);
-        %     C_Rate_inter(ind_opt) = C_Rate(ind_opt);
-        %     C_Rest_V_inter(ind_opt) = C_Rest_V(ind_opt);
-        %     tau_inter(ind_opt) = tau(ind_opt);
-        %     M_tip_inter(ind_opt) = M_tip(ind_opt);
-        %     PWM_inter(ind_opt) = PWM(ind_opt);
-        %     eta_ges_inter(ind_opt) = 
+        Thrust(q) = Thrust_inter(ind_opt);
+        Theta(q) = Theta_inter(ind_opt);
+        alpha(q) = alpha_inter(ind_opt);
+        Omega(q) = Omega_inter(ind_opt);
+        I_mot(q) = I_mot_inter(ind_opt);
+        U_mot(q) = U_mot_inter(ind_opt);
+        C_Rate(q) = C_Rate_inter(ind_opt);
+        C_Rest_V(q) = C_Rest_V_inter(ind_opt);
+        I_Bat(q) = I_Bat_inter(ind_opt);
+        tau(q) = tau_inter(ind_opt);
+        M_tip(q) = M_tip_inter(ind_opt);
+        PWM(q) = PWM_inter(ind_opt);
+        eta_ges(q) = eta_ges_inter(ind_opt);
         
         
         V_Kg_opt(q) = V_Kg(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
+        
     else
         
         V_Kg_opt(q) = NaN;
+        Thrust(q) = NaN;
+        Theta(q) = NaN;
+        alpha(q) = NaN;
+        Omega(q) = NaN;
+        I_mot(q) = NaN;
+        U_mot(q) = NaN;
+        C_Rate(q) = NaN;
+        C_Rest_V(q) = NaN;
+        I_Bat(q) = NaN;
+        tau(q) = NaN;
+        M_tip(q) = NaN;
+        PWM(q) = NaN;
+        eta_ges(q) = NaN;
+        
+        
+        
     end 
+    
+    
+    
     H(q) = H_oben;			% Speichern der Höhe im Vektor
-    q = q+1;
+    q = q+1;                % Erhöhen des Zählers um 1
+    
+    
 end
 
 
