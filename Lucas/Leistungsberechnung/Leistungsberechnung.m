@@ -283,7 +283,7 @@ for h = H_0:Delta_H:H_max
     
     
     % Wenn Grenzen ueberschritten werden, Resultate entfernen
-    
+
     if C_Rest_V(i) < 0.0 || U_mot(i) > U_Bat_nom || U_mot(i) <= 0 || C_Rate(i) > C_Rate_max || I_mot(i) > I_max || alpha(i) > alpha_stall || M_tip(i) >= 1
         C_Rest_V(i) = NaN;
         Omega(i) = NaN;
