@@ -8,7 +8,7 @@ U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
 U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
 % C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
 C_Bat = N_Bat_cell_p*C_Bat_cell*3600;
-Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität, die nach jedem delta_h gebraucht wird
+% Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität, die nach jedem delta_h gebraucht wird
 
 
 
@@ -41,6 +41,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Intialisierung der Matrizen für jeden Höhenabschnitt
 
 lengthh = floor(abs(H_max - H_0) / Delta_H + 1); 
+lengthvkg = floor(abs(V_Kg_min - V_Kg_max) / V_Kg_Delta + 1);
 H = zeros(lengthh,1);
 U_mot = zeros(lengthh,1);
 I_mot = zeros(lengthh,1);
@@ -59,7 +60,7 @@ M_tip = zeros(lengthh,1);
 eta_prop = zeros(lengthh,1);
 eta_ges = zeros(lengthh,1);
 V_Kg_opt = zeros(lengthh,1);
-
+Delta_C_Bat = zeros(lengthvkg,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Programmanfang
 
@@ -127,40 +128,32 @@ for h_variabel = H_0:Delta_H:H_max
     P_map = P_map * rho(q)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
     TAU_map = TAU_map * rho(q)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
-    %% Beginn der Leistungsberechnung für Flugsysteme
-    % Steiggeschwindigkeitsprofil vorgeben
-    %     if H_unten < 300
-    %        V_Kg = V_Profil(1);
-    %     elseif H_unten >= 300 && H_unten < 1700
-    %        V_Kg = V_Profil(2);
-    %     elseif H_unten >= 1700 && H_unten < 3100
-    %        V_Kg = V_Profil(3);
-    %     elseif H_unten >= 3100 && H_unten < 5000
-    %        V_Kg = V_Profil(4);
-    %     elseif H_unten >= 5000 && H_unten < 6000
-    %        V_Kg = V_Profil(5);
-    %     elseif H_unten >= 6000 && H_unten < 7700
-    %        V_Kg = V_Profil(6);
-    %     elseif H_unten >= 7700 && H_unten < 9800
-    %        V_Kg = V_Profil(7);
-    %     elseif H_unten >= 9800 && H_unten < 10300
-    %        V_Kg = V_Profil(8);
-    %     else
-    %        V_Kg = 3;
-    %     end
     
-    % Initialisierungen für die Bahngeschwindigkeit
-    lengthvkg = floor(abs(V_Kg_min - V_Kg_max) / V_Kg_Delta + 1);
+    
+    
+    %% Initialisierungen für die Bahngeschwindigkeit
+
     V_Kg = zeros(lengthvkg,1);
     P_Untersuchung = zeros(lengthvkg,1);
+    Thrust_inter = zeros(lengthvkg,1);
+    Theta_inter = zeros(lengthvkg,1);
+    alpha_inter = zeros(lengthvkg,1);
+    Omega_inter = zeros(lengthvkg,1);
+    I_mot_inter = zeros(lengthvkg,1);
+    U_mot_inter = zeros(lengthvkg,1);
+    C_Rate_inter = zeros(lengthvkg,1);
+    C_Rest_V_inter = zeros(lengthvkg,1);
+    tau_inter = zeros(lengthvkg,1);
+    M_tip_inter = zeros(lengthvkg,1);
+    PWM_inter = zeros(lengthvkg,1);
+    eta_ges_inter = zeros(lengthvkg,1);
     
-    % Hier Vektor der Variablen zum Auswählen der opt. Steiggeschw. speichert
-    
-%%  Hier beginnt Untersuchung der Bahngeschwindigkeit  
+    %%  Hier beginnt Untersuchung der Bahngeschwindigkeit  
     z = 1;
     
     for V_Kg_variabel = V_Kg_min:V_Kg_Delta:V_Kg_max
         
+        % Bahngeschwindigkeit festlegen
         V_Kg(z) = V_Kg_variabel;
         
         % Berechne hier alle weiteren Größen des Flugsystems
@@ -173,7 +166,7 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Aerodynamik berechnen
             
-            [Thrust(q),Theta(q),V_A,alpha(q)] = MulticopterAerodynamik(u_Wg,V_Kg(z),gamma,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(q),A_copter,m,g);
+            [Thrust_inter(z),Theta_inter(z),V_A,alpha_inter(z)] = MulticopterAerodynamik(u_Wg,V_Kg(z),gamma,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(q),A_copter,m,g);
             
         else
             
@@ -182,49 +175,49 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Aerodynamik
             
-            [Thrust(q),V_A] = FlaechenflugzeugAerodynamik(m,g,epsilon,V_Kg);
+            [Thrust_inter(z),V_A] = FlaechenflugzeugAerodynamik(m,g,epsilon,V_Kg(z));
             
             
         end
         
         
-        Thrust(q) = Thrust(q) / n_Prop;                                         % Schub auf n Propeller verteilen
+        Thrust_inter(z) = Thrust_inter(z) / n_Prop;                                         % Schub auf n Propeller verteilen
         
         
         
-        if Thrust(q) > max(max(T_map))                                          % wenn Schub zu gross (Ergebnis verwerfen)
-            Omega(q) = NaN;
-            I_mot(q) = NaN;
-            C_Rate(q) = NaN;
-            C_Rest_V(q) = NaN;
+        if Thrust_inter(z) > max(max(T_map))                                          % wenn Schub zu gross (Ergebnis verwerfen)
+            Omega_inter(z) = NaN;
+            I_mot_inter(z) = NaN;
+            C_Rate_inter(z) = NaN;
+            C_Rest_V_inter(z) = NaN;
         else
             
             
             % Drehzahl und Drehmoment bestimmen
             
-            [Omega(q),tau(q)] = Propeller(V_A, alpha(q), Thrust(q), RPM_map, V_map, T_map, TAU_map);
+            [Omega_inter(z),tau_inter(z)] = Propeller(V_A, alpha_inter(z), Thrust_inter(z), RPM_map, V_map, T_map, TAU_map);
             
             
             % Wie groß ist die Blattspitzengeschwindigkeit?
             
-            M_tip(q) = (Omega(q) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
+            M_tip_inter(z) = (Omega_inter(z) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
             
             
             % Motorzustand berechnen
             
-            [U_mot(q),I_mot(q)] = Motor(tau(q),K_V,I_0,R_i,Omega(q));
+            [U_mot_inter(z),I_mot_inter(z)] = Motor(tau_inter(z),K_V,I_0,R_i,Omega_inter(z));
             
             
             % Zustand der Motorregler berechnen
             
-            [PWM(q),eta_PWM] = ESC(U_mot(q),U_Bat_nom);
+            [PWM_inter(z),eta_PWM] = ESC(U_mot_inter(z),U_Bat_nom);
             
             
             % Batteriezustand berechnen
             
-            [I_Bat(q),C_Rate(q),Delta_C_Bat,C_Rest_V(q)] = Batterie(PWM(q),eta_PWM,I_mot(q),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat,t_Flug);
+            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat(z),t_Flug);
             
-            P_Untersuchung(z) = I_Bat(q) * U_Bat_nom; 
+            P_Untersuchung(z) = I_Bat_inter(z) * U_Bat_nom; 
             
             % Gesamtwirkungsgrad
             
@@ -233,8 +226,8 @@ for h_variabel = H_0:Delta_H:H_max
             
             vi0 = sqrt(m*g / ( 2*rho(q)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
             v = vi0;
-            mu_z = -V_A*sin(alpha(q));                                          % Geschwindigkeit durch die Rotorebene
-            mu = V_A*cos(alpha(q));                                             % Geschwindigkeit entlang Rotorebene
+            mu_z = -V_A*sin(alpha_inter(z));                                          % Geschwindigkeit durch die Rotorebene
+            mu = V_A*cos(alpha_inter(z));                                             % Geschwindigkeit entlang Rotorebene
             krit = 1;
             while krit > 0.0005
                 f = v - mu_z - vi0^2 / sqrt(mu^2 + v^2);
@@ -247,8 +240,6 @@ for h_variabel = H_0:Delta_H:H_max
             vi = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
             
             % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
-            eta_prop(q) = (Thrust(q) * (V_A + vi))/(tau(q) .* Omega(q));
-            
             eta_ges(q) = (n_Prop * Thrust(q) * (mu_z + vi))/(I_Bat(q) * U_Bat_nom);         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
             
             
@@ -312,18 +303,53 @@ for h_variabel = H_0:Delta_H:H_max
         end
         
         z = z+1;
-        H(q) = H_oben;			% Speichern der Höhe im Vektor
-        q = q+1;
+        
+        
     end
     
     % Kriterium zur Auswahl der optimalen Steiggeschwindigkeit
     
-    ind_opt = find(P_Untersuchung == min(P_Untersuchung));			% Index der opt. Steiggeschw. finden
-
-	V_Kg_opt(q) = V_Kg(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
-    
-    
+    if q >= 315
+        aaa = 1;
+    end
+    if mean(isnan(P_Untersuchung)) ~= 1
+        
+        % Kriterium für optimale Steiggeschwindigkeit
+       
+        ind_opt = find(P_Untersuchung == min(P_Untersuchung));			% Index der opt. Steiggeschw. finden
+        
+        if length(ind_opt) > 1
+            ind_opt = ind_opt(1);
+        end
+        
+        
+        % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
+        % Festlegen für entsprechenden Höhenschritt
+        %     Thrust_inter(ind_opt) = Thrust;
+        %     Theta_inter(ind_opt) = Theta(ind_opt);
+        %     alpha_inter(ind_opt) = alpha(ind_opt);
+        %     Omega_inter(ind_opt) = Omega(ind_opt);
+        %     I_mot_inter(ind_opt) = I_mot(ind_opt);
+        %     U_mot_inter(ind_opt) = U_mot(ind_opt);
+        %     C_Rate_inter(ind_opt) = C_Rate(ind_opt);
+        %     C_Rest_V_inter(ind_opt) = C_Rest_V(ind_opt);
+        %     tau_inter(ind_opt) = tau(ind_opt);
+        %     M_tip_inter(ind_opt) = M_tip(ind_opt);
+        %     PWM_inter(ind_opt) = PWM(ind_opt);
+        %     eta_ges_inter(ind_opt) = 
+        
+        
+        V_Kg_opt(q) = V_Kg(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
+    else
+        
+        V_Kg_opt(q) = NaN;
+    end 
+    H(q) = H_oben;			% Speichern der Höhe im Vektor
+    q = q+1;
 end
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
