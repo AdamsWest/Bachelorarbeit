@@ -112,7 +112,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 % Steiggeschwindigkeit
 
 V_Kg_min = 1;                               % minimale Bahngeschwindigkeit
-V_Kg_Delta = 1;                             % Inkrement der Bahngeschwindigkeit
+V_Kg_Delta = 0.5;                             % Inkrement der Bahngeschwindigkeit
 V_Kg_max = 25;                              % maximale Bahngeschwindigkeit
 
 

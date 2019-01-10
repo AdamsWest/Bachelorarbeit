@@ -60,7 +60,9 @@ M_tip = zeros(lengthh,1);
 eta_prop = zeros(lengthh,1);
 eta_ges = zeros(lengthh,1);
 V_Kg_opt = zeros(lengthh,1);
-Delta_C_Bat = zeros(lengthvkg,1);
+Delta_C_Bat = zeros(lengthh,1);
+Delta_C_Bat_inter = zeros(lengthvkg,1);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Programmanfang
 
@@ -216,10 +218,9 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Batteriezustand berechnen
             
-            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat(z),t_Flug);
+            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat_inter(z),t_Flug);
             
             P_Untersuchung(z) = I_Bat_inter(z) * U_Bat_nom;
-            Delta_C_Bat(z)
             
             
             
@@ -315,17 +316,17 @@ for h_variabel = H_0:Delta_H:H_max
     
     % Kriterium zur Auswahl der optimalen Steiggeschwindigkeit
 
-    if mean(isnan(P_Untersuchung)) ~= 1                                 % <-- hier noch anderes Krit zur Auswahl aussuchen
+    if mean(isnan(Delta_C_Bat_inter)) ~= 1                                 % <-- hier noch anderes Krit zur Auswahl aussuchen
         
         % Kriterium für optimale Steiggeschwindigkeit
-       
-        ind_opt = find(P_Untersuchung == min(P_Untersuchung));			% Index der opt. Steiggeschw. finden
+        ind_opt = find(Delta_C_Bat_inter == min(Delta_C_Bat_inter));
+%         ind_opt = find(P_Untersuchung == min(P_Untersuchung));			% Index der opt. Steiggeschw. finden
         
         if length(ind_opt) > 1
             ind_opt = ind_opt(1);
         end
         
-        
+
         % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
         % Festlegen für entsprechenden Höhenschritt
         Thrust(q) = Thrust_inter(ind_opt);
@@ -341,6 +342,7 @@ for h_variabel = H_0:Delta_H:H_max
         M_tip(q) = M_tip_inter(ind_opt);
         PWM(q) = PWM_inter(ind_opt);
         eta_ges(q) = eta_ges_inter(ind_opt);
+        Delta_C_Bat(q) = Delta_C_Bat_inter(ind_opt);
         
         
         V_Kg_opt(q) = V_Kg(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt

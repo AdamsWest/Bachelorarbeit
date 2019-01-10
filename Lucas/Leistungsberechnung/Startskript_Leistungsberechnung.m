@@ -14,7 +14,7 @@ load('DATA_APC.mat');
 % Handelt es sich bei dem zu untersuchenden Flugobjekt um einen Multicopter
 % (1) oder um ein Flächenflugzeug (0)?
 
-Abfrage_Flugsystem = 1;
+Abfrage_Flugsystem = 0;
 
 
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,7 +59,7 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat = 0.56;           % Batteriemasse in kg
 
 % Missionsparameter
-m_nutz = 0.00;          % Nutzlast in kg           
+m_nutz = 0.25;          % Nutzlast in kg           
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,19 +75,18 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-epsilon = 1/4;                  % reziproke Gleitzahl
-m_flugzeug = 15;                % Flächenflugzeug Leermasse in kg
+epsilon = 1/3;                  % reziproke Gleitzahl
+m_flugzeug = 0.354;                % Flächenflugzeug Leermasse in kg
 t_zul = 150;                    % zulässige Höchstemperatur der Flugzeugzelle in °C
 q_zul = 1000;                   % zulässige Grenzwert für Kräfte und Momente im Horizontalflug auf die Flugzeugstruktur in N/m^2
 S = 1;                          % Flügelfläche in m^2
-c_A_plane_max = 1.92;           % maximale Auftriebsbeiwert
+c_A_plane_max = 1;           % maximale Auftriebsbeiwert
 c_W_plane = 0.06;               % Widerstandsbeiwert
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Bahngeschwindigkeit
 V_Kg = 10;                                  % Steiggeschwindigkeitin m/s
-% V_Profil = [11 13 14.5 12 10 7 2 3];        % Geschwindigkeitsprofil für den Steigflug (Russland)
 gamma = 90 * pi/180;                        % Bahnanstellwinkel für den Multicopter    
 
 

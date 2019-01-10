@@ -22,18 +22,18 @@ ylabel('durchschnt. Abweichung aller Zellen in %');
 
 %% Verlauf der Standardabweichung über der C-Rate
 
-Standardabweichung = zeros(C_Rate_max,1);
-
-for i = 2:1:C_Rate_max+1
-    
-    Standardabweichung(i-1) = std(tolerance_crate(1:end,i),'omitnan');
-    
-end
-
-figure
-plot(1:C_Rate_max,Standardabweichung)
-xlabel('C-Rate');
-ylabel('Standardabweichung');
+% Standardabweichung = zeros(C_Rate_max,1);
+% 
+% for i = 2:1:C_Rate_max+1
+%     
+%     Standardabweichung(i-1) = std(tolerance_crate(1:end,i),'omitnan');
+%     
+% end
+% 
+% figure
+% plot(1:C_Rate_max,Standardabweichung)
+% xlabel('C-Rate');
+% ylabel('Standardabweichung');
 
 
 

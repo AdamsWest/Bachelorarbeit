@@ -127,26 +127,7 @@ for h = H_0:Delta_H:H_max
     TAU_map = TAU_map * rho(i)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
     %% Beginn der Leistungsberechnung für Flugsysteme
-    % Steiggeschwindigkeitsprofil vorgeben
-%     if H_unten < 300
-%        V_Kg = V_Profil(1);
-%     elseif H_unten >= 300 && H_unten < 1700
-%        V_Kg = V_Profil(2);
-%     elseif H_unten >= 1700 && H_unten < 3100
-%        V_Kg = V_Profil(3);
-%     elseif H_unten >= 3100 && H_unten < 5000
-%        V_Kg = V_Profil(4);
-%     elseif H_unten >= 5000 && H_unten < 6000
-%        V_Kg = V_Profil(5);
-%     elseif H_unten >= 6000 && H_unten < 7700
-%        V_Kg = V_Profil(6);
-%     elseif H_unten >= 7700 && H_unten < 9800
-%        V_Kg = V_Profil(7);
-%     elseif H_unten >= 9800 && H_unten < 10300
-%        V_Kg = V_Profil(8);
-%     else
-%        V_Kg = 3;
-%     end
+
        
     t_Flug = Delta_H / V_Kg;                                                % Flugzeit
         
@@ -269,6 +250,10 @@ for h = H_0:Delta_H:H_max
         
         q_max = rho(i)/2 * V_A^2;
         V_max_q = sqrt(q_zul * 2 /rho(i));
+        
+        if H_oben >= 12100
+            aaa = 1;
+        end
         
         if  V_A > V_max_q || V_A >= V_max_T || V_min > V_A || T_erf > max(max(T_map)) % || T_max > T_zul
             C_Rest_V(i) = NaN;
