@@ -7,7 +7,7 @@ close all
 % Dateiname = 'Vergleich (Kennfeld)';
 
 load('DATA_APC.mat');
-
+load('Elektromodellflug.mat');
 
 %% Flugsystem %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -53,7 +53,7 @@ E_Dichte = 750000;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;         % Anzahl der Batteriezellen
 U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 3.4;   % minimale Spannung pro Batteriezelle
-P_Bat = 1.05;           % Peukert-Konstante (Schaetzung)    
+P_Bat_Peukert = 1.05;           % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 50;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 m_Bat = 2.5;           % Batteriemasse in kg
 

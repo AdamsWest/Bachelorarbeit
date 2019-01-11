@@ -1,4 +1,4 @@
-function [PWM,eta_PWM] = ESC(U_mot,U_bat_nom)
+function [PWM,eta_PWM] = ESC(U_mot,U_bat)
 
 % ESC   Berechnet die Pulsweitenmodulation und den Wirkungsgrad des
 %       Motorreglers
@@ -28,7 +28,7 @@ function [PWM,eta_PWM] = ESC(U_mot,U_bat_nom)
 %   Copyright 2018 TU-Braunschweig
 % ******************************************************************************
 
-PWM = U_mot / U_bat_nom;            % Pulsweitenmodulation
+PWM = U_mot / U_bat;            % Pulsweitenmodulation
        
 % Bestimmung des ESC-Wirkungsgrades
 

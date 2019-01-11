@@ -17,7 +17,12 @@ figure
 plot(1:C_Rate_max,Durchschnitt)
 xlabel('C-Rate');
 ylabel('durchschnt. Abweichung aller Zellen in %');
-
+flaeche = trapz(abs(Durchschnitt));
+figure
+plot(1:C_Rate_max,abs(Durchschnitt))
+xlabel('C-Rate');
+ylabel('durchschnt. Abweichung aller Zellen in %');
+disp(num2str(flaeche));
 
 
 %% Verlauf der Standardabweichung über der C-Rate
@@ -40,13 +45,13 @@ ylabel('durchschnt. Abweichung aller Zellen in %');
 %% Copy and Paste Beispiel für eine C-Rate und alle Batterieabweichung
 
 % quick and dirty copy and paste Bespiel Abweichung von C-Rate bei 20
-figure
-plot(1:length(DATA),tolerance_crate(1:end,21),'rx')
-hold on 
-bar = zeros(length(DATA),1);
-for i = 1:length(DATA)
-    bar(i) = nanmean(tolerance_crate(1:end,21));
-end
-plot(1:length(DATA),bar) 
-xlabel('Batterienummer (id\_bat)')
-ylabel('Abweichung in %')
+% figure
+% plot(1:length(DATA),tolerance_crate(1:end,21),'rx')
+% hold on 
+% bar = zeros(length(DATA),1);
+% for i = 1:length(DATA)
+%     bar(i) = nanmean(tolerance_crate(1:end,21));
+% end
+% plot(1:length(DATA),bar) 
+% xlabel('Batterienummer (id\_bat)')
+% ylabel('Abweichung in %')

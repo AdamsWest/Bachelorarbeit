@@ -37,6 +37,9 @@ function [I_bat,U_bat,C_rate,Delta_C_bat,C_Rest_V,i_int] = Batterie(PWM,eta_PWM,
 %   Copyright 2018 TU-Braunschweig
 % ******************************************************************************
  
+
+% Cnom muss übergeben werden 
+
 B = 3/Batterie_data(3);
 Q = Batterie_data(1);
 R = Batterie_data(8);
