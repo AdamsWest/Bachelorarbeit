@@ -24,7 +24,7 @@ DATA(14,:) = [];       % id_bat = 14
 DATA(38,:) = [];       % id_bat = 38
 
 [Q,Qnom,Qexp,Vfull,Vexp,Vnom,i] = Normcell(DATA);             % Normzelle generieren
-Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i 0];        % Zwischenbelegung
+Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i 0];            % Zwischenbelegung
 Cnom = C_Bat/1000;                                            % Nominelle Kapazität
 
 
@@ -209,7 +209,12 @@ for h = H_0:Delta_H:H_max
         
         [I_Bat(x),C_Rate(x),Delta_C_Bat,C_Rest_V(x)] = Batterie(PWM(x),eta_PWM,I_mot(x),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat,t_Flug);
         
-        
+        % neue Batteriefunktion
+%       [I_Bat(x),U_bat(x),C_rate(x),Delta_C_bat,C_Rest_V(x),i_int] = Batterie(Batterie_data,Cnom,PWM(x),...
+%           eta_PWM,n_Prop,i_int,U_bat(x),C_bat,Delta_C_bat,I_mot(x),N_bat_cell,P_Bat_Peukert)        
+
+
+
         % Gesamtwirkungsgrad       
         
         % Berechnung der induzierten Geschwindigkeiten nach van der Wall

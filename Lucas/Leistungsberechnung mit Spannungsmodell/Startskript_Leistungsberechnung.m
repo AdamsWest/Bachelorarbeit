@@ -76,19 +76,24 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-epsilon = 1/3;                  % reziproke Gleitzahl
-m_flugzeug = 0.354;                % Flächenflugzeug Leermasse in kg
-t_zul = 150;                    % zulässige Höchstemperatur der Flugzeugzelle in °C
-q_zul = 1000;                   % zulässige Grenzwert für Kräfte und Momente im Horizontalflug auf die Flugzeugstruktur in N/m^2
-S = 1;                          % Flügelfläche in m^2
-c_A_plane_max = 1;           % maximale Auftriebsbeiwert
-c_W_plane = 0.06;               % Widerstandsbeiwert
+m_flugzeug = 0.354;             % Flächenflugzeug Leermasse in kg
+E = 3;                 		% Gleitzahl
+E_stern = 4;			% Auslegungsgleitzahl
+V_stern = 100/3.6;		% Auslegungsgeschwindigkeit in m/s
+rho_stern = 1.225;		% Auslegungshöhe repräsentiert durch die Dichte (Bodennähe) in kg/m^3
+
+% Diskretisierung des Bahnneigungswinkels zur Ermittlung des optimalen Steigwinkels 
+
+gamma_min = 1;			% kleinster Bahnneigungswinkel
+gamma_Delta = 1;		% Schrittweite Batteriemasse
+gamma_max = 90;			% größter Bahnneigungswinkel
+
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Bahngeschwindigkeit
 V_Kg = 10;                                  % Steiggeschwindigkeitin m/s
-gamma = 90 * pi/180;                        % Bahnanstellwinkel für den Multicopter    
+gamma_copter = 90 * pi/180;                 % Bahnanstellwinkel für den Multicopter    
 
 
 %% Umgebungsparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

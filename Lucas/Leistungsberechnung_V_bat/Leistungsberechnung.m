@@ -76,6 +76,7 @@ PWM = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
 eta_prop = zeros(lengthi,1);
 eta_ges = zeros(lengthi,1);
+i_int = zeros(lenghti+1,1);
 
 U_Bat(1) = U_Bat_nom;
 
@@ -170,7 +171,7 @@ for h = H_0:Delta_H:H_max
         % Aerodynamik
         
         [Thrust(x),V_A] = FlaechenflugzeugAerodynamik(m,g,epsilon,V_Kg);
-        
+        % [Thrust(x),V_A,Flugzustand_Flaechenflzg] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma,rho(x))
         
     end
     
@@ -211,8 +212,10 @@ for h = H_0:Delta_H:H_max
         
         [I_Bat(x),C_Rate(x),Delta_C_Bat,C_Rest_V(x)] = Batterie(PWM(x),eta_PWM,I_mot(x),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat,t_Flug);
 
-%         [I_Bat(x),U_bat(x),C_rate(x),Delta_C_bat,C_Rest_V(x),i_int] = Batterie(Batterie_data,Cnom,PWM(x),...
-%           eta_PWM,n_Prop,i_int,U_bat(x),C_bat,Delta_C_bat,I_mot(x),N_bat_cell,P_Bat_Peukert)
+
+%       y = x+1;							     % Definition einer Hilfsvariablen
+% 	[I_Bat(x),U_bat(x),C_rate(x),Delta_C_bat,C_Rest_V(x),i_int(y)] = Batterie(Batterie_data,Cnom,PWM(x),...
+%           eta_PWM,n_Prop,i_int(x),U_bat(x),C_bat,Delta_C_bat,I_mot(x),N_bat_cell,P_Bat_Peukert,t_Flug)
         
         
         % Gesamtwirkungsgrad       
@@ -253,34 +256,9 @@ for h = H_0:Delta_H:H_max
     
     if Abfrage_Flugsystem == 0
         
-        % aerodynamische Grenze
-        % herausnahmen, Annahme Flug mit V* und nicht V_min, i.e. epsilon_opt
-        n_z = cos(atan(epsilon));
-        V_min = sqrt(2*n_z*m*g/(c_A_plane_max*S*rho(x)));
+    	
         
-        % Leistungsgrenze
-        
-        % c_A = C_A0 + alpha * C_Aalpha;
-        % c_W = c_W0 + k * C_A^2
-        W = V_A^2 * rho(x)/2 * S * c_W_plane;
-        T_erf = W;
-        
-        % Temperaturgrenze
-        
-        T_zul = 273.15 + t_zul;
-        % T_max = 2 * T_zul / ((kappa - 1) * (V_A/a)^2 +2);
-        V_max_T = sqrt((T_zul-T)*2/(T*(kappa-1))) * a;
-        
-        % Begrenzung durch Festigkeit
-        
-        q_max = rho(x)/2 * V_A^2;
-        V_max_q = sqrt(q_zul * 2 /rho(x));
-        
-        if H_oben >= 12100
-            aaa = 1;
-        end
-        
-        if  V_A > V_max_q || V_A >= V_max_T || V_min > V_A || T_erf > max(max(T_map)) % || T_max > T_zul
+        if  
             C_Rest_V(x) = NaN;
             Omega(x) = NaN;
             U_mot(x) = NaN;

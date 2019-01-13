@@ -1,4 +1,4 @@
-function [I_bat,U_bat,C_rate,Delta_C_bat,C_Rest_V,i_int] = Batterie_neu(Batterie_data,Cnom,PWM,eta_PWM,n_Prop,i_int,U_bat,C_bat,Delta_C_bat,I_mot,N_bat_cell,P_bat)
+function [I_bat,U_bat,C_rate,Delta_C_bat,C_Rest_V,i_int] = Batterie_neu(Batterie_data,Cnom,PWM,eta_PWM,n_Prop,i_int,U_bat,C_bat,Delta_C_bat,I_mot,N_bat_cell,P_bat,t_Flug)
 
 
 % BATTERIE   Berechnet die Restladung der Batterie in Abhängigkeit des Motorstroms
