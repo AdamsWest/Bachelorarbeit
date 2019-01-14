@@ -61,44 +61,36 @@ lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 
 % Umgebung
-% Multicopter
-% Flächenflugzeug
-% Propeller
-% Motor
-% PWM
-% Batterie
-
-
 H = zeros(lengthi,1);
-U_mot = zeros(lengthi,1);
-I_mot = zeros(lengthi,1);
+rho = zeros(lengthi,1);
+% Multicopter
+alpha = zeros(lengthi,1);
+Theta = zeros(lengthi,1);
+% Flächenflugzeug
+gamma_Flaechenflzg = zeros(lengthi,1);
+Flugzustand_Flaechenflzg = zeros(lengthi,1);
+% Propeller
 Thrust = zeros(lengthi,1);
 Omega = zeros(lengthi,1);
 tau = zeros(lengthi,1);
+M_tip = zeros(lengthi,1);
+% Motor
+U_mot = zeros(lengthi,1);
+I_mot = zeros(lengthi,1);
+% ESC
+PWM = zeros(lengthi,1);
+% Batterie
 C_Rate = zeros(lengthi,1);
-alpha = zeros(lengthi,1);
 C_Rest_V = zeros(lengthi,1);
-Theta = zeros(lengthi,1);
-rho = zeros(lengthi,1);
 I_Bat = zeros(lengthi,1);
 U_Bat = zeros(lengthi+1,1);
+U_Bat(1) = U_Bat_nom;
 P_Bat = zeros(lengthi,1);
-PWM = zeros(lengthi,1);
-M_tip = zeros(lengthi,1);
+Delta_C_Bat = zeros(lengthi+1,1);
+i_int = zeros(lengthi+1,1);
+% Gesamtsystem
 eta_prop = zeros(lengthi,1);
 eta_ges = zeros(lengthi,1);
-gamma_Flaechenflzg = zeros(lengthi,1);
-Flugzustand_Flaechenflzg = zeros(lengthi,1);
-
-Delta_C_Bat = zeros(lengthi+1,1);
-
-
-U_Bat(1) = U_Bat_nom;
-i_int = zeros(lengthi+1,1);
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,30 +109,24 @@ for h_variabel = H_0:Delta_H:H_max
     
     % Berechnung der Dichte an den Intevallgrenzen nach Normatmosphärenbedingungen
     
-    if H_oben <= 11000
-        
+    if H_oben <= 11000        
         rho_unten = rho_0 *(1-0.0065*(H_unten/T_0))^4.256;
         rho_oben = rho_0 *(1-0.0065*(H_oben/T_0))^4.256;
         
         p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
-        p_oben = p_0 *(1-0.0065*(H_oben/T_0))^5.256;
-        
-    elseif H_unten <= 11000 && H_oben >11000
-        
+        p_oben = p_0 *(1-0.0065*(H_oben/T_0))^5.256;      
+    elseif H_unten <= 11000 && H_oben >11000      
         rho_unten = rho_0 *(1 - 0.0065*(H_unten/T_0))^4.256;
         rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
         
         p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
-        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
-        
-    else
-        
+        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));       
+    else       
         rho_unten = rho_11 * exp(-g/(287*T_11)*(H_unten-11000));
         rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
         
         p_unten = p_11 * exp(-g/(287.1*T_11)*(H_unten-11000));
-        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
-        
+        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));       
     end
     
     if H_mitte <= 11000                                             % mittlere Temperatur im Intervall
@@ -168,32 +154,38 @@ for h_variabel = H_0:Delta_H:H_max
     P_map = P_map * rho(x)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
     TAU_map = TAU_map * rho(x)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
+
     %% Beginn der Leistungsberechnung für Flugsysteme
     
     % Initialisierung des Auswahlvektors für den Steigflug
-    
-    
-    Thrust_inter = zeros(lengthgamma, 1);
+      
+    % Multicopter
     Theta_inter = zeros(lengthgamma, 1);
     alpha_inter = zeros(lengthgamma, 1);
-    Omega_inter = zeros(lengthgamma, 1);
-    I_mot_inter = zeros(lengthgamma, 1);
-    U_mot_inter = zeros(lengthgamma, 1);
-    C_Rate_inter = zeros(lengthgamma, 1);
-    C_Rest_V_inter = zeros(lengthgamma, 1);
-    I_Bat_inter = zeros(lengthgamma, 1);
-    U_Bat_inter = zeros(lengthgamma, 1);
-    tau_inter = zeros(lengthgamma, 1);
-    M_tip_inter = zeros(lengthgamma, 1);
-    PWM_inter = zeros(lengthgamma, 1);
-    eta_ges_inter = zeros(lengthgamma, 1);
+    % Flaechenflugzeug
     Flugzustand_Flaechenflzg_inter = zeros(lengthgamma,1);
     gamma_Flaechenflzg_inter = zeros(lengthgamma,1);
+    Bestimmung_gamma = zeros(lengthgamma, 1);
+    % Propeller
+    Omega_inter = zeros(lengthgamma, 1);
+    tau_inter = zeros(lengthgamma, 1);
+    M_tip_inter = zeros(lengthgamma, 1);
+    % Motor
+    I_mot_inter = zeros(lengthgamma, 1);
+    U_mot_inter = zeros(lengthgamma, 1);
+    % ESC
+    PWM_inter = zeros(lengthgamma, 1);
+    % Batterie
+    I_Bat_inter = zeros(lengthgamma, 1);
+    U_Bat_inter = zeros(lengthgamma, 1);
+    C_Rate_inter = zeros(lengthgamma, 1);
+    C_Rest_V_inter = zeros(lengthgamma, 1);
     Delta_C_Bat_inter = zeros(lengthgamma,1);
     i_int_inter = zeros(lengthgamma,1);
-    
-    Bestimmung_gamma = zeros(lengthgamma, 1);
-    
+    % Gesamtsystem	
+    Thrust_inter = zeros(lengthgamma, 1);
+    eta_ges_inter = zeros(lengthgamma, 1);
+
     
     z = 1;
     
@@ -335,30 +327,30 @@ for h_variabel = H_0:Delta_H:H_max
         
     end
     
-    
-    % Hier Auswahl des Steigwinkels für Flächenflugzeug
-    if x >= 323
-        aaa =1;
-    end
-    
     if Abfrage_Flugsystem == 1
         
-        Thrust(x) = Thrust_inter(1);
+	% Multicopter
         Theta(x) = Theta_inter(1);
         alpha(x) = alpha_inter(1);
+	% Propeller
+        Thrust(x) = Thrust_inter(1);
         Omega(x) = Omega_inter(1);
-        I_mot(x) = I_mot_inter(1);
-        U_mot(x) = U_mot_inter(1);
-        C_Rate(x) = C_Rate_inter(1);
-        C_Rest_V(x) = C_Rest_V_inter(1);
-        I_Bat(x) = I_Bat_inter(1);
-        U_Bat(x+1) = U_Bat_inter(1);
         tau(x) = tau_inter(1);
         M_tip(x) = M_tip_inter(1);
+	% Motor
+        I_mot(x) = I_mot_inter(1);
+        U_mot(x) = U_mot_inter(1);
+	% ESC
         PWM(x) = PWM_inter(1);
-        eta_ges(x) = eta_ges_inter(1);
+	% Batterie
+        I_Bat(x) = I_Bat_inter(1);
+        U_Bat(x+1) = U_Bat_inter(1);
+        C_Rate(x) = C_Rate_inter(1);
+        C_Rest_V(x) = C_Rest_V_inter(1);
         Delta_C_Bat(x+1) = Delta_C_Bat_inter(1);
        	i_int(x+1) = i_int_inter(1);
+	% Gesamtsystem
+        eta_ges(x) = eta_ges_inter(1);
         
     else       
         if mean(isnan(Delta_C_Bat_inter)) ~= 1                                 % <-- hier noch anderes Krit zur Auswahl aussuchen
@@ -372,40 +364,53 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
             % Festlegen für entsprechenden Höhenschritt
-            Thrust(x) = Thrust_inter(ind_opt);
+
+	    % Flächenflugzeug
             Theta(x) = Theta_inter(ind_opt);
             alpha(x) = alpha_inter(ind_opt);
+            gamma_Flaechenflzg(x) = gamma_Flaechenflzg_inter(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
+            Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);   
+	    % Propeller 
+            Thrust(x) = Thrust_inter(ind_opt);
             Omega(x) = Omega_inter(ind_opt);
-            I_mot(x) = I_mot_inter(ind_opt);
-            U_mot(x) = U_mot_inter(ind_opt);
-            C_Rate(x) = C_Rate_inter(ind_opt);
-            C_Rest_V(x) = C_Rest_V_inter(ind_opt);
-            I_Bat(x) = I_Bat_inter(ind_opt);
-            U_Bat(x+1) = U_Bat_inter(ind_opt);
             tau(x) = tau_inter(ind_opt);
             M_tip(x) = M_tip_inter(ind_opt);
+	    % Motor
+            I_mot(x) = I_mot_inter(ind_opt);
+            U_mot(x) = U_mot_inter(ind_opt);
+	    % ESC
             PWM(x) = PWM_inter(ind_opt);
-            eta_ges(x) = eta_ges_inter(ind_opt);
-            Delta_C_Bat(x+1) = Delta_C_Bat_inter(ind_opt);   % Änderung
+	    % Batterie
+            I_Bat(x) = I_Bat_inter(ind_opt);
+            U_Bat(x+1) = U_Bat_inter(ind_opt);
+            C_Rate(x) = C_Rate_inter(ind_opt);
+            C_Rest_V(x) = C_Rest_V_inter(ind_opt);
+            Delta_C_Bat(x+1) = Delta_C_Bat_inter(ind_opt);   
             i_int(x+1) = i_int_inter(ind_opt);
-            Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);            
+	    % Gesamtsystem
+            eta_ges(x) = eta_ges_inter(ind_opt);         
             
-            gamma_Flaechenflzg(x) = gamma_Flaechenflzg_inter(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
-            
-        else           
-            Thrust(x) = NaN;
+        else  
+
+	    % Flächenflugzeug
             Theta(x) = NaN;
             alpha(x) = NaN;
+	    % Propeller
+            Thrust(x) = NaN;
             Omega(x) = NaN;
+            tau(x) = NaN;
+            M_tip(x) = NaN; 
+	    % Motor
             I_mot(x) = NaN;
             U_mot(x) = NaN;
+	    % ESC
+            PWM(x) = NaN;
+	    % Batterie
+            I_Bat(x) = NaN;
             C_Rate(x) = NaN;
             C_Rest_V(x) = NaN;
-            I_Bat(x) = NaN;
-            tau(x) = NaN;
-            M_tip(x) = NaN;
-            PWM(x) = NaN;
-            eta_ges(x) = NaN;            
+	    % Gesamtsystem         
+            eta_ges(x) = NaN;         
             
         end
         
