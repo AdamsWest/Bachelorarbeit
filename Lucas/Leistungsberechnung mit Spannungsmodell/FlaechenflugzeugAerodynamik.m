@@ -55,12 +55,12 @@ W_stern = A_stern / E_stern;			% Über die Auslegungsgleitzahl berechnet sich der
 
 W_0_stern = 0.5 * W_stern;			% Der Nullwiderstand ergibt sich für einen optimalen Flug als die Hälfte des Gesamtwiderstands
 
-V = V_stern * sqrt(cos(gamma) * rho/rho_stern);		% mit Hilfe der Auslegungsgeschwindigkeit errechnet sich die Fluggeschwindigkeit aus der Gleichung für den Auftriebsbeiwert
+V = V_stern * sqrt(cosd(gamma) * rho/rho_stern);		% mit Hilfe der Auslegungsgeschwindigkeit errechnet sich die Fluggeschwindigkeit aus der Gleichung für den Auftriebsbeiwert
  % unter der Voraussetzung eines konstanten Auftriebsbeiwertes
 
 W_0 = W_0_stern * (V^2*rho/2)/(V_stern^2*rho_stern/2);	% Skalierung des Nullwiderstandsbeiwertes aus der 
 
-A = cos(gamma)* m*g;				% Aus der Auftriebsgleichung ergibt sich der Auftrieb
+A = cosd(gamma)* m*g;				% Aus der Auftriebsgleichung ergibt sich der Auftrieb
 
 W = A / E;					% Über die Gleitzahl berechnet sich der Widerstand
 
@@ -84,7 +84,7 @@ elseif W < W_0
 end 
 
 
-Thrust = m*g * ( sin(gamma) + 1/E *cos(gamma));	% Schubberechnung
+Thrust = m*g * ( sind(gamma) + 1/E *cosd(gamma));	% Schubberechnung
 
 V_A = V;				% Flugeschwindigkeit bestimmen
 

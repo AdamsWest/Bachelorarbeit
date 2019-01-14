@@ -14,7 +14,7 @@ load('DATA_APC.mat');
 % Handelt es sich bei dem zu untersuchenden Flugobjekt um einen Multicopter
 % (1) oder um ein Flächenflugzeug (0)?
 
-Abfrage_Flugsystem = 0;
+Abfrage_Flugsystem = 1;
 
 
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,7 +59,7 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat = 0.56;           % Batteriemasse in kg
 
 % Missionsparameter
-m_nutz = 0.25;          % Nutzlast in kg           
+m_nutz = 0.0;          % Nutzlast in kg           
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,7 +98,7 @@ H_0 = 0;                                    % Höhe des Abflugplatzes über Normal
 Delta_H = 50;                               % Inkrementweite in m 
 H_max = 20000;                              % Maximalhöhe in m
 
-T_0 = 263.15;                               % Temperatur in K am Flugplatz
+T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent

@@ -28,6 +28,7 @@ figure_U_mot = figure;
 figure_I_Bat = figure;
 figure_PWM = figure;
 figure_eta = figure;
+figure_gamma = figure;
 
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +61,7 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat = 0.56;           % Batteriemasse in kg
 
 % Missionsparameter
-m_nutz = 0.25;          % Nutzlast in kg           
+m_nutz = 0.0;          % Nutzlast in kg           
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,8 +85,8 @@ rho_stern = 1.225;		% Auslegungshöhe repräsentiert durch die Dichte (Bodennähe) 
 
 % Diskretisierung des Bahnneigungswinkels zur Ermittlung des optimalen Steigwinkels 
 
-gamma_min = 1;			% kleinster Bahnneigungswinkel
-gamma_Delta = 1;		% Schrittweite Batteriemasse
+gamma_min = 5;			% kleinster Bahnneigungswinkel
+gamma_Delta = 5;		% Schrittweite Batteriemasse
 gamma_max = 90;			% größter Bahnneigungswinkel
 
 
@@ -104,7 +105,7 @@ H_0 = 0;                                    % Höhe des Abflugplatzes über Normal
 Delta_H = 50;                               % Inkrementweite in m 
 H_max = 20000;                              % Maximalhöhe in m
 
-T_0 = 263.15;                               % Temperatur in K am Flugplatz
+T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
