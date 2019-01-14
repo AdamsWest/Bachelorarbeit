@@ -61,7 +61,7 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat = 0.56;           % Batteriemasse in kg
 
 % Missionsparameter
-m_nutz = 0.0;          % Nutzlast in kg           
+m_nutz = 0.25;          % Nutzlast in kg           
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,7 +95,7 @@ gamma_max = 90;			% größter Bahnneigungswinkel
 % Bahngeschwindigkeit
 V_Kg = 10;                                  % Steiggeschwindigkeitin m/s
 gamma_copter = 90 * pi/180;                 % Bahnanstellwinkel für den Multicopter    
-
+ 
 
 %% Umgebungsparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

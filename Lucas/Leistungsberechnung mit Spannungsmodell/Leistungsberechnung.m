@@ -60,6 +60,15 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 
+% Umgebung
+% Multicopter
+% Flächenflugzeug
+% Propeller
+% Motor
+% PWM
+% Batterie
+
+
 H = zeros(lengthi,1);
 U_mot = zeros(lengthi,1);
 I_mot = zeros(lengthi,1);
@@ -72,7 +81,7 @@ C_Rest_V = zeros(lengthi,1);
 Theta = zeros(lengthi,1);
 rho = zeros(lengthi,1);
 I_Bat = zeros(lengthi,1);
-% U_Bat = zeros(lengthi,1);
+U_Bat = zeros(lengthi+1,1);
 P_Bat = zeros(lengthi,1);
 PWM = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
@@ -80,12 +89,13 @@ eta_prop = zeros(lengthi,1);
 eta_ges = zeros(lengthi,1);
 gamma_Flaechenflzg = zeros(lengthi,1);
 Flugzustand_Flaechenflzg = zeros(lengthi,1);
-Delta_C_Bat = zeros(lengthi,1);
+
+Delta_C_Bat = zeros(lengthi+1,1);
 
 
-% U_Bat(1) = U_Bat_nom;
+U_Bat(1) = U_Bat_nom;
 i_int = zeros(lengthi+1,1);
-i_int_inter = zeros(lengthgamma,1);
+
 
 
 
@@ -172,7 +182,7 @@ for h_variabel = H_0:Delta_H:H_max
     C_Rate_inter = zeros(lengthgamma, 1);
     C_Rest_V_inter = zeros(lengthgamma, 1);
     I_Bat_inter = zeros(lengthgamma, 1);
-    U_bat_inter = zeros(lengthgamma, 1);
+    U_Bat_inter = zeros(lengthgamma, 1);
     tau_inter = zeros(lengthgamma, 1);
     M_tip_inter = zeros(lengthgamma, 1);
     PWM_inter = zeros(lengthgamma, 1);
@@ -180,6 +190,7 @@ for h_variabel = H_0:Delta_H:H_max
     Flugzustand_Flaechenflzg_inter = zeros(lengthgamma,1);
     gamma_Flaechenflzg_inter = zeros(lengthgamma,1);
     Delta_C_Bat_inter = zeros(lengthgamma,1);
+    i_int_inter = zeros(lengthgamma,1);
     
     Bestimmung_gamma = zeros(lengthgamma, 1);
     
@@ -255,19 +266,19 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Zustand der Motorregler berechnen
             
-            [PWM_inter(z),eta_PWM] = ESC(U_mot_inter(z),U_Bat_nom);			% <-- hier U_bat_inter
+            [PWM_inter(z),eta_PWM] = ESC(U_mot_inter(z),U_Bat(x));			% <-- hier U_bat_inter
             
             
             % Batteriezustand berechnen
             
             Delta_C_Bat_inter(z) = Delta_C_Bat(x);                           % Anpassung der Batteriekapazität
-            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat_inter(z),t_Flug);
+
+%            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat_inter(z),t_Flug);
             
-            %		i_int_inter(z) = i_int(x);
+            i_int_inter(z) = i_int(x);
             
-            % 		[I_Bat(x),U_bat(x),C_rate(x),Delta_C_bat,C_Rest_V(x),i_int_inter(z)] = Batterie(Batterie_data,Cnom,PWM(x),...
-            %           		eta_PWM,n_Prop,i_int_inter(z),U_bat(x),C_bat,Delta_C_bat,I_mot(x),N_bat_cell,P_Bat_Peukert,t_Flug)
-            
+            [I_Bat_inter(z),U_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z),i_int_inter(z)] = Batterie_neu(Batterie_data,...
+            Cnom,PWM_inter(z),eta_PWM,n_Prop,i_int_inter(z),U_Bat_inter(z),C_Bat,Delta_C_Bat_inter(z),I_mot_inter(z),N_Bat_cell,P_Bat_Peukert,t_Flug);            
             
             % Gesamtwirkungsgrad
             
@@ -297,7 +308,7 @@ for h_variabel = H_0:Delta_H:H_max
             
         end
         
-        % Wenn Grenzen ueberschritten werden, Resultate entfernen
+        % Wenn Grenzen ueberschritten werden, Resultate entfernen        
         
         if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat_nom || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1
             C_Rest_V_inter(z) = NaN;
@@ -307,18 +318,16 @@ for h_variabel = H_0:Delta_H:H_max
             I_Bat_inter(z) = NaN;
             PWM_inter(z) = NaN;
             eta_ges_inter(z) = NaN;
+            gamma_Flaechenflzg_inter(z) = NaN;
+            
         end
         
         
         
-        if Abfrage_Flugsystem == 1
-            
-            break;								% Abbruch für den Fall eines Multicopters um for-Schleife zu verlassen
-            
-        else
-            
-            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_nom;		% Berechnung der aufgebrachten Energiemenge
-            
+        if Abfrage_Flugsystem == 1           
+            break;								% Abbruch für den Fall eines Multicopters um for-Schleife zu verlassen, da gamma vorgegeben            
+        else          
+            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_nom;		% Berechnung der aufgebrachten Energiemenge          
         end
         
         
@@ -328,7 +337,9 @@ for h_variabel = H_0:Delta_H:H_max
     
     
     % Hier Auswahl des Steigwinkels für Flächenflugzeug
-    
+    if x >= 323
+        aaa =1;
+    end
     
     if Abfrage_Flugsystem == 1
         
@@ -341,25 +352,23 @@ for h_variabel = H_0:Delta_H:H_max
         C_Rate(x) = C_Rate_inter(1);
         C_Rest_V(x) = C_Rest_V_inter(1);
         I_Bat(x) = I_Bat_inter(1);
+        U_Bat(x+1) = U_Bat_inter(1);
         tau(x) = tau_inter(1);
         M_tip(x) = M_tip_inter(1);
         PWM(x) = PWM_inter(1);
         eta_ges(x) = eta_ges_inter(1);
-        Delta_C_Bat(x) = Delta_C_Bat(x) + Delta_C_Bat_inter(1);
-        % 	i_int(x) = i_int_inter(1);
+        Delta_C_Bat(x+1) = Delta_C_Bat_inter(1);
+       	i_int(x+1) = i_int_inter(1);
         
-    else
-        
+    else       
         if mean(isnan(Delta_C_Bat_inter)) ~= 1                                 % <-- hier noch anderes Krit zur Auswahl aussuchen
             
             % Kriterium für optimalen Steigwinkel
-            ind_opt = find(Bestimmung_gamma == min(Bestimmung_gamma));
-            
+            ind_opt = find(Bestimmung_gamma == min(Bestimmung_gamma(Bestimmung_gamma>0)));            
             
             if length(ind_opt) > 1
                 ind_opt = ind_opt(1);
-            end
-            
+            end            
             
             % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
             % Festlegen für entsprechenden Höhenschritt
@@ -372,19 +381,18 @@ for h_variabel = H_0:Delta_H:H_max
             C_Rate(x) = C_Rate_inter(ind_opt);
             C_Rest_V(x) = C_Rest_V_inter(ind_opt);
             I_Bat(x) = I_Bat_inter(ind_opt);
+            U_Bat(x+1) = U_Bat_inter(ind_opt);
             tau(x) = tau_inter(ind_opt);
             M_tip(x) = M_tip_inter(ind_opt);
             PWM(x) = PWM_inter(ind_opt);
             eta_ges(x) = eta_ges_inter(ind_opt);
-            Delta_C_Bat(x) = Delta_C_Bat(x) + Delta_C_Bat_inter(ind_opt);   % Änderung
-            i_int(x) = i_int_inter(ind_opt);
-            Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);
-            
+            Delta_C_Bat(x+1) = Delta_C_Bat_inter(ind_opt);   % Änderung
+            i_int(x+1) = i_int_inter(ind_opt);
+            Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);            
             
             gamma_Flaechenflzg(x) = gamma_Flaechenflzg_inter(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
             
-        else
-            
+        else           
             Thrust(x) = NaN;
             Theta(x) = NaN;
             alpha(x) = NaN;
@@ -397,9 +405,7 @@ for h_variabel = H_0:Delta_H:H_max
             tau(x) = NaN;
             M_tip(x) = NaN;
             PWM(x) = NaN;
-            eta_ges(x) = NaN;
-            
-            
+            eta_ges(x) = NaN;            
             
         end
         
@@ -478,31 +484,38 @@ ylabel('eta_{ges} [%]')
 
 % Steigwinkel Flaechenflugzeug
 figure(figure_gamma)
-for i = 1:length(gamma_Flaechenflzg)
-    
-    if Flugzustand_Flaechenflzg == 0
-        
-        plot(gamma_Flaechenflzg(i),H(i),'b.');
-        grid on
-        hold on
-        
-    elseif Flugzustand_Flaechenflzg == 1
-        
-        plot(gamma_Flaechenflzg(i),H(i),'y.');
-        grid on
-        hold on
-        
-    else
-        
-        plot(gamma_Flaechenflzg(i),H(i),'r.');
-        grid on
-        hold on
-        
-    end
-    
-end
-xlabel('Bahnneigungswinkel [°]')
-ylabel('Höhe [m]')
+plot(H,gamma_Flaechenflzg,'LineWidth',2)
+grid on
+hold on
+xlabel('Höhe [m]')
+ylabel('Bahnneigungswinkel [°]')
+
+% figure(figure_gamma)
+% for i = 1:length(gamma_Flaechenflzg)
+%     
+%     if Flugzustand_Flaechenflzg == 0
+%         
+%         plot(gamma_Flaechenflzg(i),H(i),'b.');
+%         grid on
+%         hold on
+%         
+%     elseif Flugzustand_Flaechenflzg == 1
+%         
+%         plot(gamma_Flaechenflzg(i),H(i),'y.');
+%         grid on
+%         hold on
+%         
+%     else
+%         
+%         plot(gamma_Flaechenflzg(i),H(i),'r.');
+%         grid on
+%         hold on
+%         
+%     end
+%     
+% end
+% xlabel('Bahnneigungswinkel [°]')
+% ylabel('Höhe [m]')
 
 
 

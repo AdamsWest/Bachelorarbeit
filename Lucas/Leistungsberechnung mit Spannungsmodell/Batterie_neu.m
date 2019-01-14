@@ -54,13 +54,15 @@ Vfull = Batterie_data(4);
 Vexp = Batterie_data(5);
 Vnom = Batterie_data(6);
 i = Batterie_data(7);
+B = 3/Qexp;
 
-% Berechnung weiterer Parameter
+
+% Berechnung weiterer Parameter für die Normzelle
 
 I_bat = PWM * I_mot / eta_PWM * n_Prop;                     % Batteriestrom
 I_bat = I_bat/Cnom;                                         % Normierung
 C_rate = I_bat / (C_bat/3600);                              % C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-R = 0.1077 / (Q*(0.1555*Q+0.9825*C_rate)^0.5485);               % Modell für den Innenwiderstand
+R = 0.1077 / (Q*(0.1555*Q+0.9825*C_rate)^0.5485);           % Modell für den Innenwiderstand, Parameter nach geringster Fläche ausgewählt
 
 Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R];        % Zwischenbelegung
 [Eo,A,K] = Batterie_parameter(Batterie_data);
@@ -83,6 +85,10 @@ for n = 1:floor(t_Flug)                                            % Iteration f
     
 end
 
+% Berechnung der Restkapazität
+
+I_bat = PWM * I_mot / eta_PWM * n_Prop;                     % Batteriestrom (Neu- bzw. Wiederbelegung)
+C_rate = I_bat / (C_bat/3600);                              % C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde (Neu- bzw. Wiederbelegung)
 C_bat_Peukert = C_bat * (1/C_rate)^(P_bat-1);               % nutzbare Kapazitaet nach Peukert
 Delta_C_bat = I_bat * t_Flug + Delta_C_bat;                 % entnommene Ladung
 C_Rest_V = (C_bat_Peukert - Delta_C_bat) / C_bat_Peukert;   % Ladezustand als Verhältnis
