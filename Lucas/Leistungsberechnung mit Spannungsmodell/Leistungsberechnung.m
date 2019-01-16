@@ -9,8 +9,8 @@
 
 U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
 U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
-% C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
-C_Bat = N_Bat_cell_p*C_Bat_cell*3600;
+C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
+% C_Bat = N_Bat_cell_p*C_Bat_cell*3600;       % Kapazität in As
 % Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität, die nach jedem delta_h gebraucht wird
 
 % Normzelle erzeugen
@@ -84,7 +84,7 @@ C_Rate = zeros(lengthi,1);
 C_Rest_V = zeros(lengthi,1);
 I_Bat = zeros(lengthi,1);
 U_Bat = zeros(lengthi+1,1);
-U_Bat(1) = U_Bat_nom;
+U_Bat(1) = U_Bat_nom;                               % Startspannung ist die Nominalspannung
 P_Bat = zeros(lengthi,1);
 Delta_C_Bat = zeros(lengthi+1,1);
 i_int = zeros(lengthi+1,1);
@@ -109,24 +109,24 @@ for h_variabel = H_0:Delta_H:H_max
     
     % Berechnung der Dichte an den Intevallgrenzen nach Normatmosphärenbedingungen
     
-    if H_oben <= 11000        
+    if H_oben <= 11000
         rho_unten = rho_0 *(1-0.0065*(H_unten/T_0))^4.256;
         rho_oben = rho_0 *(1-0.0065*(H_oben/T_0))^4.256;
         
         p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
-        p_oben = p_0 *(1-0.0065*(H_oben/T_0))^5.256;      
-    elseif H_unten <= 11000 && H_oben >11000      
+        p_oben = p_0 *(1-0.0065*(H_oben/T_0))^5.256;
+    elseif H_unten <= 11000 && H_oben >11000
         rho_unten = rho_0 *(1 - 0.0065*(H_unten/T_0))^4.256;
         rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
         
         p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
-        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));       
-    else       
+        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
+    else
         rho_unten = rho_11 * exp(-g/(287*T_11)*(H_unten-11000));
         rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
         
         p_unten = p_11 * exp(-g/(287.1*T_11)*(H_unten-11000));
-        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));       
+        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
     end
     
     if H_mitte <= 11000                                             % mittlere Temperatur im Intervall
@@ -154,11 +154,11 @@ for h_variabel = H_0:Delta_H:H_max
     P_map = P_map * rho(x)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
     TAU_map = TAU_map * rho(x)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
-
+    
     %% Beginn der Leistungsberechnung für Flugsysteme
     
     % Initialisierung des Auswahlvektors für den Steigflug
-      
+    
     % Multicopter
     Theta_inter = zeros(lengthgamma, 1);
     alpha_inter = zeros(lengthgamma, 1);
@@ -182,10 +182,10 @@ for h_variabel = H_0:Delta_H:H_max
     C_Rest_V_inter = zeros(lengthgamma, 1);
     Delta_C_Bat_inter = zeros(lengthgamma,1);
     i_int_inter = zeros(lengthgamma,1);
-    % Gesamtsystem	
+    % Gesamtsystem
     Thrust_inter = zeros(lengthgamma, 1);
     eta_ges_inter = zeros(lengthgamma, 1);
-
+    
     
     z = 1;
     
@@ -198,12 +198,9 @@ for h_variabel = H_0:Delta_H:H_max
             % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
             m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
-            
             t_Flug = Delta_H / V_Kg;                                            % Flugzeit
             
-            
-            % Aerodynamik berechnen
-            
+            % Aerodynamik
             [Thrust_inter(z),Theta_inter(z),V_A,alpha_inter(z)] = MulticopterAerodynamik(u_Wg,V_Kg,gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
             
             
@@ -215,21 +212,28 @@ for h_variabel = H_0:Delta_H:H_max
             m = m_flugzeug + m_Bat + m_Mot * n_Prop + m_nutz;                   % Gesamtmasse des Flächenflugzeugs
             
             % Aerodynamik
-            
             [Thrust_inter(z),V_A,Flugzustand_Flaechenflzg_inter(z)] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma_variabel,rho(x));
+
+            if x == 7
+                aaa = 1;
+            end
             
-            V_H = V_A * sind(gamma_variabel);
+            if V_A <= 5                                                    % Wenn Geschwindigkeit zu klein (Aerodynamische Grenze)
+                t_Flug = NaN;                                              % setze Steigzeit gleich NaN
+            else
+                V_H = V_A * sind(gamma_variabel);                          % Ansonsten berechne Steigzeit
+                t_Flug = Delta_H / V_H;
+            end
             
-            t_Flug = Delta_H / V_H;
-            
+            alpha_inter(z) = - 90 * pi/180;
         end
         
         
-        Thrust_inter(z) = Thrust_inter(z) / n_Prop;                                         % Schub auf n Propeller verteilen
+        Thrust_inter(z) = Thrust_inter(z) / n_Prop;                        % Schub auf n Propeller verteilen
         
         
-        
-        if Thrust_inter(z) > max(max(T_map))                                          % wenn Schub zu gross (Ergebnis verwerfen)
+
+        if Thrust_inter(z) > max(max(T_map))                               % wenn Schub zu gross (Ergebnis verwerfen)
             
             Omega_inter(z) = NaN;
             I_mot_inter(z) = NaN;
@@ -238,41 +242,32 @@ for h_variabel = H_0:Delta_H:H_max
             
             
         else
-            
-            
-            
+
             % Drehzahl und Drehmoment bestimmen
-            
             [Omega_inter(z),tau_inter(z)] = Propeller(V_A, alpha_inter(z), Thrust_inter(z), RPM_map, V_map, T_map, TAU_map);
             
             
             % Wie groß ist die Blattspitzengeschwindigkeit?
-            
-            M_tip_inter(z) = (Omega_inter(z) * R)/a;                                        % Blattspitzengeschwindigkeit in Ma
+            M_tip_inter(z) = (Omega_inter(z) * R)/a;                       % Blattspitzengeschwindigkeit in Ma
             
             
             % Motorzustand berechnen
-            
             [U_mot_inter(z),I_mot_inter(z)] = Motor(tau_inter(z),K_V,I_0,R_i,Omega_inter(z));
             
             
             % Zustand der Motorregler berechnen
-            
-            [PWM_inter(z),eta_PWM] = ESC(U_mot_inter(z),U_Bat(x));			% <-- hier U_bat_inter
+            [PWM_inter(z),eta_PWM] = ESC(U_mot_inter(z),U_Bat(x));         % <-- hier U_bat_inter
             
             
             % Batteriezustand berechnen
-            
-            Delta_C_Bat_inter(z) = Delta_C_Bat(x);                           % Anpassung der Batteriekapazität
-
-%            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat_inter(z),t_Flug);
-            
-            i_int_inter(z) = i_int(x);
+            Delta_C_Bat_inter(z) = Delta_C_Bat(x);                         % Anpassung der Batteriekapazität
+            i_int_inter(z) = i_int(x);                                     % Übergabe des Integrals der Spannung vom letzten Schritt
+            %            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat_inter(z),t_Flug);
             
             [I_Bat_inter(z),U_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z),i_int_inter(z)] = Batterie_neu(Batterie_data,...
-            Cnom,PWM_inter(z),eta_PWM,n_Prop,i_int_inter(z),U_Bat_inter(z),C_Bat,Delta_C_Bat_inter(z),I_mot_inter(z),N_Bat_cell,P_Bat_Peukert,t_Flug);            
+                Cnom,PWM_inter(z),eta_PWM,n_Prop,i_int_inter(z),U_Bat_inter(z),C_Bat,Delta_C_Bat_inter(z),I_mot_inter(z),N_Bat_cell,P_Bat_Peukert,t_Flug);
             
-            % Gesamtwirkungsgrad
+            %% Gesamtwirkungsgrad
             
             % Berechnung der induzierten Geschwindigkeiten nach van der Wall
             % (Grundlagen der Hubschrauber-Aerodynamik) (2015) S. 153
@@ -300,9 +295,11 @@ for h_variabel = H_0:Delta_H:H_max
             
         end
         
-        % Wenn Grenzen ueberschritten werden, Resultate entfernen        
+        % Wenn Grenzen ueberschritten werden, Resultate entfernen
+        alpha_inter(z) = alpha_inter(z)*180/pi;
         
-        if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat_nom || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1
+        if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat_nom || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || ...
+                alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1 || PWM_inter(z) > 1.0
             C_Rest_V_inter(z) = NaN;
             Omega_inter(z) = NaN;
             U_mot_inter(z) = NaN;
@@ -314,103 +311,120 @@ for h_variabel = H_0:Delta_H:H_max
             
         end
         
+        % Muss der Steigwinkel variiert werden?
         
-        
-        if Abfrage_Flugsystem == 1           
-            break;								% Abbruch für den Fall eines Multicopters um for-Schleife zu verlassen, da gamma vorgegeben            
-        else          
-            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_nom;		% Berechnung der aufgebrachten Energiemenge          
+        if Abfrage_Flugsystem == 1
+            break;								% Abbruch für den Fall eines Multicopters um for-Schleife zu verlassen, da gamma vorgegeben
+        else
+            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_nom;        % Berechnung der aufgebrachten Energiemenge
         end
         
         
         z = z+1;			% Erhöhung der Zählervariablen für die gamma-Schleife
         
     end
-    
+
     if Abfrage_Flugsystem == 1
         
-	% Multicopter
+        % Multicopter
         Theta(x) = Theta_inter(1);
         alpha(x) = alpha_inter(1);
-	% Propeller
+        % Propeller
         Thrust(x) = Thrust_inter(1);
         Omega(x) = Omega_inter(1);
         tau(x) = tau_inter(1);
         M_tip(x) = M_tip_inter(1);
-	% Motor
+        % Motor
         I_mot(x) = I_mot_inter(1);
         U_mot(x) = U_mot_inter(1);
-	% ESC
+        % ESC
         PWM(x) = PWM_inter(1);
-	% Batterie
+        % Batterie
         I_Bat(x) = I_Bat_inter(1);
         U_Bat(x+1) = U_Bat_inter(1);
         C_Rate(x) = C_Rate_inter(1);
         C_Rest_V(x) = C_Rest_V_inter(1);
         Delta_C_Bat(x+1) = Delta_C_Bat_inter(1);
-       	i_int(x+1) = i_int_inter(1);
-	% Gesamtsystem
+        i_int(x+1) = i_int_inter(1);
+        % Gesamtsystem
         eta_ges(x) = eta_ges_inter(1);
         
-    else       
-        if mean(isnan(Delta_C_Bat_inter)) ~= 1                                 % <-- hier noch anderes Krit zur Auswahl aussuchen
+    else
+        if isnan(nanmean(Omega_inter)) ~= 1 && isnan(nanmean(I_mot_inter)) ~= 1 &&  isnan(nanmean(U_mot_inter)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
+                isnan(nanmean(PWM_inter)) ~= 1 && isnan(nanmean(C_Rest_V_inter)) ~= 1 && isnan(nanmean(I_Bat_inter)) ~= 1       % enthalten (unfliegbarer Zustand) 
             
             % Kriterium für optimalen Steigwinkel
-            ind_opt = find(Bestimmung_gamma == min(Bestimmung_gamma(Bestimmung_gamma>0)));            
-            
-            if length(ind_opt) > 1
-                ind_opt = ind_opt(1);
-            end            
+            y = 1;
+            while y < length(Bestimmung_gamma)                             % Suche und finde optimalen Steigwinkel
+                A = Bestimmung_gamma;
+                A = sort(A);
+                ind_opt = find(Bestimmung_gamma == A(y));
+                
+                if length(ind_opt) > 1
+                    ind_opt = ind_opt(1);
+                end
+                
+                if ~isnan(Thrust_inter(ind_opt)) && ~isnan(Omega_inter(ind_opt)) && ~isnan(I_mot_inter(ind_opt)) && ~isnan(U_mot_inter(ind_opt)) && ~isnan(PWM_inter(ind_opt)) ...
+                        && ~isnan(I_Bat_inter(ind_opt)) && ~isnan(U_Bat_inter(ind_opt)) && ~isnan(C_Rate_inter(ind_opt)) && ~isnan(C_Rest_V_inter(ind_opt))
+                    
+                    break;                                                 % Unterbreche Schleife, falls alle Leistungsparameter physikalisch realistische Werte besitzen
+                end
+                
+                y = y+1;
+            end
             
             % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
             % Festlegen für entsprechenden Höhenschritt
-
-	    % Flächenflugzeug
+            
+            % Flächenflugzeug
             Theta(x) = Theta_inter(ind_opt);
             alpha(x) = alpha_inter(ind_opt);
-            gamma_Flaechenflzg(x) = gamma_Flaechenflzg_inter(ind_opt);		% Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
-            Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);   
-	    % Propeller 
+            gamma_Flaechenflzg(x) = gamma_Flaechenflzg_inter(ind_opt);	    % Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
+            Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);
+            % Propeller
             Thrust(x) = Thrust_inter(ind_opt);
             Omega(x) = Omega_inter(ind_opt);
             tau(x) = tau_inter(ind_opt);
             M_tip(x) = M_tip_inter(ind_opt);
-	    % Motor
+            % Motor
             I_mot(x) = I_mot_inter(ind_opt);
             U_mot(x) = U_mot_inter(ind_opt);
-	    % ESC
+            % ESC
             PWM(x) = PWM_inter(ind_opt);
-	    % Batterie
+            % Batterie
             I_Bat(x) = I_Bat_inter(ind_opt);
             U_Bat(x+1) = U_Bat_inter(ind_opt);
             C_Rate(x) = C_Rate_inter(ind_opt);
             C_Rest_V(x) = C_Rest_V_inter(ind_opt);
-            Delta_C_Bat(x+1) = Delta_C_Bat_inter(ind_opt);   
+            Delta_C_Bat(x+1) = Delta_C_Bat_inter(ind_opt);
             i_int(x+1) = i_int_inter(ind_opt);
-	    % Gesamtsystem
-            eta_ges(x) = eta_ges_inter(ind_opt);         
+            % Gesamtsystem
+            eta_ges(x) = eta_ges_inter(ind_opt);
             
-        else  
-
-	    % Flächenflugzeug
+        else
+            
+            % Ansonsten verwerfe alle Werte
+            % Flächenflugzeug
             Theta(x) = NaN;
             alpha(x) = NaN;
-	    % Propeller
+            gamma_Flaechenflzg(x) = NaN;
+            % Propeller
             Thrust(x) = NaN;
             Omega(x) = NaN;
             tau(x) = NaN;
-            M_tip(x) = NaN; 
-	    % Motor
+            M_tip(x) = NaN;
+            % Motor
             I_mot(x) = NaN;
             U_mot(x) = NaN;
-	    % ESC
+            % ESC
             PWM(x) = NaN;
-	    % Batterie
+            % Batterie
             I_Bat(x) = NaN;
+            U_Bat(x+1) = NaN;
             C_Rate(x) = NaN;
             C_Rest_V(x) = NaN;
-	    % Gesamtsystem         
-            eta_ges(x) = NaN;         
+            % Gesamtsystem
+            eta_ges(x) = NaN;
             
         end
         
@@ -437,7 +451,6 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('Restladung der Batterie [%]')
-
 
 % Drehzahl über der Höhe
 figure(figure_omega)
@@ -497,39 +510,38 @@ ylabel('Bahnneigungswinkel [°]')
 
 % figure(figure_gamma)
 % for i = 1:length(gamma_Flaechenflzg)
-%     
+% 
 %     if Flugzustand_Flaechenflzg == 0
-%         
-%         plot(gamma_Flaechenflzg(i),H(i),'b.');
+% 
+%         plot(H(i),gamma_Flaechenflzg(i),'b.','LineWidth',2);
 %         grid on
 %         hold on
-%         
+% 
 %     elseif Flugzustand_Flaechenflzg == 1
-%         
-%         plot(gamma_Flaechenflzg(i),H(i),'y.');
+% 
+%         plot(H(i),gamma_Flaechenflzg(i),'y.','LineWidth',2);
 %         grid on
 %         hold on
-%         
+% 
 %     else
-%         
-%         plot(gamma_Flaechenflzg(i),H(i),'r.');
+% 
+%         plot(H(i),gamma_Flaechenflzg(i),'r.','LineWidth',2);
 %         grid on
 %         hold on
-%         
+% 
 %     end
-%     
+% 
 % end
-% xlabel('Bahnneigungswinkel [°]')
-% ylabel('Höhe [m]')
-
+% xlabel('Höhe [m]')
+% ylabel('Bahnneigungswinkel [°]')
 
 
 %% Datei abspeichern
 % ImageSizeX = 40;
 % ImageSizeY = 30;
-% figure(figure_C_Rest_V)
 % set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 % set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+% figure(figure_C_Rest_V)
 % saveas(gcf,'C_Rest_V', 'jpg');
 % figure(figure_omega)
 % saveas(gcf,'omega', 'jpg');

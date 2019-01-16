@@ -1,4 +1,4 @@
-function [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata(filename, motor_name);
+function [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata(filename, motor_name)
 
 %MOTORDATA Kennzahlenentnahme
 %
