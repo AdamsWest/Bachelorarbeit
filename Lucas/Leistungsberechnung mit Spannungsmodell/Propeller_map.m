@@ -17,7 +17,7 @@ DATAp = DATAp(ind,:);
 
 % definition of the velocity vector V in m/s
 x_beg = -10;        % minimum velocity
-x_end = 35;         % maximum velocity
+x_end = 200;         % maximum velocity
 delta_x = 1;        % distance of the breakpoints
 
 % properties of the given propeller map

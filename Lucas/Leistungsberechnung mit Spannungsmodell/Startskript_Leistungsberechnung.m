@@ -34,14 +34,14 @@ figure_gamma = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-R_i = 0.1450;            % Innenwiderstand in Ohm
-K_V = 840*2*pi/60;     % K_V Wert in 1/(V*s)
-I_0 = 0.7;             % Leerlaufstrom in Ampere
-I_max = 17;             % Max Continuous Current
-m_Mot = 0.106;         % Motorgewicht in kg
+R_i = 0.039;            % Innenwiderstand in Ohm
+K_V = 1200*2*pi/60;     % K_V Wert in 1/(V*s)
+I_0 = 2.3;             % Leerlaufstrom in Ampere
+I_max = 30;             % Max Continuous Current
+m_Mot = 0.151;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '12x5';    % Propellerbezeichnung
+prop_name = '11x5';    % Propellerbezeichnung
 n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -53,7 +53,7 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 E_Dichte = 950708;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
-C_Bat_cell = 3.160;     % Kapazität einer Zelle in Ah
+C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
@@ -77,7 +77,7 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-m_flugzeug = 0.2;     % Flächenflugzeug Leermasse in kg
+% m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
 E = 3;                 	% Gleitzahl
 E_stern = 4;			% Auslegungsgleitzahl
 V_stern = 100/3.6;		% Auslegungsgeschwindigkeit in m/s
@@ -118,8 +118,13 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 m_Mot_Quad = 0.0365;
 n_Prop_Quad = 4;
 
+m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
 
-m_Bat = m_Bat+((n_Prop_Quad*m_Mot_Quad)-m_Mot)+0.154;
+f_p = 1;                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+
+m_flugzeug = f_p * m_copter;
+
+m_Bat = m_Bat+((n_Prop_Quad*m_Mot_Quad)-m_Mot*n_Prop) + (1-f_p) * m_copter;
 
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%

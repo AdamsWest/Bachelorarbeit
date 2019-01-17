@@ -211,6 +211,12 @@ for h_variabel = H_0:Delta_H:H_max
             
             m = m_flugzeug + m_Bat + m_Mot * n_Prop + m_nutz;                   % Gesamtmasse des Flächenflugzeugs
             
+            
+            if x == 43 && y == 57 && z == 1;
+                aaa = 1;
+                
+            end
+            
             % Aerodynamik
             [Thrust_inter(z),V_A,Flugzustand_Flaechenflzg_inter(z)] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma_variabel,rho(x));
 
@@ -244,6 +250,7 @@ for h_variabel = H_0:Delta_H:H_max
         else
 
             % Drehzahl und Drehmoment bestimmen
+                    
             [Omega_inter(z),tau_inter(z)] = Propeller(V_A, alpha_inter(z), Thrust_inter(z), RPM_map, V_map, T_map, TAU_map);
             
             
