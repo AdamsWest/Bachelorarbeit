@@ -4,10 +4,11 @@ close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Dateiname = 'Vergleich (Kennfeld)';
+Dateiname = 'Quadrocopter Russland';
 
 load('DATA_APC.mat');
 load('Elektromodellflug');
+load('axi_motor_db.mat');
 
 
 %% Flugsystem %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,22 +27,25 @@ figure_omega = figure;
 figure_I_mot = figure;
 figure_U_mot = figure;
 figure_I_Bat = figure;
+figure_U_Bat = figure;
 figure_PWM = figure;
 figure_eta = figure;
 figure_gamma = figure;
+figure_V = figure;
 
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-R_i = 0.039;            % Innenwiderstand in Ohm
-K_V = 1200*2*pi/60;     % K_V Wert in 1/(V*s)
-I_0 = 2.3;             % Leerlaufstrom in Ampere
+motor_name = axi_motor_db{27,1}; % Motorname
+R_i = 0.078;            % Innenwiderstand in Ohm
+K_V = 860*2*pi/60;     % K_V Wert in 1/(V*s)
+I_0 = 1.7;             % Leerlaufstrom in Ampere
 I_max = 30;             % Max Continuous Current
 m_Mot = 0.151;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '11x5';    % Propellerbezeichnung
+prop_name = '13x4';    % Propellerbezeichnung
 n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -50,7 +54,7 @@ a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel 
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
 
 % Batterie
-E_Dichte = 950708;      % Energiedichte des LiPos in J/kg
+E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
@@ -105,7 +109,7 @@ H_0 = 0;                                    % Höhe des Abflugplatzes über Normal
 Delta_H = 100;                               % Inkrementweite in m 
 H_max = 20000;                              % Maximalhöhe in m
 
-T_0 = 263.15;                               % Temperatur in K am Flugplatz
+T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
@@ -115,17 +119,18 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 %% Vergleich Quadrocopter vs. Flaechenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-m_Mot_Quad = 0.0365;
-n_Prop_Quad = 4;
-
-m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
-
-f_p = 1;                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
-
-m_flugzeug = f_p * m_copter;
-
-m_Bat = m_Bat+((n_Prop_Quad*m_Mot_Quad)-m_Mot*n_Prop) + (1-f_p) * m_copter;
-
+if Abfrage_Flugsystem == 0
+    m_Mot_Quad = 0.0365;
+    n_Prop_Quad = 4;
+    
+    m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
+    
+    f_p = 1;                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+    
+    m_flugzeug = f_p * m_copter;
+    
+    m_Bat = m_Bat+((n_Prop_Quad*m_Mot_Quad)-m_Mot*n_Prop) + (1-f_p) * m_copter;
+end
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

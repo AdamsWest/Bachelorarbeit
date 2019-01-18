@@ -69,6 +69,7 @@ Theta = zeros(lengthi,1);
 % Flächenflugzeug
 gamma_Flaechenflzg = zeros(lengthi,1);
 Flugzustand_Flaechenflzg = zeros(lengthi,1);
+V_Flaechenflugzeug = zeros(lengthi,1);
 % Propeller
 Thrust = zeros(lengthi,1);
 Omega = zeros(lengthi,1);
@@ -166,6 +167,7 @@ for h_variabel = H_0:Delta_H:H_max
     Flugzustand_Flaechenflzg_inter = zeros(lengthgamma,1);
     gamma_Flaechenflzg_inter = zeros(lengthgamma,1);
     Bestimmung_gamma = zeros(lengthgamma, 1);
+    V_Flaechenflugzeug_inter = zeros(lengthgamma, 1);
     % Propeller
     Omega_inter = zeros(lengthgamma, 1);
     tau_inter = zeros(lengthgamma, 1);
@@ -212,17 +214,13 @@ for h_variabel = H_0:Delta_H:H_max
             m = m_flugzeug + m_Bat + m_Mot * n_Prop + m_nutz;                   % Gesamtmasse des Flächenflugzeugs
             
             
-            if x == 43 && y == 57 && z == 1;
+            % Aerodynamik
+            [Thrust_inter(z),V_A,Flugzustand_Flaechenflzg_inter(z)] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma_variabel,rho(x));  
+            
+            if x ==196 && z == 1
                 aaa = 1;
-                
             end
             
-            % Aerodynamik
-            [Thrust_inter(z),V_A,Flugzustand_Flaechenflzg_inter(z)] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma_variabel,rho(x));
-
-            if x == 7
-                aaa = 1;
-            end
             
             if V_A <= 5                                                    % Wenn Geschwindigkeit zu klein (Aerodynamische Grenze)
                 t_Flug = NaN;                                              % setze Steigzeit gleich NaN
@@ -231,6 +229,7 @@ for h_variabel = H_0:Delta_H:H_max
                 t_Flug = Delta_H / V_H;
             end
             
+            V_Flaechenflugzeug_inter(z) = V_A;
             alpha_inter(z) = - 90 * pi/180;
         end
         
@@ -315,6 +314,7 @@ for h_variabel = H_0:Delta_H:H_max
             PWM_inter(z) = NaN;
             eta_ges_inter(z) = NaN;
             gamma_Flaechenflzg_inter(z) = NaN;
+            V_Flaechenflugzeug_inter(z) = NaN;
             
         end
         
@@ -388,6 +388,7 @@ for h_variabel = H_0:Delta_H:H_max
             alpha(x) = alpha_inter(ind_opt);
             gamma_Flaechenflzg(x) = gamma_Flaechenflzg_inter(ind_opt);	    % Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
             Flugzustand_Flaechenflzg(x) = Flugzustand_Flaechenflzg_inter(ind_opt);
+            V_Flaechenflugzeug(x) = V_Flaechenflugzeug_inter(ind_opt);
             % Propeller
             Thrust(x) = Thrust_inter(ind_opt);
             Omega(x) = Omega_inter(ind_opt);
@@ -415,6 +416,7 @@ for h_variabel = H_0:Delta_H:H_max
             Theta(x) = NaN;
             alpha(x) = NaN;
             gamma_Flaechenflzg(x) = NaN;
+            V_Flaechenflugzeug(x) = NaN;
             % Propeller
             Thrust(x) = NaN;
             Omega(x) = NaN;
@@ -458,6 +460,10 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('Restladung der Batterie [%]')
+text(6000,90,['Motor = ' motor_name]);
+text(6000,80,['Propeller = ' prop_name]);
+saveas(gcf,'Flächenflugzeug_C_Rest_V', 'pdf');  
+
 
 % Drehzahl über der Höhe
 figure(figure_omega)
@@ -466,6 +472,8 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('RPM')
+saveas(gcf,'Flächenflugzeug_omega', 'pdf');  
+
 
 % Motorstrom über der Höhe
 figure(figure_I_mot)
@@ -474,6 +482,7 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('I_{mot} [A]')
+saveas(gcf,'Flächenflugzeug_I_mot', 'pdf');  
 
 % Motorspannung über der Höhe
 figure(figure_U_mot)
@@ -482,6 +491,7 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('U_{mot} [V]')
+saveas(gcf,'Flächenflugzeug_U_mot', 'pdf');  
 
 % Batteriestrom über der Höhe
 figure(figure_I_Bat)
@@ -490,6 +500,17 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('I_{Bat} [A]')
+saveas(gcf,'Flächenflugzeug_I_Bat', 'pdf');  
+
+% Batteriespannung über der Höhe
+figure(figure_U_Bat)
+H2 = [0;H];
+plot(H2,U_Bat,'LineWidth',2)
+grid on
+hold on
+xlabel('Höhe [m]')
+ylabel('U_{Bat} [V]')
+saveas(gcf,'Flächenflugzeug_U_Bat', 'pdf'); 
 
 % PWM über der Höhe
 figure(figure_PWM)
@@ -498,6 +519,7 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('PWM [%]')
+saveas(gcf,'Flächenflugzeug_PWM', 'pdf');  
 
 % Wirkungsgrad
 figure(figure_eta)
@@ -506,6 +528,7 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('eta_{ges} [%]')
+saveas(gcf,'Flächenflugzeug_eta', 'pdf');  
 
 % Steigwinkel Flaechenflugzeug
 figure(figure_gamma)
@@ -514,6 +537,17 @@ grid on
 hold on
 xlabel('Höhe [m]')
 ylabel('Bahnneigungswinkel [°]')
+saveas(gcf,'Flächenflugzeug_gamma', 'pdf');  
+
+% Geschwindigkeit Flaechenflugzeug
+figure(figure_V)
+plot(H,V_Flaechenflugzeug,'LineWidth',2)
+grid on
+hold on
+xlabel('Höhe [m]')
+ylabel('Fluggeschwindigkeit [m/s]')
+saveas(gcf,'Flächenflugzeug_V', 'pdf');  
+
 
 % figure(figure_gamma)
 % for i = 1:length(gamma_Flaechenflzg)
@@ -560,3 +594,12 @@ ylabel('Bahnneigungswinkel [°]')
 % saveas(gcf,'I_Bat', 'jpg');
 % figure(figure_PWM)
 % saveas(gcf,'PWM', 'jpg');
+
+  %% Datei abspeichern
+% ImageSizeX = 14;
+% ImageSizeY = 24;
+% figure(figure_C_Rest_V)
+% figure(figure_omega)
+% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
+% saveas(gcf,Dateiname, 'pdf');  
