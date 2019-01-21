@@ -3,6 +3,106 @@
 
 \section{Einleitung und Vorgehensweise}
 \label{sec:einleitung_und_vorgehensweise}
+\begin{itemize}
+ 	\item Voerst Klärung welche Art von Fluggerät mehr Vorteile aufweist
+ 	\item Dazu Vergleich 
+\end{itemize}
+
+\section{Multicopter im Vergleich zu einem Flächenflugzeug}
+\label{sec:multicopter_vs_flaechenflugzeug}
+
+
+\subsection{Vorgehensweise beim Vergleich}
+\label{sec:vorgehenswiese_vergleich}
+Jedes Luftfahrzeugkonzept entzieht sich einem direkten Vergleich mit einem Luftfahrzeug einer anderen Art. So weist jedes Fluggerät in seiner Gattung spezifische Vorteile auf wie der Start ohne Landebahn und das Hovern in der Luft für Multicopter oder der Gleitflug für Flächenflugzeuge. Die optimale Auslegung beider führt zu unterschiedlichen Designs was die Propeller, die Motorleistung und -gewicht, Größe, Gesamtgewicht etc. betrifft. Aus diesem Grund müssen Kriterien für eine Vergleichbarkeit vorgeschrieben werden. Hierfür wird das Design des Multicopters auf das aus \cite{Anderson.2018} festgelegt, was genauer in Kapitel \ref{sec:komponenten} beschrieben wird. Da die Flugleistungen von \cite{Anderson.2018} bekannt sind und der Quadrocopter durchaus schon im Rahmen der Anforderungen für diese Mission als optimiert betrachtet werden kann, bedarf es lediglich einer Untersuchung des Flächenflugzeuges. Dazu wird das Flächenflugzeug auf Parameter fixiert, mit denen es bereits sehr hoch kommt. Zur Untersuchung und Vergleichbarkeit werden beide Gesamtmassen gleichgesetzt \ensuremath{m_{ges,Quadrocopter} = m_{ges,Flächenflugzeug}}. Dabei setzt sich die Masse der Flächenflugzeugbatterie   
+\begin{equation}
+	m_{Bat,Fl} = m_{Bat,Quad} + (m_{Mot,Quad}\cdot n_{Prop,Quad} - m_{Mot,Fl}\cdot n_{Prop,Fl}) - (1-f_P)\cdot m_{Quad}  
+\end{equation}
+in Bezug auf bereits gewählte Massen und auf den Quadrocopter zusammen. Der Faktor \ensuremath{f_P} kann als Penaltyfaktor verstanden werden. Dieser verringert zusätzlich die Batteriemasse, wenn das Strukturgewicht des Flächenflugzeugs das des Quadrocopters überschreitet
+\begin{equation}
+	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}.
+\end{equation} 
+Für erste Untersuchungen kann der Penaltyfaktor auf 1 gesetzt werden. Dies entspricht einer sehr optimistischen Einschätzung. Im Anschluss werden die Parameter in näherer Umgebung der festgesetzten Werte diese variiert. Dadurch kann der Einfluss auf das Leistungsverhalten und die Richtung der Optimierung bestimmt werden. Diese erste, einfache Untersuchung ist nur eine sehr oberflächliche, weil jeder Parameter nur einzeln untersucht wird. Jegliche Kombinationen von Einflüssen wie der Einfluss des Masse auf die Steiggeschwindigkeit oder andere Beziehungen werden vernachlässigt. Im Hinblick auf diese erste, kleine Optimierung ist der Kostenfaktor die maximal erreichbare Höhe beider Fluggeräte. Je nachdem welches der beiden Fluggeräte effektiver und effizienter eine maximale Flughöhe erreicht, wird es weiter untersucht und anschließend optimiert. 
+
+%\begin{itemize}
+%	\item Jede Luftfahrzeugart entzieht sich einem direkten Vergleich, Jedes Fluggerät weist für seine Flugsystemgattung spezifische Vorteile auf. Start ohne Startbahn und gerader nach oben Flug, vs Gleiten und evtl. weniger Energieverbrauch
+%	\item Eine Vergleichbarkeit der beiden Fluggeräte herzustellen ist schwierig
+%	\item Die optimale Auslegung beider führt zu komplett unterschiedlichen Designs wie die Propeller, Art und Anzahl der Motoren, Größe, Gewicht etc.
+%	\item Aus diesem Grund müssen Kriterien für eine Vergleichbarkeit vorgeschrieben werden
+%	\item Hierfür wird das Design des Multicopters auf das aus Kapitel \label{chap:nachbildung} festgelegt
+%	\item Zur Untersuchung und Vergleichbarkeit werden beide Gesamtmassen gleichgesetzt \ensuremath{m_{ges,Quadrocopter} = m_{ges,Flächenflugzeug}} 
+%	\item Im Anschluss wird in näherer Umgebung der festgesetzten Parameter des Flächenflugzeugs diese variiert
+%	\item dadurch kann Einfluss auf das Leistungsverhalten und die Richtung der Opitmierung bestimmt werden
+%	\item hier erst nur eine sehr oberflächliche Untersuchung, i.e. jegliche Kombinationen von Einflüssen wie der Einfluss des Masse auf die Steiggeschwindigkeit oder andere Beziehungen werden vernachlässigt. Es werden somit voerst einzelne Parameter einzeln untersucht
+%	\item im Hinblick auf diese erste, kleine Optimierung ist der Kostenfaktor die maximal erreichbare Höhe beider Fluggeräte
+%	\item je nachdem welches Fluggerät sich trotz aller Optimierungen als effizienter und effektiver herausstellt, wird es weiter betrachtet und untersucht
+%	\item Die Massenverteilung wird im Hinblick auf die Massenverteilung vom Flächenflugzeug untersucht. \ensuremath{m_Bat_Fl = m_Bat_Quad + (m_Bat,Quad - m_MotKombi,Fl) - f_P * m_ges} mit \ensuremath{f_P = Penaltyfaktor} für Strukturmasse (kann zuerst auf 0\% gesetzt werden --> rosarote Brille und im Verlauf der Untersuchung erhöht werden, da 0\% unrealistisch)
+%	\item Ziel ist eine Aussage über das "bessere" von beiden Fluggeräten
+%\end{itemize}
+
+\subsection{Allgemeine Untersuchung}
+Die gewählte Konstellation erreicht fast \SI{10000}{m} Höhe. Der begrenzende Faktor ist in diesem Fall der Bahnneigungswinkel, der bei \SI{1}{^\circ} das Minimum der Diskretisierung erreicht und somit das Ende des Steigfluges einleitet. Zu Beginn des Steigfluges wären größere Steigwinkel effizienter, allerdings werden diese durch den maximalen Motorstrom begrenzt. Ohne diese würde der Bahnneigungswinkel beinahe linear absinken. Daraus kann geschlossen werden, dass ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten ist. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten. Gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}. Ab diesem Zeitpunkt kann nicht mehr mit maximalem Motorstrom geflogen werden, \textcolor{red}{wodurch folglich der Motorspannung und der Bahnneigungswinkel simultan abfallen}. Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug} und \ref{eq:schub_flaechenflugzeug}). Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein (Vgl. Gleichung \ref{eq:motorstrom}). Bedingt durch die mit dem Winkel und der Höhe (indirekt durch die Dichte) steigende Geschwindigkeit, können die Steigwinkel leistungsbedingt nicht mehr aufgebracht werden. Die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
+
+
+
+\begin{itemize}
+	\item mit dieser Konstellation sind fast \SI{10000}{m} Höhe erreichbar
+	\item begrenzender Faktor / Parameter ist die Batteriespannung und damit auch gleichzeitig die PWM als das Verhältnis von Motorstrom zur nominalen Batteriespannung 
+	\item zu Beginn wären höhere Flugwinkel effizienter. Diese werden allerdings durch den max. Motorstrom begrenzt. 
+	\item Ohne diese Grenze würde der Flugbahnwinkel von sehr hohen Werten auf \SI{1}{^\circ} (Minimum der Diskretisierung) linear sinken
+	\item so ist ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten
+	\item gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}.
+	\item Ab diesem Zeitpunt kann nicht mehr mit maximalem Motorstrom geflogen werden, wodurch folglich die Motorspannung und der Bahnneigungswinkel Simultan abfallen
+	\item Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen \textcolor{red}{Gleichung Schub und  Geschwindigkeit}. Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein \textcolor{red}{Gleichung Motorstrom}
+	\item Die maximale Höhe begrenzt der minimale Bahnanstellwinkel von \SI{1}{^\circ}
+	\item bedingt durch die mit dem Winkel und der Höhe (durch die Dichte) steigende Geschwindigkeit, kann diese leistungsbedingt nicht mehr aufgebracht werden.
+	\item die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht
+	\item Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus \textcolor{red}{Gleichung Batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
+	\item der letzte Anstieg von \ensuremath{U_{Bat}} liegt am Abfall von \ensuremath{I_{Bat}}, da dieser \ensuremath{U_{Bat}} direkt beeinlusst
+	\item 
+\end{itemize}
+
+\subsection{Einflussfaktoren auf das Flächenflugzeug}
+
+\subsubsection{Motor-Propeller-Kombination}
+Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. Für jeden Motor werden vom Hersteller Propeller für einen bestimmten Anwendungsfall vorgegeben, mit dem optimale Leistungen erbracht werden können. Die Propellergröße hängt von der Leistung des Motors ab. Es zeigt sich, dass je stärker der Motor ist, desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch auch groß zu wählen, um den erforderlichen Schub zu liefern. Wird der Radius weiter vergrößert, so verringert sich der optimale Pitch. Außerdem sind Motoren mit niedrigen \ensuremath{K_V}-Werten bei gleichem Motorgewicht zu bevorzugen. Dies liegt in der Tatsache begründet, dass der \ensuremath{K_V}-Wert direkt den Motorstrom beeinflusst und ein hoher Wert diesen entsprechend zu Beginn des Fluges bereits stark erhöht. 
+
+%\begin{itemize}
+%%	\item Motor-Propeller Kombination hat signifikanten Einfluss auf das Leistungsverhalten
+%	\item jeder Motor hat einen Propeller, mit dem er optimalen Schub liefert
+%	\item es zeigt sich, dass für einen schwächeren Motor der Durchmesser und der Pitch sinkt
+%	\item Je stärker der Motor ist desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch auch groß zu wählen. 
+%	\item Je größer der Durchmesser, desto kleiner darf der verwendete fixed Pitch gewählt werden. 	
+%\end{itemize}
+
+\subsubsection{Gleitzahl}
+Mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher und vice versa. Hierbei verändert sich der Verlauf des Steigwinkels nicht ausschlaggebend. Eine entsprechend hohe Gleitzahl beudeuted gleichzeitig auch eine entsprechend hohe aerodynamische Güte (Vgl. \cite{Scheiderer.2008}). Dazu sinkt der Widerstand im Vergleich zum Auftrieb, sodass für ein Flächenflugzeug mit einer höheren Gleitzahl für den gleichen Auftrieb weniger Leistung zur Kompensation des Widerstandes aufgebracht werden muss. Als Konsequenz dessen steht mehr Leistung für das Steigen zur Verfügung.
+
+%\begin{itemize}
+%	\item mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher
+%	\item eine Erhöhung erzeugt gleichzeitig eine Erhöhung des Top of Climb
+%	\item dabei ändert sich der Verluaf des Steigwinkels nicht ausschlaggebend
+%	\item genau wie zuvor ist ab einem gewissen Punkt kein Steigen mehr möglich, der Bahnneigungswinkel geht gegen Null
+%	\item ein größerer Steigwinkel stellt auch eine größere aerodynamische Güte dar, direkt ersichtlich \cite{Scheiderer.2008}
+%\end{itemize}
+
+\subsubsection{Auslegungsgeschwindigkeit}
+Die Auslegungsgeschwindigkeit hat einen bedeutenden Einfluss auf die erreichbare Höhe. Da für den Steigflug ein Flug mit konstanten Auftriebsbeiwert vorausgesetzt wird, erhöht sich aufgrund dessen die absolute Fluggeschwindigkeit mit der Höhe und größerem Bahnneigungswinkel (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Ist die Auslegungsgeschwindigkeit gering, so wächst sie absolut gesehen mit der Höhe nicht so stark wie hohe Geschwindigkeiten. Eine geringer gewählte Auslegungsgeschwindigkeit im Horizontalflug bedeutet daher auch, dass länger mit maximalen Motorstrom geflogen werden kann, bevor die Motorspannung die Batteriespannung erreicht und somit das Absinken des Steigwinkels einleitet.
+
+
+%\begin{itemize}
+%	\item die Auslegungsgeschwindigkeit hat bedeutenden Einfluss auf die Erreichbare Höhe
+%	\item das hängt damit zusammen, dass die Fluggeschwindigkeit für Winkel \ensuremath{\gamma >0} mit der Höhe und dem Winkel steigt
+%	\item eine geringer gewählte Auslegungsgeschwindigkeit im Horizontalflug bedeutet, dass länger mit maximalen Motorstrom geflogen werden kann, bevor die Motorspannung die Batteriespannung erreicht und somit das Absinken des Steigwinkels einleitet
+%	\item höhere Auslegungsgeschwindigkeiten haben einen entsprechend umgekehrten Einfluss und verringern die max erreichbar Höhe, da die Fluggeschwindikeit entsprechend immer höher wird, bis die Leistung des Flugzeugs nicht mehr ausreicht
+%\end{itemize}
+
+\subsubsection{Auslegungsgleitzahl}
+
+\subsection{Ergebnisse des Vergleichs} 
+
+
+
 
 \section{Steiggeschwindigkeit}
 \label{sec:steiggeschwindigkeit}
@@ -25,4 +125,18 @@
 	\begin{equation}
 		\eta_{Prop} = \frac{T\cdot\tilde{V}}{P} = \frac{T\cdot (\mu_z + v_i)}{M\cdot \omega}
 	\end{equation}
+	\item Cite Ogur
+\end{itemize}
+
+\section{Steigwinkel}
+\label{sec:steigwinkel}
+
+\section{Größe des Fluggerätes}
+\label{sec:groesse}
+
+\section{VTOL im Vergleich zum Gleitflug}
+\label{sec:vtol_vs_gleitflug}
+\begin{itemize}
+	\item hier ist der Vergleich vor allem in Bezug auf die Motorisierung interessatn
+	\item höhere Motorisierung und zus. Gewicht <--> schächere Motorisierung und geringeres Gewicht im Gleitflug
 \end{itemize}

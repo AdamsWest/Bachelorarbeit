@@ -1995,7 +1995,9 @@
     <bcf:citekey order="16">Anderson.2018</bcf:citekey>
     <bcf:citekey order="17">Anderson.2018</bcf:citekey>
     <bcf:citekey order="18">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="19">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="19">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="20">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="21">Scheiderer.2008</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

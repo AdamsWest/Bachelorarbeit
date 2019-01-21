@@ -15,8 +15,8 @@
 \contentsline {subsubsection}{Batterie}{4}{subsubsection*.10}
 \contentsline {subsubsection}{Multicopter}{5}{subsubsection*.11}
 \contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{5}{subsubsection*.12}
-\contentsline {section}{\numberline {2.2}Parameter der Mission}{5}{section.2.2}
-\contentsline {subsubsection}{Missionsparameter}{5}{subsubsection*.13}
+\contentsline {section}{\numberline {2.2}Parameter der Mission}{6}{section.2.2}
+\contentsline {subsubsection}{Missionsparameter}{6}{subsubsection*.13}
 \contentsline {subsubsection}{Flugparameter}{6}{subsubsection*.14}
 \contentsline {subsubsection}{Umgebungsparameter und Diskretisierung}{6}{subsubsection*.15}
 \contentsline {section}{\numberline {2.3}Berechnung weiterer Parameter}{6}{section.2.3}
@@ -25,40 +25,52 @@
 \contentsline {subsection}{\numberline {2.5.1}Ver\IeC {\"a}nderung der Umgebungsparameter mit der H\IeC {\"o}he}{9}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Schub berechnen}{9}{subsection.2.5.2}
 \contentsline {subsubsection}{Multicopter}{9}{subsubsection*.17}
-\contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{11}{subsubsection*.18}
-\contentsline {subsection}{\numberline {2.5.3}Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{12}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Motorzustand berechnen}{12}{subsection.2.5.4}
-\contentsline {subsection}{\numberline {2.5.5}Zustand der Motorregler}{13}{subsection.2.5.5}
-\contentsline {subsection}{\numberline {2.5.6}Batteriezustand}{13}{subsection.2.5.6}
+\contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{11}{subsubsection*.19}
+\contentsline {subsection}{\numberline {2.5.3}Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}{13}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Motorzustand berechnen}{13}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}Zustand der Motorregler}{14}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.6}Batteriezustand}{14}{subsection.2.5.6}
 \contentsline {subsection}{\numberline {2.5.7}Wirkungsgrad \IeC {\"u}ber das Gesamtsystem}{16}{subsection.2.5.7}
 \contentsline {subsection}{\numberline {2.5.8}Werden Grenzen \IeC {\"u}berschritten?}{17}{subsection.2.5.8}
-\contentsline {section}{\numberline {2.6}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{17}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Einschr\IeC {\"a}nkungen}{17}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.6}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{18}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Einschr\IeC {\"a}nkungen}{18}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}Vereinfachungen}{18}{subsection.2.6.2}
-\contentsline {subsubsection}{Schub}{18}{subsubsection*.19}
-\contentsline {subsubsection}{Propeller und Kennfeld}{18}{subsubsection*.20}
-\contentsline {subsubsection}{Motor}{18}{subsubsection*.21}
-\contentsline {subsubsection}{Motorregler}{18}{subsubsection*.22}
-\contentsline {subsubsection}{Batterie}{18}{subsubsection*.23}
-\contentsline {subsubsection}{Wirkungsgrad}{19}{subsubsection*.24}
+\contentsline {subsubsection}{Schub}{18}{subsubsection*.22}
+\contentsline {subsubsection}{Propeller und Kennfeld}{19}{subsubsection*.23}
+\contentsline {subsubsection}{Motor}{19}{subsubsection*.24}
+\contentsline {subsubsection}{Motorregler}{19}{subsubsection*.25}
+\contentsline {subsubsection}{Batterie}{19}{subsubsection*.26}
+\contentsline {subsubsection}{Wirkungsgrad}{19}{subsubsection*.27}
 \contentsline {chapter}{\numberline {3}Nachbildung des Quadrocopterfluges in Russland}{20}{chapter.3}
 \contentsline {section}{\numberline {3.1}Komponenten des Quadrocopters}{20}{section.3.1}
-\contentsline {subsubsection}{Motor}{20}{subsubsection*.25}
-\contentsline {subsubsection}{Propeller}{20}{subsubsection*.26}
-\contentsline {subsubsection}{Batterie}{21}{subsubsection*.27}
-\contentsline {subsubsection}{Qudrocopterabma\IeC {\ss }e}{21}{subsubsection*.28}
+\contentsline {subsubsection}{Motor}{20}{subsubsection*.28}
+\contentsline {subsubsection}{Propeller}{20}{subsubsection*.29}
+\contentsline {subsubsection}{Batterie}{21}{subsubsection*.30}
+\contentsline {subsubsection}{Qudrocopterabma\IeC {\ss }e}{21}{subsubsection*.31}
 \contentsline {subsection}{\numberline {3.1.1}Missions und Umgebungsparameter}{21}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Nachbildung im Programm}{22}{section.3.2}
 \contentsline {section}{\numberline {3.3}Ergebnisse}{22}{section.3.3}
 \contentsline {section}{\numberline {3.4}Diskussion}{25}{section.3.4}
 \contentsline {chapter}{\numberline {4}Parameteruntersuchung}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Steiggeschwindigkeit}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Verstellpropeller}{27}{section.4.3}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{28}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{28}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ausblick}{28}{section.5.2}
-\contentsline {chapter}{\numberline {6}Projektmanagement}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Projektstrukturplan}{30}{section.6.1}
-\contentsline {section}{\numberline {6.2}Zeitplan}{32}{section.6.2}
-\contentsline {chapter}{\numberline {A}Blindtext im Anhang}{46}{appendix.A}
+\contentsline {section}{\numberline {4.2}Multicopter im Vergleich zu einem Fl\IeC {\"a}chenflugzeug}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Vorgehensweise beim Vergleich}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Allgemeine Untersuchung}{28}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Einflussfaktoren auf das Fl\IeC {\"a}chenflugzeug}{29}{subsection.4.2.3}
+\contentsline {subsubsection}{Motor-Propeller-Kombination}{29}{subsubsection*.32}
+\contentsline {subsubsection}{Gleitzahl}{30}{subsubsection*.33}
+\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{30}{subsubsection*.34}
+\contentsline {subsubsection}{Auslegungsgleitzahl}{30}{subsubsection*.35}
+\contentsline {subsection}{\numberline {4.2.4}Ergebnisse des Vergleichs}{30}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Steiggeschwindigkeit}{30}{section.4.3}
+\contentsline {section}{\numberline {4.4}Verstellpropeller}{31}{section.4.4}
+\contentsline {section}{\numberline {4.5}Steigwinkel}{31}{section.4.5}
+\contentsline {section}{\numberline {4.6}Gr\IeC {\"o}\IeC {\ss }e des Flugger\IeC {\"a}tes}{31}{section.4.6}
+\contentsline {section}{\numberline {4.7}VTOL im Vergleich zum Gleitflug}{31}{section.4.7}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{32}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ausblick}{32}{section.5.2}
+\contentsline {chapter}{\numberline {6}Projektmanagement}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Projektstrukturplan}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}Zeitplan}{36}{section.6.2}
+\contentsline {chapter}{\numberline {A}Blindtext im Anhang}{51}{appendix.A}

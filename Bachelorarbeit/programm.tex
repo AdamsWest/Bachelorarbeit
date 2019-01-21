@@ -53,14 +53,14 @@ Die aufgeführten Parameter der Batterie bestimmen zum einen die verfügbare Kap
 		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \ensuremath{V} \\
 		 minimale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell,min}} & \texttt{U\_bat\_min} & \ensuremath{V} \\
 		 Peukert-Konstante \ensuremath{P}& \texttt{P\_bat\_Peukert} & \ensuremath{1,05} \\
-		 Maximale C-Rate \ensuremath{C_{rate,max}} & \texttt{C\_Rate\_max} & \ensuremath{-} \\
+		 Maximale C-Rate \ensuremath{C_{Rate,max}} & \texttt{C\_Rate\_max} & \ensuremath{-} \\
 		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \ensuremath{kg} \\ \hline
 	\end{tabular}	
 	\label{tab:bat_parameter}
 \end{center}
 
 \subsubsection{Multicopter}
-Die Parameter für den Multicopter sind in \ref{tab:multicop_parameter} aufgeführt. Die Leermasse fließt mit in die Gesamtmasse mit ein und wird für die Berechnung des Schubs und weiterer Parameter benötigt. Die Beiwerte sind reine Schätzwerte. Für die nachfolgenden Berechnungen ist nur die obere Stirnfläche von Bedeutung, da sich auf diese die Beiwerte beziehen. \textcolor{red}{(fraglich ob die Angabe des Seitlichen Widerstandsbeiwertes mit einfließen soll, Stichwort Formfaktor)}. Die Propeller bleiben bei den Stirnflächen unberücksichtigt.
+Die Parameter für den Multicopter sind in \ref{tab:multicop_parameter} aufgeführt. Die Leermasse fließt mit in die Gesamtmasse mit ein und wird für die Berechnung des Schubs und weiterer Parameter benötigt. Die Beiwerte sind reine Schätzwerte. Für die nachfolgenden Berechnungen ist nur die obere Stirnfläche von Bedeutung, da sich auf diese die Beiwerte beziehen. Die Propeller bleiben bei den Stirnflächen unberücksichtigt.
 \begin{center}
 	\captionof{table}{Parameter des Multicopters}
 	\begin{tabular}{l l l} \hline
@@ -76,16 +76,31 @@ Die Parameter für den Multicopter sind in \ref{tab:multicop_parameter} aufgefü
 \end{center}
 
 \subsubsection{Flächenflugzeug}
-Der erste Parameter des Flächenflugzeugs wird zur Ermittlung des Bahnanstellwinkels \ensuremath{\gamma} benötigt. Für den Steigflug wird ein Flug mit optimaler Gleitzahl \ensuremath{E} vorausgesetzt. Mit der Leermasse wird analog zum Multicopter der Schub berechnet.
+Mit der Leermasse wird analog zum Multicopter der Schub berechnet. Der zweite Parameter wird zur Bestimmung des aktuellen Flugzustandes benötigt. Dieser ergibt sich aus einem Auslegungszustand mit vorgegebener Gleitzahl \ensuremath{E^\star} und Geschwindigkeit \ensuremath{V^\star} in Bodennähe. Die Bodennähe und die Höhe sind entsprechend durch die Dichte charakterisiert.
 \begin{center}
 	\captionof{table}{Parameter des Flächenflugzeug}
 	\begin{tabular}{l l l} \hline
-		 Parameter & Variablenname & Einheit \\ \hline
-		 Reziproke Gleitzahl \ensuremath{\varepsilon} & \texttt{epsilon} & \ensuremath{-}\\		 
-		 Leermasse des Flächenflugzeug \ensuremath{m_{Flugzeug}}& \texttt{m\_Flugzeug} & \ensuremath{kg}\\ \hline
+		 Parameter & Variablenname & Einheit \\ \hline	 
+		 Leermasse des Flächenflugzeug \ensuremath{m_{Flugzeug}}& \texttt{m\_Flugzeug} & \ensuremath{kg}\\ 
+		 Gleitzahl \ensuremath{E} & \texttt{E} & \ensuremath{-}\\	
+		 Auslegungsgleitzahl \ensuremath{E^\star} & \texttt{E\_stern} & \ensuremath{-}\\
+		 Auslegungsgeschwindigkeit \ensuremath{V^\star} & \texttt{V\_stern} & \ensuremath{m/s}\\
+		 Auslegungshöhe \ensuremath{\rho^\star} & \texttt{rho\_stern} & \SI{1,225}{kg/m^3}\\ \hline
 	\end{tabular}	
 	\label{tab:flugzeug_parameter}
 \end{center}
+Zusätzlich wird noch der Bahnneigungswinkel \ensuremath{\gamma} für jeden Höhenschritt diskretisiert. Dabei sollte die Schrittweite so klein wie nötig gewählt werden, um die Genauigkeit zu maximieren und so groß wie möglich, um die Rechendauer akzeptabel kurz zu halten. Der Maximalwert entspricht in diesem Fall einem senkrechten Steigflug.
+\begin{center}
+	\captionof{table}{Diskretisierung des Bahnneigungswinkels}
+	\begin{tabular}{l l l} \hline
+		 Parameter & Variablenname & Einheit \\ \hline	  
+		 Kleinster Bahnneigungswinkel \ensuremath{\gamma_{min}} & \texttt{gamma\_min} & \SI{1}{^\circ}\\	
+		 Schrittweite des Bahnneigunsw. \ensuremath{\Delta\gamma} & \texttt{gamma\_Delta} & \SI{1}{^\circ}\\
+		 Größter Bahnneigungswinkel \ensuremath{\gamma_{max}} & \texttt{gamma\_max} & \SI{90}{^\circ}\\ \hline
+	\end{tabular}	
+	\label{tab:flugzeug_parameter}
+\end{center}
+
 
 \section{Parameter der Mission}
 \label{sec:parameter_mission}
@@ -100,7 +115,7 @@ Die Flugparameter geben für den Multicopter den Steigwinkel sowie die Steigesch
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & Einheit \\ \hline
 		 Bahngeschwindigkeit \ensuremath{V_{Kg}} & \texttt{V\_Kg} & \ensuremath{m/s}\\		 
-		 Bahnneigungswinkel \ensuremath{\gamma}& \texttt{gamma} & \ensuremath{^\circ}\\ \hline
+		 Bahnneigungswinkel \ensuremath{\gamma_{Copter}}& \texttt{gamma\_copter} & \ensuremath{^\circ}\\ \hline
 	\end{tabular}	
 	\label{tab:flugparameter}
 \end{center}
@@ -247,10 +262,17 @@ mit
 	\begin{pmatrix} u_{Kg} \\ w_{Kg} \end{pmatrix} = \begin{pmatrix}
 	\cos\gamma \\ -sin{\gamma}	\end{pmatrix} \cdot V_{kg}.
 \end{equation}
-Die am Multicopter angreifenden Kräfte werden in Abbildung(einfügen) dargestellt. 
-\begin{center}
-\includegraphics[scale=0.2]{images/Coming-Soon.jpg}
-\end{center}
+Die am Multicopter angreifenden Kräfte werden in Abb.\ref{abb:kraefteggw} dargestellt. 
+
+\begin{figure}[H]
+\centering
+\begin{small}
+	\input{Kraefteggw.pdf_tex}
+	\end{small}
+	\caption{Kräftegleichgewicht am unbeschleunigten Multicopter unter Berücksichtigung aerodynamischer Kräfte ($k^*$ ist eine beliebige Achse in der $x_f,y_f$-Ebene).}
+	\label{abb:kraefteggw}
+\end{figure}
+
 Für die spätere Koordinatentransformation wird der Windanstellwinkel
 \begin{equation}
 	\gamma_a = \arctan \Big(\frac{-w_{Kg}}{u_{Kg}+u_{Wg}}\Big)
@@ -297,31 +319,86 @@ bestimmt werden.
 Für den Fall, dass der errechnete Schub größer als der zur Verfügung stehende Schub ist, wird das Ergebnis verworfen und als \texttt{NaN} (Not a Number) gespeichert.
 
 \subsubsection{Flächenflugzeug}
+%Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
+%\begin{equation}
+%	m = m_{Flugzeug}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}.
+%\end{equation}
+%Aus dem Kräftegleichgewicht aller angreifenden Kräfte am System können folgende %Beziehungen 
+%\begin{equation}
+%	F = W + \sin\gamma\cdot G, \label{eq:widerstandsgleichung}
+%\end{equation}
+%\begin{equation}
+%	A = \cos\gamma G \label{eq:auftriebsgleichung}
+%\end{equation}
+%entnommen werden.
+%Mit
+%\begin{equation}
+%	E = \frac{A}{W}
+%\end{equation}
+%bzw.
+%%\begin{equation}
+%	\varepsilon = \frac{W}{A} = \frac{c_W}{c_A}
+%\end{equation} 
+%können die Gleichungen \eqref{eq:widerstandsgleichung} und \eqref{eq:auftriebsgleichung} umgeformt werden zu
+%\begin{equation}
+%	F = G\cdot\cos\gamma\cdot\Big(\frac{1}{E}+\tan\gamma\Big) = G\cdot(\sin\gamma+\varepsilon\cdot\cos\gamma).
+%\end{equation}
+
 Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
 \begin{equation}
 	m = m_{Flugzeug}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}.
 \end{equation}
 Aus dem Kräftegleichgewicht aller angreifenden Kräfte am System können folgende Beziehungen 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{images/Coming-Soon.jpg}
+\end{figure}
 \begin{equation}
 	F = W + \sin\gamma\cdot G, \label{eq:widerstandsgleichung}
 \end{equation}
 \begin{equation}
-	A = \cos\gamma G \label{eq:auftriebsgleichung}
+	A = m\cdot g\cdot\cos\gamma 
+\end{equation} \label{eq:auftriebsgleichung}
+entnommen werden. Der Auslegungspunkt des Flächenflugzeugs ist ein Horizontalflug (\ensuremath{\gamma^\star = 0}) in Bodennähe bei konstanter Gleitzahl und Geschwindigkeit \ensuremath{V^\star}. Die Auftriebsgleichung \ref{eq:auftriebsgleichung} vereinfacht sich damit zu
+\begin{equation}
+	A^\star = m\cdot g .
 \end{equation}
-entnommen werden.
-Mit
+Über die Definition der Gleitzahl 
 \begin{equation}
 	E = \frac{A}{W}
 \end{equation}
-bzw.
+berechnet sich der Widerstand mit
 \begin{equation}
-	\varepsilon = \frac{W}{A} = \frac{c_W}{c_A}
-\end{equation} 
-können die Gleichungen \eqref{eq:widerstandsgleichung} und \eqref{eq:auftriebsgleichung} umgeformt werden zu
-\begin{equation}
-	F = G\cdot\cos\gamma\cdot\Big(\frac{1}{E}+\tan\gamma\Big) = G\cdot(\sin\gamma+\varepsilon\cdot\cos\gamma).
+	W^\star = \frac{A^\star}{E^\star} .
 \end{equation}
-
+Unter Annahme eines Fluges im optimalen Operationspunkt ist der Nullwiderstand genau die Hälfte des Gesamtwiderstandes
+\begin{equation}
+	W_0^\star = 0,5\cdot W^\star .
+\end{equation}
+Es wird vorausgesetzt, dass für jeden Bahnneigungswinkel \ensuremath{\gamma} der Auftriebsbeiwert und folglich der Anstellwinkel konstant bleibt. Dies setzt voraus, dass sich mit ändernder Höhe die Dichte und die Geschwindigkeit ändern, um die obige Voraussetzung zu gewährleisten. Dadurch verringert sich die Geschwindigkeit
+\begin{equation}
+	V = V^\star\cdot\sqrt{\cos\gamma\cdot\frac{\rho}{\rho^\star}}  \label{eq:geschw_flaechenflugzeug}
+\end{equation}
+analog mit einer Vergrößerung der Flughöhe und des Steigwinkels. Mit dem Staudruck kann der Nullwiderstand 
+\begin{equation}
+	W_0 = W_0^\star\cdot\frac{V^2\cdot\rho/2}{{V^\star}^2\cdot\rho^\star/2}
+\end{equation}
+skaliert werden.
+Analog zur Berechnung des Widerstandes im Auslegungszustand errechnet sich der Widerstand im aktuellen Operationspunkt, mit welchem der Flugzustand abgeschätzt werden kann. Dies geschieht nach folgendem Schema
+\begin{equation}
+Flugzustand_Flächenflugzeug = \begin{cases} 
+zulässig & wenn \qquad W > 2\cdot W_0 \\ 
+Grauzone & wenn \qquad W_0 < W < 2\cdot W_0 \\ 
+Steigflug & wenn \qquad W < W_0 
+\end{cases}
+\end{equation} 
+Die Theorie gilt nur für den Bereich kleiner Winkel. Mit der Variablen \texttt{Flugzustand\_Flaechenflugzeug} wird das Einhalten der Theorie überprüft. Der Fall, dass \ensuremath{W < W_0} beträgt, ist ein Flugzustand, der die Theorie entscheidend verletzt und daher nicht zulässig ist. Ein Flug mit einem Widerstand kleiner als \ensuremath{W_0} ist physikalisch unmöglich.
+Letztlich ergibt sich der Schub aus Gleichung \ref{eq:auftriebsgleichung} und \ref{eq:widerstandsgleichung}
+\begin{equation}
+	F = m\cdot g\cdot (\frac{1}{E}\cdot\cos\gamma + \sin\gamma) \label{eq:schub_flaechenflugzeug}
+\end{equation}
+mit dem Gewicht und Steigwinkel als Variable.
+Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren. Aus diesem Grund wird dieser für jeden Schritt variiert. Das Auswahlkriterium für den optimalen Steigwinkel ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung voraussetzt. Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
 
 
 \subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
@@ -341,7 +418,7 @@ angepasst werden.
 Mit dem Drehmoment und der Drehzahl des Propellers berechnet sich der Motorzustand, genauer der Motorstrom und die Motorspannung. Dies erfolgt nach einem einfachen Motormodell \cite{Drela.2007}.
 Der Motorstrom berechnet sich aus 
 \begin{equation}
-	I_{Mot} = Q\cdot K_v + I_0.
+	I_{Mot} = Q\cdot K_v + I_0. \label{eq:motorstrom}
 \end{equation}
 Mit dem Strom ergibt sich die Spannung zu
 \begin{equation}
@@ -366,15 +443,15 @@ die sich aus dem Spannungsverhältnis des ESCs zusammensetzt.
 
 
 \subsection{Batteriezustand}
-Die wesentliche Zustandsgröße der Batterie ist der Entladestrom \ensuremath{I_{Bat}}. Dieser setzt sich zusammen aus den Motorströmen und zusätzlich aus dem Wirkungsgrad der Pulsweitenmodulation (PWM).
+Die wesentliche Zustandsgröße der Batterie ist der Entladestrom \ensuremath{I_{Bat}}. Dieser setzt sich zusammen aus den Motorströmen und zusätzlich aus dem Wirkungsgrad der Pulsweitenmodulation (PWM)
 \begin{equation}
-	I_{Bat} = I_{Mot}\cdot \frac{PWM}{\eta_{PWM}}\cdot n_{Prop}.
+	I_{Bat} = I_{Mot}\cdot \frac{PWM}{\eta_{PWM}}\cdot n_{Prop}.  \label{eq:batteriestrom}
 \end{equation}
 Die C-Rate \ensuremath{\dot{C}} [1/h] berechnet sich nach 
 \begin{equation}
 	\dot{C} = \frac{I_{Bat}[A]}{C_{Bat}[A]}\cdot n_{Prop}
 \end{equation}
-und wird zur Verlustberechnung sowie zur Begrenzung benötigt. Die nutzbare Kapazität der Batterie sinkt mit steigender Entladerate nach
+Die nutzbare Kapazität der Batterie sinkt mit steigender Entladerate nach
 \begin{equation}
 	C_{Bat,Peukert} = C_{Bat}\cdot (\frac{1}{\dot{C}})^{P_{Bat}-1} 
 	\qquad mit P_{Bat} \geq 1,
@@ -389,61 +466,61 @@ Nach
 \begin{equation}
 	Restladung_i[\%] = \frac{C_{bat,Peukert}-\Delta C_{Bat,i}}{C_{Bat,Peukert}}\cdot 100\%
 \end{equation}
-berechnet sich die Restladung$_{i}$ nach der \ensuremath{i}-ten Flugphase. Diese ist vor allem für die Flugenveloppe interessant.
+berechnet sich die Restladung$_{i}$ nach der \ensuremath{i}-ten Flugphase. Diese ist vor allem für die Flugenveloppe interessant.\\
 
-
-Bei Batterien, hier vor allem Li-Ion und Li-Po, ist die Batteriespannung abhängig von der Entladerate und der Zeit. Hierzu beschreibt \cite{Tremblay.2009} ein einfaches Modell, in welchem dieser Zusammenhang berücksichtigt wird (Vgl. Abb.\ref{pic:discharge_curve}). 
-\begin{center}
+Bei Batterien, hier vor allem Li-Ion und Li-Po, ist die Batteriespannung abhängig von der Entladerate (C-Rate), der Zeit und Kapazität. Für dieses Problem beschreibt \cite{Tremblay.2009} ein Modell, in welchem dieser Zusammenhang berücksichtigt wird (Vgl. Abb.\ref{abb:discharge_curve}). 
+\begin{figure}[H]
+	\centering
 	\includegraphics[scale=0.5]{images/Discharge.PNG}
-	\label{pic:discharge_curve}
-	\captionof{figure}{typische Entladekurve für eine Batterie \cite{Tremblay.2009}}
-\end{center}
-Dazu errechnet sich die Batteriespannung für Li-Ion Batterien nach
+	\label{abb:discharge_curve}
+	\captionof{figure}{Typische Entladekurve für eine Batterie \cite{Tremblay.2009}}
+\end{figure}
+Für Li-Ion Batterien berechnet sich die Batteriespannung mit:
 \begin{equation}
-	V_{bat} = E_0-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot\int_{}^{} I_{bat} dt - R\cdot I_{bat}+A\cdot e^{-3\cdot\int_{}^{} I_{bat} dt}-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot i^* .
+	V_{bat} = E_0-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot\int_{}^{} I_{bat} dt - R\cdot I_{bat}+A\cdot e^{-3\cdot\int_{}^{} I_{bat} dt}-K\cdot\frac{Q}{Q-\int_{}^{} I_{bat} dt}\cdot i^* \label{eq:batteriespannung}
 \end{equation}
-Diese weisen ein sehr ähnliches Verhalten wie Li-Po Batterien auf, weshalb beide nach der obigen Formel berechnet werden können. Die unbekannten Batterieparameter mit 3 diskreten Punkten nach folgendem Schema
+mit 
+\begin{description}
+	\item \ensuremath{E_0} = konstante Batteriespannung
+	\item \ensuremath{K} = Polarisationskonstante
+	\item \ensuremath{Q} = Batteriekapazität
+	\item \ensuremath{\int_{}^{} I_{bat} dt} = tatsächliche Batterieladung
+	\item \ensuremath{A} = Amplitude der exponentiellen Zone
+	\item \ensuremath{B} = inverse Zeitkonstante der exponentiellen Zone
+	\item \ensuremath{R} = Innenwiderstand
+	\item \ensuremath{i} = Batteriespannung
+	\item \ensuremath{i^\star} = gefilterte Spannung (in diesem Fall \(= 0\))
+\end{description}
+Li-Po Batterien weisen ein der Li-Ion Batterie ähnliches Verhalten auf, weshalb beide nach \ref{eq:batteriespannung} berechnet werden können. Die unbekannten Batterieparameter können mit 3 diskreten Punkten für die Spannung pro Zelle \ensuremath{V_{full}}, \ensuremath{V_{exp}} und  \ensuremath{V_{nom}} und die Kapazität \ensuremath{Q}, \ensuremath{Q_{exp}} und \ensuremath{Q_{nom}} (vgl. Abb.\ref{abb:discharge_curve}) nach folgendem Schema
 \begin{equation}
 	\begin{pmatrix} E_0 \\ A \\ K \end{pmatrix} = A^{-1}\cdot \begin{pmatrix}
 	V_{full}+R\cdot I_{bat} \\ V_{exp}+R\cdot I_{bat} \\ V_{nom}+R\cdot i \end{pmatrix}
 \end{equation}
-mit
+mit der Beziehung
 \begin{equation}
 	A = \begin{pmatrix}
 	1 & 1 & 0 \\ 1 & e^{-3} & -\frac{Q\cdot (Q_{exp}+I_{bat})}{Q-Q_{exp}} \\ 1 & e^{-3\cdot\frac{Q_{nom}}{Q_{exp}}} & -\frac{Q\cdot (Q_{exp}+I_{bat})}{Q-Q_{exp}}
 	\end{pmatrix}
 \end{equation}
 bestimmt werden.
-Um eine möglichst einfache Handhabung zu gewährleisten und eine Batteriezellen unabhängig vom Hersteller, der Kapazität und der maximalen Entladerate verwenden zu können, ist die Erstellung einer Normzelle von Interesse. Aus \textcolor{red}{Beyer2016a Blub} existiert bereits eine Datenbank mit mehreren Batterien von unterschiedlichen Herstellern, in der alle benötigten Daten zur Erstellung dieser Zelle vorhanden sind. Benötigt werden folgende Punkte: 
-\begin{itemize}
-	\item die Kapazität Q
-	\item die $Q_{exp} Q_{nom}, V_{full}, V_{exp}, V_{nom}$, R und i
-\end{itemize}
-Hierbei sind schon $V_{full}, V_{exp} und V_{nom}$ auf eine Zelle normiert, allerdings die anderen Parameter nicht. Aus diesem Grund werden alle übrigen Parameter mit \SI{1}{Ah} normiert und der arithmetische Mittelwert über alle Batterien gebildet. Der Entladestrom entspricht dabei dem 1/100 der Batteriekapazität also \SI{1}{Ah}. Für den auf \SI{1}{Ah} genormten Innenwiderstand lässt sich ein hyperbolischer Verlauf über der Kapazität feststellen. Mittels einer Regression kann der Innenwiderstand für eine Zelle mit \SI{1}{Ah} ermittelt werden. 
-Einen bedeutenden Einfluss auf die Abweichungen hat der Innenwiderstand. Bedingt durch die Normierung kann im Vergleich zu den eigentlichen Batterien festgestellt werden, dass dieser vor allem bei den Zellen mit signifikanten Unterschieden abweicht. An dieser Stelle ist daher ein Modell für den Innenwiderstand sinnvoll. Beim Darstellen des Innenwiderstandes in Abhängigkeit der C-Rate und der Kapazität fällt auf, das beiden ein hyperbolisches Verhalten zugrunde gelegt werden kann. 
-Entsprechend werden die Datenpunkte mit der Funktion:
+Aus dieser Datenbank sind die oben genannten Punkte für die Spannung und Kapazität sowie die Innenwiderstände und Entladeströme angegeben. Die Punkte für die Spannung, $V_{full}, V_{exp} und V_{nom}$ entziehen sich einer Normierung, da sie bereits für nur eine Batteriezelle gelten. Die Punkte für die Kapazität und der Innenwiderstand beziehen sich allerdings auf die gesamte Batteriezelle. Daher ist eine Normierung auf eine Zelle notwendig, was mit dem arithmetischen Mittelwert geschieht. Dies ist jedoch für den Innenwiderstand zu ungenau, da er einen starken Einfluss auf die Genauigkeit des Modells hat und kleine Abweichungen zu eindeutigen Ungenauigkeiten führen. Für den Innenwiderstand kann ein Modell in Abhängigkeit der C-Rate und der Kapazität aufgestellt werden.  Die Abhängigkeit von beiden Faktoren zeigt ein hyperbolisches Verhalten auf was am besten durch einen Funktionstyp der Form 
 \begin{equation}
-	R_I = finde\cdot heraus
+	f(x,y) = \frac{k}{C_{Rate}\cdot(a\cdot C_{Rate}+b\cdot Q)^d}
 \end{equation}
-angenähert.
-Der Vergleich der berechneten Normzelle mit originalen Batterien teils starke Abweichungen von über 100\% von der ursprünglichen Batteriezelle. Zusätzlich wird der Einfluss der C-Rate auf diese Abweichungen mit berücksichtigt. Dabei kam heraus, dass gewisse Batterien signifikant von der angenäherten Zelle abweichen (z.B. Batterienummer 14,30,40 und 63). Diese wiesen deutliche Abweichungen von der mittleren Abweichung aller Zellen auf. Aus diesem Grund sind diese Batterien aus der Betrachtung entfernt und die Mittelwerte neu berechnet worden.
+Beschrieben wird. Zur Steigerung der Genauigkeit, werden einige Batteriezellen aus der Berechnung der Erstellung dieses Modells herausgenommen, da diese erhebliche Abweichungen von der Standardabweichung aufzeigen. Hier sei angemerkt, dass sich dadurch die Genauigkeit vor allem  im Bereich kleiner C-Raten und Kapazitäten verringert.
 
 
 
 
-\begin{itemize}
-	\item Es ist eine Datenbank von Elektromodellflug vorhanden, in der die lastabhängige Entladekurve verschiedener Batterien unterschiedlicher Hersteller und unterschiedlichen Kapazitäten, Massen etc. dargestellt sind
-	\item Ziel ist, unabhängig vom Hersteller, der Kapazität, der Masse, der max. Dauerentladerate, etc. ein Batteriemodell aufzustellen für eine Zelle
-	\item Dazu muss eine Normzelle hergestellt werden <-- anders formulieren
-	\item Enstsprechung wurden alle Batterien der Datenbank auf eine \SI{1}{Ah} normiert.
-	\item dazu arithmetischer Mittelwert von Q, Qexp und Qnom bezogen auf eine Ah, die Angaben V, Vexp,Vfull waren entsprechend genormt, nur Mittelwert berechnen
-	\item Der Strom i ist auf 1/100 der Kapazität oder Entladerate bezogen
-	\item für Innenwiderstand ist auch genormt auf 1Ah. Es lässt sich ein hyperbolischer Verlauf der des Widerstandes über der Kapazität feststellen.
-	\item --> Regression durch die Punkte legen mit lsqcurvefit. 
-	\item Vergleich aufgestellten Modells zu Originalzellen. 
-	\item Feststellung der Abweichungen des Modells von der Originalzelle, dazu Bestimmung starker Diskrepanzen einzelner Zellen von der Normzelle und Bestimmung einer Tendenz der Abweichung. 
-	\item Korrektur dieser durch Errechnung der Standardabweichung und Festlegung des Konfidenzintervalls  
-\end{itemize}
+%Interessant für die nachfolgende Untersuchungen ist eine Batteriezelle, die unabhängig vom Hersteller, der Kapazität, der Entladerate und anderen herstellerspezifischen Eigenheiten, verwendet werden kann.  Aus diesem Grund ist die Erstellung einer Normzelle von Interesse. Aus \textcolor{red}{Beyer2016a Blub} existiert bereits die Datenbank \texttt{Elektromodellflug} mit mehreren Batterien von unterschiedlichen Herstellern, in der alle benötigten Daten zur Erstellung dieser Zelle vorhanden sind. Ebenso existiert aus dieser Arbeit bereits eine Funktion zur Erstellung der in Abb.\ref{abb:discharge_curve} gezeigten Entladekurve. 
+%Hierbei sind schon $V_{full}, V_{exp} und V_{nom}$ auf eine Zelle normiert, allerdings die anderen Parameter nicht. Folglich werden alle übrigen Parameter mit \SI{1}{Ah} normiert und der arithmetische Mittelwert über alle Batterien gebildet. Der Entladestrom entspricht dabei dem 1/100 der Batteriekapazität. 
+%Erste Vergleich der normierten Zelle mit den ursprünglichen Batterien zeigten deutliche Unterschiede. Es wurde herausgefunden, dass der Innenwiderstand einen bedeutenden Einfluss auf die Abweichungen hat. Der arithmetische Mittelwert für den Widerstand ist an dieser zu Stelle zu ungenau. Dem Innenwiderstand in Abhängigkeit der Kapazität und der C-Rate kann einen hyperbolischen Verlauf in beide Richtungen zugrunde gelegt werden. Unter Vernachlässigung von Ausreißern können die Datenpunkte mit der Gleichung
+%\begin{equation}
+%	f(x,y) = \frac{k}{C_{Rate}\cdot(a\cdot x+b\cdot y)^d}
+%\end{equation}
+%angenähert werden. Hier sei angemerkt, dass durch das Entfernen von Batterien aus der Berechnung die Genauigkeit im Bereich kleiner C-Raten und Kapazitäten verringert. Nichtsdestotrotz ist damit die Genauigkeit in der Nähe der fixen Datenpunkte größer. Die Abweichungen der Batteriespannung des Modells von den realen Zellen sind in \textcolor{red}{Abb. Abweichungen} dargestellt. Dazu wurde jeweils die Fläche der Normzelle unter der Entladespannungskurve in Bezug zu der der tatsächlichen Batterie in Bezug gesetzt.
+
+%Der Vergleich der berechneten Normzelle mit originalen Batterien teils starke Abweichungen von über \SI{100}{\%} von der ursprünglichen Batteriezelle. Zusätzlich wird der Einfluss der C-Rate auf diese Abweichungen mit berücksichtigt. Dabei kam heraus, dass gewisse Batterien signifikant von der angenäherten Zelle abweichen (z.B. Batterienummer 14,30,40 und 63). Diese wiesen deutliche Abweichungen von der mittleren Abweichung aller Zellen auf. Aus diesem Grund sind diese Batterien aus der Betrachtung entfernt und die Mittelwerte neu berechnet worden.
 
 
 \subsection{Wirkungsgrad über das Gesamtsystem}
@@ -482,8 +559,8 @@ ist das Produkt aus der Batteriespannung und -strom.
 Für den Fall, dass technisch und aerodynamisch unmögliche Flugzustände erreicht werden, sind folgende technische und aerodynamische Grenzen festgelegt:
 \begin{itemize}
 	\item Die Restladung im Steigflug ist kleiner als  Null oder kleiner als eine vorher festgelegte, minimale Restkapazität (Kapazität der Batterie reicht nicht aus oder zu hohe Flugzeit)
-	\item Die Motorspannung ist größer als die nominelle Spannung der Batterie (zu hohe Winkelgeschwindigkeit im Steigflug erforderlich)
-	\item Die Motorspannung ist kleiner/gleich Null (zu schneller Sinkflug, diese Grenze kann in einem Steigflug nicht erreicht werden, ist der Vollständigkeit halbe trotzdem mit berücksichtigt)
+	\item Die Motorspannung ist größer als die nominelle Spannung der Batterie zw die PWM ist größer als \SI{100}{\%} (zu hohe Winkelgeschwindigkeit im Steigflug erforderlich)
+	\item Die Motorspannung oder der Motorstrom ist kleiner/gleich Null (physikalisch unmöglicher Steigflug oder zu schneller Sinkflug)
 	\item Die C-Rate ist größer als die maximal zulässige C-Rate der Batterie (Batterieentladestrom ist höher als zulässig)
 	\item Der Motorstrom ist höher als der maximal zulässige Dauerstrom des Motors unter Last (zu hohes Drehmoment gefordert)
 	\item Der lokale Anstellwinkel überschreitet den festgelegten Grenzwert von \ensuremath{\alpha_{max}}(Strömungsabriss)

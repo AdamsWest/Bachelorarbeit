@@ -2,12 +2,5 @@
 
 
 
-		Mi.09.01.19: bis Mittag: weitere Untersuchung des Batteriemodells 
-		- Beginn der Untersuchung mit Auswahl ob Flächenflugzeug oder Multicopter
-		- Implementierung von Steiggeschw. in Matlab
-		- etc. ...
-
-
-
 
 	UNBEDINGT ÄNDERN: DIAGRAMME AUS RUSSLAND WEICHEN FÜR TIEFERE TEMPERATUR AB. IM BERICHT VERMERKEN UND DIE BESCHREIBUNG ÄNDERN

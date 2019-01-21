@@ -1,0 +1,78 @@
+%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Kraefteggw.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{321.61184888bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.54765445)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Kraefteggw.pdf}}%
+    \put(0.10286727,0.52310465){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_a$}}}%
+    \put(0.00814458,0.32121549){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_g$}}}%
+    \put(0.00576133,0.21034459){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$k^*$}}}%
+    \put(0.04986695,0.10081116){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_a$}}}%
+    \put(0.25113025,0.0137497){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_g$}}}%
+    \put(0.35839042,0.02206467){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_f$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Kraefteggw.pdf}}%
+    \put(0.21353177,0.11626312){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m \cdot g$}}}%
+    \put(0.40398102,0.20332459){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W$}}}%
+    \put(0.37795337,0.34333954){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$A$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Kraefteggw.pdf}}%
+    \put(0.1804215,0.27397564){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$-\Theta'$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Kraefteggw.pdf}}%
+    \put(0.19897254,0.3298767){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\gamma_a$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Kraefteggw.pdf}}%
+    \put(0.09781126,0.36401626){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$-\alpha_M$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Kraefteggw.pdf}}%
+    \put(0.24632041,0.51035541){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Kraefteggw.pdf}}%
+    \put(0.59207518,0.22427011){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S$}}}%
+    \put(0.59788666,0.32246485){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$-X_g^A$}}}%
+    \put(0.71647482,0.1543951){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$Z_g^A + m\cdot g$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Kraefteggw.pdf}}%
+    \put(0.63280599,0.24635096){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$-\Theta'$}}}%
+  \end{picture}%
+\endgroup%

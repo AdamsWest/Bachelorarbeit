@@ -52,6 +52,37 @@
       \endverb
       \warn{\item Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring}
     \endentry
+    \entry{Bittner.2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=37ca3ff1fe0bcb2928d0379b75bcfbc1}{%
+           family={Bittner},
+           familyi={B\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \strng{fullhash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \strng{bibnamehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \strng{authorbibnamehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \strng{authornamehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \strng{authorfullhash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-54285-5}
+      \field{title}{Flugmechanik der Hubschrauber}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1007/978-3-642-54286-2
+      \endverb
+    \endentry
     \entry{Drivecalc}{misc}{}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
@@ -270,6 +301,35 @@
       \verb{doi}
       \verb 10.1007/978-981-10-3382-7
       \endverb
+    \endentry
+    \entry{Scheiderer.2008}{book}{}
+      \name{author}{1}{}{%
+        {{hash=594bad86b0b63327c8244f31caac7160}{%
+           family={Scheiderer},
+           familyi={S\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{fullhash}{594bad86b0b63327c8244f31caac7160}
+      \strng{bibnamehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{authorbibnamehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{authornamehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{authorfullhash}{594bad86b0b63327c8244f31caac7160}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Aufl.}
+      \field{isbn}{978-3-540-72724-8}
+      \field{title}{Angewandte Flugleistung: Eine Einf{ü}hrung in die operationelle Flugleistung vom Start bis zur Landung}
+      \field{year}{2008}
     \endentry
     \entry{Shi.2017}{article}{}
       \name{author}{4}{}{%
