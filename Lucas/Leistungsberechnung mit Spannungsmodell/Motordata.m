@@ -44,7 +44,7 @@ end
 K_V = DAT(1);
 I_0 = DAT(2);
 R_i = DAT(3);
-m_Mot = DAT(4);
+m_Mot = DAT(4)/1000;
 S_max = DAT(5);
 I_max = DAT(6);    
           

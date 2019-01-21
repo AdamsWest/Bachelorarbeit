@@ -304,8 +304,8 @@ for h_variabel = H_0:Delta_H:H_max
         % Wenn Grenzen ueberschritten werden, Resultate entfernen
         alpha_inter(z) = alpha_inter(z)*180/pi;
         
-        if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat_nom || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || ...
-                alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1 || PWM_inter(z) > 1.0
+        if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat(x) || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || ...
+                alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1 || I_Bat_inter(z) <= 0     % ||  PWM_inter(z) > 1.0
             C_Rest_V_inter(z) = NaN;
             Omega_inter(z) = NaN;
             U_mot_inter(z) = NaN;
@@ -452,102 +452,40 @@ end
 %% plot
 
 % Darstellung der Ergenisse in Diagrammen
-
-% Restladung über der Höhe
-figure(figure_C_Rest_V)
-plot(H,C_Rest_V*100,'LineWidth',2);
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('Restladung der Batterie [%]')
-text(6000,90,['Motor = ' motor_name]);
-text(6000,80,['Propeller = ' prop_name]);
-saveas(gcf,'Flächenflugzeug_C_Rest_V', 'pdf');  
-
-
-% Drehzahl über der Höhe
-figure(figure_omega)
-plot(H,Omega/(2*pi)*60,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('RPM')
-saveas(gcf,'Flächenflugzeug_omega', 'pdf');  
-
-
-% Motorstrom über der Höhe
-figure(figure_I_mot)
-plot(H,I_mot,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('I_{mot} [A]')
-saveas(gcf,'Flächenflugzeug_I_mot', 'pdf');  
-
-% Motorspannung über der Höhe
-figure(figure_U_mot)
-plot(H,U_mot,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('U_{mot} [V]')
-saveas(gcf,'Flächenflugzeug_U_mot', 'pdf');  
-
-% Batteriestrom über der Höhe
-figure(figure_I_Bat)
-plot(H,I_Bat,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('I_{Bat} [A]')
-saveas(gcf,'Flächenflugzeug_I_Bat', 'pdf');  
-
-% Batteriespannung über der Höhe
-figure(figure_U_Bat)
-H2 = [0;H];
-plot(H2,U_Bat,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('U_{Bat} [V]')
-saveas(gcf,'Flächenflugzeug_U_Bat', 'pdf'); 
-
-% PWM über der Höhe
-figure(figure_PWM)
-plot(H,PWM*100,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('PWM [%]')
-saveas(gcf,'Flächenflugzeug_PWM', 'pdf');  
-
-% Wirkungsgrad
-figure(figure_eta)
-plot(H,eta_ges*100,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('eta_{ges} [%]')
-saveas(gcf,'Flächenflugzeug_eta', 'pdf');  
-
-% Steigwinkel Flaechenflugzeug
-figure(figure_gamma)
-plot(H,gamma_Flaechenflzg,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('Bahnneigungswinkel [°]')
-saveas(gcf,'Flächenflugzeug_gamma', 'pdf');  
-
-% Geschwindigkeit Flaechenflugzeug
-figure(figure_V)
-plot(H,V_Flaechenflugzeug,'LineWidth',2)
-grid on
-hold on
-xlabel('Höhe [m]')
-ylabel('Fluggeschwindigkeit [m/s]')
-saveas(gcf,'Flächenflugzeug_V', 'pdf');  
-
+figure(figure_ges)
+if Abfrage_Flugsystem == 1
+    % MULICOPTER
+    subplot(421), plot(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+    subplot(422), plot(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+    subplot(423), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
+    subplot(424), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
+    subplot(425), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    H2 = [0;H];
+    subplot(426), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
+    subplot(427), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
+    subplot(428), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+        
+else   
+    % FLAECHENFLUGZEUG
+    subplot(521), plot(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+    subplot(522), plot(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+    subplot(523), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
+    subplot(524), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
+    subplot(525), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    H2 = [0;H];
+    subplot(526), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
+    subplot(527), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
+    subplot(528), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+    subplot(529), plot(H,gamma_Flaechenflzg,'LineWidth',2), title('Bahnneigungswinkel'), grid, xlabel('Höhe [m]'),ylabel('gamma [°]')
+    subplot(5,2,10), plot(H,V_Flaechenflugzeug,'LineWidth',2), title('absolute Fluggeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_A [m/s]')
+    
+end
+ImageSizeX = 14;
+ImageSizeY = 24;
+figure(figure_ges)
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
+saveas(gcf,Dateiname, 'pdf');  
 
 % figure(figure_gamma)
 % for i = 1:length(gamma_Flaechenflzg)

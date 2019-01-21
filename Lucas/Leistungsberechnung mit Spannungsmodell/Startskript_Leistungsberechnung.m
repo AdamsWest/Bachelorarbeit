@@ -4,7 +4,8 @@ close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dateiname = 'Quadrocopter Russland';
+% Dateiname = 'Flächenflugzeug';                        % Hier Dateiname
+% festlegn oder unten definieren lassen
 
 load('DATA_APC.mat');
 load('Elektromodellflug');
@@ -22,30 +23,23 @@ Abfrage_Flugsystem = 0;
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % figures definieren
-figure_C_Rest_V = figure;
-figure_omega = figure;
-figure_I_mot = figure;
-figure_U_mot = figure;
-figure_I_Bat = figure;
-figure_U_Bat = figure;
-figure_PWM = figure;
-figure_eta = figure;
-figure_gamma = figure;
-figure_V = figure;
+figure_ges = figure;
 
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{27,1}; % Motorname
-R_i = 0.078;            % Innenwiderstand in Ohm
-K_V = 860*2*pi/60;     % K_V Wert in 1/(V*s)
-I_0 = 1.7;             % Leerlaufstrom in Ampere
-I_max = 30;             % Max Continuous Current
-m_Mot = 0.151;         % Motorgewicht in kg
+motor_name = axi_motor_db{15,1}; % Motorname
+[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+% R_i = 0.078;            % Innenwiderstand in Ohm
+% K_V = 860*2*pi/60;     % K_V Wert in 1/(V*s)
+% I_0 = 1.7;             % Leerlaufstrom in Ampere
+% I_max = 30;             % Max Continuous Current
+% m_Mot = 0.151;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '13x4';    % Propellerbezeichnung
+prop_name = '12x5';    % Propellerbezeichnung
 n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -82,9 +76,9 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
-E = 3;                 	% Gleitzahl
-E_stern = 4;			% Auslegungsgleitzahl
-V_stern = 100/3.6;		% Auslegungsgeschwindigkeit in m/s
+E = 2;                 	% Gleitzahl
+E_stern = 2;			% Auslegungsgleitzahl
+V_stern = 50/3.6;		% Auslegungsgeschwindigkeit in m/s
 rho_stern = 1.225;		% Auslegungshöhe repräsentiert durch die Dichte (Bodennähe) in kg/m^3
 
 % Diskretisierung des Bahnneigungswinkels zur Ermittlung des optimalen Steigwinkels 
@@ -107,7 +101,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                               % Inkrementweite in m 
-H_max = 20000;                              % Maximalhöhe in m
+H_max = 15000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -133,5 +127,11 @@ if Abfrage_Flugsystem == 0
 end
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
+
+Dateiname = ['Flächenflzg, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', E = ' ...
+    num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh'];
+
+% Dateiname = ['Flächenflzg, Motor = ' motor_name ', Prop = ' prop_name ', E = ' ...
+%     num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh'];
 
 run('Leistungsberechnung');
