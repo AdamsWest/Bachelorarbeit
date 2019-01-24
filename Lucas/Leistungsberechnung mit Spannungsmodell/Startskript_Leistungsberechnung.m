@@ -32,14 +32,14 @@ figure_ges = figure;
 motor_name = axi_motor_db{15,1}; % Motorname
 [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
 K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-% R_i = 0.078;            % Innenwiderstand in Ohm
-% K_V = 860*2*pi/60;     % K_V Wert in 1/(V*s)
-% I_0 = 1.7;             % Leerlaufstrom in Ampere
+% R_i = 0.123;            % Innenwiderstand in Ohm
+% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+% I_0 = 0.56;             % Leerlaufstrom in Ampere
 % I_max = 30;             % Max Continuous Current
-% m_Mot = 0.151;         % Motorgewicht in kg
+% m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '12x5';    % Propellerbezeichnung
+prop_name = '11x5';    % Propellerbezeichnung
 n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -49,7 +49,7 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 
 % Batterie
 E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 5;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
@@ -76,9 +76,9 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
-E = 2;                 	% Gleitzahl
-E_stern = 2;			% Auslegungsgleitzahl
-V_stern = 50/3.6;		% Auslegungsgeschwindigkeit in m/s
+E = 4;                 	% Gleitzahl
+E_stern = 4;			% Auslegungsgleitzahl
+V_stern = 100/3.6;		% Auslegungsgeschwindigkeit in m/s
 rho_stern = 1.225;		% Auslegungshöhe repräsentiert durch die Dichte (Bodennähe) in kg/m^3
 
 % Diskretisierung des Bahnneigungswinkels zur Ermittlung des optimalen Steigwinkels 
@@ -124,14 +124,20 @@ if Abfrage_Flugsystem == 0
     m_flugzeug = f_p * m_copter;
     
     m_Bat = m_Bat+((n_Prop_Quad*m_Mot_Quad)-m_Mot*n_Prop) + (1-f_p) * m_copter;
-end
-
-%% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
-
-Dateiname = ['Flächenflzg, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', E = ' ...
+    
+    Dateiname = ['Flächenflzg, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', E = ' ...
     num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh'];
 
-% Dateiname = ['Flächenflzg, Motor = ' motor_name ', Prop = ' prop_name ', E = ' ...
-%     num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh'];
+else
+    
+    Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', V_Kg = ' ...
+    num2str(V_Kg) ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
+
+end
+
+
+
+
+%% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
 run('Leistungsberechnung');

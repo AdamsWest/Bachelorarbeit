@@ -216,12 +216,7 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Aerodynamik
             [Thrust_inter(z),V_A,Flugzustand_Flaechenflzg_inter(z)] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma_variabel,rho(x));  
-            
-            if x ==196 && z == 1
-                aaa = 1;
-            end
-            
-            
+          
             if V_A <= 5                                                    % Wenn Geschwindigkeit zu klein (Aerodynamische Grenze)
                 t_Flug = NaN;                                              % setze Steigzeit gleich NaN
             else

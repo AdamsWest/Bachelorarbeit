@@ -80,6 +80,9 @@ elseif W < W_0
     % Übergang in den Senkrechtflug
 
     Flugzustand_Flaechenflzg = 2;		% --> Senkrechtflug
+    
+    W = W_0;
+    E = A / W_0;
 
 end 
 
