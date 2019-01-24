@@ -398,7 +398,11 @@ Letztlich ergibt sich der Schub aus Gleichung \ref{eq:auftriebsgleichung} und \r
 	F = m\cdot g\cdot (\frac{1}{E}\cdot\cos\gamma + \sin\gamma) \label{eq:schub_flaechenflugzeug}
 \end{equation}
 mit dem Gewicht und Steigwinkel als Variable.
-Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren. Aus diesem Grund wird dieser für jeden Schritt variiert. Das Auswahlkriterium für den optimalen Steigwinkel ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung voraussetzt. Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
+Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren. Aus diesem Grund wird dieser für jeden Schritt variiert. Das Auswahlkriterium für den optimalen Steigwinkel ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung voraussetzt
+\begin{equation}
+	\sigma = \delta C_{Bat}\cdot U_{Bat}.
+\end{equation}
+Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
 
 
 \subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
@@ -422,7 +426,7 @@ Der Motorstrom berechnet sich aus
 \end{equation}
 Mit dem Strom ergibt sich die Spannung zu
 \begin{equation}
-	U_{Mot} = \frac{\omega}{K_v} + R_i\cdot I_{Mot}.
+	U_{Mot} = \frac{\omega}{K_v} + R_i\cdot I_{Mot}. \label{eq:motorspannung}
 \end{equation}
 
 

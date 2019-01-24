@@ -13,10 +13,8 @@
 \vspace*{\fill}
 
 \begin{struktogramm}(140,200)
-\assign[1]{Flugger\"at auswählen (im Startskript)}
-\assign[1]{Flugger\"atkomponenten definieren (im Startskript)}
-\assign[1]{Missionsparameter festlegen (im Startskript)}
-\assign[1]{Umgebungsparameter festlegen (im Startskript)}
+\assign[1]{Fluggerät auswählen und Komponenten definieren(im Startskript)}
+\assign[1]{Missions- und Umgebungsparameter festlegen (im Startskript)}
 \assign[1]{Diskretisierungen festlegen}
 \assign[1]{Aufruf des Hauptskripts: Leistungsberechnung starten}
 \assign[1]{Initialisierung der Parameterberechnung}
@@ -63,7 +61,14 @@
 		\assign[2]{Übergabe der zwischengespeicherten Leistungsparameter}
 		\change
 		\ifthenelse[10]{1}{1}{Sind die Werte NaN?}{nein}{ja}
-			\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+			\while[5]{Solange Abbruchkriterium nicht erreicht}		
+				\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+				\ifthenelse[10]{1}{1}{Sind alle Werte innerhalb der Leistungsgrenzen?}{ja}{nein}
+				\assign[2]{Verlasse Schleife}
+				\change
+				\assign[2]{Suche nächst kleinere Energiemenge}
+				\ifend
+			\whileend
 			\assign[2]{Übergabe aller Leistungsparameter mit diesem Index}
 			\change
 			\assign[2]{Verwerfe alle Ergebnisse}
@@ -71,7 +76,7 @@
 	\ifend
 \whileend
 \assign[2]{Ergebnisse für Restladung, Drehzahl, Motorstrom und -spannung, PWM in Diagramme zeichnen}
-\assign[2]{Speichern der Diagramme als .jpg - Bilder}
+\assign[2]{Speichern der Diagramme}
 \end{struktogramm}
 
 \end{document}

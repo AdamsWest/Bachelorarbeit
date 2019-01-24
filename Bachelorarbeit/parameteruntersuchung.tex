@@ -40,32 +40,54 @@ Für erste Untersuchungen kann der Penaltyfaktor auf 1 gesetzt werden. Dies ents
 %	\item Ziel ist eine Aussage über das "bessere" von beiden Fluggeräten
 %\end{itemize}
 
-\subsection{Allgemeine Untersuchung}
-Die gewählte Konstellation erreicht fast \SI{10000}{m} Höhe. Der begrenzende Faktor ist in diesem Fall der Bahnneigungswinkel, der bei \SI{1}{^\circ} das Minimum der Diskretisierung erreicht und somit das Ende des Steigfluges einleitet. Zu Beginn des Steigfluges wären größere Steigwinkel effizienter, allerdings werden diese durch den maximalen Motorstrom begrenzt. Ohne diese würde der Bahnneigungswinkel beinahe linear absinken. Daraus kann geschlossen werden, dass ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten ist. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten. Gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}. Ab diesem Zeitpunkt kann nicht mehr mit maximalem Motorstrom geflogen werden, \textcolor{red}{wodurch folglich der Motorspannung und der Bahnneigungswinkel simultan abfallen}. Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug} und \ref{eq:schub_flaechenflugzeug}). Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein (Vgl. Gleichung \ref{eq:motorstrom}). Bedingt durch die mit dem Winkel und der Höhe (indirekt durch die Dichte) steigende Geschwindigkeit, können die Steigwinkel leistungsbedingt nicht mehr aufgebracht werden. Die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
 
 
+\subsection{Erste Untersuchung}
+In der folgenden Tabelle sind wichtige Parameter des Flächenflugzeuges aufgelistet.
 
-\begin{itemize}
-	\item mit dieser Konstellation sind fast \SI{10000}{m} Höhe erreichbar
-	\item begrenzender Faktor / Parameter ist die Batteriespannung und damit auch gleichzeitig die PWM als das Verhältnis von Motorstrom zur nominalen Batteriespannung 
-	\item zu Beginn wären höhere Flugwinkel effizienter. Diese werden allerdings durch den max. Motorstrom begrenzt. 
-	\item Ohne diese Grenze würde der Flugbahnwinkel von sehr hohen Werten auf \SI{1}{^\circ} (Minimum der Diskretisierung) linear sinken
-	\item so ist ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten
-	\item gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}.
-	\item Ab diesem Zeitpunt kann nicht mehr mit maximalem Motorstrom geflogen werden, wodurch folglich die Motorspannung und der Bahnneigungswinkel Simultan abfallen
-	\item Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen \textcolor{red}{Gleichung Schub und  Geschwindigkeit}. Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein \textcolor{red}{Gleichung Motorstrom}
-	\item Die maximale Höhe begrenzt der minimale Bahnanstellwinkel von \SI{1}{^\circ}
-	\item bedingt durch die mit dem Winkel und der Höhe (durch die Dichte) steigende Geschwindigkeit, kann diese leistungsbedingt nicht mehr aufgebracht werden.
-	\item die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht
-	\item Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus \textcolor{red}{Gleichung Batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
-	\item der letzte Anstieg von \ensuremath{U_{Bat}} liegt am Abfall von \ensuremath{I_{Bat}}, da dieser \ensuremath{U_{Bat}} direkt beeinlusst
-	\item 
-\end{itemize}
+\begin{center}
+	\captionof{table}{wichtige Parameter des Flächenflugzeugs}
+	\begin{tabular}{l l l} \hline
+		Parameter & Variablenname & Wert \\ \hline
+		Motormasse \ensuremath{m_{Mot}}& \texttt{m\_Mot} & \SI{151}{g} \\
+		Geschwindigkeitskonstante \ensuremath{K_V} & \texttt{K\_V} & \SI{860}{1/(V\cdot s)} \\
+		maximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{30}{A} \\
+		Propeller & \texttt{prop\_name} & 13x4 \\
+		Anzahl Propeller \ensuremath{n_{Prop}} & \texttt{n\_prop} & \SI{1}{} \\
+		Auslegungsgleitzahl \ensuremath{E^{\star}} & \texttt{E\_stern} & \SI{4}{} \\
+		Auslegungsgeschwindigkeit \ensuremath{V^{\star}} & \texttt{V\_stern} & \SI{50}{km/h} \\
+		Gleitzahl \ensuremath{E} & \texttt{E} & \SI{3}{} \\ \hline
+	\end{tabular}	
+	\label{tab:flzg_parameter}
+\end{center}
+
+Die gewählte Konstellation erreicht fast \SI{11500}{m} Höhe. Der begrenzende Faktor ist in diesem Fall die fehlende Leistung zum Aufstieg in noch größere Höhen. Zu Beginn des Steigflugs stellt sich ein optimaler Bahnneigungswinkel von ca. \SI{55}{^\circ} ein. Dieser Winkel kann bis zu einer Höhe \SI{7500}{m} gehalten werden. Dabei steigt die absolute Fluggeschwindigkeit linear mit dem Produkt aus \ensuremath{\sqrt{\rho^\star/\rho}} an (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Gleichzeitig steigt der Motorstrom leicht, da für einen konstanten Bahnneigungswinkel der benötigte Schub konstant bleibt (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug}), aber mit abnehmenden Dichte das Drehmoment zunimmt. Noch stärker als der Motorstrom steigt die Motorspannung linear an, bis sie das Niveau des Batteriestroms erreicht. Damit ist das Verhältnis von \ensuremath{U_{Mot}} und \ensuremath{U_{Bat}} gleich 1 und  die PWM liegt bei \SI{100}{\%}. Ab diesem Zeitpunkt kann \textcolor{red}{leistungsbedingt} die Geschwindigkeit und Schub für einen konstanten Steigwinkel nicht mehr gehalten werden. Folglich steigt der Bahnneigungswinkel, da für ein Höhenintervall die absolute Fluggeschwindigkeit und analog die Steiggeschwindigkeit \ensuremath{V_H} mit einem mit einem  größeren Bahnneigungswinkel sinkt (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Die maximale Motorspannung entspricht ab \SI{7500}{m} Flughöhe der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei einem beinahe konstantem Motorstrom ist \ensuremath{I_{Bat}} fast ausschließlich von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab. 
+Der Verlauf der Drehzahl ist ausschlaggebend für den des Motorspannung. Da die Motorspannung nicht weiter steigen kann und der Motorstrom leicht absinkt, kann die Drehzahl analog zum sinkenden Strom durch die festgelegten Grenzen leicht steigen (Vgl. Gleichung \ref{eq:motorspannung}). Die Maximaldrehzahl ist damit auf \SI{12000}{RPM} begrenzt. 
+
+%Zu Beginn des Steigfluges wären größere Steigwinkel effizienter, allerdings werden diese durch den maximalen Motorstrom begrenzt. Ohne diese würde der Bahnneigungswinkel beinahe linear absinken. Daraus kann geschlossen werden, dass ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten ist. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten. Gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}. Ab diesem Zeitpunkt kann nicht mehr mit maximalem Motorstrom geflogen werden, \textcolor{red}{wodurch folglich der Motorspannung und der Bahnneigungswinkel simultan abfallen}. Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug} und \ref{eq:schub_flaechenflugzeug}). Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein (Vgl. Gleichung \ref{eq:motorstrom}). Bedingt durch die mit dem Winkel und der Höhe (indirekt durch die Dichte) steigende Geschwindigkeit, können die Steigwinkel leistungsbedingt nicht mehr aufgebracht werden. Die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
+
+
+%\begin{itemize}
+	%\item mit dieser Konstellation sind fast \SI{10000}{m} Höhe erreichbar
+%	\item begrenzender Faktor / Parameter ist die Batteriespannung und damit auch gleichzeitig die PWM als das Verhältnis von Motorstrom zur nominalen Batteriespannung 
+%	\item zu Beginn wären höhere Flugwinkel effizienter. Diese werden allerdings durch den max. Motorstrom begrenzt. 
+%	\item Ohne diese Grenze würde der Flugbahnwinkel von sehr hohen Werten auf \SI{1}{^\circ} (Minimum der Diskretisierung) linear sinken
+%	\item so ist ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten
+%	\item gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}.
+%	\item Ab diesem Zeitpunt kann nicht mehr mit maximalem Motorstrom geflogen werden, wodurch folglich die Motorspannung und der Bahnneigungswinkel Simultan abfallen
+%	\item Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen \textcolor{red}{Gleichung Schub und  Geschwindigkeit}. Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein \textcolor{red}{Gleichung Motorstrom}
+%	\item Die maximale Höhe begrenzt der minimale Bahnanstellwinkel von \SI{1}{^\circ}
+%	\item bedingt durch die mit dem Winkel und der Höhe (durch die Dichte) steigende Geschwindigkeit, kann diese leistungsbedingt nicht mehr aufgebracht werden.
+%	\item die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht
+%	\item Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus \textcolor{red}{Gleichung Batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
+%	\item der letzte Anstieg von \ensuremath{U_{Bat}} liegt am Abfall von \ensuremath{I_{Bat}}, da dieser \ensuremath{U_{Bat}} direkt beeinlusst
+%	\item 
+%\end{itemize}
 
 \subsection{Einflussfaktoren auf das Flächenflugzeug}
 
 \subsubsection{Motor-Propeller-Kombination}
-Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. Für jeden Motor werden vom Hersteller Propeller für einen bestimmten Anwendungsfall vorgegeben, mit dem optimale Leistungen erbracht werden können. Die Propellergröße hängt von der Leistung des Motors ab. Es zeigt sich, dass je stärker der Motor ist, desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch auch groß zu wählen, um den erforderlichen Schub zu liefern. Wird der Radius weiter vergrößert, so verringert sich der optimale Pitch. Außerdem sind Motoren mit niedrigen \ensuremath{K_V}-Werten bei gleichem Motorgewicht zu bevorzugen. Dies liegt in der Tatsache begründet, dass der \ensuremath{K_V}-Wert direkt den Motorstrom beeinflusst und ein hoher Wert diesen entsprechend zu Beginn des Fluges bereits stark erhöht. 
+Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. Für jeden Motor werden vom Hersteller Propeller für einen bestimmten Anwendungsfall vorgegeben, mit dem optimale Leistungen erbracht werden können. Die Propellergröße hängt von der Leistung des Motors ab. Es zeigt sich, dass je stärker der Motor ist, desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch deshalb groß zu wählen, um den erforderlichen Schub zu liefern. Wird der Radius weiter vergrößert, so verringert sich der optimale Pitch. Außerdem sind Motoren mit niedrigen \ensuremath{K_V}-Werten bei gleichem Motorgewicht zu bevorzugen. Dies liegt in der Tatsache begründet, dass der \ensuremath{K_V}-Wert direkt den Motorstrom beeinflusst und ein hoher Wert diesen entsprechend zu Beginn des Fluges bereits stark erhöht. Zudem steht ein hoher \ensuremath{K_V} für eine hohe Maximaldrehzahl des Motors, aber für entsprechend weniger Drehmoment. Das gleiche gilt umgekehrt. 
 
 %\begin{itemize}
 %%	\item Motor-Propeller Kombination hat signifikanten Einfluss auf das Leistungsverhalten
@@ -74,6 +96,10 @@ Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten 
 %	\item Je stärker der Motor ist desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch auch groß zu wählen. 
 %	\item Je größer der Durchmesser, desto kleiner darf der verwendete fixed Pitch gewählt werden. 	
 %\end{itemize}
+
+\subsubsection{Anzahl der Motoren}
+Noch bessere Ergebnisse können mit 2 Motoren erreicht werden, die  einen niedrigen \ensuremath{K_V}-Wert besitzen, aber ein hohes Leistungsgewicht. Mit dieser Konstellation sind Flughöhen bis zu \SI{15000}{m} möglich. In diesem Fall ist nicht der Flug mit maximalen Motorstrom am effizientesten sonder ein Flug mit konstantem Steigwinkel von ca. \SI{60}{^\circ}. Dabei sinkt der Motorstrom in diesem Zustand leicht, da das Drehmoment mit der Höhe abnimmt. Ebenfalls wie oben ist beschrieben ist dieser Zustand so lange fliegbar bis der Motorstrom auf dem Niveau des Batteriestroms und damit \SI{100}{\%} der PWM erreicht ist. Ab diesem Punkt steigt der Bahnneigungswinkel wieder an, da für einen Höhenschritt die Fluggeschwindigkeit mit Winkel sinkt. alle anderen Größen verhalten sich analog zum oben beschriebenen Zustand
+
 
 \subsubsection{Gleitzahl}
 Mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher und vice versa. Hierbei verändert sich der Verlauf des Steigwinkels nicht ausschlaggebend. Eine entsprechend hohe Gleitzahl beudeuted gleichzeitig auch eine entsprechend hohe aerodynamische Güte (Vgl. \cite{Scheiderer.2008}). Dazu sinkt der Widerstand im Vergleich zum Auftrieb, sodass für ein Flächenflugzeug mit einer höheren Gleitzahl für den gleichen Auftrieb weniger Leistung zur Kompensation des Widerstandes aufgebracht werden muss. Als Konsequenz dessen steht mehr Leistung für das Steigen zur Verfügung.
@@ -98,6 +124,8 @@ Die Auslegungsgeschwindigkeit hat einen bedeutenden Einfluss auf die erreichbare
 %\end{itemize}
 
 \subsubsection{Auslegungsgleitzahl}
+Eine verringerte Gleitzahl ist nur im begrenzten Maße möglich. Mit kleiner werdender Auslegungsgleitzahl steigt 
+der Widerstand im Vergleich zum Auftrieb, der im Horizontalflug konstant bleibt. Als Folge steigt auch der Nullwiderstand. Somit befindet sich das Flächenflugzeug aerodynamisch gesehen vermehrt in der Grauzone, sodass die Aussagekraft der Ergebnisse angezweifelt werden muss. 
 
 \subsection{Ergebnisse des Vergleichs} 
 

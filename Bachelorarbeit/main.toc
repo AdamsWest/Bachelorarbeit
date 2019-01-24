@@ -55,15 +55,16 @@
 \contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{27}{section.4.1}
 \contentsline {section}{\numberline {4.2}Multicopter im Vergleich zu einem Fl\IeC {\"a}chenflugzeug}{27}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Vorgehensweise beim Vergleich}{27}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Allgemeine Untersuchung}{28}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Erste Untersuchung}{28}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Einflussfaktoren auf das Fl\IeC {\"a}chenflugzeug}{29}{subsection.4.2.3}
 \contentsline {subsubsection}{Motor-Propeller-Kombination}{29}{subsubsection*.32}
-\contentsline {subsubsection}{Gleitzahl}{30}{subsubsection*.33}
-\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{30}{subsubsection*.34}
-\contentsline {subsubsection}{Auslegungsgleitzahl}{30}{subsubsection*.35}
+\contentsline {subsubsection}{Anzahl der Motoren}{29}{subsubsection*.33}
+\contentsline {subsubsection}{Gleitzahl}{29}{subsubsection*.34}
+\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{30}{subsubsection*.35}
+\contentsline {subsubsection}{Auslegungsgleitzahl}{30}{subsubsection*.36}
 \contentsline {subsection}{\numberline {4.2.4}Ergebnisse des Vergleichs}{30}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}Steiggeschwindigkeit}{30}{section.4.3}
-\contentsline {section}{\numberline {4.4}Verstellpropeller}{31}{section.4.4}
+\contentsline {section}{\numberline {4.4}Verstellpropeller}{30}{section.4.4}
 \contentsline {section}{\numberline {4.5}Steigwinkel}{31}{section.4.5}
 \contentsline {section}{\numberline {4.6}Gr\IeC {\"o}\IeC {\ss }e des Flugger\IeC {\"a}tes}{31}{section.4.6}
 \contentsline {section}{\numberline {4.7}VTOL im Vergleich zum Gleitflug}{31}{section.4.7}
