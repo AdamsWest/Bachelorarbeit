@@ -1,4 +1,4 @@
-function [V_H] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho,v_vert_min,v_vert_Delta)
+function [Thrust] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho)
 % FLAECHENFLUGZEUGAERODYNAMIK   berechnet auf Basis eines einfachen
 % aerodynamischen Modells den benötigten Schub für ein Flächenflugzeug im
 % stationären Steigflug
@@ -47,14 +47,7 @@ function [V_H] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho,v_vert_min,v_v
 %   Copyright 2018 TU-Braunschweig
 % ******************************************************************************
 
-v_ver_max = ceil(v_ver_max);
 
-lengthb_vert = floor(abs(v_ver_max - v_vert_min) / v_vert_Delta + 1);
-
-V_H = zeros(lengthb_vert,1);
-i = 1;
-
-for v_vert_variabel = v_vert_min:v_vert_Delta:v_vert_max
     
     V_H(i) = v_vert_variabel;
     
@@ -66,15 +59,9 @@ for v_vert_variabel = v_vert_min:v_vert_Delta:v_vert_max
     
     W_0 = W_0_stern * (V_vert_opt^2*rho/2)/(V_stern^2*rho_stern/2);	% Skalierung des Nullwiderstandsbeiwertes aus der
     
-    W = W_0;
+    Thrust = m*g + W_0;
     
-    A = cosd(gamma)* m*g;				% Aus der Auftriebsgleichung ergibt sich der Auftrieb
-
-    E = A / W;					% Über die Gleitzahl berechnet sich der Widerstand
     
-    Thrust = m*g * (sind(gamma) + 1/E *cosd(gamma));	% Schubberechnung  
-    
-    i = i + 1;
 end
 end
 
