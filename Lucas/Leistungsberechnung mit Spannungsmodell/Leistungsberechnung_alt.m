@@ -233,7 +233,7 @@ for h_variabel = H_0:Delta_H:H_max
 %              end
 
 
-%                 if Flugzustand_Flaechenflzg == 2 || b == 1
+%                 if Flugzustand_Flaechenflzg == 2 || b == 1 || gamma_variabel >= 90
 %                     b = 1;
 %                     V_vert = V_vert + v_Delta;
 %                     gamma_Flaechenflzg_inter(z) = 90;
@@ -243,7 +243,7 @@ for h_variabel = H_0:Delta_H:H_max
 %                 elseif b == 0 && gamma_variabel >= 90
 %                     Thrust = 0;
                       
-%                     
+%                 end     
 %
 
 %             alpha_inter(z) = - 90 * pi/180;
