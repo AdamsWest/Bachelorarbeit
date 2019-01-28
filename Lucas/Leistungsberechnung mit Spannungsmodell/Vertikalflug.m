@@ -1,11 +1,10 @@
-function [Thrust] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho)
-% FLAECHENFLUGZEUGAERODYNAMIK   berechnet auf Basis eines einfachen
-% aerodynamischen Modells den benötigten Schub für ein Flächenflugzeug im
-% stationären Steigflug
+function [Thrust] = Vertikalflug(m,g,E_stern,V_stern,rho_stern,V_A,rho)
+% VERTIKALFLUG berechnet den Schub für ein lächenflugzeug im vertikalen
+% Steiglfug
 %
-%   FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma,rho)
-%   bestimmt aus dem Auslegungszustand des Flugzeuges im Horizontalflug
-%   (E_stern, V_stern und rho_stern) den Schub für den Steigflug (gamma > 0).
+%   Vertikalflug(m,g,E_stern,V_stern,rho_stern,V_A,rho) errechnet für aus
+%   einem gegebenen Auslegungszustand und für eine gegebene
+%   Steiggeschwindigkeit den benötigten Schub.
 %
 %
 %   Dabei bleiben Windeinflüsse unberücksichtig, sodass gilt
@@ -17,8 +16,7 @@ function [Thrust] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho)
 %   operationelle Flugleistung vom Start bis zur Landung/“, Springer, 2008,
 %   S. 241f.)
 %
-% Syntax:  [Thrust,V_A,Flugzustand_Flaechenflzg] =
-%	FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma,rho)
+% Syntax:  [Thrust] = Vertikalflug(m,g,E_stern,V_stern,rho_stern,V_A,rho)
 %
 %
 % Inputs:
@@ -27,14 +25,11 @@ function [Thrust] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho)
 %    E_stern	Auslegungsgleitzahl
 %    V_stern  	Auslegungsgeschwindigkeit
 %    rho_stern	Auslegungshöhe bzw. repräsentiert durch die Dichte
-%    E		Gleitzahl
-%    gamma	Bahnneigungswinkel
+%    V_A    vertikale Steiggeschwindigkeit
 %    rho	aktuelle Höhe bzw. Dichte
 %
 % Outputs:
 %    Thrust	benötigter Schub
-%    V_A	Fluggeschwindigkeit
-%    Flugzustand_Flaechenflzg 	Kontrollvariable des Flugzustandes
 %
 % Example:
 %    Line 1 of example
@@ -42,26 +37,20 @@ function [Thrust] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho)
 %    [ values, derivatives ] = Untitled( x, myStruct.y, 2 )
 %    [ values, ~ ] = Untitled( [ 1:.1:100 ] , myStruct.y, 1 )
 %
-% See also: MULTICOPTERAERODYNAMIK,
+% See also: MULTICOPTERAERODYNAMIK, FLAECHENFLUGZEUGAERODYNAMIK
 %
 %   Copyright 2018 TU-Braunschweig
 % ******************************************************************************
-
-
-    
-    V_H(i) = v_vert_variabel;
     
     A_stern = m*g;					% Berechnung des Auftriebs im Auslegungszustand, Horizontalflug mit gamma = 0
     
-    W_stern = A_stern / E_stern;			% Über die Auslegungsgleitzahl berechnet sich der Widerstand
+    W_stern = A_stern / E_stern;    % Über die Auslegungsgleitzahl berechnet sich der Widerstand
     
-    W_0_stern = 0.5 * W_stern;			% Der Nullwiderstand ergibt sich für einen optimalen Flug als die Hälfte des Gesamtwiderstands
+    W_0_stern = 0.5 * W_stern;		% Der Nullwiderstand ergibt sich für einen optimalen Flug als die Hälfte des Gesamtwiderstands
     
-    W_0 = W_0_stern * (V_vert_opt^2*rho/2)/(V_stern^2*rho_stern/2);	% Skalierung des Nullwiderstandsbeiwertes aus der
+    W_0 = W_0_stern * (V_A^2*rho/2)/(V_stern^2*rho_stern/2);	% Skalierung des Nullwiderstandsbeiwertes aus der
     
-    Thrust = m*g + W_0;
+    Thrust = m*g + W_0;             % Schub besteht aus der Kompensation der Gewichtskraft und des Nullwiderstandes
     
-    
-
 end
 
