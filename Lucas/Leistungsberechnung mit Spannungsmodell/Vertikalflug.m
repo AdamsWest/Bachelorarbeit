@@ -62,6 +62,6 @@ function [Thrust] = Vertikalflug(m,g,E_stern,v_ver_max,rho_stern,rho)
     Thrust = m*g + W_0;
     
     
-end
+
 end
 
