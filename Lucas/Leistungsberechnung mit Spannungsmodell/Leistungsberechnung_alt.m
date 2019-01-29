@@ -339,7 +339,7 @@ for h_variabel = H_0:Delta_H:H_max
         if Abfrage_Flugsystem == 1
             break;								% Abbruch für den Fall eines Multicopters um for-Schleife zu verlassen, da gamma vorgegeben
         else
-            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_nom;        % Berechnung der aufgebrachten Energiemenge
+            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_inter(z);        % Berechnung der aufgebrachten Energiemenge
         end
         
         

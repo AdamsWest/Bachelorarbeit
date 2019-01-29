@@ -17,7 +17,7 @@ load('axi_motor_db.mat');
 % Handelt es sich bei dem zu untersuchenden Flugobjekt um einen Multicopter
 % (1) oder um ein Flächenflugzeug (0)?
 
-Abfrage_Flugsystem = 0;
+% Abfrage_Flugsystem = 0;
 
 
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,6 +58,10 @@ P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 m_Bat = 0.56;           % Batteriemasse in kg
 
+% m_Bat_min = 0.1;
+% m_Bat_Delta = 0.1;
+% m_Bat_max = 5;
+
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
 
@@ -72,30 +76,15 @@ c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters
 c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
 c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
-
-%% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
-E = 4;                 	% Gleitzahl
-E_stern = 4;			% Auslegungsgleitzahl
-V_stern = 70/3.6;		% Auslegungsgeschwindigkeit in m/s
-rho_stern = 1.225;		% Auslegungshöhe repräsentiert durch die Dichte (Bodennähe) in kg/m^3
-
-% Diskretisierung des Bahnneigungswinkels zur Ermittlung des optimalen Steigwinkels 
-
-gamma_min = 1;			% kleinster Bahnneigungswinkel
-gamma_Delta = 1;		% Schrittweite Batteriemasse
-gamma_max = 90;			% größter Bahnneigungswinkel
-
-v_vert_min = 1;         % kleinste vertikale Steiggeschwindigkeit
-v_vert_Delta = 1;       % Schrittweite Steiggeschwindigkeit
-% v_vert_max ist die Auslegungsgeschwindigkeit
-
+% Diskretisierung der Steiggeschwindigkeit
+V_Kg_min = 0.5;			% kleinster Bahnneigungswinkel
+V_Kg_Delta = 0.5;		% Schrittweite Batteriemasse
+V_Kg_max = 40;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Bahngeschwindigkeit
-V_Kg = 10;                                  % Steiggeschwindigkeitin m/s
+% V_Kg = 10;                                  % Steiggeschwindigkeitin m/s
 gamma_copter = 90 * pi/180;                 % Bahnanstellwinkel für den Multicopter    
  
 
@@ -104,10 +93,10 @@ gamma_copter = 90 * pi/180;                 % Bahnanstellwinkel für den Multicop
 g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
-Delta_H = 100;                              % Inkrementweite in m 
+Delta_H = 50;                              % Inkrementweite in m 
 H_max = 16000;                              % Maximalhöhe in m
 
-T_0 = 288.15;                               % Temperatur in K am Flugplatz
+T_0 = 273.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
@@ -115,32 +104,10 @@ kappa = 1.4;                                % Adiabatenexponent
 u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 
-%% Vergleich Quadrocopter vs. Flaechenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-if Abfrage_Flugsystem == 0
-    m_Mot_Quad = 0.0365;
-    n_Prop_Quad = 4;
+%% Festlegung des Dateinamen
     
-    m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
-    
-    f_p = 1.0;                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
-    
-    m_flugzeug = f_p * m_copter;
-    
-    m_Bat = m_Bat+((n_Prop_Quad*m_Mot_Quad)-m_Mot*n_Prop) + (1-f_p) * m_copter;
-    
-    Dateiname = ['Flächenflzg, m_Mot = ' num2str(m_Mot) ', f_p = ' num2str(f_p) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', E = ' ...
-    num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh'];
-
-else
-    
-    Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', V_Kg = ' ...
-    num2str(V_Kg) ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
-
-end
-
-
-
+Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
+    ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

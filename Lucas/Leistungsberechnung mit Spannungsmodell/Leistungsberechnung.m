@@ -225,29 +225,26 @@ for h_variabel = H_0:Delta_H:H_max
             
             
             % Aerodynamik
-             if b == 0             
+             if b == 0                      % Solange Flugzustand = 2 noch nicht erreicht ist, Berechne die Aerodynamik nach ...        
                   [Thrust_inter(z),V_A,Flugzustand_Flaechenflzg_inter(z)] = FlaechenflugzeugAerodynamik(m,g,E_stern,V_stern,rho_stern,E,gamma_variabel,rho(x));  
-                  V_H = V_A * sind(gamma_variabel);
-                  t_Flug = Delta_H / V_H;
-                  V_Flaechenflugzeug_inter(z) = V_A;
-             end
-            
-             if x == 1 && z == 137
-                 aaa = 1;
+                  V_H = V_A * sind(gamma_variabel);         % Bestimmung der Vertikalgeschwindigkeit
+                  t_Flug = Delta_H / V_H;                   % Berechne aus Vertikalgeschwindigkeit und Höhe die Flugzeit
+                  V_Flaechenflugzeug_inter(z) = V_A;        % Speicher die absolute Fluggeschwindigkeit 
              end
 
-             if Flugzustand_Flaechenflzg_inter(z) == 2 || b == 1 || gamma_variabel >= 90   % <-- Überprüfen
-                 b = 1;
-                 V_vert = V_vert + v_vert_Delta;
-                 V_A = V_vert;
-                 gamma_Flaechenflzg_inter(z) = 90;
+             if Flugzustand_Flaechenflzg_inter(z) == 2 || b == 1 || gamma_variabel >= 90   % Wenn Flugzustand = 2 erreicht wurde 
+                                                            % oder der Steigwinkel bereits 90° ist, berechne die Aerodynamik nach
+                 b = 1;                                     % Setze den Kontrollfaktor gleich 1
+                 V_vert = V_vert + v_vert_Delta;            % Iteriere die Vertikalgeschwindigkeit
+                 V_A = V_vert;                              % Vertikalgeschw. = Fluggeschw.
+                 gamma_Flaechenflzg_inter(z) = 90;          % Der Bahnneigungswinkel ist 90°
                  [Thrust_inter(z)] = Vertikalflug(m,g,E_stern,V_stern,rho_stern,V_A,rho(x));
-                 t_Flug = Delta_H / V_A;
-                 V_Flaechenflugzeug_inter(z) = V_A;
+                 t_Flug = Delta_H / V_A;                    % Berechne aus Vertikalgeschwindigkeit und Höhe die Flugzeit
+                 V_Flaechenflugzeug_inter(z) = V_A;         % Speicher die absolute Fluggeschwindigkeit 
              end
              
              
-             alpha_inter(z) = - 90 * pi/180;
+             alpha_inter(z) = - 90 * pi/180;                % Die Rotorebene für ein Flächenflugzeug ist immer 90°
         end
         
         
@@ -340,7 +337,7 @@ for h_variabel = H_0:Delta_H:H_max
         if Abfrage_Flugsystem == 1
             break;								% Abbruch für den Fall eines Multicopters um for-Schleife zu verlassen, da gamma vorgegeben
         else
-            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_nom;        % Berechnung der aufgebrachten Energiemenge
+            Bestimmung_gamma(z) = Delta_C_Bat_inter(z) * U_Bat_inter(z);        % Berechnung der aufgebrachten Energiemenge
         end
         
         

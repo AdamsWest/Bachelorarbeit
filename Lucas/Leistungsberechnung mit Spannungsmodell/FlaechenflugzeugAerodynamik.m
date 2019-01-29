@@ -75,7 +75,7 @@ if W_0 < W && W < 2*W_0				% Flugzustand zwischen Optimalflug und Steigflug --> 
 
     Flugzustand_Flaechenflzg = 1;		% --> Flug in Grauzone
     
-elseif  					
+elseif  W < W_0				
 
     % Übergang in den Senkrechtflug
 
