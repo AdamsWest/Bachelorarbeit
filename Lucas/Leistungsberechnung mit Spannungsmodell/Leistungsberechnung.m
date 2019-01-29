@@ -232,11 +232,11 @@ for h_variabel = H_0:Delta_H:H_max
                   V_Flaechenflugzeug_inter(z) = V_A;
              end
             
-             if x == 61 && z == 90
+             if x == 1 && z == 137
                  aaa = 1;
              end
 
-             if Flugzustand_Flaechenflzg(z) == 2 || b == 1 || gamma_variabel >= 90   % <-- Überprüfen
+             if Flugzustand_Flaechenflzg_inter(z) == 2 || b == 1 || gamma_variabel >= 90   % <-- Überprüfen
                  b = 1;
                  V_vert = V_vert + v_vert_Delta;
                  V_A = V_vert;
