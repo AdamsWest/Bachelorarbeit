@@ -56,11 +56,12 @@ U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-m_Bat = 0.56;           % Batteriemasse in kg
+% m_Bat = 0.56;           % Batteriemasse in kg
 
-% m_Bat_min = 0.1;
-% m_Bat_Delta = 0.1;
-% m_Bat_max = 5;
+% Batteriemassendiskreitisierung
+m_Bat_min = 0.25;
+m_Bat_Delta = 0.25;
+m_Bat_max = 1.5;
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
@@ -77,9 +78,9 @@ c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Wid
 c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
 % Diskretisierung der Steiggeschwindigkeit
-V_Kg_min = 0.5;			% kleinster Bahnneigungswinkel
-V_Kg_Delta = 0.5;		% Schrittweite Batteriemasse
-V_Kg_max = 40;			% größter Bahnneigungswinkel
+V_Kg_min = 1;			% kleinster Bahnneigungswinkel
+V_Kg_Delta = 1;		% Schrittweite Batteriemasse
+V_Kg_max = 35;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -93,10 +94,10 @@ gamma_copter = 90 * pi/180;                 % Bahnanstellwinkel für den Multicop
 g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
-Delta_H = 50;                              % Inkrementweite in m 
+Delta_H = 100;                              % Inkrementweite in m 
 H_max = 16000;                              % Maximalhöhe in m
 
-T_0 = 273.15;                               % Temperatur in K am Flugplatz
+T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
@@ -111,4 +112,4 @@ Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung');
+run('Leistungsberechnung_Var_m_Bat'); % _Var_m_Bat
