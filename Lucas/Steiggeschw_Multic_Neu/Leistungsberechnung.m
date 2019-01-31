@@ -300,10 +300,26 @@ for h_variabel = H_0:Delta_H:H_max
         
     end
     
-    
-    if isnan(nanmean(Omega_inter)) ~= 1 && isnan(nanmean(I_mot_inter)) ~= 1 &&  isnan(nanmean(U_mot_inter)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
-            isnan(nanmean(PWM_inter)) ~= 1 && isnan(nanmean(C_Rest_V_inter)) ~= 1 && isnan(nanmean(I_Bat_inter)) ~= 1       % enthalten (unfliegbarer Zustand)
+% Alternative zu der Funtkion nanmean
+        gooddata_index = ~isnan(Omega_inter);
+        good_omega = Omega_inter(gooddata_index);
+        gooddata_index = ~isnan(I_mot_inter);
+        good_I_mot = I_mot_inter(gooddata_index);
+        gooddata_index = ~isnan(U_mot_inter);
+        good_U_mot = U_mot_inter(gooddata_index);
+        gooddata_index = ~isnan(PWM_inter);
+        good_PWM = PWM_inter(gooddata_index);
+        gooddata_index = ~isnan(C_Rest_V_inter);
+        good_C_Rest_V = C_Rest_V_inter(gooddata_index);
+        gooddata_index = ~isnan(I_Bat_inter);
+        good_I_Bat = I_Bat_inter(gooddata_index);
         
+        
+        
+        
+        if isnan(mean(good_omega)) ~= 1 && isnan(mean(good_I_mot)) ~= 1 &&  isnan(mean(good_U_mot)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
+                isnan(mean(good_PWM)) ~= 1 && isnan(mean(good_C_Rest_V)) ~= 1 && isnan(mean(good_I_Bat)) ~= 1       % enthalten (unfliegbarer Zustand)
+         
         % Kriterium für optimalen Steigwinkel
         y = 1;
         while y < length(Bestimmung_V_Kg)                             % Suche und finde optimalen Steiggeschwindigkeit

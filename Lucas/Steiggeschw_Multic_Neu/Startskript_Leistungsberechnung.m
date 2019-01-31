@@ -39,7 +39,7 @@ I_max = 30;             % Max Continuous Current
 m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '7x3.8';    % Propellerbezeichnung
+prop_name = '7x5';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -56,12 +56,12 @@ U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-% m_Bat = 0.56;           % Batteriemasse in kg
+m_Bat = 0.56;           % Batteriemasse in kg
 
 % Batteriemassendiskreitisierung
-m_Bat_min = 0.25;
-m_Bat_Delta = 0.25;
-m_Bat_max = 1.5;
+m_Bat_min = 0.4;
+m_Bat_Delta = 0.05;
+m_Bat_max = 0.65;
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
@@ -95,7 +95,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 16000;                              % Maximalhöhe in m
+H_max = 25000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -108,7 +108,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 %% Festlegung des Dateinamen
     
 Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
-    ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', u_Wg = ' num2str(u_Wg) 'ms'];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
