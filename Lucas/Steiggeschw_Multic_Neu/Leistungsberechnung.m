@@ -68,6 +68,7 @@ rho = zeros(lengthi,1);
 alpha = zeros(lengthi,1);
 Theta = zeros(lengthi,1);
 V_Kg = zeros(lengthi,1);
+t_Flug = zeros(lengthi+1,1);
 % Flugzustand_Flaechenflzg = zeros(lengthi,1);
 % V_Flaechenflugzeug = zeros(lengthi,1);
 % Propeller
@@ -168,6 +169,7 @@ for h_variabel = H_0:Delta_H:H_max
     alpha_inter = zeros(lengthvkg, 1);
     V_Kg_inter = zeros(lengthvkg,1);
     Bestimmung_V_Kg = zeros(lengthvkg, 1);  
+    t_Flug_inter = zeros(lengthvkg,1);
     % Propeller
     Omega_inter = zeros(lengthvkg, 1);
     tau_inter = zeros(lengthvkg, 1);
@@ -201,7 +203,7 @@ for h_variabel = H_0:Delta_H:H_max
         % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
-        t_Flug = Delta_H / V_Kg_inter(z);                                            % Flugzeit
+        t_Flug_inter(z) = Delta_H / V_Kg_inter(z);                                            % Flugzeit
         
         % Aerodynamik
         [Thrust_inter(z),Theta_inter(z),V_A,alpha_inter(z)] = MulticopterAerodynamik(u_Wg,V_Kg_inter(z),gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
@@ -247,7 +249,7 @@ for h_variabel = H_0:Delta_H:H_max
             %            [I_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z)] = Batterie(PWM_inter(z),eta_PWM,I_mot_inter(z),n_Prop,C_Bat,P_Bat_Peukert,Delta_C_Bat_inter(z),t_Flug);
             
             [I_Bat_inter(z),U_Bat_inter(z),C_Rate_inter(z),Delta_C_Bat_inter(z),C_Rest_V_inter(z),i_int_inter(z)] = Batterie(Batterie_data,...
-                Cnom,PWM_inter(z),eta_PWM,n_Prop,i_int_inter(z),U_Bat_inter(z),C_Bat,Delta_C_Bat_inter(z),I_mot_inter(z),N_Bat_cell,P_Bat_Peukert,t_Flug);
+                Cnom,PWM_inter(z),eta_PWM,n_Prop,i_int_inter(z),U_Bat_inter(z),C_Bat,Delta_C_Bat_inter(z),I_mot_inter(z),N_Bat_cell,P_Bat_Peukert,t_Flug_inter(z));
             
             %% Gesamtwirkungsgrad
             
@@ -347,6 +349,7 @@ for h_variabel = H_0:Delta_H:H_max
         Theta(x) = Theta_inter(ind_opt);
         alpha(x) = alpha_inter(ind_opt);
         V_Kg(x) = V_Kg_inter(ind_opt);	    % Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
+        t_Flug(x+1) = t_Flug(x) + t_Flug_inter(ind_opt);
         % Propeller
         Thrust(x) = Thrust_inter(ind_opt);
         Omega(x) = Omega_inter(ind_opt);
@@ -374,6 +377,7 @@ for h_variabel = H_0:Delta_H:H_max
         Theta(x) = NaN;
         alpha(x) = NaN;
         V_Kg(x) = NaN;
+        t_Flug(x+1) = NaN;
         % Propeller
         Thrust(x) = NaN;
         Omega(x) = NaN;
@@ -415,12 +419,13 @@ subplot(521), plot(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xla
 subplot(522), plot(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
 subplot(523), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
 subplot(524), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-subplot(525), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+subplot(525), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
 H2 = [0;H];
-subplot(526), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
+subplot(526), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
 subplot(527), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
 subplot(528), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
 subplot(529), plot(H,V_Kg,'LineWidth',2), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
+subplot(5,2,10), plot(H2,t_Flug,'LineWidth',2), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 % Anpassung und Abspeichern der Diagramme
 ImageSizeX = 14;
 ImageSizeY = 24;
