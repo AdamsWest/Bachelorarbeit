@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  2 FEB 2019 10:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  2 FEB 2019 10:40
 entering extended mode
-**./Struktogramm.tex
-(Struktogramm.tex
+**./Programmstruktur.tex
+(Programmstruktur.tex
 LaTeX2e <2018-04-01> patch level 5
 ("C:\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -135,8 +135,8 @@ File: babel.def 2018/09/26 3.24 Babel common definitions
 \bbl@dirlevel=\count95
 )
 Package babel Info: Making " an active character on input line 121.
-))) (Struktogramm.aux)
-\openout1 = `Struktogramm.aux'.
+))) (Programmstruktur.aux)
+\openout1 = `Programmstruktur.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -199,268 +199,101 @@ LaTeX Font Info:    ... okay on input line 9.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-===> dbg Args:   0, 200000, 140000
+===> dbg Args:   0, 185000, 140000
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
 
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 27--27
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 29--29
 []\OT1/cmr/m/n/10 .0pt 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--27
+Underfull \hbox (badness 6641) in paragraph at lines 29--29
  |\OT1/cmr/m/n/10 Flugger[]at? 
  []
 
 ===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]\OT1/cmr/m/n/10 Ubergabe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+\OT1/cmr/m/n/10 der zwi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+\OT1/cmr/m/n/10 schen-ge-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+\OT1/cmr/m/n/10 spei-cher-ten
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+\OT1/cmr/m/n/10 Leis-tungs-
+ []
+
+===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 32--32
+[]\OT1/cmr/m/n/10 .0pt 
+ []
+
+===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 35--35
+[]\OT1/cmr/m/n/10 .0pt 
+ []
+
+===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
+===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
+
+Underfull \hbox (badness 1014) in paragraph at lines 38--38
+\OT1/cmr/m/n/10 Suche n[]achst klei-ne-re
+ []
+
 ===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 38.
+(Font)              <7> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 38.
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+(Font)              <5> on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 ("C:\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 40--40
-[]\OT1/cmr/m/n/10 .0pt 
- []
-
-
-Underfull \hbox (badness 3769) in paragraph at lines 40--40
- |\OT1/cmr/m/n/10 Schub zu gro? 
- []
-
-===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
-
-Underfull \hbox (badness 1122) in paragraph at lines 41--41
-\OT1/cmr/m/n/10 Ergebnis ver-
- []
-
-===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
-
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 49--49
-[]\OT1/cmr/m/n/10 .0pt 
- []
-
-===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
-===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
-
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 54--54
-[]\OT1/cmr/m/n/10 .0pt 
- []
-
-
-Underfull \hbox (badness 5667) in paragraph at lines 54--54
- |\OT1/cmr/m/n/10 Flugger[]at? 
- []
-
-===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
-===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
-
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 60--60
-[]\OT1/cmr/m/n/10 .0pt 
- []
-
-
-Underfull \hbox (badness 6641) in paragraph at lines 60--60
- |\OT1/cmr/m/n/10 Flugger[]at? 
- []
-
-===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
-===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
-
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 63--63
-[]\OT1/cmr/m/n/10 .0pt 
- []
-
-===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
-===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
-
-Underfull \hbox (badness 4479) in paragraph at lines 65--65
-\OT1/cmr/m/n/10 Finde den
- []
-
-
-Underfull \hbox (badness 7081) in paragraph at lines 65--65
-\OT1/cmr/m/n/10 In-dex mit
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
-\OT1/cmr/m/n/10 der ge-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
-\OT1/cmr/m/n/10 rings-ten
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
-\OT1/cmr/m/n/10 ver-brauch-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
-\OT1/cmr/m/n/10 ten Ener-
- []
-
-
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 66--66
-[]\OT1/cmr/m/n/10 .0pt 
- []
-
-
-Overfull \hbox (12.87837pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 al- 
- []
-
-
-Overfull \hbox (8.98947pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 le 
- []
-
-
-Overfull \hbox (22.90614pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 Wer- 
- []
-
-
-Overfull \hbox (10.10059pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 te 
- []
-
-
-Overfull \hbox (13.43393pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 in- 
- []
-
-
-Overfull \hbox (19.01726pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 ner- 
- []
-
-
-Overfull \hbox (20.65619pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 halb 
- []
-
-
-Overfull \hbox (15.68393pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 der 
- []
-
-
-Overfull \hbox (22.51726pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 Leis- 
- []
-
-
-Overfull \hbox (29.04507pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 tungs- 
- []
-
-
-Overfull \hbox (24.01727pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 gren- 
- []
-
-
-Overfull \hbox (20.93393pt too wide) in paragraph at lines 66--66
- \OT1/cmr/m/n/10 zen? 
- []
-
-===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
-
-Overfull \hbox (10.30013pt too wide) in paragraph at lines 67--67
-\OT1/cmr/m/n/10 Verlasse
- []
-
-
-Overfull \hbox (3.77235pt too wide) in paragraph at lines 67--67
-\OT1/cmr/m/n/10 Schlei-
- []
-
-===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
-
-Overfull \hbox (3.27237pt too wide) in paragraph at lines 69--69
-\OT1/cmr/m/n/10 n[]achst
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\OT1/cmr/m/n/10 klei-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\OT1/cmr/m/n/10 ne-re
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\OT1/cmr/m/n/10 Ener-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\OT1/cmr/m/n/10 gie-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
-\OT1/cmr/m/n/10 men-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-[]\OT1/cmr/m/n/10 Ubergabe al-ler
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-\OT1/cmr/m/n/10 Leis-tungs-pa-ra-me-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-\OT1/cmr/m/n/10 ter mit die-sem
- []
-
-===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
-
-Overfull \hbox (1.13652pt too wide) in paragraph at lines 80--80
+Overfull \hbox (1.13652pt too wide) in paragraph at lines 49--49
 [][] 
  []
 
 
-Overfull \hbox (5.04153pt too wide) in paragraph at lines 16--81
+Overfull \hbox (5.04153pt too wide) in paragraph at lines 16--50
 []$[]$ 
  []
 
 [1
 
-]
-Overfull \vbox (7.62358pt too high) has occurred while \output is active []
-
-
-[2{C:/Users/lucsc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(Struktogramm.aux) ) 
+{C:/Users/lucsc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(Programmstruktur.aux) ) 
 Here is how much of TeX's memory you used:
- 2356 strings out of 492970
- 30399 string characters out of 3142029
- 125646 words of memory out of 3000000
- 6224 multiletter control sequences out of 15000+200000
- 5309 words of font info for 20 fonts, out of 3000000 for 9000
+ 2358 strings out of 492970
+ 30460 string characters out of 3142029
+ 118646 words of memory out of 3000000
+ 6225 multiletter control sequences out of 15000+200000
+ 5617 words of font info for 21 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,12n,23p,273b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Struktogramm.pdf (2 pages, 29666 bytes).
+ 32i,12n,23p,277b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Programmstruktur.pdf (1 page, 38113 bytes).
 PDF statistics:
- 17 PDF objects out of 1000 (max. 8388607)
+ 18 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

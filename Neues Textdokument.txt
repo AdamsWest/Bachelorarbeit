@@ -11,5 +11,6 @@ Strukturierung der Parameteruntersuchung
 		- Einfluss des Widerstandsbeiwerts 
 		- Einfluss des Motors / Motorstroms
 		- Einfluss der Batteriezellenanzahl
+	- Verstellpropeller
 		
 	

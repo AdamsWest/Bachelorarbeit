@@ -2,14 +2,15 @@
 \babel@toc {ngerman}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Struktogramm des MATLAB-Skripts\relax }}{8}{figure.caption.16}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Kr\IeC {\"a}ftegleichgewicht am unbeschleunigten Multicopter unter Ber\IeC {\"u}cksichtigung aerodynamischer Kr\IeC {\"a}fte ($k^*$ ist eine beliebige Achse in der $x_f,y_f$-Ebene).\relax }}{10}{figure.caption.18}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Typische Entladekurve f\IeC {\"u}r eine Batterie \cite {Tremblay.2009}\relax }}{15}{figure.caption.21}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Programmstruktur des MATLAB-Skripts\relax }}{8}{figure.caption.16}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Programmstruktur des MATLAB-Skripts\relax }}{9}{figure.caption.17}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Kr\IeC {\"a}ftegleichgewicht am unbeschleunigten Multicopter unter Ber\IeC {\"u}cksichtigung aerodynamischer Kr\IeC {\"a}fte ($k^*$ ist eine beliebige Achse in der $x_f,y_f$-Ebene).\relax }}{11}{figure.caption.19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Typische Entladekurve f\IeC {\"u}r eine Batterie \cite {Tremblay.2009}\relax }}{16}{figure.caption.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Restladung der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{22}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Motordrehzahl der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{23}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Entladestrom der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{24}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Pulsweitenmodulation \IeC {\"u}ber der H\IeC {\"o}he\relax }}{25}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Restladung der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{24}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Motordrehzahl der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{25}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Entladestrom der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{26}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Pulsweitenmodulation \IeC {\"u}ber der H\IeC {\"o}he\relax }}{27}{figure.3.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

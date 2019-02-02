@@ -52,35 +52,54 @@
       \endverb
       \warn{\item Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring}
     \endentry
-    \entry{Bittner.2014}{book}{}
-      \name{author}{1}{}{%
-        {{hash=37ca3ff1fe0bcb2928d0379b75bcfbc1}{%
-           family={Bittner},
+    \entry{Bruning.1986}{book}{}
+      \name{author}{3}{}{%
+        {{hash=48c844e9fe56361d091a404d13f505f7}{%
+           family={Br{ü}ning},
            familyi={B\bibinitperiod},
-           given={Walter},
-           giveni={W\bibinitperiod}}}%
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2f35384c635d73553b9c5c26e9ea7708}{%
+           family={Hafer},
+           familyi={H\bibinitperiod},
+           given={Xaver},
+           giveni={X\bibinitperiod}}}%
+        {{hash=ea496c038a3a07f013b705cc5df542f7}{%
+           family={Sachs},
+           familyi={S\bibinitperiod},
+           given={Gottfried},
+           giveni={G\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Berlin, Heidelberg}%
+      \list{location}{2}{%
+        {Berlin}%
+        {Heidelberg}%
       }
       \list{publisher}{1}{%
-        {Springer Berlin Heidelberg}%
+        {Springer}%
       }
-      \strng{namehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
-      \strng{fullhash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
-      \strng{bibnamehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
-      \strng{authorbibnamehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
-      \strng{authornamehash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
-      \strng{authorfullhash}{37ca3ff1fe0bcb2928d0379b75bcfbc1}
+      \strng{namehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{fullhash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{bibnamehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{authorbibnamehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{authornamehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{authorfullhash}{f9f22f6035857723fb63f2a944dad0b1}
       \field{sortinit}{B}
       \field{sortinithash}{276475738cc058478c1677046f857703}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{978-3-642-54285-5}
-      \field{title}{Flugmechanik der Hubschrauber}
-      \field{year}{2014}
+      \field{edition}{Zweite, neubearbeitete und erweiterte Auflage}
+      \field{isbn}{978-3-540-16982-6}
+      \field{series}{Hochschultext}
+      \field{title}{Flugleistungen: Grundlagen · Flugzust{ä}nde · Flugabschnitte Aufgaben und L{ö}sungen}
+      \field{year}{1986}
       \verb{doi}
-      \verb 10.1007/978-3-642-54286-2
+      \verb 10.1007/978-3-662-07259-2
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/978-3-662-07259-2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-662-07259-2
       \endverb
     \endentry
     \entry{Drivecalc}{misc}{}

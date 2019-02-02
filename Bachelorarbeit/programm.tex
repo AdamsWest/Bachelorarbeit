@@ -159,51 +159,94 @@ Die Erdbeschleunigung und der Adiabatenexponent werden als konstant über der H�
 \newpage
 \section{Aufbau des Programms}
 \label{sec:aufbau_des_programms}
-Der Aufbau des \textsc{Matlab}-Skriptes wird im Struktogramm (Abb.\ref{abb:struktogramm}) verdeutlicht.
+Der Aufbau des \textsc{Matlab}-Skriptes wird in den unteren Struktogrammen verdeutlicht. 
+Abb. \ref{abb:programmstruktur} legt die Ablaufstruktur dar 
 \begin{center}
 \begin{figure}[H]
-\begin{struktogramm}(140,175)
-\assign[2]{Flugger\"at ausw\"ahlen (im Startskript)}
-\assign[2]{Flugger\"atkomponenten definieren (im Startskript)}
-\assign[2]{Missionsparameter festlegen (im Startskript)}
-\assign[2]{Umgebungsparameter festlegen (im Startskript)}
-\assign[2]{Aufruf des Hauptskripts: Leistungsberechnung starten}
-\assign[2]{Initialisierung der Parameterberechnung}
+\begin{struktogramm}(163,153)
+\assign[1]{Fluggerät auswählen und Komponenten definieren(im Startskript)}
+\assign[1]{Missions- und Umgebungsparameter festlegen (im Startskript)}
+\assign[1]{Diskretisierungen festlegen}
+\assign[1]{Aufruf des Hauptskripts: Leistungsberechnung starten}
+\assign[1]{Initialisierung der Parameterberechnung}
 \while[5]{F\"ur alle Höhenabschnitte}
-	\assign[2]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
-	\assign[2]{arithmetische Mittelwert berechnen}
-	\assign[2]{Schub- und Leistungskennfeld anpassen}
-	\ifthenelse[15]{1}{1}{Flugger\"at?}{Multicopter (1)}{Fl\"achenflugzeug (0)}
-		\while[5]{Solange Abbruchkriterium nicht erreicht}
-			\assign{Aerodynamik berechnen}
-		\whileend
-		\assign[2]{Schub berechnen}
+	\assign[1]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
+	\assign[1]{arithmetische Mittelwert berechnen}
+	\assign[1]{Schub- und Leistungskennfeld anpassen}
+	\assign[2]{Initialisierung der Leistungsberechnung}
+	\while[5]{Für alle Bahnneigungswinkel}
+		\assign[2]{\textbf{Leistungsberechnung}}
+	\whileend
+	\ifthenelse[10]{1}{5}{Fluggerät?}{Multicopter (1)}{Flächenflugzeug (0)}
+		\assign[2]{Übergabe der zwischengespeicherten Leistungsparameter}
 		\change
-		\assign[2]{Bahnneigungswinkel aus reziproker Gleitzahl berechnen}
-		\assign[2]{Schub berechnen}
-	\ifend
-	\assign[2]{Schub auf Propeller verteilen}
-	\ifthenelse[10]{1}{4}{Schub zu gro\ss{}?}{ja}{nein}
-		\assign[2]{Ergebnis verwerfen (NaN)}
-		\change
-		\assign[2]{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
-		\assign[2]{Motorzustand berechnen}
-		\assign[2]{Zustand der Motorregler berechnen}
-		\assign[2]{Zustand der Batterie neu berechnen}
-	\ifend
-	\ifthenelse[10]{1}{1}{Werden Grenzen \"uberschritten?}{ja}{nein}
-	\assign[2]{Ergebnis verwerfen (NaN)}
-	\change
-	\assign[2]{Ergebnis beibehalten}
+		\ifthenelse[10]{5}{1}{Sind die Werte NaN?}{nein}{ja}
+			\while[5]{Solange Abbruchkriterium nicht erreicht}		
+				\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+				\ifthenelse[10]{1}{1}{Werte innerhalb Leistungsgrenzen?}{ja}{nein}
+				\assign[2]{Verlasse Schleife}
+				\change
+				\assign[2]{Suche nächst kleinere Energiemenge}
+				\ifend
+			\whileend
+			\assign[2]{Übergabe aller Leistungsparameter mit diesem Index}
+			\change
+			\assign[2]{Verwerfe alle Ergebnisse}
+		\ifend
 	\ifend
 \whileend
-\assign[2]{Ergebnisse für Restladung, Drehzahl, Motorstrom und -spannung, PWM in Diagramme zeichnen}
-\assign[2]{Speichern der Diagramme als .jpg - Bilder}
+\assign[2]{Ergebnisse der Leistungsparameter in Diagrammen speichern}
+\assign[2]{Speichern der Diagramme in .pdf-Datei}
 \end{struktogramm}
-\caption{Struktogramm des MATLAB-Skripts}
-\label{abb:struktogramm}
+\caption{Programmstruktur des MATLAB-Skripts}
+\label{abb:programmstruktur}
 \end{figure}
 \end{center}
+
+und Abb. \ref{abb:leistungsberechnung} veranschaulicht dem Programm zugrunde gelegten Ablauf der Leistungsberechnung.
+
+\begin{center}
+\begin{figure}[H]
+\begin{struktogramm}(163,140)
+\ifthenelse[15]{1}{1}{Flugger\"at?}{Multicopter (1)}{Fl\"achenflugzeug (0)}
+			\assign[2]{Berechne Gesamtmasse}
+			\assign[2]{Flugzeit für Höhenschritt berechnen}			
+			\while[5]{Solange Abbruchkriterium nicht erreicht}
+				\assign{Aerodynamik berechnen}
+			\whileend
+			\assign[2]{Schub berechnen}
+			\change
+			\assign[2]{Berechne Gesamtmasse}
+			\assign[2]{Schub aus Bahnneigungswinkel und Auslegungspunkt berechnen}
+			\assign[2]{Flugzeit für Höhenschritt berechnen}
+		\ifend
+		\assign[2]{Schub auf Propeller verteilen}
+		\ifthenelse[10]{1}{4}{Schub zu gro\ss{}?}{ja}{nein}
+			\assign[2]{Ergebnis verwerfen (NaN)}
+			\change
+			\assign[2]{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
+			\assign[2]{Motorzustand berechnen}
+			\assign[2]{Zustand der Motorregler berechnen}
+			\assign[2]{Zustand der Batterie neu berechnen}
+			\assign[2]{Gesamtwirkungsgrad berechnen}
+		\ifend
+		\ifthenelse[10]{1}{1}{Werden Grenzen überschritten?}{ja}{nein}
+			\assign[2]{Ergebnis verwerfen (NaN)}
+			\change
+			\assign[2]{Ergebnis beibehalten}
+		\ifend
+		\ifthenelse[10]{1}{1}{Fluggerät?}{Multicopter (1)}{Flächenflugzeug (0)}
+			\assign[2]{break}
+			\change
+			\assign[2]{Speichern der aufgebrachten Energiemenge}
+		\ifend
+\end{struktogramm}
+\caption{Programmstruktur des MATLAB-Skripts}
+\label{abb:leistungsberechnung}
+\end{figure}
+\end{center}
+
+
 %\begin{figure}[H]
 %\centering
 %	\includegraphics{Struktogramm/Struktogramm.pdf}
@@ -293,7 +336,7 @@ Im Anschluss werden die aerodynamischen Beiwerte
 \end{equation}
 berechnet. Auf diese folgt die Berechnung der aerodynamischen Kräfte
 \begin{equation}
-	W = c_W\cdot \frac{\rho}{2}\cdot A_{copter,oben}\cdot V_A^2,
+	W = c_W\cdot \frac{\rho}{2}\cdot A_{copter,oben}\cdot V_A^2, \label{eq:widerstand}
 \end{equation}
 \begin{equation}
 	A = c_A\cdot \frac{\rho}{2}\cdot A_{copter,oben}\cdot V_A^2.
@@ -319,6 +362,7 @@ bestimmt werden.
 Für den Fall, dass der errechnete Schub größer als der zur Verfügung stehende Schub ist, wird das Ergebnis verworfen und als \texttt{NaN} (Not a Number) gespeichert.
 
 \subsubsection{Flächenflugzeug}
+\textcolor{red}{immer Flug bei optimaler Glitzahl E gleich Estern und vmax bei gamma neunzig grad ist vstern}
 %Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
 %\begin{equation}
 %	m = m_{Flugzeug}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}.
@@ -343,23 +387,25 @@ Für den Fall, dass der errechnete Schub größer als der zur Verfügung stehend
 %\begin{equation}
 %	F = G\cdot\cos\gamma\cdot\Big(\frac{1}{E}+\tan\gamma\Big) = G\cdot(\sin\gamma+\varepsilon\cdot\cos\gamma).
 %\end{equation}
-
 Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
 \begin{equation}
 	m = m_{Flugzeug}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}.
 \end{equation}
-Aus dem Kräftegleichgewicht aller angreifenden Kräfte am System können folgende Beziehungen 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.2]{images/Coming-Soon.jpg}
-\end{figure}
+Alle Flugzustände eines Flächenflugzeuges können mit den Grundgleichungen der symmetrischen Flugbahn beschrieben werden. Diese Bewegungsgleichungen \cite{Bruning.1986} sind
+\begin{align}
+	m\cdot \dot{V} &= -W + F\cdot\cos(\alpha+\sigma)-m\cdot g\cdot\sin\gamma , \label{eq:widerstandsgleichung} \\ 
+	-m\cdot V\cdot\dot{\gamma} &= -A - F\cdot\sin(\alpha+\sigma)+m\cdot g\cdot\cos\gamma , \label{eq:auftriebsgleichung} \\ 
+	V\cdot\sin\gamma &= \dot{H}. \label{eq:steiggleichung}
+\end{align}	
+Für einen stationäre Flug, der im weiteren ausschließlich betrachtet werden soll, gilt \ensuremath{\dot{V} = 0} und \ensuremath{\dot{\gamma} = 0}. Außerdem sind die Winkel \ensuremath{\alpha + \sigma} klein, sodass sich mit hinreichender Genauigkeit die Gleichungen \ref{eq:widerstandsgleichung} und \ref{eq:auftriebsgleichung} zu
 \begin{equation}
-	F = W + \sin\gamma\cdot G, \label{eq:widerstandsgleichung}
+	F = W + \sin\gamma\cdot G, \label{eq:widerstandsgleichung_vereinfacht}
 \end{equation}
+und
 \begin{equation}
 	A = m\cdot g\cdot\cos\gamma 
-\end{equation} \label{eq:auftriebsgleichung}
-entnommen werden. Der Auslegungspunkt des Flächenflugzeugs ist ein Horizontalflug (\ensuremath{\gamma^\star = 0}) in Bodennähe bei konstanter Gleitzahl und Geschwindigkeit \ensuremath{V^\star}. Die Auftriebsgleichung \ref{eq:auftriebsgleichung} vereinfacht sich damit zu
+\end{equation} \label{eq:auftriebsgleichung_vereinfacht}
+vereinfachen. Der Auslegungspunkt des Flächenflugzeugs ist ein Horizontalflug (\ensuremath{\gamma^\star = 0}) in Bodennähe bei konstanter Gleitzahl und Geschwindigkeit \ensuremath{V^\star}. Die vereinfachte Auftriebsgleichung \ref{eq:auftriebsgleichung_vereinfacht} vereinfacht sich damit zu
 \begin{equation}
 	A^\star = m\cdot g .
 \end{equation}
@@ -386,23 +432,36 @@ analog mit einer Vergrößerung der Flughöhe und des Steigwinkels. Mit dem Stau
 skaliert werden.
 Analog zur Berechnung des Widerstandes im Auslegungszustand errechnet sich der Widerstand im aktuellen Operationspunkt, mit welchem der Flugzustand abgeschätzt werden kann. Dies geschieht nach folgendem Schema
 \begin{equation}
-Flugzustand_Flächenflugzeug = \begin{cases} 
+Flugzustand\_Flaechenflugzeug = \begin{cases} 
 zulässig & wenn \qquad W > 2\cdot W_0 \\ 
 Grauzone & wenn \qquad W_0 < W < 2\cdot W_0 \\ 
 Steigflug & wenn \qquad W < W_0 
 \end{cases}
 \end{equation} 
 Die Theorie gilt nur für den Bereich kleiner Winkel. Mit der Variablen \texttt{Flugzustand\_Flaechenflugzeug} wird das Einhalten der Theorie überprüft. Der Fall, dass \ensuremath{W < W_0} beträgt, ist ein Flugzustand, der die Theorie entscheidend verletzt und daher nicht zulässig ist. Ein Flug mit einem Widerstand kleiner als \ensuremath{W_0} ist physikalisch unmöglich.
-Letztlich ergibt sich der Schub aus Gleichung \ref{eq:auftriebsgleichung} und \ref{eq:widerstandsgleichung}
+Letztlich ergibt sich der Schub aus Gleichung \ref{eq:auftriebsgleichung_vereinfacht} und \ref{eq:widerstandsgleichung_vereinfacht}
 \begin{equation}
 	F = m\cdot g\cdot (\frac{1}{E}\cdot\cos\gamma + \sin\gamma) \label{eq:schub_flaechenflugzeug}
 \end{equation}
 mit dem Gewicht und Steigwinkel als Variable.
-Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren. Aus diesem Grund wird dieser für jeden Schritt variiert. Das Auswahlkriterium für den optimalen Steigwinkel ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung voraussetzt
+Für \ensuremath{\gamma = 90^\circ} besitzt Gleichung \ref{eq:schub_flaechenflugzeug} eine Definitionslücke. Bei diesem Bahnneigungswinkel müsste der benötigte Schub gerade einmal das Gewicht des Fluggerätes kompensieren. Dabei wird jedoch der Luftwiderstand, der sich aus einer Fluggeschwindigkeit ergibt, vernachlässigt. 
+Für den unbeschleunigten, vertikalen Steigflug vereinfachen sich die Widerstandsgleichung \ref{eq:widerstandsgleichung} und die Auftriebsgleichung \ref{eq:auftriebsgleichung} mit den Bedingungen \ensuremath{\dot{V} = 0}, \ensuremath{\dot{\gamma} = 0}, \ensuremath{\gamma = 90^\circ} und \ensuremath{\alpha + \sigma \approx 0} zu 
 \begin{equation}
-	\sigma = \delta C_{Bat}\cdot U_{Bat}.
+	F = W + G , 
+\end{equation}
+\begin{equation}
+	A = 0 .
+\end{equation}
+Da der Auftrieb Null ist, erfolgt der unbeschleunigte, vertikale Steigflug mit dem Nullwiderstand
+\begin{equation}
+	W = W_0 .
+\end{equation}
+Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = 2). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
+\begin{equation}
+	\sigma = \Delta C_{Bat}\cdot U_{Bat}.
 \end{equation}
 Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
+Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale Winde haben keinen Einfluss auf die Steigzeit oder die zum Steigen benötigte Energiemenge. Jedoch verändern die Winde die zurückglegte Strecke über Grund für eine gewisse Höhendistanz (Vgl. \cite{Scheiderer.2008}). Diese ist für eine Betrachtung Flächenflugzeuges vorerst ohne Belang. 
 
 
 \subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
