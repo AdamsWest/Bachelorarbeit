@@ -48,7 +48,7 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 
 % Batterie
 E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 8;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
@@ -65,7 +65,7 @@ m_nutz = 0.0;          % Nutzlast in kg
 
 % Gesamtsystem
 m_copter = 0.354;                       % Multicopter Leermasse in kg
-A_copter = 0.15*0.05 + 0.12*0.02*4;     % obere Stirnflaeche des Multicopter in m^2
+A_copter = 0.15*0.05 + 0.12*0.02*n_Prop;     % obere Stirnflaeche des Multicopter in m^2
 A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
 c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters 
 c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
@@ -74,7 +74,7 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 % Diskretisierung der Steiggeschwindigkeit
 V_Kg_min = 1;			% kleinster Bahnneigungswinkel
 V_Kg_Delta = 1;		% Schrittweite Batteriemasse
-V_Kg_max = 40;			% größter Bahnneigungswinkel
+V_Kg_max = 50;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

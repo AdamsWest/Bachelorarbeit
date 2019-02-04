@@ -37,6 +37,7 @@ F = pi * R^2;                               % Fläche eines Propellers in Quadrat
 DATA = evalin('base','DATA_APC');
 
 [l,w] = size(DATA_APC);
+clear w;
 % Aufsuchen und finden aller Propellernamen, die den gleichen Durchmesser
 % wie der gesuchte haben. Dabei werden alle anderen Propeller entfernt
 
@@ -361,7 +362,7 @@ for h_variabel = H_0:Delta_H:H_max
             alpha_vprop(n) = alpha_vprop(n)*180/pi;
             
             if C_Rest_V_vprop(n) < 0.0 || U_mot_vprop(n) > U_Bat(x) || U_mot_vprop(n) <= 0 || C_Rate_vprop(n) > C_Rate_max || I_mot_vprop(n) > I_max || ...
-                    alpha_vprop(n) > alpha_stall || M_tip_vprop(n) >= 1 || I_Bat_vprop(n) <= 0
+                    alpha_vprop(n) > alpha_stall || M_tip_vprop(n) >= 1 || I_Bat_vprop(n) <= 0 || eta_ges_vprop(n) < 1
                 C_Rest_V_vprop(n) = NaN;
                 Omega_vprop(n) = NaN;
                 U_mot_vprop(n) = NaN;
@@ -373,11 +374,25 @@ for h_variabel = H_0:Delta_H:H_max
                 
             end
             
+            if x > 1     % Entferne alle Ergebnisse, wobei die Restladung im Vergleich zum vorheigen Schritt steigt
+                if C_Rest_V_vprop(n) > C_Rest_V(x-1)
+                    C_Rest_V_vprop(n) = NaN;
+                    Omega_vprop(n) = NaN;
+                    U_mot_vprop(n) = NaN;
+                    I_mot_vprop(n) = NaN;
+                    I_Bat_vprop(n) = NaN;
+                    PWM_vprop(n) = NaN;
+                    eta_ges_vprop(n) = NaN;
+                    V_Kg_vprop(n) = NaN;
+                end
+            end
+            
+            
             Bestimmung_vprop(n) = Delta_C_Bat_vprop(n) * U_Bat_vprop(n);        % Berechnung der aufgebrachten Energiemenge
             
             
         end               % Ende der Pitchschleife
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if isnan(nanmean(Omega_vprop)) ~= 1 && isnan(nanmean(I_mot_vprop)) ~= 1 &&  isnan(nanmean(U_mot_vprop)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
                 isnan(nanmean(PWM_vprop)) ~= 1 && isnan(nanmean(C_Rest_V_vprop)) ~= 1 && isnan(nanmean(I_Bat_vprop)) ~= 1       % enthalten (unfliegbarer Zustand)
             
@@ -423,11 +438,11 @@ for h_variabel = H_0:Delta_H:H_max
             PWM_inter(z) = PWM_vprop(ind_opt);
             % Batterie
             I_Bat_inter(z) = I_Bat_vprop(ind_opt);
-            U_Bat_inter(z) = U_Bat_vprop(ind_opt);   % <-- Was muss da hin????????????????????????????????????????????????????????????
+            U_Bat_inter(z) = U_Bat_vprop(ind_opt);   
             C_Rate_inter(z) = C_Rate_vprop(ind_opt);
             C_Rest_V_inter(z) = C_Rest_V_vprop(ind_opt);
-            Delta_C_Bat_inter(z) = Delta_C_Bat_vprop(ind_opt);  % <-- Was muss da hin????????????????????????????????????????????????????????????
-            i_int_inter(z) = i_int_vprop(ind_opt);  % <-- Was muss da hin????????????????????????????????????????????????????????????
+            Delta_C_Bat_inter(z) = Delta_C_Bat_vprop(ind_opt);  
+            i_int_inter(z) = i_int_vprop(ind_opt);  
             % Gesamtsystem
             eta_ges_inter(z) = eta_ges_vprop(ind_opt);
             
@@ -451,7 +466,7 @@ for h_variabel = H_0:Delta_H:H_max
             PWM_inter(z) = NaN;
             % Batterie
             I_Bat_inter(z) = NaN;
-            U_Bat_inter(z) = NaN;   % <-- Was muss da hin????????????????????????????????????????????????????????????        
+            U_Bat_inter(z) = NaN;          
             C_Rate_inter(z) = NaN;
             C_Rest_V_inter(z) = NaN;
             % Gesamtsystem
