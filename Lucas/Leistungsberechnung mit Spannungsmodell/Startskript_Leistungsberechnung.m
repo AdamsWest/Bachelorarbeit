@@ -29,7 +29,7 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{13,1}; % Motorname
+motor_name = axi_motor_db{21,1}; % Motorname
 [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
 K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -39,8 +39,8 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '9x6';    % Propellerbezeichnung
-n_Prop = 2;             % Anzahl der Propeller
+prop_name = '9x7';    % Propellerbezeichnung
+n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
@@ -105,7 +105,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 17000;                              % Maximalhöhe in m
+H_max = 16500;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -123,7 +123,7 @@ if Abfrage_Flugsystem == 0
     
     m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
     
-    f_p = 1.0;                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+    f_p = 1;                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
     
     m_flugzeug = f_p * m_copter;
     
