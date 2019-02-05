@@ -282,9 +282,9 @@ for h_variabel = H_0:Delta_H:H_max
             
             RPM_map = evalin('base',['RPM_' num2str(n)]);
             V_map = evalin('base',['V_' num2str(n)]);
-            T_map = evalin('base',['T_' num2str(n)]) * rho(x)/rho_1;
-            P_map = evalin('base',['P_' num2str(n)]) * rho(x)/rho_1;
-            TAU_map = evalin('base',['Tau_' num2str(n)]) * rho(x)/rho_1;          
+            T_map = evalin('base',['T_' num2str(n)]) * rho(x)/rho_0;
+            P_map = evalin('base',['P_' num2str(n)]) * rho(x)/rho_0;
+            TAU_map = evalin('base',['Tau_' num2str(n)]) * rho(x)/rho_0;          
             
             V_Kg_vprop(n) = V_Kg_inter(z);
             
@@ -362,7 +362,7 @@ for h_variabel = H_0:Delta_H:H_max
             alpha_vprop(n) = alpha_vprop(n)*180/pi;
             
             if C_Rest_V_vprop(n) < 0.0 || U_mot_vprop(n) > U_Bat(x) || U_mot_vprop(n) <= 0 || C_Rate_vprop(n) > C_Rate_max || I_mot_vprop(n) > I_max || ...
-                    alpha_vprop(n) > alpha_stall || M_tip_vprop(n) >= 1 || I_Bat_vprop(n) <= 0 || eta_ges_vprop(n) < 1
+                    alpha_vprop(n) > alpha_stall || M_tip_vprop(n) >= 1 || I_Bat_vprop(n) <= 0 || eta_ges_vprop(n) > 1
                 C_Rest_V_vprop(n) = NaN;
                 Omega_vprop(n) = NaN;
                 U_mot_vprop(n) = NaN;
@@ -389,7 +389,7 @@ for h_variabel = H_0:Delta_H:H_max
             
             
             Bestimmung_vprop(n) = Delta_C_Bat_vprop(n) * U_Bat_vprop(n);        % Berechnung der aufgebrachten Energiemenge
-            
+            eta_prop_vprop(n) = 
             
         end               % Ende der Pitchschleife
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

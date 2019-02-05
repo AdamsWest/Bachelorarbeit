@@ -80,7 +80,6 @@ A_copter = 0.15*0.05 + 0.12*0.02*4;     % obere Stirnflaeche des Multicopter in 
 m_Bat = m_Bat * scale;
 m_copter = m_copter * scale;
 A_copter = A_copter * scale;
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
 c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters 

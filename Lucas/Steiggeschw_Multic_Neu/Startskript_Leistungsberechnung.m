@@ -56,12 +56,12 @@ U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-m_Bat = 0.56;           % Batteriemasse in kg
+% m_Bat = 0.56;           % Batteriemasse in kg
 
 % Batteriemassendiskreitisierung
-m_Bat_min = 0.4;
-m_Bat_Delta = 0.05;
-m_Bat_max = 0.65;
+m_Bat_min = 0.5;
+m_Bat_Delta = 0.02;
+m_Bat_max = 0.72;
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
@@ -80,7 +80,7 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 % Diskretisierung der Steiggeschwindigkeit
 V_Kg_min = 1;			% kleinster Bahnneigungswinkel
 V_Kg_Delta = 1;		% Schrittweite Batteriemasse
-V_Kg_max = 80;			% größter Bahnneigungswinkel
+V_Kg_max = 40;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -112,4 +112,4 @@ Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung'); % _Var_m_Bat
+run('Leistungsberechnung_Var_m_Bat'); % _Var_m_Bat

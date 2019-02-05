@@ -289,7 +289,7 @@ for m_Bat = m_Bat_min:m_Bat_Delta:m_Bat_max
             alpha_inter(z) = alpha_inter(z)*180/pi;
             
             if C_Rest_V_inter(z) < 0.0 || U_mot_inter(z) > U_Bat(x) || U_mot_inter(z) <= 0 || C_Rate_inter(z) > C_Rate_max || I_mot_inter(z) > I_max || ...
-                    alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1 || I_Bat_inter(z) <= 0     % ||  PWM_inter(z) > 1.0
+                    alpha_inter(z) > alpha_stall || M_tip_inter(z) >= 1 || I_Bat_inter(z) <= 0 || eta_ges_inter(z) > 1    % ||  PWM_inter(z) > 1.0
                 C_Rest_V_inter(z) = NaN;
                 Omega_inter(z) = NaN;
                 U_mot_inter(z) = NaN;
@@ -301,7 +301,19 @@ for m_Bat = m_Bat_min:m_Bat_Delta:m_Bat_max
                 
             end
             
-            
+            if x > 1
+                if C_Rest_V_inter(z) > C_Rest_V(x-1)
+                    C_Rest_V_inter(z) = NaN;
+                    Omega_inter(z) = NaN;
+                    U_mot_inter(z) = NaN;
+                    I_mot_inter(z) = NaN;
+                    I_Bat_inter(z) = NaN;
+                    PWM_inter(z) = NaN;
+                    eta_ges_inter(z) = NaN;
+                    V_Kg_inter(z) = NaN;
+                end
+            end           
+                        
             Bestimmung_V_Kg(z) = Delta_C_Bat_inter(z) * U_Bat_inter(z);        % Berechnung der aufgebrachten Energiemenge
             
             z = z+1;			% Erhöhung der Zählervariablen für die gamma-Schleife
