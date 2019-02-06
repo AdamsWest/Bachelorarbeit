@@ -16,3 +16,15 @@ Getriebe
 - zeigt zu Beginn eine übersetzung und nach 3000 m eine deutliche Untersetzung auf einen Faktor bis zu 0.3
 - ansonsten sind auch hier unter optimalen bedingungen keine Leistungsverbesserungen zu erkennen. 
 
+
+
+Konstellaion
+- wenn eine äquivalente Veränderung der Konstellation vorgenommen wird, sind die Ergebnisse beinahe identisch, es ergeben sich keine Leistungsunterschiede
+- der Duocopter erreicht beinahe ebenso hohe, wenn nicht sogar bessere Werte als die Multicopter
+- allerdings müssen die Ergebnisse unter realistischen Gesichtspuntken betrachtet werden
+- Für den Monocopter fehlt die Berücksichtigung der Drehmomentausgleichenden Mechanismen, sei es ein Hekcrotor oder ähnliches
+- diese benötigen auch Leistung aus der Batterie und verschlechtern die bisher erbrachten Flugleistungen deutlich
+- ein Duocopter scheint eine gute Alternative zu sein, allerdings ist sein Flugverhalten eher nachteilig
+- langsame Reaktionszeiten, ein träges Reaktionsverhalten, komplizierte Regelung, wird leicht instabil und besitzt eine komplizierte Technik
+- für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt
+- somit stellt der Quadrocopter die beste Lösung da
