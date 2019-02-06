@@ -17,7 +17,7 @@ load('axi_motor_db.mat');
 % Handelt es sich bei dem zu untersuchenden Flugobjekt um einen Multicopter
 % (1) oder um ein Flächenflugzeug (0)?
 
-Abfrage_Flugsystem = 0;
+Abfrage_Flugsystem = 1;
 
 
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,18 +29,18 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{21,1}; % Motorname
-[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-% R_i = 0.123;            % Innenwiderstand in Ohm
-% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-% I_0 = 0.56;             % Leerlaufstrom in Ampere
-% I_max = 30;             % Max Continuous Current
-% m_Mot = 0.0365;         % Motorgewicht in kg
+% motor_name = axi_motor_db{21,1}; % Motorname
+% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+R_i = 0.123;            % Innenwiderstand in Ohm
+K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+I_0 = 0.56;             % Leerlaufstrom in Ampere
+I_max = 30;             % Max Continuous Current
+m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '9x7';    % Propellerbezeichnung
-n_Prop = 1;             % Anzahl der Propeller
+prop_name = '7x3.8';    % Propellerbezeichnung
+n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
@@ -66,7 +66,7 @@ m_nutz = 0.0;          % Nutzlast in kg
 
 % Gesamtsystem
 m_copter = 0.354;                       % Multicopter Leermasse in kg
-A_copter = 0.15*0.05 + 0.12*0.02*4;     % obere Stirnflaeche des Multicopter in m^2
+A_copter = 0.15*0.05 + 0.12*0.02*n_Prop;     % obere Stirnflaeche des Multicopter in m^2
 A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
 c_W_copter_oben = 0.1;                    % Widerstandsbeiwert des Multicopters 
 c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
@@ -107,7 +107,7 @@ H_0 = 0;                                    % Höhe des Abflugplatzes über Normal
 Delta_H = 100;                              % Inkrementweite in m 
 H_max = 16500;                              % Maximalhöhe in m
 
-T_0 = 288.15;                               % Temperatur in K am Flugplatz
+T_0 = 263.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent

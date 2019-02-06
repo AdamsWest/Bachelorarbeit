@@ -69,8 +69,6 @@ alpha = zeros(lengthi,1);
 Theta = zeros(lengthi,1);
 V_Kg = zeros(lengthi,1);
 t_Flug = zeros(lengthi+1,1);
-% Flugzustand_Flaechenflzg = zeros(lengthi,1);
-% V_Flaechenflugzeug = zeros(lengthi,1);
 % Propeller
 Thrust = zeros(lengthi,1);
 Omega = zeros(lengthi,1);
@@ -79,6 +77,7 @@ M_tip = zeros(lengthi,1);
 % Motor
 U_mot = zeros(lengthi,1);
 I_mot = zeros(lengthi,1);
+Uebersetzung = zeros(lengthi,1);
 % ESC
 PWM = zeros(lengthi,1);
 % Batterie
@@ -177,6 +176,7 @@ for h_variabel = H_0:Delta_H:H_max
     % Motor
     I_mot_inter = zeros(lengthvkg, 1);
     U_mot_inter = zeros(lengthvkg, 1);
+    Uebersetzung_inter = zeros(lengthvkg,1);
     % ESC
     PWM_inter = zeros(lengthvkg, 1);
     % Batterie

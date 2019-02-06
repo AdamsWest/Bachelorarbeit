@@ -41,14 +41,14 @@ m_Mot = 0.0365;         % Motorgewicht in kg
 % Propeller
 % prop_name = '6x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 8;                  % Propellerdurchmesser in inch
+D = 6.5;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
 
 % Batterie
 E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
@@ -74,7 +74,7 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 % Diskretisierung der Steiggeschwindigkeit
 V_Kg_min = 1;			% kleinster Bahnneigungswinkel
 V_Kg_Delta = 1;		% Schrittweite Batteriemasse
-V_Kg_max = 50;			% größter Bahnneigungswinkel
+V_Kg_max = 60;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -102,7 +102,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 %% Festlegung des Dateinamen
     
 Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop-Durchm = ' num2str(D) ...
-    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms'];
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = eta'];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

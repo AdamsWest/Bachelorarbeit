@@ -31,64 +31,17 @@ Cnom = C_Bat/1000;                                            % Nominelle Kapazi
 
 %% Propeller
 
+%Entnahme des Durchmessers und des Pitches aus dem Propellernahmen
+D = str2double(prop_name(1:strfind(prop_name,'x')-1));      % Durchmesser extrahieren
+P_75 = prop_name(strfind(prop_name,'x')+1:end);             % Pitch extrahieren
+while isnan(str2double(P_75)) == 1
+    P_75(end) = [];
+end
+P_75 = str2double(P_75);                    % Pitch festlegen
 R = D * 0.0254 / 2;                         % Propellerradius in Meter
 F = pi * R^2;                               % Fläche eines Propellers in Quadratmeter
-
-DATA = evalin('base','DATA_APC');
-
-[l,w] = size(DATA_APC);
-clear w;
-% Aufsuchen und finden aller Propellernamen, die den gleichen Durchmesser
-% wie der gesuchte haben. Dabei werden alle anderen Propeller entfernt
-
-for w = l:-1:1
-    a = DATA{w,1};                                  % Speichern des Propellernames unter der Variablen a
-    diameter = str2double(a(1:strfind(a,'x')-1));   % Extrahieren des Durchmessers aus dem Propellernamen
-    if diameter ~= D                                % Entfernen der Zeile mit einem anderen Propellerdurchmesser
-        DATA(w,:) = [];
-    end
-end
-
-% Entnahme jedes einzelnen Propellers
-counter = 0;
-ind = 1;
-len = length(DATA);
-d = 1;
-while ind < len
-    
-    prop_name = DATA{ind,1};
-    pitch_all = prop_name(strfind(prop_name,'x')+1:end);
-    ind = find(strcmp(DATA(:,1),prop_name));
-    
-    ind_unten = min(ind);
-    ind_oben = max(ind);
-    ind = max(ind) + 1;
-    
-    % nicht passende Propeller werden entfernt (-E, 3- and 4-blade, -SF, etc.)
-    if isnan(str2double(pitch_all)) == 1
-        
-        for d = ind_oben:-1:ind_unten
-            DATA(d,:) = [];
-            len = len - 1;
-        end
-        
-    else
-        
-        [RPM, V, T, P, Tau] = Propeller_map(DATA,prop_name);
-        counter = counter + 1;
-        
-        % Die Daten für RPM, V, T, usw. werden fortlaufenden Vektoren
-        % zugewiesen
-        assignin ('base',['prop_name' num2str(counter)], prop_name);
-        assignin ('base',['pitch_' num2str(counter)], pitch_all);
-        assignin ('base',['RPM_' num2str(counter)], RPM);
-        assignin ('base',['V_' num2str(counter)], V);
-        assignin ('base',['T_' num2str(counter)], T);
-        assignin ('base',['P_' num2str(counter)], P);
-        assignin ('base',['Tau_' num2str(counter)], Tau);
-    end
-end
-
+Theta_75 = atan( 4*P_75 / (3*pi * D) );     % geometrischer Anstellwinkel des Propellers bei 75% des Radius
+[RPM_map, V_map, T_map, P_map, TAU_map] = Propeller_map(DATA_APC,prop_name);    % Aufbau des Kennfeldes
 
 
 %% Umgebungsparameter
@@ -104,6 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
+lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1) + 1;
 
 % Umgebung
 H = zeros(lengthi,1);
@@ -118,8 +72,7 @@ Thrust = zeros(lengthi,1);
 Omega = zeros(lengthi,1);
 tau = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
-pitch = zeros(lengthi,1);
-eta_prop = zeros(lengthi,1);
+Uebersetzung = zeros(lengthi,1);
 % Motor
 U_mot = zeros(lengthi,1);
 I_mot = zeros(lengthi,1);
@@ -135,6 +88,7 @@ P_Bat = zeros(lengthi,1);
 Delta_C_Bat = zeros(lengthi+1,1);
 i_int = zeros(lengthi+1,1);
 % Gesamtsystem
+eta_prop = zeros(lengthi,1);
 eta_ges = zeros(lengthi,1);
 
 
@@ -217,8 +171,7 @@ for h_variabel = H_0:Delta_H:H_max
     Omega_inter = zeros(lengthvkg, 1);
     tau_inter = zeros(lengthvkg, 1);
     M_tip_inter = zeros(lengthvkg, 1);
-    pitch_inter = zeros(lengthvkg, 1);
-    eta_prop_inter = zeros(lengthvkg,1);
+    Uebersetzung_inter = zeros(lengthvkg, 1);
     % Motor
     I_mot_inter = zeros(lengthvkg, 1);
     U_mot_inter = zeros(lengthvkg, 1);
@@ -252,83 +205,81 @@ for h_variabel = H_0:Delta_H:H_max
         
         % Initialisierungen für den Verstellpropeller
         % Multicopter
-        Theta_vprop = zeros(counter, 1);
-        alpha_vprop = zeros(counter, 1);
-        V_Kg_vprop = zeros(counter, 1);
+        Theta_ueber = zeros(lengthueber, 1);
+        alpha_ueber = zeros(lengthueber, 1);
+        V_Kg_ueber = zeros(lengthueber, 1);
+        Bestimmung_ueber = zeros(lengthueber, 1);
         % Propeller
-        Omega_vprop = zeros(counter, 1);
-        tau_vprop = zeros(counter, 1);
-        M_tip_vprop = zeros(counter, 1);
-        pitch_vprop = zeros(counter,1);
-        eta_prop_vprop = zeros(counter,1);
+        Omega_ueber = zeros(lengthueber, 1);
+        tau_ueber = zeros(lengthueber, 1);
+        M_tip_ueber = zeros(lengthueber, 1);
         % Motor
-        I_mot_vprop = zeros(counter, 1);
-        U_mot_vprop = zeros(counter, 1);
+        Uebersetzung_ueber = zeros(lengthueber,1);
+        I_mot_ueber = zeros(lengthueber, 1);
+        U_mot_ueber = zeros(lengthueber, 1);
         % ESC
-        PWM_vprop = zeros(counter, 1);
+        PWM_ueber = zeros(lengthueber, 1);
         % Batterie
-        I_Bat_vprop = zeros(counter, 1);
-        U_Bat_vprop = zeros(counter, 1);
-        C_Rate_vprop = zeros(counter, 1);
-        C_Rest_V_vprop = zeros(counter, 1);
-        Delta_C_Bat_vprop = zeros(counter, 1);
-        i_int_vprop = zeros(counter, 1);
+        I_Bat_ueber = zeros(lengthueber, 1);
+        U_Bat_ueber = zeros(lengthueber, 1);
+        C_Rate_ueber = zeros(lengthueber, 1);
+        C_Rest_V_ueber = zeros(lengthueber, 1);
+        Delta_C_Bat_ueber = zeros(lengthueber, 1);
+        i_int_ueber = zeros(lengthueber, 1);
         % Gesamtsystem
-        Thrust_vprop = zeros(counter, 1);
-        eta_ges_vprop = zeros(counter, 1);
+        Thrust_ueber = zeros(lengthueber, 1);
+        eta_ges_ueber = zeros(lengthueber, 1);
        
-        
-        for n = 1:counter
+        w = 1;
+        for ue = ue_min:ue_Delta:ue_max       
             
-            
-            RPM_map = evalin('base',['RPM_' num2str(n)]);
-            V_map = evalin('base',['V_' num2str(n)]);
-            T_map = evalin('base',['T_' num2str(n)]) * rho(x)/rho_0;
-            P_map = evalin('base',['P_' num2str(n)]) * rho(x)/rho_0;
-            TAU_map = evalin('base',['Tau_' num2str(n)]) * rho(x)/rho_0;          
-            
-            V_Kg_vprop(n) = V_Kg_inter(z);
+            V_Kg_ueber(w) = V_Kg_inter(z);
+            Uebersetzung_ueber(w) = ue;
             
             % Aerodynamik
-            [Thrust_vprop(n),Theta_vprop(n),V_A,alpha_vprop(n)] = MulticopterAerodynamik(u_Wg,V_Kg_vprop(n),gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
+            [Thrust_ueber(w),Theta_ueber(w),V_A,alpha_ueber(w)] = MulticopterAerodynamik(u_Wg,V_Kg_ueber(w),gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
                       
-            Thrust_vprop(n) = Thrust_vprop(n) / n_Prop;                        % Schub auf n Propeller verteilen
+            Thrust_ueber(w) = Thrust_ueber(w) / n_Prop;                        % Schub auf n Propeller verteilen
             
-            if Thrust_vprop(n) > max(max(T_map))                               % wenn Schub zu gross (Ergebnis verwerfen)
+            if Thrust_ueber(w) > max(max(T_map))                               % wenn Schub zu gross (Ergebnis verwerfen)
                 
-                Omega_vprop(n) = NaN;
-                I_mot_vprop(n) = NaN;
-                C_Rate_vprop(n) = NaN;
-                C_Rest_V_vprop(n) = NaN;
+                Omega_ueber(w) = NaN;
+                I_mot_ueber(w) = NaN;
+                C_Rate_ueber(w) = NaN;
+                C_Rest_V_ueber(w) = NaN;
                 
                 
             else
 
                 % Drehzahl und Drehmoment bestimmen
-                [Omega_vprop(n),tau_vprop(n)] = Propeller(V_A, alpha_vprop(n), Thrust_vprop(n), RPM_map, V_map, T_map, TAU_map);
+                [Omega_ueber(w),tau_ueber(w)] = Propeller(V_A, alpha_ueber(w), Thrust_ueber(w), RPM_map, V_map, T_map, TAU_map);
    
-                % Pitch
-                zw = str2double(evalin('base',['pitch_' num2str(n)]));
-                pitch_vprop(n) = zw;
+                % Übersetzung 
+                P_ueber = Omega_ueber(w) * tau_ueber(w);
+                Omega_ueber(w) = Omega_ueber(w) * Uebersetzung_ueber(w);
+                tau_ueber(w) = P_ueber / Omega_ueber(w);
                 
                 % Wie groß ist die Blattspitzengeschwindigkeit?
-                M_tip_vprop(n) = (Omega_vprop(n) * R)/a;                       % Blattspitzengeschwindigkeit in Ma
+                M_tip_ueber(w) = (Omega_ueber(w) * R)/a;                       % Blattspitzengeschwindigkeit in Ma
                 
                 
                 % Motorzustand berechnen
-                [U_mot_vprop(n),I_mot_vprop(n)] = Motor(tau_vprop(n),K_V,I_0,R_i,Omega_vprop(n));
+                [U_mot_ueber(w),I_mot_ueber(w)] = Motor(tau_ueber(w),K_V,I_0,R_i,Omega_ueber(w));
                 
                 
                 % Zustand der Motorregler berechnen
-                [PWM_vprop(n),eta_PWM] = ESC(U_mot_vprop(n),U_Bat(x));         % <-- hier U_bat_inter
+                [PWM_ueber(w),eta_PWM] = ESC(U_mot_ueber(w),U_Bat(x));         % <-- hier U_bat_inter
 
                 
                 % Batteriezustand berechnen
-                Delta_C_Bat_vprop(n) = Delta_C_Bat(x);                         % Anpassung der Batteriekapazität
-                i_int_vprop(n) = i_int(x);                                     % Übergabe des Integrals der Spannung vom letzten Schritt
+                Delta_C_Bat_ueber(w) = Delta_C_Bat(x);                         % Anpassung der Batteriekapazität
+                i_int_ueber(w) = i_int(x);                                     % Übergabe des Integrals der Spannung vom letzten Schritt
                 
-                [I_Bat_vprop(n),U_Bat_vprop(n),C_Rate_vprop(n),Delta_C_Bat_vprop(n),C_Rest_V_vprop(n),i_int_vprop(n)] = Batterie(Batterie_data,...
-                    Cnom,PWM_vprop(n),eta_PWM,n_Prop,i_int_vprop(n),U_Bat_vprop(n),C_Bat,Delta_C_Bat_vprop(n),I_mot_vprop(n),N_Bat_cell,P_Bat_Peukert,t_Flug_inter(z));
+                if w == 97
+                    aaa = 1;
+                end
+                [I_Bat_ueber(w),U_Bat_ueber(w),C_Rate_ueber(w),Delta_C_Bat_ueber(w),C_Rest_V_ueber(w),i_int_ueber(w)] = Batterie(Batterie_data,...
+                    Cnom,PWM_ueber(w),eta_PWM,n_Prop,i_int_ueber(w),U_Bat_ueber(w),C_Bat,Delta_C_Bat_ueber(w),I_mot_ueber(w),N_Bat_cell,P_Bat_Peukert,t_Flug_inter(z));
                 
                 
                 %% Gesamtwirkungsgrad
@@ -338,8 +289,8 @@ for h_variabel = H_0:Delta_H:H_max
                 
                 vi0 = sqrt(m*g / ( 2*rho(x)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
                 v = vi0;
-                mu_z = -V_A*sin(alpha_vprop(n));                                          % Geschwindigkeit durch die Rotorebene
-                mu = V_A*cos(alpha_vprop(n));                                             % Geschwindigkeit entlang Rotorebene
+                mu_z = -V_A*sin(alpha_ueber(w));                                          % Geschwindigkeit durch die Rotorebene
+                mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
                 krit = 1;
                 while krit > 0.0005
                     f = v - mu_z - vi0^2 / sqrt(mu^2 + v^2);
@@ -354,66 +305,63 @@ for h_variabel = H_0:Delta_H:H_max
                 % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
                 %        	eta_prop(x) = (Thrust(x) * (V_A + vi))/(tau(x) .* Omega(x));
                 
-                eta_ges_vprop(n) = (n_Prop * Thrust_vprop(n) * (mu_z + vi))/(I_Bat_vprop(n) * U_Bat_vprop(n));         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
+                eta_ges_ueber(w) = (n_Prop * Thrust_ueber(w) * (mu_z + vi))/(I_Bat_ueber(w) * U_Bat_ueber(w));         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
 
-                eta_prop_vprop(n) = (Thrust_vprop(n) * (V_A + vi))/(tau_vprop(n) .* Omega_vprop(n));
-                            
                 
             end
             
             %% Wenn Grenzen ueberschritten werden, Resultate entfernen
-            alpha_vprop(n) = alpha_vprop(n)*180/pi;
+            alpha_ueber(w) = alpha_ueber(w)*180/pi;
             
-            if C_Rest_V_vprop(n) < 0.0 || U_mot_vprop(n) > U_Bat(x) || U_mot_vprop(n) <= 0 || C_Rate_vprop(n) > C_Rate_max || I_mot_vprop(n) > I_max || ...
-                    alpha_vprop(n) > alpha_stall || M_tip_vprop(n) >= 1 || I_Bat_vprop(n) <= 0 || eta_ges_vprop(n) > 1 || eta_prop_vprop(n) > 1
-                C_Rest_V_vprop(n) = NaN;
-                Omega_vprop(n) = NaN;
-                U_mot_vprop(n) = NaN;
-                I_mot_vprop(n) = NaN;
-                I_Bat_vprop(n) = NaN;
-                PWM_vprop(n) = NaN;
-                eta_ges_vprop(n) = NaN;
-                eta_prop_vprop(n) = NaN;
-                V_Kg_vprop(n) = NaN;
+            if C_Rest_V_ueber(w) < 0.0 || U_mot_ueber(w) > U_Bat(x) || U_mot_ueber(w) <= 0 || C_Rate_ueber(w) > C_Rate_max || I_mot_ueber(w) > I_max || ...
+                    alpha_ueber(w) > alpha_stall || M_tip_ueber(w) >= 1 || I_Bat_ueber(w) <= 0 || eta_ges_ueber(w) > 1
+                C_Rest_V_ueber(w) = NaN;
+                Omega_ueber(w) = NaN;
+                U_mot_ueber(w) = NaN;
+                I_mot_ueber(w) = NaN;
+                I_Bat_ueber(w) = NaN;
+                PWM_ueber(w) = NaN;
+                eta_ges_ueber(w) = NaN;
+                V_Kg_ueber(w) = NaN;
                 
             end
             
             if x > 1     % Entferne alle Ergebnisse, wobei die Restladung im Vergleich zum vorheigen Schritt steigt
-                if C_Rest_V_vprop(n) > C_Rest_V(x-1)
-                    C_Rest_V_vprop(n) = NaN;
-                    Omega_vprop(n) = NaN;
-                    U_mot_vprop(n) = NaN;
-                    I_mot_vprop(n) = NaN;
-                    I_Bat_vprop(n) = NaN;
-                    PWM_vprop(n) = NaN;
-                    eta_ges_vprop(n) = NaN;
-                    eta_prop_vprop(n) = NaN;
-                    V_Kg_vprop(n) = NaN;
+                if C_Rest_V_ueber(w) > C_Rest_V(x-1)
+                    C_Rest_V_ueber(w) = NaN;
+                    Omega_ueber(w) = NaN;
+                    U_mot_ueber(w) = NaN;
+                    I_mot_ueber(w) = NaN;
+                    I_Bat_ueber(w) = NaN;
+                    PWM_ueber(w) = NaN;
+                    eta_ges_ueber(w) = NaN;
+                    V_Kg_ueber(w) = NaN;
                 end
             end
             
             
-%             Bestimmung_vprop(n) = Delta_C_Bat_vprop(n) * U_Bat_vprop(n);        % Berechnung der aufgebrachten Energiemenge
+            Bestimmung_ueber(w) = Delta_C_Bat_ueber(w) * U_Bat_ueber(w);        % Berechnung der aufgebrachten Energiemenge
+            
+            w = w+1;
             
         end               % Ende der Pitchschleife
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        if isnan(nanmean(Omega_vprop)) ~= 1 && isnan(nanmean(I_mot_vprop)) ~= 1 &&  isnan(nanmean(U_mot_vprop)) ~= 1 && isnan(nanmean(eta_prop_vprop)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
-                isnan(nanmean(PWM_vprop)) ~= 1 && isnan(nanmean(C_Rest_V_vprop)) ~= 1 && isnan(nanmean(I_Bat_vprop)) ~= 1       % enthalten (unfliegbarer Zustand)
+        if isnan(nanmean(Omega_ueber)) ~= 1 && isnan(nanmean(I_mot_ueber)) ~= 1 &&  isnan(nanmean(U_mot_ueber)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
+                isnan(nanmean(PWM_ueber)) ~= 1 && isnan(nanmean(C_Rest_V_ueber)) ~= 1 && isnan(nanmean(I_Bat_ueber)) ~= 1       % enthalten (unfliegbarer Zustand)
             
             % Kriterium für optimalen Steigwinkel
             y = 1;
-            while y <= length(eta_prop_vprop)                             % Suche und finde optimalen Steiggeschwindigkeit
-                A = eta_prop_vprop;
-                A = A(~isnan(A));
-                A = sort(A,'descend');               
-                ind_opt = find(eta_prop_vprop == A(y));
+            while y <= length(Bestimmung_ueber)                             % Suche und finde optimalen Steiggeschwindigkeit
+                A = Bestimmung_ueber;
+                A = sort(A);
+                ind_opt = find(Bestimmung_ueber == A(y));
                 
                 if length(ind_opt) > 1
                     ind_opt = ind_opt(1);
                 end
                 
-                if ~isnan(Thrust_vprop(ind_opt)) && ~isnan(Omega_vprop(ind_opt)) && ~isnan(I_mot_vprop(ind_opt)) && ~isnan(U_mot_vprop(ind_opt)) && ~isnan(PWM_vprop(ind_opt)) ...
-                        && ~isnan(I_Bat_vprop(ind_opt)) && ~isnan(U_Bat_vprop(ind_opt)) && ~isnan(C_Rate_vprop(ind_opt)) && ~isnan(C_Rest_V_vprop(ind_opt))
+                if ~isnan(Thrust_ueber(ind_opt)) && ~isnan(Omega_ueber(ind_opt)) && ~isnan(I_mot_ueber(ind_opt)) && ~isnan(U_mot_ueber(ind_opt)) && ~isnan(PWM_ueber(ind_opt)) ...
+                        && ~isnan(I_Bat_ueber(ind_opt)) && ~isnan(U_Bat_ueber(ind_opt)) && ~isnan(C_Rate_ueber(ind_opt)) && ~isnan(C_Rest_V_ueber(ind_opt))
                     
                     break;                                                 % Unterbreche Schleife, falls alle Leistungsparameter physikalisch realistische Werte besitzen
                 end
@@ -425,30 +373,29 @@ for h_variabel = H_0:Delta_H:H_max
             % Festlegen für entsprechenden Höhenschritt
             
             % Multicopter
-            Theta_inter(z) = Theta_vprop(ind_opt);
-            alpha_inter(z) = alpha_vprop(ind_opt);
-            V_Kg_inter(z) = V_Kg_vprop(ind_opt);	    % Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
+            Theta_inter(z) = Theta_ueber(ind_opt);
+            alpha_inter(z) = alpha_ueber(ind_opt);
+            V_Kg_inter(z) = V_Kg_ueber(ind_opt);	    % Bestimmung opt. Stgeschw. und speichern in Vektor für jeden Höhenabschnitt
             % Propeller
-            Thrust_inter(z) = Thrust_vprop(ind_opt);
-            Omega_inter(z) = Omega_vprop(ind_opt);
-            tau_inter(z) = tau_vprop(ind_opt);
-            M_tip_inter(z) = M_tip_vprop(ind_opt);
-            pitch_inter(z) = pitch_vprop(ind_opt);
-            eta_prop_inter(z) = eta_prop_vprop(ind_opt);
+            Thrust_inter(z) = Thrust_ueber(ind_opt);
+            Omega_inter(z) = Omega_ueber(ind_opt);
+            tau_inter(z) = tau_ueber(ind_opt);
+            M_tip_inter(z) = M_tip_ueber(ind_opt);
+            Uebersetzung_inter(z) = Uebersetzung_ueber(ind_opt);
             % Motor
-            I_mot_inter(z) = I_mot_vprop(ind_opt);
-            U_mot_inter(z) = U_mot_vprop(ind_opt);
+            I_mot_inter(z) = I_mot_ueber(ind_opt);
+            U_mot_inter(z) = U_mot_ueber(ind_opt);
             % ESC
-            PWM_inter(z) = PWM_vprop(ind_opt);
+            PWM_inter(z) = PWM_ueber(ind_opt);
             % Batterie
-            I_Bat_inter(z) = I_Bat_vprop(ind_opt);
-            U_Bat_inter(z) = U_Bat_vprop(ind_opt);   
-            C_Rate_inter(z) = C_Rate_vprop(ind_opt);
-            C_Rest_V_inter(z) = C_Rest_V_vprop(ind_opt);
-            Delta_C_Bat_inter(z) = Delta_C_Bat_vprop(ind_opt);  
-            i_int_inter(z) = i_int_vprop(ind_opt);  
+            I_Bat_inter(z) = I_Bat_ueber(ind_opt);
+            U_Bat_inter(z) = U_Bat_ueber(ind_opt);   
+            C_Rate_inter(z) = C_Rate_ueber(ind_opt);
+            C_Rest_V_inter(z) = C_Rest_V_ueber(ind_opt);
+            Delta_C_Bat_inter(z) = Delta_C_Bat_ueber(ind_opt);  
+            i_int_inter(z) = i_int_ueber(ind_opt);  
             % Gesamtsystem
-            eta_ges_inter(z) = eta_ges_vprop(ind_opt);
+            eta_ges_inter(z) = eta_ges_ueber(ind_opt);
             
         else
             
@@ -462,8 +409,7 @@ for h_variabel = H_0:Delta_H:H_max
             Omega_inter(z) = NaN;
             tau_inter(z) = NaN;
             M_tip_inter(z) = NaN;
-            pitch_inter(z) = NaN;
-            eta_prop_inter(z) = NaN;
+            Uebersetzung_inter(z) = NaN;
             % Motor
             I_mot_inter(z) = NaN;
             U_mot_inter(z) = NaN;
@@ -524,8 +470,7 @@ for h_variabel = H_0:Delta_H:H_max
         Omega(x) = Omega_inter(ind_opt2);
         tau(x) = tau_inter(ind_opt2);
         M_tip(x) = M_tip_inter(ind_opt2);
-        pitch(x) = pitch_inter(ind_opt2);
-        eta_prop(x) = eta_prop_inter(ind_opt2);
+        Uebersetzung(x) = Uebersetzung_inter(ind_opt2);
         % Motor
         I_mot(x) = I_mot_inter(ind_opt2);
         U_mot(x) = U_mot_inter(ind_opt2);
@@ -554,8 +499,7 @@ for h_variabel = H_0:Delta_H:H_max
         Omega(x) = NaN;
         tau(x) = NaN;
         M_tip(x) = NaN;
-        pitch(x) = NaN;
-        eta_prop(x) = NaN;
+        Uebersetzung(x) = NaN;
         % Motor
         I_mot(x) = NaN;
         U_mot(x) = NaN;
@@ -599,7 +543,7 @@ subplot(627), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation')
 subplot(628), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
 subplot(629), plot(H,V_Kg,'LineWidth',2), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(6,2,10), plot(H2,t_Flug,'LineWidth',2), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
-subplot(6,2,11), plot(H,pitch,'LineWidth',2), title('Pitch'), grid, xlabel('Höhe [m]'),ylabel('Pitch [in]')
+subplot(6,2,11), plot(H,Uebersetzung,'LineWidth',2), title('Uebersetzung'), grid, xlabel('Höhe [m]'),ylabel('i')
 % Anpassung und Abspeichern der Diagramme
 ImageSizeX = 14;
 ImageSizeY = 24;

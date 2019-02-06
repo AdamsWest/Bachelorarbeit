@@ -332,6 +332,19 @@ for h_variabel = H_0:Delta_H:H_max
             
         end
         
+        if x > 1     % Entferne alle Ergebnisse, wobei die Restladung im Vergleich zum vorheigen Schritt steigt
+            if C_Rest_V_inter(z) > C_Rest_V(x-1)
+                C_Rest_V_inter(z) = NaN;
+                Omega_inter(z) = NaN;
+                U_mot_inter(z) = NaN;
+                I_mot_inter(z) = NaN;
+                I_Bat_inter(z) = NaN;
+                PWM_inter(z) = NaN;
+                eta_ges_inter(z) = NaN;
+                V_Kg_inter(z) = NaN;
+            end
+        end
+        
         % Muss der Steigwinkel variiert werden?
         
         if Abfrage_Flugsystem == 1
