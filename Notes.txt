@@ -1,0 +1,18 @@
+	
+
+Verstellpropeller:
+- der Verstellpropeller bringt keine eindeutige Verbesserung, eher eine Verschlechterung im Vergleich zum fixed pitch Popeller
+- erkennbar ist, dass der Pitch mit der Höhe steigt bevor er sich beim höchsten Pitch sehr schnell einstellt
+- die optimale Fluggeschindigkeit ist dabei auch ca40 m die s 
+- der Gesamtwirkungsgrad kann nicht verbessert werden und ist im Vergleich zu andere Propeller noch niedriger
+- die Drehzahl nimmt nach einem anfänglichen Peak drastisch ab, um dann wieder konstant zu steigen
+- Es ein flug bei sofortig 100 % PWM, das heißt bei maximaler Spannung
+- der Batteriestrom nimmt exorbitant hohe Werte mit über 100 Amp an 
+- fraglich ob nicht flug mit geringerem Pitch am Anfang länger besser wäre ???
+
+
+Getriebe
+- konstante Motorleistung optimal
+- zeigt zu Beginn eine übersetzung und nach 3000 m eine deutliche Untersetzung auf einen Faktor bis zu 0.3
+- ansonsten sind auch hier unter optimalen bedingungen keine Leistungsverbesserungen zu erkennen. 
+

@@ -72,8 +72,8 @@ c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Wid
 c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
 % Diskretisierung der Steiggeschwindigkeit
-V_Kg_min = 1;			% kleinster Bahnneigungswinkel
-V_Kg_Delta = 1;		% Schrittweite Batteriemasse
+V_Kg_min = 15;			% kleinster Bahnneigungswinkel
+V_Kg_Delta = 0.5;		% Schrittweite Batteriemasse
 V_Kg_max = 60;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,8 +102,8 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 %% Festlegung des Dateinamen
     
 Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop-Durchm = ' num2str(D) ...
-    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = eta'];
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = vkonstant'];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_vprop_eta'); 
+run('Leistungsberechnung_verstellprop'); 

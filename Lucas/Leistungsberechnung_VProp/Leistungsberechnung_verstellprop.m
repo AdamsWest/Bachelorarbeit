@@ -389,7 +389,6 @@ for h_variabel = H_0:Delta_H:H_max
             
             
             Bestimmung_vprop(n) = Delta_C_Bat_vprop(n) * U_Bat_vprop(n);        % Berechnung der aufgebrachten Energiemenge
-            eta_prop_vprop(n) = 
             
         end               % Ende der Pitchschleife
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
