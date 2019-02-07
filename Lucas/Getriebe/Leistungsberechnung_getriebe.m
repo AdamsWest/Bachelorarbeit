@@ -57,7 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
-lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1) + 1;
+lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1);% + 1;
 
 % Umgebung
 H = zeros(lengthi,1);
@@ -235,7 +235,9 @@ for h_variabel = H_0:Delta_H:H_max
             
             V_Kg_ueber(w) = V_Kg_inter(z);
             Uebersetzung_ueber(w) = ue;
-            
+            if w == 22 
+                aaa = 1;
+            end
             % Aerodynamik
             [Thrust_ueber(w),Theta_ueber(w),V_A,alpha_ueber(w)] = MulticopterAerodynamik(u_Wg,V_Kg_ueber(w),gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
                       
@@ -515,9 +517,9 @@ for h_variabel = H_0:Delta_H:H_max
         
     end
     
-    
-    
-    
+    %% Spielereien
+    disp(num2str((x-2)*10000/H_max));
+      
     H(x) = H_oben;			% Speichern der Höhe im Vektor
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
     

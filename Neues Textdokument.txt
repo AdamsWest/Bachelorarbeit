@@ -1,16 +1,6 @@
 Strukturierung der Parameteruntersuchung
 
-	- Einleitung und Vorgehensweise
-	- Grundlegende Frage: Flächenflugzeug vs. Multicopter
-		- Problem und Vorgehensweise darlegen
-		- Darstellung der Ergebnisse in geeigneten Diagrammen
-		- Auswertung der Ergebnisse und Klärung der Frage, welches Fluggerät ist besser
-	- Steiggeschwindigkeit für Quadrocopter 
-		- Beschreibung und Auswertung der Ergebnisse
-		- Feststellung des Flaschenhalse
-		- Einfluss des Widerstandsbeiwerts 
-		- Einfluss des Motors / Motorstroms
-		- Einfluss der Batteriezellenanzahl
-	- Verstellpropeller
-		
+	- zeigen, was bisher geschehen ist:
+	--> Untersuchung des Einflusses der Konstellation --> bei gleichen Verteilungen der Massen ist jede Konstellation äquivalent
+	--> analog für eine Größenkonstellation
 	
