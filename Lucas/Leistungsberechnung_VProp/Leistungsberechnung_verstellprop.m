@@ -567,8 +567,8 @@ for h_variabel = H_0:Delta_H:H_max
         
     end
     
-    
-    
+    %% Spielereien
+    disp([num2str((x-2)*10000/H_max) '%']);  
     
     H(x) = H_oben;			% Speichern der Höhe im Vektor
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife

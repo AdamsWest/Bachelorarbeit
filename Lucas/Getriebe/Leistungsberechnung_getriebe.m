@@ -200,7 +200,7 @@ for h_variabel = H_0:Delta_H:H_max
         
         % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
+        m = m_copter + m_Bat + m_Mot * n_Prop + m_getriebe + m_nutz;                     % Gesamtmasse des Quadrocopters
         t_Flug_inter(z) = Delta_H / V_Kg_inter(z);                                            % Flugzeit
         
         % Initialisierungen für den Verstellpropeller
@@ -257,9 +257,10 @@ for h_variabel = H_0:Delta_H:H_max
                 [Omega_ueber(w),tau_ueber(w)] = Propeller(V_A, alpha_ueber(w), Thrust_ueber(w), RPM_map, V_map, T_map, TAU_map);
    
                 % Übersetzung 
-                P_ueber = Omega_ueber(w) * tau_ueber(w);
-                Omega_ueber(w) = Omega_ueber(w) * Uebersetzung_ueber(w);
-                tau_ueber(w) = P_ueber / Omega_ueber(w);
+                P_ueber = Omega_ueber(w) * tau_ueber(w);                       % Leistung am Propeller
+                P_ueber = P_ueber / eta_getriebe;                              % Einbeziehung des Wirkungsgrades
+                Omega_ueber(w) = Omega_ueber(w) / Uebersetzung_ueber(w);       % Drehzahl an der Motorwelle
+                tau_ueber(w) = P_ueber / Omega_ueber(w);                       % Drehmoment an der Motorwelle
                 
                 % Wie groß ist die Blattspitzengeschwindigkeit?
                 M_tip_ueber(w) = (Omega_ueber(w) * R)/a;                       % Blattspitzengeschwindigkeit in Ma
@@ -518,7 +519,7 @@ for h_variabel = H_0:Delta_H:H_max
     end
     
     %% Spielereien
-    disp(num2str((x-2)*10000/H_max));
+    disp([num2str((x-2)*10000/H_max) '%']);
       
     H(x) = H_oben;			% Speichern der Höhe im Vektor
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
