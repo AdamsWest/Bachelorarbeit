@@ -29,17 +29,17 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{21,1}; % Motorname
-[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-% R_i = 0.123;            % Innenwiderstand in Ohm
-% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-% I_0 = 0.56;             % Leerlaufstrom in Ampere
-% I_max = 30;             % Max Continuous Current
-% m_Mot = 0.0365;         % Motorgewicht in kg
+% motor_name = axi_motor_db{21,1}; % Motorname
+% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+R_i = 0.123;            % Innenwiderstand in Ohm
+K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+I_0 = 0.56;             % Leerlaufstrom in Ampere
+I_max = 30;             % Max Continuous Current
+m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '9x7';    % Propellerbezeichnung
+prop_name = '7x3.8';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -49,14 +49,14 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 
 % Batterie
 E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-% m_Bat = 0.56;           % Batteriemasse in kg
+m_Bat = 0.56;           % Batteriemasse in kg
 
 % Batteriemassendiskreitisierung
 m_Bat_min = 0.5;
@@ -112,4 +112,4 @@ Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_Var_m_Bat'); % _Var_m_Bat
+run('Leistungsberechnung'); % _Var_m_Bat
