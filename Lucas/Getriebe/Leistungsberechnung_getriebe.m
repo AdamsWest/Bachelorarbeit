@@ -200,7 +200,7 @@ for h_variabel = H_0:Delta_H:H_max
         
         % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        m = m_copter + m_Bat + m_Mot * n_Prop + m_getriebe + m_nutz;                     % Gesamtmasse des Quadrocopters
+        m = m_copter + m_Bat + (m_Mot + m_getriebe) * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
         t_Flug_inter(z) = Delta_H / V_Kg_inter(z);                                            % Flugzeit
         
         % Initialisierungen für den Verstellpropeller
@@ -517,12 +517,12 @@ for h_variabel = H_0:Delta_H:H_max
         eta_ges(x) = NaN;
         
     end
-    
-    %% Spielereien
-    disp([num2str((x-2)*10000/H_max) '%']);
       
     H(x) = H_oben;			% Speichern der Höhe im Vektor
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
+    
+    %% Spielereien
+    disp([num2str((x-2)*10000/H_max) '%']);
     
 end
 

@@ -30,10 +30,10 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Getriebe
-ue_min = 0.5;           % minimale Übersetzung
+ue_min = 0.7;           % minimale Übersetzung
 ue_Delta = 0.05;         % Schrittweite der Über
-ue_max = 1.5;            % maximale Übersetzung
-m_getriebe = 0.1;       % Getriebegewicht
+ue_max = 0.7;            % maximale Übersetzung
+m_getriebe = 0.05;       % Getriebegewicht
 eta_getriebe = 0.8;     % Wirkungsgrad des Getriebes
 
 % Propeller
@@ -93,7 +93,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 25000;                              % Maximalhöhe in m
+H_max = 17500;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa

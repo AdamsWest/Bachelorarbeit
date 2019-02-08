@@ -391,8 +391,8 @@ for h_variabel = H_0:Delta_H:H_max
                 end
             end
             
-            
-            Bestimmung_vprop(n) = Delta_C_Bat_vprop(n) * U_Bat_vprop(n);        % Berechnung der aufgebrachten Energiemenge
+            Bestimmung_vprop(n) = C_Rest_V_vprop(n);
+%             Bestimmung_vprop(n) = Delta_C_Bat_vprop(n) * U_Bat_vprop(n);        % Berechnung der aufgebrachten Energiemenge
             
         end               % Ende der Pitchschleife
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -403,7 +403,8 @@ for h_variabel = H_0:Delta_H:H_max
             y = 1;
             while y <= length(Bestimmung_vprop)                             % Suche und finde optimalen Steiggeschwindigkeit
                 A = Bestimmung_vprop;
-                A = sort(A);
+                A = A(~isnan(A));
+                A = sort(A,'descend');               
                 ind_opt = find(Bestimmung_vprop == A(y));
                 
                 if length(ind_opt) > 1
@@ -421,7 +422,7 @@ for h_variabel = H_0:Delta_H:H_max
             
             % Übergabe der Leistungswerte für die optimale Geschwindigkeit und
             % Festlegen für entsprechenden Höhenschritt
-            
+            ind_opt = 7;
             % Multicopter
             Theta_inter(z) = Theta_vprop(ind_opt);
             alpha_inter(z) = alpha_vprop(ind_opt);

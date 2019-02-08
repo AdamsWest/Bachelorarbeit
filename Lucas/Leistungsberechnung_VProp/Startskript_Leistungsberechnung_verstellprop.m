@@ -29,26 +29,26 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{7,1}; % Motorname
-[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-% R_i = 0.123;            % Innenwiderstand in Ohm
-% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-% I_0 = 0.56;             % Leerlaufstrom in Ampere
-% I_max = 30;             % Max Continuous Current
-% m_Mot = 0.0365;         % Motorgewicht in kg
+% motor_name = axi_motor_db{21,1}; % Motorname
+% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+R_i = 0.123;            % Innenwiderstand in Ohm
+K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+I_0 = 0.56;             % Leerlaufstrom in Ampere
+I_max = 30;             % Max Continuous Current
+m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
 % prop_name = '6x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 10;                  % Propellerdurchmesser in inch
+D = 7;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
 
 % Batterie
 E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
@@ -60,9 +60,9 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
 
-m_ges = (n_Prop * m_Mot)/0.138;     % Gesamtmasse
-m_Bat = m_ges * 0.528;              % Batteriemasse
-m_copter = m_ges * 0.334;           % Leermasse
+m_ges = (n_Prop * m_Mot)/(4*0.0365/1.06);     % Gesamtmasse
+m_Bat = m_ges * (0.56/1.06);              % Batteriemasse
+m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +93,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 15000;                              % Maximalhöhe in m
+H_max = 16500;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -106,8 +106,8 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 %% Festlegung des Dateinamen
     
 Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop-Durchm = ' num2str(D) ...
-    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = vkonstant'];
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = neu'];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_verstellprop'); 
+run('Leistungsberechnung_verstellprop_alternativ'); 
