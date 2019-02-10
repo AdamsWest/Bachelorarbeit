@@ -1,5 +1,9 @@
 % Die größten Abweichungen
-% close all
+clear
+close all
+clc
+
+figure_durchschn_abweichung = figure;
 run('Gesamt')
 
 
@@ -13,16 +17,18 @@ for i = 2:1:C_Rate_max+1
     
 end
 
-figure
-plot(1:C_Rate_max,Durchschnitt)
+figure(figure_durchschn_abweichung)
+subplot(2,1,1)
+plot(1:C_Rate_max,Durchschnitt,'LineWidth',2)
+grid on
 xlabel('C-Rate');
-ylabel('durchschnt. Abweichung aller Zellen in %');
-flaeche = trapz(abs(Durchschnitt));
-figure
-plot(1:C_Rate_max,abs(Durchschnitt))
-xlabel('C-Rate');
-ylabel('durchschnt. Abweichung aller Zellen in %');
-disp(num2str(flaeche));
+ylabel('durchschn. Abweichung [%]');
+% flaeche = trapz(abs(Durchschnitt));
+% figure
+% plot(1:C_Rate_max,abs(Durchschnitt))
+% xlabel('C-Rate');
+% ylabel('durchschnt. Abweichung aller Zellen in %');
+% disp(num2str(flaeche));
 
 
 %% Verlauf der Standardabweichung über der C-Rate
@@ -45,13 +51,25 @@ disp(num2str(flaeche));
 %% Copy and Paste Beispiel für eine C-Rate und alle Batterieabweichung
 
 % quick and dirty copy and paste Bespiel Abweichung von C-Rate bei 20
-% figure
-% plot(1:length(DATA),tolerance_crate(1:end,21),'rx')
-% hold on 
-% bar = zeros(length(DATA),1);
-% for i = 1:length(DATA)
-%     bar(i) = nanmean(tolerance_crate(1:end,21));
-% end
-% plot(1:length(DATA),bar) 
-% xlabel('Batterienummer (id\_bat)')
-% ylabel('Abweichung in %')
+subplot(2,1,2)
+plot(1:length(DATA),tolerance_crate(1:end,21),'bx','LineWidth',1.5)
+grid on
+hold on 
+bar = zeros(length(DATA),1);
+for i = 1:length(DATA)
+    bar(i) = nanmean(tolerance_crate(1:end,21));
+end
+plot(1:length(DATA),bar,'r') 
+xlabel('Batterienummer (id\_bat)','LineWidth',2)
+ylabel('Abweichung der Zellenspannung [%]')
+legend('? Following','Durchschnittliche Abweichung')
+% ImagesizeX
+% ImagesizeY
+% print('-bestfit','Abweichungen','-dpdf')
+
+ImageSizeX = 14;
+ImageSizeY = 20;
+figure(figure_durchschn_abweichung)
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
+saveas(gcf,'Abweichungen', 'pdf');  

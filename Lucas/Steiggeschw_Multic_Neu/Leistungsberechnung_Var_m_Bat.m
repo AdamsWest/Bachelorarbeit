@@ -420,6 +420,8 @@ for m_Bat = m_Bat_min:m_Bat_Delta:m_Bat_max
     subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
    
     j = j + 1;
+    %% Spielereien
+    disp([num2str((j-1)*100/lengthj) '%']);
 end
 
 

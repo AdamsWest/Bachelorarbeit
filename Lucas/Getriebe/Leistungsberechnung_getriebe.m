@@ -259,7 +259,7 @@ for h_variabel = H_0:Delta_H:H_max
                 % ‹bersetzung 
                 P_ueber = Omega_ueber(w) * tau_ueber(w);                       % Leistung am Propeller
                 P_ueber = P_ueber / eta_getriebe;                              % Einbeziehung des Wirkungsgrades
-                Omega_ueber(w) = Omega_ueber(w) / Uebersetzung_ueber(w);       % Drehzahl an der Motorwelle
+                Omega_ueber(w) = Omega_ueber(w) * Uebersetzung_ueber(w);       % Drehzahl an der Motorwelle
                 tau_ueber(w) = P_ueber / Omega_ueber(w);                       % Drehmoment an der Motorwelle
                 
                 % Wie groﬂ ist die Blattspitzengeschwindigkeit?

@@ -362,36 +362,11 @@ bestimmt werden.
 Für den Fall, dass der errechnete Schub größer als der zur Verfügung stehende Schub ist, wird das Ergebnis verworfen und als \texttt{NaN} (Not a Number) gespeichert.
 
 \subsubsection{Flächenflugzeug}
-\textcolor{red}{immer Flug bei optimaler Glitzahl E gleich Estern und vmax bei gamma neunzig grad ist vstern}
-%Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
-%\begin{equation}
-%	m = m_{Flugzeug}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}.
-%\end{equation}
-%Aus dem Kräftegleichgewicht aller angreifenden Kräfte am System können folgende %Beziehungen 
-%\begin{equation}
-%	F = W + \sin\gamma\cdot G, \label{eq:widerstandsgleichung}
-%\end{equation}
-%\begin{equation}
-%	A = \cos\gamma G \label{eq:auftriebsgleichung}
-%\end{equation}
-%entnommen werden.
-%Mit
-%\begin{equation}
-%	E = \frac{A}{W}
-%\end{equation}
-%bzw.
-%%\begin{equation}
-%	\varepsilon = \frac{W}{A} = \frac{c_W}{c_A}
-%\end{equation} 
-%können die Gleichungen \eqref{eq:widerstandsgleichung} und \eqref{eq:auftriebsgleichung} umgeformt werden zu
-%\begin{equation}
-%	F = G\cdot\cos\gamma\cdot\Big(\frac{1}{E}+\tan\gamma\Big) = G\cdot(\sin\gamma+\varepsilon\cdot\cos\gamma).
-%\end{equation}
 Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
 \begin{equation}
 	m = m_{Flugzeug}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}.
 \end{equation}
-Alle Flugzustände eines Flächenflugzeuges können mit den Grundgleichungen der symmetrischen Flugbahn beschrieben werden. Diese Bewegungsgleichungen \cite{Bruning.1986} sind
+Alle Flugzustände eines Flächenflugzeuges können mit den Grundgleichungen der symmetrischen Flugbahn beschrieben werden. Diese Bewegungsgleichungen \cite[S.77]{Bruning.1986} sind
 \begin{align}
 	m\cdot \dot{V} &= -W + F\cdot\cos(\alpha+\sigma)-m\cdot g\cdot\sin\gamma , \label{eq:widerstandsgleichung} \\ 
 	-m\cdot V\cdot\dot{\gamma} &= -A - F\cdot\sin(\alpha+\sigma)+m\cdot g\cdot\cos\gamma , \label{eq:auftriebsgleichung} \\ 
@@ -417,7 +392,7 @@ berechnet sich der Widerstand mit
 \begin{equation}
 	W^\star = \frac{A^\star}{E^\star} .
 \end{equation}
-Unter Annahme eines Fluges im optimalen Operationspunkt ist der Nullwiderstand genau die Hälfte des Gesamtwiderstandes
+Unter Annahme eines Fluges im optimalen Operationspunkt, i.e. bei Auslegungsgleitzahl, ist der Nullwiderstand genau die Hälfte des Gesamtwiderstandes
 \begin{equation}
 	W_0^\star = 0,5\cdot W^\star .
 \end{equation}
@@ -456,12 +431,12 @@ Da der Auftrieb Null ist, erfolgt der unbeschleunigte, vertikale Steigflug mit d
 \begin{equation}
 	W = W_0 .
 \end{equation}
-Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = 2). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
+Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = 2). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Maximum der Geschwindigkeitsuntersuchung für einen vertikalen Steigflug ist die Auslegungsgeschwindigkeit \ensuremath{V^\star}. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
 \begin{equation}
 	\sigma = \Delta C_{Bat}\cdot U_{Bat}.
 \end{equation}
 Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
-Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale Winde haben keinen Einfluss auf die Steigzeit oder die zum Steigen benötigte Energiemenge. Jedoch verändern die Winde die zurückglegte Strecke über Grund für eine gewisse Höhendistanz (Vgl. \cite{Scheiderer.2008}). Diese ist für eine Betrachtung Flächenflugzeuges vorerst ohne Belang. 
+Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale Winde haben keinen Einfluss auf die Steigzeit oder die zum Steigen benötigte Energiemenge. Jedoch verändern die Winde die zurückglegte Strecke über Grund für eine gewisse Höhendistanz (Vgl. \cite[S.241-242]{Scheiderer.2008}). Diese ist für eine Betrachtung Flächenflugzeuges vorerst ohne Belang. 
 
 
 \subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
@@ -596,7 +571,7 @@ Die Strahlleistung
 	P_{Strahl} = T\cdot (v_i + V_c)
 \end{equation}
 setzt sich aus dem Schub \ensuremath{T}, der induzierten Geschwindigkeit \ensuremath{v_i} und der Steiggeschwindigkeit \ensuremath{V_c} zusammen.
-Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite{Wall.2015}:
+Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}:
 \begin{equation}
 	f(v) = v-\mu_z-\frac{{v_h}^2}{\sqrt{\mu^2+v^2}}
 \end{equation}
@@ -622,12 +597,14 @@ ist das Produkt aus der Batteriespannung und -strom.
 Für den Fall, dass technisch und aerodynamisch unmögliche Flugzustände erreicht werden, sind folgende technische und aerodynamische Grenzen festgelegt:
 \begin{itemize}
 	\item Die Restladung im Steigflug ist kleiner als  Null oder kleiner als eine vorher festgelegte, minimale Restkapazität (Kapazität der Batterie reicht nicht aus oder zu hohe Flugzeit)
-	\item Die Motorspannung ist größer als die nominelle Spannung der Batterie zw die PWM ist größer als \SI{100}{\%} (zu hohe Winkelgeschwindigkeit im Steigflug erforderlich)
+	\item Die Motorspannung ist größer als die nominelle Spannung der Batterie bzw. die PWM ist größer als \SI{100}{\%} (zu hohe Winkelgeschwindigkeit im Steigflug erforderlich)
 	\item Die Motorspannung oder der Motorstrom ist kleiner/gleich Null (physikalisch unmöglicher Steigflug oder zu schneller Sinkflug)
 	\item Die C-Rate ist größer als die maximal zulässige C-Rate der Batterie (Batterieentladestrom ist höher als zulässig)
 	\item Der Motorstrom ist höher als der maximal zulässige Dauerstrom des Motors unter Last (zu hohes Drehmoment gefordert)
 	\item Der lokale Anstellwinkel überschreitet den festgelegten Grenzwert von \ensuremath{\alpha_{max}}(Strömungsabriss)
 	\item Die Blattspitzengeschwindigkeit überschreitet \ensuremath{M_{tip}=1}(transsonische Strömung)
+	\item Der Gesamtwirkungsgrad ist größer als \SI{100}{\%} (ein physikalisch unmöglicher Zustand)
+	\item Die Restladung nimmt zu \ensuremath{Restladung_{i+1} > Restladung_{i}} (ein physikalisch nicht erreichbarer Zustand für diese Bestrachtung)
 \end{itemize}
 
 \section{Vernachlässigungen und Vereinfachungen}
@@ -639,15 +616,7 @@ Die Störgrößen, in diesem Fall vor allem der laterale Seitenwind, werden als 
 Weiterhin nicht berücksichtigt bleiben Reynoldszahl- und Machzahleffekte. Transonische Strömung unterhalb einer Blattspitzengeschwindigkeit von \ensuremath{M_{tip}=1} kann aus diesem Grund nicht ausgeschlossen werden.
 Die ganze Leistung der Batterie geht in diesem Modell ausschließlich in die Schuberzeugung. Das heißt, dass die Regler und sonstige elektrische Komponenten keinen zusätzlichen Strom verbrauchen.
 Das Flächenflugzeug wird in dem Programm als eine Punktmasse ohne Abmaße betrachtet. Um eine möglichst allgemeine Dimensionierung eines Flugsystems mit fixed wings zu ermöglichen wird sich hier jeglicher genauerer Beschreibungen des Systems verwehrt. So wird auf Kennzahlen wie die Streckung, die Flügelfläche oder z.B. Auftriebs- und Widerstandsbeiwerten verzichtet. Dies zieht eine derartige Betrachtung des Systems mit sich, dass nur der Einfluss von Gleitzahl, Motorisierung und anderen Einflussfaktoren betrachtet werden. Eine exakte Auslegung kann deshalb nur im Anschluss vorgenommen werden. Diese Vereinfachungen müssen in der Auswertung berücksichtigt werden.
-%\begin{itemize}
-%	\item einfaches Motormodell, i.e. Abweichungen
-%	\item Frage nach der Genauigkeit der Kennfelder
-%	\item lineare Interpolation und generell Interpolation, d.h. Abweichungen t%treten auf
-%	\item vereinfachende Annahmen einer Normatmosphäre und eines konstanten %Windprofils über der Höhe
-%	\item keine Berücksichtigung dynamischer Effekte wie Beschleunigung des %Systems, Drehträgheiten, Beschleunigungen durch Störausgleiche etc.
-%	\item vereinfachende Aerodynamik, keine Berücksichtigung von Reynoldszahleffekten. Machzahleffekte nur angenähert. Effekte können beim Propeller nicht ausgeschlossen werden
-%	\item weitere Leistung zum Betrieb des Reglers oder anderer elektrischer Systeme wurde nicht berücksichtigt 
-%\end{itemize}
+
 
 \subsection{Vereinfachungen}
 \subsubsection{Schub}
@@ -664,17 +633,8 @@ Jeglicher Einfluss der Temperatur auf die Leistung des Motors bleibt in dem einf
 Für den Motorregler wurde ein sehr einfaches Modell verwendet, in dem der Wirkungsgrad ausschließlich eine Funktion der PWM ist.
 
 \subsubsection{Batterie}
-Die Berechnung der Batterie vernachlässigt zwei wichtige Einflussfaktoren. Das ist der Temperatureinfluss und der Einfluss der Alterung auf die Kapazität. Dies kann jedoch durch eine Anpassung der Peukert-Konstante kompensiert werden. Weiterhin wird ein Einbruch der Batteriespannung in Abhängigkeit der Entladerate nicht berücksichtigt.
+Die Berechnung der Batterie vernachlässigt zwei wichtige Einflussfaktoren. Das ist der Temperatureinfluss und der Einfluss der Alterung auf die Kapazität. Dies kann jedoch durch eine Anpassung der Peukert-Konstante kompensiert werden. Weiterhin wird ein Einbruch der Batteriespannung in Abhängigkeit der Entladerate nicht berücksichtigt. \textcolor{red}{Abweichungen vom realen Modell}
 
 \subsubsection{Wirkungsgrad}
 Die Berechnung der Strahlleistung beruht auf der Berechnung der induzierten Geschwindigkeit innerhalb der Strahltheorie. Hier wird ein idealer Rotor zugrunde gelegt.
-Beruhend auf dieser Annahme bleiben viele Effekte wie Blattspitzeffekte an der Rotorblattspitze und im Bereich der Rotorblattaufhängung, Strömungsablösungen, Blattwirbelinteraktionen usw. unberücksichtigt.  Zudem wird eine über den Radius konstante induzierte Geschwindigkeit in der Rotorebene angenommen. Dies ist im Vorwärtsflug und bei Schräganströmung zu relativieren \cite{Wall.2015}.
-%\begin{itemize}
-%	\item Schub: sehr einfaches aerodynamisches Modell
-%	\item Kennfeld: Kennfelder einfach angepasst, Kennfelder extrapoliert, Kennfelder nicht validiert, 
-%	\item Motor: Vernachlässigung Motorerwärmung, 
-%	\item Motorregler: einfaches Modell, nur abhängig von der PWM
-%	\item Batterie: Temperatur komplett vernachlässigt, kann großen Einfluss haben auf Kapazität, neue Batterie angenommen, keine Berücksichtigung von Alterseffekten
-%	\item Wirkungsgrad nach Strahltheorie, Vorraussetzung eines idealen Rotors und vernachlässigung anderer Verluste wie ungleichförmige Geschwindigkeitsverteilung, Blattspitzeneffekte etc.
-%	\item energiedichte nur geschätzt
-%\end{itemize}
+Beruhend auf dieser Annahme bleiben viele Effekte wie Blattspitzeffekte an der Rotorblattspitze und im Bereich der Rotorblattaufhängung, Strömungsablösungen, Blattwirbelinteraktionen usw. unberücksichtigt.  Zudem wird eine über den Radius konstante induzierte Geschwindigkeit in der Rotorebene angenommen. Dies ist im Vorwärtsflug und bei Schräganströmung zu relativieren \cite[S.226]{Wall.2015}.

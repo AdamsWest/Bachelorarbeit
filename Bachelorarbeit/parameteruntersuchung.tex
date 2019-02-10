@@ -58,151 +58,290 @@ Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten 
 An dieser Stelle ist auch die Motor-Propeller Kombination zu beachten. Der Motor mit einem \ensuremath{K_V}-Wert von 2850 erzielt mit dem 9x7 Propeller zwar signifikant schlechtere Flugeigenschaften, erreicht mit einem 6x4 Propeller noch größere Höhen. Zusammengenommen zeigt sich, dass mit geringer werdenden \ensuremath{K_V}-Wert, also einem langsamer, aber mit höherem Drehmoment drehender Motor, der optimale Durchmesser des Propellers in reziproker Weise steigt bei einem gleichen Verhältnis zwischen Durchmesser und Pitch. Dies kann relativ einfach mit den Angaben der Hersteller zu der besten Motor-Propeller-Kombination verglichen werden. Nach \cite{Wall.2015} erhöht sich der Wirkungsgrad eines Rotors mit größer werdenden Durchmesser. 
 Mit den oben gemachten Aussagen zu einer Motor-Propeller-Kombination wird im Folgenden der Propeller an die Wahl der Motoren angepasst.
 \textcolor{red}{hier Kurvenschar mit gleichem Motorgewicht, aber anderen KV, evtl. Prop anpassen}
+
 \subsubsection{Anzahl der Motoren und Propeller}
-Während die Leistung der Motoren mit gleichem Gewicht wenig Einfluss auf den optimalen Steigwinkel hat, ändert sich dies bedeutend mit der Anzahl der Motoren. Schon mit einer Steigerung der Motorenanzahl auf 2 verändert sich der optimale Steigwinkel zu \SI{90}{^\circ}. Die dazu zugehörige Steiggeschwindigkeit liegt hierbei beim Maximum der Steiggeschwindigkeitsiterationsweite. Dies ist solange der optimale Betriebspunkt bis der Steigwinkel von \SI{55}{^\circ} als optimaler ist. Danach ergibt sich das gleiche Verhalten wie es in \ref{subsec:erste_untersuchung} beschrieben ist. Das gleiche Flugverhalten ist bei einer Erhöhung der Anzahl auf 4 zu beobachten.
+Während die Leistung der Motoren mit gleichem Gewicht wenig Einfluss auf den optimalen Steigwinkel hat, ändert sich dies bedeutend mit der Anzahl der Motoren. Schon mit einer Steigerung der Motorenanzahl auf 2 verändert sich der optimale Steigwinkel zu \SI{90}{^\circ}. Die dazu zugehörige Steiggeschwindigkeit liegt hierbei beim Maximum der Steiggeschwindigkeitsiterationsweite. Dies ist solange der optimale Betriebspunkt bis der Steigwinkel von \SI{55}{^\circ} optimaler ist.
+Ebenfalls wie oben beschrieben ist dieser Zustand so lange fliegbar bis der Motorstrom auf dem Niveau des Batteriestroms und damit \SI{100}{\%} der PWM erreicht ist. Ab diesem Punkt steigt der Bahnneigungswinkel wieder an, da für einen Höhenschritt die Fluggeschwindigkeit mit Winkel sinkt. Alle anderen Größen verhalten sich analog zum oben beschriebenen Zustand (Vgl. Kap. \ref{subsec:erste_untersuchung}). Ein vergleichbares Flugverhalten ist bei einer Erhöhung der Anzahl auf 4 zu beobachten.
+Mit der Propelleranzahl verringert sich der Schub, der pro Propeller aufgebracht werden muss und damit auch die vom Motor benötigte Leistung. Folglich erhöht sich auch der Leistungsüberschuss. Dies resultiert auf der anderen Seite in einer höheren Belastung der Batterie. Beachtlich ist auch, dass die Batterie am TOC noch beinahe \SI{50}{\%} Restladung besitzt. Dies ist signifikant mehr als beim Quadrocopter. Bei diesem ist der Steigflug beendet, wenn die Batterie leer ist. Beim Flächenflugzeug ist die Motorleistung der limitierende Parameter.
 
-
-Wird die Anzahl der Propeller erhöht, so liegt der effizienteste Flug eines Flächenflugzeuges im vertikalen Steigflug mit \ensuremath{\gamma = 90^\circ}. Außerdem erhöht sich die mit Anzahl an Motoren auch der TOC
 \subsubsection{Gleitzahl}
+Mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher und vice versa. Eine entsprechend hohe Gleitzahl beudeuted gleichzeitig auch eine entsprechend hohe aerodynamische Güte (Vgl. \cite[S.34]{Scheiderer.2008}). Dazu sinkt der Widerstand im Vergleich zum Auftrieb, sodass für ein Flächenflugzeug mit einer höheren Gleitzahl für den gleichen Auftrieb weniger Leistung zur Kompensation des Widerstandes aufgebracht werden muss. Als Konsequenz dessen steht mehr Leistung für das Steigen zur Verfügung. Mit der Gleitzahl steigt ebenso der optimale Steigwinkel. Als Grund dafür kann wieder die verringerte Wiederstandsleistung angeführt werden. Zusätzlich sinkt die Zeit zum Überwinden einer Höhendifferenz mit steilerem Winkel.
+
 \subsubsection{Auslegungsgeschwindigkeit}
+Die Auslegungsgeschwindigkeit hat einen bedeutenden Einfluss auf die erreichbare Höhe. Da für den Steigflug ein Flug mit konstanten Auftriebsbeiwert vorausgesetzt wird, erhöht sich aufgrund dessen die absolute Fluggeschwindigkeit mit der Höhe und größerem Bahnneigungswinkel (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}).
+Ist die Auslegungsgeschwindigkeit gering, so wächst sie absolut gesehen mit der Höhe nicht so stark wie hohe Geschwindigkeiten. Eine geringer gewählte Auslegungsgeschwindigkeit im Horizontalflug bedeutet daher auch, dass länger mit maximalen Motorstrom geflogen werden kann, bevor die Motorspannung die Batteriespannung erreicht und somit das Absinken des Steigwinkels einleitet.
+Da mit der Auslegungsgeschwindigkeit auch die Geschwindigkeit mit der Höhe steigt, sind für hohe Geschwindigkeiten Propeller mit hohem Pitch vom Vorteil.
+\textcolor{red}{mehr anbringen} 
+
 \subsubsection{Penaltyfaktor}
+Im Vergleich von einem Flächenflugzeug mit einem Multicopter muss bei gleichem Gesamtgewicht die unterschiedliche Verteilung der Gewichtskomponenten berücksichtigt werden. Für ein Flugzeug ist das Strukturgewicht von Flügeln und Rumpf sowie den Steuerungselementen bedeutend größer als das von einem Multicopter. Ein Penaltyfaktor von 1 entspricht daher wie oben beschrieben einer sehr optimistischen Einschätzung. Um realistischere Ergebnisse für ein Flächenflugzeug zu erreichen, wird der Penaltyfaktor schrittweise erhöht. Dabei verringert sich auch die maximal erreichbare Höhe. Dies hängt damit zusammen, dass ein Penaltyfaktor größer als 1 die zur Verfügung stehende Batteriemasse und folglich die Batteriekapazität.
 
 
 
 
-
-\subsubsection{Motor-Propeller-Kombination}
-Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. Für jeden Motor werden vom Hersteller Propeller für einen bestimmten Anwendungsfall vorgegeben, mit dem optimale Leistungen erbracht werden können. Die Propellergröße hängt von der Leistung des Motors ab und von dem Auslegungsfall. Es zeigt sich, dass je stärker der Motor ist, desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch deshalb groß zu wählen, um den erforderlichen Schub zu liefern. Wird der Radius weiter vergrößert, so verringert sich der optimale Pitch. Außerdem sind Motoren mit niedrigen \ensuremath{K_V}-Werten bei gleichem Motorgewicht zu bevorzugen. Dies liegt in der Tatsache begründet, dass der \ensuremath{K_V}-Wert direkt den Motorstrom beeinflusst und ein hoher Wert diesen entsprechend zu Beginn des Fluges bereits stark erhöht. Zudem steht ein hoher \ensuremath{K_V} für eine hohe Maximaldrehzahl des Motors, aber für entsprechend weniger Drehmoment. Das gleiche gilt umgekehrt. 
-
-%\begin{itemize}
-%%	\item Motor-Propeller Kombination hat signifikanten Einfluss auf das Leistungsverhalten
-%	\item jeder Motor hat einen Propeller, mit dem er optimalen Schub liefert
-%	\item es zeigt sich, dass für einen schwächeren Motor der Durchmesser und der Pitch sinkt
-%	\item Je stärker der Motor ist desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch auch groß zu wählen. 
-%	\item Je größer der Durchmesser, desto kleiner darf der verwendete fixed Pitch gewählt werden. 	
-%\end{itemize}
-
-\subsubsection{Anzahl der Motoren}
-Noch bessere Ergebnisse können mit 2 Motoren erreicht werden, die  einen niedrigen \ensuremath{K_V}-Wert besitzen, aber ein hohes Leistungsgewicht. Mit dieser Konstellation sind Flughöhen bis zu \SI{15000}{m} möglich. In diesem Fall ist nicht der Flug mit maximalen Motorstrom am effizientesten sonder ein Flug mit konstantem Steigwinkel von ca. \SI{60}{^\circ}. Dabei sinkt der Motorstrom in diesem Zustand leicht, da das Drehmoment mit der Höhe abnimmt. Ebenfalls wie oben ist beschrieben ist dieser Zustand so lange fliegbar bis der Motorstrom auf dem Niveau des Batteriestroms und damit \SI{100}{\%} der PWM erreicht ist. Ab diesem Punkt steigt der Bahnneigungswinkel wieder an, da für einen Höhenschritt die Fluggeschwindigkeit mit Winkel sinkt. alle anderen Größen verhalten sich analog zum oben beschriebenen Zustand
+%\subsubsection{Motor-Propeller-Kombination}
+%Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. Für jeden Motor werden vom Hersteller Propeller für einen bestimmten Anwendungsfall vorgegeben, mit dem optimale Leistungen erbracht werden können. Die Propellergröße hängt von der Leistung des Motors ab und von dem Auslegungsfall. Es zeigt sich, dass je stärker der Motor ist, desto größer ist der optimale Radius. Prinzipiell können auch kleinere Propeller verwendet werden. Aufgrund der Motorleistung ist der Pitch deshalb groß zu wählen, um den erforderlichen Schub zu liefern. Wird der Radius weiter vergrößert, so verringert sich der optimale Pitch. Außerdem sind Motoren mit niedrigen \ensuremath{K_V}-Werten bei gleichem Motorgewicht zu bevorzugen. Dies liegt in der Tatsache begründet, dass der \ensuremath{K_V}-Wert direkt den Motorstrom beeinflusst und ein hoher Wert diesen entsprechend zu Beginn des Fluges bereits stark erhöht. Zudem steht ein hoher \ensuremath{K_V} für eine hohe Maximaldrehzahl des Motors, aber für entsprechend weniger Drehmoment. Das gleiche gilt umgekehrt. 
 
 
-\subsubsection{Gleitzahl}
-Mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher und vice versa. Hierbei verändert sich der Verlauf des Steigwinkels nicht ausschlaggebend. Eine entsprechend hohe Gleitzahl beudeuted gleichzeitig auch eine entsprechend hohe aerodynamische Güte (Vgl. \cite{Scheiderer.2008}). Dazu sinkt der Widerstand im Vergleich zum Auftrieb, sodass für ein Flächenflugzeug mit einer höheren Gleitzahl für den gleichen Auftrieb weniger Leistung zur Kompensation des Widerstandes aufgebracht werden muss. Als Konsequenz dessen steht mehr Leistung für das Steigen zur Verfügung.
 
-%\begin{itemize}
-%	\item mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher
-%	\item eine Erhöhung erzeugt gleichzeitig eine Erhöhung des Top of Climb
-%	\item dabei ändert sich der Verluaf des Steigwinkels nicht ausschlaggebend
-%	\item genau wie zuvor ist ab einem gewissen Punkt kein Steigen mehr möglich, der Bahnneigungswinkel geht gegen Null
-%	\item ein größerer Steigwinkel stellt auch eine größere aerodynamische Güte dar, direkt ersichtlich \cite{Scheiderer.2008}
-%\end{itemize}
-
-\subsubsection{Auslegungsgeschwindigkeit}
-Die Auslegungsgeschwindigkeit hat einen bedeutenden Einfluss auf die erreichbare Höhe. Da für den Steigflug ein Flug mit konstanten Auftriebsbeiwert vorausgesetzt wird, erhöht sich aufgrund dessen die absolute Fluggeschwindigkeit mit der Höhe und größerem Bahnneigungswinkel (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Ist die Auslegungsgeschwindigkeit gering, so wächst sie absolut gesehen mit der Höhe nicht so stark wie hohe Geschwindigkeiten. Eine geringer gewählte Auslegungsgeschwindigkeit im Horizontalflug bedeutet daher auch, dass länger mit maximalen Motorstrom geflogen werden kann, bevor die Motorspannung die Batteriespannung erreicht und somit das Absinken des Steigwinkels einleitet.
+%\subsubsection{Anzahl der Motoren}
+%Noch bessere Ergebnisse können mit 2 Motoren erreicht werden, die  einen niedrigen \ensuremath{K_V}-Wert besitzen, aber ein hohes Leistungsgewicht. Mit dieser Konstellation sind Flughöhen bis zu \SI{15000}{m} möglich. In diesem Fall ist nicht der Flug mit maximalen Motorstrom am effizientesten sonder ein Flug mit konstantem Steigwinkel von ca. \SI{60}{^\circ}. Dabei sinkt der Motorstrom in diesem Zustand leicht, da das Drehmoment mit der Höhe abnimmt. Ebenfalls wie oben ist beschrieben ist dieser Zustand so lange fliegbar bis der Motorstrom auf dem Niveau des Batteriestroms und damit \SI{100}{\%} der PWM erreicht ist. Ab diesem Punkt steigt der Bahnneigungswinkel wieder an, da für einen Höhenschritt die Fluggeschwindigkeit mit Winkel sinkt. Alle anderen Größen verhalten sich analog zum oben beschriebenen Zustand. 
+%Mit der Propelleranzahl verringert sich der Schub, der pro Propeller aufgebracht werden muss und damit auch die vom Motor benötigte Leistung. Folglich erhöht sich auch der Leistungsüberschuss. Dies resultiert auf der anderen Seite in einer höheren Belastung der Batterie.
 
 
-%\begin{itemize}
-%	\item die Auslegungsgeschwindigkeit hat bedeutenden Einfluss auf die Erreichbare Höhe
-%	\item das hängt damit zusammen, dass die Fluggeschwindigkeit für Winkel \ensuremath{\gamma >0} mit der Höhe und dem Winkel steigt
-%	\item eine geringer gewählte Auslegungsgeschwindigkeit im Horizontalflug bedeutet, dass länger mit maximalen Motorstrom geflogen werden kann, bevor die Motorspannung die Batteriespannung erreicht und somit das Absinken des Steigwinkels einleitet
-%	\item höhere Auslegungsgeschwindigkeiten haben einen entsprechend umgekehrten Einfluss und verringern die max erreichbar Höhe, da die Fluggeschwindikeit entsprechend immer höher wird, bis die Leistung des Flugzeugs nicht mehr ausreicht
-%\end{itemize}
+%\subsubsection{Gleitzahl}
+%Mit einer Verringerung der Gleitzahl geht auch eine Verringerung der maximalen Höhe mit einher und vice versa. Hierbei verändert sich der Verlauf des Steigwinkels nicht ausschlaggebend. Eine entsprechend hohe Gleitzahl beudeuted gleichzeitig auch eine entsprechend hohe aerodynamische Güte (Vgl. \cite{Scheiderer.2008}). Dazu sinkt der Widerstand im Vergleich zum Auftrieb, sodass für ein Flächenflugzeug mit einer höheren Gleitzahl für den gleichen Auftrieb weniger Leistung zur Kompensation des Widerstandes aufgebracht werden muss. Als Konsequenz dessen steht mehr Leistung für das Steigen zur Verfügung.
 
-\subsubsection{Auslegungsgleitzahl}
-Eine verringerte Gleitzahl ist nur im begrenzten Maße möglich. Mit kleiner werdender Auslegungsgleitzahl steigt 
-der Widerstand im Vergleich zum Auftrieb, der im Horizontalflug konstant bleibt. Als Folge steigt auch der Nullwiderstand. Somit befindet sich das Flächenflugzeug aerodynamisch gesehen vermehrt in der Grauzone, sodass die Aussagekraft der Ergebnisse angezweifelt werden muss. 
+
+%\subsubsection{Auslegungsgeschwindigkeit}
+%Die Auslegungsgeschwindigkeit hat einen bedeutenden Einfluss auf die erreichbare Höhe. Da für den Steigflug ein Flug mit konstanten Auftriebsbeiwert vorausgesetzt wird, erhöht sich aufgrund dessen die absolute Fluggeschwindigkeit mit der Höhe und größerem Bahnneigungswinkel (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Ist die Auslegungsgeschwindigkeit gering, so wächst sie absolut gesehen mit der Höhe nicht so stark wie hohe Geschwindigkeiten. Eine geringer gewählte Auslegungsgeschwindigkeit im Horizontalflug bedeutet daher auch, dass länger mit maximalen Motorstrom geflogen werden kann, bevor die Motorspannung die Batteriespannung erreicht und somit das Absinken des Steigwinkels einleitet.
+
+
+
+%\subsubsection{Auslegungsgleitzahl}
+%Eine verringerte Gleitzahl ist nur im begrenzten Maße möglich. Mit kleiner werdender Auslegungsgleitzahl steigt 
+%der Widerstand im Vergleich zum Auftrieb, der im Horizontalflug konstant bleibt. Als Folge steigt auch der Nullwiderstand. Somit befindet sich das Flächenflugzeug aerodynamisch gesehen vermehrt in der Grauzone, sodass die Aussagekraft der Ergebnisse angezweifelt werden muss. 
 
 \subsection{Ergebnisse des Vergleichs} 
-\begin{itemize}
-	\item Ergebnisse 
-	\item ein Flächenflugzeug mit einem Motor erweist sich effizienter als
-ein Quadrocopter in Bezug auf die max. erreichbare Höhe
-	\item bei Vernachlässigung von zusätzlichen Widerständen und unter
-Berücksichtigung des einfachen Modells ist dieser Vorteil gerade
-wieder hinfällig sprich der zusätzliche Höhengewinn schwindet zu Null, wenn man die Widerstände berücksichtigt
-	\item weiterhin erweist sich das Flächenflugzeug als bereits in den möglichen Maßen optimiert (Steiggeschwindigkeit ist in Bezug auf Auslegungszustand und bei Auslegungsgleitzahl optimal, Steigwinkel wird optimiert, Auslegungsgeschwindigkeit und optimale Konstellation von Motor und Propeller
-	\item der Quadrocopter zeigt in diese Richtung noch Potenzial
-	\item bei der Erhöhung der Motoren- und damit auch Propelleranzahl neigt das Flugzeug dazu in einem 90° Winkel zu steigen, dabei optimiert sich die Steigeschwindigkeit bisher automatisch
-- eine Erhöhung der Gleitzahl erhöht die Anzahl der Ausreißer, quasi Abweichungen von dem 90° Zustand (zwischenzeitlich ist Flug mit 90° ernergieoptimaler, zwischenzeitlich der Gleitflug/ Steigflug mit geringerem Steigwinkel)
-	\item letztendlich führt die bisherige Untersuchung wohl zu dem Design eines VTOL-Fliegers (Vermutung)
-	\item wir haben weiterhin ein aerodynamisches Modell besprochen für einen VTOL-Flieger, Flugzustand bei entsprechendem Wind (Ausrichtung bspw. Messerflug) und Geschwindigkeitsmodell, entsprechend 4 mögliche Zustände (Steigwinkel anpassen, Steigwinkel und Fluggeschwindigkeit aus der Gleichungssystem lösen, etc.)
-	\item ich werde nun den Multicopter weiter untersuchen (Anpassung der Steiggeschwindigkeit, Gewicht, Größe, etc.)
-	\item als unterer Ast des Baumes ist eine Untersuchung der Verkleidung des Copters in Richtung VTOL-Flugzeug interessant,folglich auch weitere Untersuchung in diese Richtung
+Im direkten Vergleich weist das Flächenflugzeug eine größere maximale Flughöhe auf. Besonders mit hohen Gleitzahlen, mehreren Motoren und einer guten Kombination aus Motor und Propeller wird dieser Vorteil ersichtlich. Bei Vernachlässigung von zusätzlichen Widerständen und unter Berücksichtigung des einfachen Modells ist dieser Vorteil gerade wieder hinfällig sprich der zusätzliche Höhengewinn schwindet zu Null, wenn man die Widerstände berücksichtigt. Weiterhin erweist sich das Flächenflugzeug als bereits in den möglichen Maßen optimiert. Die Steiggeschwindigkeit ist in Bezug auf den Auslegungszustand und einem Flug bei Auslegungsgleitzahl optimal. Außerdem wird der Steigwinkel für jeden Höhenabschnitt optimiert und eine gute Kombination von Motor und Propeller ist bereits gegeben. Schlussendlich ist damit der Spielraum für weitere Verbesserungen im Rahmen dieses einfachen Modells. Hingegen zeigt der Quadrocopter in dieser Hinsicht noch Potenzial. Ein zu untersuchender Punkt ist noch die Abkehr von einer konstanten Steiggeschwindigkeit hin zu einer kontinuierlichen Optimierung über der Höhe. \\
+Wird für das Flugzeug außerdem eine Konstellation von mehr als einem Motor gewählt, neigt das Flugzeug dazu in einem \SI{90}{^\circ} Winkel zu steigen. Damit zeigt sich die optimale Flugweise in einem vertikalen Steigflug. Hierbei werden nichtsdestotrotz wieder viel Vereinfachungen getroffen und Verluste nicht berücksichtigt. Die Vorteile eines Flächenflugzeuges zeigen sich auch nur stark bei einem Penalty-Faktor nahe bei 1. Dies muss als unrealistisch angesehen werden. Besonders im Bezug auf eine hohe Gleitzahl geht dies Anforderung mit einer hohen Flügelstreckung und damit mit einem hohen Strukturgewicht einher. Somit ist zwingend notwendig den Penalty-Faktor zu erhöhen. Letztendlich verschwindet damit der Vorteil gegenüber einem Multicopter. 
+In der Berechnung der Flächenflugzeugaerodynamik bleibt der Einfluss von Seitenwinden unberücksichtigt, da Seitenwinde nur die Strecke über Grund beeinflussen nicht aber die Flugeigenschaften im Steigflug. Unter Berücksichtigung an das angedachte Operationsziel einer Atmosphärenmessung sind die Flugkorridore, die von der Deutschen Flugsicherung (DFS) zur Verfügung gestellt werden, begrenzt. Daher ist ein Abtrieb bei sehr hohen Seitenwinden für die Mission negativ und muss vom Fluggerät ausgeglichen werden. Dies verbraucht zusätzlich Energie zum Ausgleichen und reduziert nochmals die erreichbare Höhe. Dies geschieht beim Quadrocopter bereits durch den Ausgleich der Seitenwinde mit einer Anpassung vom Winkel \ensuremath{\alpha}, also einer Schrägstellung der Rotorebene. Ein weiteres Argument, was gegen den Einsatz von einem Flächenflugzeug spricht ist, ist eine Start und Landevorrichtung. Das erfordert außerdem Platz für eine Start- und Landebahn. Dies entfällt für einen Quadrocopter aufgrund seiner Senkrechtstarterfähigkeiten. Es ist damit der Start von jeder beliebigen Stelle möglich.
+Unter Berücksichtigung all dieser Fakten überwiegen die Vorteile beim Einsatz eines Multicopters. Dies gilt vor allem in Bezug auf das noch mögliche Potential eines Multicopters.
 
-\end{itemize}
+Diese entfällt bei einem Quadrocopter 
+
+
+Eine Erhöhung der Gleitzahl erhöht die Anzahl der Ausreißer, quasi Abweichungen von dem 90° Zustand (zwischenzeitlich ist Flug mit 90° ernergieoptimaler, zwischenzeitlich der Gleitflug/ Steigflug mit geringerem Steigwinkel) 
+
+
+%\begin{itemize}
+%	\item Ergebnisse 
+%	\item ein Flächenflugzeug mit einem Motor erweist sich effizienter als
+%ein Quadrocopter in Bezug auf die max. erreichbare Höhe
+%	\item bei Vernachlässigung von zusätzlichen Widerständen und unter
+%Berücksichtigung des einfachen Modells ist dieser Vorteil gerade
+%wieder hinfällig sprich der zusätzliche Höhengewinn schwindet zu Null, wenn man die Widerstände berücksichtigt
+%	\item weiterhin erweist sich das Flächenflugzeug als bereits in den möglichen Maßen optimiert (Steiggeschwindigkeit ist in Bezug auf Auslegungszustand und bei Auslegungsgleitzahl optimal, Steigwinkel wird optimiert, Auslegungsgeschwindigkeit und optimale Konstellation von Motor und Propeller
+%	\item der Quadrocopter zeigt in diese Richtung noch Potenzial
+%	\item bei der Erhöhung der Motoren- und damit auch Propelleranzahl neigt das Flugzeug dazu in einem 90° Winkel zu steigen, dabei optimiert sich die Steigeschwindigkeit bisher automatisch
+%- eine Erhöhung der Gleitzahl erhöht die Anzahl der Ausreißer, quasi Abweichungen von dem 90° Zustand (zwischenzeitlich ist Flug mit 90° ernergieoptimaler, zwischenzeitlich der Gleitflug/ Steigflug mit geringerem Steigwinkel)
+%	\item letztendlich führt die bisherige Untersuchung wohl zu dem Design eines VTOL-Fliegers (Vermutung)
+%	\item wir haben weiterhin ein aerodynamisches Modell besprochen für einen VTOL-Flieger, Flugzustand bei entsprechendem Wind (Ausrichtung bspw. Messerflug) und Geschwindigkeitsmodell, entsprechend 4 mögliche Zustände (Steigwinkel anpassen, Steigwinkel und Fluggeschwindigkeit aus der Gleichungssystem lösen, etc.)
+%	\item ich werde nun den Multicopter weiter untersuchen (Anpassung der Steiggeschwindigkeit, Gewicht, Größe, etc.)
+%	\item als unterer Ast des Baumes ist eine Untersuchung der Verkleidung des Copters in Richtung VTOL-Flugzeug interessant,folglich auch weitere Untersuchung in diese Richtung
+
+%\end{itemize}
 
 
 
 \section{Steiggeschwindigkeit}
 \label{sec:steiggeschwindigkeit}
-Eine weitere Optimierung des Multicopters bzw. des Quadrocopters kann durch eine Anpassung der Steiggeschwindigkeit geschehen. Die vormalig als konstant angenommene Steiggeschwindigkeit von \SI{10}{m/s} ist nicht in jedem Operationspunkt die optimale. Die Steiggeschwindigkeit wird wieder für jeden Höhenschritt variiert. Analog zur Variation des Steigwinkels beim Flächenflugzeug fällt die Auswahl der Geschwindigkeit auf den Wert, welcher die geringste Energiemenge benötigt für den Aufstieg. Bei der Untersuchung kristallisieren sich drei starke Einflussfaktoren heraus. Im Einzelnen sind das der Widerstandsbeiwert, die Anzahl der Batteriezellen und die Motorleistung
+Eine weitere Optimierung des Multicopters bzw. des Quadrocopters kann durch eine Anpassung der Steiggeschwindigkeit geschehen. Die vormalig als konstant angenommene Steiggeschwindigkeit von \SI{10}{m/s} ist nicht in jedem Operationspunkt die optimale. Die Steiggeschwindigkeit wird wieder für jeden Höhenschritt variiert. Analog zur Variation des Steigwinkels beim Flächenflugzeug fällt die Auswahl der Geschwindigkeit auf den Wert, welcher die geringste Energiemenge benötigt für den Aufstieg. Bei der Untersuchung kristallisieren sich drei starke Einflussfaktoren heraus. Im Einzelnen sind das der Widerstandsbeiwert, die Anzahl der Batteriezellen und die Motorleistung. Im Abb. \ref{abb:steiggeschw} ist der Ablauf der Leistungsberechnung für die Steiggeschwindigkeit dargestellt
+\begin{center}
+\begin{figure}[H]
+\begin{struktogramm}(163,160)
+\while[5]{Für alle Bahngeschwindigkeiten}
+	\assign[2]{Berechne Gesamtmasse}
+	\assign[2]{Flugzeit für Höhenschritt berechnen}			
+	\while[5]{Solange Abbruchkriterium nicht erreicht}
+		\assign{Aerodynamik berechnen}
+	\whileend
+	\assign[2]{Schub berechnen}
+	\assign[2]{Schub auf Propeller verteilen}
+	\ifthenelse[10]{1}{4}{Schub zu gro\ss{}?}{ja}{nein}
+		\assign[2]{Ergebnis verwerfen (NaN)}
+		\change
+		\assign[2]{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
+		\assign[2]{Motorzustand berechnen}
+		\assign[2]{Zustand der Motorregler berechnen}
+		\assign[2]{Zustand der Batterie neu berechnen}
+		\assign[2]{Gesamtwirkungsgrad berechnen}
+	\ifend
+	\ifthenelse[10]{1}{1}{Werden Grenzen überschritten?}{ja}{nein}
+		\assign[2]{Ergebnis verwerfen (NaN)}
+		\change
+		\assign[2]{Ergebnis beibehalten}
+	\ifend
+	\assign[2]{Speichern der aufgebrachten Energiemenge}
+\whileend
+\ifthenelse[10]{5}{1}{Sind die Werte NaN?}{nein}{ja}
+	\while[5]{Solange Abbruchkriterium nicht erreicht}		
+		\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+		\ifthenelse[10]{1}{3}{Werte innerhalb Leistungsgrenzen?}{ja}{nein}
+			\assign[2]{Verlasse Schleife}
+			\change
+			\assign[2]{Suche nächst kleinere Energiemenge}
+		\ifend
+	\whileend
+	\assign[2]{Übergabe aller Leistungsparameter mit diesem Index}
+		\change
+	\assign[2]{Verwerfe alle Ergebnisse}
+\ifend
+\end{struktogramm}
+\caption{Programmstruktur zur Ermittlung der optimalen Steiggeschwindigkeit}
+\label{abb:steiggeschw}
+\end{figure}
+\end{center}
 
 \subsection{Einfluss des Widerstands}
 Der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit. Bei einem großen maximalen Motorstrom gilt, dass die Begrenzung der Geschwindigkeit durch den Widerstandsbeiwert erfolgt. Eine sehr hohe Geschwindigkeit verringert zum einen die Flugzeit für einen Höhenbereich, erhöht auf der anderen Seite jedoch den Widerstand und damit zusätzlich die benötigte Leistung. Je geringer der \ensuremath{C_W} gewählt wird, desto höher ist die optimale Steiggeschwindigkeit. Erhöht sich im Umkehrschluss der Luftwiderstand so sinkt die Steiggeschwindigkeit, da der Widerstand mit der Geschwindigkeit quadratisch (Vgl. Gleichung \ref{eq:widerstand}) ansteigt. Im Sinne einer großen maximalen Höhe ist daher eine aerodynamisch günstige Verkleidung des Multicopters anzustreben.  
 
 
-\begin{itemize}
-	\item der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit
-	\item prinzipiell gilt bei einem großen maximalen Motorstrom, dass die Begrenzung der Geschwindigkeit durch den Widerstandsbeiwert erfolgt. Eine sehr hohe Geschwindigkeit verringert zum einen die Flugzeit für einen Höhenbereich, erhöht auf der anderen Seite jedoch den Widerstand und damit die benötigte Leistung. 
-	\item je geringer der \ensuremath{C_W} gewählt wird, desto höher die Steiggeschwindigkeit, da der Widerstand bei großen Werten noch einen geringen Einfluss hat
-	\item Eine Erhöhung von diesem bezweckt eine Erhöhung eine Verringerung der optimalen Fluggeschwindigkeit
-	\item auch hier gilt wieder, dass der Flug mit \SI{100}{\%} am effizientesten ist
-\end{itemize}
+%\begin{itemize}
+%	\item der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit
+%	\item prinzipiell gilt bei einem großen maximalen Motorstrom, dass die Begrenzung der Geschwindigkeit durch den Widerstandsbeiwert erfolgt. Eine sehr hohe Geschwindigkeit verringert zum einen die Flugzeit für einen Höhenbereich, erhöht auf der anderen Seite jedoch den Widerstand und damit die benötigte Leistung. 
+%	\item je geringer der \ensuremath{C_W} gewählt wird, desto höher die Steiggeschwindigkeit, da der Widerstand bei großen Werten noch einen geringen Einfluss hat
+%	\item Eine Erhöhung von diesem bezweckt eine Erhöhung eine Verringerung der optimalen Fluggeschwindigkeit
+%	\item auch hier gilt wieder, dass der Flug mit \SI{100}{\%} am effizientesten ist
+%\end{itemize}
 
 \subsection{Einfluss der Anzahl der Batteriezellen}
-Ein weiterer begrenzender Parameter ist die PWM. Die Motorspannung an sich ksann nicht beeinflusst werden. Jedoch lässt sich Einfluss auf die Höhe der Motorspannung durch eine Erhöhung der in Reihe geschalteten Batteriezellen nehmen. Mit jeder zusätzlichen Zelle erhöht sich die Batteriespannung um \SI{3,7}{V}. Damit stellt die PWM nicht mehr die Grenze für die Steiggeschwindigkeit dar. Der effizienteste Flugzustand ist nun der bei maximalen, dauerhaften Motorstrom. Jedoch verringert eine höhere Batteriekapazität. Bei gleicher Energiemenge 
+Ein weiterer begrenzender Parameter ist die PWM. Die Motorspannung an sich kann nicht beeinflusst werden. Jedoch lässt sich Einfluss auf die Höhe der Motorspannung durch eine Erhöhung der in Reihe geschalteten Batteriezellen nehmen. Mit jeder zusätzlichen Zelle erhöht sich die Batteriespannung um \SI{3,7}{V}. Damit stellt die PWM nicht mehr die Grenze für die Steiggeschwindigkeit dar. Der effizienteste Flugzustand ist nun der bei maximalen, dauerhaften Motorstrom. Jedoch verringert eine höhere Batteriekapazität. Bei gleicher Energiemenge 
 \begin{equation}
-	Wh = Ah\cdot V
+	E_{Bat} = C_{Bat}\cdot U_{Bat}
 \end{equation}
-führt eine Erhöhung der Spannung in dem Produkt aus Spannung und Kapazität unweigerlich zu einer Verringerung der Kapazität. Die schlägt sich wieder auf den Kostenfaktor aus, der erreichbaren Flughöhe. Diese Maßnahme ist also mit Bedacht zu wählen. Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom.
+führt eine Erhöhung der Spannung in dem Produkt aus Spannung und Kapazität (\ensuremath{C_{Bat} = I_{Bat}\cdot t_{Flug}}) unweigerlich zu einer Verringerung der Kapazität. Die schlägt sich wieder auf den Kostenfaktor aus, der erreichbaren Flughöhe. Diese Maßnahme ist also mit Bedacht zu wählen. Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom.
 
-\begin{itemize}
-	\item Einfluss der Batteriezellenanzahl
-	\item als begrenzender Parameter erweist sich die PWM
-	\item dieser kann ausgewichen werden, wenn die Anzahl der Zellen erhöht wird, weil damit die Batteriespannung steigt. 
-	\item damit begrenzt nicht mehr die PWM die Höhe, sondern es sind andere Parameter
-	\item Wenn sie nicht mehr begrenzt, wird als erstes die maximale Motorspannung erreicht und konstant mir ihr geflogen
-	\item dies ist nicht so effizient, wie mit maximaler Leistung, entsprechend verringert sich die max. erreichbare Höhe
-	\item Der Batteriezellenanzahlerhöhung sind Grenzen gesetzt
-	\item Durch eine Erhöhung der Batteriespannung verringert sich um Umkehrschluss die Kapazität der Batterie, da gilt \ensuremath{Wh = Ah\cdot U}
-	\item Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom
-\end{itemize}
+%\begin{itemize}
+%	\item Einfluss der Batteriezellenanzahl
+%	\item als begrenzender Parameter erweist sich die PWM
+%	\item dieser kann ausgewichen werden, wenn die Anzahl der Zellen erhöht wird, weil damit die Batteriespannung steigt. 
+%	\item damit begrenzt nicht mehr die PWM die Höhe, sondern es sind andere Parameter
+%	\item Wenn sie nicht mehr begrenzt, wird als erstes die maximale Motorspannung erreicht und konstant mir ihr geflogen
+%	\item dies ist nicht so effizient, wie mit maximaler Leistung, entsprechend verringert sich die max. erreichbare Höhe
+%	\item Der Batteriezellenanzahlerhöhung sind Grenzen gesetzt
+%	\item Durch eine Erhöhung der Batteriespannung verringert sich um Umkehrschluss die Kapazität der Batterie, da gilt \ensuremath{Wh = Ah\cdot U}
+%	\item Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom
+%\end{itemize}
 
 \subsection{Einfluss des maximalen Motorstroms}
 Die Ergebnisse zeigen, dass ein geringer maximaler Motorstrom die ebenfalls die Steiggeschwindigkeit begrenzt. Dieser begrenzt die dem Motor entnommene Leistung. Folglich ist ein Motor für einen solchen Steigflug zu wählen, der einen entsprechend hohen Dauerstrom vertragen kann, wie der Motor aus Kapitel \ref{chap:nachbildung}.
 
-Die Motorleistung
-\begin{itemize}
-	\item Einfluss des maximalen Motorstroms
-	\item ist dieser sehr gering gewählt so stellt er den begrenzenden Parameter
-	\item dieser begrenzt die dem Motor entnommene Leistung 
-	\item entsprechend ist diese groß zu wählen wie beim Cobra-Motor
-\end{itemize}
+%Die Motorleistung
+%\begin{itemize}
+%	\item Einfluss des maximalen Motorstroms
+%	\item ist dieser sehr gering gewählt so stellt er den begrenzenden Parameter
+%	\item dieser begrenzt die dem Motor entnommene Leistung 
+%	\item entsprechend ist diese groß zu wählen wie beim Cobra-Motor
+%\end{itemize}
 
 \section{Verstellpropeller}
 \label{sec:verstellprop}
-
 \begin{itemize}
-	\item Aus der Datenbank von APC werden alle Propeller mit dem vorgegebenen Durchmesser und verschiedenen Pitches entnommen
-	\item Vernachlässigt werden dabei gesonderte Propeller mit z.B. besonderem Pitch, Verwindung, E am Ende oder mit mehr als 2 Blättern (3 oder 4)
-	\item \textcolor{red}{hier interessant, ob Funktion für Regression des Wirkungsgrades über dem Schubbeiwert???}
-	\item interessant ist hier Regression --> Frage nur über was, Wirkungsgrad in Abhängigkeit von \ensuremath{C_T} oder \ensuremath{\lambda}
-	\item Auswahl nach 
-	\begin{equation}
-		\eta_{Prop} = \frac{T\cdot\tilde{V}}{P} = \frac{T\cdot (\mu_z + v_i)}{M\cdot \omega}
-	\end{equation}
-	\item Cite Ogur
+	\item besonders auffällig bei vorherigen Untersuchungen ist, dass bei Propeller mit einem geringen Pitch die Drehzahl deutlich schneller steigt, als bei einem Propeller mit einem großen Pitch
+	\item Da vor allem die Drehzahl die Motorspannung bestimmt, ist eine Verringerung der Drehzahl bei gleichem Schub von Interesse / anzustreben
+	\item analog steigt \textcolor{red}{van der Wall, diagramm mit theta nachgucken} bei konstanter Drehzahl (Vgl. z.B. Hubschrauber) der Pitch, sprich Theta mit einem größer werdendem Schubbeiwert und damit auch mit der Höhe. 
+	\item bei einem elektrisch propellergetriebenen Fluggerät können mit einem Mechanismus der Pitch und über den Motor die Drehzahl geändert werden. 
+	\item dies kann im folgenden über die Auswertung der Kennfelder in der APC Datenbank erfolgen, die den gleichen Durchmesser besitzen, aber unterschiedliche feste Pitches
+	\item Die Auswahl für den in dem betrachteten Flugmoment besten Pitch erfolgt wieder über die Energiebetrachtung, analog zum Steigwinkel und der Steiggeschwindigkeit
+	\item Programmablauf in unterer Abbildung
 \end{itemize}
 
-\section{Steigwinkel}
-\label{sec:steigwinkel}
+\subsection{Ergebnisse}
+\begin{itemize}
+	\item Die Benutzung eines Verstellpropellers bringt keinen zusätzlichen Nutzen, und in Kombination mit einer variablen Steiggeschwindigkeit besitzt sie wenig Einfluss.
+	\item würde weiterhin noch das zusätzliche Gewicht des Mechanismus sowie der zur Verstellung benötigten Komponenten mit berücksichtigt, wird der eventuelle Vorteil vollends hinfällig
+	\item somit ergibt sich keinerlei Vorteil für die Benutzung eines Verstellpropellers
+	\item Trotzdem muss berücksichtigt werden, das der Propeller nur im Rahmen der in der APC-Datenbank vorhanden Propeller modelliert werden kann.
+	\item dies setzt Ungenauigkeiten voraus, da eine kontinuierliche Verstellung nicht nachgebildet werden kann und nur so viele Verstellungen berücksichtigt werden können, wie auch in der Datenbank vorhanden sind
+	\item außerdem ist man auf die Kennfelder angewiesen
+	\item kann aber für den Sinkflug bedeutend sein, weil mit der Verstellung die Autorotation ermöglicht wird
+\end{itemize}
+
 
 \section{Größe des Fluggerätes}
 \label{sec:groesse}
+Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Fluggerätes dar. Dabei wird das Fluggerät äquivalent, das heißt die Massenverhältnisse von Motoren, Batterien und die Leermasse bleiben im Verhältnis zum Gesamtgewicht konstant. Das Verhältnis orientiert sich an der Massenverteilung des Quadrocopters aus Kapitel \ref{chap:nachbildung}. Für diesen beschlagnahmen die Motoren einen Anteil von \SI{13,77}{\%}, die Batterie \SI{52,83}{\%} und der Rahmen sowie die übrigen Eineheiten einen Anteil von \SI{33,4}{\%}. Dieses Verhältnis wird für jede Größenskalierung gewahrt. Als Anhaltspunkt dient die Masse der Motoren, da mit diese durch die Datenbank vollständig definiert sind und eine feste Masse besitzen. Die Propellerauswahl findet nach den Herstellerempfehlungen statt. Alle anderen Massenverteilungen ergeben sich im Anschluss aus der Motormasse.
+Die Massen errechnen sich nach folgendem Schema:
+\begin{align}
+	m_{ges} &= \frac{n_{Prop}\cdot m_{Mot}}{0.1377} , \\
+	m_{Bat} &= m_{ges}\cdot 0.5283 , \\
+	m_{copter} &= m_{ges}\cdot 0.334.
+\end{align}
+Dabei wird jeweils auch die obere Stirnfläche \ensuremath{A_{copter,oben}} mit der Größe angepasst.
 
-\section{VTOL im Vergleich zum Gleitflug}
-\label{sec:vtol_vs_gleitflug}
+\subsection{Ergebnisse}
+\label{subsec:ergebnisse_groesse}
+Eine äquivalente Größenskalierung besitzt einen vernachlässigbar kleinen Einfluss auf die Kostenfunktion, die maximale Höhe. 
+\textcolor{red}{Begründung für Reichweitenunabhängigkeit von der Flugmasse}
 \begin{itemize}
-	\item hier ist der Vergleich vor allem in Bezug auf die Motorisierung interessatn
-	\item höhere Motorisierung und zus. Gewicht <--> schächere Motorisierung und geringeres Gewicht im Gleitflug
+	\item äquivalente Größenskalierung 
+	\item Skalierung anhand des Motorgewichtes
+	\item \begin{equation}
+	scale = \frac{m_{Mot}}{m_{Mot,Russland}}
+	\end{equation}
+	\item signifikante Änderung bleibt aus
+	\item Wenn alle Verhältnisse der Komponentne zueinander beibehalten werden, ändern sich die Flugleistungen nicht
+	\item eine entsprechende Anpassung der Propeller an den Motor muss erfolgen
+\end{itemize}
+
+\subsection{Größenkonstellation}
+Wie sich oben zeigte, hat eine uniforme Skalierung des Fluggerätes keinen Einfluss auf dessen Flugleistung. Bisher wurde dabei nur Fluggeräte mit vier Rotoren untersucht. Dabei gilt es noch die Abhängigkeit der Flugleistungen von der Rotoranzahl zu überprüfen. 
+
+\subsection{Ergebnisse}
+Analog zu den obigen Ergebnissen bewirkt eine äquivalente Veränderung der Rotoranzahl keine nennenswerten Änderungen der maximalen Flughöhe für gleiche Motoren. Die Begründung ist dieselbe wie Kapitel \ref{subsec:ergebnisse_groesse}. An dieser Stelle sind jedoch Einschränkungen vorzunehmen. 
+Der Monocopter erreicht die gleiche maximale Höhe wie die anderen Konstellationen. Der Monocopter benötigt jedoch zusätzlich noch Aktuatorik für die Abdeckung aller vier Stellgrößen, sprich den 3 rotatorischen (Rollen, Nicken und Gieren) und einem translatorischen. Weiterhin muss ein Drehmomentenausgleich vollzogen werden, sei es durch einen Heckrotor, eine angepasste Steuerung, die Formgebung des Rumpfes oder durch sonstige Mechanismen.
+Diese zusätzliche Aktuatorik benötigt der Duocopter ebenfalls. Ein Drehmomentenausgleich ist hier jedoch nicht notwendig.
+Beide erwähnten Punkte erhöhen die Gesamtmasse und benötigen zusätzlich Energie. Dies verringert die Gesamthöhe. 
+Für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt. 
+
+\begin{itemize}
+	\item wenn eine äquivalente Veränderung der Konstellation vorgenommen wird, sind die Ergebnisse beinahe identisch, es ergeben sich keine Leistungsunterschiede
+	\item der Duocopter erreicht beinahe ebenso hohe, wenn nicht sogar bessere Werte als die Multicopter
+ 	\item allerdings müssen die Ergebnisse unter realistischen Gesichtspuntken betrachtet werden
+	\item Für den Monocopter fehlt die Berücksichtigung der Drehmomentausgleichenden Mechanismen, sei es ein Hekcrotor oder ähnliches
+	\item diese benötigen auch Leistung aus der Batterie und verschlechtern die bisher erbrachten Flugleistungen deutlich
+	\item ein Duocopter scheint eine gute Alternative zu sein, allerdings ist sein Flugverhalten eher nachteilig
+	\item langsame Reaktionszeiten, ein träges Reaktionsverhalten, komplizierte Regelung, wird leicht instabil und besitzt eine komplizierte Technik
+	\item für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt
+	\item somit stellt der Quadrocopter die beste Lösung da
+\end{itemize}
+
+\section{Massenverteilung}
+Weiterhin wichtig ist die Verteilung der Massen für einen Multicopter. Die Massen des Multicopters werden auf die des Motors, des Rahmens und der Batterie beschränkt. Wiederum kann die Verteilung aus Kapitel \ref{chap:nachbildung} aus Grundlage der folgenden Untersuchung vorausgesetzt werden. Die Verhältnisse sind in Kapitel \ref{sec:groesse} beschrieben. Es ist schnell ersichtlich, dass bei einer festgelegten Gesamt- und Motormasse 
+
+\begin{itemize}
+	\item die optimale Verteilung sieht so aus, dass 
+\end{itemize}
+
+\section{Stufenloses Getriebe}
+\label{sec:getriebe}
+Eine häufige Begrenzung der Leistung ist die maximale Drehzahl des Motors oder des Propellers. Ein stufenlos verstellbares Getriebe bringt Vorteile in der Begrenzung der maximalen Drehzahl (Machzahleffekte, Strömungsablösung etc.), dass heißt durch den Einsatz eines Getriebes kann die Drehzahl für den Motor untersetzt werden, sodass diese nicht mehr den Flaschenhals für einen Steigflug darstellt.
+\begin{equation}
+	i = \frac{n_{ein}}{n_{aus}} 
+\end{equation}
+\begin{equation}
+	P_{ein} = \frac{P_{aus}}{\eta_{Getriebe}}
+\end{equation}
+\begin{equation}
+	M_{neu} = \frac{p_{aus}}{\omega}
+\end{equation}
+\begin{itemize}
+	\item Der theoretische Einsatz von einem stufenlosen Getriebe bringt Vorteile in der Begrenzung der maximalen Drehzahl (Machzahleffekte, Strömungsablösung etc.), dass heißt durch den Einsatz eines Getriebes kann die Drehzahl für den Motor untersetzt werden, sodass diese nicht mehr den Flaschenhals für einen Steigflug darstellt. 
+	\item optimaler Betriebspunkt des Motors ist bei einer konstanten Leistungsabgabe und nicht maximaler Drehzahl beim Propeller
+	\item Nutzen noch nicht abzuschätzen
+\end{itemize}
+\textcolor{red}{hier noch untersuchen, wie sich die KV Wert auf die Leistung auswirkt bei gleichem Motorgewicht. Außerdem noch feststellen, in welche Richtung die Drehzahl gewandelt wird}
+
+\subsection{Ergebnis}
+\begin{itemize}
+	\item mit dem Einsatz eines idealen Getriebes ( \ensuremath{m_{Getriebe = 0} und \ensuremath{\eta_{Getriebe} = 1}}, ist ein enormer Höhenzusatz zu verzeichnen
+	\item dieser beträgt bis zu \SI{8000}{m}
+	\item wie vorausgesagt wird die Drehzahl untersetzt!
+	\item realistischer Einsatz kann als  zweifelhaft abgetan werden
+	\item es gibt stufenlos verstellbare Getriebe für Lastkraftwagen im Modellbau, allerdings beläuft sich das Gewicht eines Getriebes auf mehr als \SI{700}{g}. Für einen vierrotorigen Multicopter bedeutet das ein Zusatzgewicht von ca\SI{2800}{g}, quasi dem doppelten des gesamten Multicoptergewichts
+	\item trotz des Nutzens / gerade wegen dem nichtverbessern der Leistungen
+	\item stufenlose Verstellung ist möglich aber nicht leicht umzusetzen. 
+	\item Ein Getriebe bedeutet bei all seiner Kampaktheit und Effizienz letztendlich große Zusatzmasse und einen weitere, verlustbehaftete Komponenten in der Antriebskette
+	\item es gibt außerdem kein fertiges Getriebe auf dem Markt, was die Ansprüche erfüllen könnte
+	\item die Übersetzung hält sich in Grenzen , sodass der Einsatz im Ganzen hinterfragt werden sollte
+\end{itemize}
+
+\section{Ummantelte Rotoren}
+\begin{itemize}
+	\item Fenestron bei z.B. dem EC 135 und EC 145 sind bekannte Beispiele für den Einsatz eines ummantelten Rotors
+	\item nach \cite[S.145-S.148]{Wall.2015} kann durch den Einsatz einer Rotorummantelung die Leistung für die Generation des gleichen Schubes bei gleichem Durchmesser eines Rotors verringert werden
+	\item hierbei wird eine Strahlkontraktion des Abstroms durch die Formgebung des Mantels verringert oder sogar zu einer Aufweitung erzwungen
+	\item mit einer Strahlaufweitung nimmt auch die benötigte Leistung für konstanten Schub ab
+	\item dadurch kann der Rotordurchmesser verringert werden, was zusätzliches Gewicht und Größe einspart.
 \end{itemize}

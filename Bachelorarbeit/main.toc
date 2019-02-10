@@ -62,24 +62,25 @@
 \contentsline {subsubsection}{Gleitzahl}{32}{subsubsection*.34}
 \contentsline {subsubsection}{Auslegungsgeschwindigkeit}{32}{subsubsection*.35}
 \contentsline {subsubsection}{Penaltyfaktor}{32}{subsubsection*.36}
-\contentsline {subsubsection}{Motor-Propeller-Kombination}{32}{subsubsection*.37}
-\contentsline {subsubsection}{Anzahl der Motoren}{32}{subsubsection*.38}
-\contentsline {subsubsection}{Gleitzahl}{32}{subsubsection*.39}
-\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{33}{subsubsection*.40}
-\contentsline {subsubsection}{Auslegungsgleitzahl}{33}{subsubsection*.41}
 \contentsline {subsection}{\numberline {4.2.4}Ergebnisse des Vergleichs}{33}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}Steiggeschwindigkeit}{34}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Einfluss des Widerstands}{34}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Einfluss der Anzahl der Batteriezellen}{35}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}Einfluss des Widerstands}{35}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Einfluss der Anzahl der Batteriezellen}{36}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Einfluss des maximalen Motorstroms}{36}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}Verstellpropeller}{36}{section.4.4}
-\contentsline {section}{\numberline {4.5}Steigwinkel}{37}{section.4.5}
-\contentsline {section}{\numberline {4.6}Gr\IeC {\"o}\IeC {\ss }e des Flugger\IeC {\"a}tes}{37}{section.4.6}
-\contentsline {section}{\numberline {4.7}VTOL im Vergleich zum Gleitflug}{37}{section.4.7}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{38}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{38}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ausblick}{38}{section.5.2}
-\contentsline {chapter}{\numberline {6}Projektmanagement}{39}{chapter.6}
-\contentsline {section}{\numberline {6.1}Projektstrukturplan}{40}{section.6.1}
-\contentsline {section}{\numberline {6.2}Zeitplan}{42}{section.6.2}
-\contentsline {chapter}{\numberline {A}Blindtext im Anhang}{57}{appendix.A}
+\contentsline {subsection}{\numberline {4.4.1}Ergebnisse}{37}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Gr\IeC {\"o}\IeC {\ss }e des Flugger\IeC {\"a}tes}{37}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Ergebnisse}{38}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Gr\IeC {\"o}\IeC {\ss }enkonstellation}{38}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Ergebnisse}{38}{subsection.4.5.3}
+\contentsline {section}{\numberline {4.6}Massenverteilung}{39}{section.4.6}
+\contentsline {section}{\numberline {4.7}Stufenloses Getriebe}{40}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Ergebnis}{40}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Ummantelte Rotoren}{41}{section.4.8}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{42}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{42}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ausblick}{42}{section.5.2}
+\contentsline {chapter}{\numberline {6}Projektmanagement}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Projektstrukturplan}{44}{section.6.1}
+\contentsline {section}{\numberline {6.2}Zeitplan}{46}{section.6.2}
+\contentsline {chapter}{\numberline {A}Blindtext im Anhang}{61}{appendix.A}

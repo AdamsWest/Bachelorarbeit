@@ -68,7 +68,7 @@ m_nutz = 0.0;          % Nutzlast in kg
 m_copter = 0.354;                       % Multicopter Leermasse in kg
 A_copter = 0.15*0.05 + 0.12*0.02*n_Prop;     % obere Stirnflaeche des Multicopter in m^2
 A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
-c_W_copter_oben = 0.1;                    % Widerstandsbeiwert des Multicopters 
+c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters 
 c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
 c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
@@ -134,9 +134,10 @@ if Abfrage_Flugsystem == 0
 
 else
     
-    Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', V_Kg = ' ...
-    num2str(V_Kg) ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
-
+%     Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', V_Kg = ' ...
+%     num2str(V_Kg) ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
+    
+    Dateiname = 'Russland';
 end
 
 
