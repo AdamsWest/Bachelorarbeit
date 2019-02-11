@@ -46,7 +46,8 @@ D = 10;                % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
-k_W = 1;            % Einflussfaktor der Ummantelung
+k_W = 0.75;            % Einflussfaktor der Ummantelung
+m_fenestron = 0.25;        % Gewicht der Ummantelung
 
 % Skalierungsfaktor
 m_ges = (n_Prop * m_Mot)/(4*0.0365/1.06);     % Gesamtmasse
@@ -65,7 +66,7 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 % m_Bat = 0.56;           % Batteriemasse in kg
 
 % Missionsparameter
-m_nutz = 0.0;          % Nutzlast in kg           
+m_nutz = 0.250;          % Nutzlast in kg           
 
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,13 +104,13 @@ p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
 
-u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
+u_Wg = 26;%0/3.6;                                  % Seitenwindgeschwindigkeit in m/s
 
 
 %% Festlegung des Dateinamen
     
 Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
-    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, k_W = ' num2str(k_W)];
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, k_W = ' num2str(k_W) ', m_fan = ' num2str(m_fenestron)];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

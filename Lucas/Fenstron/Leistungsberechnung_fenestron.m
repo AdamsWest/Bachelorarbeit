@@ -202,7 +202,7 @@ for h_variabel = H_0:Delta_H:H_max
         
         % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
+        m = m_copter + m_Bat + (m_Mot + m_fenestron) * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
         t_Flug_inter(z) = Delta_H / V_Kg_inter(z);                                            % Flugzeit
         
         % Aerodynamik
