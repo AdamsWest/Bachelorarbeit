@@ -17,7 +17,7 @@ load('axi_motor_db.mat');
 % Handelt es sich bei dem zu untersuchenden Flugobjekt um einen Multicopter
 % (1) oder um ein Flächenflugzeug (0)?
 
-Abfrage_Flugsystem = 1;
+Abfrage_Flugsystem = 0;
 
 
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,18 +29,18 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-% motor_name = axi_motor_db{21,1}; % Motorname
-% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-R_i = 0.123;            % Innenwiderstand in Ohm
-K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-I_0 = 0.56;             % Leerlaufstrom in Ampere
-I_max = 30;             % Max Continuous Current
-m_Mot = 0.0365;         % Motorgewicht in kg
+motor_name = axi_motor_db{21,1}; % Motorname
+[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+% R_i = 0.123;            % Innenwiderstand in Ohm
+% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+% I_0 = 0.56;             % Leerlaufstrom in Ampere
+% I_max = 30;             % Max Continuous Current
+% m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '7x3.8';    % Propellerbezeichnung
-n_Prop = 4;             % Anzahl der Propeller
+prop_name = '9x7';    % Propellerbezeichnung
+n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
@@ -75,7 +75,7 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 
 %% Parameter Flächenflugzeug %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
+m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
 E = 4;                 	% Gleitzahl
 E_stern = 4;			% Auslegungsgleitzahl
 V_stern = 100/3.6;		% Auslegungsgeschwindigkeit in m/s
@@ -105,9 +105,9 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 16500;                              % Maximalhöhe in m
+H_max = 16000;                              % Maximalhöhe in m
 
-T_0 = 263.15;                               % Temperatur in K am Flugplatz
+T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
@@ -134,10 +134,10 @@ if Abfrage_Flugsystem == 0
 
 else
     
-%     Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', V_Kg = ' ...
-%     num2str(V_Kg) ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
+    Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', V_Kg = ' ...
+    num2str(V_Kg) ', gamma = ' num2str(gamma_copter) ', u_Wg = ' num2str(u_Wg) 'ms'];
     
-    Dateiname = 'Russland';
+%     Dateiname = 'Russland';
 end
 
 

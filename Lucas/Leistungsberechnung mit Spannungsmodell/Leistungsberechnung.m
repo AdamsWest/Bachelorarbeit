@@ -484,27 +484,27 @@ if Abfrage_Flugsystem == 1
     % MULICOPTER
     subplot(411), plot(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
     subplot(412), plot(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-%     subplot(423), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
-%     subplot(424), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
+    subplot(423), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
+    subplot(424), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
     subplot(413), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
     H2 = [0;H];
-%     subplot(426), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
+    subplot(426), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
     subplot(414), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
-%     subplot(428), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+    subplot(428), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
         
 else   
     % FLAECHENFLUGZEUG
-    subplot(521), plot(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-    subplot(522), plot(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-    subplot(523), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
-    subplot(524), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-    subplot(525), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    subplot(521), plot(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+    subplot(522), plot(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+    subplot(523), plot(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
+    subplot(524), plot(H,U_mot,'LineWidth',1), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
+    subplot(525), plot(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
     H2 = [0;H];
-    subplot(526), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
-    subplot(527), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
-    subplot(528), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
-    subplot(529), plot(H,gamma_Flaechenflzg,'LineWidth',2), title('Bahnneigungswinkel'), grid, xlabel('Höhe [m]'),ylabel('gamma [°]')
-    subplot(5,2,10), plot(H,V_Flaechenflugzeug,'LineWidth',2), title('absolute Fluggeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_A [m/s]')
+    subplot(526), plot(H2,U_Bat,'LineWidth',1), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
+    subplot(527), plot(H,PWM*100,'LineWidth',1), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
+    subplot(528), plot(H,eta_ges*100,'LineWidth',1), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+    subplot(529), plot(H,gamma_Flaechenflzg,'LineWidth',1), title('Bahnneigungswinkel'), grid, xlabel('Höhe [m]'),ylabel('gamma [°]')
+    subplot(5,2,10), plot(H,V_Flaechenflugzeug,'LineWidth',1), title('absolute Fluggeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_A [m/s]')
     
 end
 ImageSizeX = 14;
