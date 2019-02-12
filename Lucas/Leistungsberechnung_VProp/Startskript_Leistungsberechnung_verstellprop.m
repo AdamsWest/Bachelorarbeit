@@ -110,4 +110,4 @@ Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_verstellprop_alternativ'); 
+run('Leistungsberechnung_verstellprop'); 

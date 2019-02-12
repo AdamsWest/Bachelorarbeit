@@ -168,7 +168,7 @@ for h_variabel = H_0:Delta_H:H_max
     Theta_inter = zeros(lengthvkg, 1);
     alpha_inter = zeros(lengthvkg, 1);
     V_Kg_inter = zeros(lengthvkg,1);
-    Bestimmung_V_Kg = zeros(lengthvkg, 1);  
+    Bestimmung_V_Kg = zeros(lengthvkg, 1);
     t_Flug_inter = zeros(lengthvkg,1);
     % Propeller
     Omega_inter = zeros(lengthvkg, 1);
@@ -297,31 +297,31 @@ for h_variabel = H_0:Delta_H:H_max
         
         
         Bestimmung_V_Kg(z) = Delta_C_Bat_inter(z) * U_Bat_inter(z);        % Berechnung der aufgebrachten Energiemenge
-            
+        
         z = z+1;			% Erhöhung der Zählervariablen für die gamma-Schleife
         
     end
     
-% Alternative zu der Funtkion nanmean
-        gooddata_index = ~isnan(Omega_inter);
-        good_omega = Omega_inter(gooddata_index);
-        gooddata_index = ~isnan(I_mot_inter);
-        good_I_mot = I_mot_inter(gooddata_index);
-        gooddata_index = ~isnan(U_mot_inter);
-        good_U_mot = U_mot_inter(gooddata_index);
-        gooddata_index = ~isnan(PWM_inter);
-        good_PWM = PWM_inter(gooddata_index);
-        gooddata_index = ~isnan(C_Rest_V_inter);
-        good_C_Rest_V = C_Rest_V_inter(gooddata_index);
-        gooddata_index = ~isnan(I_Bat_inter);
-        good_I_Bat = I_Bat_inter(gooddata_index);
+    % Alternative zu der Funtkion nanmean
+    gooddata_index = ~isnan(Omega_inter);
+    good_omega = Omega_inter(gooddata_index);
+    gooddata_index = ~isnan(I_mot_inter);
+    good_I_mot = I_mot_inter(gooddata_index);
+    gooddata_index = ~isnan(U_mot_inter);
+    good_U_mot = U_mot_inter(gooddata_index);
+    gooddata_index = ~isnan(PWM_inter);
+    good_PWM = PWM_inter(gooddata_index);
+    gooddata_index = ~isnan(C_Rest_V_inter);
+    good_C_Rest_V = C_Rest_V_inter(gooddata_index);
+    gooddata_index = ~isnan(I_Bat_inter);
+    good_I_Bat = I_Bat_inter(gooddata_index);
+    
+    
+    
+    
+    if isnan(mean(good_omega)) ~= 1 && isnan(mean(good_I_mot)) ~= 1 &&  isnan(mean(good_U_mot)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
+            isnan(mean(good_PWM)) ~= 1 && isnan(mean(good_C_Rest_V)) ~= 1 && isnan(mean(good_I_Bat)) ~= 1       % enthalten (unfliegbarer Zustand)
         
-        
-        
-        
-        if isnan(mean(good_omega)) ~= 1 && isnan(mean(good_I_mot)) ~= 1 &&  isnan(mean(good_U_mot)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
-                isnan(mean(good_PWM)) ~= 1 && isnan(mean(good_C_Rest_V)) ~= 1 && isnan(mean(good_I_Bat)) ~= 1       % enthalten (unfliegbarer Zustand)
-         
         % Kriterium für optimalen Steigwinkel
         y = 1;
         while y < length(Bestimmung_V_Kg)                             % Suche und finde optimalen Steiggeschwindigkeit
@@ -404,6 +404,7 @@ for h_variabel = H_0:Delta_H:H_max
     H(x) = H_oben;			% Speichern der Höhe im Vektor
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
     
+    disp([num2str((x-1*100)/lengthi) ' %']);
 end
 
 

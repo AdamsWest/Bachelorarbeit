@@ -208,7 +208,7 @@ for h_variabel = H_0:Delta_H:H_max
         % Aerodynamik
         [Thrust_inter(z),Theta_inter(z),V_A,alpha_inter(z)] = MulticopterAerodynamik(u_Wg,V_Kg_inter(z),gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
         
-        Thrust_inter(z) = Thrust_inter(z) / (2*k_W);                        % Einfluss der Ummantelung
+        Thrust_inter(z) = Thrust_inter(z) / sqrt(2*k_W);                        % Einfluss der Ummantelung
         
         Thrust_inter(z) = Thrust_inter(z) / n_Prop;                        % Schub auf n Propeller verteilen
         

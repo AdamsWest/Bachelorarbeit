@@ -29,17 +29,17 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-% motor_name = axi_motor_db{21,1}; % Motorname
-% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-R_i = 0.123;            % Innenwiderstand in Ohm
-K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-I_0 = 0.56;             % Leerlaufstrom in Ampere
-I_max = 30;             % Max Continuous Current
-m_Mot = 0.0365;         % Motorgewicht in kg
+motor_name = axi_motor_db{21,1}; % Motorname
+[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+% R_i = 0.123;            % Innenwiderstand in Ohm
+% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+% I_0 = 0.56;             % Leerlaufstrom in Ampere
+% I_max = 30;             % Max Continuous Current
+% m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '7x3.8';    % Propellerbezeichnung
+prop_name = '10x3';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -56,7 +56,7 @@ U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
-m_Bat = 0.56;           % Batteriemasse in kg
+% m_Bat = 0.56;           % Batteriemasse in kg
 
 % Batteriemassendiskreitisierung
 m_Bat_min = 0.5;
@@ -66,11 +66,14 @@ m_Bat_max = 0.72;
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
 
+m_ges = (n_Prop * m_Mot)/(4*0.0365/1.06);     % Gesamtmasse
+m_Bat = m_ges * (0.56/1.06);              % Batteriemasse
+m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Gesamtsystem
-m_copter = 0.354;                       % Multicopter Leermasse in kg
+% m_copter = 0.354;                       % Multicopter Leermasse in kg
 A_copter = 0.15*0.05 + 0.12*0.02*4;     % obere Stirnflaeche des Multicopter in m^2
 A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
 c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters 

@@ -30,11 +30,11 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Getriebe
-ue_min = 0.5;           % minimale Übersetzung
-ue_Delta = 0.05;         % Schrittweite der Über
-ue_max = 1.5;            % maximale Übersetzung
-Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
-% m_getriebe = 0.00;       % Getriebegewicht
+ue_min = 1;           % minimale Übersetzung
+ue_Delta = 1;         % Schrittweite der Über
+ue_max = 1;            % maximale Übersetzung
+% Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
+m_getriebe = 0.00;       % Getriebegewicht
 eta_getriebe = 1;     % Wirkungsgrad des Getriebes
 
 % Propeller
@@ -46,9 +46,9 @@ c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
 
-m_ges = (n_Prop * m_Mot)/0.138;     % Gesamtmasse
-m_Bat = m_ges * 0.528;              % Batteriemasse
-m_copter = m_ges * 0.334;           % Leermasse
+m_ges = (n_Prop * m_Mot)/(4*0.0365/1.06);     % Gesamtmasse
+m_Bat = m_ges * (0.56/1.06);              % Batteriemasse
+m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 
 % Batterie
@@ -106,11 +106,11 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 %% Festlegung des Dateinamen
     
-% Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
-%     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, m_getriebe = ' num2str(m_getriebe) ...
-%     ', eta_getriebe = ' num2str(eta_getriebe)];
-Dateiname = 'Getriebe';
+Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, m_getriebe = ' num2str(m_getriebe) ...
+    ', eta_getriebe = ' num2str(eta_getriebe)];
+% Dateiname = 'Getriebe';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_getriebe_kurvenschar'); 
+run('Leistungsberechnung_getriebe'); 
