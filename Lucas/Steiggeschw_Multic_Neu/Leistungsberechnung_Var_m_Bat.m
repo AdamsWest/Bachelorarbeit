@@ -57,6 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
+% lengthj = length(Abfrage_m_Bat);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
 
 
@@ -77,8 +78,11 @@ l9 = zeros(lengthj,1);
 %% Programmanfang
 
 j = 1;
-for m_Bat = m_Bat_min:m_Bat_Delta:m_Bat_max
+for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
+% for j = 1:length(Abfrage_m_Bat)
     
+%     m_Bat = Abfrage_m_Bat(j)*m_ges;
+    m_Bat = m_Bat_variabel * m_ges;
     m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
     C_Bat = E_Dichte * m_Bat / U_Bat_nom;                               % Kapazitaet der Batterie in As
     Cnom = C_Bat/1000;                                            % Nominelle Kapazität
@@ -408,20 +412,35 @@ for m_Bat = m_Bat_min:m_Bat_Delta:m_Bat_max
     % Darstellung der Ergenisse in Diagrammen
     figure(figure_ges)
     
-    subplot(521), l1(j) = plot(H,C_Rest_V*100,'LineWidth',2); l1_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(522), l2(j) = plot(H,Omega/(2*pi)*60,'LineWidth',2); l2_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(523), l3(j) = plot(H,I_mot,'LineWidth',2); l3_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(524), l4(j) = plot(H,U_mot,'LineWidth',2); l4_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(525), l5(j) = plot(H,I_Bat,'LineWidth',2); l5_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    H2 = [0;H];
-    subplot(526), l6(j) = plot(H2,U_Bat,'LineWidth',2); l6_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(527), l7(j) = plot(H,PWM*100,'LineWidth',2); l7_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',2); l8_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-    subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(521), l1(j) = plot(H,C_Rest_V*100,'LineWidth',2); l1_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(522), l2(j) = plot(H,Omega/(2*pi)*60,'LineWidth',2); l2_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(523), l3(j) = plot(H,I_mot,'LineWidth',2); l3_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(524), l4(j) = plot(H,U_mot,'LineWidth',2); l4_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(525), l5(j) = plot(H,I_Bat,'LineWidth',2); l5_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     H2 = [0;H];
+%     subplot(526), l6(j) = plot(H2,U_Bat,'LineWidth',2); l6_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(527), l7(j) = plot(H,PWM*100,'LineWidth',2); l7_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',2); l8_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+%     subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
    
+    subplot(521), l1(j) = plot(H,C_Rest_V*100,'LineWidth',2); grid on, hold on
+    subplot(522), l2(j) = plot(H,Omega/(2*pi)*60,'LineWidth',2); grid on, hold on
+    subplot(523), l3(j) = plot(H,I_mot,'LineWidth',2); grid on, hold on
+    subplot(524), l4(j) = plot(H,U_mot,'LineWidth',2); grid on, hold on
+    subplot(525), l5(j) = plot(H,I_Bat,'LineWidth',2); grid on, hold on
+    H2 = [0;H];
+    subplot(526), l6(j) = plot(H2,U_Bat,'LineWidth',2); grid on, hold on
+    subplot(527), l7(j) = plot(H,PWM*100,'LineWidth',2); grid on, hold on
+    subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',2); grid on, hold on
+    subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = [num2str(m_Bat_variabel*100) ' %']; grid on, hold on
+
+
+
+
+
     j = j + 1;
     %% Spielereien
-    disp([num2str((j-1)*100/lengthj) '%']);
+    disp([num2str((j-1)*100/lengthj) ' %']); %(Abfrage_m_Bat)) ' %']);
 end
 
 
@@ -433,24 +452,25 @@ end
 figure(figure_ges)
 
 subplot(521), title('Restladung'), xlabel('Höhe [m]'),
-    ylabel('C_{Bat,Rest} [%]'), legend([l1], l1_Info,'Location','northeastoutside')
+    ylabel('C_{Bat,Rest} [%]'),% legend([l1], l1_Info,'Location','northeastoutside')
 subplot(522), title('Drehzahl'), xlabel('Höhe [m]'),
-    ylabel('Drehzahl [RPM]'), legend([l2], l2_Info)
+    ylabel('Drehzahl [RPM]'), %legend([l2], l2_Info)
 subplot(523), title('Motorstrom'), xlabel('Höhe [m]'),
-    ylabel('I_{Mot} [A]'), legend([l3], l3_Info)
+    ylabel('I_{Mot} [A]'),% legend([l3], l3_Info)
 subplot(524), title('Motorspannung'), xlabel('Höhe [m]'),
-    ylabel('U_{mot} [V]'), legend([l4], l4_Info)
+    ylabel('U_{mot} [V]'),% legend([l4], l4_Info)
 subplot(525), title('Batteriestrom'), xlabel('Höhe [m]'),
-    ylabel('I_{Bat} [A]'), legend([l5], l5_Info)
+    ylabel('I_{Bat} [A]'), %legend([l5], l5_Info)
 H2 = [0;H];
 subplot(526), title('Batteriespannung'), xlabel('Höhe [m]'),
-    ylabel('U_{Bat} [A]'), legend([l6], l6_Info)
+    ylabel('U_{Bat} [A]'), %legend([l6], l6_Info)
 subplot(527), title('Pulsweitenmodulation'), xlabel('Höhe [m]'),
-    ylabel('PWM [%]'), legend([l7], l7_Info)
+    ylabel('PWM [%]'),% legend([l7], l7_Info)
 subplot(528), title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),
-    ylabel('eta_{ges} [%]'), legend([l8], l8_Info)
+    ylabel('eta_{ges} [%]'), %legend([l8], l8_Info)
 subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
-    ylabel('V_{Kg} [m/s]'), legend([l9], l9_Info)
+    ylabel('V_{Kg} [m/s]'), 
+lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Anteil m_{Bat} an m_{ges}')
 
 % Anpassung und Abspeichern der Diagramme
 ImageSizeX = 20;
@@ -459,33 +479,3 @@ figure(figure_ges)
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
 saveas(gcf,Dateiname, 'pdf');
-
-
-
-
-%% Datei abspeichern
-% ImageSizeX = 40;
-% ImageSizeY = 30;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% figure(figure_C_Rest_V)
-% saveas(gcf,'C_Rest_V', 'jpg');
-% figure(figure_omega)
-% saveas(gcf,'omega', 'jpg');
-% figure(figure_I_mot)
-% saveas(gcf,'I_mot', 'jpg');
-% figure(figure_U_mot)
-% saveas(gcf,'U_mot', 'jpg');
-% figure(figure_I_Bat)
-% saveas(gcf,'I_Bat', 'jpg');
-% figure(figure_PWM)
-% saveas(gcf,'PWM', 'jpg');
-
-%% Datei abspeichern
-% ImageSizeX = 14;
-% ImageSizeY = 24;
-% figure(figure_C_Rest_V)
-% figure(figure_omega)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');

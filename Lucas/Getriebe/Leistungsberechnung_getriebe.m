@@ -57,7 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
-lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1);% + 1;
+lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1) + 1;
 
 % Umgebung
 H = zeros(lengthi,1);
@@ -278,7 +278,7 @@ for h_variabel = H_0:Delta_H:H_max
                 Delta_C_Bat_ueber(w) = Delta_C_Bat(x);                         % Anpassung der Batteriekapazität
                 i_int_ueber(w) = i_int(x);                                     % Übergabe des Integrals der Spannung vom letzten Schritt
                 
-                if w == 97
+                if w == 13
                     aaa = 1;
                 end
                 [I_Bat_ueber(w),U_Bat_ueber(w),C_Rate_ueber(w),Delta_C_Bat_ueber(w),C_Rest_V_ueber(w),i_int_ueber(w)] = Batterie(Batterie_data,...

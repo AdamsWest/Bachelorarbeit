@@ -348,6 +348,7 @@ Die aerodynamischen Kräfte werden dann vom aerodynamischen Koordinatensystem in
 Der Neigungswinkel kann aus dem Kräftegleichgewicht
 \begin{equation}
 	\Theta_i' = -\arctan\Big(\frac{-X_g^A}{Z_g^A + m\cdot g}\Big), \qquad i =1,2,3,\dots
+	\label{eq:neigungswinkel}
 \end{equation}
 neu berechnet werden und geht als Startwert in den nächsten Iterationsschritt ein. Die Iteration erfolgt solange bis das Abbruchkriterium
 \begin{equation}
@@ -357,6 +358,7 @@ erfüllt wird.
 Ist das Abbruchkriterium erreicht, kann der erforderliche Schub mit dem Satz des Pythagoras aus den Kraftanteilen in \(x_g-\) und \(z_g-\)Richtung
 \begin{equation}
 	S = \sqrt{{X_g}^2+(Z_g^A+m\cdot g)^2}
+	\label{eq:schub_multicopter}
 \end{equation}
 bestimmt werden.
 Für den Fall, dass der errechnete Schub größer als der zur Verfügung stehende Schub ist, wird das Ergebnis verworfen und als \texttt{NaN} (Not a Number) gespeichert.
@@ -374,12 +376,14 @@ Alle Flugzustände eines Flächenflugzeuges können mit den Grundgleichungen der
 \end{align}	
 Für einen stationäre Flug, der im weiteren ausschließlich betrachtet werden soll, gilt \ensuremath{\dot{V} = 0} und \ensuremath{\dot{\gamma} = 0}. Außerdem sind die Winkel \ensuremath{\alpha + \sigma} klein, sodass sich mit hinreichender Genauigkeit die Gleichungen \ref{eq:widerstandsgleichung} und \ref{eq:auftriebsgleichung} zu
 \begin{equation}
-	F = W + \sin\gamma\cdot G, \label{eq:widerstandsgleichung_vereinfacht}
+	F = W + \sin\gamma\cdot G, 
+	\label{eq:widerstandsgleichung_vereinfacht}
 \end{equation}
 und
 \begin{equation}
 	A = m\cdot g\cdot\cos\gamma 
-\end{equation} \label{eq:auftriebsgleichung_vereinfacht}
+	\label{eq:auftriebsgleichung_vereinfacht}
+\end{equation} 
 vereinfachen. Der Auslegungspunkt des Flächenflugzeugs ist ein Horizontalflug (\ensuremath{\gamma^\star = 0}) in Bodennähe bei konstanter Gleitzahl und Geschwindigkeit \ensuremath{V^\star}. Die vereinfachte Auftriebsgleichung \ref{eq:auftriebsgleichung_vereinfacht} vereinfacht sich damit zu
 \begin{equation}
 	A^\star = m\cdot g .
@@ -617,13 +621,12 @@ Weiterhin nicht berücksichtigt bleiben Reynoldszahl- und Machzahleffekte. Trans
 Die ganze Leistung der Batterie geht in diesem Modell ausschließlich in die Schuberzeugung. Das heißt, dass die Regler und sonstige elektrische Komponenten keinen zusätzlichen Strom verbrauchen.
 Das Flächenflugzeug wird in dem Programm als eine Punktmasse ohne Abmaße betrachtet. Um eine möglichst allgemeine Dimensionierung eines Flugsystems mit fixed wings zu ermöglichen wird sich hier jeglicher genauerer Beschreibungen des Systems verwehrt. So wird auf Kennzahlen wie die Streckung, die Flügelfläche oder z.B. Auftriebs- und Widerstandsbeiwerten verzichtet. Dies zieht eine derartige Betrachtung des Systems mit sich, dass nur der Einfluss von Gleitzahl, Motorisierung und anderen Einflussfaktoren betrachtet werden. Eine exakte Auslegung kann deshalb nur im Anschluss vorgenommen werden. Diese Vereinfachungen müssen in der Auswertung berücksichtigt werden.
 
-
 \subsection{Vereinfachungen}
 \subsubsection{Schub}
 Der Schub wird innerhalb eines sehr einfachen Modells berechnet. Das gilt sowohl für den Multicopter als auch für das Flächenflugzeug. Der Multicopter ist als eine Art Rotationsellipsoid und das Flächenflugzeug als Punktmasse vereinfacht
 
 \subsubsection{Propeller und Kennfeld}
-Bei der Transformation der Propellerkennfelder auf äquidistante Geschwindigkeitsabstände ist der Bereich von \SI{-10}{m/s} bis \SI{0}{m/s} extrapoliert. Das reale Verhalten der Propeller kann folglich von dem errechneten abweichen. Weiterhin beziehen sich alle Auslegungen auf die Datenbank von APC. 
+Bei der Transformation der Propellerkennfelder auf äquidistante Geschwindigkeitsabstände ist der Bereich von \SI{-10}{m/s} bis \SI{0}{m/s} extrapoliert. Ein analoges Vorgehen wird zur Erweiterung des ursprünglichen Kennfeldes in den Bereich noch größerer Anströmgeschwindigkeiten angewandt. Das reale Verhalten der Propeller kann folglich von dem errechneten abweichen. Weiterhin beziehen sich alle Auslegungen auf die Datenbank von APC. 
 Die Modellierung eines Propellers mit gleichem Durchmesser und gleicher Steigung eines anderen Herstellers kann aus diesem Grund abweichen. Gründe dafür können eine unterschiedliche Profilierung, Verwindung oder Profiltiefenverteilung sein. 
 
 \subsubsection{Motor}
@@ -633,7 +636,16 @@ Jeglicher Einfluss der Temperatur auf die Leistung des Motors bleibt in dem einf
 Für den Motorregler wurde ein sehr einfaches Modell verwendet, in dem der Wirkungsgrad ausschließlich eine Funktion der PWM ist.
 
 \subsubsection{Batterie}
-Die Berechnung der Batterie vernachlässigt zwei wichtige Einflussfaktoren. Das ist der Temperatureinfluss und der Einfluss der Alterung auf die Kapazität. Dies kann jedoch durch eine Anpassung der Peukert-Konstante kompensiert werden. Weiterhin wird ein Einbruch der Batteriespannung in Abhängigkeit der Entladerate nicht berücksichtigt. \textcolor{red}{Abweichungen vom realen Modell}
+Die Berechnung der Batterie vernachlässigt zwei wichtige Einflussfaktoren. Das ist der Temperatureinfluss und der Einfluss der Alterung auf die Kapazität. Dies kann jedoch durch eine Anpassung der Peukert-Konstante kompensiert werden.\\
+Zusätzlich unterliegt die Batteriespannung im Rahmen des Modells Abweichungen. Diese nehmen für zunehmende C-Raten ebenfalls zu (Vgl. Abb. \ref{abb:abweichungen}). In diesem ist das Verhältnis der Flächen unterhalb der Spannungskurve von der normierten Batteriezelle zur Originalzelle aufgetragen (\ensuremath{V_{Bat,normiert}/V_{Bat,original}}. Für die Berechnung der Abweichungen werden Batterien, deren maximale C-Rate bereits überschritten ist, herausgenommen. Außerdem werden Batterien in der Berechnung nicht berücksichtigt, deren individuelle Abweichung eine große Diskrepanz zur Standardabweichung aufweist. Die Genauigkeit des Modells steigt somit. Im unteren Diagramm von Abb. \ref{abb:abweichungen} ist beispielhaft die Spannungsabweichung jeder normierten Zelle von der Originalzelle sowie die Standardabweichung dargestellt.
+\begin{figure}[H]
+\centering
+	\includegraphics{Diagramme/Abweichungen.pdf}
+	\caption{oben: Durschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abhängigkeit von der C-Rate, \\
+	unten: Beispiel für die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle für eine C-Rate von 20 (\texttt{PWM}=0.8, \texttt{eta\_PWM}=0.7, \texttt{I\_mot}=8, \texttt{n\_Prop}=4)}
+	\label{abb:abweichungen}
+\end{figure}
+Die Zuverlässigkeit des Batteriemodells nimmt daher mit hohen C-Raten ab. Außerdem ist zu berücksichtigen, dass im Durchschnitt der Spannungsverlauf der normierten Zelle unterhalb der Normalzelle liegt. Dies bedeutet, dass die Spannung der Originalzelle unter Last geringer einbricht, als die der normierten Zelle.  
 
 \subsubsection{Wirkungsgrad}
 Die Berechnung der Strahlleistung beruht auf der Berechnung der induzierten Geschwindigkeit innerhalb der Strahltheorie. Hier wird ein idealer Rotor zugrunde gelegt.

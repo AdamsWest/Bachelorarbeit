@@ -1,26 +1,26 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[35] biber-MSWIN64:313> INFO - === 
-[68] Biber.pm:371> INFO - Reading 'main.bcf'
-[173] Biber.pm:857> INFO - Found 15 citekeys in bib section 0
-[187] Biber.pm:3976> INFO - Processing section 0
-[202] Biber.pm:4136> INFO - Looking for bibtex format file 'Literatur.bib' for section 0
-[212] bibtex.pm:1500> INFO - LaTeX decoding ...
-[252] bibtex.pm:1316> INFO - Found BibTeX data source 'Literatur.bib'
-[259] Utils.pm:193> WARN - Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring
-[264] Utils.pm:193> WARN - year field '17.03.2006' in entry 'Ostler.2006' is not an integer - this will probably not sort properly.
-[295] Utils.pm:193> WARN - year field '04.07.2017 - 07.07.2017' in entry 'KARI.2017' is not an integer - this will probably not sort properly.
-[296] Utils.pm:193> WARN - year field '07.05.2018' in entry 'Drivecalc' is not an integer - this will probably not sort properly.
-[296] Utils.pm:193> WARN - Entry 'Drivecalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
-[297] Utils.pm:193> WARN - year field '23.12.2018' in entry 'eCalc' is not an integer - this will probably not sort properly.
-[298] Utils.pm:193> WARN - Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
-[298] Utils.pm:193> WARN - year field '07.12.2018' in entry 'Flyeval' is not an integer - this will probably not sort properly.
-[299] Utils.pm:193> WARN - Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
-[305] Utils.pm:193> WARN - year field '20.08.2017 - 23.08.2017' in entry 'PCUP.2017' is not an integer - this will probably not sort properly.
-[371] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[371] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[371] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[371] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[393] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[399] bbl.pm:720> INFO - Output to main.bbl
-[405] Biber.pm:110> INFO - WARNINGS: 10
+[56] biber-MSWIN64:313> INFO - === 
+[91] Biber.pm:371> INFO - Reading 'main.bcf'
+[191] Biber.pm:857> INFO - Found 16 citekeys in bib section 0
+[205] Biber.pm:3976> INFO - Processing section 0
+[220] Biber.pm:4136> INFO - Looking for bibtex format file 'Literatur.bib' for section 0
+[255] bibtex.pm:1500> INFO - LaTeX decoding ...
+[319] bibtex.pm:1316> INFO - Found BibTeX data source 'Literatur.bib'
+[328] Utils.pm:193> WARN - Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring
+[331] Utils.pm:193> WARN - year field '17.03.2006' in entry 'Ostler.2006' is not an integer - this will probably not sort properly.
+[375] Utils.pm:193> WARN - year field '04.07.2017 - 07.07.2017' in entry 'KARI.2017' is not an integer - this will probably not sort properly.
+[376] Utils.pm:193> WARN - year field '07.05.2018' in entry 'Drivecalc' is not an integer - this will probably not sort properly.
+[377] Utils.pm:193> WARN - Entry 'Drivecalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
+[379] Utils.pm:193> WARN - year field '23.12.2018' in entry 'eCalc' is not an integer - this will probably not sort properly.
+[380] Utils.pm:193> WARN - Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
+[381] Utils.pm:193> WARN - year field '07.12.2018' in entry 'Flyeval' is not an integer - this will probably not sort properly.
+[383] Utils.pm:193> WARN - Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
+[400] Utils.pm:193> WARN - year field '20.08.2017 - 23.08.2017' in entry 'PCUP.2017' is not an integer - this will probably not sort properly.
+[513] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[513] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[513] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[513] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[535] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[541] bbl.pm:720> INFO - Output to main.bbl
+[547] Biber.pm:110> INFO - WARNINGS: 10

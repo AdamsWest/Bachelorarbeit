@@ -283,7 +283,9 @@ for h_variabel = H_0:Delta_H:H_max
         
         for n = 1:counter
             
-            
+            if z == 3
+                aaa = 1;
+            end
             RPM_map = evalin('base',['RPM_' num2str(n)]);
             V_map = evalin('base',['V_' num2str(n)]);
             T_map = evalin('base',['T_' num2str(n)]) * rho(x)/rho_0;

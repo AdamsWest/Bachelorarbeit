@@ -30,9 +30,9 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Getriebe
-ue_min = 1;           % minimale Übersetzung
-ue_Delta = 1;         % Schrittweite der Über
-ue_max = 1;            % maximale Übersetzung
+ue_min = 0.9;           % minimale Übersetzung
+ue_Delta = 0.05;         % Schrittweite der Über
+ue_max = 1.5;            % maximale Übersetzung
 % Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
 m_getriebe = 0.00;       % Getriebegewicht
 eta_getriebe = 1;     % Wirkungsgrad des Getriebes
@@ -79,7 +79,7 @@ c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multico
 % Diskretisierung der Steiggeschwindigkeit
 V_Kg_min = 1;			% kleinster Bahnneigungswinkel
 V_Kg_Delta = 1;		% Schrittweite Batteriemasse
-V_Kg_max = 35;			% größter Bahnneigungswinkel
+V_Kg_max = 40;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

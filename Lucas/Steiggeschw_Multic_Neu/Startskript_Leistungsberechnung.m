@@ -41,7 +41,7 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % Propeller
 prop_name = '10x3';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-%D = 14;                % Propellerdurchmesser in inch
+D = 10;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
@@ -59,9 +59,9 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 % m_Bat = 0.56;           % Batteriemasse in kg
 
 % Batteriemassendiskreitisierung
-m_Bat_min = 0.5;
-m_Bat_Delta = 0.02;
-m_Bat_max = 0.72;
+% m_Bat_min = 0.5;
+% m_Bat_Delta = 0.02;
+% m_Bat_max = 0.72;
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
@@ -74,7 +74,8 @@ m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 % Gesamtsystem
 % m_copter = 0.354;                       % Multicopter Leermasse in kg
-A_copter = 0.15*0.05 + 0.12*0.02*4;     % obere Stirnflaeche des Multicopter in m^2
+% A_copter = 0.15*0.05 + 0.12*0.02*4;     % obere Stirnflaeche des Multicopter in m^2
+A_copter = 0.15*0.05 + (D/2*0.0254)*1.2*0.02* n_Prop;     % obere Stirnflaeche des Multicopter in m^2
 A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
 c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters 
 c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters

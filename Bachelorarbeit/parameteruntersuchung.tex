@@ -3,7 +3,7 @@
 
 \section{Einleitung und Vorgehensweise}
 \label{sec:einleitung_und_vorgehensweise}
-Grundlegend kann die Parameteruntersuchung wie eine Art Entscheidungsbaum aufgefasst werden. Dabei führt jede Entscheidung im Baum zu einer neuen Untersuchung und zu neuen Erkenntnissen. Im Verlaufe dieser Untersuchung werden somit Konzepte, Flugzustände, Komponenten und Konstellationen ausgewählt und intensiver betrachtet. Den Beginn zeichnet die grundlegende Frage aus, welches Fluggerätekonzept, i.e. Flächenflugzeug oder Multicopter, sich für einen effizienten Aufstieg in die untere Stratosphäre optimaler erweist.   
+Grundlegend kann die Parameteruntersuchung wie eine Art Entscheidungsbaum aufgefasst werden. Dabei führt jede Entscheidung im Baum zu einer neuen Untersuchung und zu neuen Erkenntnissen. Im Verlaufe dieser Untersuchung werden somit Konzepte, Flugzustände, Komponenten und Konstellationen ausgewählt und intensiver betrachtet. Den Beginn zeichnet die grundlegende Frage aus, welches Fluggerätekonzept, i.e. Flächenflugzeug oder Multicopter, sich für einen effizienten Aufstieg in die untere Stratosphäre als optimaler erweist.   
 
 \section{Multicopter im Vergleich zu einem Flächenflugzeug}
 \label{sec:multicopter_vs_flaechenflugzeug}
@@ -24,7 +24,7 @@ Für erste Untersuchungen kann der Penaltyfaktor auf 1 gesetzt werden. Dies ents
 
 \subsection{Erste Untersuchung}
 \label{subsec:erste_untersuchung}
-In der folgenden Tabelle sind wichtige Parameter des Flächenflugzeuges aufgelistet.
+In der folgenden Tabelle sind wichtige Parameter der Ausgangskonstellation für das Flächenflugzeuges aufgelistet.
 
 \begin{center}
 	\captionof{table}{wichtige Parameter des Flächenflugzeugs}
@@ -32,7 +32,7 @@ In der folgenden Tabelle sind wichtige Parameter des Flächenflugzeuges aufgelis
 		Parameter & Variablenname & Wert \\ \hline
 		Motormasse \ensuremath{m_{Mot}}& \texttt{m\_Mot} & \SI{106}{g} \\
 		Geschwindigkeitskonstante \ensuremath{K_V} & \texttt{K\_V} & \SI{1390}{1/(V\cdot s)} \\
-		maximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{30}{A} \\
+		maximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}{A} \\
 		Propeller & \texttt{prop\_name} & 9x7 \\
 		Anzahl Propeller \ensuremath{n_{Prop}} & \texttt{n\_prop} & \SI{1}{} \\
 		Auslegungsgleitzahl \ensuremath{E^{\star}} & \texttt{E\_stern} & \SI{4}{} \\
@@ -42,15 +42,27 @@ In der folgenden Tabelle sind wichtige Parameter des Flächenflugzeuges aufgelis
 	\label{tab:flzg_parameter}
 \end{center}
 
-Die gewählte Konstellation erreicht fast \SI{11500}{m} Höhe. Der begrenzende Faktor ist in diesem Fall die fehlende Leistung zum Aufstieg in noch größere Höhen. Zu Beginn des Steigflugs stellt sich ein optimaler Bahnneigungswinkel von ca. \SI{55}{^\circ} ein. Dieser Winkel kann bis zu einer Höhe \SI{7500}{m} gehalten werden. Dabei steigt die absolute Fluggeschwindigkeit linear mit dem Produkt aus \ensuremath{\sqrt{\rho^\star/\rho}} an (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Gleichzeitig steigt der Motorstrom leicht, da für einen konstanten Bahnneigungswinkel der benötigte Schub konstant bleibt (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug}), aber mit abnehmenden Dichte das Drehmoment zunimmt. Noch stärker als der Motorstrom steigt die Motorspannung linear an, bis sie das Niveau des Batteriestroms erreicht. Damit ist das Verhältnis von \ensuremath{U_{Mot}} und \ensuremath{U_{Bat}} gleich 1 und  die PWM liegt bei \SI{100}{\%}. Ab diesem Zeitpunkt kann \textcolor{red}{leistungsbedingt} die Geschwindigkeit und Schub für einen konstanten Steigwinkel nicht mehr gehalten werden. Folglich steigt der Bahnneigungswinkel, da für ein Höhenintervall die absolute Fluggeschwindigkeit und analog die Steiggeschwindigkeit \ensuremath{V_H} mit einem mit einem  größeren Bahnneigungswinkel sinkt (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Die maximale Motorspannung entspricht ab \SI{7500}{m} Flughöhe der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei einem beinahe konstantem Motorstrom ist \ensuremath{I_{Bat}} fast ausschließlich von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab. 
-Der Verlauf der Drehzahl ist ausschlaggebend für den des Motorspannung. Da die Motorspannung nicht weiter steigen kann und der Motorstrom leicht absinkt, kann die Drehzahl analog zum sinkenden Strom durch die festgelegten Grenzen leicht steigen (Vgl. Gleichung \ref{eq:motorspannung}). Die Maximaldrehzahl ist damit auf \SI{12000}{RPM} begrenzt. 
+\begin{figure}[H]
+\centering
+	\includegraphics{Diagramme/Ausgangskonstellation.pdf}
+	\caption{Verlauf der Leistungsparameter über der Höhe für ein Flächenflugzeug mit den in Tabelle \ref{tab:flzg_parameter} definierten Parametern}
+	\label{abb:ausgangskonstellation}
+\end{figure}
 
-%Zu Beginn des Steigfluges wären größere Steigwinkel effizienter, allerdings werden diese durch den maximalen Motorstrom begrenzt. Ohne diese würde der Bahnneigungswinkel beinahe linear absinken. Daraus kann geschlossen werden, dass ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten ist. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten. Gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{8100}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}. Ab diesem Zeitpunkt kann nicht mehr mit maximalem Motorstrom geflogen werden, \textcolor{red}{wodurch folglich der Motorspannung und der Bahnneigungswinkel simultan abfallen}. Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug} und \ref{eq:schub_flaechenflugzeug}). Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein (Vgl. Gleichung \ref{eq:motorstrom}). Bedingt durch die mit dem Winkel und der Höhe (indirekt durch die Dichte) steigende Geschwindigkeit, können die Steigwinkel leistungsbedingt nicht mehr aufgebracht werden. Die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
+Die gewählte Konstellation erreicht fast \SI{13000}{m} Höhe. Der begrenzende Faktor ist in diesem Fall die fehlende Leistung zum Aufstieg in noch größere Höhen. Zu Beginn des Steigflugs stellt sich ein optimaler Bahnneigungswinkel von ca. \SI{13}{^\circ} ein. Dieser Winkel kann bis zu einer Höhe \SI{11400}{m} gehalten werden. Dabei steigt die absolute Fluggeschwindigkeit leicht quadratisch mit dem Produkt aus \ensuremath{\sqrt{\rho^\star/\rho}} an (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}). Zu Beginn des Steigfluges wären größere Steigwinkel effizienter, allerdings werden diese durch den maximalen Motorstrom begrenzt. Ohne diesen würde der Bahnneigungswinkel beinahe linear absinken. Daraus kann geschlossen werden, dass ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten ist. Der sägezahnartige Verlauf des Motorstroms hängt mit der gewählten Diskretisierung und dadurch rückwirkend mit der Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würden sich die Verläufe aller anderen Leistungsparameter über der Höhe glätten. Gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis diese ab \SI{11400}{m} das Niveau der Batteriespannung erreicht. Damit ist das Verhältnis von \ensuremath{U_{Mot}} und \ensuremath{U_{Bat}} gleich 1 und  die PWM liegt bei \SI{100}{\%}. Ab diesem Zeitpunkt kann die Leistung für die Geschwindigkeit und den Schub bei einem konstanten Steigwinkel nicht mehr aufgebracht werden. Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel und der Höhe (indirekt durch die Dichte) der Schub und die Geschwindigkeit steigen (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug} und \ref{eq:schub_flaechenflugzeug}). Die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei konstanten Motorstrom ist  \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist beinahe \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab. Der Verlauf der Drehzahl ist ausschlaggebend für den des Motorspannung. Da die Motorspannung nicht weiter steigen kann und der Motorstrom leicht absinkt, kann die Drehzahl analog zum sinkenden Strom durch die festgelegten Grenzen leicht steigen (Vgl. Gleichung \ref{eq:motorspannung}). Die Maximaldrehzahl kann damit nur noch leicht auf \SI{19000}{RPM} steigen. \textcolor{red}{Geschwindigkeit erklären?}
 
 
+% Die maximale Motorspannung entspricht ab \SI{11400}{m} Flughöhe der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei einem beinahe konstantem Motorstrom ist \ensuremath{I_{Bat}} fast ausschließlich von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab. 
+%Der Verlauf der Drehzahl ist ausschlaggebend für den des Motorspannung. Da die Motorspannung nicht weiter steigen kann und der Motorstrom leicht absinkt, kann die Drehzahl analog zum sinkenden Strom durch die festgelegten Grenzen leicht steigen (Vgl. Gleichung \ref{eq:motorspannung}). Die Maximaldrehzahl ist damit auf \SI{12000}{RPM} begrenzt. 
+
+%Zu Beginn des Steigfluges wären größere Steigwinkel effizienter, allerdings werden diese durch den maximalen Motorstrom begrenzt. Ohne diese würde der Bahnneigungswinkel beinahe linear absinken. Daraus kann geschlossen werden, dass ein Flug mit maximalem Motorstrom im unteren Höhenbereich am effizientesten ist. Der sägezahnartige Verlauf der Motorspannung hängt mit der gewählten Diskretisierung / Genauigkeit zusammen. Eine genauere Untersuchung dieser Punkte würde zu einem glatten Verlauf des Motorstroms bei \ensuremath{I_{max}} führen. Ebenso würde sich der Verlauf aller anderen Kurven glätten. Gleichzeitig zum konstanten Motorstrom wächst die Motorspannung linear an, bis sie ab \SI{11400}{m} das Niveau der Batteriespannung erreicht. Damit ist die PWM bei \SI{100}{\%}. Ab diesem Zeitpunkt kann nicht mehr mit maximalem Motorstrom geflogen werden, \textcolor{red}{wodurch folglich der Motorspannung und der Bahnneigungswinkel simultan abfallen}. 
+%Der Zusammenhang ergibt sich daher, dass mit dem Bahnanstellwinkel der Schub und die Geschwindigkeit steigen (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug} und \ref{eq:schub_flaechenflugzeug}). Die im Anschluss aus dem Kennfeld interpolierte Drehzahl fließt direkt in den Motorstrom ein (Vgl. Gleichung \ref{eq:motorstrom}). Bedingt durch die mit dem Winkel und der Höhe (indirekt durch die Dichte) steigende Geschwindigkeit, können die Steigwinkel leistungsbedingt nicht mehr aufgebracht werden. Die maximale Motorspannung entspricht hier der maximalen Batteriespannung, die durch die Last von anfänglich \SI{15,6}{V} auf ca. \SI{14.7}{V} einbricht. Der Verlauf des Batteriestroms steht in direktem Zusammenhang mit dem Motorstrom und der Motorspannung. Dies wird aus Gleichung \ref{eq:batteriestrom} ersichtlich. Bei konstanten Motorstrom ist die \ensuremath{I_{Bat}} nur von \ensuremath{U_{Mot}} abhängig. Daher der gleiche Verlauf wie bei \ensuremath{U_{Mot}}. Danach ist \ensuremath{U_{Mot}} konstant und \ensuremath{I_{Bat}} hängt nur noch von \ensuremath{I_{Mot}} ab.
+
+%Gleichzeitig steigt der Motorstrom leicht, da für einen konstanten Bahnneigungswinkel der benötigte Schub konstant bleibt (Vgl. Gleichung \ref{eq:schub_flaechenflugzeug}), aber mit abnehmenden Dichte das Drehmoment zunimmt. Noch stärker als der Motorstrom steigt die Motorspannung linear an, bis sie das Niveau des Batteriestroms erreicht. Damit ist das Verhältnis von \ensuremath{U_{Mot}} und \ensuremath{U_{Bat}} gleich 1 und  die PWM liegt bei \SI{100}{\%}. Ab diesem Zeitpunkt kann \textcolor{red}{leistungsbedingt} die Geschwindigkeit und Schub für einen konstanten Steigwinkel nicht mehr gehalten werden. Folglich sinkt der Bahnneigungswinkel, da für ein Höhenintervall die absolute Fluggeschwindigkeit und analog die Steiggeschwindigkeit \ensuremath{V_H} mit einem mit einem  größeren Bahnneigungswinkel sinkt (Vgl. Gleichung \ref{eq:geschw_flaechenflugzeug}).
 
 
 \subsection{Einflussfaktoren auf das Flächenflugzeug}
+Als zu variierende Parameter des Flächenflugzeugs qualifizieren sich die Leistungsparameter, die das Fluggerät auch qualifizieren. Das sind die Motor-Propeller-Kombination, die Propelleranzahl, die Gleitzahl, die Auslegungsgeschwindigkeit und der Penalty-Faktor.
 
 \subsubsection{Motor-Propeller Kombination}
 Die Motor-Propeller-Kombination beeinflusst entscheidend das Leistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. Mit dem in Tab. \ref{tab:flzg_parameter} aufgeführten Motor mit einem Gewicht von \SI{106}{g} und einem \ensuremath{K_V}-Wert von \SI{1390}{RPM/V} sind bereits sehr hohe Flughöhen erreichbar. Bei Verwendung des gleichen Propellers, einem 9x7 Propeller, und der Variation des \ensuremath{K_V}-Wertes, zeigen die Motoren mit einem größeren \ensuremath{K_V}-Wert ein besseres Flugverhalten. Die optimale Flugweise des Flächenflugzeuges ist für jede Art des Motors mit gleichem Gewicht identisch. Zuerst wird solange mit maximalem Motorstrom geflogen, bis die Schubhebelstellung \SI{100}{\%} erreicht. Danach sinkt der Bahnneigungswinkel während die Steiggeschwindigkeit steigt. Die maximale Höhe ist erreicht, wenn der noch fliegbare Steigwinkel Null erreicht und kein Steigflug mehr möglich ist. Der Steigwinkel leigt dabei in einem Bereich von \SI{15}{^\circ} und \SI{20}{^\circ}.
@@ -74,7 +86,7 @@ Da mit der Auslegungsgeschwindigkeit auch die Geschwindigkeit mit der Höhe stei
 \textcolor{red}{mehr anbringen} 
 
 \subsubsection{Penaltyfaktor}
-Im Vergleich von einem Flächenflugzeug mit einem Multicopter muss bei gleichem Gesamtgewicht die unterschiedliche Verteilung der Gewichtskomponenten berücksichtigt werden. Für ein Flugzeug ist das Strukturgewicht von Flügeln und Rumpf sowie den Steuerungselementen bedeutend größer als das von einem Multicopter. Ein Penaltyfaktor von 1 entspricht daher wie oben beschrieben einer sehr optimistischen Einschätzung. Um realistischere Ergebnisse für ein Flächenflugzeug zu erreichen, wird der Penaltyfaktor schrittweise erhöht. Dabei verringert sich auch die maximal erreichbare Höhe. Dies hängt damit zusammen, dass ein Penaltyfaktor größer als 1 die zur Verfügung stehende Batteriemasse und folglich die Batteriekapazität.
+Im Vergleich von einem Flächenflugzeug mit einem Multicopter muss bei gleichem Gesamtgewicht die unterschiedliche Verteilung der Gewichtskomponenten berücksichtigt werden. Für ein Flugzeug ist das Strukturgewicht von Flügeln und Rumpf sowie den Steuerungselementen bedeutend größer als das von einem Multicopter. Ein Penaltyfaktor von 1 entspricht daher wie oben beschrieben einer sehr optimistischen Einschätzung. Um realistischere Ergebnisse für ein Flächenflugzeug zu erreichen, wird der Penaltyfaktor schrittweise erhöht. Dabei verringert sich auch die maximal erreichbare Höhe. Dies hängt damit zusammen, dass ein Penaltyfaktor größer als 1 die zur Verfügung stehende Batteriemasse und folglich die Batteriekapazität reduziert.
 
 
 
@@ -132,11 +144,11 @@ Eine Erhöhung der Gleitzahl erhöht die Anzahl der Ausreißer, quasi Abweichung
 
 %\end{itemize}
 
-
+%******************************************************************
 
 \section{Steiggeschwindigkeit}
 \label{sec:steiggeschwindigkeit}
-Eine weitere Optimierung des Multicopters bzw. des Quadrocopters kann durch eine Anpassung der Steiggeschwindigkeit geschehen. Die vormalig als konstant angenommene Steiggeschwindigkeit von \SI{10}{m/s} ist nicht in jedem Operationspunkt die optimale. Die Steiggeschwindigkeit wird wieder für jeden Höhenschritt variiert. Analog zur Variation des Steigwinkels beim Flächenflugzeug fällt die Auswahl der Geschwindigkeit auf den Wert, welcher die geringste Energiemenge benötigt für den Aufstieg. Bei der Untersuchung kristallisieren sich drei starke Einflussfaktoren heraus. Im Einzelnen sind das der Widerstandsbeiwert, die Anzahl der Batteriezellen und die Motorleistung. Im Abb. \ref{abb:steiggeschw} ist der Ablauf der Leistungsberechnung für die Steiggeschwindigkeit dargestellt
+Eine weitere Optimierung des Multicopters bzw. des Quadrocopters kann durch eine Anpassung der Steiggeschwindigkeit geschehen. Die vormalig als konstant angenommene Steiggeschwindigkeit von \SI{10}{m/s} ist nicht in jedem Operationspunkt optimal. Die Steiggeschwindigkeit wird wieder für jeden Höhenschritt variiert. Analog zur Variation des Steigwinkels beim Flächenflugzeug fällt die Auswahl der Geschwindigkeit auf den Wert, welcher die geringste Energiemenge benötigt für den Aufstieg. Bei der Untersuchung kristallisieren sich drei starke Einflussfaktoren heraus. Im Einzelnen sind das der Widerstandsbeiwert, die Anzahl der Batteriezellen und die Motorleistung. Im Abb. \ref{abb:steiggeschw} ist der Ablauf der Leistungsberechnung für die Steiggeschwindigkeit dargestellt
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,160)
@@ -183,7 +195,11 @@ Eine weitere Optimierung des Multicopters bzw. des Quadrocopters kann durch eine
 \end{figure}
 \end{center}
 
+\subsection{Ergebnis}
+Mit einer variablen Steiggeschwindigkeit ist ein deutlicher Höhengewinn von \SI{3000}{m} zu verzeichnen. Die Steiggeschwindigkeit liegt deutlich über den \SI{10}{m/s}, die vorher angenommen wurden. Mit einer höheren Steiggeschwindigkeit sinkt auch die Flugzeit und als Konsequenz auch die benötigte Kapazität für einen Höhenschritt. Auf der anderen Seite steigt mit einer größeren Fluggeschwindigkeit die Widerstandskraft quadratisch an (Vgl. Gleichung \ref{eq:widerstand}. Dies wird noch genauer in Kap. \ref{subsec:widerstandseinfluss} beschrieben. 
+
 \subsection{Einfluss des Widerstands}
+\label{subsec:widerstandseinfluss}
 Der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit. Bei einem großen maximalen Motorstrom gilt, dass die Begrenzung der Geschwindigkeit durch den Widerstandsbeiwert erfolgt. Eine sehr hohe Geschwindigkeit verringert zum einen die Flugzeit für einen Höhenbereich, erhöht auf der anderen Seite jedoch den Widerstand und damit zusätzlich die benötigte Leistung. Je geringer der \ensuremath{C_W} gewählt wird, desto höher ist die optimale Steiggeschwindigkeit. Erhöht sich im Umkehrschluss der Luftwiderstand so sinkt die Steiggeschwindigkeit, da der Widerstand mit der Geschwindigkeit quadratisch (Vgl. Gleichung \ref{eq:widerstand}) ansteigt. Im Sinne einer großen maximalen Höhe ist daher eine aerodynamisch günstige Verkleidung des Multicopters anzustreben.  
 
 
@@ -201,6 +217,7 @@ Ein weiterer begrenzender Parameter ist die PWM. Die Motorspannung an sich kann 
 	E_{Bat} = C_{Bat}\cdot U_{Bat}
 \end{equation}
 führt eine Erhöhung der Spannung in dem Produkt aus Spannung und Kapazität (\ensuremath{C_{Bat} = I_{Bat}\cdot t_{Flug}}) unweigerlich zu einer Verringerung der Kapazität. Die schlägt sich wieder auf den Kostenfaktor aus, der erreichbaren Flughöhe. Diese Maßnahme ist also mit Bedacht zu wählen. Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom.
+Die Zellen, aus denen eine Batterie besteht, sind meist \textcolor{red}{Massenprodukte} und daher nur in festen Größen und Kapazitäten vorhanden. Erhöht sich nun die Anzahl der Zellen, in diesem Fall wird einfach eine Zelle ergänzt, so erhöht sich auch die Batteriemasse mit der Zelle. Dahingehend ist eine Batteriezellenanzahlerhöhung gegenüber einer Massenerhöhung abzuwägen.
 
 %\begin{itemize}
 %	\item Einfluss der Batteriezellenanzahl
@@ -225,45 +242,59 @@ Die Ergebnisse zeigen, dass ein geringer maximaler Motorstrom die ebenfalls die 
 %	\item entsprechend ist diese groß zu wählen wie beim Cobra-Motor
 %\end{itemize}
 
-\section{Verstellpropeller}
-\label{sec:verstellprop}
-\begin{itemize}
-	\item besonders auffällig bei vorherigen Untersuchungen ist, dass bei Propeller mit einem geringen Pitch die Drehzahl deutlich schneller steigt, als bei einem Propeller mit einem großen Pitch
-	\item Da vor allem die Drehzahl die Motorspannung bestimmt, ist eine Verringerung der Drehzahl bei gleichem Schub von Interesse / anzustreben
-	\item analog steigt \textcolor{red}{van der Wall, diagramm mit theta nachgucken} bei konstanter Drehzahl (Vgl. z.B. Hubschrauber) der Pitch, sprich Theta mit einem größer werdendem Schubbeiwert und damit auch mit der Höhe. 
-	\item bei einem elektrisch propellergetriebenen Fluggerät können mit einem Mechanismus der Pitch und über den Motor die Drehzahl geändert werden. 
-	\item dies kann im folgenden über die Auswertung der Kennfelder in der APC Datenbank erfolgen, die den gleichen Durchmesser besitzen, aber unterschiedliche feste Pitches
-	\item Die Auswahl für den in dem betrachteten Flugmoment besten Pitch erfolgt wieder über die Energiebetrachtung, analog zum Steigwinkel und der Steiggeschwindigkeit
-	\item Programmablauf in unterer Abbildung
-\end{itemize}
 
-\subsection{Ergebnisse}
-\begin{itemize}
-	\item Die Benutzung eines Verstellpropellers bringt keinen zusätzlichen Nutzen, und in Kombination mit einer variablen Steiggeschwindigkeit besitzt sie wenig Einfluss.
-	\item würde weiterhin noch das zusätzliche Gewicht des Mechanismus sowie der zur Verstellung benötigten Komponenten mit berücksichtigt, wird der eventuelle Vorteil vollends hinfällig
-	\item somit ergibt sich keinerlei Vorteil für die Benutzung eines Verstellpropellers
-	\item Trotzdem muss berücksichtigt werden, das der Propeller nur im Rahmen der in der APC-Datenbank vorhanden Propeller modelliert werden kann.
-	\item dies setzt Ungenauigkeiten voraus, da eine kontinuierliche Verstellung nicht nachgebildet werden kann und nur so viele Verstellungen berücksichtigt werden können, wie auch in der Datenbank vorhanden sind
-	\item außerdem ist man auf die Kennfelder angewiesen
-	\item kann aber für den Sinkflug bedeutend sein, weil mit der Verstellung die Autorotation ermöglicht wird
-\end{itemize}
+%******************************************************************
 
-
-\section{Größe des Fluggerätes}
-\label{sec:groesse}
-Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Fluggerätes dar. Dabei wird das Fluggerät äquivalent, das heißt die Massenverhältnisse von Motoren, Batterien und die Leermasse bleiben im Verhältnis zum Gesamtgewicht konstant. Das Verhältnis orientiert sich an der Massenverteilung des Quadrocopters aus Kapitel \ref{chap:nachbildung}. Für diesen beschlagnahmen die Motoren einen Anteil von \SI{13,77}{\%}, die Batterie \SI{52,83}{\%} und der Rahmen sowie die übrigen Eineheiten einen Anteil von \SI{33,4}{\%}. Dieses Verhältnis wird für jede Größenskalierung gewahrt. Als Anhaltspunkt dient die Masse der Motoren, da mit diese durch die Datenbank vollständig definiert sind und eine feste Masse besitzen. Die Propellerauswahl findet nach den Herstellerempfehlungen statt. Alle anderen Massenverteilungen ergeben sich im Anschluss aus der Motormasse.
+\section{Massenverteilung}
+\label{sec:massenverteilung}
+Ein weiterer wichtiger Punkt, der an dieser Stelle untersucht werden soll, ist die Massenanteilsverteilung von den Motoren, der Batterie und der Leermasse des Multicopters am Gesamtgewicht. Wiederum stellt der Quadrocopter aus Kapitel \ref{sec:komponenten} die Grundlage der Untersuchung dar. Bei diesem nehmen die Motoren \SI{13,77}{\%}, die Batterie \SI{52,83}{\%} und die der Rahmen mit den übrigen Komponenten \SI{33,4}{\%} der Gesamtmasse von \SI{1060}{g} ein. Für einen Gegenvergleich wird nun ein anderen Quadrocopter mit diesen Massenverhältnissen erstellt. Als Anhaltspunkt dient die Masse der Motoren, da diese durch die Datenbank vollständig definiert sind und eine feste Masse besitzen. Alle anderen Massenverteilungen ergeben sich im Anschluss aus der Motormasse.
 Die Massen errechnen sich nach folgendem Schema:
 \begin{align}
 	m_{ges} &= \frac{n_{Prop}\cdot m_{Mot}}{0.1377} , \\
 	m_{Bat} &= m_{ges}\cdot 0.5283 , \\
 	m_{copter} &= m_{ges}\cdot 0.334.
 \end{align}
-Dabei wird jeweils auch die obere Stirnfläche \ensuremath{A_{copter,oben}} mit der Größe angepasst.
+Zusätzlich wird jeweils auch die obere Stirnfläche \ensuremath{A_{copter,oben}} mit der Größe angepasst. Im folgenden wird die Masse der Batterie 
+
+\subsection{Ergebnisse}
+\newpage
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.85]{Diagramme/Batteriemasse.pdf}
+	\caption{Abhängigkeit der maximalen Höhe von Batteriemasse anteilig an der Gesamtmasse (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
+	\label{abb:batteriemasse}
+\end{figure}
+\begin{itemize}
+	\item Die Batteriemasse hat einen großen Einfluss auf die Flugleistungen.
+	\item Die TOC's variieren zwischen eine Spanne von \SI{5000}{m}
+	\item Ein Optimum ist bei einer Konstellation erreicht, bei der die Batteriemasse die Hälfte des Gesamtgewichts ausmacht also \SI{50}{\%} 
+	\item die Kurven der Restladungskurven von \SI{75}{\%} und \SI{50}{\%} sind bis zu einer Höhe von \SI{12500}{m} deckungsgleich. Danach sinkt die Leistung reduziert sich die Restladung eines Fluggeräts mit einem höheren Anteil der Batteriemasse drastisch. Begrenzend für diesen Flug ist die Kapazität der Batterie sondern die Steiggeschwindigkeit.
+	\item mit zunehmender Batteriemasse reduziert sich die Steiggeschwindigkeit signifikant. Dies liegt darin begründet, dass die Masse direkt in den Schub mit einfließt (Vgl. Gleichung \ref{eq:neigungswinkel} und \ref{eq:schub_multicopter}). Ein schlechte Verteilung der Massen erhöht somit den Schub und damit die erforderliche Leistung. Die beeinflusst die Steiggeschwindigkeit, welche die Flugzeit und letztendlich in Höhe bestimmt. 
+	\item Weiterhin kann mit größeren Batteriemassen länger mit maximalen Motorstrom geflogen werden, bevor die PWM 1 erreicht und die Steiggeschwindigkeit sinkt, da das maximale Niveau leistungsbedingt nicht mehr gehalten werden kann. 
+	\item Für kleinere Batteriemassen wird die \SI{100}{\%} PWM bereits deutlich früher erreicht (pro \SI{25}{\%} sind das ungefähr zusätzliche \SI{2500}{m}. Dies hat zur Folge, dass die maximale Drehzahl (ca. \SI{18000}{RPM} früher erreicht ist. 
+	\item durch die großen Steiggeschwindigkeiten bei kleinen Batteriemassen ist auch ein deutlich stärkerer Einbruch der Batteriespannung zu verzeichnen. 
+	\item Zudem ist analog zu den Kurven der Restladung bei den optimalen Konstellationen auch der optimale Gesamtwirkungsgrad erreicht.
+	\item die optimale Batteriemasse liegt bei ca. \SI{50}{\%} und \SI{52.5}{\%} (Vgl. Anhang)
+	\item dies widerspricht den Aussagen von \cite{Neitzke.2013}, optimal ist ein Batterieanteil von 2/3 an der Gesamtmasse
+	\item mögliche Gründe 
+	\item Neitzke hat das ganze nur im Hovern untersucht
+	\item Neitzke nimmt einen konstanten Wirkungsgrad für alle an, was aber nicht für alle Flugzustände gilt.
+	\item zusammengenommen spiegeln die obige Untersuchung der Massenverteilung und der Quadrocopter aus Russland das gleicher Ergebnis wieder.
+	\item bemerkenswerterweise zeichnet sich die Konstellation des Quadrocopters aus \cite{Anderson.2018} bereits in diesem Sinne als optimal
+	\item Es ist außerdem ersichtlich, dass die Leistung noch weiter verbessert werden können, wenn der Massenanteil des Rahmens und aller übriger kleiner wird und die Masse der Batterie im Gegensatz steigt
+	\item Im allgemeinen ist dieser Trend mit \ensuremath{m_{Copter}\rightarrow 0} und \ensuremath{m_{Bat}\rightarrow m_{Bat}+m_{Copter}} zu beschreiben
+\end{itemize}
+
+%******************************************************************
+
+\section{Größe und Anzahl der Propeller des Fluggerätes}
+\label{sec:groesse}
+Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Fluggerätes dar. Dabei wird das Fluggerät äquivalent, das heißt die Massenverhältnisse von Motoren, Batterien und die Leermasse bleiben im Verhältnis zum Gesamtgewicht konstant. Das Verhältnis orientiert sich an der Massenverteilung aus Kapitel \ref{sec:massenverteilung}. Dieses Verhältnis wird für jede Größenskalierung gewahrt. Als Anhaltspunkt dient die Masse der Motoren, da mit diese durch die Datenbank vollständig definiert sind und eine feste Masse besitzen. Die Propellerauswahl findet nach den Herstellerempfehlungen statt. Alle anderen Massenverteilungen ergeben sich im Anschluss aus der Motormasse analog zu Kapitel \ref{sec:massenverteilung}.
 
 \subsection{Ergebnisse}
 \label{subsec:ergebnisse_groesse}
 Eine äquivalente Größenskalierung besitzt einen vernachlässigbar kleinen Einfluss auf die Kostenfunktion, die maximale Höhe. 
-\textcolor{red}{Begründung für Reichweitenunabhängigkeit von der Flugmasse}
+\textcolor{red}{Begründung für Reichweitenunabhängigkeit von der Flugmasse}. An dieser Stelle kann somit festgehalten werden, dass eine Größenskalierung keinen Einfluss auf die Flugleistungen hat. Die Vorteile eine größeren Masse liegen für reale Anwendungsfälle vorrangig in der Massenträgheit. In einem Höhensektor von \SI{0}{} bis \SI{15000}{m} treten im durchschnitt starken Winde mit \SI{100}{km/h} auf. Die Einflüsse von Böen in diesen Größenordnungen auf einen Multicopter fällt geringer aus, wenn die Masse höher. Dies erfordert im Umkehrschluss weniger Energie zur Kurs- und Lagekorrektur.
 \begin{itemize}
 	\item äquivalente Größenskalierung 
 	\item Skalierung anhand des Motorgewichtes
@@ -294,54 +325,119 @@ Für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden,
 	\item ein Duocopter scheint eine gute Alternative zu sein, allerdings ist sein Flugverhalten eher nachteilig
 	\item langsame Reaktionszeiten, ein träges Reaktionsverhalten, komplizierte Regelung, wird leicht instabil und besitzt eine komplizierte Technik
 	\item für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt
-	\item somit stellt der Quadrocopter die beste Lösung da
+	\item somit stellt der Quadrocopter die beste Lösung dar
 \end{itemize}
 
-\section{Massenverteilung}
-Weiterhin wichtig ist die Verteilung der Massen für einen Multicopter. Die Massen des Multicopters werden auf die des Motors, des Rahmens und der Batterie beschränkt. Wiederum kann die Verteilung aus Kapitel \ref{chap:nachbildung} aus Grundlage der folgenden Untersuchung vorausgesetzt werden. Die Verhältnisse sind in Kapitel \ref{sec:groesse} beschrieben. Es ist schnell ersichtlich, dass bei einer festgelegten Gesamt- und Motormasse 
 
+\section{Verstellpropeller}
+\label{sec:verstellprop}
 \begin{itemize}
-	\item die optimale Verteilung sieht so aus, dass 
+	\item besonders auffällig bei vorherigen Untersuchungen ist, dass bei Propeller mit einem geringen Pitch die Drehzahl deutlich schneller steigt, als bei einem Propeller mit einem großen Pitch
+	\item Da vor allem die Drehzahl die Motorspannung bestimmt, ist eine Verringerung der Drehzahl bei gleichem Schub von Interesse / anzustreben
+	\item analog steigt \textcolor{red}{van der Wall, diagramm mit theta nachgucken} bei konstanter Drehzahl (Vgl. z.B. Hubschrauber) der Pitch, sprich Theta mit einem größer werdendem Schubbeiwert und damit auch mit der Höhe. 
+	\item bei einem elektrisch propellergetriebenen Fluggerät können mit einem Mechanismus der Pitch und über den Motor die Drehzahl geändert werden. 
+	\item dies kann im folgenden über die Auswertung der Kennfelder in der APC Datenbank erfolgen, die den gleichen Durchmesser besitzen, aber unterschiedliche feste Pitches
+	\item Die Auswahl für den in dem betrachteten Flugmoment besten Pitch erfolgt wieder über die Energiebetrachtung, analog zum Steigwinkel und der Steiggeschwindigkeit
+	\item Programmablauf in unterer Abbildung
 \end{itemize}
+
+\subsection{Ergebnisse}
+\begin{itemize}
+	\item Die Benutzung eines Verstellpropellers bringt keinen zusätzlichen Nutzen, und in Kombination mit einer variablen Steiggeschwindigkeit besitzt sie wenig Einfluss.
+	\item würde weiterhin noch das zusätzliche Gewicht des Mechanismus sowie der zur Verstellung benötigten Komponenten mit berücksichtigt, wird der eventuelle Vorteil vollends hinfällig
+	\item somit ergibt sich keinerlei Vorteil für die Benutzung eines Verstellpropellers
+	\item Trotzdem muss berücksichtigt werden, das der Propeller nur im Rahmen der in der APC-Datenbank vorhanden Propeller modelliert werden kann.
+	\item dies setzt Ungenauigkeiten voraus, da eine kontinuierliche Verstellung nicht nachgebildet werden kann und nur so viele Verstellungen berücksichtigt werden können, wie auch in der Datenbank vorhanden sind
+	\item außerdem ist man auf die Kennfelder angewiesen
+	\item kann aber für den Sinkflug bedeutend sein, weil mit der Verstellung die Autorotation ermöglicht wird
+\end{itemize}
+
 
 \section{Stufenloses Getriebe}
 \label{sec:getriebe}
-Eine häufige Begrenzung der Leistung ist die maximale Drehzahl des Motors oder des Propellers. Ein stufenlos verstellbares Getriebe bringt Vorteile in der Begrenzung der maximalen Drehzahl (Machzahleffekte, Strömungsablösung etc.), dass heißt durch den Einsatz eines Getriebes kann die Drehzahl für den Motor untersetzt werden, sodass diese nicht mehr den Flaschenhals für einen Steigflug darstellt.
+Eine häufige Begrenzung der Leistung ist die maximale Drehzahl des Motors oder des Propellers. Ein stufenlos verstellbares Getriebe bringt Vorteile in der Begrenzung der maximalen Drehzahl (Machzahleffekte, Strömungsablösung etc.), dass heißt durch den Einsatz eines Getriebes kann die Drehzahl für den Motor entsprechend angepasst werden, sodass diese nicht mehr den Flaschenhals für einen Steigflug darstellt.
+Die Übersetzung für ein Getriebe 
 \begin{equation}
-	i = \frac{n_{ein}}{n_{aus}} 
+	i = \frac{\omega_{an}}{\omega_{ab}} 
+	\label{eq:getriebe_uebersetzung}
 \end{equation}
+setzt sich in Abhängigkeit der Drehzahlen aus dem Verhältnis der Eingangsdrehzahl \ensuremath{\omega_{an}} zur Ausgangsdrehzahl \ensuremath{\omega_{ab}} zusammen. Weiterhin gilt für die Leistung, dass unter Berücksichtigung von Verlusten innerhalb des Getriebes die Eingangsleistung \ensuremath{P_{an}} gleich der Ausgangsleistung \ensuremath{P_{ab}} ist
 \begin{equation}
-	P_{ein} = \frac{P_{aus}}{\eta_{Getriebe}}
-\end{equation}
+	P_{an} = \eta_{Getriebe} \cdot \omega_{an}\cdot M_{an} = \omega_{ab}\cdot M_{ab} = P_{ab}
+	\label{eq:getriebe_leistung}
+\end{equation} 
+mit dem Wirkungsgrad 
 \begin{equation}
-	M_{neu} = \frac{p_{aus}}{\omega}
+	\eta_{Getriebe} = \frac{P_{ab}}{P_{an}} \leq 1.
+	\label{eq:getriebe_wirkungsgrad}
 \end{equation}
-\begin{itemize}
-	\item Der theoretische Einsatz von einem stufenlosen Getriebe bringt Vorteile in der Begrenzung der maximalen Drehzahl (Machzahleffekte, Strömungsablösung etc.), dass heißt durch den Einsatz eines Getriebes kann die Drehzahl für den Motor untersetzt werden, sodass diese nicht mehr den Flaschenhals für einen Steigflug darstellt. 
-	\item optimaler Betriebspunkt des Motors ist bei einer konstanten Leistungsabgabe und nicht maximaler Drehzahl beim Propeller
-	\item Nutzen noch nicht abzuschätzen
-\end{itemize}
+Aus den Gleichungen \ref{eq:getriebe_uebersetzung} bis \ref{eq:getriebe_wirkungsgrad} ergeben sich nun für die aus Propellerkennfeld ermittelten Drehzahl und dem Drehmoment die neuen Werte für den Motor
+\begin{equation}
+	\omega_{neu} = \omega_{Kennfeld}\cdot i
+\end{equation}
+und aus der Leistung
+\begin{equation}
+	M_{neu} = \frac{P_{aab}}{\omega_{neu}}.
+\end{equation}
+Die günstigste Übersetzung wird analog zum Steigwinkel des Flächenflugzeuges und analog zur Steiggeschwindigkeit durch eine Iteration über der Übersetzung \ensuremath{i} gefunden. Das Entscheidungskriterium ist auch hier die minimal aufgebrachte Energiemenge für den jeweiligen Höhenschritt. An dieser Stelle ist das Getriebegewicht \texttt{m\_Getriebe} nicht zu vernachlässigen. Diese fließt mit der Anzahl der Propeller in die Berechnung der Gesamtmasse mit ein
+\begin{equation}
+	m = m_{Bat} + (m_{Mot} + m_{Getriebe})\cdot n_{Prop} + m_{Copter} .
+\end{equation}
+
+
 \textcolor{red}{hier noch untersuchen, wie sich die KV Wert auf die Leistung auswirkt bei gleichem Motorgewicht. Außerdem noch feststellen, in welche Richtung die Drehzahl gewandelt wird}
 
 \subsection{Ergebnis}
-\begin{itemize}
-	\item mit dem Einsatz eines idealen Getriebes ( \ensuremath{m_{Getriebe = 0} und \ensuremath{\eta_{Getriebe} = 1}}, ist ein enormer Höhenzusatz zu verzeichnen
-	\item dieser beträgt bis zu \SI{8000}{m}
-	\item wie vorausgesagt wird die Drehzahl untersetzt!
-	\item realistischer Einsatz kann als  zweifelhaft abgetan werden
-	\item es gibt stufenlos verstellbare Getriebe für Lastkraftwagen im Modellbau, allerdings beläuft sich das Gewicht eines Getriebes auf mehr als \SI{700}{g}. Für einen vierrotorigen Multicopter bedeutet das ein Zusatzgewicht von ca\SI{2800}{g}, quasi dem doppelten des gesamten Multicoptergewichts
-	\item trotz des Nutzens / gerade wegen dem nichtverbessern der Leistungen
-	\item stufenlose Verstellung ist möglich aber nicht leicht umzusetzen. 
-	\item Ein Getriebe bedeutet bei all seiner Kampaktheit und Effizienz letztendlich große Zusatzmasse und einen weitere, verlustbehaftete Komponenten in der Antriebskette
-	\item es gibt außerdem kein fertiges Getriebe auf dem Markt, was die Ansprüche erfüllen könnte
-	\item die Übersetzung hält sich in Grenzen , sodass der Einsatz im Ganzen hinterfragt werden sollte
-\end{itemize}
+Der Einsatz eines idealen, stufenlosen Getriebes (\ensuremath{m_{Getriebe} = 0} und \ensuremath{\eta_{Getriebe} = 1}) erzeugt einen erheblichen Höhengewinn. Für die gewählte Konstellation bedeutet dies einen TOC von ca. \SI{20800}{m}. Das ist ein Zuwachs von mindestens \SI{6000}{m} zum Multicopter ohne Getriebe. Das 
+CVT (continuously variable transmission)-Getriebe übersetzt dabei die Drehzahl des Motors, das heißt die Propellerdrehzahl ist größer als die des Motors. \\
+Zu Beginn des Fluges übersetzt das Getriebe die Motordrehzahl mit einer Übersetzung von \SI{1,4}{} ins Schnelle. die Drehzahl des Propellers beträgt dabei \SI{20000}{U/min}. Es folgt eine hyperbolische Abnahme der Übersetzung durch das Getriebe und damit auch der Drehzahl. Der Motor wird bei maximaler Last betrieben, das heißt beim maximalen Motorstrom von \SI{25}{A} und bei Volllast (PWM =  \SI{100}{\%}). Die PWM schwankt in einem Bereich von \SI{5}{\%} in der Nähe von \SI{100}{\%}. Die Sprünge, die im Verlauf der Drehzahl, Des Motorstroms und der PWM zu verzeichnen sind, können auf die gewählte Diskretisierung der Getriebeübersetzung zurückgeführt werden. \textcolor{red}{Das stufenlose Getriebe ermöglicht den optimalen Betrieb des Motors, welcher in diesem Fall bei voller Leistungsentnahme ist. Es ermöglicht eine derartige Wandlung des der Drehzahl, sodass einerseits die PWM bei \SI{100}{\%} ist und andererseits der Motorstrom dem maximalen Dauerstrom entspricht. Also ein Betriebspunkt bei Volllast. Dies kann durch das Getriebe dauerhaft gehalten werden.} 
+Die Steiggeschwindigkeit weist einen beinahe asymptotischen Verlauf von anfänglich \SI{21}{m/s} an den Grenzwert von \SI{26}{m/s} auf. Entsprechend dieser hohe Geschwindigkeiten braucht der Quadrocopter nur \SI{14}{min} und \SI{9}{s} bis zum Erreichen der maximalen Höhe.
+
+In der Realität besitzt stufenlose Getriebe jedoch immer ein Eigengewicht und zeichnen sich durch einen vergleichsweise schlechten Wirkungsgrad aus (\SI{0.8}{} zu etwa \SI{0.95}{} bei einem Stufengetriebe). Die hohen Verluste liegen in der hohen erforderlichen Reibkraft und Verstellkraft begründet. Unter Berücksichtigung dieser verringert sich der Höhengewinn schrittweise, je größer das Getriebegewicht und dessen Verluste ausfallen. Stufenlose Getriebe existieren im Modellbau, allerdings nur für Lastkraftwagenmodelle. Das Gewicht eines einzelnen Getriebes beläuft sich dabei auf mehr \SI{700}{g}, wobei die Verstellelektronik nicht berücksichtigt wurde. Für einen vierrotorigen Multicopter entspräche das einem Zusatzgewicht von mehr als \SI{2800}{g}. 
+Trotz seines Nutzens für die Höhenleistung werden die Vorteile eines CVT-Getriebes durch dessen Nachteile überkompensiert. Ein solches Getriebe bedeutet bei all seiner Kampaktheit und Effizienz letztendlich große Zusatzmasse und einen weitere, verlustbehaftete Komponenten innerhalb der Antriebskette. In Bezug auf die optimale Massenverteilung aus Kapitel \ref{sec:massenverteilung} und die besagte Richtung einer Optimierung der Verhältnisse verändert Getriebe die Massenaufteilung in Richtung einer schlechteren. Aus all diesen Gründen kann von dem Einsatz eines CVT-Getriebes abgesehen werden.
+
+%mit dem Einsatz eines idealen Getriebes 
+%\begin{itemize}
+%	\item mit dem Einsatz eines idealen Getriebes ( \%ensuremath{m_{Getriebe = 0} und \ensuremath{\eta_{Getriebe} = 1}}, ist ein enormer Höhenzusatz zu verzeichnen
+%	\item dieser beträgt bis zu \SI{8000}{m}
+%	\item wie vorausgesagt wird die Drehzahl untersetzt!
+%	\item realistischer Einsatz kann als  zweifelhaft abgetan werden
+%	\item es gibt stufenlos verstellbare Getriebe für Lastkraftwagen im Modellbau, allerdings beläuft sich das Gewicht eines Getriebes auf mehr als \SI{700}{g}. Für einen vierrotorigen Multicopter bedeutet das ein Zusatzgewicht von ca\SI{2800}{g}, quasi dem doppelten des gesamten Multicoptergewichts
+%	\item trotz des Nutzens / gerade wegen dem nichtverbessern der Leistungen
+%	\item stufenlose Verstellung ist möglich aber nicht leicht umzusetzen. 
+%	\item Ein Getriebe bedeutet bei all seiner Kampaktheit und Effizienz letztendlich große Zusatzmasse und einen weitere, verlustbehaftete Komponenten in der Antriebskette
+%	\item es gibt außerdem kein fertiges Getriebe auf dem Markt, was die Ansprüche erfüllen könnte
+%	\item die Übersetzung hält sich in Grenzen , sodass der Einsatz im Ganzen hinterfragt werden sollte
+%\end{itemize}
 
 \section{Ummantelte Rotoren}
+\begin{equation}
+	\frac{P_{i,Fan}}{P_{i}} = \frac{1}{\sqrt{2\kappa_W}}
+\end{equation}
+\begin{equation}
+	T_{fan} = \frac{T}{2\kappa_W}
+\end{equation}
 \begin{itemize}
 	\item Fenestron bei z.B. dem EC 135 und EC 145 sind bekannte Beispiele für den Einsatz eines ummantelten Rotors
 	\item nach \cite[S.145-S.148]{Wall.2015} kann durch den Einsatz einer Rotorummantelung die Leistung für die Generation des gleichen Schubes bei gleichem Durchmesser eines Rotors verringert werden
 	\item hierbei wird eine Strahlkontraktion des Abstroms durch die Formgebung des Mantels verringert oder sogar zu einer Aufweitung erzwungen
 	\item mit einer Strahlaufweitung nimmt auch die benötigte Leistung für konstanten Schub ab
 	\item dadurch kann der Rotordurchmesser verringert werden, was zusätzliches Gewicht und Größe einspart.
+\end{itemize}
+
+
+\section{Randbedingungen des Aeromot\_UAV-Projekts}
+\begin{itemize}
+	\item Schlussendlich soll noch der Einfluss der für dieses Projekt bestimmten Randbedingungen festgehalten werden
+	\item diese betragen 
+	\item 
+	\begin{center}
+	\captionof{table}{wichtige Parameter des Flächenflugzeugs}
+	\begin{tabular}{l l l} \hline
+		Parameter & Variablenname & Wert \\ \hline
+		Windgeschwindigkeit \ensuremath{u_{Wg}} & \texttt{u\_Wg} & \SI{100}{km/h}\\
+		Nutzlast \ensuremath{m_{Nutz}} & \texttt{m\_Nutz} & \SI{250}{g}  \\ \hline
+	\end{tabular}	
+	\label{tab:flzg_parameter}
+\end{center}
 \end{itemize}

@@ -404,7 +404,7 @@ for h_variabel = H_0:Delta_H:H_max
     H(x) = H_oben;			% Speichern der Höhe im Vektor
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
     
-    disp([num2str((x-1*100)/lengthi) ' %']);
+    disp([num2str((x-1)/lengthi *100) ' %']);
 end
 
 

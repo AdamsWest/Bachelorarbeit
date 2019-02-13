@@ -29,19 +29,19 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-% motor_name = axi_motor_db{21,1}; % Motorname
-% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-R_i = 0.123;            % Innenwiderstand in Ohm
-K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-I_0 = 0.56;             % Leerlaufstrom in Ampere
-I_max = 30;             % Max Continuous Current
-m_Mot = 0.0365;         % Motorgewicht in kg
+motor_name = axi_motor_db{21,1}; % Motorname
+[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+% R_i = 0.123;            % Innenwiderstand in Ohm
+% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+% I_0 = 0.56;             % Leerlaufstrom in Ampere
+% I_max = 30;             % Max Continuous Current
+% m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
 % prop_name = '6x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 7;                  % Propellerdurchmesser in inch
+D = 9;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
@@ -106,7 +106,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 %% Festlegung des Dateinamen
     
 Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop-Durchm = ' num2str(D) ...
-    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = neu'];
+    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = Energie'];
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

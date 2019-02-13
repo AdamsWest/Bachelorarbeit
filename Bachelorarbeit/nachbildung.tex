@@ -27,8 +27,7 @@ Die Batterie ist eine selbst gebaute LiIon Batterie in der Bauform 4s3p. Das Gew
 \begin{center}
 	\captionof{table}{Batterieparameter}
 	\begin{tabular}{l l l} \hline
-		 Parameter & Variablenname & Wert \\ \hline
-		 
+		 Parameter & Variablenname & Wert \\ \hline		 
 		 Anzahl der Batteriezellen \ensuremath{N_{Bat,cell}} & \texttt{N\_bat\_cell} & \SI{4}{} \\
 		 nominelle Kapazität einer Batteriezelle \ensuremath{C_{Bat,cell}} & \texttt{U\_Bat\_cell} & \SI{3120}{mAh} \\
 		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \SI{3,9}{V} \\
@@ -69,43 +68,20 @@ Weitere Startbedingungen und Missionsparameter sind in Tab.\ref{tab:umgebungs_mi
 \section{Ergebnisse}
 \label{sec:ergebnisse_quadrocopter}
 
-\begin{itemize}
-	\item \textcolor{red}{neue Bilder einfügen und Beschreibung entsprechend anpassen}
-\end{itemize}
-
-
-
-
-
-Im Nachfolgenden sind die Ergebnisse des Programms in Graphen dargestellt. Aus allen Diagrammen ist zu entnehmen, dass der Quadrocopter eine Höhe von mehr als \SI{13000}{m} erreichen kann. Das ist mehr als \SI{3000}{m} höher als die Höhe, die der Quadrocopter im Video erreicht.
-Die Restladung der Batterie nimmt mit der Höhe linear ab (Vgl. Abb.\ref{pic:restladung_russland}).  
-\begin{center}
-	\includegraphics[scale=0.3]{Diagramme/C_Rest_V.jpg}
-	\label{pic:restladung_russland}
-	\captionof{figure}{Restladung der Batterie über der Höhe}
-\end{center}
-Diese erweist sich jedoch nicht als begrenzender Faktor, da selbst in \SI{13000}{m} Höhe immer noch ca. \SI{3}{\%} Restladung vorhanden sind. Im Video ist weiterhin die verbrauchte Kapazität in \SI{}{mAh} gegeben. Mit dieser und der Gesamtkapazität von aller Zellen kann daraus geschlossen werden, dass der Quadrocopter noch eine Restladung von etwas weniger als \SI{28}{\%} unter idealen Bedingungen am Top Of Climb (TOC) hat. Dieses stimmt beim Ablesen der Restkapazität in \SI{}{\%} bei \SI{10260}{m} aus dem Diagramm annähernd überein. Die berechnete liegt ziemlich genau bei der realen.
-Hiergegen nimmt die Motordrehzahl und damit auch die Propellerdrehzahl leicht quadratisch zu und erreicht am TOC \SI{17000}{U/min} (Vgl. Abb.\ref{pic:omega_russland}).  
-\begin{center}
-	\includegraphics[scale=0.3]{Diagramme/omega.jpg}
-	\label{pic:omega_russland}
-	\captionof{figure}{Motordrehzahl der Batterie über der Höhe}
-\end{center}
-Dies entspricht auch der maximalen Drehzahl des APC-Kennfeldes. Die Berechnung wird abgebrochen, weil das Kennfeld für Drehzahlen von über \SI{17000}{U/min} keine Daten mehr liefert. Es ist daher zu vermuten, dass letztendlich die Restkapazität den limitierenden Faktor für größere Höhen  darstellt. Trotz der hohen Propellerdrehzahl erreicht die Blattspitzengeschwindigkeit \ensuremath{M_{tip}} mit \SI{0.6}{Ma} keine Ma = 1. Bemerkenswerterweise erreichen die Restladung und die Propeller-/Motordrehzahl simultan die vorher festgelegten Grenzen. \\
-Der aus der Batterie entnommene Strom \ensuremath{I_Bat} bleibt innerhalb von \SI{22}{A} und \SI{25}{A} für den im Video erreichten Höhenbereich relativ konstant. 
-\begin{center}
-	\includegraphics[scale=0.3]{Diagramme/I_Bat.jpg}
-	\label{pic:batteriestrom_russland}
-	\captionof{figure}{Entladestrom der Batterie über der Höhe}
-\end{center}
-Dies stimmt mit den Beobachtungen aus \cite{Anderson.2018} gut überein. In diesem schwankt der Entladestrom zwischen \SI{21,5}{A} und \SI{25}{A}.
-Stimmen die oben genannten Größen mit denen im Video noch relativ gut überein, zeigen sich bei der PWM große Diskrepanzen. Die ermittelte PWM über der Höhe ist beim Start etwa \SI{50}{\%} und steigt im Laufe des Fluges auf ca. \SI{82,5}{\%} am TOC. 
-\begin{center}
-	\includegraphics[scale=0.3]{Diagramme/PWM.jpg}
-	\label{pic:pwm_russland}
-	\captionof{figure}{Pulsweitenmodulation über der Höhe}
-\end{center}
-Der Vergleich mit dem realen Quadrocopterflug zeigt deutlich, dass die errechnete PWM im Durchschnitt etwa \SI{20}{\%} unterhalb der realen liegt.
+Im Nachfolgenden sind die Ergebnisse des Programms in Graphen dargestellt. Aus allen Diagrammen ist zu entnehmen, dass der Quadrocopter eine Höhe von mehr als \SI{13000}{m} erreichen kann. Das ist mehr als \SI{3000}{m} höher als die Höhe, die der Quadrocopter im Video erreicht. Mit dem TOC wird sich im Folgenden auf den realen Flug bezogen. Dieser liegt bei \SI{12600}{m}.\\
+\begin{figure}[H]
+\centering
+	\includegraphics{Diagramme/Russland.pdf}
+	\caption{Die Restladung, die Drehzahl, der Batteriestrom und die PWM im Programm aufgetragen über der Höhe}
+	\label{abb:ergebnisse_russland}
+\end{figure}
+Die Restladung der Batterie nimmt mit der Höhe linear ab (Vgl. Abb.\ref{abb:ergebnisse_russland}). Diese erweist sich als einer der begrenzenden Faktore, da in ca. \SI{13000}{m} Höhe nur noch ein wenig mehr als \SI{0}{\%} Restladung vorhanden sind. Im Video ist weiterhin die verbrauchte Kapazität in \SI{}{mAh} gegeben. Mit dieser und der Gesamtkapazität von allen Zellen kann daraus geschlossen werden, dass der Quadrocopter noch eine Restladung von etwas weniger als \SI{28}{\%} unter idealen Bedingungen am Top Of Climb (TOC) hat. Dieses stimmt beim Ablesen der Restkapazität in \SI{}{\%} bei \SI{10260}{m} aus dem Diagramm annähernd überein. Die berechnete liegt sogar ein wenig unterhalb der realen. \\
+Hiergegen nimmt die Motordrehzahl und damit auch die Propellerdrehzahl leicht quadratisch zu und erreicht am TOC \SI{17000}{U/min} (Vgl. Abb.\ref{abb:ergebnisse_russland}).  
+Dies entspricht auch der maximalen Drehzahl des APC-Kennfeldes. Die Berechnung wird abgebrochen, weil das Kennfeld für Drehzahlen von über \SI{17000}{U/min} keine Daten mehr liefert. Erstaunlicher Weise erreichen sowohl die Restladung und Drehzahl simultan die Minimal- bzw. Maximalwerte (vorher bestimmten Grenzen). Bei realen Flügen ist die Drehzahl des Propellers nicht durch ein Kennfeld begrenzt, sondern durch die Maximaldrehzahl des Motors sowie der Motorspannung und dem Motorstrom. Es ist daher zu vermuten, dass letztendlich die Restkapazität den limitierenden Faktor für größere Höhen darstellt. Trotz der hohen Propellerdrehzahl erreicht die Blattspitzengeschwindigkeit \ensuremath{M_{tip}} mit \SI{0.6}{Ma} keine Ma = 1. \\
+Der aus der Batterie entnommene Strom \ensuremath{I_Bat} bleibt innerhalb von \SI{22}{A} und \SI{25}{A} für den im Video erreichten Höhenbereich relativ konstant. \\
+Dies stimmt mit den Beobachtungen aus \cite{Anderson.2018} gut überein. In diesem schwankt der Entladestrom zwischen \SI{21,5}{A} und \SI{25}{A}. \\
+Stimmen die oben genannten Größen mit denen im Video noch relativ gut überein, zeigen sich bei der PWM große Diskrepanzen. Die ermittelte PWM über der Höhe ist beim Start etwa \SI{50}{\%} und steigt im Laufe des Fluges auf ca. \SI{75}{\%} bei \SI{12600}{m}. \\
+Der Vergleich mit dem realen Quadrocopterflug zeigt deutlich, dass die errechnete PWM im Durchschnitt etwa \SI{25}{\%} unterhalb der realen liegt.
 
 
 \section{Diskussion}

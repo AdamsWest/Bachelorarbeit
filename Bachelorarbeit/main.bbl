@@ -225,6 +225,26 @@
       \verb 10.1109/ICUFN.2017.7993756
       \endverb
     \endentry
+    \entry{Neitzke.2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1d305ac43c7a838dae81ee5ad39140d0}{%
+           family={{Klaus-Peter Neitzke}},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{fullhash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{bibnamehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{authorbibnamehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{authornamehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{authorfullhash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Rotary~Wing Micro Air Vehicle Endurance}
+      \field{year}{2013}
+      \keyw{Endurance,MAV}
+    \endentry
     \entry{Drela.2007}{article}{}
       \name{author}{1}{}{%
         {{hash=8843a019dd382ada5b62357cea5cc6e9}{%
