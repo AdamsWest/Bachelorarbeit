@@ -12,7 +12,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Verlauf der Leistungsparameter \IeC {\"u}ber der H\IeC {\"o}he f\IeC {\"u}r ein Fl\IeC {\"a}chenflugzeug mit den in Tabelle \ref {tab:flzg_parameter} definierten Parametern\relax }}{32}{figure.caption.34}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Programmstruktur zur Ermittlung der optimalen Steiggeschwindigkeit\relax }}{37}{figure.caption.40}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Abh\IeC {\"a}ngigkeit der maximalen H\IeC {\"o}he von Batteriemasse anteilig an der Gesamtmasse (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{40}{figure.caption.41}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Widerstandseinfluss auf die maximale erreichbare H\IeC {\"o}he\relax }}{39}{figure.caption.41}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Einfluss der Batteriezellenanzahl auf die maximale erreichbare H\IeC {\"o}he\relax }}{41}{figure.caption.42}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Abh\IeC {\"a}ngigkeit der maximalen H\IeC {\"o}he von Batteriemasse anteilig an der Gesamtmasse (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{43}{figure.caption.43}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces genauere Untersuchung der Batteriemassenabh\IeC {\"a}ngigkeit (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{70}{figure.caption.56}

@@ -200,8 +200,14 @@ Mit einer variablen Steiggeschwindigkeit ist ein deutlicher Höhengewinn von \SI
 
 \subsection{Einfluss des Widerstands}
 \label{subsec:widerstandseinfluss}
-Der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit. Bei einem großen maximalen Motorstrom gilt, dass die Begrenzung der Geschwindigkeit durch den Widerstandsbeiwert erfolgt. Eine sehr hohe Geschwindigkeit verringert zum einen die Flugzeit für einen Höhenbereich, erhöht auf der anderen Seite jedoch den Widerstand und damit zusätzlich die benötigte Leistung. Je geringer der \ensuremath{C_W} gewählt wird, desto höher ist die optimale Steiggeschwindigkeit. Erhöht sich im Umkehrschluss der Luftwiderstand so sinkt die Steiggeschwindigkeit, da der Widerstand mit der Geschwindigkeit quadratisch (Vgl. Gleichung \ref{eq:widerstand}) ansteigt. Im Sinne einer großen maximalen Höhe ist daher eine aerodynamisch günstige Verkleidung des Multicopters anzustreben.  
-
+Der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit. Bei einem großen maximalen Motorstrom gilt, dass die Begrenzung der Geschwindigkeit durch den Widerstandsbeiwert erfolgt. Eine sehr hohe Geschwindigkeit verringert zum einen die Flugzeit für einen Höhenbereich, erhöht auf der anderen Seite jedoch den Widerstand und damit zusätzlich die benötigte Leistung. Je geringer der \ensuremath{C_W} gewählt wird, desto höher ist die optimale Steiggeschwindigkeit. Erhöht sich im Umkehrschluss der Luftwiderstand so sinkt die Steiggeschwindigkeit, da der Widerstand mit der Geschwindigkeit quadratisch (Vgl. Gleichung \ref{eq:widerstand}) ansteigt. Im Sinne einer großen maximalen Höhe ist daher eine aerodynamisch günstige Verkleidung des Multicopters anzustreben.
+  
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.85]{Diagramme/C_W_Untersuchung.pdf}
+	\caption{Widerstandseinfluss auf die maximale erreichbare Höhe}
+	\label{abb:c_W_einfluss}
+\end{figure}
 
 %\begin{itemize}
 %	\item der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steiggeschwindigkeit
@@ -218,6 +224,13 @@ Ein weiterer begrenzender Parameter ist die PWM. Die Motorspannung an sich kann 
 \end{equation}
 führt eine Erhöhung der Spannung in dem Produkt aus Spannung und Kapazität (\ensuremath{C_{Bat} = I_{Bat}\cdot t_{Flug}}) unweigerlich zu einer Verringerung der Kapazität. Die schlägt sich wieder auf den Kostenfaktor aus, der erreichbaren Flughöhe. Diese Maßnahme ist also mit Bedacht zu wählen. Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom.
 Die Zellen, aus denen eine Batterie besteht, sind meist \textcolor{red}{Massenprodukte} und daher nur in festen Größen und Kapazitäten vorhanden. Erhöht sich nun die Anzahl der Zellen, in diesem Fall wird einfach eine Zelle ergänzt, so erhöht sich auch die Batteriemasse mit der Zelle. Dahingehend ist eine Batteriezellenanzahlerhöhung gegenüber einer Massenerhöhung abzuwägen.
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.85]{Diagramme/N_Bat_Untersuchung.pdf}
+	\caption{Einfluss der Batteriezellenanzahl auf die maximale erreichbare Höhe}
+	\label{abb:N_Bat_einfluss}
+\end{figure}
 
 %\begin{itemize}
 %	\item Einfluss der Batteriezellenanzahl
@@ -264,26 +277,12 @@ Zusätzlich wird jeweils auch die obere Stirnfläche \ensuremath{A_{copter,oben}
 	\caption{Abhängigkeit der maximalen Höhe von Batteriemasse anteilig an der Gesamtmasse (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
 	\label{abb:batteriemasse}
 \end{figure}
-\begin{itemize}
-	\item Die Batteriemasse hat einen großen Einfluss auf die Flugleistungen.
-	\item Die TOC's variieren zwischen eine Spanne von \SI{5000}{m}
-	\item Ein Optimum ist bei einer Konstellation erreicht, bei der die Batteriemasse die Hälfte des Gesamtgewichts ausmacht also \SI{50}{\%} 
-	\item die Kurven der Restladungskurven von \SI{75}{\%} und \SI{50}{\%} sind bis zu einer Höhe von \SI{12500}{m} deckungsgleich. Danach sinkt die Leistung reduziert sich die Restladung eines Fluggeräts mit einem höheren Anteil der Batteriemasse drastisch. Begrenzend für diesen Flug ist die Kapazität der Batterie sondern die Steiggeschwindigkeit.
-	\item mit zunehmender Batteriemasse reduziert sich die Steiggeschwindigkeit signifikant. Dies liegt darin begründet, dass die Masse direkt in den Schub mit einfließt (Vgl. Gleichung \ref{eq:neigungswinkel} und \ref{eq:schub_multicopter}). Ein schlechte Verteilung der Massen erhöht somit den Schub und damit die erforderliche Leistung. Die beeinflusst die Steiggeschwindigkeit, welche die Flugzeit und letztendlich in Höhe bestimmt. 
-	\item Weiterhin kann mit größeren Batteriemassen länger mit maximalen Motorstrom geflogen werden, bevor die PWM 1 erreicht und die Steiggeschwindigkeit sinkt, da das maximale Niveau leistungsbedingt nicht mehr gehalten werden kann. 
-	\item Für kleinere Batteriemassen wird die \SI{100}{\%} PWM bereits deutlich früher erreicht (pro \SI{25}{\%} sind das ungefähr zusätzliche \SI{2500}{m}. Dies hat zur Folge, dass die maximale Drehzahl (ca. \SI{18000}{RPM} früher erreicht ist. 
-	\item durch die großen Steiggeschwindigkeiten bei kleinen Batteriemassen ist auch ein deutlich stärkerer Einbruch der Batteriespannung zu verzeichnen. 
-	\item Zudem ist analog zu den Kurven der Restladung bei den optimalen Konstellationen auch der optimale Gesamtwirkungsgrad erreicht.
-	\item die optimale Batteriemasse liegt bei ca. \SI{50}{\%} und \SI{52.5}{\%} (Vgl. Anhang)
-	\item dies widerspricht den Aussagen von \cite{Neitzke.2013}, optimal ist ein Batterieanteil von 2/3 an der Gesamtmasse
-	\item mögliche Gründe 
-	\item Neitzke hat das ganze nur im Hovern untersucht
-	\item Neitzke nimmt einen konstanten Wirkungsgrad für alle an, was aber nicht für alle Flugzustände gilt.
-	\item zusammengenommen spiegeln die obige Untersuchung der Massenverteilung und der Quadrocopter aus Russland das gleicher Ergebnis wieder.
-	\item bemerkenswerterweise zeichnet sich die Konstellation des Quadrocopters aus \cite{Anderson.2018} bereits in diesem Sinne als optimal
-	\item Es ist außerdem ersichtlich, dass die Leistung noch weiter verbessert werden können, wenn der Massenanteil des Rahmens und aller übriger kleiner wird und die Masse der Batterie im Gegensatz steigt
-	\item Im allgemeinen ist dieser Trend mit \ensuremath{m_{Copter}\rightarrow 0} und \ensuremath{m_{Bat}\rightarrow m_{Bat}+m_{Copter}} zu beschreiben
-\end{itemize}
+
+Die Batteriemasse hat einen großen Einfluss auf die Flugleistungen. Die TOC's variieren zwischen eine Spanne von \SI{5000}{m}. Ein Optimum ist bei einer Konstellation erreicht, bei der die Batteriemasse die Hälfte des Gesamtgewichts ausmacht also \SI{50}{\%}. Die Kurven der Restladungskurven von \SI{75}{\%} und \SI{50}{\%} sind bis zu einer Höhe von \SI{12500}{m} deckungsgleich. Danach reduziert sich die Restladung eines Fluggeräts mit einem höheren Anteil der Batteriemasse drastisch. Mit einem zunehmenden Batteriemassenanteil ist für den Steigflug nicht mehr die Kapazität der Batterie begrenzend sondern vielmehr die Leistung und damit die Steiggeschwindigkeit. Mit zunehmender Batteriemasse reduziert sich auch die Steiggeschwindigkeit signifikant. Dies liegt darin begründet, dass die Masse direkt in den Schub mit einfließt (Vgl. Gleichung \ref{eq:neigungswinkel} und \ref{eq:schub_multicopter}). Ein schlechte Verteilung der Massen erhöht somit den Schub und damit die erforderliche Leistung. Dies beeinflusst die Steiggeschwindigkeit, welche die Flugzeit und letztendlich die erreichbare Höhe bestimmt. Weiterhin kann mit größeren Batteriemassen länger mit maximalen Motorstrom geflogen werden, bevor die PWM \SI{100}{\%} erreicht und die Steiggeschwindigkeit sinkt, \textcolor{red}{da das maximale Niveau leistungsbedingt nicht mehr gehalten werden kann.} Für kleinere Batteriemassen beginnt der Flugabschnitt mit \SI{100}{\%} PWM bereits deutlich früher (pro \SI{25}{\%} mehr Batteriemasse sind das ungefähr zusätzliche \SI{2500}{m} Höhe). Dies hat zur Folge, dass die maximale Drehzahl (ca. \SI{18000}{RPM}) früher erreicht ist. Durch die großen Steiggeschwindigkeiten bei kleinen Batteriemassen ist auch ein deutlich stärkerer Einbruch der Batteriespannung zu verzeichnen (ca.\SI{2,5}{V} bei \SI{25}{\%} und nur \SI{1,5}{V} bei größeren Massenanteilen). Zudem ist analog zu den Kurven der Restladung bei den optimalen Konstellationen auch der optimale Gesamtwirkungsgrad erreicht. Die optimale Batteriemasse liegt zwischen \SI{50}{\%} und \SI{52.5}{\%} (Vgl. Anhang).
+Dies widerspricht den Aussagen von \cite{Neitzke.2013}, worin die besten Flugleistungen und insbesondere die längste Flugdauer mit einem Anteil der Batteriemasse an der Gesamtmasse von 2/3 angegeben wird. Ein möglicher Grunde sind die unterschiedlichen Flugzustände. Neitzke hat seine Untersuchungen ausschließlich im Hovern gemacht. Somit fehlt in seinen Betrachtungen der Höheneinfluss und der Einfluss einer Steiggeschwindigkeit. \textcolor{red}{Neitzke nimmt einen konstanten Wirkungsgrad für alle an, was aber nicht für alle Flugzustände gilt.}\\
+Zusammengenommen weisen die obige Untersuchung der Massenverteilung und der Quadrocopter aus Russland das gleiche Ergebnis auf. Die Konstellation des Quadrocopters aus \cite{Anderson.2018} erweist sich bereits in diesem Sinne als optimal.\\
+Es ist außerdem ersichtlich, dass die Flugleistung und -dauer noch weiter verbessert werden können, wenn der Massenanteil des Rahmens und aller übriger kleiner wird und die Masse der Batterie im Gegensatz steigt, i.e. eine Tendenz der Coptermasse gegen Null (\ensuremath{m_{Copter}\rightarrow 0} und \ensuremath{m_{Bat}\rightarrow (m_{Bat}+m_{Copter})})
+
 
 %******************************************************************
 
@@ -295,16 +294,7 @@ Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Flugger
 \label{subsec:ergebnisse_groesse}
 Eine äquivalente Größenskalierung besitzt einen vernachlässigbar kleinen Einfluss auf die Kostenfunktion, die maximale Höhe. 
 \textcolor{red}{Begründung für Reichweitenunabhängigkeit von der Flugmasse}. An dieser Stelle kann somit festgehalten werden, dass eine Größenskalierung keinen Einfluss auf die Flugleistungen hat. Die Vorteile eine größeren Masse liegen für reale Anwendungsfälle vorrangig in der Massenträgheit. In einem Höhensektor von \SI{0}{} bis \SI{15000}{m} treten im durchschnitt starken Winde mit \SI{100}{km/h} auf. Die Einflüsse von Böen in diesen Größenordnungen auf einen Multicopter fällt geringer aus, wenn die Masse höher. Dies erfordert im Umkehrschluss weniger Energie zur Kurs- und Lagekorrektur.
-\begin{itemize}
-	\item äquivalente Größenskalierung 
-	\item Skalierung anhand des Motorgewichtes
-	\item \begin{equation}
-	scale = \frac{m_{Mot}}{m_{Mot,Russland}}
-	\end{equation}
-	\item signifikante Änderung bleibt aus
-	\item Wenn alle Verhältnisse der Komponentne zueinander beibehalten werden, ändern sich die Flugleistungen nicht
-	\item eine entsprechende Anpassung der Propeller an den Motor muss erfolgen
-\end{itemize}
+
 
 \subsection{Größenkonstellation}
 Wie sich oben zeigte, hat eine uniforme Skalierung des Fluggerätes keinen Einfluss auf dessen Flugleistung. Bisher wurde dabei nur Fluggeräte mit vier Rotoren untersucht. Dabei gilt es noch die Abhängigkeit der Flugleistungen von der Rotoranzahl zu überprüfen. 
