@@ -41,7 +41,7 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % Propeller
 % prop_name = '6x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 9;                  % Propellerdurchmesser in inch
+D = 10;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
@@ -110,4 +110,4 @@ Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_verstellprop'); 
+run('Leistungsberechnung_verstellprop_alternativ'); 

@@ -97,7 +97,7 @@ end
 
 %% Umgebungsparameter
 
-T_11 = T_0 - 0.0065 *(11000-H_0);                   % T in 11000m Höhe
+Temp_11 = T_0 - 0.0065 *(11000-H_0);                   % T in 11000m Höhe
 rho_11 = rho_0 * (1 - 0.0065*(11000/T_0))^4.256;    % Dichte in 11000m Höhe
 p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 
@@ -166,22 +166,22 @@ for h_variabel = H_0:Delta_H:H_max
         p_oben = p_0 *(1-0.0065*(H_oben/T_0))^5.256;
     elseif H_unten <= 11000 && H_oben >11000
         rho_unten = rho_0 *(1 - 0.0065*(H_unten/T_0))^4.256;
-        rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
+        rho_oben = rho_11 * exp(-g/(287*Temp_11)*(H_oben-11000));
         
         p_unten = p_0 *(1-0.0065*(H_unten/T_0))^5.256;
-        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
+        p_oben = p_11 * exp(-g/(287.1*Temp_11)*(H_oben-11000));
     else
-        rho_unten = rho_11 * exp(-g/(287*T_11)*(H_unten-11000));
-        rho_oben = rho_11 * exp(-g/(287*T_11)*(H_oben-11000));
+        rho_unten = rho_11 * exp(-g/(287*Temp_11)*(H_unten-11000));
+        rho_oben = rho_11 * exp(-g/(287*Temp_11)*(H_oben-11000));
         
-        p_unten = p_11 * exp(-g/(287.1*T_11)*(H_unten-11000));
-        p_oben = p_11 * exp(-g/(287.1*T_11)*(H_oben-11000));
+        p_unten = p_11 * exp(-g/(287.1*Temp_11)*(H_unten-11000));
+        p_oben = p_11 * exp(-g/(287.1*Temp_11)*(H_oben-11000));
     end
     
     if H_mitte <= 11000                                             % mittlere Temperatur im Intervall
         T = T_0 - 0.0065 * H_mitte;
     else
-        T = T_11;
+        T = Temp_11;
     end
     
     rho(x) = rho_unten + (rho_oben - rho_unten)/2;                  % Berechnung der mittleren Dichte im Intervall
@@ -283,9 +283,6 @@ for h_variabel = H_0:Delta_H:H_max
         
         for n = 1:counter
             
-            if z == 3
-                aaa = 1;
-            end
             RPM_map = evalin('base',['RPM_' num2str(n)]);
             V_map = evalin('base',['V_' num2str(n)]);
             T_map = evalin('base',['T_' num2str(n)]) * rho(x)/rho_0;

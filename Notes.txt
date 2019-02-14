@@ -28,3 +28,20 @@ Konstellaion
 - langsame Reaktionszeiten, ein träges Reaktionsverhalten, komplizierte Regelung, wird leicht instabil und besitzt eine komplizierte Technik
 - für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt
 - somit stellt der Quadrocopter die beste Lösung da
+
+
+
+
+
+ToDo dokumentation
+
+	- T_11 --> Temp_11
+	- Formatierung Bilder
+	- In neues Dok einbinden
+	- am Anfang von Kap. 4 anmerken, dass die Berechnung andersherum abläuft --> statisches Modell, kein dynamisches
+	- die Untersuchungen für die steiggeschwindigkeit ausformulieren, was ist in den diagrammen zu sehen
+	- Motorwirkungsgrad anfügen in Kap 2
+	- Anmerkung, dass Gesamtwirkungsgrad die Batterie nicht mit einbezieht
+	- Nassi-Schneidermann Diagramme in Anhang verfrachten trotzdem sagen, wie untersucht wird
+
+	https://de.mathworks.com/help/matlab/creating_plots/save-figure-with-minimal-white-space.html
