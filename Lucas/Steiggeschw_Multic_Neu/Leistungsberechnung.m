@@ -426,8 +426,13 @@ end
 %% plot
 
 % Darstellung der Ergenisse in Diagrammen
-figure(figure_ges)
 
+
+
+figure(figure_ges)
+% q=figure('visible','on','Name',strcat('Eingangsdaten'));
+% set(q, 'Units', 'normalized', 'Position',[0.1, 0.1, 0.8, 0.8] );
+% AxesH = axes('Units', 'normalized', 'Position', [0.082,0.25, 0.81, 0.74]);
 subplot(521), stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
 subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
 subplot(523), stairs(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
@@ -448,17 +453,23 @@ subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabe
 % Anpassung und Abspeichern der Diagramme
 ImageSizeX = 14;
 ImageSizeY = 24;
-figure(figure_ges)
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-saveas(gcf,Dateiname, 'pdf');
-
+% figure(figure_ges)
+% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
+% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+% saveas(gcf,Dateiname, 'pdf');
+% 
 fig = gcf;
 fig.PaperPositionMode = 'auto';
 set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 21 29.7]); 
 fig_pos = fig.PaperPosition;
 fig.PaperSize = [21 29.7];
 print(fig,'MySavedFile','-dpdf')
+
+%      fig = gcf;
+%      fig.PaperUnits = 'inches';
+%      fig.PaperPosition = [0 0 22 13];
+%      print(fig,'-dpng','-r0','tryhard.png')
+
 
 
 %% Datei abspeichern
