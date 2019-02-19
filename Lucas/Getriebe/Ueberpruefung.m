@@ -153,9 +153,9 @@ for h_variabel = H_0:Delta_H:H_max
     end
     
     
-    %     T_map = T_map * rho(x)/rho_1;                                   % Anpassung des Schubkennfeldes an die sich ändernde Dichte
-    %     P_map = P_map * rho(x)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
-    %     TAU_map = TAU_map * rho(x)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
+        T_map = T_map * rho(x)/rho_1;                                   % Anpassung des Schubkennfeldes an die sich ändernde Dichte
+        P_map = P_map * rho(x)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
+        TAU_map = TAU_map * rho(x)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
     
     %% Beginn der Leistungsberechnung für Flugsysteme
@@ -249,9 +249,7 @@ for h_variabel = H_0:Delta_H:H_max
             
             V_Kg_ueber(w) = V_Kg_inter(z);
             Uebersetzung_ueber(w) = ue;
-            if w == 22 
-                aaa = 1;
-            end
+
             % Aerodynamik
             [Thrust_ueber(w),Theta_ueber(w),V_A,alpha_ueber(w)] = MulticopterAerodynamik(u_Wg,V_Kg_ueber(w),gamma_copter,c_W_copter_seitlich,c_W_copter_oben,c_A_copter_max,rho(x),A_copter,m,g);
                       
@@ -303,22 +301,26 @@ for h_variabel = H_0:Delta_H:H_max
                 
 %                 vi0 = sqrt(m*g / ( 2*rho(x)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
                 vi0 = sqrt(Thrust_ueber(w)/ ( 2*rho(x)*F ) );
-                v = vi0;
+%                 v = vi0;
                 mu_z_ueber(w) = -V_A*sin(alpha_ueber(w));                                          % Geschwindigkeit durch die Rotorebene
-                mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
-                krit = 1;
-                while krit > 0.0005
-                    f = v - mu_z_ueber(w) - vi0^2 / sqrt(mu^2 + v^2);
-                    fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
-                    v_i_neu = v - f/fs;
-                    krit = abs(v_i_neu - v) / v_i_neu;
-                    v = v_i_neu;
+%                 mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
+%                 krit = 1;
+%                 while krit > 0.0005
+%                     f = v - mu_z_ueber(w) - vi0^2 / sqrt(mu^2 + v^2);
+%                     fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
+%                     v_i_neu = v - f/fs;
+%                     krit = abs(v_i_neu - v) / v_i_neu;
+%                     v = v_i_neu;
+%                 end
+%                 vi_vi0 = (v - mu_z_ueber(w)) / vi0;
+%                 vi_ueber(w) = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
+                if x == 151
+                    aaa = 1;
                 end
-                vi_vi0 = (v - mu_z_ueber(w)) / vi0;
-                vi_ueber(w) = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
-                
+                P_rotor = Thrust_ueber(w)*(mu_z_ueber(w)/2 + sqrt((mu_z_ueber(w)/2)^2 + vi0^2));
                 % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
-                eta_prop_ueber(w) = (Thrust_ueber(w) * (mu_z_ueber(w) + vi_ueber(w)))/(tau_ueber(w) * Omega_ueber(w));
+                eta_prop_ueber(w) = P_rotor/(tau_ueber(w) * Omega_ueber(w));
+%                 eta_prop_ueber(w) = (Thrust_ueber(w) * (mu_z_ueber(w) + vi_ueber(w)))/(tau_ueber(w) * Omega_ueber(w));
                 
                 eta_ges_ueber(w) = (n_Prop * Thrust_ueber(w) * (mu_z_ueber(w) + vi_ueber(w)))/(I_Bat_ueber(w) * U_Bat_ueber(w));         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
 
@@ -361,8 +363,24 @@ for h_variabel = H_0:Delta_H:H_max
             
         end               % Ende der Pitchschleife
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        if isnan(nanmean(Omega_ueber)) ~= 1 && isnan(nanmean(I_mot_ueber)) ~= 1 &&  isnan(nanmean(U_mot_ueber)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
-                isnan(nanmean(PWM_ueber)) ~= 1 && isnan(nanmean(C_Rest_V_ueber)) ~= 1 && isnan(nanmean(I_Bat_ueber)) ~= 1       % enthalten (unfliegbarer Zustand)
+        gooddata_index = ~isnan(Omega_ueber);
+        good_omega = Omega_ueber(gooddata_index);
+        gooddata_index = ~isnan(I_mot_ueber);
+        good_I_mot = I_mot_ueber(gooddata_index);
+        gooddata_index = ~isnan(U_mot_ueber);
+        good_U_mot = U_mot_ueber(gooddata_index);
+        gooddata_index = ~isnan(PWM_ueber);
+        good_PWM = PWM_ueber(gooddata_index);
+        gooddata_index = ~isnan(C_Rest_V_ueber);
+        good_C_Rest_V = C_Rest_V_ueber(gooddata_index);
+        gooddata_index = ~isnan(I_Bat_ueber);
+        good_I_Bat = I_Bat_ueber(gooddata_index);
+        
+        
+        
+        
+        if isnan(mean(good_omega)) ~= 1 && isnan(mean(good_I_mot)) ~= 1 &&  isnan(mean(good_U_mot)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
+                isnan(mean(good_PWM)) ~= 1 && isnan(mean(good_C_Rest_V)) ~= 1 && isnan(mean(good_I_Bat)) ~= 1       % enthalten (unfliegbarer Zustand)
             
             % Kriterium für optimalen Steigwinkel
             y = 1;
@@ -374,6 +392,7 @@ for h_variabel = H_0:Delta_H:H_max
                 if length(ind_opt) > 1
                     ind_opt = ind_opt(1);
                 end
+                
                 
                 if ~isnan(Thrust_ueber(ind_opt)) && ~isnan(Omega_ueber(ind_opt)) && ~isnan(I_mot_ueber(ind_opt)) && ~isnan(U_mot_ueber(ind_opt)) && ~isnan(PWM_ueber(ind_opt)) ...
                         && ~isnan(I_Bat_ueber(ind_opt)) && ~isnan(U_Bat_ueber(ind_opt)) && ~isnan(C_Rate_ueber(ind_opt)) && ~isnan(C_Rest_V_ueber(ind_opt))
@@ -458,9 +477,24 @@ for h_variabel = H_0:Delta_H:H_max
     end
     
     
+    gooddata_index = ~isnan(Omega_inter);
+    good_omega = Omega_inter(gooddata_index);
+    gooddata_index = ~isnan(I_mot_inter);
+    good_I_mot = I_mot_inter(gooddata_index);
+    gooddata_index = ~isnan(U_mot_inter);
+    good_U_mot = U_mot_inter(gooddata_index);
+    gooddata_index = ~isnan(PWM_inter);
+    good_PWM = PWM_inter(gooddata_index);
+    gooddata_index = ~isnan(C_Rest_V_inter);
+    good_C_Rest_V = C_Rest_V_inter(gooddata_index);
+    gooddata_index = ~isnan(I_Bat_inter);
+    good_I_Bat = I_Bat_inter(gooddata_index);
     
-    if isnan(nanmean(Omega_inter)) ~= 1 && isnan(nanmean(I_mot_inter)) ~= 1 &&  isnan(nanmean(U_mot_inter)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
-            isnan(nanmean(PWM_inter)) ~= 1 && isnan(nanmean(C_Rest_V_inter)) ~= 1 && isnan(nanmean(I_Bat_inter)) ~= 1       % enthalten (unfliegbarer Zustand)
+    
+    
+    
+    if isnan(mean(good_omega)) ~= 1 && isnan(mean(good_I_mot)) ~= 1 &&  isnan(mean(good_U_mot)) ~= 1 && ...     % Wenn alle der Vektoren nicht nur NaN
+            isnan(mean(good_PWM)) ~= 1 && isnan(mean(good_C_Rest_V)) ~= 1 && isnan(mean(good_I_Bat)) ~= 1       % enthalten (unfliegbarer Zustand)
         
         % Kriterium für optimalen Steigwinkel
         y = 1;
@@ -497,8 +531,8 @@ for h_variabel = H_0:Delta_H:H_max
         M_tip(x) = M_tip_inter(ind_opt2);
         eta_prop(x) = eta_prop_inter(ind_opt2);
         Uebersetzung(x) = Uebersetzung_inter(ind_opt2);
-        mu_z(x) = mu_z(ind_opt);
-        vi(x) = vi_inter(ind_opt);
+        mu_z(x) = mu_z_inter(ind_opt2);
+        vi(x) = vi_inter(ind_opt2);
         % Motor
         I_mot(x) = I_mot_inter(ind_opt2);
         U_mot(x) = U_mot_inter(ind_opt2);
@@ -554,7 +588,7 @@ for h_variabel = H_0:Delta_H:H_max
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
     
     %% Spielereien
-    disp([num2str((x-2)*10000/H_max) '%']);
+    disp([num2str((x-1)*10000/H_max) '%']);
     
 end
 
@@ -592,18 +626,31 @@ figure(figure_ges)
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
 saveas(gcf,Dateiname, 'pdf');
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure_geschw  = figure;
-figure = figure(figure_geschw);
-subplot(221), stairs(H,vi,'LineWidth',1), grid, title('Geschwindigkeiten'), xlabel('Höhe [m]'),ylabel('[m/s]')
+figure(figure_geschw);
+subplot(321), stairs(H,vi,'LineWidth',1), grid, title('Geschwindigkeiten'), xlabel('Höhe [m]'),ylabel('[m/s]')
 hold on
 stairs(H,mu_z,'LineWidth',1)
-legend('induz. Geschw. v_i','\mu_z');
+legend('induz. Geschw. v_i','\mu_z','Location','southeast');
 hold off
-subplot(222), stairs(H,Thrust,'LineWidth',1), grid, title('Schub'), xlabel('Höhe [m]'),ylabel('Schub [N/m]')
-subplot(223), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-subplot(224), stairs(H,tau,'LineWidth',1), grid, title('Drehmoment'), xlabel('Höhe [m]'),ylabel('Drehmoment [N/m]')
+subplot(322), stairs(H,Thrust,'LineWidth',1), grid, title('Schub'), xlabel('Höhe [m]'),ylabel('Schub [N]')
+subplot(323), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+hold on 
+stairs(H,Omega/(2*pi)*60./Uebersetzung,'LineWidth',1)
+legend('Motordrehzahl', 'Propellerdrehzahl','Location','southwest')
+subplot(324), stairs(H,tau,'LineWidth',1), grid, title('Drehmoment'), xlabel('Höhe [m]'),ylabel('Drehmoment [Nm]')
+hold on 
+stairs(H,tau .* Uebersetzung,'LineWidth',1), legend('Motordrehmoment','Propellerdrehmoment','Location','northeast');
+subplot(325), stairs(H,Omega.*tau,'LineWidth',1), grid, title('Gegenüberstellung der Leistungen'), xlabel('Höhe [m]'), ylabel('Leistung [W]');
+hold on 
+stairs(H,Thrust.*(mu_z+vi),'LineWidth',1), legend('Wellenleistung (M*\omega)','Strahlleistung (T*(v_i+\mu_Z)','Location','southeast');
 
+ImageSizeX = 20;
+ImageSizeY = 24;
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
+set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+saveas(gcf,'Popellerwirkungsgrad', 'pdf');
 
 %% Datei abspeichern
 % ImageSizeX = 40;
