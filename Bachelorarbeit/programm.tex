@@ -1,16 +1,20 @@
-\chapter{Programm}
-\label{chap:Programm}
+\chapter{Programmbeschreibung}
+\label{chap:Programmbeschreibung}
+\todo[inline]{hier noch ein paar einleitende Sätze}
+
 
 \section{Parameter des Fluggeräts}
 \label{sec:parameter_fluggeraet}
-Bei der Auslegung des Fluggeräts werden nicht nur Multicopter betrachtet sondern auch Flächenflugzeuge, sogenannte fixed wing UAVs. Aus diesem Grund werden die Parameter Motor, Propeller, Batterie und Missionsparameter sowie Umgebungsparameter allgemein für beide Arten der UAVs festgelegt. Anschließend werden die Parameter des Multicopters oder des Flächenflugzeugs zur Charakterisierung dieser bestimmt, je nachdem, welches Fluggerät untersucht werden soll. Im Anschluss werden die Formeln der Leistungsberechnung dargelegt. 
-Das Programm und die diesem grundlegende Leistungsberechnung, basieren auf dem internen Bericht \textcolor{red}{"Leistungsberechnung von Multicoptern" von Y. Beyer (2016) Blub}. Aus dieser wurden die Berechnung der Aerodynamik von Multicoptern, die Pulsweitenmodulation und der Batterieentladung sowie die festgelegten Grenzen der fliegbaren Flugzustände übernommen. 
+Bei der Auslegung des Fluggeräts werden nicht nur Multicopter betrachtet sondern auch Flächenflugzeuge, sogenannte fixed wing UAVs. Aus diesem Grund werden die Parameter Motor, Propeller, Batterie und Umgebungsparameter allgemein für beide Arten der UAVs festgelegt. Anschließend werden die Parameter des Multicopters oder des Flächenflugzeugs zur Charakterisierung dieser bestimmt, je nachdem, welches Fluggerät untersucht werden soll. Im Anschluss werden die Formeln der Leistungsberechnung dargelegt. 
+Das Programm und die diesem grundlegende Leistungsberechnung, basieren auf dem internen Bericht \todo[inline]{ fix das Problem mit "Leistungsberechnung von Multicoptern" von Y. Beyer (2016) Blub}. Aus dieser wurden die Berechnung der Aerodynamik von Multicoptern, die Pulsweitenmodulation und der Batterieentladung sowie die festgelegten Grenzen der fliegbaren Flugzustände übernommen. \\
+
  
 \subsubsection{Flugsystem}
-Zu Beginn der Mission muss das Flugsystem festgelegt werden, da die Berechnung der Aerodynamik entscheidend vom Flugsystem abhängt. Die Abfrage erfolgt mit der Variablen \texttt{Abfrage\_Flugsystem}. Diese kann die Werte \texttt{1} für einen Multicopter oder \texttt{0} für ein Flächenflugzeug annehmen.
+Zu Beginn der Mission muss das Flugsystem festgelegt werden, da die Berechnung der Aerodynamik entscheidend vom Flugsystem abhängt ist. Die Abfrage erfolgt mit der Variablen \texttt{Abfrage\_Flugsystem}. Diese kann die Werte \texttt{1} für einen Multicopter oder \texttt{0} für ein Flächenflugzeug annehmen.
 
 \subsubsection{Motor}
-Die ersten drei Motorparameter sind notwendig, um den Motorzustand zu berechnen. Der vorletzte Parameter dient als technische Grenze, die für ein gut ausgelegtes System nicht überschritten wird. Die Motormasse fließt in Kombination mit der Anzahl der Propeller in die Gesamtmasse des Fluggerätes mit ein.
+Die ersten drei Motorparameter in Tab. \ref{tab:mot_parameter} sind notwendig, um den Motorzustand zu berechnen. Der vorletzte Parameter dient als technische Grenze, die für ein gut ausgelegtes System nicht überschritten wird. Die Motormasse fließt in Kombination mit der Anzahl der Propeller in die Gesamtmasse des Fluggerätes mit ein. Die vorrangige technische Leistungsgrenze ist ist die maximale Motorleistung, die durch den maximalen Motorstrom \ensuremath{I_{max}} repräsentiert wird.
+\todo[inline]{Quelle für AXI Datenbank}
 
 \begin{center}
 	\captionof{table}{Motorparameter für technische Grenzen}
@@ -26,41 +30,39 @@ Die ersten drei Motorparameter sind notwendig, um den Motorzustand zu berechnen.
 \end{center}
 
 \subsubsection{Propeller}
-Der Propellername wird in der Form 'Durchmesser x Pitch' angegeben. Der Name ist wichtig, um das Propellerkennfeld aus der Propellerdatenbank von APC zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter dienen zur Bestimmung der Effekte einer Anströmung und damit der Berücksichtigung der Blattelemententheorie.
+Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab. \ref{tab:prop_parameter}). Der Name ist wichtig, um das Propellerkennfeld aus der Propellerdatenbank von APC \todo[inline]{Quelle für APC angeben} zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter dienen zur Bestimmung der Effekte einer Anströmung und damit der Berücksichtigung der Blattelemententheorie.
 
 \begin{center}
 	\captionof{table}{Propellerparameter für Schub, aerodynamische und technische Grenzen}
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & Einheit \\ \hline
 		 Propellername & \texttt{prop\_name} & \ensuremath{-} \\
-		 Anzahl der Propeller \ensuremath{n_{Prop}} & \texttt{n\_Prop} & \ensuremath{-} \\
-		 Mittlerer Nullwiderstandsbeiwert \ensuremath{c_{d0}} & \texttt{c\_d0} & \ensuremath{0,05} \\
-		 Anstieg des Auftriebsbeiwerts \ensuremath{\frac{dc_a}{dc_\alpha}} & \texttt{a\_alpha} & \ensuremath{5} \\
-		 Maximaler Anstellwinkel \ensuremath{\alpha_{max}} & \texttt{alpha\_stall} & \ensuremath{10}\textdegree \\ \hline
+		 Anzahl der Propeller \ensuremath{n_{Prop}} & \texttt{n\_Prop} & \ensuremath{-} \\ \hline
 	\end{tabular}	
 	\label{tab:prop_parameter}
 \end{center}
 
 \subsubsection{Batterie}
-Die aufgeführten Parameter der Batterie bestimmen zum einen die verfügbare Kapazität und zum anderen die Batterieentladung. Bei der Energiedichte handelt es sich um repräsentative Werte für den verwendeten Akkutyp, z.B. Li-Ion oder Li-Po. Die minimale Zellenspannung ist ein Erfahrungswert, der am \textit{Institut für Flugführung} verwendet wird. Um den Energieverlust der Batterie zu berechnen, wird die Peukert-Konstante herangezogen. Diese beträgt für Li-Po-Akkus ca. $1,01 \leq P \leq 1,05$ und für Li-Ion-Akkus ca. 1,05 (\textcolor{red}{Traub} Blub). Außerdem ist die Peukert-Konstante für Li-Po-Batterien von der Temperatur abhängig. Niedrigere Temperaturen als die Umgebungstemperatur können die angegebene Nennkapazität reduzieren und die Batterieverluste progressiv steigen lassen. Die maximale C-Rate dient als weitere technische Begrenzung, die wiederum für ein gut ausgelegtes System nicht erreicht wird.
+Die in Tab. \ref{tab:bat_parameter} aufgeführten Parameter der Batterie bestimmen zum einen die verfügbare Kapazität und zum anderen die Batterieentladung. Bei der Energiedichte handelt es sich um repräsentative Werte für den verwendeten Akkutyp, z.B. Li-Ion oder Li-Po. \todo[inline]{Quelle für die Energiedichte von LI-Ion Batterien heraussuchen}. Die minimale Zellenspannung ist ein Erfahrungswert, der am \textit{Institut für Flugführung} verwendet wird. Um den Energieverlust der Batterie zu berechnen, wird die Peukert-Konstante herangezogen. Diese beträgt für Li-Po-Akkus ca. $1,01 \leq P \leq 1,05$ und für Li-Ion-Akkus ca. 1,05 (\textcolor{red}{Traub} Blub). Außerdem ist die Peukert-Konstante für Li-Po-Batterien von der Temperatur abhängig. Niedrigere Temperaturen als die Umgebungstemperatur können die angegebene Nennkapazität reduzieren und die Batterieverluste progressiv steigen lassen. Die maximale C-Rate dient als weitere technische Begrenzung, die wiederum für ein gut ausgelegtes System nicht erreicht wird.
 
 \begin{center}
 	\captionof{table}{Batterieparameter zur Berechnung der verbleibenden Restladung sowie der technischen Grenzen}
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & Einheit \\ \hline
-		 Energiedichte \ensuremath{\frac{E_{Bat}}{m_{Bat}}}& \texttt{E\_Dichte} & \ensuremath{J/kg} \\
+		 Energiedichte \ensuremath{\frac{E_{Bat}}{m_{Bat}}}& \texttt{E\_Dichte} & \SI{940000}{J/kg} \\
 		 Anzahl der Batteriezellen \ensuremath{N_{Bat,cell}} & \texttt{N\_bat\_cell} & \ensuremath{-} \\
-		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \ensuremath{V} \\
-		 minimale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell,min}} & \texttt{U\_bat\_min} & \ensuremath{V} \\
+		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \SI{3,7}{V} \\
+		 minimale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell,min}} & \texttt{U\_bat\_min} & \SI{3,1}{V} \\
 		 Peukert-Konstante \ensuremath{P}& \texttt{P\_bat\_Peukert} & \ensuremath{1,05} \\
 		 Maximale C-Rate \ensuremath{C_{Rate,max}} & \texttt{C\_Rate\_max} & \ensuremath{-} \\
-		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \ensuremath{kg} \\ \hline
+		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \SI{}{kg} \\ \hline
 	\end{tabular}	
 	\label{tab:bat_parameter}
 \end{center}
+\todo[inline]{Fehlen hier Parameter der Normzelle}
 
 \subsubsection{Multicopter}
-Die Parameter für den Multicopter sind in \ref{tab:multicop_parameter} aufgeführt. Die Leermasse fließt mit in die Gesamtmasse mit ein und wird für die Berechnung des Schubs und weiterer Parameter benötigt. Die Beiwerte sind reine Schätzwerte. Für die nachfolgenden Berechnungen ist nur die obere Stirnfläche von Bedeutung, da sich auf diese die Beiwerte beziehen. Die Propeller bleiben bei den Stirnflächen unberücksichtigt.
+Die Parameter für den Multicopter sind in Tab. \ref{tab:multicop_parameter} aufgeführt. Die Leermasse fließt mit in die Gesamtmasse mit ein und wird für die Berechnung des Schubs und weiterer Parameter benötigt. Die Beiwerte sind reine Schätzwerte. Für die nachfolgenden Berechnungen ist nur die obere Stirnfläche von Bedeutung, da sich auf diese die Beiwerte als Referenzfläche beziehen. Die Propeller bleiben bei den Stirnflächen unberücksichtigt.
 \begin{center}
 	\captionof{table}{Parameter des Multicopters}
 	\begin{tabular}{l l l} \hline
@@ -95,7 +97,7 @@ Zusätzlich wird noch der Bahnneigungswinkel \ensuremath{\gamma} für jeden Höh
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & Einheit \\ \hline	  
 		 Kleinster Bahnneigungswinkel \ensuremath{\gamma_{min}} & \texttt{gamma\_min} & \SI{1}{^\circ}\\	
-		 Schrittweite des Bahnneigunsw. \ensuremath{\Delta\gamma} & \texttt{gamma\_Delta} & \SI{1}{^\circ}\\
+		 Schrittweite des Bahnneigungsw. \ensuremath{\Delta\gamma} & \texttt{gamma\_Delta} & \SI{1}{^\circ}\\
 		 Größter Bahnneigungswinkel \ensuremath{\gamma_{max}} & \texttt{gamma\_max} & \SI{90}{^\circ}\\ \hline
 	\end{tabular}	
 	\label{tab:flugzeug_parameter}
@@ -106,12 +108,12 @@ Zusätzlich wird noch der Bahnneigungswinkel \ensuremath{\gamma} für jeden Höh
 \label{sec:parameter_mission}
 
 \subsubsection{Missionsparameter}
-Innerhalb der Flugparameter kann die Nutzlast \texttt{m\_Nutz} des Fluggerätes bestimmt werden. Diese Masse fließt mit der Masse des Fluggerätes, der der Motoren sowie der der Batterie in die Gesamtmasse mit ein. Im Rahmen des Projektes AEROMET UAV ist diese auf \SI{250}{g} festgelegt.
+Innerhalb der Flugparameter kann die Nutzlast \texttt{m\_Nutz} des Fluggerätes bestimmt werden. Diese Masse fließt mit der Masse des Fluggerätes, der der Motoren sowie der der Batterie in die Gesamtmasse mit ein. Im Rahmen des Projektes AEROMET UAV ist die Nutzlast auf \SI{250}{g} festgelegt.
  
-\subsubsection{Flugparameter}
-Die Flugparameter geben für den Multicopter den Steigwinkel sowie die Steigeschwindigkeit vor. Der Steigwinkel ist mit einem Wert von \ensuremath{90^\circ} festgelegt, was einem geraden Steigflug nach oben entspricht.
+\subsubsection{Flugbahnparameter}
+Die Flugbahnparameter geben für den Multicopter den Bahnneigungswinkel sowie die Bahngeschwindigkeit vor. Der Bahnneigungswinkel ist mit einem Wert von \ensuremath{90^\circ} festgelegt, was einem vertikalen Steigflug nach oben entspricht.
 \begin{center}
-	\captionof{table}{Flugparameter}
+	\captionof{table}{Flugbahnparameter}
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & Einheit \\ \hline
 		 Bahngeschwindigkeit \ensuremath{V_{Kg}} & \texttt{V\_Kg} & \ensuremath{m/s}\\		 
@@ -120,7 +122,7 @@ Die Flugparameter geben für den Multicopter den Steigwinkel sowie die Steigesch
 	\label{tab:flugparameter}
 \end{center}
 
-\subsubsection{Umgebungsparameter und Diskretisierung}
+\subsubsection{Umgebungsparameter und Diskretisierung variabler Umgebungsparameter}
 Die Erdbeschleunigung und der Adiabatenexponent werden als konstant über der Höhe angenommen. Mit Startwerten für die Höhe, die Temperatur, die Dichte und des Luftdrucks werden die Abflugbedingungen am Abflugort spezifiziert.  Die Schrittweite der Höhe legt die Genauigkeit der Höhendiskretisierung fest.
 \begin{center}
 	\captionof{table}{Umgebungsparameter}
@@ -160,7 +162,8 @@ Die Erdbeschleunigung und der Adiabatenexponent werden als konstant über der H�
 \section{Aufbau des Programms}
 \label{sec:aufbau_des_programms}
 Der Aufbau des \textsc{Matlab}-Skriptes wird in den unteren Struktogrammen verdeutlicht. 
-Abb. \ref{abb:programmstruktur} legt die Ablaufstruktur dar 
+Abb. \ref{abb:programmstruktur} legt die Ablaufstruktur dar.
+\todo[inline]{genauere Programmbeschreibung}
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,153)
@@ -255,12 +258,12 @@ und Abb. \ref{abb:leistungsberechnung} veranschaulicht dem Programm zugrunde gel
 %\end{figure}
 
 
-\section{Leistungsberechnung}
-\label{sec:leistungsberechnung}
-
+\section{Flugleistungsberechnung}
+\label{sec:flugleistungsberechnung}
+Die Leistungsberechnung ist umgekehrt zu einem realen Fluggerät aufgebaut. Die Berechnung startet bei der Ermittlung des benötigten Schubes für eine vorgegebene Fluggeschwindigkeit innerhalb eines aerodynamischen Modells. Mit diesem werden aus einem Propellerkennfeld die Drehzahl und das Drehmoment des Propellers bestimmt, welche den Motorzustand definieren. Die Motorzustandsgrößen legen wiederum zum einen die Pulsweitenmodulation und den Wirkungsgrad des Reglers fest und zum anderen fließen sie mit diesen Werten in die Berechnung der Batterierestladung ein. Zusammengenommen handelt es sich hierbei um ein statisches Modell. Dies steht dem realen, dynamischen Fluggerät gegenüber. Bei diesem wird über eine Schubhebelstellung die konstante Spannung der Batterie für den Motor angepasst und mit dem Batteriestrom im Motor in eine Leistung umgesetzt, welche den Propeller antreibt. Das Resultat ist der Schub vom Propeller und damit eine Fluggeschwindigkeit.
 
 \subsection{Veränderung der Umgebungsparameter mit der Höhe}
-Für Leistungsuntersuchung wird die Internationale Standardatmosphäre vorausgesetzt. Hiernach ist der Temperaturkoeffizient bis zur Tropopause
+Für Leistungsuntersuchung wird die Internationale Standardatmosphäre vorausgesetzt. Hiernach ist der Temperaturkoeffizient bis zur Tropopause in \SI{11}{km} Höhe
 \begin{equation}
 	\frac{dT}{dH} = -0,0065\frac{K}{m}
 \end{equation}
@@ -268,7 +271,7 @@ und danach in der unteren Stratosphäre bis zu einer Höhe von \SI{20000}{m}
 \begin{equation}
 	\frac{dT}{dH} = 0.
 \end{equation}
-Entsprechend kann der Verlauf der Temperatur, des Druckes und der Dichte von einer Höhe ab \SI{0}{m} bis zur Tropopause (\SI{11000}{m}mit
+Entsprechend kann der Verlauf der Temperatur, des Druckes und der Dichte von einer Höhe ab \SI{0}{m} bis zur Tropopause mit
 \begin{equation}
 	T_{0-11} = T_0 - \frac{dT}{dH}\cdot H,
 \end{equation}
@@ -288,7 +291,7 @@ beschrieben werden. Ab \SI{11000}{m} ist der Verlauf von Druck und Dichte durch 
 gegeben.
 Um den Einfluss der Flughöhe in der Leistungsberechnung festzuhalten, werden für jedes Höhenintervall die Umgebungsparameter an den oberen und unteren Intervallgrenzen berechnet. Durch Bildung des arithmetischen Mittelwertes ergeben sich daraus durchschnittliche Parameter für den jeweiligen Höhenabschnitt.  
 
-\subsection{Schub berechnen}
+\subsection{Schubberechnung}
 \subsubsection{Multicopter}
 Der Schub des Multicopters setzt sich zusammen aus dem zu kompensierenden Gewicht und dem Luftwiderstand durch eine Fluggeschwindigkeit. Dazu kommt noch indirekt der ebenfalls zu kompensierende Seitenwind. Innerhalb eines iterativen, aerodynamischen Modells wird der Schub berechnet. Hierbei sind der Auftriebs- und Widerstandsbeiwert Funktionen des modifizierten Anstellewinkels \ensuremath{\alpha_M} (der Schiebewinkel gibt lediglich die Himmelsrichtung der resultierenden Kraft an, welche in diesem Bericht keine Rolle spielt). Die Idee des Aerodynamischen Modells entstammt aus \textcolor{red}{Beyer,Y.2016b}. 
 Die Gesamtmasse des Multicopters setzt sich aus der Masse des Rahmens, der Masse der Batterie, der Masse der Motoren und der Nutzlast
@@ -303,7 +306,7 @@ Die absolute Fluggeschwindigkeit setzt sich zusammen aus Seitenwindgeschwindigke
 mit
 \begin{equation}
 	\begin{pmatrix} u_{Kg} \\ w_{Kg} \end{pmatrix} = \begin{pmatrix}
-	\cos\gamma \\ -sin{\gamma}	\end{pmatrix} \cdot V_{kg}.
+	\cos\gamma \\ -\sin\gamma	\end{pmatrix} \cdot V_{Kg}.
 \end{equation}
 Die am Multicopter angreifenden Kräfte werden in Abb.\ref{abb:kraefteggw} dargestellt. 
 
@@ -332,7 +335,7 @@ Im Anschluss werden die aerodynamischen Beiwerte
 	c_W = \frac{c_{W,copter,oben}-c_{W,copter,seitlich}}{2}\cdot \cos(2\cdot \alpha_M)+\frac{c_{W,copter,oben}+c_{W,copter,seitlich}}{2}
 \end{equation} und 
 \begin{equation}
-	c_A = c_{A,max}\cdot sin(2\cdot \alpha_M)
+	c_A = c_{A,max}\cdot \sin(2\cdot \alpha_M)
 \end{equation}
 berechnet. Auf diese folgt die Berechnung der aerodynamischen Kräfte
 \begin{equation}
@@ -363,6 +366,7 @@ Ist das Abbruchkriterium erreicht, kann der erforderliche Schub mit dem Satz des
 bestimmt werden.
 Für den Fall, dass der errechnete Schub größer als der zur Verfügung stehende Schub ist, wird das Ergebnis verworfen und als \texttt{NaN} (Not a Number) gespeichert.
 
+
 \subsubsection{Flächenflugzeug}
 Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Widerstandes und des Anteils der zu kompensierenden Gewichtskraft. Analog zum Multicopter setzt sich die Gesamtmasse des Flächenflugzeugs aus der Summe aller Komponenten zusammen
 \begin{equation}
@@ -374,7 +378,7 @@ Alle Flugzustände eines Flächenflugzeuges können mit den Grundgleichungen der
 	-m\cdot V\cdot\dot{\gamma} &= -A - F\cdot\sin(\alpha+\sigma)+m\cdot g\cdot\cos\gamma , \label{eq:auftriebsgleichung} \\ 
 	V\cdot\sin\gamma &= \dot{H}. \label{eq:steiggleichung}
 \end{align}	
-Für einen stationäre Flug, der im weiteren ausschließlich betrachtet werden soll, gilt \ensuremath{\dot{V} = 0} und \ensuremath{\dot{\gamma} = 0}. Außerdem sind die Winkel \ensuremath{\alpha + \sigma} klein, sodass sich mit hinreichender Genauigkeit die Gleichungen \ref{eq:widerstandsgleichung} und \ref{eq:auftriebsgleichung} zu
+Für einen stationäre Flug, der im weiteren ausschließlich betrachtet werden soll, gilt \ensuremath{\dot{V} = 0} und \ensuremath{\dot{\gamma} = 0}. Außerdem ist der Winkel \ensuremath{\alpha + \sigma} klein, sodass sich mit hinreichender Genauigkeit die Gleichungen \ref{eq:widerstandsgleichung} und \ref{eq:auftriebsgleichung} zu
 \begin{equation}
 	F = W + \sin\gamma\cdot G, 
 	\label{eq:widerstandsgleichung_vereinfacht}
@@ -384,11 +388,11 @@ und
 	A = m\cdot g\cdot\cos\gamma 
 	\label{eq:auftriebsgleichung_vereinfacht}
 \end{equation} 
-vereinfachen. Der Auslegungspunkt des Flächenflugzeugs ist ein Horizontalflug (\ensuremath{\gamma^\star = 0}) in Bodennähe bei konstanter Gleitzahl und Geschwindigkeit \ensuremath{V^\star}. Die vereinfachte Auftriebsgleichung \ref{eq:auftriebsgleichung_vereinfacht} vereinfacht sich damit zu
+vereinfachen. Der Auslegungspunkt (mit * gekennzeichnet) des Flächenflugzeugs ist ein Horizontalflug (\ensuremath{\gamma^\star = 0}) in Bodennähe bei maximaler Gleitzahl \ensuremath{E^\star} und Geschwindigkeit \ensuremath{V^\star}. Die vereinfachte Auftriebsgleichung \ref{eq:auftriebsgleichung_vereinfacht} vereinfacht sich damit zu
 \begin{equation}
 	A^\star = m\cdot g .
 \end{equation}
-Über die Definition der Gleitzahl 
+Über die Definition der Gleitzahl \cite[S.49]{Bruning.1986}
 \begin{equation}
 	E = \frac{A}{W}
 \end{equation}
@@ -396,28 +400,28 @@ berechnet sich der Widerstand mit
 \begin{equation}
 	W^\star = \frac{A^\star}{E^\star} .
 \end{equation}
-Unter Annahme eines Fluges im optimalen Operationspunkt, i.e. bei Auslegungsgleitzahl, ist der Nullwiderstand genau die Hälfte des Gesamtwiderstandes
+Unter Annahme eines Fluges im optimalen Operationspunkt, i.e. bei Auslegungsgleitzahl, ist der Nullwiderstand genau die Hälfte des Gesamtwiderstandes \cite[S.82-S.83]{Bruning.1986}
 \begin{equation}
 	W_0^\star = 0,5\cdot W^\star .
 \end{equation}
-Es wird vorausgesetzt, dass für jeden Bahnneigungswinkel \ensuremath{\gamma} der Auftriebsbeiwert und folglich der Anstellwinkel konstant bleibt. Dies setzt voraus, dass sich mit ändernder Höhe die Dichte und die Geschwindigkeit ändern, um die obige Voraussetzung zu gewährleisten. Dadurch verringert sich die Geschwindigkeit
+Es wird vorausgesetzt, dass für jeden Bahnneigungswinkel \ensuremath{\gamma} der Auftriebsbeiwert und folglich der Anstellwinkel konstant bleibt. Dies setzt voraus, dass sich mit ändernder Höhe die Dichte und die Geschwindigkeit ändert, um die obige Voraussetzung zu gewährleisten. Dadurch verringert sich die Geschwindigkeit \todo[inline]{Herleitung von der unteren Gleichung genauer aufschreiben}
 \begin{equation}
 	V = V^\star\cdot\sqrt{\cos\gamma\cdot\frac{\rho}{\rho^\star}}  \label{eq:geschw_flaechenflugzeug}
 \end{equation}
-analog mit einer Vergrößerung der Flughöhe und des Steigwinkels. Mit dem Staudruck kann der Nullwiderstand 
+mit einer Vergrößerung der Flughöhe und des Steigwinkels. Mit dem Staudruck kann der Nullwiderstand 
 \begin{equation}
 	W_0 = W_0^\star\cdot\frac{V^2\cdot\rho/2}{{V^\star}^2\cdot\rho^\star/2}
 \end{equation}
 skaliert werden.
-Analog zur Berechnung des Widerstandes im Auslegungszustand errechnet sich der Widerstand im aktuellen Operationspunkt, mit welchem der Flugzustand abgeschätzt werden kann. Dies geschieht nach folgendem Schema
+Analog zur Berechnung des Widerstandes im Auslegungszustand errechnet sich der Widerstand im aktuellen Betriebspunkt, mit welchem der Flugzustand abgeschätzt werden kann. Dies geschieht nach folgendem Schema
 \begin{equation}
 Flugzustand\_Flaechenflugzeug = \begin{cases} 
-zulässig & wenn \qquad W > 2\cdot W_0 \\ 
-Grauzone & wenn \qquad W_0 < W < 2\cdot W_0 \\ 
-Steigflug & wenn \qquad W < W_0 
+zul\"assig & ,wenn \qquad W > 2\cdot W_0 \\ 
+Grauzone & ,wenn \qquad W_0 < W < 2\cdot W_0 \\ 
+vertikaler Steigflug & ,wenn \qquad W < W_0 
 \end{cases}
 \end{equation} 
-Die Theorie gilt nur für den Bereich kleiner Winkel. Mit der Variablen \texttt{Flugzustand\_Flaechenflugzeug} wird das Einhalten der Theorie überprüft. Der Fall, dass \ensuremath{W < W_0} beträgt, ist ein Flugzustand, der die Theorie entscheidend verletzt und daher nicht zulässig ist. Ein Flug mit einem Widerstand kleiner als \ensuremath{W_0} ist physikalisch unmöglich.
+Die Theorie gilt nur für den Bereich kleiner Bahnneigungswinkel. Mit der Variablen \texttt{Flugzustand\_Flaechenflugzeug} wird das Einhalten der Theorie überprüft. Der Fall, dass \ensuremath{W < W_0} beträgt, ist ein Flugzustand, der die Theorie entscheidend verletzt und daher nicht zulässig ist. Ein Flug mit einem Widerstand kleiner als \ensuremath{W_0} ist physikalisch unmöglich.
 Letztlich ergibt sich der Schub aus Gleichung \ref{eq:auftriebsgleichung_vereinfacht} und \ref{eq:widerstandsgleichung_vereinfacht}
 \begin{equation}
 	F = m\cdot g\cdot (\frac{1}{E}\cdot\cos\gamma + \sin\gamma) \label{eq:schub_flaechenflugzeug}
@@ -435,7 +439,7 @@ Da der Auftrieb Null ist, erfolgt der unbeschleunigte, vertikale Steigflug mit d
 \begin{equation}
 	W = W_0 .
 \end{equation}
-Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = 2). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Maximum der Geschwindigkeitsuntersuchung für einen vertikalen Steigflug ist die Auslegungsgeschwindigkeit \ensuremath{V^\star}. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
+Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = vertikaler Steigflug). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Maximum der Geschwindigkeitsuntersuchung für einen vertikalen Steigflug ist die Auslegungsgeschwindigkeit \ensuremath{V^\star}. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
 \begin{equation}
 	\sigma = \Delta C_{Bat}\cdot U_{Bat}.
 \end{equation}
@@ -443,20 +447,20 @@ Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
 Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale Winde haben keinen Einfluss auf die Steigzeit oder die zum Steigen benötigte Energiemenge. Jedoch verändern die Winde die zurückglegte Strecke über Grund für eine gewisse Höhendistanz (Vgl. \cite[S.241-242]{Scheiderer.2008}). Diese ist für eine Betrachtung Flächenflugzeuges vorerst ohne Belang. 
 
 
-\subsection{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
-In der Propellerdatenbank vom Propellerhersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
+\subsection{Propellerzustand}
+In der Propellerdatenbank vom Propellerhersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt \todo[inline]{fucking source is missing, Kennfelder}. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
 Die Kennfelder wurden in Versuchen ermittelt, die keine ändernde Dichte berücksichtigen. Um den Einfluss der sich verringernden Dicht mit zunehmender Flughöhe trotzdem zu beachten, müssen die Kennfelder angepasst werden. Gemäß der Strahltheorie setzt sich der Schub aus dem Massenstrom und der Geschwindigkeit im voll ausgebildeten Abstromzylinder 
 \begin{equation}
 	T =  \dot{m}\cdot v_{\infty} = \rho\cdot A_{Propeller}\cdot v_i\cdot v_{\infty}
 \end{equation}
-zusammen. Unter der Annahme vernachlässigbar kleiner Differenzen von  induzierten Geschwindigkeiten $v_i$ und Geschwindigkeiten im voll ausgebildeten Abstrom $v_{\infty}$ kann das Schubfeld des Propellers an den Höheneinfluss 
+zusammen. Unter der Annahme vernachlässigbar kleiner Differenzen von  induzierten Geschwindigkeiten $v_i$ und Geschwindigkeiten im voll ausgebildeten Abstrom $v_{\infty}$ kann das Schubkennfeld des Propellers an den Höheneinfluss 
 \begin{equation}
 	\frac{T_1}{T_2} = \frac{\rho_1}{\rho_2}
 \end{equation}
 angepasst werden.
 
 
-\subsection{Motorzustand berechnen}
+\subsection{Motorzustand}
 Mit dem Drehmoment und der Drehzahl des Propellers berechnet sich der Motorzustand, genauer der Motorstrom und die Motorspannung. Dies erfolgt nach einem einfachen Motormodell \cite{Drela.2007}.
 Der Motorstrom berechnet sich aus 
 \begin{equation}
@@ -476,6 +480,7 @@ Das Modell der Wirkungsgradsberechnung von bürstenlosen Gleichstrom-Motorregler
 0,2\cdot PWM + 0,75 & wenn \qquad 0,5 < PWM \leq 1 \\ 
 undefiniert & sonst 
 \end{cases}
+\label{eq:eta_pwm}
 \end{equation} 
 mit der Pulsweitenmodulation (PWM) 
 \begin{equation}
@@ -491,24 +496,24 @@ Die wesentliche Zustandsgröße der Batterie ist der Entladestrom \ensuremath{I_
 \end{equation}
 Die C-Rate \ensuremath{\dot{C}} [1/h] berechnet sich nach 
 \begin{equation}
-	\dot{C} = \frac{I_{Bat}[A]}{C_{Bat}[A]}\cdot n_{Prop}
+	\dot{C} = \frac{I_{Bat}[A]}{C_{Bat}[Ah]}\cdot n_{Prop}
 \end{equation}
 Die nutzbare Kapazität der Batterie sinkt mit steigender Entladerate nach
 \begin{equation}
 	C_{Bat,Peukert} = C_{Bat}\cdot (\frac{1}{\dot{C}})^{P_{Bat}-1} 
-	\qquad mit P_{Bat} \geq 1,
+	\qquad mit \qquad P_{Bat} \geq 1,
 \end{equation}
 wobei die Verluste für eine Peukertkonstante von 1 Null sind und mit steigender \ensuremath{P_{Bat}} größer werden.
 Mit der Flugzeit \ensuremath{t_{Flug}} berechnet sich die entnommene Kapazität nach dem \ensuremath{i}-ten Höhenschrittschritt mit: 
 \begin{equation}
 	\Delta C_{Bat,i} = I_{Bat}\cdot t_{Flug} + \Delta C_{Bat,i-1} 
-	\qquad mit \Delta C_{Bat,0} = 0.
+	\qquad mit \qquad \Delta C_{Bat,0} = 0.
 \end{equation}
 Nach
 \begin{equation}
-	Restladung_i[\%] = \frac{C_{bat,Peukert}-\Delta C_{Bat,i}}{C_{Bat,Peukert}}\cdot 100\%
+	C_{Rest,Bat,i}[\%] = \frac{C_{bat,Peukert}-\Delta C_{Bat,i}}{C_{Bat,Peukert}}\cdot 100\%
 \end{equation}
-berechnet sich die Restladung$_{i}$ nach der \ensuremath{i}-ten Flugphase. Diese ist vor allem für die Flugenveloppe interessant.\\
+berechnet sich die Restladung \ensuremath{C_{Rest,Bat,i}} nach der \ensuremath{i}-ten Flugphase. Diese ist vor allem für die Flugenveloppe interessant.\\
 
 Bei Batterien, hier vor allem Li-Ion und Li-Po, ist die Batteriespannung abhängig von der Entladerate (C-Rate), der Zeit und Kapazität. Für dieses Problem beschreibt \cite{Tremblay.2009} ein Modell, in welchem dieser Zusammenhang berücksichtigt wird (Vgl. Abb.\ref{abb:discharge_curve}). 
 \begin{figure}[H]
@@ -597,7 +602,7 @@ Die der Batterie entzogenen Leistung
 ist das Produkt aus der Batteriespannung und -strom.
 
 
-\subsection{Werden Grenzen überschritten?}
+\subsection{Einhaltung leistungsbezogener Grenzen}
 Für den Fall, dass technisch und aerodynamisch unmögliche Flugzustände erreicht werden, sind folgende technische und aerodynamische Grenzen festgelegt:
 \begin{itemize}
 	\item Die Restladung im Steigflug ist kleiner als  Null oder kleiner als eine vorher festgelegte, minimale Restkapazität (Kapazität der Batterie reicht nicht aus oder zu hohe Flugzeit)

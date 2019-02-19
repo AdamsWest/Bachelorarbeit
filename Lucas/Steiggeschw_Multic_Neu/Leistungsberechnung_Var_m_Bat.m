@@ -57,9 +57,9 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
-% lengthj = length(Abfrage_m_Bat);
+lengthj = length(Abfrage_m_Bat);
 % lengthj = length(Abfrage_c_W);
-lengthj = length(Abfrage_N_Bat);
+% lengthj = length(Abfrage_N_Bat);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
 
 
@@ -81,12 +81,12 @@ l9 = zeros(lengthj,1);
 
 % j = 1;
 % for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
-for j = 1:length(Abfrage_N_Bat)
+for j = 1:length(Abfrage_m_Bat)
     
-%     m_Bat = Abfrage_m_Bat(j)*m_ges;
+    m_Bat = Abfrage_m_Bat(j)*(m_copter+m_Mot*n_Prop);
 %     m_Bat = m_Bat_variabel * m_ges;
 %     c_W_copter_oben = Abfrage_c_W(j);
-    N_Bat_cell = Abfrage_N_Bat(j);
+%     N_Bat_cell = Abfrage_N_Bat(j);
     U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
     U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
     
@@ -413,6 +413,7 @@ for j = 1:length(Abfrage_N_Bat)
         
         H(x) = H_oben;			% Speichern der Höhe im Vektor
         x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
+        disp([num2str((x-1)*100/lengthi) ' %']);
         
     end
     
@@ -430,16 +431,16 @@ for j = 1:length(Abfrage_N_Bat)
 %     subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',2); l8_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
 %     subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
    
-    subplot(521), l1(j) = plot(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
-    subplot(522), l2(j) = plot(H,Omega/(2*pi)*60,'LineWidth',1); grid on, hold on
-    subplot(523), l3(j) = plot(H,I_mot,'LineWidth',1); grid on, hold on
-    subplot(524), l4(j) = plot(H,U_mot,'LineWidth',1); grid on, hold on
-    subplot(525), l5(j) = plot(H,I_Bat,'LineWidth',1); grid on, hold on
+    subplot(521), l1(j) = stairs(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
+    subplot(522), l2(j) = stairs(H,Omega/(2*pi)*60,'LineWidth',1); grid on, hold on
+    subplot(523), l3(j) = stairs(H,I_mot,'LineWidth',1); grid on, hold on
+    subplot(524), l4(j) = stairs(H,U_mot,'LineWidth',1); grid on, hold on
+    subplot(525), l5(j) = stairs(H,I_Bat,'LineWidth',1); grid on, hold on
     H2 = [0;H];
-    subplot(526), l6(j) = plot(H2,U_Bat,'LineWidth',1); grid on, hold on
-    subplot(527), l7(j) = plot(H,PWM*100,'LineWidth',1); grid on, hold on
-    subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',1); grid on, hold on
-    subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',1); l9_Info{j} = ['N_{Bat,cell} = ' num2str(N_Bat_cell)]; grid on, hold on
+    subplot(526), l6(j) = stairs(H2,U_Bat,'LineWidth',1); grid on, hold on
+    subplot(527), l7(j) = stairs(H,PWM*100,'LineWidth',1); grid on, hold on
+    subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
+    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat/m*100) ' %']; grid on, hold on
 
 
 
@@ -477,12 +478,19 @@ subplot(528), title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),
     ylabel('eta_{ges} [%]'), %legend([l8], l8_Info)
 subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
     ylabel('V_{Kg} [m/s]'), 
-lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Einfluss der Batteriezellenanzahl')
+lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Anteil m_{Bat} an m_{ges}')
 
 % Anpassung und Abspeichern der Diagramme
-ImageSizeX = 14;
-ImageSizeY = 24;
-figure(figure_ges)
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-saveas(gcf,Dateiname, 'pdf');
+ImageSizeX = 26;
+ImageSizeY = 29.7;
+% figure(figure_ges)
+% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
+% saveas(gcf,Dateiname, 'pdf');  
+
+fig = gcf;
+fig.PaperPositionMode = 'auto';
+set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+fig_pos = fig.PaperPosition;
+fig.PaperSize = [ImageSizeX ImageSizeY];
+print(fig,Dateiname,'-dpdf')

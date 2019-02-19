@@ -43,5 +43,6 @@ ToDo dokumentation
 	- Motorwirkungsgrad anfügen in Kap 2
 	- Anmerkung, dass Gesamtwirkungsgrad die Batterie nicht mit einbezieht
 	- Nassi-Schneidermann Diagramme in Anhang verfrachten trotzdem sagen, wie untersucht wird
+	- wichtig: auf Beziehung zwischen kv und km eingehen, https://www.rc-modellbau-portal.de/index.php?threads/drehzahl-und-drehmoment-von-brushless-motoren.464/
 
-	https://de.mathworks.com/help/matlab/creating_plots/save-figure-with-minimal-white-space.html
+	 

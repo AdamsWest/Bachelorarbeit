@@ -428,22 +428,23 @@ end
 % Darstellung der Ergenisse in Diagrammen
 figure(figure_ges)
 
-subplot(521), stairs(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-subplot(523), stairs(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
-subplot(524), stairs(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-subplot(525), stairs(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
+subplot(521), stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+subplot(523), stairs(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
+subplot(524), stairs(H,U_mot,'LineWidth',1), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
+subplot(525), stairs(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
 H2 = [0;H];
-subplot(526), stairs(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
-subplot(527), stairs(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
-subplot(528), stairs(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+subplot(526), stairs(H2,U_Bat,'LineWidth',1), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
+subplot(527), stairs(H,PWM*100,'LineWidth',1), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
+subplot(528), stairs(H,eta_ges*100,'LineWidth',1)
 hold on
-stairs(H,eta_prop*100,'LineWidth',2)
-stairs(H,eta_mot*100,'LineWidth',2)
-stairs(H,eta_PWM*100,'LineWidth',2)
+stairs(H,eta_prop*100,'LineWidth',1)
+stairs(H,eta_mot*100,'LineWidth',1)
+stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta [%]')
+legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestoutside')
 hold off
-subplot(529), stairs(H,V_Kg,'LineWidth',2), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
-subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',2), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
+subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
+subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 % Anpassung und Abspeichern der Diagramme
 ImageSizeX = 14;
 ImageSizeY = 24;
@@ -452,7 +453,12 @@ set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]
 set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
 saveas(gcf,Dateiname, 'pdf');
 
-
+fig = gcf;
+fig.PaperPositionMode = 'auto';
+set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 21 29.7]); 
+fig_pos = fig.PaperPosition;
+fig.PaperSize = [21 29.7];
+print(fig,'MySavedFile','-dpdf')
 
 
 %% Datei abspeichern

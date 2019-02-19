@@ -102,6 +102,36 @@
       \verb http://dx.doi.org/10.1007/978-3-662-07259-2
       \endverb
     \endentry
+    \entry{Buchi.2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=eac694b65a7e367aca8df2483f01c07b}{%
+           family={B{ü}chi},
+           familyi={B\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Baden-Baden}%
+      }
+      \list{publisher}{1}{%
+        {Verl. f{ü}r Technik und Handwerk neue Medien}%
+      }
+      \strng{namehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{fullhash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{bibnamehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{authorbibnamehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{authornamehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{authorfullhash}{eac694b65a7e367aca8df2483f01c07b}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Aufl.}
+      \field{isbn}{978-3-88180-427-1}
+      \field{series}{vth-Fachbuch}
+      \field{title}{Brushless-Motoren und -Regler: Grundlagen - Technik - Praxis}
+      \field{year}{2013}
+    \endentry
     \entry{Drivecalc}{misc}{}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}

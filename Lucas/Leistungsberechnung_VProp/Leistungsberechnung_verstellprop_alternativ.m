@@ -572,7 +572,7 @@ for h_variabel = H_0:Delta_H:H_max
     x = x+1;				% Erhöhung der Zählervariablen für die Höhen-Schleife
     
     %% Spielereien
-    disp([num2str((x-1)*10000/H_max) '%']);
+    disp([num2str((x-1)*100/lengthi) ' %']);
 end
 
 

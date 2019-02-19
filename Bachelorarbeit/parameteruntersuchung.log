@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  22 JAN 2019 09:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  17 FEB 2019 10:28
 entering extended mode
 **./parameteruntersuchung.tex
 (parameteruntersuchung.tex
@@ -98,30 +98,106 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 4--6
-[]
- []
-
-Missing character: There is no V in font nullfont!
-Missing character: There is no o in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no K in font nullfont!
-Missing character: There is no l in font nullfont!
-LaTeX Font Info:    Try loading font information for +cmr on input line 7.
-LaTeX Font Info:    No file cmr.fd. on input line 7.
+Missing character: There is no E in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no f in font nullfont!
+LaTeX Font Info:    Try loading font information for +cmr on input line 6.
+LaTeX Font Info:    No file cmr.fd. on input line 6.
 
 LaTeX Font Warning: Font shape `/cmr/m/n' undefined
-(Font)              using `/cmr/m/n' instead on input line 7.
+(Font)              using `/cmr/m/n' instead on input line 6.
 
 ! Corrupted NFSS tables.
 wrong@fontshape ...message {Corrupted NFSS tables}
                                                   error@fontshape else let f...
-l.7  	\item Voerst Klä
-                       rung welche Art von Fluggerät mehr Vorteile aufweist
+l.6 ...scheidungsbaum aufgefasst werden. Dabei fü
+                                                  hrt jede Entscheidung im B...
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
 Pretend that you're Hercule Poirot: Examine all clues,
@@ -129,24 +205,251 @@ and deduce the truth by order and method.
 
 
 LaTeX Font Warning: Font shape `/cmr/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 7.
+(Font)              using `OT1/cmr/m/n' instead on input line 6.
 
+Missing character: There is no h in font nullfont!
 Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
 Missing character: There is no w in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no F in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -155,57 +458,357 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no V in font nullfont!
+Missing character: There is no k in font nullfont!
 Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no A in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no f in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no w in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
-
-Overfull \hbox (10.00003pt too wide) in paragraph at lines 7--8
-\/cmr/m/n/10 a
- []
-
-
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 7--8
-\/cmr/m/n/10 a
- []
-
-Missing character: There is no D in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no V in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
 Missing character: There is no l in font nullfont!
+Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.11 \section
-             {Multicopter im Vergleich zu einem Flächenflugzeug}
+<write> ...:leistungsberechnung' on page \thepage 
+                                                  \space undefined\on@line .
+l.7 ...ersteht (Kap. \ref{sec:leistungsberechnung}
+                                                  ).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:leistungsberechnung' on page  undefined on input 
+line 7.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--8
+[]
+ []
+
+
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--8
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--8
+[] 
+ []
+
+! Undefined control sequence.
+l.9 \section
+            {Multicopter im Vergleich zu einem Flächenflugzeug}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \section{M
+              ulticopter im Vergleich zu einem Flächenflugzeug}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no M in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -251,23 +854,35 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no g in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 11--13
+Overfull \hbox (20.0pt too wide) in paragraph at lines 9--11
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 11--13
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 9--11
 \/cmr/m/n/10 a
  []
 
 ! Undefined control sequence.
-l.15 \subsection
+l.13 \subsection
                 {Vorgehensweise beim Vergleich}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \subsection{V
+                  orgehensweise beim Vergleich}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no V in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -788,7 +1403,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.17 ...ticopters auf das aus \cite{Anderson.2018}
+l.15 ...ticopters auf das aus \cite{Anderson.2018}
                                                    festgelegt, was genauer i...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -797,7 +1412,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 17.
+LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 15.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no f in font nullfont!
@@ -833,8 +1448,8 @@ Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
 <write> ...nce `sec:komponenten' on page \thepage 
                                                   \space undefined\on@line .
-l.17 ...s genauer in Kapitel \ref{sec:komponenten}
-                                                   beschrieben wird. Da die ...
+l.15 ...s genauer in Kapitel \ref{sec:komponenten}
+                                                   beschrieben ist. Da die F...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -842,7 +1457,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:komponenten' on page  undefined on input line 17.
+LaTeX Warning: Reference `sec:komponenten' on page  undefined on input line 15.
 
 
 Missing character: There is no b in font nullfont!
@@ -856,10 +1471,9 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no b in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no w in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no D in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -888,7 +1502,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.17 ...ie Flugleistungen von \cite{Anderson.2018}
+l.15 ...ie Flugleistungen von \cite{Anderson.2018}
                                                    bekannt sind und der Quad...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -897,7 +1511,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 17.
+LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 15.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no b in font nullfont!
@@ -1137,11 +1751,20 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no Z in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -1214,19 +1837,19 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no t in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 17.
+(Font)              <7> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 17.
+(Font)              <5> on input line 15.
 
-LaTeX Warning: Command \" invalid in math mode on input line 17.
+LaTeX Warning: Command \" invalid in math mode on input line 15.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 17.
+LaTeX Warning: Command \" invalid in math mode on input line 15.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.17 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 I'm changing \accent to \mathaccent here; wish me luck.
 (Accents are not the same in formulas as they are in text.)
@@ -1234,7 +1857,7 @@ I'm changing \accent to \mathaccent here; wish me luck.
 ! Missing { inserted.
 <to be read again> 
                    \edef 
-l.17 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1244,7 +1867,7 @@ so that I will find a matching right brace soon.
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.17 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1254,7 +1877,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.17 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1312,102 +1935,102 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 15--18
+Overfull \hbox (20.0pt too wide) in paragraph at lines 13--16
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (10.00003pt too wide) in paragraph at lines 15--18
+Overfull \hbox (10.00003pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 o
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 13--16
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 15--18
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 13--16
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 13--16
 []
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (83.71988pt too wide) in paragraph at lines 15--18
+Overfull \hbox (83.71988pt too wide) in paragraph at lines 13--16
 \OML/cmm/m/it/10 m[] \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (86.34036pt too wide) in paragraph at lines 15--18
+Overfull \hbox (86.34036pt too wide) in paragraph at lines 13--16
 \OML/cmm/m/it/10 m[]$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--18
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
 \/cmr/m/n/10 a 
  []
 
 
-Overfull \hbox (357.31294pt too wide) detected at line 20
+Overfull \hbox (357.31294pt too wide) detected at line 18
 \OML/cmm/m/it/10 m[] \/cmr/m/n/10 = \OML/cmm/m/it/10 m[] \/cmr/m/n/10 + (\OML/c
 mm/m/it/10 m[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10   \OML/
 cmm/m/it/10 m[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 n[]\/cmr/m/n/10 ) \OMS/cmsy
@@ -1635,40 +2258,40 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 18--20
     \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (11.56357pt too wide) in paragraph at lines 20--22
+Overfull \hbox (11.56357pt too wide) in paragraph at lines 18--20
 \OML/cmm/m/it/10 f[]$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 18--20
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 18--20
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 20--22
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 18--20
 \/cmr/m/n/10 u 
  []
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 23.
+LaTeX Warning: Command \" invalid in math mode on input line 21.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 23.
+LaTeX Warning: Command \" invalid in math mode on input line 21.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.23 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
+l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
                                                  .
 I'm changing \accent to \mathaccent here; wish me luck.
 (Accents are not the same in formulas as they are in text.)
@@ -1676,7 +2299,7 @@ I'm changing \accent to \mathaccent here; wish me luck.
 ! Missing { inserted.
 <to be read again> 
                    \edef 
-l.23 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
+l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
                                                  .
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1686,7 +2309,7 @@ so that I will find a matching right brace soon.
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.23 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
+l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
                                                  .
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1696,7 +2319,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.23 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
+l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
                                                  .
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1706,7 +2329,7 @@ my insertion and my current dilemma will both disappear.
 
 Missing character: There is no � in font cmex10!
 
-Overfull \hbox (102.31905pt too wide) detected at line 24
+Overfull \hbox (102.31905pt too wide) detected at line 22
 \OML/cmm/m/it/10 f[] \/cmr/m/n/10 = []\OML/cmm/m/it/10 :
  []
 
@@ -1866,6 +2489,12 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -1883,11 +2512,6 @@ Missing character: There is no W in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -2174,10 +2798,17 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no d in font nullfont!
+Missing character: There is no v in font nullfont!
 Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no B in font nullfont!
@@ -2443,67 +3074,231 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 o
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 o
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--26
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
 \/cmr/m/n/10 
  []
 
+! Undefined control sequence.
+l.26 \subsection
+                {Erste Untersuchung}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 43--43
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \subsection{E
+                  rste Untersuchung}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no E in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 26--29
+[]
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 26--29
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 26--29
+\/cmr/m/n/10 a
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \begin{center}
+                   
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 30--30
 [] 
  []
 
 ! Undefined control sequence.
-l.44 	\captionof
+l.31 	\captionof
                 {table}{wichtige Parameter des Flächenflugzeugs}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2588,8 +3383,8 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.47 		Motormasse & \texttt{m\_Mot} & \SI
-                                         {151}{g} \\
+l.34 ...ensuremath{m_{Mot}}& \texttt{m\_Mot} & \SI
+                                                  {106}{g} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2597,8 +3392,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 6 in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no G in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -2626,16 +3421,17 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.48 ...windigkeitskonstante & \texttt{K\_V} & \SI
-                                                  {860}{1/(V\cdot s)} \\
+l.35 ...nte \ensuremath{K_V} & \texttt{K\_V} & \SI
+                                                  {1390}{1/(V\cdot s)} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 6 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 9 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no / in font nullfont!
@@ -2644,13 +3440,13 @@ Missing character: There is no V in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.48 ...tante & \texttt{K\_V} & \SI{860}{1/(V\cdot
+l.35 ...K_V} & \texttt{K\_V} & \SI{1390}{1/(V\cdot
                                                    s)} \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.48 ...e & \texttt{K\_V} & \SI{860}{1/(V\cdot s)}
+l.35 ... & \texttt{K\_V} & \SI{1390}{1/(V\cdot s)}
                                                    \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2661,8 +3457,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2670,8 +3466,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2681,8 +3477,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2690,8 +3486,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2701,8 +3497,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2710,8 +3506,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2721,8 +3517,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2730,8 +3526,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2741,8 +3537,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2750,8 +3546,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2761,8 +3557,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2770,8 +3566,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2781,8 +3577,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2790,8 +3586,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2801,8 +3597,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2810,8 +3606,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2821,8 +3617,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2830,8 +3626,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2841,8 +3637,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2850,8 +3646,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2861,8 +3657,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2870,8 +3666,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2881,8 +3677,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2890,8 +3686,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2901,8 +3697,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2910,8 +3706,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2921,8 +3717,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2930,8 +3726,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2941,8 +3737,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2950,8 +3746,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2961,8 +3757,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2970,8 +3766,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2981,8 +3777,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2990,8 +3786,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3001,8 +3797,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3010,8 +3806,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3021,8 +3817,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3030,8 +3826,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3041,8 +3837,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3050,8 +3846,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3061,8 +3857,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3070,8 +3866,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3081,8 +3877,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3090,8 +3886,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3101,8 +3897,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3110,8 +3906,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3121,8 +3917,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3130,8 +3926,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3141,8 +3937,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3150,8 +3946,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3161,8 +3957,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3170,8 +3966,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3181,8 +3977,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3190,8 +3986,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3201,8 +3997,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3210,8 +4006,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3221,8 +4017,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3230,8 +4026,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3241,8 +4037,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3250,8 +4046,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3261,8 +4057,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3270,8 +4066,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3281,8 +4077,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3290,8 +4086,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3301,8 +4097,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3310,8 +4106,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3321,8 +4117,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3330,8 +4126,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3341,8 +4137,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3350,8 +4146,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3361,8 +4157,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3370,8 +4166,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3381,8 +4177,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3390,8 +4186,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3401,8 +4197,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3410,8 +4206,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3421,8 +4217,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3430,8 +4226,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3441,8 +4237,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3450,8 +4246,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3461,8 +4257,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3470,8 +4266,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3481,8 +4277,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3490,8 +4286,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3501,8 +4297,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3510,8 +4306,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3521,8 +4317,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3530,8 +4326,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3541,8 +4337,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3550,8 +4346,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3561,8 +4357,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3570,8 +4366,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3581,8 +4377,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -3590,8 +4386,8 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten $.
 <inserted text> }
                  
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -3601,16 +4397,16 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 		m
-        aximaler Dauerstrom & \texttt{I\_max} & \SI{30}{A} \\
+l.36 		m
+        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 28 strings out of 492970
- 455 string characters out of 3142029
- 59603 words of memory out of 3000000
- 3998 multiletter control sequences out of 15000+200000
+ 27 strings out of 492970
+ 446 string characters out of 3142029
+ 59617 words of memory out of 3000000
+ 3997 multiletter control sequences out of 15000+200000
  4116 words of font info for 16 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 19i,8n,22p,1270b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 19i,8n,22p,1279b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
