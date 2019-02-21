@@ -76,6 +76,8 @@ eta_prop = zeros(lengthi,1);
 Uebersetzung = zeros(lengthi,1);
 mu_z = zeros(lengthi,1);
 vi = zeros(lengthi,1);
+% Getriebe
+eta_getriebe_ges = zeros(lengthi,1);
 % Motor
 U_mot = zeros(lengthi,1);
 I_mot = zeros(lengthi,1);
@@ -198,7 +200,6 @@ for h_variabel = H_0:Delta_H:H_max
     eta_ges_inter = zeros(lengthvkg, 1);
     
     
-    
     z = 1;
     
     for V_Kg_variabel = V_Kg_min:V_Kg_Delta:V_Kg_max	    % Variation des Bahnneigungswinkel für das Flächenflugzeug
@@ -267,7 +268,30 @@ for h_variabel = H_0:Delta_H:H_max
 
                 % Drehzahl und Drehmoment bestimmen
                 [Omega_ueber(w),tau_ueber(w)] = Propeller(V_A, alpha_ueber(w), Thrust_ueber(w), RPM_map, V_map, T_map, TAU_map);
-   
+                
+                % Propellerwirkungsgrad
+                % van der Wall, 2015, S.153
+                vi0 = sqrt(Thrust_ueber(w)/ ( 2*rho(x)*F ) );
+                v = vi0;
+                mu_z_ueber(w) = -V_A*sin(alpha_ueber(w));                                          % Geschwindigkeit durch die Rotorebene
+                mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
+                krit = 1;
+                while krit > 0.0005
+                    f = v - mu_z_ueber(w) - vi0^2 / sqrt(mu^2 + v^2);
+                    fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
+                    v_i_neu = v - f/fs;
+                    krit = abs(v_i_neu - v) / v_i_neu;
+                    v = v_i_neu;
+                end
+                vi_vi0 = (v - mu_z_ueber(w)) / vi0;
+                vi_ueber(w) = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
+
+                P_rotor = Thrust_ueber(w)*(mu_z_ueber(w)/2 + sqrt((mu_z_ueber(w)/2)^2 + vi0^2));
+                % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
+                eta_prop_ueber(w) = P_rotor/(tau_ueber(w) * Omega_ueber(w));
+%                 eta_prop_ueber(w) = (Thrust_ueber(w) * (mu_z_ueber(w) + vi_ueber(w)))/(tau_ueber(w) * Omega_ueber(w));
+                
+
                 % Übersetzung 
                 P_ueber = Omega_ueber(w) * tau_ueber(w);                       % Leistung am Propeller
                 P_ueber = P_ueber / eta_getriebe;                              % Einbeziehung des Wirkungsgrades
@@ -295,30 +319,6 @@ for h_variabel = H_0:Delta_H:H_max
                 
                 
                 %% Gesamtwirkungsgrad
-                
-                % Berechnung der induzierten Geschwindigkeiten nach van der Wall
-                % (Grundlagen der Hubschrauber-Aerodynamik) (2015) S. 153
-                
-%                 vi0 = sqrt(m*g / ( 2*rho(x)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
-                vi0 = sqrt(Thrust_ueber(w)/ ( 2*rho(x)*F ) );
-                v = vi0;
-                mu_z_ueber(w) = -V_A*sin(alpha_ueber(w));                                          % Geschwindigkeit durch die Rotorebene
-                mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
-                krit = 1;
-                while krit > 0.0005
-                    f = v - mu_z_ueber(w) - vi0^2 / sqrt(mu^2 + v^2);
-                    fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
-                    v_i_neu = v - f/fs;
-                    krit = abs(v_i_neu - v) / v_i_neu;
-                    v = v_i_neu;
-                end
-                vi_vi0 = (v - mu_z_ueber(w)) / vi0;
-                vi_ueber(w) = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
-
-                P_rotor = Thrust_ueber(w)*(mu_z_ueber(w)/2 + sqrt((mu_z_ueber(w)/2)^2 + vi0^2));
-                % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
-                eta_prop_ueber(w) = P_rotor/(tau_ueber(w) * Omega_ueber(w));
-%                 eta_prop_ueber(w) = (Thrust_ueber(w) * (mu_z_ueber(w) + vi_ueber(w)))/(tau_ueber(w) * Omega_ueber(w));
                 
                 eta_ges_ueber(w) = (n_Prop * Thrust_ueber(w) * (mu_z_ueber(w) + vi_ueber(w)))/(I_Bat_ueber(w) * U_Bat_ueber(w));         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
 
@@ -531,6 +531,8 @@ for h_variabel = H_0:Delta_H:H_max
         Uebersetzung(x) = Uebersetzung_inter(ind_opt2);
         mu_z(x) = mu_z_inter(ind_opt2);
         vi(x) = vi_inter(ind_opt2);
+        % Getriebe
+        eta_getriebe_ges(x) = eta_getriebe;
         % Motor
         I_mot(x) = I_mot_inter(ind_opt2);
         U_mot(x) = U_mot_inter(ind_opt2);
@@ -565,6 +567,8 @@ for h_variabel = H_0:Delta_H:H_max
         Uebersetzung(x) = NaN;
         mu_z(x) = NaN;
         vi(x) = NaN;
+        % Getriebe
+        eta_getriebe_ges(x) = NaN;
         % Motor
         I_mot(x) = NaN;
         U_mot(x) = NaN;
@@ -611,8 +615,9 @@ subplot(628), stairs(H,eta_ges*100,'LineWidth',1)
 hold on
 stairs(H,eta_prop*100,'LineWidth',1)
 stairs(H,eta_mot*100,'LineWidth',1)
-stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta [%]')
-legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestoutside')
+stairs(H,eta_PWM*100,'LineWidth',1)
+stairs(H,eta_getriebe_ges*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta [%]')
+legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', '\eta_{Getriebe}', 'Location', 'bestoutside')
 hold off
 subplot(629), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(6,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
@@ -628,7 +633,8 @@ saveas(gcf,Dateiname, 'pdf');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%
+figure_geschw = figure;
 figure(figure_geschw);
 subplot(321), stairs(H,vi,'LineWidth',1), grid, title('Geschwindigkeiten'), xlabel('Höhe [m]'),ylabel('[m/s]')
     hold on
@@ -647,8 +653,34 @@ subplot(325), stairs(H,Omega.*tau,'LineWidth',1), grid, title('Gegenüberstellung
     hold on 
     stairs(H,Thrust.*(mu_z+vi),'LineWidth',1), legend('Wellenleistung (M*\omega)','Strahlleistung (T*(v_i+\mu_Z)','Location','southwest');
 
-ImageSizeX = 20;
-ImageSizeY = 24;
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-saveas(gcf,'Popellerwirkungsgrad', 'pdf');
+    ax = gca;
+outerpos = ax.OuterPosition;
+ti = ax.TightInset; 
+left = outerpos(1) + ti(1);
+bottom = outerpos(2) + ti(2);
+ax_width = outerpos(3) - ti(1) - ti(3);
+ax_height = outerpos(4) - ti(2) - ti(4);
+ax.Position = [left bottom ax_width ax_height];
+
+ImageSizeX = 21;
+ImageSizeY = 29.7;
+set(ax,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
+set(ax,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+saveas(ax,'Popellerwirkungsgrad2', 'pdf');
+
+
+% ImageSizeX = 21;
+% ImageSizeY = 29.7;
+% % figure(figure_ges)
+% % set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+% % set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
+% % saveas(gcf,Dateiname, 'pdf');  
+% 
+% figure(figure_geschw)
+% fig = gcf;
+% % fig.PaperPositionMode = 'auto';
+% % set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+% % fig_pos = fig.PaperPosition;
+% % fig.PaperSize = [ImageSizeX ImageSizeY];
+% print(fig,'eta','-dpdf', '-fillpage')
+% print(fig,'-fillpage', 'Fig.pdf', '-dpdf')

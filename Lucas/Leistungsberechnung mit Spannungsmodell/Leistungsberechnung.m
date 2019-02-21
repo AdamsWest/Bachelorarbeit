@@ -541,13 +541,17 @@ ImageSizeY = 29.7;
 % set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
 % saveas(gcf,Dateiname, 'pdf');  
 
-fig = gcf;
-fig.PaperPositionMode = 'auto';
-set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
-fig_pos = fig.PaperPosition;
-fig.PaperSize = [ImageSizeX ImageSizeY];
-print(fig,Dateiname,'-dpdf')
+% fig = gcf;
+% fig.PaperPositionMode = 'auto';
+% set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
+% fig_pos = fig.PaperPosition;
+% fig.PaperSize = [ImageSizeX ImageSizeY];
+% print(fig,Dateiname,'-dpdf')
 
+fig = gcf;
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.85 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [21 29.7]);
+saveas(gcf,Dateiname, 'pdf');
 
 % figure(figure_gamma)
 % for i = 1:length(gamma_Flaechenflzg)

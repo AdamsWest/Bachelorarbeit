@@ -9,8 +9,8 @@
 
 U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
 U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
-C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
-% C_Bat = N_Bat_cell_p*C_Bat_cell*3600;       % Kapazität in As
+% C_Bat = E_Dichte * m_Bat / U_Bat_nom;       % Kapazitaet der Batterie in As
+C_Bat = N_Bat_cell_p*C_Bat_cell*3600;       % Kapazität in As
 % Delta_C_Bat = 0;                            % Initialisierung Batteriekapazität, die nach jedem delta_h gebraucht wird
 
 % Normzelle erzeugen
@@ -450,51 +450,30 @@ legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestou
 hold off
 subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
-% Anpassung und Abspeichern der Diagramme
-ImageSizeX = 14;
-ImageSizeY = 24;
-% figure(figure_ges)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');
-% 
+
+ImageSizeX = 21;
+ImageSizeY = 29.7;
 fig = gcf;
-fig.PaperPositionMode = 'auto';
-set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 21 29.7]); 
-fig_pos = fig.PaperPosition;
-fig.PaperSize = [21 29.7];
-print(fig,'MySavedFile','-dpdf')
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.85 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [21 29.7]);
+saveas(gcf,Dateiname, 'pdf');
 
-%      fig = gcf;
-%      fig.PaperUnits = 'inches';
-%      fig.PaperPosition = [0 0 22 13];
-%      print(fig,'-dpng','-r0','tryhard.png')
-
-
-
-%% Datei abspeichern
-% ImageSizeX = 40;
-% ImageSizeY = 30;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% figure(figure_C_Rest_V)
-% saveas(gcf,'C_Rest_V', 'jpg');
-% figure(figure_omega)
-% saveas(gcf,'omega', 'jpg');
-% figure(figure_I_mot)
-% saveas(gcf,'I_mot', 'jpg');
-% figure(figure_U_mot)
-% saveas(gcf,'U_mot', 'jpg');
-% figure(figure_I_Bat)
-% saveas(gcf,'I_Bat', 'jpg');
-% figure(figure_PWM)
-% saveas(gcf,'PWM', 'jpg');
-
-%% Datei abspeichern
+% Anpassung und Abspeichern der Diagramme
 % ImageSizeX = 14;
 % ImageSizeY = 24;
-% figure(figure_C_Rest_V)
-% figure(figure_omega)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');
+% % figure(figure_ges)
+% % set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
+% % set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+% % saveas(gcf,Dateiname, 'pdf');
+% % 
+% fig = gcf;
+% % fig.PaperPositionMode = 'auto';
+% % set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 21 29.7]); 
+% % fig_pos = fig.PaperPosition;
+% % fig.PaperSize = [21 29.7];
+% % print(fig,'MySavedFile','-dpdf')
+% 
+% %    q=figure('visible','on','Name',strcat('Eingangsdaten'));
+% set(fig, 'Units', 'normalized', 'Position',[0.1, 0.1, 0.8, 0.8] );
+% AxesH = axes('Units', 'normalized', 'Position', [0.1,0.135, 0.81, 0.74]);
+% print(fig,'MySavedFile','-dpdf')

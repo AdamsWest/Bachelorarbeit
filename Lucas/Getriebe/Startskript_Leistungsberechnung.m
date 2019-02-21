@@ -30,12 +30,12 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Getriebe
-ue_min = 0.5;           % minimale Übersetzung
+ue_min = 0.8;           % minimale Übersetzung
 ue_Delta = 0.05;         % Schrittweite der Über
 ue_max = 1.4;            % maximale Übersetzung
 % Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
-m_getriebe = 0.00;       % Getriebegewicht
-eta_getriebe = 1;     % Wirkungsgrad des Getriebes
+m_getriebe = 0.25;       % Getriebegewicht
+eta_getriebe = 0.8;     % Wirkungsgrad des Getriebes
 
 % Propeller
 prop_name = '10x3';    % Propellerbezeichnung
