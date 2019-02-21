@@ -57,7 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
-lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1);% + 1;
+lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1) + 1;
 
 % Umgebung
 H = zeros(lengthi,1);
@@ -153,9 +153,9 @@ for h_variabel = H_0:Delta_H:H_max
     end
     
     
-        T_map = T_map * rho(x)/rho_1;                                   % Anpassung des Schubkennfeldes an die sich ändernde Dichte
-        P_map = P_map * rho(x)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
-        TAU_map = TAU_map * rho(x)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
+    T_map = T_map * rho(x)/rho_1;                                   % Anpassung des Schubkennfeldes an die sich ändernde Dichte
+    P_map = P_map * rho(x)/rho_1;                                   % Anpassung des Leistungskennfeldes an die sich ändernde Dichte
+    TAU_map = TAU_map * rho(x)/rho_1;                               % Anpassung des Drehmomentkennfeldes an die sich ändernde Dichte
     
     
     %% Beginn der Leistungsberechnung für Flugsysteme
@@ -301,22 +301,20 @@ for h_variabel = H_0:Delta_H:H_max
                 
 %                 vi0 = sqrt(m*g / ( 2*rho(x)*F*n_Prop ) );                          % induzierte Geschwindigkeit im Schwebeflug v_i0
                 vi0 = sqrt(Thrust_ueber(w)/ ( 2*rho(x)*F ) );
-%                 v = vi0;
+                v = vi0;
                 mu_z_ueber(w) = -V_A*sin(alpha_ueber(w));                                          % Geschwindigkeit durch die Rotorebene
-%                 mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
-%                 krit = 1;
-%                 while krit > 0.0005
-%                     f = v - mu_z_ueber(w) - vi0^2 / sqrt(mu^2 + v^2);
-%                     fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
-%                     v_i_neu = v - f/fs;
-%                     krit = abs(v_i_neu - v) / v_i_neu;
-%                     v = v_i_neu;
-%                 end
-%                 vi_vi0 = (v - mu_z_ueber(w)) / vi0;
-%                 vi_ueber(w) = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
-                if x == 151
-                    aaa = 1;
+                mu = V_A*cos(alpha_ueber(w));                                             % Geschwindigkeit entlang Rotorebene
+                krit = 1;
+                while krit > 0.0005
+                    f = v - mu_z_ueber(w) - vi0^2 / sqrt(mu^2 + v^2);
+                    fs = 1 + v * vi0^2 / (mu^2 + v^2)^(3/2);
+                    v_i_neu = v - f/fs;
+                    krit = abs(v_i_neu - v) / v_i_neu;
+                    v = v_i_neu;
                 end
+                vi_vi0 = (v - mu_z_ueber(w)) / vi0;
+                vi_ueber(w) = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
+
                 P_rotor = Thrust_ueber(w)*(mu_z_ueber(w)/2 + sqrt((mu_z_ueber(w)/2)^2 + vi0^2));
                 % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
                 eta_prop_ueber(w) = P_rotor/(tau_ueber(w) * Omega_ueber(w));
@@ -626,55 +624,31 @@ figure(figure_ges)
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
 saveas(gcf,Dateiname, 'pdf');
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-figure_geschw  = figure;
+
 figure(figure_geschw);
 subplot(321), stairs(H,vi,'LineWidth',1), grid, title('Geschwindigkeiten'), xlabel('Höhe [m]'),ylabel('[m/s]')
-hold on
-stairs(H,mu_z,'LineWidth',1)
-legend('induz. Geschw. v_i','\mu_z','Location','southeast');
-hold off
+    hold on
+    stairs(H,mu_z,'LineWidth',1)
+    legend('induz. Geschw. v_i','\mu_z','Location','southeast');
+    hold off
 subplot(322), stairs(H,Thrust,'LineWidth',1), grid, title('Schub'), xlabel('Höhe [m]'),ylabel('Schub [N]')
 subplot(323), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-hold on 
-stairs(H,Omega/(2*pi)*60./Uebersetzung,'LineWidth',1)
-legend('Motordrehzahl', 'Propellerdrehzahl','Location','southwest')
+    hold on 
+    stairs(H,Omega/(2*pi)*60./Uebersetzung,'LineWidth',1)
+    legend('Motordrehzahl', 'Propellerdrehzahl','Location','southeast')
 subplot(324), stairs(H,tau,'LineWidth',1), grid, title('Drehmoment'), xlabel('Höhe [m]'),ylabel('Drehmoment [Nm]')
-hold on 
-stairs(H,tau .* Uebersetzung,'LineWidth',1), legend('Motordrehmoment','Propellerdrehmoment','Location','northeast');
+    hold on 
+    stairs(H,tau .* Uebersetzung,'LineWidth',1), legend('Motordrehmoment','Propellerdrehmoment','Location','northeast');
 subplot(325), stairs(H,Omega.*tau,'LineWidth',1), grid, title('Gegenüberstellung der Leistungen'), xlabel('Höhe [m]'), ylabel('Leistung [W]');
-hold on 
-stairs(H,Thrust.*(mu_z+vi),'LineWidth',1), legend('Wellenleistung (M*\omega)','Strahlleistung (T*(v_i+\mu_Z)','Location','southeast');
+    hold on 
+    stairs(H,Thrust.*(mu_z+vi),'LineWidth',1), legend('Wellenleistung (M*\omega)','Strahlleistung (T*(v_i+\mu_Z)','Location','southwest');
 
 ImageSizeX = 20;
 ImageSizeY = 24;
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
 saveas(gcf,'Popellerwirkungsgrad', 'pdf');
-
-%% Datei abspeichern
-% ImageSizeX = 40;
-% ImageSizeY = 30;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% figure(figure_C_Rest_V)
-% saveas(gcf,'C_Rest_V', 'jpg');
-% figure(figure_omega)
-% saveas(gcf,'omega', 'jpg');
-% figure(figure_I_mot)
-% saveas(gcf,'I_mot', 'jpg');
-% figure(figure_U_mot)
-% saveas(gcf,'U_mot', 'jpg');
-% figure(figure_I_Bat)
-% saveas(gcf,'I_Bat', 'jpg');
-% figure(figure_PWM)
-% saveas(gcf,'PWM', 'jpg');
-
-%% Datei abspeichern
-% ImageSizeX = 14;
-% ImageSizeY = 24;
-% figure(figure_C_Rest_V)
-% figure(figure_omega)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');

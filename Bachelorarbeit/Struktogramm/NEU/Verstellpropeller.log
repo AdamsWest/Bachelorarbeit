@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  15 FEB 2019 13:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  20 FEB 2019 16:37
 entering extended mode
 **./Verstellpropeller.tex
 (Verstellpropeller.tex
@@ -213,56 +213,56 @@ Overfull \hbox (17.22227pt too wide) in paragraph at lines 20--20
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
 
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 42--42
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 43--43
 []\OT1/cmr/m/n/10 .0pt 
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 42--42
+Underfull \hbox (badness 1939) in paragraph at lines 43--43
  |\OT1/cmr/m/n/10 Sind die Werte NaN? 
  []
 
 ===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
 
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 45--45
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 46--46
 []\OT1/cmr/m/n/10 .0pt 
  []
 
 ===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
 ===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
 \OT1/cmr/m/n/10 Suche n[]achst klei-ne-re
  []
 
 ===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
 
-Underfull \hbox (badness 3792) in paragraph at lines 53--53
+Underfull \hbox (badness 3792) in paragraph at lines 54--54
 \OT1/cmr/m/n/10 Verwerfe al-le
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 54.
+(Font)              <7> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 54.
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+(Font)              <5> on input line 55.
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
 ("C:\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 57--57
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 58--58
 []\OT1/cmr/m/n/10 .0pt 
  []
 
 
-Underfull \hbox (badness 2426) in paragraph at lines 57--57
+Underfull \hbox (badness 2426) in paragraph at lines 58--58
  |\OT1/cmr/m/n/10 Sind die Werte NaN? 
  []
 
 ===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
 ===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
 
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 60--60
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 61--61
 []\OT1/cmr/m/n/10 .0pt 
  []
 
@@ -270,17 +270,17 @@ Overfull \hbox (17.22227pt too wide) in paragraph at lines 60--60
 ===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
 ===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 \OT1/cmr/m/n/10 Verwerfe al-le
  []
 
 
-Overfull \hbox (1.13652pt too wide) in paragraph at lines 74--74
+Overfull \hbox (1.13652pt too wide) in paragraph at lines 75--75
 [][] 
  []
 
 
-Overfull \hbox (5.04153pt too wide) in paragraph at lines 16--75
+Overfull \hbox (5.04153pt too wide) in paragraph at lines 16--76
 []$[]$ 
  []
 
@@ -295,7 +295,7 @@ Overfull \vbox (7.62358pt too high) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  2360 strings out of 492970
  30459 string characters out of 3142029
- 122646 words of memory out of 3000000
+ 123646 words of memory out of 3000000
  6226 multiletter control sequences out of 15000+200000
  5645 words of font info for 22 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -303,7 +303,7 @@ Here is how much of TeX's memory you used:
  <C:\Users\lucsc\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
 our\public\cm\dpi600\cmbtt10.pk><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mr10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Verstellpropeller.pdf (2 pages, 31154 bytes).
+Output written on Verstellpropeller.pdf (2 pages, 31249 bytes).
 PDF statistics:
  33 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

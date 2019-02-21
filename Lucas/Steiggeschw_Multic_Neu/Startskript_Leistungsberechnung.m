@@ -29,19 +29,19 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{21,1}; % Motorname
-[K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
-K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
-% R_i = 0.123;            % Innenwiderstand in Ohm
-% K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
-% I_0 = 0.56;             % Leerlaufstrom in Ampere
-% I_max = 30;             % Max Continuous Current
-% m_Mot = 0.0365;         % Motorgewicht in kg
+% motor_name = axi_motor_db{21,1}; % Motorname
+% [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+% K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+R_i = 0.123;            % Innenwiderstand in Ohm
+K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+I_0 = 0.56;             % Leerlaufstrom in Ampere
+I_max = 17;             % Max Continuous Current
+m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '10x3';    % Propellerbezeichnung
+prop_name = '7x3.8';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 10;                % Propellerdurchmesser in inch
+D = 7;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
@@ -82,9 +82,9 @@ c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Wid
 c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
 % Diskretisierung der Steiggeschwindigkeit
-V_Kg_min = 1;			% kleinster Bahnneigungswinkel
+V_Kg_min = 10;			% kleinster Bahnneigungswinkel
 V_Kg_Delta = 1;		% Schrittweite Batteriemasse
-V_Kg_max = 40;			% größter Bahnneigungswinkel
+V_Kg_max = 10;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -101,7 +101,7 @@ H_0 = 0;                                    % Höhe des Abflugplatzes über Normal
 Delta_H = 100;                              % Inkrementweite in m 
 H_max = 16500;                              % Maximalhöhe in m
 
-T_0 = 288.15;                               % Temperatur in K am Flugplatz
+T_0 = 263.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
 rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
 kappa = 1.4;                                % Adiabatenexponent
