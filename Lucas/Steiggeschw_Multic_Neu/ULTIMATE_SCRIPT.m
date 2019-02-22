@@ -102,7 +102,7 @@ l9 = zeros(lengthj,1);
 
 % j = 1;
 % for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
-for j = 1:length(Abfrage_n_prop)
+for j = 1:length(Abfrage_mot)
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,7 +110,7 @@ for j = 1:length(Abfrage_n_prop)
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Motor
-    motor_name = axi_motor_db{Abfrage_mot(2),1}; % Motorname
+    motor_name = axi_motor_db{Abfrage_mot(j),1}; % Motorname
     [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
     K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
     % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -120,8 +120,8 @@ for j = 1:length(Abfrage_n_prop)
     % m_Mot = 0.0365;         % Motorgewicht in kg
     
     % Propeller
-    prop_name = Abfrage_prop{2};    % Propellerbezeichnung
-    n_Prop = Abfrage_n_prop(j);             % Anzahl der Propeller
+    prop_name = Abfrage_prop{j};    % Propellerbezeichnung
+    n_Prop = Abfrage_n_prop(3);             % Anzahl der Propeller
     c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
     a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
     alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
@@ -144,13 +144,13 @@ for j = 1:length(Abfrage_n_prop)
     m_copter = m_ges * (0.354/1.06);           % Leermasse
     
     % Batterie
-    E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
+    E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
     N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
     N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
     C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
     U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
     U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
-    P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)
+    P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)
     C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
     % m_Bat = 0.56;           % Batteriemasse in kg
     
@@ -527,9 +527,9 @@ for j = 1:length(Abfrage_n_prop)
     subplot(526), l6(j) = stairs(H2,U_Bat,'LineWidth',1); grid on, hold on
     subplot(527), l7(j) = stairs(H,PWM*100,'LineWidth',1); grid on, hold on
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
-    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = ['n_{Prop} =' num2str(Abfrage_n_prop(j))]; grid on, hold on
+    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = ['m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name]; grid on, hold on
     
-%     ['m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name]
+%   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]  
     
     
     
@@ -562,22 +562,20 @@ ylabel('U_{Bat} [A]'), %legend([l6], l6_Info)
 subplot(527), title('Pulsweitenmodulation'), xlabel('Höhe [m]'),
 ylabel('PWM [%]'),% legend([l7], l7_Info)
 subplot(528), title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),
-ylabel('eta_{ges} [%]'), %legend([l8], l8_Info)
+ylabel('\eta_{ges} [%]'), %legend([l8], l8_Info)
 subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
 ylabel('V_{Kg} [m/s]'),
-lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Groessenskalierung')
+lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Groessenskalierung') % 
+% 
+% newPosition = [10 20 0.2 0.2];
+% newUnits = 'centimeters';
+% set(hL,'Position', newPosition,'Units', newUnits);
 
 % Anpassung und Abspeichern der Diagramme
-ImageSizeX = 26;
-ImageSizeY = 29.7;
-% figure(figure_ges)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');
+PaperSizeX = 21;
+PaperSizeY = 29.7;
 
 fig = gcf;
-fig.PaperPositionMode = 'auto';
-set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-fig_pos = fig.PaperPosition;
-fig.PaperSize = [ImageSizeX ImageSizeY];
-print(fig,Dateiname,'-dpdf')
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
+saveas(gcf,Dateiname, 'pdf');

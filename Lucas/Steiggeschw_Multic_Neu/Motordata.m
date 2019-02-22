@@ -23,7 +23,7 @@ DATAp = DATAp{ind,2};                           % Ablegen des Datenvektors unter
 
 switch filename
     case 'axi_motor_db'
-        DAT = DATAp([1 2 3 4 6 7]);
+        DAT = DATAp([1 2 3 4 6 5]);
         
     case 'hacker_motor_db'
         DAT = [DATAp(1:3) NaN NaN DATAp(3)];

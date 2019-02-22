@@ -421,20 +421,46 @@ Der Propellerwirkungsgrad \ensuremath{\eta_{Prop}}
 \begin{equation}
 	\eta_{Prop} = \frac{P_{Strahl}}{P_{Welle}}
 \end{equation}
-bezieht die erzeugte Strahlleistung in Bezug zur Wellenleistung. Erstere ist das Produkt aus den vom Propeller erzeugten Schub und den Geschwindigkeiten durch die Rotorebene \cite[S.52, S.138]{Bittner.2014,Wall.2015}
-\todo[inline]{Quelle für van der Wall, Bittner und Johnson angeben}
+setzt die erzeugte Strahlleistung in Bezug zur Wellenleistung.
+Die Strahlleistung 
 \begin{equation}
-	P_{Strahl} = S\cdot (V_{c} + v_i) = S \cdot \Bigg(\frac{V_{c}}{2}+ \sqrt{\Big(\frac{V_{c}}{2}\Big)^2+v_h^2}\;\Bigg) \eqend{.}
+	P_{Strahl} = S\cdot (v_i + V_c)
 \end{equation}
-Diese sind zum einen die induzierte Geschwindigkeit im Schwebeflug
+setzt sich aus dem Schub \ensuremath{T}, der induzierten Geschwindigkeit \ensuremath{v_i} und der Steiggeschwindigkeit \ensuremath{V_c} zusammen. 
+
+Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}:
+\todo[inline]{Schau dir hier nochmal die Indizes an}
 \begin{equation}
-	v_{h} = \sqrt{\frac{S}{2\cdot \dot{m}}} = \sqrt{\frac{S}{2\cdot \rho \cdot F}}
+	f(v) = v-\mu_z-\frac{{v_h}^2}{\sqrt{\mu^2+v^2}}
 \end{equation}
-und zum anderen die Steiggeschwindigkeit \ensuremath{V_{c}}. Die durch den vertikalen Steigflug erzeugte zusätzliche Geschwindigkeit durch die Rotorebene \ensuremath{V_{c}} ist bei Seitenwinden mit dem senkrechten Anteil \ensuremath{\mu_{z}} der absoluten Fluggeschwindigkeit 
 \begin{equation}
-	V_{c} = \mu_{z} = -V_{A}\cdot \sin\alpha_{M}
+	f'(v) = 1 + v\cdot\frac{{v_h}^2}{\sqrt{\mu^2+v^2}^3}
 \end{equation}
-gleichzusetzen.
+\begin{equation}
+	v_{n+1} = v_n - \frac{f(v_n)}{f'(v_n)}\qquad n = 0,1,2,\dots
+\end{equation}
+An dieser Stelle sei angemerkt, dass van der Wall mit dimensionslosen Durchflussgraden \ensuremath{\lambda} rechnet. In dieser Arbeit wird aber mit den dimensionsbehafteten Geschwindigkeiten gerechnet.
+
+
+
+%Der Propellerwirkungsgrad \ensuremath{\eta_{Prop}} 
+%\begin{equation}
+%	\eta_{Prop} = \frac{P_{Strahl}}{P_{Welle}}
+%\end{equation}
+%bezieht die erzeugte Strahlleistung in Bezug zur Wellenleistung. Erstere ist das Produkt aus den vom Propeller erzeugten Schub und den Geschwindigkeiten durch die Rotorebene \cite[S.52, S.138]{Bittner.2014,Wall.2015}
+%\todo[inline]{Quelle für van der Wall, Bittner und Johnson angeben}
+%\begin{equation}
+%	P_{Strahl} = S\cdot (V_{c} + v_i) = S \cdot \Bigg(\frac{V_{c}}{2}+ \sqrt{\Big(\frac{V_{c}}{2}\Big)^2+v_h^2}\;\Bigg) \eqend{.}
+%\end{equation}
+%Diese sind zum einen die induzierte Geschwindigkeit im Schwebeflug
+%\begin{equation}
+%	v_{h} = \sqrt{\frac{S}{2\cdot \dot{m}}} = \sqrt{\frac{S}{2\cdot \rho \cdot F}}
+%\end{equation}
+%und zum anderen die Steiggeschwindigkeit \ensuremath{V_{c}}. Die durch den vertikalen Steigflug erzeugte zusätzliche Geschwindigkeit durch die Rotorebene \ensuremath{V_{c}} ist bei Seitenwinden mit dem senkrechten Anteil \ensuremath{\mu_{z}} der absoluten Fluggeschwindigkeit 
+%\begin{equation}
+%	V_{c} = \mu_{z} = -V_{A}\cdot \sin\alpha_{M}
+%\end{equation}
+%gleichzusetzen.
 
 \subsection{Motorzustand}
 \label{subsec:motorzustand}
@@ -467,6 +493,7 @@ Mit dem Strom ergibt sich die Spannung zu
 Der Wirkungsgrad ist für den Motor das Verhältnis aus der Wellenleistung am Propeller zur elektrischen Leistung, dem Produkt aus Motorspannung \ensuremath{U_{Mot}} und Motorstrom \ensuremath{I_{Mot}}
 \begin{equation}
 	\eta_{Mot} = \frac{M\cdot\omega}{U_{Mot}\cdot I_{Mot}} \eqend{.}
+	\label{eq:eta_mot}
 \end{equation}
 
 
@@ -564,6 +591,8 @@ Mithilfe der \textsc{Matlab} Curve Fitting Toolbox kann der Abhängigkeit en Fun
 \end{equation}
 zugrunde gelegt werden. 
 Die unbekannten Konstanten ergeben sich dabei zu k = 0,1077, a = 0,1555, b = 0,9825 und c = 0,5485. Zur Steigerung der Genauigkeit, werden einige Batteriezellen aus der Berechnung der Erstellung dieses Modells herausgenommen, da diese erhebliche Abweichungen von der Standardabweichung aufzeigen. Dies bezieht sich vor allem auf einzellige Batterien mit einer vergleichsweise geringen Kapazität und sehr hohem Innenwiderstand. Deshalb sei hier angemerkt, dass sich dadurch die Genauigkeit vor allem im Bereich kleiner C-Raten und Kapazitäten verringert.
+Der Vergleich der Normzelle zur Originalzelle (Siehe Anhang) zeigt auf, dass die Spannung der Normelle im Durchschnitt etwa \SI{14}{\%} geringer ist als die der Originalzelle. Dies ist bei der Auswertung zu berücksichtigen.
+
 \todo[inline]{Abweichungen von der Origzelle verdeutlichen}
 
 \subsubsection{Batteriezustand}
@@ -611,11 +640,12 @@ berechnet sich die Restladung \ensuremath{C_{Rest,Bat,i}} nach der \ensuremath{i
 
 
 \subsection{Wirkungsgrad über das Gesamtsystem}
+\label{subsec:eta_ges}
 Zur Berechnung des Wirkungsgrads kann das Verhältnis der Leistung, die in Schub gewandelt wird zu der Leistung, die der Batterie entzogen wird, herangezogen werden
 \begin{equation}
 	\eta_{ges} = \frac{P_{Strahl}}{P_{Bat}}.
 \end{equation}
-Dies schließt den Wirkungsgrad der Batterie aus 
+Dies schließt den Wirkungsgrad der Batterie aus.
 Die Strahlleistung 
 \begin{equation}
 	P_{Strahl} = T\cdot (v_i + V_c)
@@ -661,19 +691,22 @@ Für den Fall, dass technisch und aerodynamisch unmögliche Flugzustände erreic
 \label{sec:vernachlaessigungen_vereinfachungen}
 
 \subsection{Einschränkungen}
-Für die Leistungsberechnung sind mehrere Vernachlässigungen vorzunehmen. Zuerst wurden keinerlei dynamische Effekte und Verhalten berücksichtigt. Dies beinhaltet translatorische Beschleunigungen des Multicopters, rotatorische Beschleunigungen der Rotoren zum Störausgleich sowie und rotatorische Beschleunigungen des Multicopters durch Ungenauigkeiten des Lagereglers. Das gleiche gilt für das Flächenflugzeug. 
-Die Störgrößen, in diesem Fall vor allem der laterale Seitenwind, werden als statisch und konstant vorausgesetzt. Hierbei werden jegliche Veränderungen des Windes und Böen mit der Höhe vernachlässigt. Auf- und Abwinde entziehen sich auch der Betrachtung. Hinzu kommt die Vernachlässigung der Totzeit des Reglers. 
-Weiterhin nicht berücksichtigt bleiben Reynoldszahl- und Machzahleffekte. Transonische Strömung unterhalb einer Blattspitzengeschwindigkeit von \ensuremath{M_{tip}=1} kann aus diesem Grund nicht ausgeschlossen werden.
+Für die Leistungsberechnung sind mehrere Vernachlässigungen vorzunehmen. Zuerst wurden keinerlei dynamische Effekte und Verhalten berücksichtigt. Dies beinhaltet translatorische Beschleunigungen des Multicopters, rotatorische Beschleunigungen der Rotoren zum Störausgleich sowie und rotatorische Beschleunigungen des Multicopters durch Ungenauigkeiten des Lagereglers. Das gleiche gilt für das Flächenflugzeug. \\
+Die Störgrößen, in diesem Fall vor allem der laterale Seitenwind, werden als statisch und konstant vorausgesetzt. Hierbei werden jegliche Veränderungen des Windes und Böen mit der Höhe vernachlässigt. Auf- und Abwinde werden nicht betrachtet. \\
+Weiterhin nicht berücksichtigt bleiben Reynoldszahl- und Machzahleffekte. Transonische Strömung unterhalb einer Blattspitzengeschwindigkeit von \ensuremath{Ma_{tip}=1} kann aus diesem Grund nicht ausgeschlossen werden.
 Die ganze Leistung der Batterie geht in diesem Modell ausschließlich in die Schuberzeugung. Das heißt, dass die Regler und sonstige elektrische Komponenten keinen zusätzlichen Strom verbrauchen.
-Das Flächenflugzeug wird in dem Programm als eine Punktmasse ohne Abmaße betrachtet. Um eine möglichst allgemeine Dimensionierung eines Flugsystems mit fixed wings zu ermöglichen wird sich hier jeglicher genauerer Beschreibungen des Systems verwehrt. So wird auf Kennzahlen wie die Streckung, die Flügelfläche oder z.B. Auftriebs- und Widerstandsbeiwerten verzichtet. Dies zieht eine derartige Betrachtung des Systems mit sich, dass nur der Einfluss von Gleitzahl, Motorisierung und anderen Einflussfaktoren betrachtet werden. Eine exakte Auslegung kann deshalb nur im Anschluss vorgenommen werden. Diese Vereinfachungen müssen in der Auswertung berücksichtigt werden.
+Das Flächenflugzeug wird in dem Programm als eine Punktmasse ohne Abmaße betrachtet. Um eine möglichst allgemeine Dimensionierung eines Flugsystems mit starren Flügeln zu ermöglichen wird sich hier jeglicher genauerer Beschreibungen des Systems verwehrt. So wird auf Kennzahlen wie die Streckung, die Flügelfläche oder z.B. Auftriebs- und Widerstandsbeiwerten verzichtet. Dies zieht eine derartige Betrachtung des Systems mit sich, dass nur der Einfluss von Gleitzahl, Auslegungsgeschwindigkeit, Motorisierung und anderen Einflussfaktoren betrachtet werden. Weiterhin kann damit für das Flächenflugzeug nur die Leistungsgrenze betrachtet werden. Weitere Flugbereichsgrenzen wie die aerodynamische, die Wärme- bzw. Temperaturgrenze oder die Festigkeitsgrenze werden in diesem Modell nicht berücksichtigt. 
+Eine exakte Auslegung kann deshalb nur im Anschluss vorgenommen werden. Diese Vereinfachungen müssen in der Auswertung berücksichtigt werden.
 
 \subsection{Vereinfachungen}
 \subsubsection{Schub}
-Der Schub wird innerhalb eines sehr einfachen Modells berechnet. Das gilt sowohl für den Multicopter als auch für das Flächenflugzeug. Der Multicopter ist als eine Art Rotationsellipsoid und das Flächenflugzeug als Punktmasse vereinfacht
+Der Schub wird innerhalb eines sehr einfachen Modells berechnet. Das gilt sowohl für den Multicopter als auch für das Flächenflugzeug. Der Multicopter ist als eine Art Rotationsellipsoid und das Flächenflugzeug als Punktmasse vereinfacht.
+\todo[inline]{auf Gleitzahl verweisen}
 
 \subsubsection{Propeller und Kennfeld}
 Bei der Transformation der Propellerkennfelder auf äquidistante Geschwindigkeitsabstände ist der Bereich von \SI{-10}{m/s} bis \SI{0}{m/s} extrapoliert. Ein analoges Vorgehen wird zur Erweiterung des ursprünglichen Kennfeldes in den Bereich noch größerer Anströmgeschwindigkeiten angewandt. Das reale Verhalten der Propeller kann folglich von dem errechneten abweichen. Weiterhin beziehen sich alle Auslegungen auf die Datenbank von APC. 
-Die Modellierung eines Propellers mit gleichem Durchmesser und gleicher Steigung eines anderen Herstellers kann aus diesem Grund abweichen. Gründe dafür können eine unterschiedliche Profilierung, Verwindung oder Profiltiefenverteilung sein. 
+\todo[inline]{APC Quelle angeben}
+Die Modellierung eines Propellers mit gleichem Durchmesser und gleicher Steigung eines anderen Herstellers kann aus diesem Grund abweichen. Gründe dafür können eine unterschiedliche Profilierung, Verwindung oder Profiltiefenverteilung sein. Insgesamt wird ein vereinfachtes Luftdichtemodell verwendet, das z.B. Reynoldszahl- oder Machzahleffekte nicht mit einbezieht.
 
 \subsubsection{Motor}
 Jeglicher Einfluss der Temperatur auf die Leistung des Motors bleibt in dem einfachen Motormodell unberücksichtigt. Außerdem werden der Motorstrom und der der Innenwiderstand als konstant angenommen.
@@ -688,12 +721,12 @@ Zusätzlich unterliegt die Batteriespannung im Rahmen des Modells Abweichungen. 
 \centering
 	\includegraphics{Diagramme/Abweichungen.pdf}
 	\caption{oben: Durschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abhängigkeit von der C-Rate, \\
-	unten: Beispiel für die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle für eine C-Rate von 20 (\texttt{PWM}=0.8, \texttt{eta\_PWM}=0.7, \texttt{I\_mot}=8, \texttt{n\_Prop}=4)}
+	unten: Beispiel für die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle für eine C-Rate von 20}
 	\label{abb:abweichungen}
 \end{figure}
 Die Zuverlässigkeit des Batteriemodells nimmt daher mit hohen C-Raten ab. Außerdem ist zu berücksichtigen, dass im Durchschnitt der Spannungsverlauf der normierten Zelle unterhalb der Normalzelle liegt. Dies bedeutet, dass die Spannung der Originalzelle unter Last geringer einbricht, als die der normierten Zelle.  
 
 \subsubsection{Wirkungsgrad}
 Die Berechnung der Strahlleistung beruht auf der Berechnung der induzierten Geschwindigkeit innerhalb der Strahltheorie. Hier wird ein idealer Rotor zugrunde gelegt.
-Beruhend auf dieser Annahme bleiben viele Effekte wie Blattspitzeffekte an der Rotorblattspitze und im Bereich der Rotorblattaufhängung, Strömungsablösungen, Blattwirbelinteraktionen usw. unberücksichtigt.  Zudem wird eine über den Radius konstante induzierte Geschwindigkeit in der Rotorebene angenommen. Dies ist im Vorwärtsflug und bei Schräganströmung zu relativieren \cite[S.226]{Wall.2015}.
+Beruhend auf dieser Annahme bleiben viele Effekte wie Blattspitzeffekte an der Rotorblattspitze und im Bereich der Blattwurzel, Strömungsablösungen, Blattwirbelinteraktionen usw. unberücksichtigt.  Zudem wird eine über den Radius konstante induzierte Geschwindigkeit in der Rotorebene angenommen. Dies ist im Vorwärtsflug und bei Schräganströmung zu relativieren \cite[S.226]{Wall.2015}.
 

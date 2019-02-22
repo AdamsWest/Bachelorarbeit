@@ -527,10 +527,10 @@ else
     hold on
     stairs(H,eta_prop*100,'LineWidth',1)
     stairs(H,eta_mot*100,'LineWidth',1)
-    stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta [%]')
-    legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestoutside')
+    stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta [%]')
+    legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', 'Location', 'bestoutside')
     hold off
-    subplot(529), stairs(H,gamma_Flaechenflzg,'LineWidth',1), title('Bahnneigungswinkel'), grid, xlabel('Höhe [m]'),ylabel('gamma [°]')
+    subplot(529), stairs(H,gamma_Flaechenflzg,'LineWidth',1), title('Bahnneigungswinkel'), grid, xlabel('Höhe [m]'),ylabel('\gamma [°]')
     subplot(5,2,10), stairs(H,V_Flaechenflugzeug,'LineWidth',1), title('absolute Fluggeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_A [m/s]')
     
 end
@@ -549,7 +549,7 @@ ImageSizeY = 29.7;
 % print(fig,Dateiname,'-dpdf')
 
 fig = gcf;
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.85 34.45]);
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [21 29.7]);
 saveas(gcf,Dateiname, 'pdf');
 

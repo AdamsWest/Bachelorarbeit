@@ -31,34 +31,36 @@
 \BOOKMARK [0][-]{chapter.4}{Parameteruntersuchung}{}% 31
 \BOOKMARK [1][-]{section.4.1}{Einleitung und Vorgehensweise}{chapter.4}% 32
 \BOOKMARK [1][-]{section.4.2}{Multicopter im Vergleich zu einem Fl\344chenflugzeug}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.2.1}{Vorgehensweise beim Vergleich}{section.4.2}% 34
-\BOOKMARK [2][-]{subsection.4.2.2}{Erste Untersuchung}{section.4.2}% 35
-\BOOKMARK [2][-]{subsection.4.2.3}{Einflussfaktoren auf das Fl\344chenflugzeug}{section.4.2}% 36
-\BOOKMARK [2][-]{subsection.4.2.4}{Ergebnisse des Vergleichs}{section.4.2}% 37
-\BOOKMARK [1][-]{section.4.3}{Steiggeschwindigkeit}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.3.1}{Ergebnis}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.2}{Einfluss des Widerstands}{section.4.3}% 40
-\BOOKMARK [2][-]{subsection.4.3.3}{Einfluss der Anzahl der Batteriezellen}{section.4.3}% 41
-\BOOKMARK [2][-]{subsection.4.3.4}{Einfluss des maximalen Motorstroms}{section.4.3}% 42
-\BOOKMARK [1][-]{section.4.4}{Massenverteilung}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.1}{Ergebnisse}{section.4.4}% 44
-\BOOKMARK [1][-]{section.4.5}{Gr\366\337e und Anzahl der Propeller des Flugger\344tes}{chapter.4}% 45
-\BOOKMARK [2][-]{subsection.4.5.1}{Ergebnisse}{section.4.5}% 46
-\BOOKMARK [2][-]{subsection.4.5.2}{Anzahl der Propeller}{section.4.5}% 47
-\BOOKMARK [2][-]{subsection.4.5.3}{Ergebnisse}{section.4.5}% 48
-\BOOKMARK [1][-]{section.4.6}{Verstellpropeller}{chapter.4}% 49
-\BOOKMARK [2][-]{subsection.4.6.1}{Ergebnisse}{section.4.6}% 50
-\BOOKMARK [2][-]{subsection.4.6.2}{Ergebnisse}{section.4.6}% 51
-\BOOKMARK [1][-]{section.4.7}{Stufenloses Getriebe}{chapter.4}% 52
-\BOOKMARK [2][-]{subsection.4.7.1}{Ergebnis}{section.4.7}% 53
-\BOOKMARK [1][-]{section.4.8}{Randbedingungen des Aeromot\137UAV-Projekts}{chapter.4}% 54
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 55
-\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 56
-\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 57
-\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 58
-\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 60
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 61
-\BOOKMARK [1][-]{section.A.1}{Fl\344chenflugzeug}{appendix.A}% 62
-\BOOKMARK [1][-]{section.A.2}{Steiggeschwindigkeit}{appendix.A}% 63
-\BOOKMARK [1][-]{section.A.3}{Batteriemasse}{appendix.A}% 64
+\BOOKMARK [2][-]{subsection.4.2.1}{Erste Untersuchung}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.2}{Einflussfaktoren auf das Fl\344chenflugzeug}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.3}{Ergebnisse des Vergleichs}{section.4.2}% 36
+\BOOKMARK [1][-]{section.4.3}{Steiggeschwindigkeit}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.3.1}{Ergebnis}{section.4.3}% 38
+\BOOKMARK [2][-]{subsection.4.3.2}{Einfluss des Widerstands}{section.4.3}% 39
+\BOOKMARK [2][-]{subsection.4.3.3}{Einfluss der Anzahl der Batteriezellen}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.4}{Einfluss des maximalen Motorstroms}{section.4.3}% 41
+\BOOKMARK [1][-]{section.4.4}{Massenverteilung}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.1}{Ergebnisse}{section.4.4}% 43
+\BOOKMARK [1][-]{section.4.5}{Gr\366\337e und Anzahl der Propeller des Flugger\344tes}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.5.1}{Ergebnisse}{section.4.5}% 45
+\BOOKMARK [2][-]{subsection.4.5.2}{Anzahl der Propeller}{section.4.5}% 46
+\BOOKMARK [2][-]{subsection.4.5.3}{Ergebnisse}{section.4.5}% 47
+\BOOKMARK [1][-]{section.4.6}{Verstellpropeller}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.6.1}{Ergebnisse}{section.4.6}% 49
+\BOOKMARK [2][-]{subsection.4.6.2}{Ergebnisse}{section.4.6}% 50
+\BOOKMARK [1][-]{section.4.7}{Stufenloses Getriebe}{chapter.4}% 51
+\BOOKMARK [2][-]{subsection.4.7.1}{Ergebnis}{section.4.7}% 52
+\BOOKMARK [1][-]{section.4.8}{Randbedingungen des Aeromot\137UAV-Projekts}{chapter.4}% 53
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 54
+\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 56
+\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 57
+\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 59
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 60
+\BOOKMARK [1][-]{section.A.1}{Fl\344chenflugzeug}{appendix.A}% 61
+\BOOKMARK [1][-]{section.A.2}{Vergleich von normierter zur originalen Batteriezelle}{appendix.A}% 62
+\BOOKMARK [1][-]{section.A.3}{Steiggeschwindigkeit}{appendix.A}% 63
+\BOOKMARK [1][-]{section.A.4}{Batteriemasse}{appendix.A}% 64
+\BOOKMARK [1][-]{section.A.5}{Verstellpropeller}{appendix.A}% 65
+\BOOKMARK [1][-]{section.A.6}{Getriebe}{appendix.A}% 66
