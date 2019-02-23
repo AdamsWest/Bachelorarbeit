@@ -446,39 +446,10 @@ hold off
 subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 % Anpassung und Abspeichern der Diagramme
-ImageSizeX = 14;
-ImageSizeY = 24;
-figure(figure_ges)
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+PaperSizeX = 21;
+PaperSizeY = 29.7;
+
+fig = gcf;
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');
-
-
-
-
-%% Datei abspeichern
-% ImageSizeX = 40;
-% ImageSizeY = 30;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% figure(figure_C_Rest_V)
-% saveas(gcf,'C_Rest_V', 'jpg');
-% figure(figure_omega)
-% saveas(gcf,'omega', 'jpg');
-% figure(figure_I_mot)
-% saveas(gcf,'I_mot', 'jpg');
-% figure(figure_U_mot)
-% saveas(gcf,'U_mot', 'jpg');
-% figure(figure_I_Bat)
-% saveas(gcf,'I_Bat', 'jpg');
-% figure(figure_PWM)
-% saveas(gcf,'PWM', 'jpg');
-
-%% Datei abspeichern
-% ImageSizeX = 14;
-% ImageSizeY = 24;
-% figure(figure_C_Rest_V)
-% figure(figure_omega)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');

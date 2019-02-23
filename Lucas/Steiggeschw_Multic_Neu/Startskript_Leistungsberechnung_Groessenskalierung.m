@@ -53,14 +53,14 @@ m_Bat = m_ges * (0.56/1.06);              % Batteriemasse
 m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 % Batterie
-E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
+E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 % Abfrage_N_Bat = [2 4 6 8];
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazit‰t einer Zelle in Ah
 U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
-P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
+P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 % m_Bat = 0.56;           % Batteriemasse in kg
 
@@ -68,7 +68,8 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat_min = 0.49;
 m_Bat_Delta = 0.01;
 m_Bat_max = 0.55;
-Abfrage_m_Bat = [0.25 0.5 0.75 1 1.5 2];  
+% Abfrage_m_Bat = [0.25 0.5 0.75 1 1.5 2];  
+Abfrage_m_Bat = [0.7 0.75 0.8 0.85 0.9 0.95 1];
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
@@ -118,7 +119,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
     
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = groﬂe Schritte'];
-Dateiname = 'C_W_Untersuchung';
+Dateiname = 'Batteriemasse_genau';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

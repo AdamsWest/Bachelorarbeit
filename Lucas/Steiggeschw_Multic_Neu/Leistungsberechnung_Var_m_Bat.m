@@ -87,7 +87,7 @@ for j = 1:length(Abfrage_m_Bat)
 %     m_Bat = m_Bat_variabel * m_ges;
 %     c_W_copter_oben = Abfrage_c_W(j);
 %     N_Bat_cell = Abfrage_N_Bat(j);
-    U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
+    U_Bat_nom = N_Bat_cell * 4;%Batterie_data(4);        % nominale Batteriespannung
     U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
     
     m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
@@ -481,16 +481,10 @@ subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
 lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Anteil m_{Bat} an m_{ges}')
 
 % Anpassung und Abspeichern der Diagramme
-ImageSizeX = 26;
-ImageSizeY = 29.7;
-% figure(figure_ges)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
-% saveas(gcf,Dateiname, 'pdf');  
+PaperSizeX = 21;
+PaperSizeY = 29.7;
 
 fig = gcf;
-fig.PaperPositionMode = 'auto';
-set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
-fig_pos = fig.PaperPosition;
-fig.PaperSize = [ImageSizeX ImageSizeY];
-print(fig,Dateiname,'-dpdf')
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
+saveas(gcf,Dateiname, 'pdf');

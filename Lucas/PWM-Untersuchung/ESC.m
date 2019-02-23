@@ -40,6 +40,7 @@ else
 	eta_PWM = 1;
 end
 
-% eta_PWM = 1;
+eta_PWM = 1;
+% eta_PWM = eta_PWM + (1-eta_PWM)/2;
 
 end
