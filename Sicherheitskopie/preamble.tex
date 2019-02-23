@@ -68,8 +68,7 @@
 %    eprint=false,
 %    bibencoding=utf8,safeinputenc=true
 %]{biblatex}
-\addbibresource{Literatur.bib}
-\bibliography{Literatur}
+\addbibresource{dummy_bibliography.bib}
 % ******************************************************************************
 %
 % Textsatz
@@ -162,19 +161,6 @@
 % Laden von Abkuerzungen
 \sisetup{load-configurations = abbreviations}
 %\sisetup{load=prefixed}
-% ******************************************************************************
-%
-% Das Paket ermoeglicht das erstellen von Glossaries und Abkuerzungen, sowie
-% Abkuerzungen von Formelzeichen.
-\usepackage[
-    nonumberlist,   % keine Seitenzahlen anzeigen
-    acronym,        % ein Abkuerzungsverzeichnis erstellen
-    %toc,           % Eintraege im Inhaltsverzeichnis
-    %nottoc,
-    section,        % Im Inhaltsverzeichnis auf section-Ebene erscheinen
-    %footnote        % Erklaerungen und ausgeschriebene Abkürzungen beim ersten
-                    % erscheinen als Fußnote
-]{glossaries}
 % ******************************************************************************
 %
 % Sonderzeichen
@@ -492,7 +478,7 @@
 %\usepackage{csvsimple}
 %
 % Ermoeglicht das Erstellen von Tabellen ueber mehrere Seiten.
-%\usepackage{longtable}
+\usepackage{longtable}
 %
 % Erstellen von Tabellen mit PGF
 %\usepackage{pgfplotstable}
@@ -550,6 +536,31 @@
 \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 \DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
 % ******************************************************************************
+%******************************************************************************
 %
 % Packages zum Erstellen von Struktogrammen
 \usepackage{struktex}
+%*******************************************************************************
+% Packages zum einfachen Erstellen einer Projektdokumentierung, Workpackagedescription, Workbreakdownstructure und Gantt-Chart
+
+\usepackage{lscape}
+
+%
+% Dieses Paket ermoeglicht PGF plots innerhalb der TIKZ Umgebung
+\usepackage{pgf}
+\usepackage{pgfgantt}
+%
+% Ermoeglicht ein viel einfacheres erstellen von WPDs
+\usepackage{colortbl}
+\usepackage{totcount}
+\let\titleoriginal\title           % save original \title macro
+\renewcommand{\title}[1]{          % substitute for a new \title
+    \titleoriginal{#1}%               % define the real title
+    \newcommand{\otitle}{#1}        % define \otitle
+}
+\usepackage{workpackagedescription}
+
+\usepackage{tikz}
+
+\usetikzlibrary{ shapes, shadows, arrows}
+%*******************************************************************************

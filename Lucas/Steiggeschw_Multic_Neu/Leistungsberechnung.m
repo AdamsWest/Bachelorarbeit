@@ -451,11 +451,12 @@ hold off
 subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 
-ImageSizeX = 21;
-ImageSizeY = 29.7;
+PaperSizeX = 21;
+PaperSizeY = 29.7;
+
 fig = gcf;
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.85 34.45]);
-set(gcf,'Units','centimeters', 'PaperSize', [21 29.7]);
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');
 
 % Anpassung und Abspeichern der Diagramme

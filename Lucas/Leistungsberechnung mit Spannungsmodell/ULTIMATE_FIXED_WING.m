@@ -9,15 +9,16 @@ load('Elektromodellflug');
 load('axi_motor_db.mat');
 
 %% Festlegung des Dateinamen
-Dateiname = 'Flaechenflzg_E';
+Dateiname = 'Flaechenflzg_Vstern';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % *************************************************************************
-Abfrage_mot = [23 22 21 20 24];
-Abfrage_prop = {'9x7','9x7','9x7','9x7','9x7'};
+Abfrage_mot = [24];
+Abfrage_prop = {'9x7','6x4'};
 Abfrage_n_prop = [1 2 4 6];
 Abfrage_E = [4 6 10 20 50];
 Abfrage_fp = [1 1.2 1.5 2];
+Abfrage_V = [25 75 100 125];
 
 %**************************************************************************
 Abfrage_Flugsystem = 0; % HANDS OFF
@@ -48,7 +49,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m
-H_max = 17000;                              % Maximalhöhe in m
+H_max = 16500;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -93,13 +94,12 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
-v_ver_max = ceil(V_stern);
-lengthvert = floor(abs(v_ver_max - v_vert_min) / v_vert_Delta + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
 % lengthj = length(Abfrage_mot);
-% lengthj = length(Abfrage_n_prop);
+lengthj = length(Abfrage_prop);
 % lengthj = length(Abfrage_E);
-lengthj = length(Abfrage_fp);
+% lengthj = length(Abfrage_fp);
+% lengthj = length(Abfrage_V);
 
 
 %% Initialisierungen
@@ -121,7 +121,7 @@ l10 = zeros(lengthj,1);
 
 
 
-for j = 1:length(Abfrage_fp)
+for j = 1:length(Abfrage_prop)
     
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -129,9 +129,15 @@ for j = 1:length(Abfrage_fp)
     E_stern = Abfrage_E(1);
     E = E_stern;
     m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
+    V_stern = Abfrage_V(3)/3.6;
     
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    v_ver_max = ceil(V_stern);
+    lengthvert = floor(abs(v_ver_max - v_vert_min) / v_vert_Delta + 1);
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     % Motor
-    motor_name = axi_motor_db{Abfrage_mot(3),1}; % Motorname
+    motor_name = axi_motor_db{Abfrage_mot(1),1}; % Motorname
     [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
     K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
     % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -141,7 +147,7 @@ for j = 1:length(Abfrage_fp)
     % m_Mot = 0.0365;         % Motorgewicht in kg
     
     % Propeller
-    prop_name = Abfrage_prop{3};    % Propellerbezeichnung
+    prop_name = Abfrage_prop{j};    % Propellerbezeichnung
     n_Prop = Abfrage_n_prop(1);             % Anzahl der Propeller
     %D = 14;                % Propellerdurchmesser in inch
     %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -206,7 +212,7 @@ for j = 1:length(Abfrage_fp)
         
         m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
         
-        f_p = Abfrage_fp(j);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+        f_p = Abfrage_fp(1);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
         
         m_flugzeug = f_p * m_copter;
         
@@ -685,7 +691,7 @@ for j = 1:length(Abfrage_fp)
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
     subplot(529), l9(j) = stairs(H,gamma_Flaechenflzg,'LineWidth',1); grid on, hold on
     subplot(5,2,10), l10(j) = stairs(H,V_Flaechenflugzeug,'LineWidth',1); grid on, hold on   
-    l10_Info{j} = [num2str(Abfrage_fp(j))]; grid on, hold on
+    l10_Info{j} = [prop_name]; grid on, hold on
     % m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name
     
     %   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]
@@ -742,7 +748,7 @@ else
 %     hold off
     subplot(529), xlabel('Höhe [m]'),ylabel('\gamma [°]')
     subplot(5,2,10), xlabel('Höhe [m]'),ylabel('V_A [m/s]')
-    lgd = legend([l10], l10_Info, 'Location','bestoutside'); title(lgd,'f_P =') % 
+    lgd = legend([l10], l10_Info, 'Location','bestoutside'); title(lgd,'Propeller') % 
     
 end
 

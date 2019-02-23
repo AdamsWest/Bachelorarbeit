@@ -1,14 +1,15 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
-A level-1 auxiliary file: title_page_thesis.aux
-A level-1 auxiliary file: oath.aux
-A level-1 auxiliary file: abstract.aux
-A level-1 auxiliary file: introduction.aux
-A level-1 auxiliary file: programm.aux
-A level-1 auxiliary file: nachbildung.aux
-A level-1 auxiliary file: parameteruntersuchung.aux
-A level-1 auxiliary file: conclusion.aux
-A level-1 auxiliary file: projektmanagement.aux
-I found no \citation commands---while reading file main.aux
-I found no \bibdata command---while reading file main.aux
-I found no \bibstyle command---while reading file main.aux
-(There were 3 error messages)
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[40] biber-MSWIN64:313> INFO - === 
+[110] Biber.pm:371> INFO - Reading 'main.bcf'
+[217] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[234] Biber.pm:3976> INFO - Processing section 0
+[257] Biber.pm:4136> INFO - Looking for bibtex format file 'dummy_bibliography.bib' for section 0
+[265] bibtex.pm:1500> INFO - LaTeX decoding ...
+[274] bibtex.pm:1316> INFO - Found BibTeX data source 'dummy_bibliography.bib'
+[300] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[300] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[300] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[301] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[302] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[303] bbl.pm:720> INFO - Output to main.bbl

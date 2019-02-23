@@ -48,10 +48,10 @@ a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel 
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
 
 % Batterie
-E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
+E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
-C_Bat_cell = 3.0;     % Kapazität einer Zelle in Ah
+C_Bat_cell = 3.12;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
@@ -114,7 +114,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms.pdf'];
 
-Dateiname = 
+Dateiname = 'Russland';
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
 run('Leistungsberechnung'); % _Var_m_Bat

@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{struktex}
+\usepackage{geometry}
+\usepackage[ngerman]{babel}
+\geometry{a5paper, top=0mm, left=-0.5mm, right=5mm, bottom=10mm}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{struktogramm}(140,185)
+%\assign[1]{Fluggerät auswählen und Komponenten definieren(im Startskript)}
+%\assign[1]{Missions- und Umgebungsparameter festlegen (im Startskript)}
+%\assign[1]{Diskretisierungen festlegen}
+%\assign[1]{Aufruf des Hauptskripts: Leistungsberechnung starten}
+%\assign[1]{Initialisierung der Parameterberechnung}
+%\while[5]{F\"ur alle Höhenabschnitte}
+%	\assign[1]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
+%	\assign[1]{arithmetische Mittelwert berechnen}
+%	\assign[1]{Schub- und Leistungskennfeld anpassen}
+%	\assign[2]{Initialisierung der Leistungsberechnung}
+%	\while[5]{Für alle Bahnneigungswinkel}
+		\ifthenelse[15]{1}{1}{Flugger\"at?}{Multicopter (1)}{Fl\"achenflugzeug (0)}
+			\assign[2]{Berechne Gesamtmasse}
+			\assign[2]{Flugzeit für Höhenschritt berechnen}			
+			\while[5]{Solange Abbruchkriterium nicht erreicht}
+				\assign{Aerodynamik berechnen}
+			\whileend
+			\assign[2]{Schub berechnen}
+			\change
+			\assign[2]{Berechne Gesamtmasse}
+			\assign[2]{Schub aus Bahnneigungswinkel und Auslegungspunkt berechnen}
+			\assign[2]{Flugzeit für Höhenschritt berechnen}
+		\ifend
+		\assign[2]{Schub auf Propeller verteilen}
+		\ifthenelse[10]{1}{4}{Schub zu gro\ss{}?}{ja}{nein}
+			\assign[2]{Ergebnis verwerfen (NaN)}
+			\change
+			\assign[2]{Drehzahl und Drehmoment aus Propellerkennfeld interpolieren}
+			\assign[2]{Motorzustand berechnen}
+			\assign[2]{Zustand der Motorregler berechnen}
+			\assign[2]{Zustand der Batterie neu berechnen}
+			\assign[2]{Gesamtwirkungsgrad berechnen}
+		\ifend
+		\ifthenelse[10]{1}{1}{Werden Grenzen überschritten?}{ja}{nein}
+			\assign[2]{Ergebnis verwerfen (NaN)}
+			\change
+			\assign[2]{Ergebnis beibehalten}
+		\ifend
+		\ifthenelse[10]{1}{1}{Fluggerät?}{Multicopter (1)}{Flächenflugzeug (0)}
+			\assign[2]{break}
+			\change
+			\assign[2]{Speichern der aufgebrachten Energiemenge}
+		\ifend
+%	\whileend
+%	\ifthenelse[10]{1}{1}{Fluggerät?}{Multicopter (1)}{Flächenflugzeug (0)}
+%		\assign[2]{Übergabe der zwischengespeicherten Leistungsparameter}
+%		\change
+%		\ifthenelse[10]{1}{1}{Sind die Werte NaN?}{nein}{ja}
+%			\while[5]{Solange Abbruchkriterium nicht erreicht}		
+%				\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+%				\ifthenelse[10]{1}{1}{Sind alle Werte innerhalb der Leistungsgrenzen?}{ja}{nein}
+%				\assign[2]{Verlasse Schleife}
+%				\change
+%				\assign[2]{Suche nächst kleinere Energiemenge}
+%				\ifend
+%			\whileend
+%			\assign[2]{Übergabe aller Leistungsparameter mit diesem Index}
+%			\change
+%			\assign[2]{Verwerfe alle Ergebnisse}
+%		\ifend
+%	\ifend
+%\whileend
+%\assign[2]{Ergebnisse für Restladung, Drehzahl, Motorstrom und -spannung, PWM in Diagramme zeichnen}
+%\assign[2]{Speichern der Diagramme}
+\end{struktogramm}
+
+\end{document}

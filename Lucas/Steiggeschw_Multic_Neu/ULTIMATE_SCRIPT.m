@@ -16,6 +16,7 @@ Dateiname = 'Groessenskalierung';
 Abfrage_mot = [10 21 28 31];
 Abfrage_prop = {'9x4','10x3','11x3','11x3'};
 Abfrage_n_prop = [1 2 4 6 8];
+Abfrage_c_W = [0.1 0.5 1 1.5 2];
 
 % figures definieren
 figure_ges = figure;
@@ -78,8 +79,8 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
-lengthj = length(Abfrage_mot);
-% lengthj = length(Abfrage_c_W);
+% lengthj = length(Abfrage_mot);
+lengthj = length(Abfrage_c_W);
 % lengthj = length(Abfrage_N_Bat);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
 
@@ -102,7 +103,7 @@ l9 = zeros(lengthj,1);
 
 % j = 1;
 % for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
-for j = 1:length(Abfrage_mot)
+for j = 1:length(Abfrage_c_W)
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,7 +111,7 @@ for j = 1:length(Abfrage_mot)
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Motor
-    motor_name = axi_motor_db{Abfrage_mot(j),1}; % Motorname
+    motor_name = axi_motor_db{Abfrage_mot(2),1}; % Motorname
     [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
     K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
     % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -120,7 +121,7 @@ for j = 1:length(Abfrage_mot)
     % m_Mot = 0.0365;         % Motorgewicht in kg
     
     % Propeller
-    prop_name = Abfrage_prop{j};    % Propellerbezeichnung
+    prop_name = Abfrage_prop{2};    % Propellerbezeichnung
     n_Prop = Abfrage_n_prop(3);             % Anzahl der Propeller
     c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
     a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
@@ -171,7 +172,7 @@ for j = 1:length(Abfrage_mot)
     % A_copter = 0.15*0.05 + 0.12*0.02*n_Prop;     % obere Stirnflaeche des Multicopter in m^2
     A_copter = 0.15*0.05 + (D/2*0.0254)*1.2*0.02* n_Prop;     % obere Stirnflaeche des Multicopter in m^2
     A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
-    c_W_copter_oben = 1;                    % Widerstandsbeiwert des Multicopters
+    c_W_copter_oben = Abfrage_c_W(j);                    % Widerstandsbeiwert des Multicopters
     c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
     c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
     
@@ -527,8 +528,9 @@ for j = 1:length(Abfrage_mot)
     subplot(526), l6(j) = stairs(H2,U_Bat,'LineWidth',1); grid on, hold on
     subplot(527), l7(j) = stairs(H,PWM*100,'LineWidth',1); grid on, hold on
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
-    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = ['m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name]; grid on, hold on
+    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = [num2str(Abfrage_c_W(j))]; grid on, hold on
     
+%     'm_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name
 %   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]  
     
     
@@ -565,7 +567,7 @@ subplot(528), title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),
 ylabel('\eta_{ges} [%]'), %legend([l8], l8_Info)
 subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
 ylabel('V_{Kg} [m/s]'),
-lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Groessenskalierung') % 
+lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'c_W=')  
 % 
 % newPosition = [10 20 0.2 0.2];
 % newUnits = 'centimeters';
@@ -576,6 +578,6 @@ PaperSizeX = 21;
 PaperSizeY = 29.7;
 
 fig = gcf;
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.6 24.65 34.45]);
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');

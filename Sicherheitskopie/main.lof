@@ -2,13 +2,31 @@
 \babel@toc {ngerman}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Struktogramm des MATLAB-Skripts\relax }}{8}{figure.caption.16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Programmablauf\relax }}{5}{figure.caption.19}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ablaufstruktur der Flugleistungsberechnung\relax }}{6}{figure.caption.20}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Kr\IeC {\"a}ftegleichgewicht am unbeschleunigten Multicopter unter Ber\IeC {\"u}cksichtigung aerodynamischer Kr\IeC {\"a}fte ($k^*$ ist eine beliebige Achse in der $x_f,y_f$-Ebene).\relax }}{10}{figure.caption.23}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Typische Entladekurve f\IeC {\"u}r eine Li-Po-Batterie \cite {Tremblay.2009}\relax }}{19}{figure.caption.36}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces oben: Durschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abh\IeC {\"a}ngigkeit von der C-Rate, unten: Beispiel f\IeC {\"u}r die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle f\IeC {\"u}r eine C-Rate von 20\relax }}{26}{figure.caption.49}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Restladung der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{21}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Motordrehzahl der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{22}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Entladestrom der Batterie \IeC {\"u}ber der H\IeC {\"o}he\relax }}{23}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Pulsweitenmodulation \IeC {\"u}ber der H\IeC {\"o}he\relax }}{24}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die Restladung, die Drehzahl, der Batteriestrom und die PWM im Programm aufgetragen \IeC {\"u}ber der H\IeC {\"o}he\relax }}{31}{figure.caption.58}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Verlauf der Leistungsparameter \IeC {\"u}ber der H\IeC {\"o}he f\IeC {\"u}r ein Fl\IeC {\"a}chenflugzeug mit den in Tabelle \ref {tab:flzg_parameter} definierten Parametern\relax }}{36}{figure.caption.61}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Einfluss der Motor-Propeller-Kombination auf die Flugleistungen eines Fl\IeC {\"a}chenflugzeugs (\ensuremath {m_{Mot}} = \SI {106}{g}, Propeller = 9x7)\relax }}{39}{figure.caption.63}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Einfluss der Propelleranzahl auf die Flugleistungen eines Fl\IeC {\"a}chenflugzeugs (\ensuremath {m_{Mot}} = \SI {106}{g}, Propeller = 9x7)\relax }}{42}{figure.caption.65}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Einfluss der Gleitzahl auf die Flugleistungen eines Fl\IeC {\"a}chenflugzeugs\relax }}{44}{figure.caption.67}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Einfluss der Auslegungsgeschwindigkeit auf die Flugleistungen eines Fl\IeC {\"a}chenflugzeugs\relax }}{46}{figure.caption.69}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Einfluss des Penalty-Faktors auf die Flugleistungen eines Fl\IeC {\"a}chenflugzeugs\relax }}{48}{figure.caption.71}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Flugleistungen des Quadrocopter aus \cite {Anderson.2018} mit variabler Steiggeschwindigkeit\relax }}{51}{figure.caption.72}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Widerstandseinfluss auf die maximale erreichbare H\IeC {\"o}he\relax }}{53}{figure.caption.73}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Einfluss der Batteriezellenanzahl auf die maximale erreichbare H\IeC {\"o}he\relax }}{55}{figure.caption.74}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Abh\IeC {\"a}ngigkeit der maximalen H\IeC {\"o}he von Batteriemasse anteilig an der Gesamtmasse (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{58}{figure.caption.76}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Einfluss der Gr\IeC {\"o}\IeC {\ss }enver\IeC {\"a}nderung auf die maximal erreichbare H\IeC {\"o}he\relax }}{61}{figure.caption.77}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Einfluss der Propelleranzahl auf die maximal erreichbare H\IeC {\"o}he (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{64}{figure.caption.78}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Verstellpropeller\relax }}{67}{figure.caption.79}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Programmstruktur zur Ermittlung der optimalen Steiggeschwindigkeit\relax }}{90}{figure.caption.93}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces genauere Untersuchung der Batteriemassenabh\IeC {\"a}ngigkeit (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{91}{figure.caption.94}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers\relax }}{92}{figure.caption.95}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Programmstruktur die Untersuchung des Nutzens eines Getriebes\relax }}{93}{figure.caption.96}

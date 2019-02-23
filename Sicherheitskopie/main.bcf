@@ -1971,22 +1971,46 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
-    <bcf:datasource type="file" datatype="bibtex">Literatur.bib</bcf:datasource>
-    <bcf:datasource type="file" datatype="bibtex">Literatur.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex">dummy_bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">.</bcf:citekey>
-    <bcf:citekey order="2">JonNealOstler.17.03.2006</bcf:citekey>
-    <bcf:citekey order="3">Kim.04.07.201707.07.2017</bcf:citekey>
-    <bcf:citekey order="4">.23.12.2018</bcf:citekey>
-    <bcf:citekey order="4">.07.12.2018</bcf:citekey>
-    <bcf:citekey order="4">.07.05.2018</bcf:citekey>
-    <bcf:citekey order="5">Paredes.20.08.201723.08.2017</bcf:citekey>
-    <bcf:citekey order="6">Shi.2017</bcf:citekey>
-    <bcf:citekey order="6">Stepaniak.2009</bcf:citekey>
-    <bcf:citekey order="6">Quan.2017</bcf:citekey>
-    <bcf:citekey order="7">.</bcf:citekey>
-    <bcf:citekey order="8">Wall.2015</bcf:citekey>
+    <bcf:citekey order="3">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="4">Ostler.2006</bcf:citekey>
+    <bcf:citekey order="5">KARI.2017</bcf:citekey>
+    <bcf:citekey order="6">Drivecalc</bcf:citekey>
+    <bcf:citekey order="6">eCalc</bcf:citekey>
+    <bcf:citekey order="6">Flyeval</bcf:citekey>
+    <bcf:citekey order="7">PCUP.2017</bcf:citekey>
+    <bcf:citekey order="8">Quan.2017</bcf:citekey>
+    <bcf:citekey order="8">Shi.2017</bcf:citekey>
+    <bcf:citekey order="8">Stepaniak.2009</bcf:citekey>
+    <bcf:citekey order="9">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="10">Bruning.1986</bcf:citekey>
+    <bcf:citekey order="11">Bruning.1986</bcf:citekey>
+    <bcf:citekey order="12">Bruning.1986</bcf:citekey>
+    <bcf:citekey order="13">Scheiderer.2008</bcf:citekey>
+    <bcf:citekey order="14">Wall.2015</bcf:citekey>
+    <bcf:citekey order="15">Drela.2007</bcf:citekey>
+    <bcf:citekey order="16">Traub.2016</bcf:citekey>
+    <bcf:citekey order="17">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="18">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="19">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="20">Wall.2015</bcf:citekey>
+    <bcf:citekey order="21">Wall.2015</bcf:citekey>
+    <bcf:citekey order="22">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="23">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="24">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="25">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="26">Tremblay.2009</bcf:citekey>
+    <bcf:citekey order="27">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="28">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="29">Buchi.2013</bcf:citekey>
+    <bcf:citekey order="30">Wall.2015</bcf:citekey>
+    <bcf:citekey order="31">Scheiderer.2008</bcf:citekey>
+    <bcf:citekey order="32">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="33">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="34">Neitzke.2013</bcf:citekey>
+    <bcf:citekey order="35">Anderson.2018</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

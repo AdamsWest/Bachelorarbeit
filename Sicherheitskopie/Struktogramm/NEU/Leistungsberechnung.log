@@ -1,0 +1,293 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  2 FEB 2019 10:27
+entering extended mode
+**./Leistungsberechnung.tex
+(Leistungsberechnung.tex
+LaTeX2e <2018-04-01> patch level 5
+("C:\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\MiKTeX 2.9\tex\latex\struktex\struktex.sty"
+("C:\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\MiKTeX 2.9\tex\latex\struktex\struktxf.sty"
+\symitalics=\mathgroup4
+\symAMSb=\mathgroup5
+)
+("C:\MiKTeX 2.9\tex\latex\struktex\struktxp.sty"
+("C:\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+("C:\MiKTeX 2.9\tex\latex\pict2e\pict2e.sty"
+Package: pict2e 2016/02/05 v0.3b Improved picture commands (HjG,RN,JT)
+
+("C:\MiKTeX 2.9\tex\latex\pict2e\pict2e.cfg"
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 119.
+
+("C:\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 121.
+
+("C:\MiKTeX 2.9\tex\latex\pict2e\p2e-pdftex.def"
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+("C:\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+\pIIe@GRAPH=\toks14
+\@arclen=\dimen103
+\@arcrad=\dimen104
+\@tempdimd=\dimen105
+)
+debug inactive
+\savelength@nss=\dimen106
+\gx@nss=\count88
+\gy@nss=\count89
+\gsize@nss=\count90
+\TextBox@nss=\box26
+\TextBoxHt@nss=\dimen107
+\descriptionindent=\skip43
+\descriptionwidth=\skip44
+\descriptionsep=\skip45
+\descriptionwidth@nss=\skip46
+\indentmeasure@nss=\dimen108
+\indentmeasureright@nss=\dimen109
+\thisindent@nss=\dimen110
+\thisindentright@nss=\dimen111
+\thislength@nss=\dimen112
+\CenterBox@nss=\box27
+) ("C:\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("C:\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+("C:\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count91
+\Gm@cntv=\count92
+\c@Gm@tempcnt=\count93
+\Gm@bindingoffset=\dimen113
+\Gm@wd@mp=\dimen114
+\Gm@odd@mp=\dimen115
+\Gm@even@mp=\dimen116
+\Gm@layoutwidth=\dimen117
+\Gm@layoutheight=\dimen118
+\Gm@layouthoffset=\dimen119
+\Gm@layoutvoffset=\dimen120
+\Gm@dimlist=\toks16
+
+("C:\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2018/09/26 3.24 The Babel package
+
+("C:\MiKTeX 2.9\tex\generic\babel\switch.def"
+File: switch.def 2018/09/26 3.24 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\MiKTeX 2.9\tex\latex\babel-german\ngerman.ldf"
+Language: ngerman 2018/03/29 v2.10 German support for babel (post-1996 orthogra
+phy)
+
+("C:\MiKTeX 2.9\tex\latex\babel-german\ngermanb.ldf"
+Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
+aphy)
+
+("C:\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2018/09/26 3.24 Babel common definitions
+\babel@savecnt=\count94
+\U@D=\dimen121
+
+("C:\MiKTeX 2.9\tex\generic\babel\txtbabel.def")
+\bbl@dirlevel=\count95
+)
+Package babel Info: Making " an active character on input line 121.
+))) (Leistungsberechnung.aux)
+\openout1 = `Leistungsberechnung.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+("C:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen122
+\scratchbox=\box28
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen123
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
+\everyMPtoPDFconversion=\toks18
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a5paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(-1.42262pt, 408.29704pt, 14.22636pt)
+* v-part:(T,H,B)=(0.0pt, 569.05513pt, 28.45274pt)
+* \paperwidth=421.10078pt
+* \paperheight=597.50787pt
+* \textwidth=408.29704pt
+* \textheight=569.05513pt
+* \oddsidemargin=-73.69261pt
+* \evensidemargin=-73.69261pt
+* \topmargin=-109.26999pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+===> dbg Args:   0, 185000, 140000
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 27--27
+[]\OT1/cmr/m/n/10 .0pt 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ |\OT1/cmr/m/n/10 Flugger[]at? 
+ []
+
+===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
+
+Underfull \hbox (badness 1082) in paragraph at lines 30--30
+\OT1/cmr/m/n/10 Solange Ab-bruch-kri-te-ri-um nicht er-
+ []
+
+===> dbg Args:   \tempx@nss , \tempy@nss , \tempxx@nss 
+===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+("C:\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 40--40
+[]\OT1/cmr/m/n/10 .0pt 
+ []
+
+
+Underfull \hbox (badness 5331) in paragraph at lines 40--40
+ |\OT1/cmr/m/n/10 Schub zu gro? 
+ []
+
+===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+\OT1/cmr/m/n/10 Ergebnis ver-
+ []
+
+===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 49--49
+[]\OT1/cmr/m/n/10 .0pt 
+ []
+
+===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
+===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 54--54
+[]\OT1/cmr/m/n/10 .0pt 
+ []
+
+
+Underfull \hbox (badness 7685) in paragraph at lines 54--54
+ |\OT1/cmr/m/n/10 Flugger[]at? 
+ []
+
+===> dbg Args:   \x@nss , \y@nss , \tempx@nss 
+===> dbg Args:   \xx@nss , \y@nss , \tempxx@nss 
+
+Overfull \hbox (1.13652pt too wide) in paragraph at lines 80--80
+[][] 
+ []
+
+
+Overfull \hbox (5.04153pt too wide) in paragraph at lines 27--81
+[]$[]$ 
+ []
+
+[1
+
+{C:/Users/lucsc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(Leistungsberechnung.aux) ) 
+Here is how much of TeX's memory you used:
+ 2356 strings out of 492970
+ 30469 string characters out of 3142029
+ 118646 words of memory out of 3000000
+ 6224 multiletter control sequences out of 15000+200000
+ 5309 words of font info for 20 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 32i,12n,23p,280b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
+pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Leistungsberechnung.pdf (1 page, 24881 bytes).
+PDF statistics:
+ 14 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

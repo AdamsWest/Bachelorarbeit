@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{struktex}
+\usepackage{geometry}
+\usepackage[ngerman]{babel}
+\geometry{a5paper, top=0mm, left=-0.5mm, right=5mm, bottom=10mm}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{struktogramm}(140,200)
+\assign[1]{Multicopter- und Umgebungsparameter festlegen (im Startskript)}
+\assign[1]{Diskretisierungen (Geschwindigkeit, Höhe) festlegen}
+\assign[1]{Aufruf des Hauptskripts: Leistungsberechnung starten}
+\while[5]{Für alle Zeilen der APC-Datenbank}
+	\ifthenelse[10]{1}{1}{Stimmt Durchmesser mit dem gesuchten überein?}{ja}{nein}
+		\assign[2]{Gehe zur nächsten Zeile}
+		\change
+		\assign[2]{Lösche Zeile}
+	\ifend
+\whileend
+\while[5]{Für alle Propeller}
+	\assign[2]{Extrahiere Propellerkennfeld}
+	\assign[2]{Speicher das Ergebnis unter fortlaufenden Nummern}
+	\assign[2]{Erhöhe Propellerzähler}
+\whileend
+\assign[1]{Initialisierung der Parameterberechnung}
+\while[5]{F\"ur alle Höhenabschnitte}
+	\assign[1]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
+	\assign[1]{arithmetische Mittelwert berechnen}
+	\assign[1]{Schub- und Leistungskennfeld anpassen}
+	\assign[2]{Initialisierung der Leistungsberechnung}
+	\while[5]{Für alle Bahngeschwindigkeiten}
+		\assign[2]{Initialisierungen}
+		\while[5]{Für alle Propeller}
+			\assign[2]{\texttt{\textbf{Leistungsberechnung}}}
+			\assign[2]{Berechnung benötigter Energiemenge bei dieser Bahngeschwindigkeit mit diesem Propeller}
+		\whileend
+		\ifthenelse[10]{4}{1}{Sind die Werte NaN?}{nein}{ja}
+			\while[5]{Solange Abbruchkriterium nicht erreicht}		
+				\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+				\ifthenelse[10]{1}{1}{Werte innerhalb Leistungsgrenzen?}{ja}{nein}
+				\assign[2]{Verlasse Schleife}
+				\change
+				\assign[2]{Suche nächst kleinere Energiemenge}
+				\ifend
+			\whileend
+			\assign[2]{Übergabe aller Leistungsparameter mit diesem Index}
+			\change
+			\assign[2]{Verwerfe alle Ergebnisse}
+		\ifend
+		\assign[2]{Berechne benötigte Energie für Steiggeschwindigkeit}
+	\whileend
+	\ifthenelse[10]{4}{1}{Sind die Werte NaN?}{nein}{ja}
+		\while[5]{Solange Abbruchkriterium nicht erreicht}		
+			\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
+			\ifthenelse[10]{1}{1}{Werte innerhalb Leistungsgrenzen?}{ja}{nein}
+			\assign[2]{Verlasse Schleife}
+			\change
+			\assign[2]{Suche nächst kleinere Energiemenge}
+			\ifend
+		\whileend
+		\assign[2]{Übergabe aller Leistungsparameter mit diesem Index}
+		\change
+		\assign[2]{Verwerfe alle Ergebnisse}
+	\ifend
+	\assign[2]{Erhöhe Zählervariable}
+\whileend
+\assign[2]{Ergebnisse der Leistungsparameter in Diagrammen speichern}
+\assign[2]{Speichern der Diagramme in .pdf-Datei}
+\end{struktogramm}
+
+\end{document}
