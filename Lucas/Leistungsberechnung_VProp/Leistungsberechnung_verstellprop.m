@@ -582,52 +582,30 @@ end
 % Darstellung der Ergenisse in Diagrammen
 figure(figure_ges)
 
-subplot(621), plot(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-subplot(622), plot(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-subplot(623), plot(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
-subplot(624), plot(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-subplot(625), plot(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
+subplot(621), plot(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+subplot(622), plot(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+subplot(623), plot(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
+subplot(624), plot(H,U_mot,'LineWidth',1), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
+subplot(625), plot(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
 H2 = [0;H];
-subplot(626), plot(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
-subplot(627), plot(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
-subplot(628), plot(H,eta_ges*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
-subplot(629), plot(H,V_Kg,'LineWidth',2), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
-subplot(6,2,10), plot(H2,t_Flug,'LineWidth',2), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
-subplot(6,2,11), plot(H,pitch,'LineWidth',2), title('Pitch'), grid, xlabel('Höhe [m]'),ylabel('Pitch [in]')
+subplot(626), plot(H2,U_Bat,'LineWidth',1), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
+subplot(627), plot(H,PWM*100,'LineWidth',1), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
+subplot(628), plot(H,eta_ges*100,'LineWidth',1), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+subplot(629), plot(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
+subplot(6,2,10), plot(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
+subplot(6,2,11), plot(H,pitch,'LineWidth',1), title('Pitch'), grid, xlabel('Höhe [m]'),ylabel('Pitch [in]')
 % Anpassung und Abspeichern der Diagramme
-ImageSizeX = 14;
-ImageSizeY = 24;
-figure(figure_ges)
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-saveas(gcf,Dateiname, 'pdf');
-
-
-
-
-%% Datei abspeichern
-% ImageSizeX = 40;
-% ImageSizeY = 30;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% figure(figure_C_Rest_V)
-% saveas(gcf,'C_Rest_V', 'jpg');
-% figure(figure_omega)
-% saveas(gcf,'omega', 'jpg');
-% figure(figure_I_mot)
-% saveas(gcf,'I_mot', 'jpg');
-% figure(figure_U_mot)
-% saveas(gcf,'U_mot', 'jpg');
-% figure(figure_I_Bat)
-% saveas(gcf,'I_Bat', 'jpg');
-% figure(figure_PWM)
-% saveas(gcf,'PWM', 'jpg');
-
-%% Datei abspeichern
 % ImageSizeX = 14;
 % ImageSizeY = 24;
-% figure(figure_C_Rest_V)
-% figure(figure_omega)
+% figure(figure_ges)
 % set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 % set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
 % saveas(gcf,Dateiname, 'pdf');
+
+PaperSizeX = 21;
+PaperSizeY = 29.7;
+
+fig = gcf;
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
+saveas(gcf,Dateiname, 'pdf');

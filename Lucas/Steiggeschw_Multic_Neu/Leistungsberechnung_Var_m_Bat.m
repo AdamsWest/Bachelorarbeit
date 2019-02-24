@@ -82,7 +82,7 @@ l9 = zeros(lengthj,1);
 % j = 1;
 % for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
 for j = 1:length(Abfrage_m_Bat)
-    
+
     m_Bat = Abfrage_m_Bat(j)*(m_copter+m_Mot*n_Prop);
 %     m_Bat = m_Bat_variabel * m_ges;
 %     c_W_copter_oben = Abfrage_c_W(j);
@@ -90,7 +90,7 @@ for j = 1:length(Abfrage_m_Bat)
     U_Bat_nom = N_Bat_cell * 4;%Batterie_data(4);        % nominale Batteriespannung
     U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
     
-    m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
+
     C_Bat = E_Dichte * m_Bat / U_Bat_nom;                               % Kapazitaet der Batterie in As
     Cnom = C_Bat/1000;                                            % Nominelle Kapazität
     [RPM_map, V_map, T_map, P_map, TAU_map] = Propeller_map(DATA_APC,prop_name);    % Aufbau des Kennfeldes
@@ -224,7 +224,7 @@ for j = 1:length(Abfrage_m_Bat)
             V_Kg_inter(z) = V_Kg_variabel;
             
             % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                       
+            m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters           
             t_Flug = Delta_H / V_Kg_inter(z);                                            % Flugzeit
             
             % Aerodynamik

@@ -1,6 +1,6 @@
 clc
 clear  
-% close all
+close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -34,8 +34,8 @@ ue_min = 0.8;           % minimale Übersetzung
 ue_Delta = 0.05;         % Schrittweite der Über
 ue_max = 1.4;            % maximale Übersetzung
 % Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
-m_getriebe = 0.25;       % Getriebegewicht
-eta_getriebe = 0.8;     % Wirkungsgrad des Getriebes
+m_getriebe = 0.0;       % Getriebegewicht
+eta_getriebe = 1;     % Wirkungsgrad des Getriebes
 
 % Propeller
 prop_name = '10x3';    % Propellerbezeichnung
@@ -52,13 +52,13 @@ m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 
 % Batterie
-E_Dichte = 938674;      % Energiedichte des LiPos in J/kg
+E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
+U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
-P_Bat_Peukert = 1.05;   % Peukert-Konstante (Schaetzung)    
+P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
 % m_Bat = 0.56;           % Batteriemasse in kg
 
@@ -107,10 +107,10 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 %% Festlegung des Dateinamen
     
-Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
-    ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, m_getriebe = ' num2str(m_getriebe) ...
-    ', eta_getriebe = ' num2str(eta_getriebe) '.pdf'];
-% Dateiname = 'Getriebe';
+% Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
+%     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, m_getriebe = ' num2str(m_getriebe) ...
+%     ', eta_getriebe = ' num2str(eta_getriebe) '.pdf'];
+Dateiname = 'Getriebe';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

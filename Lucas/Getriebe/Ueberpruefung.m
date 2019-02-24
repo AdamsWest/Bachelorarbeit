@@ -623,11 +623,12 @@ subplot(629), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, 
 subplot(6,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 subplot(6,2,11), stairs(H,Uebersetzung,'LineWidth',1), title('Uebersetzung'), grid, xlabel('Höhe [m]'),ylabel('i')
 % Anpassung und Abspeichern der Diagramme
-ImageSizeX = 20;
-ImageSizeY = 24;
-figure(figure_ges)
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
+PaperSizeX = 21;
+PaperSizeY = 29.7;
+
+fig = gcf;
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');
 
 
@@ -666,21 +667,7 @@ ImageSizeX = 21;
 ImageSizeY = 29.7;
 set(ax,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
 set(ax,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-saveas(ax,'Popellerwirkungsgrad2', 'pdf');
+saveas(ax,'Verdeutlichung Übersetzung', 'pdf');
 
 
-% ImageSizeX = 21;
-% ImageSizeY = 29.7;
-% % figure(figure_ges)
-% % set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
-% % set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]); 
-% % saveas(gcf,Dateiname, 'pdf');  
-% 
-% figure(figure_geschw)
-% fig = gcf;
-% % fig.PaperPositionMode = 'auto';
-% % set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
-% % fig_pos = fig.PaperPosition;
-% % fig.PaperSize = [ImageSizeX ImageSizeY];
-% print(fig,'eta','-dpdf', '-fillpage')
-% print(fig,'-fillpage', 'Fig.pdf', '-dpdf')
+

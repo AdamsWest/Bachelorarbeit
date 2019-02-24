@@ -106,7 +106,6 @@ Im Anschluss an die Flugleistungsberechnung erfolgt die Kontrolle, ob alle errec
 Nach dem Durchlaufen der Iteration über den Bahnneigungswinkel (für einen Multicopter endet diese bereits nach der 1. Iteration, weil der Bahnneigungswinkel mit festgelegten \SI{90}{^\circ} keiner Iteration bedarf) folgt die Auswahl des optimalen Bahnneigungswinkel für das Flächenflugzeug anhand der minimalen aufgebrachten Energie für den jeweiligen Höhenschritt.
 Zuletzt werden die Ergebnisse in Diagrammen visualisiert.
 
-\todo[inline]{Beschreibe in Blöcken den Ablauf des Programms}
 %Die Berechnung startet bei der Ermittlung des benötigten Schubes für eine vorgegebene Fluggeschwindigkeit innerhalb eines aerodynamischen Modells. Mit diesem werden aus einem Propellerkennfeld die Drehzahl und das Drehmoment des Propellers bestimmt, welche den Motorzustand definieren. Die Motorzustandsgrößen legen wiederum zum einen die Pulsweitenmodulation und den Wirkungsgrad des Reglers fest und zum anderen fließen sie mit diesen Werten in die Berechnung der Batterierestladung ein.
 
 
@@ -141,6 +140,7 @@ Für Leistungsuntersuchung wird die Internationale Standardatmosphäre vorausges
 		 Luftdruck am Start \ensuremath{p_0} & \texttt{p\_0} & \ensuremath{N/m^2} \\
 		 Dichte am Start \ensuremath{\rho_0} & \texttt{rho\_0} & \ensuremath{kg/m^3} \\
 		 Adiabatenexponent \ensuremath{\kappa} & \texttt{kappa} & \SI{1,4}{} \\
+		 Gaskonstante der Luft \ensuremath{R} & \texttt{R} & \SI{287}{J/(kg K)} \\
 		 Windgeschwindigkeit \ensuremath{u_{Wg}} & \texttt{u\_Wg} & \ensuremath{m/s} \\ 
 		 Schallgeschwindigkeit \ensuremath{a} & \texttt{a} & \SI{}{m/s} \\
 		 Temperatur in \SI{11}{km} Höhe & \texttt{T\_11} & \ensuremath{T_{11} = T_0 - 0.0065\cdot(11000-H_0)} \\
@@ -180,7 +180,7 @@ beschrieben werden. Ab \SI{11}{km} ist der Verlauf von Druck und Dichte durch di
 gegeben.
 Letztendlich ergibt sich die Schallgeschwindigkeit aus 
 \begin{equation}
-	a = sqrt(\kappa\cdot R\cdot T).
+	a = \sqrt{\kappa\cdot R\cdot T}.
 \end{equation}
 Um den Einfluss der Flughöhe in der Leistungsberechnung festzuhalten, werden für jedes Höhenintervall die Umgebungsparameter an den oberen und unteren Intervallgrenzen berechnet. Durch Bildung des arithmetischen Mittelwertes ergeben sich daraus durchschnittliche Parameter für den jeweiligen Höhenabschnitt.  
 
@@ -207,6 +207,7 @@ Der Schub des Multicopters setzt sich zusammen aus dem zu kompensierenden Gewich
 Die Gesamtmasse des Multicopters setzt sich aus der Masse des Rahmens, der Masse der Batterie, der Masse der Motoren und der Nutzlast
 \begin{equation}
 	m = m_{copter}+m_{Bat}+m_{Mot}\cdot n_{Prop}+m_{Nutz}
+	\label{eq:masse_multicopter}
 \end{equation}
 zusammen.
 Die absolute Fluggeschwindigkeit setzt sich zusammen aus Seitenwindgeschwindigkeit und Bahngeschwindigkeit
@@ -388,7 +389,7 @@ Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale 
 \subsection{Propellerzustand}
 \label{subsec:propellerzustand}
 
-Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab. \ref{tab:prop_parameter}). Der Name ist wichtig, um das Propellerkennfeld aus der Propellerdatenbank von APC \todo[inline]{Quelle für APC angeben} zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter dienen zur Bestimmung der Effekte einer Anströmung und damit der Berücksichtigung der Blattelemententheorie.
+Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab. \ref{tab:prop_parameter}). Der Name ist wichtig, um das Propellerkennfeld aus der Propellerdatenbank von APC \cite{https:www.facebook.comapcprop.} zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter dienen zur Bestimmung der Effekte einer Anströmung und damit der Berücksichtigung der Blattelemententheorie.
 \todo[inline]{Berechnung der Blattspitzengeschwindigkeit}
 \begin{center}
 	\captionof{table}{Propellerparameter für Schub, aerodynamische und technische Grenzen}
@@ -396,8 +397,8 @@ Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab
 		 Parameter & Variablenname & Einheit \\ \hline
 		 Propellername & \texttt{prop\_name} & \ensuremath{-} \\
 		 Anzahl der Propeller \ensuremath{n_{Prop}} & \texttt{n\_Prop} & \ensuremath{-} \\ 
-		 Propellerradius & \texttt{R} & \ensuremath{R = D\cdot 0,0254/2} \\
-		 Fläche eines Propellers & F & \ensuremath{F = \pi\cdot R^2} \\\hline
+		 Propellerradius & \texttt{r} & \ensuremath{r = D\cdot 0,0254/2} \\
+		 Fläche eines Propellers & F & \ensuremath{F = \pi\cdot r^2} \\\hline
 	\end{tabular}	
 	\label{tab:prop_parameter}
 \end{center}
@@ -414,7 +415,7 @@ zusammen. Unter der Annahme vernachlässigbar kleiner Differenzen von  induziert
 angepasst werden.
 Bei den hohen Drehzahlen des Propellers können Machzahleffekte auftreten. Um dies zu kontrollieren wird zusätzlich noch die Blattspitzengeschwindigkeit berücksichtigt
 \begin{equation}
-	M_{tip} = \frac{\omega\cdot R}{a} \eqend{.}
+	M_{tip} = \frac{\Omega\cdot r}{a} \eqend{.}
 \end{equation}
 \todo[inline]{Propellerwirkungsgrad einfügen}
 Der Propellerwirkungsgrad \ensuremath{\eta_{Prop}} 
@@ -465,9 +466,8 @@ An dieser Stelle sei angemerkt, dass van der Wall mit dimensionslosen Durchfluss
 
 \subsection{Motorzustand}
 \label{subsec:motorzustand}
-
-Die ersten drei Motorparameter in Tab. \ref{tab:mot_parameter} sind notwendig, um den Motorzustand zu berechnen. Der vorletzte Parameter dient als technische Grenze, die für ein gut ausgelegtes System nicht überschritten wird. Die Motormasse fließt in Kombination mit der Anzahl der Propeller in die Gesamtmasse des Fluggerätes mit ein. Die vorrangige technische Leistungsgrenze ist ist die maximale Motorleistung, die durch den maximalen Motorstrom \ensuremath{I_{max}} repräsentiert wird.
-\todo[inline]{Quelle für AXI Datenbank}
+Motorbezeichnungen werden nach der Form "`AXI 2814/20 GOLD LINE"\; (Die Werte stehen für Statordurchmesser: \SI{28}{mm}, Statordicke: \SI{14}{mm}, Motorwicklung \SI{20}{\ensuremath{\Delta}}) 
+Die ersten drei Motorparameter in Tab. \ref{tab:mot_parameter} sind notwendig, um den Motorzustand zu berechnen. Der vorletzte Parameter dient als technische Grenze, die für ein gut ausgelegtes System nicht überschritten wird. Die Motormasse fließt in Kombination mit der Anzahl der Propeller in die Gesamtmasse des Fluggerätes mit ein. Die vorrangige technische Leistungsgrenze ist ist die maximale Motorleistung, die durch den maximalen Motorstrom \ensuremath{I_{max}} repräsentiert wird \cite{axi}. 
 
 \begin{center}
 	\captionof{table}{Motorparameter für technische Grenzen}
@@ -489,11 +489,11 @@ Der Motorstrom berechnet sich aus
 \end{equation}
 Mit dem Strom ergibt sich die Spannung zu
 \begin{equation}
-	U_{Mot} = \frac{\omega}{K_v} + R_i\cdot I_{Mot} \eqend{.} \label{eq:motorspannung}
+	U_{Mot} = \frac{\Omega}{K_v} + R_i\cdot I_{Mot} \eqend{.} \label{eq:motorspannung}
 \end{equation}
 Der Wirkungsgrad ist für den Motor das Verhältnis aus der Wellenleistung am Propeller zur elektrischen Leistung, dem Produkt aus Motorspannung \ensuremath{U_{Mot}} und Motorstrom \ensuremath{I_{Mot}}
 \begin{equation}
-	\eta_{Mot} = \frac{M\cdot\omega}{U_{Mot}\cdot I_{Mot}} \eqend{.}
+	\eta_{Mot} = \frac{M\cdot\Omega}{U_{Mot}\cdot I_{Mot}} \eqend{.}
 	\label{eq:eta_mot}
 \end{equation}
 
@@ -512,6 +512,7 @@ Das Modell der Wirkungsgradsberechnung von bürstenlosen Gleichstrom-Motorregler
 mit der Pulsweitenmodulation (PWM) 
 \begin{equation}
 	PWM = \frac{U_{mot}}{U_{Bat}} \eqend{,}
+	\label{eq:pwm}
 \end{equation}
 die sich aus dem Spannungsverhältnis des ESCs zusammensetzt.
 
@@ -519,7 +520,12 @@ die sich aus dem Spannungsverhältnis des ESCs zusammensetzt.
 \subsection{Batteriezustand}
 \label{subsec:batteriezustand}
 
-Die in Tab. \ref{tab:bat_parameter} aufgeführten Parameter der Batterie bestimmen zum einen die verfügbare Kapazität und zum anderen die Batterieentladung. Bei der Energiedichte handelt es sich um repräsentative Werte für den verwendeten Akkutyp, z.B. Li-Ion oder Li-Po. \todo[inline]{Quelle für die Energiedichte von LI-Ion Batterien heraussuchen}. Die minimale Zellenspannung ist ein Erfahrungswert, der am \textit{Institut für Flugführung} verwendet wird. Um den Energieverlust der Batterie zu berechnen, wird die Peukert-Konstante herangezogen. Diese beträgt für Li-Po-Akkus ca. $1,01 \leq P \leq 1,05$ und für Li-Ion-Akkus ca. 1,05 (\textcolor{red}{Traub} Blub). Außerdem ist die Peukert-Konstante für Li-Po-Batterien von der Temperatur abhängig. Niedrigere Temperaturen als die Umgebungstemperatur können die angegebene Nennkapazität reduzieren und die Batterieverluste progressiv steigen lassen. Die maximale C-Rate dient als weitere technische Begrenzung, die wiederum für ein gut ausgelegtes System nicht erreicht wird. Der letzte Parameter stellt eine wichtige Begrenzung dar \todo[inline]{hier noch angeben wie sich die nominelle Batteriespannung aus einer 4s3p Batterie unter anderem berechnet.}
+Die in Tab. \ref{tab:bat_parameter} aufgeführten Parameter der Batterie bestimmen zum einen die verfügbare Kapazität und zum anderen die Batterieentladung. Bei der Energiedichte handelt es sich um repräsentative Werte für den verwendeten Akkutyp, z.B. Li-Ion oder Li-Po. Dieser Wert errechnet sich aus den verwendeten Batteriezellen \cite{batteriezelle}, die in Kap. \ref{chap:nachbildung} verwendet werden
+\begin{equation}
+	\omega = \frac{\SI{3.12}{Ah}\cdot \SI{3600}{s/h}\cdot \SI{3,7}{V}}{\SI{0.0466}{kg}} \eqend{.}
+\end{equation}
+Die minimale Zellenspannung ist ein Erfahrungswert, der am \textit{Institut für Flugführung} verwendet wird. Um den Energieverlust der Batterie zu berechnen, wird die Peukert-Konstante herangezogen. Diese beträgt für Li-Po-Akkus ca. $1,01 \leq P \leq 1,05$ und für Li-Ion-Akkus ca. 1,05 (\textcolor{red}{Traub} Blub). Außerdem ist die Peukert-Konstante für Li-Po-Batterien von der Temperatur abhängig. Niedrigere Temperaturen als die Umgebungstemperatur können die angegebene Nennkapazität reduzieren und die Batterieverluste progressiv steigen lassen. Die maximale C-Rate dient als weitere technische Begrenzung, die wiederum für ein gut ausgelegtes System nicht erreicht wird. Der letzte Parameter stellt eine wichtige Begrenzung dar.
+Häufig werden Batterien z.B. in der Form 4s3p angegeben. Diese Angabe beschreibt die Bauform der Batterie. Dabei enthält die Batterie insgesamt 12 (\ensuremath{4\cdot 3}) Zellen, wobei 4 seriell (s) und 3 Zellen parallel (p) angeschlossen sind. Die seriell angeschlossenen Batteriezellen definieren die nominelle Batteriespannung, in diesem Fall \ensuremath{4\cdot \SI{3,7}{V}} also \SI{14,8}{V}. Dahingegen bestimmen die parallel geschalteten Zellen die Kapazität (z.B. \ensuremath{3\cdot \SI{3}{Ah} = \SI{9}{Ah}}).
 
 \begin{center}
 	\captionof{table}{Batterieparameter zur Berechnung der verbleibenden Restladung sowie der technischen Grenzen}
@@ -534,7 +540,7 @@ Die in Tab. \ref{tab:bat_parameter} aufgeführten Parameter der Batterie bestimm
 		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \SI{}{kg} \\ 
 		 Nominale Batteriespannung & \texttt{U\_Bat\_nom} & \ensuremath{U_{Bat,nom} = N_{Bat,cell}\cdot U_{Bat,cell}} \\
 		 Minimale Batteriespannung & \texttt{U\_Bat\_min} & \ensuremath{U_{Bat,min} = N_{Bat,cell}\cdot U_{Bat,cell,min}} \\ 
-		 normierte Batteriekapazität \ensuremath{C_{Bat,normiert}} & \texttt{C\_nom} & - \\ \hline
+		 normierte Batteriekapazität \ensuremath{C_{Bat,normiert}} & \texttt{C\_nomiert} & - \\ \hline
 	\end{tabular}	
 	\label{tab:bat_parameter}
 \end{center}
@@ -560,7 +566,7 @@ Die Entladekurve für Li-Po-Batterien kann mit folgender Gleichung beschrieben w
 \end{equation}
 Dabei ist \ensuremath{E_0} die konstante Batteriespannung, \ensuremath{K} die Polarisationskonstante, \ensuremath{C_{Bat}} die Batteriekapazität, \ensuremath{\int_{}^{} I_{bat} dt} die tatsächliche Batterieladung, \ensuremath{A} die Amplitude der Exponentiellen Methode, \ensuremath{B} die inverse Zeitkonstante der exponentiellen Zone, \ensuremath{R_{Bat}} der Innenwiderstand, \ensuremath{i} der Batteriestrom und \ensuremath{i^\star} der gefilterte Strom (in diesem Fall \(= 0\)). \\
 Li-Po Batterien weisen ein der Li-Ion Batterie ähnliches Verhalten auf, weshalb beide nach \ref{eq:batteriespannung} berechnet werden können.\\
-Die unbekannten Parameter \ensuremath{E_0}, \ensuremath{A} und \ensuremath{K} können mithilfe von drei Punkten \ensuremath{V_{full}}, \ensuremath{V_{exp}}, \ensuremath{V_{nom}} und die Kapazität \ensuremath{Q}, \ensuremath{Q_{exp}} und \ensuremath{Q_{nom}} (vgl. Abb.\ref{abb:discharge_curve}) bestimmt werden. Diese drei Punkte entstammen von den experimentell gemessenen Entladekurven.
+Die unbekannten Parameter \ensuremath{E_0}, \ensuremath{A} und \ensuremath{K} können mithilfe von drei Punkten \ensuremath{V_{full}}, \ensuremath{V_{exp}}, \ensuremath{V_{nom}} und die Kapazität \ensuremath{Q}, \ensuremath{Q_{exp}} und \ensuremath{Q_{nom}} (vgl. Abb. \ref{abb:discharge_curve}) bestimmt werden. Diese drei Punkte entstammen von den experimentell gemessenen Entladekurven \cite{elektromodellflug}.
 \todo[inline]{Quelle für Elektromodellflug}
 Die Bestimmung der unbekannten Parameter geschieht mit dem gegebenen Innenwiderstand \ensuremath{R_{Bat}} nach folgendem Schema:
 \begin{equation}
@@ -573,7 +579,7 @@ mit der Beziehung
 	1 & 1 & 0 \\ 1 & e^{-3} & -\frac{Q\cdot (Q_{exp}+I_{bat})}{Q-Q_{exp}} \\ 1 & e^{-3\cdot\frac{Q_{nom}}{Q_{exp}}} & -\frac{Q\cdot (Q_{exp}+I_{bat})}{Q-Q_{exp}}
 	\end{pmatrix}\; .
 \end{equation}
-Die experimentellen Entladekurven stammen aus der Datenbank von \todo[inline]{Quelle Elektromodellflug}. In dieser Datenbank sind viele verschiedene Batterien enthalten, die sich in Bezug auf den Hersteller, der Anzahl der Batteriezellen, der Kapazität, der maximalen Entladerate, dem Gewicht, dem Innenwiderstand etc. unterscheiden. Dies erschwert es allgemeine Aussagen über die Batterie unabhängig von der Batteriequalität des Herstellers und der ihrer Größe zu treffen. \\
+Die experimentellen Entladekurven stammen aus der Datenbank von \cite{elektromodellflug}. In dieser Datenbank sind viele verschiedene Batterien enthalten, die sich in Bezug auf den Hersteller, der Anzahl der Batteriezellen, der Kapazität, der maximalen Entladerate, dem Gewicht, dem Innenwiderstand etc. unterscheiden. Dies erschwert es allgemeine Aussagen über die Batterie unabhängig von der Batteriequalität des Herstellers und der ihrer Größe zu treffen. \\
 Für die nachfolgende Untersuchungen ist es daher interessant, eine normierte Batteriezelle zu erstellen, die unabhängig von den oben genannten Unterschieden verwendbar ist. Mit dieser Zelle kann jede beliebige Batteriegröße modelliert werden. \\
 Die Batteriekapazität jeder Batterie aus der Datenbank werden mit \SI{1}{Ah} normiert
 \begin{equation}
@@ -606,6 +612,7 @@ Der Batteriestrom setzt sich zusammen aus den Motorströmen und zusätzlich aus 
 Die C-Rate \ensuremath{\dot{C}} [1/h] berechnet sich nach 
 \begin{equation}
 	\dot{C} = \frac{I_{Bat}[A]}{C_{Bat}[As]}\cdot 3600[s/h]
+	\label{eq:c_rate}
 \end{equation}
 Die Ermittlung der zweiten Zustandsgröße erfolgt nach Gleichung \ref{eq:batteriespannung} für die genormte Batteriezelle. Hierfür ist der Batteriestrom vorher zu normieren
 \begin{equation}

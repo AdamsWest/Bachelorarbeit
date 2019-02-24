@@ -19,28 +19,679 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{Mustermann2017}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=30701365ff35d71d636382710e9d1ca7}{%
-           family={Mustermann},
-           familyi={M\bibinitperiod},
-           given={Max},
-           giveni={M\bibinitperiod}}}%
+    \entry{amazon}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Online shopping from a great selection at Prime Air Store.}
+      \field{title}{Amazon.com: Prime Air}
+      \verb{urlraw}
+      \verb https://www.amazon.com/b?node=8037720011
+      \endverb
+      \verb{url}
+      \verb https://www.amazon.com/b?node=8037720011
+      \endverb
+      \keyw{Amazon.com;Prime Air}
+      \warn{\item Entry 'amazon' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Anderson.2018}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=11678ce95e887bbc1825004ad38c3c92}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={C.\bibnamedelimi (DIY\bibnamedelima Drones)},
+           giveni={C\bibinitperiod\bibinitdelim (\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=8b674dc1a0d584dadf45a3a4a7db83a2}{%
+           family={Blouin},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
       }
-      \strng{namehash}{30701365ff35d71d636382710e9d1ca7}
-      \strng{fullhash}{30701365ff35d71d636382710e9d1ca7}
-      \strng{bibnamehash}{30701365ff35d71d636382710e9d1ca7}
-      \strng{authorbibnamehash}{30701365ff35d71d636382710e9d1ca7}
-      \strng{authornamehash}{30701365ff35d71d636382710e9d1ca7}
-      \strng{authorfullhash}{30701365ff35d71d636382710e9d1ca7}
+      \strng{namehash}{0850aca83825c561cfd436f2cd472aa9}
+      \strng{fullhash}{0850aca83825c561cfd436f2cd472aa9}
+      \strng{bibnamehash}{0850aca83825c561cfd436f2cd472aa9}
+      \strng{authorbibnamehash}{0850aca83825c561cfd436f2cd472aa9}
+      \strng{authornamehash}{0850aca83825c561cfd436f2cd472aa9}
+      \strng{authorfullhash}{0850aca83825c561cfd436f2cd472aa9}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{10 km high flight with a 1kg quadcopter}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://diydrones.com/profiles/blogs/10-km-high-flight-with-a-1kg-quadcopter
+      \endverb
+      \verb{url}
+      \verb https://diydrones.com/profiles/blogs/10-km-high-flight-with-a-1kg-quadcopter
+      \endverb
+      \warn{\item Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{polizei}{misc}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeltitlesource}{title}
+      \field{title}{Beantwortung der M{ü}ndl. Anfrage der FDP zum Drohneneinsatz der Polizei | Nds. Ministerium f{ü}r Inneres und Sport}
+      \field{year}{23.08.2018}
+      \verb{urlraw}
+      \verb http://www.mi.niedersachsen.de/startseite/aktuelles/aus_landtag/beantwortung-der-muendl-anfrage-der-fdp-zum-drohneneinsatz-der-polizei-168086.html
+      \endverb
+      \verb{url}
+      \verb http://www.mi.niedersachsen.de/startseite/aktuelles/aus_landtag/beantwortung-der-muendl-anfrage-der-fdp-zum-drohneneinsatz-der-polizei-168086.html
+      \endverb
+      \keyw{Drohnen;Landtag;Pistorius;Polizei}
+      \warn{\item Entry 'polizei' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Bruning.1986}{book}{}
+      \name{author}{3}{}{%
+        {{hash=48c844e9fe56361d091a404d13f505f7}{%
+           family={Br{ü}ning},
+           familyi={B\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2f35384c635d73553b9c5c26e9ea7708}{%
+           family={Hafer},
+           familyi={H\bibinitperiod},
+           given={Xaver},
+           giveni={X\bibinitperiod}}}%
+        {{hash=ea496c038a3a07f013b705cc5df542f7}{%
+           family={Sachs},
+           familyi={S\bibinitperiod},
+           given={Gottfried},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{2}{%
+        {Berlin}%
+        {Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{fullhash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{bibnamehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{authorbibnamehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{authornamehash}{f9f22f6035857723fb63f2a944dad0b1}
+      \strng{authorfullhash}{f9f22f6035857723fb63f2a944dad0b1}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Zweite, neubearbeitete und erweiterte Auflage}
+      \field{isbn}{978-3-540-16982-6}
+      \field{series}{Hochschultext}
+      \field{title}{Flugleistungen: Grundlagen · Flugzust{ä}nde · Flugabschnitte Aufgaben und L{ö}sungen}
+      \field{year}{1986}
+      \verb{doi}
+      \verb 10.1007/978-3-662-07259-2
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/978-3-662-07259-2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-662-07259-2
+      \endverb
+    \endentry
+    \entry{Buchi.2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=eac694b65a7e367aca8df2483f01c07b}{%
+           family={B{ü}chi},
+           familyi={B\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Baden-Baden}%
+      }
+      \list{publisher}{1}{%
+        {Verl. f{ü}r Technik und Handwerk neue Medien}%
+      }
+      \strng{namehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{fullhash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{bibnamehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{authorbibnamehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{authornamehash}{eac694b65a7e367aca8df2483f01c07b}
+      \strng{authorfullhash}{eac694b65a7e367aca8df2483f01c07b}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Aufl.}
+      \field{isbn}{978-3-88180-427-1}
+      \field{series}{vth-Fachbuch}
+      \field{title}{Brushless-Motoren und -Regler: Grundlagen - Technik - Praxis}
+      \field{year}{2013}
+    \endentry
+    \entry{Drivecalc}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labeltitlesource}{title}
+      \field{title}{Drive Calculator}
+      \field{year}{07.05.2018}
+      \verb{urlraw}
+      \verb http://www.drivecalc.de/
+      \endverb
+      \verb{url}
+      \verb http://www.drivecalc.de/
+      \endverb
+      \keyw{BL;brushless;DC motor;e-flight;elektroantrieb;elektroflug;eletric flight;modellflug;motor analysis;motor analyzer;motoranalyse;performance prediction;propeller calculator;reconfigurator;rotor calculator;wire calculator}
+      \warn{\item Entry 'Drivecalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{landwirtschaft}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Schadenserfassung aus der Vogelperspektive. Drohnen leisten in der heutigen smarten Landwirtschaft wertvolle Dienste. Sie helfen, Tiere vor dem M{ä}hen im Feld zu orten, gr{ö}{ß}ere Unkrautnester von oben zu entdecken oder Sch{ä}dlinge biologisch zu bek{ä}mpfen.}
+      \field{title}{Drohnen f{ü}r die Landwirtschaft: Innovativer Pflanzenschutz}
+      \verb{urlraw}
+      \verb https://www.moderne-landwirtschaft.de/drohnen-fuer-die-landwirtschaft-innovativer-pflanzenschutz
+      \endverb
+      \verb{url}
+      \verb https://www.moderne-landwirtschaft.de/drohnen-fuer-die-landwirtschaft-innovativer-pflanzenschutz
+      \endverb
+      \keyw{Drohne;Ernteversicherung;Landwirtschaft}
+      \warn{\item Entry 'landwirtschaft' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{cobramot}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labeltitlesource}{title}
+      \field{title}{Drone Matters - Cobra CM2206/1400 Multirotor Motors}
+      \verb{urlraw}
+      \verb https://www.dronematters.com/cm2206-1400-multirotor-motors.html
+      \endverb
+      \verb{url}
+      \verb https://www.dronematters.com/cm2206-1400-multirotor-motors.html
+      \endverb
+      \keyw{Batteries;Drone Matters;ESCs;Frames;Hexacopter;Hexes;Kits;Motors;Multirotors;Propellers;quadcopter;Quads}
+      \warn{\item Entry 'cobramot' (Literatur.bib): Invalid format '20.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{eCalc}{misc}{}
+      \field{sortinit}{e}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{abstract}{get your electric rc drive right ✓ fast {\&} reliable simulation - no more guessing ✓ most comprehensive motor database ☆ prevents mispurchase since 2004}
+      \field{title}{eCalc - the most reliable electric Motor Calculator on the Web for RC Pilots}
+      \field{year}{23.12.2018}
+      \verb{urlraw}
+      \verb https://www.ecalc.ch/
+      \endverb
+      \verb{url}
+      \verb https://www.ecalc.ch/
+      \endverb
+      \keyw{Accu;Airplane;Akku;Antrieb;Auto;Batterie;Battery;BEV;Calc;Calculator;Car;Consumption;Drive;Ducted Fan;eAuto;e-calc;eCalc;eCar;EDF;eflight;electric;Electric Vehicle;eMobilit{ä}t;eMobility;Energie;Energy;ESC;EV;Fahrzeug;fanCalc;Flugzeug;heliCalc;Helicopter;Helikopter;Impeller;Jet;Luftschraube;Modellbau;MotoCalc;Motor;Multicopter;Multikopter;Multirotor Elektro;Plane;propCalc;Propeller;Range;RC;Rechner;Regler;Reichweite;Remote Control;Setup;Simulate;Simulation;Verbrauch;xCalc;xcopterCalc}
+      \warn{\item Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Flyeval}{misc}{}
+      \field{sortinit}{f}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A performance evaluation website for multicopters or multirotors . Users can obtain the detail evaluations after providing the body frame parameters, the environment and propulsion system parameters.}
+      \field{title}{flyeval - Flight Performance Evaluation of UAVs|estimate performance of UAV|multicopter|multirotor|quadcopter|quadrotor performance evaluation|endurance calculation}
+      \field{year}{07.12.2018}
+      \verb{urlraw}
+      \verb https://flyeval.com/
+      \endverb
+      \verb{url}
+      \verb https://flyeval.com/
+      \endverb
+      \keyw{Battery;Calc;calculation;copter;electric;ESC;evaluation;flyeval;flying;Model;Motor;Multicopter;multirotor;performance;Propeller;quadcopter;quadrotor;rotor;test;UAV}
+      \warn{\item Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Ostler.2006}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=2babd377ad21f520a080f9eeeff75f29}{%
+           family={{Jon N. Ostler}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Brigham Young University}%
+      }
+      \list{location}{1}{%
+        {Provo, Utah}%
+      }
+      \list{publisher}{1}{%
+        {Department of Mechanical Engineering}%
+      }
+      \strng{namehash}{2babd377ad21f520a080f9eeeff75f29}
+      \strng{fullhash}{2babd377ad21f520a080f9eeeff75f29}
+      \strng{bibnamehash}{2babd377ad21f520a080f9eeeff75f29}
+      \strng{authorbibnamehash}{2babd377ad21f520a080f9eeeff75f29}
+      \strng{authornamehash}{2babd377ad21f520a080f9eeeff75f29}
+      \strng{authorfullhash}{2babd377ad21f520a080f9eeeff75f29}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Flight Testing Small, Electric Powered Unmanned Aerial Vehicles}
+      \field{type}{Thesis}
+      \field{year}{17.03.2006}
+      \verb{urlraw}
+      \verb http://hdl.lib.byu.edu/1877/etd1223
+      \endverb
+      \verb{url}
+      \verb http://hdl.lib.byu.edu/1877/etd1223
+      \endverb
+    \endentry
+    \entry{KARI.2017}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=7beb6096a07ed11e6db1ae7b7c747ef2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Minwoo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f6394e99d18fd43f919a6f4b2e85fe36}{%
+           family={Joo},
+           familyi={J\bibinitperiod},
+           given={Heejin},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bff17e6c66368ceef59d49e71a2739ab}{%
+           family={Jang},
+           familyi={J\bibinitperiod},
+           given={Byungwook},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{fullhash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{bibnamehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{authorbibnamehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{authornamehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{authorfullhash}{8eda0980b8e570fcc455b4651033fb35}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 Ninth International Conference on Ubiquitous and Future Networks (ICUFN)}
+      \field{isbn}{978-1-5090-4749-9}
+      \field{title}{Conceptual multicopter sizing and performance analysis via component database}
+      \field{year}{04.07.2017 - 07.07.2017}
+      \field{pages}{105\bibrangedash 109}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICUFN.2017.7993756
+      \endverb
+    \endentry
+    \entry{Neitzke.2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1d305ac43c7a838dae81ee5ad39140d0}{%
+           family={{Klaus-Peter Neitzke}},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{fullhash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{bibnamehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{authorbibnamehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{authornamehash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \strng{authorfullhash}{1d305ac43c7a838dae81ee5ad39140d0}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Rotary~Wing Micro Air Vehicle Endurance}
+      \field{year}{2013}
+      \keyw{Endurance,MAV}
+    \endentry
+    \entry{batteriezelle}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e489dbd3f86907c401f5f9e84bdcefee}{%
+           family={{Luxtrim GmbH}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{fullhash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{bibnamehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{authorbibnamehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{authornamehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{authorfullhash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Murata / Sony Konion US18650VTC6 - 3120mAh, 3,6V - 3,7V (Flat Top) Lithium-Ionen Akkus 18650}
+      \verb{urlraw}
+      \verb https://www.akkuteile.de/lithium-ionen-akkus/18650/sony-konion-us18650vtc6-3120mah-3-6v-3-7v-flat-top-max-30a/a-100680/
+      \endverb
+      \verb{url}
+      \verb https://www.akkuteile.de/lithium-ionen-akkus/18650/sony-konion-us18650vtc6-3120mah-3-6v-3-7v-flat-top-max-30a/a-100680/
+      \endverb
+      \keyw{3;6V 3;7V ungesch{ü}tzt vtc6 us 18650 3120mah VTC6;Sony Konion US18650VTC6 - 3000mAh}
+      \warn{\item Entry 'batteriezelle' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Drela.2007}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8843a019dd382ada5b62357cea5cc6e9}{%
+           family={{Mark Drela}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8843a019dd382ada5b62357cea5cc6e9}
+      \strng{fullhash}{8843a019dd382ada5b62357cea5cc6e9}
+      \strng{bibnamehash}{8843a019dd382ada5b62357cea5cc6e9}
+      \strng{authorbibnamehash}{8843a019dd382ada5b62357cea5cc6e9}
+      \strng{authornamehash}{8843a019dd382ada5b62357cea5cc6e9}
+      \strng{authorfullhash}{8843a019dd382ada5b62357cea5cc6e9}
       \field{sortinit}{M}
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Technische Universität Braunschweig}
-      \field{month}{6}
-      \field{title}{Mustertitle}
+      \field{title}{First-Order DC Electric Motor Model}
+      \field{year}{2007}
+    \endentry
+    \entry{PCUP.2017}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=48e5b658d8a69ff1b0b848b27700e79b}{%
+           family={Paredes},
+           familyi={P\bibinitperiod},
+           given={Juan\bibnamedelima Augusto},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=fb09dc619ca25647216f8c50b86cf952}{%
+           family={Saito},
+           familyi={S\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c1ea64c056c46b7a02fb8e6e26b5cd3e}{%
+           family={Abarca},
+           familyi={A\bibinitperiod},
+           given={Monica},
+           giveni={M\bibinitperiod}}}%
+        {{hash=07b33fc2c0a11cf371b26e8e6a17e67a}{%
+           family={Cuellar},
+           familyi={C\bibinitperiod},
+           given={Francisco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6da59b1af4ca144261c3e98adac6ae75}
+      \strng{fullhash}{f43b8813f3a4611fb72ad57c6a34e894}
+      \strng{bibnamehash}{6da59b1af4ca144261c3e98adac6ae75}
+      \strng{authorbibnamehash}{6da59b1af4ca144261c3e98adac6ae75}
+      \strng{authornamehash}{6da59b1af4ca144261c3e98adac6ae75}
+      \strng{authorfullhash}{f43b8813f3a4611fb72ad57c6a34e894}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 13th IEEE Conference on Automation Science and Engineering (CASE)}
+      \field{isbn}{978-1-5090-6781-7}
+      \field{title}{Study of effects of high-altitude environments on multicopter and fixed-wing UAVs' energy consumption and flight time}
+      \field{year}{20.08.2017 - 23.08.2017}
+      \field{pages}{1645\bibrangedash 1650}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/COASE.2017.8256340
+      \endverb
+    \endentry
+    \entry{https:www.facebook.comapcprop.}{misc}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labeltitlesource}{title}
+      \field{title}{Performance Data | APC Propellers}
+      \verb{urlraw}
+      \verb https://www.apcprop.com/technical-information/performance-data/
+      \endverb
+      \verb{url}
+      \verb https://www.apcprop.com/technical-information/performance-data/
+      \endverb
+      \warn{\item Entry 'https:www.facebook.comapcprop.' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Quan.2017}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c11034bc0e4d5832ffedafaabbd0f18a}{%
+           family={Quan},
+           familyi={Q\bibinitperiod},
+           given={Quan},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore}%
+      }
+      \list{publisher}{1}{%
+        {Springer Singapore}%
+      }
+      \strng{namehash}{c11034bc0e4d5832ffedafaabbd0f18a}
+      \strng{fullhash}{c11034bc0e4d5832ffedafaabbd0f18a}
+      \strng{bibnamehash}{c11034bc0e4d5832ffedafaabbd0f18a}
+      \strng{authorbibnamehash}{c11034bc0e4d5832ffedafaabbd0f18a}
+      \strng{authornamehash}{c11034bc0e4d5832ffedafaabbd0f18a}
+      \strng{authorfullhash}{c11034bc0e4d5832ffedafaabbd0f18a}
+      \field{sortinit}{Q}
+      \field{sortinithash}{d257e420984a3a5c57a3330114cd646a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-981-10-3381-0}
+      \field{title}{Introduction to Multicopter Design and Control}
       \field{year}{2017}
+      \verb{doi}
+      \verb 10.1007/978-981-10-3382-7
+      \endverb
+    \endentry
+    \entry{Scheiderer.2008}{book}{}
+      \name{author}{1}{}{%
+        {{hash=594bad86b0b63327c8244f31caac7160}{%
+           family={Scheiderer},
+           familyi={S\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{fullhash}{594bad86b0b63327c8244f31caac7160}
+      \strng{bibnamehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{authorbibnamehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{authornamehash}{594bad86b0b63327c8244f31caac7160}
+      \strng{authorfullhash}{594bad86b0b63327c8244f31caac7160}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Aufl.}
+      \field{isbn}{978-3-540-72724-8}
+      \field{title}{Angewandte Flugleistung: Eine Einf{ü}hrung in die operationelle Flugleistung vom Start bis zur Landung}
+      \field{year}{2008}
+    \endentry
+    \entry{Shi.2017}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6ce5cb6405153cd7575ecddc41cb82e8}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Dongjie},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8dd370de5bef2e53ee971b68ba3226e9}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Xunhua},
+           giveni={X\bibinitperiod}}}%
+        {{hash=dfa115b9b6a8ef65413f0a13d7bdf10c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiaowei},
+           giveni={X\bibinitperiod}}}%
+        {{hash=c11034bc0e4d5832ffedafaabbd0f18a}{%
+           family={Quan},
+           familyi={Q\bibinitperiod},
+           given={Quan},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{b03afd45aaa0ce06717185fb310413e8}
+      \strng{fullhash}{b85223ed32cfabef9db6c3b397b021bd}
+      \strng{bibnamehash}{b03afd45aaa0ce06717185fb310413e8}
+      \strng{authorbibnamehash}{b03afd45aaa0ce06717185fb310413e8}
+      \strng{authornamehash}{b03afd45aaa0ce06717185fb310413e8}
+      \strng{authorfullhash}{b85223ed32cfabef9db6c3b397b021bd}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1083-4435}
+      \field{journaltitle}{IEEE/ASME Transactions on Mechatronics}
+      \field{number}{3}
+      \field{title}{A Practical Performance Evaluation Method for Electric Multicopters}
+      \field{volume}{22}
+      \field{year}{2017}
+      \field{pages}{1337\bibrangedash 1348}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TMECH.2017.2675913
+      \endverb
+    \endentry
+    \entry{Stepaniak.2009}{article}{}
+      \name{author}{3}{}{%
+        {{hash=edcecc38473771b041072f09673a3815}{%
+           family={Stepaniak},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=849aa532b0aaeccf692e4c15d1181032}{%
+           family={{van Graas}},
+           familyi={v\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c60314f049b156b20f206b5400ac601b}{%
+           family={Haag},
+           familyi={H\bibinitperiod},
+           given={Maarten\bibnamedelima Uijt},
+           giveni={M\bibinitperiod\bibinitdelim U\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{12b6e4a156e1e8cb8957a1171f82c984}
+      \strng{fullhash}{12b6e4a156e1e8cb8957a1171f82c984}
+      \strng{bibnamehash}{12b6e4a156e1e8cb8957a1171f82c984}
+      \strng{authorbibnamehash}{12b6e4a156e1e8cb8957a1171f82c984}
+      \strng{authornamehash}{12b6e4a156e1e8cb8957a1171f82c984}
+      \strng{authorfullhash}{12b6e4a156e1e8cb8957a1171f82c984}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0021-8669}
+      \field{journaltitle}{Journal of Aircraft}
+      \field{number}{3}
+      \field{title}{Design of an Electric Propulsion System for a Quadrotor Unmanned Aerial Vehicle}
+      \field{volume}{46}
+      \field{year}{2009}
+      \field{pages}{1050\bibrangedash 1058}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.2514/1.38409
+      \endverb
+    \endentry
+    \entry{Traub.2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e7e2ae6688e3dd41907acd5e7088a7c0}{%
+           family={Traub},
+           familyi={T\bibinitperiod},
+           given={Lance},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{fullhash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{bibnamehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{authorbibnamehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{authornamehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{authorfullhash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Batteries}
+      \field{number}{2}
+      \field{title}{Calculation of Constant Power Lithium Battery Discharge Curves}
+      \field{volume}{2}
+      \field{year}{2016}
+      \field{pages}{17}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/batteries2020017
+      \endverb
+    \endentry
+    \entry{Tremblay.2009}{article}{}
+      \name{author}{2}{}{%
+        {{hash=72def2f1f27c93ed98db49f4e7d76789}{%
+           family={Tremblay},
+           familyi={T\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=4281dafa095246216b7fe58fd0fcab63}{%
+           family={Dessaint},
+           familyi={D\bibinitperiod},
+           given={Louis-A.},
+           giveni={L\bibinithyphendelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{49eb3369779381305b4e5f4131ed9658}
+      \strng{fullhash}{49eb3369779381305b4e5f4131ed9658}
+      \strng{bibnamehash}{49eb3369779381305b4e5f4131ed9658}
+      \strng{authorbibnamehash}{49eb3369779381305b4e5f4131ed9658}
+      \strng{authornamehash}{49eb3369779381305b4e5f4131ed9658}
+      \strng{authorfullhash}{49eb3369779381305b4e5f4131ed9658}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{World Electric Vehicle Journal}
+      \field{number}{2}
+      \field{title}{Experimental Validation of a Battery Dynamic Model for EV Applications}
+      \field{volume}{3}
+      \field{year}{2009}
+      \field{pages}{289\bibrangedash 298}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.3390/wevj3020289
+      \endverb
+    \endentry
+    \entry{Wall.2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9f29ebc6322d1f83245e98129e70ccbe}{%
+           family={Wall},
+           familyi={W\bibinitperiod},
+           given={Berend\bibnamedelima Gerdes},
+           giveni={B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{9f29ebc6322d1f83245e98129e70ccbe}
+      \strng{fullhash}{9f29ebc6322d1f83245e98129e70ccbe}
+      \strng{bibnamehash}{9f29ebc6322d1f83245e98129e70ccbe}
+      \strng{authorbibnamehash}{9f29ebc6322d1f83245e98129e70ccbe}
+      \strng{authornamehash}{9f29ebc6322d1f83245e98129e70ccbe}
+      \strng{authorfullhash}{9f29ebc6322d1f83245e98129e70ccbe}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-662-44399-6}
+      \field{title}{Grundlagen der Hubschrauber-Aerodynamik}
+      \field{year}{2015}
+      \verb{doi}
+      \verb 10.1007/978-3-662-44400-9
+      \endverb
+    \endentry
+    \entry{dwd}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Das Wetterlexikon des DWD erl{ä}utert die wichtigsten meteorologischen Begriffe und wird st{ä}ndig ausgebaut.}
+      \field{title}{Wetter und Klima - Deutscher Wetterdienst - Glossar - R - Radiosonde}
+      \verb{urlraw}
+      \verb https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=102134&lv3=102176
+      \endverb
+      \verb{url}
+      \verb https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=102134&lv3=102176
+      \endverb
+      \warn{\item Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring}
     \endentry
   \enddatalist
 \endrefsection

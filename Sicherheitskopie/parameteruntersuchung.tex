@@ -197,7 +197,7 @@ Der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steigg
   
 \begin{figure}[H]
 \centering
-	\includegraphics[scale=0.7]{Diagramme/C_W_Untersuchung.pdf}
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_c_W.pdf}
 	\caption{Widerstandseinfluss auf die maximale erreichbare Höhe}
 	\label{abb:c_W_einfluss}
 \end{figure}
@@ -211,13 +211,18 @@ Der Widerstandsbeiwert hat einen entscheidenden Einfluss auf die maximale Steigg
 %\end{itemize}
 
 \subsection{Einfluss der Anzahl der Batteriezellen}
-Ein weiterer begrenzender Parameter ist die PWM. Die Motorspannung an sich kann nicht beeinflusst werden. Jedoch lässt sich Einfluss auf die Höhe der Motorspannung durch eine Erhöhung der in Reihe geschalteten Batteriezellen nehmen. Mit jeder zusätzlichen Zelle erhöht sich die Batteriespannung um \SI{3,7}{V}. Damit stellt die PWM nicht mehr die Grenze für die Steiggeschwindigkeit dar. Der effizienteste Flugzustand ist nun der bei maximalen, dauerhaften Motorstrom. Jedoch verringert eine höhere Batteriekapazität. Bei gleicher Energiemenge 
+\label{subsec:einfluss_n_bat}
+Ein weiterer begrenzender Parameter ist die PWM. Die Motorspannung an sich kann nicht beeinflusst werden. Jedoch lässt sich Einfluss auf die Höhe der Motorspannung durch eine Erhöhung der in Reihe geschalteten Batteriezellen nehmen. Mit jeder zusätzlichen Zelle erhöht sich die nominelle Batteriespannung um \SI{3,7}{V}. Damit stellt die PWM nicht mehr die Grenze für die Steiggeschwindigkeit dar. Der effizienteste Flugzustand ist nun der bei maximalen, dauerhaften Motorstrom. Jedoch führt bei gleicher Energiemenge 
 \begin{equation}
 	E_{Bat} = C_{Bat}\cdot U_{Bat}
 \end{equation}
-führt eine Erhöhung der Spannung in dem Produkt aus Spannung und Kapazität (\ensuremath{C_{Bat} = I_{Bat}\cdot t_{Flug}}) unweigerlich zu einer Verringerung der Kapazität. Die schlägt sich wieder auf den Kostenfaktor aus, der erreichbaren Flughöhe. Diese Maßnahme ist also mit Bedacht zu wählen. Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom.
-In Bezug auf die Restladung, Drehzahl, den Motorstrom, Motorspannung und der Bahngeschwindigkeit sind bis auf eine Batteriezellenanzahl von 2 keine großen Unterschiede zu vermerken. Mit der erhöhten Batteriespannung sinkt entsprechend auch die PWM. Zusätzlich verringert sich der Gesamtwirkungsgrad mit der Zellenanzahl. Der Grund hierfür liegt im Wirkungsgrad des Motorreglers. Ein sinkende PWM erhöht die Verluste und verringert den Wirkungsgrad (Vgl. Gleichung \ref{eq:eta_pwm}). Daher sollte der Wirkungsgrad 
-%Die Zellen, aus denen eine Batterie besteht, sind meist \textcolor{red}{Massenprodukte} und daher nur in festen Größen und Kapazitäten vorhanden. Erhöht sich nun die Anzahl der Zellen, in diesem Fall wird einfach eine Zelle ergänzt, so erhöht sich auch die Batteriemasse mit der Zelle. Dahingehend ist eine Batteriezellenanzahlerhöhung gegenüber einer Massenerhöhung abzuwägen.
+eine Erhöhung der Spannung in dem Produkt aus Spannung und Kapazität (\ensuremath{C_{Bat} = I_{Bat}\cdot t_{Flug}}) unweigerlich zu einer Verringerung der Kapazität. Die schlägt sich wieder auf den Kostenfaktor aus, der erreichbaren Flughöhe. Diese Maßnahme ist also mit Bedacht zu wählen. Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom.
+Die schlechtesten Flugleistungen weist die Batterie mit nur zwei Zellen auf. Diese kann nur eine geringe Batteriespannung liefern, weshalb die maximale Drehzahl, der maximale Motorstrom und die -spannung und schließlich auch die Bahngeschwindigkeit sehr niedrige Werte aufweisen. Dies kann mit der sehr niedrigen Batteriespannung begründet werden. Das Ende des Steigfluges ist erreicht, wenn die Steiggeschwindigkeit null erreicht und die Batterie nicht mehr die erforderliche Spannung für ein weiteres Steigen zur Verfügung stellen kann. Durch die Motorspannung ist die maximale Motordrehzahl begrenzt und damit die Propellerdrehzahl (Vgl. Gleichung \ref{eq:motorspannung}, sodass der vom Propeller erzeugte Schub mit der Höhe abnimmt.\\
+Deutlich bessere Ergebnisse liefert eine Verdoppelung der Zellenanzahl auf vier. Bei dieser ist auch sofort die Pulsweitenmodulation auf \SI{100}{\%} angestiegen, allerdings ist die nominale Spannung doppelt so hoch. Dies folgert eine höhere Drehzahl, höhere Motorkenngrößen, einen deutlich verbesserten Gesamtwirkungsgrad und einen schnelleren Steigflug. Auch diese Konstellation endet analog zur Batterie mit nur zwei Zellen mit dem Absinken der Bahngeschwindigkeit gegen null durch den verringerten Propellerschub. \\
+Die Leistungsparameter für die sechs- und achtzellige Batterie sind in Bezug auf die Restladung die Propellerdrehzahl, den Motorstrom und die -spannung sowie die Bahngeschwindigkeit beinahe identisch. Lediglich in den Batteriekenngrößen und damit auch in PWM treten Unterschiede auf, weil mit der Zellenanzahl die nominelle Batteriespannung steigt und damit die PWM sinkt (Vgl. Gleichung \ref{eq:pwm}). Der Batteriestrom nimmt ebenfalls ab. 
+Ein wichtiger Punkt ist hier noch der Gesamtwirkungsgrad. Dieser fällt ebenfalls mit der nominellen Batteriespannung. Insbesondere für die Batterien mit sechs und acht Zellen sind der Propeller- und Motorwirkungsgrad identisch, da die Leistungsgrößen, die auf diese Wirkungsgrade einen Einfluss haben, enbenfalls identisch sind. \\
+Der Grund unterschiedlichen Gesamtwirkungsgrade liegt im Wirkungsgrad des Motorreglers. Ein sinkende PWM erhöht die Verluste und verringert den Wirkungsgrad (Vgl. Gleichung \ref{eq:eta_pwm}). Dies soll in Abschn. \ref{subsec:einfluss_eta_pwm} genauer untersucht werden.
+
 
 \begin{figure}[H]
 \centering
@@ -226,42 +231,17 @@ In Bezug auf die Restladung, Drehzahl, den Motorstrom, Motorspannung und der Bah
 	\label{abb:N_Bat_einfluss}
 \end{figure}
 
-\subsubsection{Bedeutung des Reglerwirkungsgrades}
-Hinzu kommt, dass bei einer Batterie mit vielen Zellen die PWM bedeutend geringere Werte annimmt als dies bei wenigen Zellen der Fall ist. Der Grund ist die bedeutend höhere Spannung, die mit jeder Zelle um \SI{3,7}{V} steigt. Der Regler muss bei einer gleichen Motorspannung die Batteriespannung stärker modulieren womit auch die Verluste steigen. Der Wirkungsgrad sinkt und damit steigt auch die entnommene Kapazität der Batterie.
+\subsection{Bedeutung des Reglerwirkungsgrades}
+\label{subsec:einfluss_eta_pwm}
+Der Wirkungsgrad des ESC ist ausschließlich eine Funktion der PWM (Vgl. Gleichung \ref{eq:eta_pwm}). Wie bereits in Abschn. \ref{subsec:einfluss_n_bat} erklärt, sinkt die PWM mit der Erhöhung der Batteriezellenanzahl. Zeitgleich steigen die Verluste in diesem ESC-Modell. Im Sinne eines besseren Gesamtwirkungsgrades und der erreichbaren Höhe ist eine Verringerung der Reglerverluste anzustreben. Die Ergebnisse sind in \ref{sec:motorreglerwirkungsgrad} dargelegt. \\
+Insgesamt ist der Einfluss des Reglerwirkungsgrades sehr gering. Mit dem ESC-Wirkungsgrad steigt auch der Gesamtwirkungsgrad deutlich und auch die Restkapazität. Auf die maximale Höhe ist dieser Einfluss allerdings unbedeutend. Der zusätzliche Höhengewinn macht ungefähr \SI{100}{m} aus.
 
 
-\begin{itemize}
-	\item eine Verringerung der PWM-Verluste hat bei geringen Anzahl an Batteriezellen keinen Einfluss auf die Flugleistungen
-	\item hier ist die PWM sehr schnell auf \SI{100}{\%} wobei sich die Verluste damit minimieren
-	\item bei mehr Zellen kann der Einfluss bereits \SI{1000}{m} ausmachen
-	\item auch die Kapazität liegt im Durchschnitt höher 
-\end{itemize}
-%\begin{itemize}
-%	\item Einfluss der Batteriezellenanzahl
-%	\item als begrenzender Parameter erweist sich die PWM
-%	\item dieser kann ausgewichen werden, wenn die Anzahl der Zellen erhöht wird, weil damit die Batteriespannung steigt. 
-%	\item damit begrenzt nicht mehr die PWM die Höhe, sondern es sind andere Parameter
-%	\item Wenn sie nicht mehr begrenzt, wird als erstes die maximale Motorspannung erreicht und konstant mir ihr geflogen
-%	\item dies ist nicht so effizient, wie mit maximaler Leistung, entsprechend verringert sich die max. erreichbare Höhe
-%	\item Der Batteriezellenanzahlerhöhung sind Grenzen gesetzt
-%	\item Durch eine Erhöhung der Batteriespannung verringert sich um Umkehrschluss die Kapazität der Batterie, da gilt \ensuremath{Wh = Ah\cdot U}
-%	\item Eine extreme Erhöhung der Zellenanzahl bewirkt außerdem wieder ein Flug mit maximalen Motorstrom
-%\end{itemize}
 
 \subsection{Einfluss des maximalen Motorstroms}
 Die Ergebnisse zeigen, dass ein geringer maximaler Motorstrom ebenfalls die Steiggeschwindigkeit begrenzt. Dieser begrenzt die dem Motor entnommene Leistung. 
-Folglich ist ein Motor für einen solchen Steigflug zu wählen, der einerseits einen hohen \ensuremath{K_V}-Wert besitzt, andererseits aber auch einen hohen maximalen Dauerstrom besitzt (Vgl. Kap. \ref{subsubsec:mot_prop_kombi}). Ein gutes Beispiel ist der Motor aus Kapitel \ref{chap:nachbildung}.
+Folglich ist ein Motor für einen solchen Steigflug zu wählen, der einerseits einen hohen \ensuremath{K_V}-Wert besitzt, andererseits aber auch einen hohen maximalen Dauerstrom besitzt (Vgl. Kap. \ref{subsubsec:mot_prop_kombi}). Ein gutes Beispiel ist der Motor aus Kapitel \ref{subsubsec:mot_prop_kombi} mit einem \ensuremath{K_V}-Wert von \SI{2850}{RPM/V} und einem maximalen Motorstrom \ensuremath{I_{max}} von \SI{55}{A}.
 
-auch hier \textcolor{red}{KV und KM mit PWM}
-Ein hoher KV Wert bedeutet wenig Spannung für viele Umdrehungen allerdings auch einen hohen Strom für das benötigte Drehmoment
-
-%Die Motorleistung
-%\begin{itemize}
-%	\item Einfluss des maximalen Motorstroms
-%	\item ist dieser sehr gering gewählt so stellt er den begrenzenden Parameter
-%	\item dieser begrenzt die dem Motor entnommene Leistung 
-%	\item entsprechend ist diese groß zu wählen wie beim Cobra-Motor
-%\end{itemize}
 
 
 %******************************************************************
@@ -278,15 +258,20 @@ Die Massen errechnen sich nach folgendem Schema:
 Zusätzlich wird jeweils auch die obere Stirnfläche \ensuremath{A_{copter,oben}} mit der Größe angepasst. Im folgenden wird die Masse der Batterie 
 
 \subsection{Ergebnisse}
+\label{subsec:ergebnis_massenverteilung}
 \newpage
 \begin{figure}[H]
-%\centering
+\centering
 	\includegraphics[scale=0.70]{Diagramme/Batteriemasse.pdf}
 	\caption{Abhängigkeit der maximalen Höhe von Batteriemasse anteilig an der Gesamtmasse (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
 	\label{abb:batteriemasse}
 \end{figure}
 
-Die Batteriemasse hat einen großen Einfluss auf die Flugleistungen. Die TOC's variieren zwischen eine Spanne von \SI{5000}{m}. Ein Optimum ist bei einer Konstellation erreicht, bei der die Batteriemasse die Hälfte des Gesamtgewichts ausmacht also \SI{50}{\%}. Die Kurven der Restladungskurven von \SI{75}{\%} und \SI{50}{\%} sind bis zu einer Höhe von \SI{12500}{m} deckungsgleich. Danach reduziert sich die Restladung eines Fluggeräts mit einem höheren Anteil der Batteriemasse drastisch. Mit einem zunehmenden Batteriemassenanteil ist für den Steigflug nicht mehr die Kapazität der Batterie begrenzend sondern vielmehr die Leistung und damit die Steiggeschwindigkeit. Mit zunehmender Batteriemasse reduziert sich auch die Steiggeschwindigkeit signifikant. Dies liegt darin begründet, dass die Masse direkt in den Schub mit einfließt (Vgl. Gleichung \ref{eq:neigungswinkel} und \ref{eq:schub_multicopter}). Ein schlechte Verteilung der Massen erhöht somit den Schub und damit die erforderliche Leistung. Dies beeinflusst die Steiggeschwindigkeit, welche die Flugzeit und letztendlich die erreichbare Höhe bestimmt. Weiterhin kann mit größeren Batteriemassen länger mit maximalen Motorstrom geflogen werden, bevor die PWM \SI{100}{\%} erreicht und die Steiggeschwindigkeit sinkt, \textcolor{red}{da das maximale Niveau leistungsbedingt nicht mehr gehalten werden kann.} Für kleinere Batteriemassen beginnt der Flugabschnitt mit \SI{100}{\%} PWM bereits deutlich früher (pro \SI{25}{\%} mehr Batteriemasse sind das ungefähr zusätzliche \SI{2500}{m} Höhe). Dies hat zur Folge, dass die maximale Drehzahl (ca. \SI{18000}{RPM}) früher erreicht ist. Durch die großen Steiggeschwindigkeiten bei kleinen Batteriemassen ist auch ein deutlich stärkerer Einbruch der Batteriespannung zu verzeichnen (ca.\SI{2,5}{V} bei \SI{25}{\%} und nur \SI{1,5}{V} bei größeren Massenanteilen). Zudem ist analog zu den Kurven der Restladung bei den optimalen Konstellationen auch der optimale Gesamtwirkungsgrad erreicht. Die optimale Batteriemasse liegt zwischen \SI{50}{\%} und \SI{52.5}{\%} (Vgl. Anhang).
+Die Batteriemasse hat einen großen Einfluss auf die Flugleistungen. Die TOC's variieren zwischen eine Spanne von \SI{5000}{m}. Ein Optimum ist bei einer Konstellation erreicht, bei der die Batteriemasse die Hälfte des Gesamtgewichts ausmacht also \SI{50}{\%}. Die Kurven der Restladungskurven von \SI{60}{\%} und \SI{66.66}{\%} sind bis zu einer Höhe von \SI{12500}{m} deckungsgleich. Danach reduziert sich die Restladung eines Fluggeräts mit einem höheren Anteil der Batteriemasse drastisch. Mit einem zunehmenden Batteriemassenanteil ist für den Steigflug nicht mehr die Kapazität der Batterie begrenzend sondern vielmehr die Leistung und der vom Propeller erzeugte Schub (indirekt damit auch die Fluggeschwindigkeit). Mit zunehmender Batteriemasse reduziert sich auch die Bahngeschwindigkeit signifikant. Dies liegt darin begründet, dass die Masse direkt in den Schub mit einfließt (Vgl. Gleichung \ref{eq:neigungswinkel} und \ref{eq:schub_multicopter}). Ein schlechte Verteilung der Massen erhöht somit den Schub und damit die erforderliche Leistung für eine feste Verteilung von Motor- und Multicoptermasse. 
+eine zu geringe Masse und damit Kapazität der verringert zum einen die erforderliche Motorleistung (Vgl. Niveau des Motorstroms und Spannung in Abb. \ref{abb:batteriemasse}), allerdings ist die Kapazität . 
+
+
+Dies beeinflusst die Bahngeschwindigkeit, welche die Flugzeit und letztendlich die erreichbare Höhe bestimmt. Weiterhin kann mit größeren Batteriemassen länger mit maximalen Motorstrom geflogen werden, bevor die PWM \SI{100}{\%} erreicht und die Steiggeschwindigkeit sinkt, \textcolor{red}{da das maximale Niveau leistungsbedingt nicht mehr gehalten werden kann.} Für kleinere Batteriemassen beginnt der Flugabschnitt mit \SI{100}{\%} PWM bereits deutlich früher (pro \SI{25}{\%} mehr Batteriemasse sind das ungefähr zusätzliche \SI{2500}{m} Höhe). Dies hat zur Folge, dass die maximale Drehzahl (ca. \SI{19000}{RPM}) früher erreicht ist. Durch die großen Steiggeschwindigkeiten bei kleinen Batteriemassen ist auch ein deutlich stärkerer Einbruch der Batteriespannung zu verzeichnen (ca.\SI{1,25}{V} bei \SI{20}{\%} und nur \SI{1}{V} bei größeren Massenanteilen). Zudem ist analog zu den Kurven der Restladung bei den optimalen Konstellationen auch der optimale Gesamtwirkungsgrad erreicht. Die optimale Batteriemasse liegt zwischen \SI{50}{\%} und \SI{52.5}{\%} (Vgl. Anhang).
 Dies widerspricht den Aussagen von \cite{Neitzke.2013}, worin die besten Flugleistungen und insbesondere die längste Flugdauer mit einem Anteil der Batteriemasse an der Gesamtmasse von 2/3 angegeben wird. Ein möglicher Grunde sind die unterschiedlichen Flugzustände. Neitzke hat seine Untersuchungen ausschließlich im Hovern gemacht. Somit fehlt in seinen Betrachtungen der Höheneinfluss und der Einfluss einer Steiggeschwindigkeit. \textcolor{red}{Neitzke nimmt einen konstanten Wirkungsgrad für alle an, was aber nicht für alle Flugzustände gilt.}\\
 Zusammengenommen weisen die obige Untersuchung der Massenverteilung und der Quadrocopter aus Russland das gleiche Ergebnis auf. Die Konstellation des Quadrocopters aus \cite{Anderson.2018} erweist sich bereits in diesem Sinne als optimal.\\
 Es ist außerdem ersichtlich, dass die Flugleistung und -dauer noch weiter verbessert werden können, wenn der Massenanteil des Rahmens und aller übriger kleiner wird und die Masse der Batterie im Gegensatz steigt, i.e. eine Tendenz der Coptermasse gegen Null (\ensuremath{m_{Copter}\rightarrow 0} und \ensuremath{m_{Bat}\rightarrow (m_{Bat}+m_{Copter})})
@@ -296,7 +281,7 @@ Es ist außerdem ersichtlich, dass die Flugleistung und -dauer noch weiter verbe
 
 \section{Größe und Anzahl der Propeller des Fluggerätes}
 \label{sec:groesse}
-Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Fluggerätes dar. Dabei wird das Fluggerät äquivalent, das heißt die Massenverhältnisse von Motoren, Batterien und die Leermasse bleiben im Verhältnis zum Gesamtgewicht konstant. Das Verhältnis orientiert sich an der Massenverteilung aus Kapitel \ref{sec:massenverteilung}. Dieses Verhältnis wird für jede Größenskalierung gewahrt. Als Anhaltspunkt dient die Masse der Motoren, da mit diese durch die Datenbank vollständig definiert sind und eine feste Masse besitzen. Die Propellerauswahl findet nach den Herstellerempfehlungen statt. Alle anderen Massenverteilungen ergeben sich im Anschluss aus der Motormasse analog zu Kapitel \ref{sec:massenverteilung}.
+Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Fluggerätes dar. Dabei wird das Fluggerät äquivalent skaliert. Dies bedeutet, dass die Massenverhältnisse von Motoren, Batterien und die Leermasse im Verhältnis zum Gesamtgewicht konstant bleiben. Das Verhältnis orientiert sich an der Massenverteilung aus Kapitel \ref{sec:massenverteilung}. Dieses Verhältnis wird für jede Größenskalierung gewahrt. Als Anhaltspunkt dient die Masse der Motoren, da mit diese durch die Datenbank vollständig definiert sind und eine feste Masse besitzen. Die Propellerauswahl findet nach den Herstellerempfehlungen statt. Alle anderen Massenverteilungen ergeben sich im Anschluss aus der Motormasse analog zu Kapitel \ref{sec:massenverteilung}.
 
 \subsection{Ergebnisse}
 \label{subsec:ergebnisse_groesse}
@@ -307,16 +292,11 @@ Ein weitere Einfluss auf die Flugleistungen stellt das Gesamtgewicht des Flugger
 	\caption{Einfluss der Größenveränderung auf die maximal erreichbare Höhe}
 	\label{abb:groessenskalierung}
 \end{figure}
-Eine äquivalente Größenskalierung besitzt einen vernachlässigbar kleinen Einfluss auf die Kostenfunktion, die maximale Höhe (Vgl. Abb. \ref{abb:groessenskalierung}). 
-\textcolor{red}{Begründung für Reichweitenunabhängigkeit von der Flugmasse}. An dieser Stelle kann somit festgehalten werden, dass eine Größenskalierung keinen Einfluss auf die Flugleistungen hat. Die Vorteile eine größeren Masse liegen für reale Anwendungsfälle vorrangig in der Massenträgheit. In einem Höhensektor von \SI{0}{} bis \SI{15000}{m} treten im Durchschnitt starken Winde mit \SI{100}{km/h} auf. Die Einflüsse von Böen in diesen Größenordnungen auf einen Multicopter fällt geringer aus, wenn die Masse höher. Dies erfordert im Umkehrschluss weniger Energie zur Kurs- und Lagekorrektur.
+Eine äquivalente Größenskalierung besitzt einen vernachlässigbar kleinen Einfluss auf die Kostenfunktion, die maximale Höhe (Vgl. Abb. \ref{abb:groessenskalierung}). Der Grund für die Unterschiede in den Diagrammen liegt in den Unterschieden der Motoren und Propeller. Eine hundertprozentig uniforme Skalierung ist hier nicht möglich. Dabei unterscheiden sich besonders die \ensuremath{K_V}-Werte der Motoren. Dies zieht Unterschiede im Bereich der Motorspannung und folglich in der PWM und im Gesamtwirkungsgrad nach sich.
+\textcolor{red}{Dies wird weiterhin begründet durch Begründung für Reichweitenunabhängigkeit von der Flugmasse}. An dieser Stelle kann somit festgehalten werden, dass eine Größenskalierung keinen Einfluss auf die Flugleistungen hat. Die Vorteile eine größeren Masse liegen für reale Anwendungsfälle vorrangig in der Massenträgheit. In einem Höhensektor von \SI{0}{} bis \SI{15000}{m} treten im Durchschnitt \SI{100}{km/h} starke Winde auf. 
+\todo[inline]{Quelle für Höhenprofil, Falk}
+Die Einflüsse von Böen in diesen Größenordnungen auf einen Multicopter fällt geringer aus, wenn die Masse höher. Dies erfordert im Umkehrschluss weniger Energie zur Kurs- und Lagekorrektur.
 
-\begin{itemize}
-	\item größter Einfluss ist bei bei Motor zu verzeichnen. größerer maximaler Motorstrom
-	\item Die Drehzahl hängt auch sehr vom Motorab. genereller Trend geht in richtung einer größeren Drehzahl bei größeren Motoren und mit höherem \ensuremath{K_V}-Wert
-	\item entsprechend sinkt auch die Motorspannung mit dem \ensuremath{K_V}-Wert und \SI{100}{\%} PWM wird später erreicht. außerdem sinkt die optimale Steiggeschwindigkeit mit dem Gewicht des Gewicht
-	\item der Gesamtwirkungsgrad ist bei einem geringen Gewicht deutlich höher und das schlägt sich auch auf die Restladung aus
-	\item bei geringerem Gewicht begrenzt die mögliche Steiggeschwindigkeit den Flug, bei höherem Gewicht ist es die Restladung 
-\end{itemize}
 
 \subsection{Anzahl der Propeller}
 Wie sich oben zeigte, hat eine uniforme Skalierung des Fluggerätes keinen Einfluss auf dessen Flugleistung. Bisher wurde dabei nur Fluggeräte mit vier Rotoren untersucht. Dabei gilt es noch die Abhängigkeit der Flugleistungen von der Rotoranzahl zu überprüfen. 
@@ -328,38 +308,21 @@ Wie sich oben zeigte, hat eine uniforme Skalierung des Fluggerätes keinen Einfl
 	\caption{Einfluss der Propelleranzahl auf die maximal erreichbare Höhe (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
 	\label{abb:groessenskalierung}
 \end{figure}
-Analog zu den obigen Ergebnissen bewirkt eine äquivalente Veränderung der Rotoranzahl keine nennenswerten Änderungen der maximalen Flughöhe für gleiche Motoren. Die Begründung ist dieselbe wie Kapitel \ref{subsec:ergebnisse_groesse}. An dieser Stelle sind jedoch Einschränkungen vorzunehmen. 
-Der Monocopter erreicht die gleiche maximale Höhe wie die anderen Konstellationen. Der Monocopter benötigt jedoch zusätzlich noch Aktuatorik für die Abdeckung aller vier Stellgrößen, sprich den 3 rotatorischen (Rollen, Nicken und Gieren) und einem translatorischen. Weiterhin muss ein Drehmomentenausgleich vollzogen werden, sei es durch einen Heckrotor, eine angepasste Steuerung, die Formgebung des Rumpfes oder durch sonstige Mechanismen.
-Diese zusätzliche Aktuatorik benötigt der Duocopter ebenfalls. Ein Drehmomentenausgleich ist hier jedoch nicht notwendig.
+Analog zu den obigen Ergebnissen bewirkt eine äquivalente Veränderung der Rotoranzahl keine nennenswerten Änderungen der maximalen Flughöhe für gleiche Motoren. Die Begründung ist dieselbe wie Kapitel \ref{subsec:ergebnisse_groesse}. Die Ergebnisse für einen Multicopter mit vier, sechs oder acht Propellern sind nahezu identisch. Dies gilt auch für die Restladung, die für diese Konstellationen noch am größten ausfällt. In Bezug auf Abschn. \ref{subsec:ergebnis_massenverteilung} sind diese den Konstellationen mit weniger Rotoren vorzuziehen. \\
+An dieser Stelle sind jedoch Einschränkungen vorzunehmen. 
+Der Monocopter erreicht die gleiche maximale Höhe wie die anderen Konstellationen. Der Monocopter benötigt jedoch zusätzlich noch Aktuatorik für die Abdeckung aller vier Stellgrößen. Dies sind die 3 rotatorischen (Rollen, Nicken und Gieren) und eine translatorische Stellgröße. Weiterhin muss ein Drehmomentenausgleich vollzogen werden, sei es durch einen Heckrotor, eine angepasste Steuerung, die Formgebung des Rumpfes oder durch sonstige Mechanismen. Diese zusätzliche Aktuatorik benötigt der Duocopter ebenfalls. Ein Drehmomentenausgleich ist hier jedoch nicht notwendig.
 Beide erwähnten Punkte erhöhen die Gesamtmasse und benötigen zusätzlich Energie. Dies verringert die Gesamthöhe. 
-Für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt. 
+Für mehr als vier Propeller muss berücksichtigt werden, dass die Gesamtmasse und damit insbesondere das Strukturgewicht steigt. Dies geht auf die Kosten einer optimalen Konstellation der Massenverteilung. Zusätzlich erhöht sich die obere Stirnfläche \ensuremath{A_{copter,oben}} durch stärkere Strukturen, die in einer Widerstandserhöhung und somit erhöhten Verlusten resultieren. Um das oben gesagte zusammenzufassen, eignet sich eine Propelleranzahl von vier am besten für einen Flug in die untere Strathosphäre. 
 
-%\begin{itemize}
-%	\item wenn eine äquivalente Veränderung der Konstellation vorgenommen wird, sind die Ergebnisse beinahe identisch, es ergeben sich keine Leistungsunterschiede
-%	\item der Duocopter erreicht beinahe ebenso hohe, wenn nicht sogar bessere Werte als die Multicopter
- %	\item allerdings müssen die Ergebnisse unter realistischen Gesichtspuntken betrachtet werden
-%	\item Für den Monocopter fehlt die Berücksichtigung der Drehmomentausgleichenden Mechanismen, sei es ein Hekcrotor oder ähnliches
-%	\item diese benötigen auch Leistung aus der Batterie und verschlechtern die bisher erbrachten Flugleistungen deutlich
-	%\item ein Duocopter scheint eine gute Alternative zu sein, allerdings ist sein Flugverhalten eher nachteilig
-%	\item langsame Reaktionszeiten, ein träges Reaktionsverhalten, komplizierte Regelung, wird leicht instabil und besitzt eine komplizierte Technik
-%	\item für mehrere Propeller müssten noch Penaltyfaktoren mit berücksichtigt werden, da mit der Anzahl der Propeller auch die Struktur und dessen Gewicht zunimmt
-%	\item somit stellt der Quadrocopter die beste Lösung dar
-%\end{itemize}
 
 
 \section{Verstellpropeller}
 \label{sec:verstellprop}
 Ein bisherige Begrenzung der Flugleistungen erfolgte häufig durch die maximale Drehzahl des Propellers, die indirekt die Motorspannung beeinflusst. 
-Besonders auffällig bei vorherigen Untersuchungen (vor allem in Bezug auf die Untersuchungen des Quadrocopters aus Kap. \ref{chap:nachbildung})  ist, dass bei Propeller mit einem geringen Pitch die Drehzahl deutlich schneller steigt, als bei einem Propeller mit einem großen Pitch. Da vor allem die Drehzahl die Motorspannung bestimmt, ist eine Verringerung der Drehzahl bei gleichem Schub von Interesse / anzustreben. Mit zunehmender Flughöhe verringert sich die Dichte und damit auch der Schub, wenn die Rotordrehzahl oder der Blattanstellwinkel konstant gehalten werden. Diesem kann mit einer Erhöhung der Drehzahl oder mit einer Erhöhung der Blattanstellwinkel ausgeglichen werden. Während bei einem Drehflügler mit Flugtriebwerk nur eine Blattverstellung, nicht aber eine Drehzahlerveränderung möglich ist, besitzen elektrisch, propellergetriebene Fluggeräte beide Möglichkeiten. Dies kann mit einem Verstellpropeller und entsprechender Aktuatorik realisiert werden. \\
-Im Rahmen dieser Untersuchung liegen nur Propellerkennfelder mit einem konstanten Pitch vor. Das Vorgehen für einen Propeller mit variablem Pitch sieht so aus, dass für einen vorgegebenen Durchmesser alle Kennfelder mit diesem Durchmesser der Datenbank entnommen werden. Danach wird in der Leistungsuntersuchung jeder Propeller mit unterschiedlichem Pitch, aber gleichem Durchmesser, gegeinander abgewogen. Die Auswahl für den in dem betrachteten Flugmoment besten Pitch erfolgt wieder über die Energiebetrachtung, analog zum Steigwinkel und der Steiggeschwindigkeit.
-%	\item analog steigt \textcolor{red}{van der Wall, diagramm mit theta nachgucken} bei konstanter Drehzahl (Vgl. z.B. Hubschrauber) der Pitch, sprich Theta mit einem größer werdendem Schubbeiwert und damit auch mit der Höhe. 
-%	\item bei einem elektrisch propellergetriebenen Fluggerät können mit einem Mechanismus der Pitch und über den Motor die Drehzahl geändert werden. 
-%	\item dies kann im folgenden über die Auswertung der Kennfelder in der APC Datenbank erfolgen, die den gleichen Durchmesser besitzen, aber unterschiedliche feste Pitches
-%	\item Die Auswahl für den in dem betrachteten Flugmoment besten Pitch erfolgt wieder über die Energiebetrachtung, analog zum Steigwinkel und der Steiggeschwindigkeit
-%	\item Programmablauf in unterer Abbildung
-%\end{itemize}
+Besonders auffällig bei vorherigen Untersuchungen (vor allem in Bezug auf die Untersuchungen des Quadrocopters aus Kap. \ref{chap:nachbildung}) ist, dass bei Propeller mit einer geringen Steigung die Drehzahl deutlich schneller steigt, als bei einem Propeller mit einer großen Steigung. Da vor allem die Drehzahl die Motorspannung bestimmt, ist eine Verringerung der Drehzahl bei gleichem Schub von Interesse. Mit zunehmender Flughöhe verringert sich die Dichte und damit auch der Schub, wenn die Rotordrehzahl oder die Propellersteigung konstant gehalten werden. Diesem kann mit einer Erhöhung der Drehzahl oder mit einer Erhöhung der Steigung ausgeglichen werden. Während bei einem Drehflügler mit Strahltriebwerk nur eine Blattverstellung, nicht aber eine Drehzahlerveränderung möglich ist, besitzen elektrisch, propellergetriebene Fluggeräte beide Möglichkeiten. Dies kann mit einem Verstellpropeller und entsprechender Aktuatorik realisiert werden. \\
+Im Rahmen dieser Untersuchung liegen nur Propellerkennfelder mit einer konstanten Propellersteigung vor. Das Vorgehen für einen Propeller mit variabler Steigung sieht so aus, dass für einen vorgegebenen Durchmesser alle Kennfelder mit diesem Durchmesser der Datenbank entnommen werden. Danach wird in der Leistungsuntersuchung jeder Propeller mit unterschiedlicher Steigung, aber gleichem Durchmesser, gegeinander abgewogen. Die Auswahl für den in dem betrachteten Flugmoment beste Steigung erfolgt wieder über die Energiebetrachtung, analog zum Bahnneigungswinkel und der Bahngeschwindigkeit.
 
-\subsection{Ergebnisse}
+
 \subsection{Ergebnisse}
 \begin{figure}[H]
 %\centering
@@ -367,10 +330,15 @@ Im Rahmen dieser Untersuchung liegen nur Propellerkennfelder mit einem konstante
 	\caption{Verstellpropeller}
 	\label{abb:verstellpropeller}
 \end{figure}
-Der zusätzliche Höhengewinn durch einen Verstellpropeller ist gerade einmal \SI{10000}{m}. Die Leistungsparameter beider Propellerarten sind für die ersten \SI{10000}{m} identisch. Dies liegt am gleichen Pitch. Zuerst ist wieder ein Flug mit maximalen Motorstrom am effizientesten bis die PWM wieder \SI{100}{\%} erreicht und folglich der Motorstrom und der Batteriestrom abfallen. Da die Motorspannung konstant bleibt, bleibt auch die Drehzahl konstant. Die Bahngeschwindigkeit sinkt jedoch kontinuierlich ab. Während sich dieser Zustand beim Propeller mit festem Anstellwinkel nicht ändert, ist ab \SI{10000}{m} Steigflug ein Anstellwinkel von \SI{4}{in} für den Verstellpropeller energetisch effizienter. Dies bewirkt, dass die Drehzahl und damit einhergehend die Motorspannung abfällt, während gleichzeitig der Motorstrom zum zweiten Mal auf sein maximales Niveau steigt. Gleichzeitig steigen auch der Wirkungsgrad und die Bahngeschwindigkeit erneut. Dieser Zustand kann ebenfalls wieder solange gehalten werden bis die PWM \SI{100}{\%} erreicht und somit die Bahngeschwindigkeit bis auf \SI{0}{m/s} absinkt. Damit ist das Ende des Steigflugs erreicht. \\
-	Der Vorteil eines Verstellpropellers ist vergleichsweise gering. Dazu müssen auch noch folgende Einschränkungen vorgenommen werden. Der Verstellpropeller kann nur im Rahmen der in der APC-Datenbank vorhanden Propeller modelliert werden. Dies setzt Ungenauigkeiten voraus, da eine kontinuierliche Verstellung nicht nachgebildet werden kann und nur so viele Verstellungen berücksichtigt werden können, wie auch Propeller mit verschiedenen Pitches in der Datenbank vorhanden sind. \textcolor{red}{Zudem ist man auf die Kennfelder angewiesen.}. An dieser Stelle wurde der Propeller in gewisser Weise idealisiert. So wurde unter anderem die verlängerte Blattaufhängung außer Acht gelassen. Dies führt zu zusätzlichen Verlusten an der Blattwurzel und einer Verringerung des effektiven Radius. Bei einem Propeller mit konstantem Anstellwinkel kann diese sehr kurz gehalten werden, weshalb das profilierte Rotorblatt deutlich früher beginnt. Dies ist bei dem hier modellierten Verstellpropeller nicht berücksichtigt worden.\\
-Weiterhin wurden in dieser Betrachtung das Gewicht des Verstellmechanismus an sich und der Aktuatorik für jeden einzelnen Propeller nicht berücksichtigt. Weiterhin bedeuten die Aktuatoren zusätzliche Verbraucher, die mitunter deutlich schneller zu einem Flug bei \SI{100}{\%} PWM führen würden. Letztendlich ist der fehlende Schub in großen Höhen nicht das Begrenzungsmerkmal, sondern die Drehzahl des Propellers und Motors sowie die Batteriespannung. Letztere macht den Verstellpropeller ein weiteres Stück redundant (Vgl. \textcolor{red}{Anhang}). Mit einem hohen Batteriestrom verschiebt sich der Bereich, in dem ein größerer Pitch vorteilhafter ist, noch weiter in größere Höhen. Damit sinkt auch die Einsatzdauer und schließlich der Nutzen. 
-Schlussendlich bringt der Verstellpropeller einen entscheidenden Vorteil der Autorotation mit, der weniger für den Steigflug als für den anschließenden Sinkflug von Bedeutung ist. Durch die Autorotation ist ein antriebsloser Sinkflug möglich. Damit könnte die Batterie noch weiter entladen werden bevor ein Sinkflug eingeleitet werden muss, was im Umkehrschluss die erreichbare Höhe steigert. 
+Der zusätzliche Höhengewinn durch einen Verstellpropeller ist gerade einmal \SI{1000}{m}. Die Leistungsparameter beider Propellerarten sind für die ersten \SI{3000}{m} identisch. Dies liegt an der gleichen Propellersteigung. Zuerst ist wieder ein Flug mit maximalen Motorstrom am effizientesten bis die PWM wieder \SI{100}{\%} erreicht und folglich der Motorstrom und der Batteriestrom abfallen. Da die Motorspannung konstant bleibt, bleibt auch die Drehzahl konstant. Die Bahngeschwindigkeit sinkt jedoch kontinuierlich ab. Während sich dieser Zustand beim Propeller mit fester Propellersteigung nicht ändert, ist ab \SI{10000}{m} Steigflug ein Anstellwinkel von \SI{4}{in} für den Verstellpropeller energetisch effizienter. Dies bewirkt, dass die Drehzahl und damit einhergehend die Motorspannung abfällt, während gleichzeitig der Motorstrom zum zweiten Mal auf sein maximales Niveau steigt. Gleichzeitig steigen auch der Wirkungsgrad und die Bahngeschwindigkeit erneut. Dieser Zustand kann ebenfalls wieder solange gehalten werden bis die PWM \SI{100}{\%} erreicht und somit die Bahngeschwindigkeit bis auf \SI{0}{m/s} absinkt. Damit ist das Ende des Steigflugs erreicht. \\
+
+
+
+
+
+	Der Vorteil eines Verstellpropellers ist vergleichsweise gering. Dazu müssen auch noch folgende Einschränkungen vorgenommen werden. Der Verstellpropeller kann nur im Rahmen der in der APC-Datenbank vorhanden Propeller modelliert werden. Dies setzt Ungenauigkeiten voraus, da eine kontinuierliche Verstellung nicht nachgebildet werden kann und nur so viele Verstellungen berücksichtigt werden können, wie auch Propeller mit verschiedenen Steigungen in der Datenbank vorhanden sind. \textcolor{red}{Zudem ist man auf die Kennfelder angewiesen.}. An dieser Stelle wurde der Propeller in gewisser Weise idealisiert. So wurde unter anderem die verlängerte Blattaufhängung außer Acht gelassen. Dies führt zu zusätzlichen Verlusten an der Blattwurzel und einer Verringerung des effektiven Radius. Bei einem Propeller mit konstantem Anstellwinkel kann diese sehr kurz gehalten werden, weshalb das profilierte Rotorblatt deutlich früher beginnt. Dies ist bei dem hier modellierten Verstellpropeller nicht berücksichtigt worden.\\
+Weiterhin wurden in dieser Betrachtung das Gewicht des Verstellmechanismus an sich und der Aktuatorik für jeden einzelnen Propeller nicht berücksichtigt. Weiterhin bedeuten die Aktuatoren zusätzliche Verbraucher, die mitunter deutlich schneller zu einem Flug bei \SI{100}{\%} PWM führen würden. Letztendlich ist der fehlende Schub in großen Höhen nicht das Begrenzungsmerkmal, sondern die Drehzahl des Propellers und Motors sowie die Batteriespannung. Letztere macht den Verstellpropeller ein weiteres Stück redundant (Vgl. \textcolor{red}{Anhang}). Mit einem hohen Batteriestrom verschiebt sich der Bereich, in dem ein größere Steigung vorteilhafter ist, noch weiter in größere Höhen. Damit sinkt auch die Einsatzdauer und schließlich der Nutzen. 
+Schlussendlich bringt der Verstellpropeller den Vorteil der Autorotation mit, der weniger für den Steigflug als für den anschließenden Sinkflug von Bedeutung ist. Durch die Autorotation ist ein antriebsloser Sinkflug möglich. Damit könnte die Batterie noch weiter entladen werden bevor ein Sinkflug eingeleitet werden muss, was im Umkehrschluss die erreichbare Höhe steigert. 
 
 %\begin{itemize}
 %	\item Der Verstellpropeller bringt gerade einmal einen Vorteil von \SI{1000}{m}Höhe.

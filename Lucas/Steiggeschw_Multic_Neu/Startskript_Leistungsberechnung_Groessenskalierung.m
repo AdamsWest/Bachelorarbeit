@@ -68,8 +68,8 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat_min = 0.49;
 m_Bat_Delta = 0.01;
 m_Bat_max = 0.55;
-% Abfrage_m_Bat = [0.25 0.5 0.75 1 1.5 2];  
-Abfrage_m_Bat = [0.7 0.75 0.8 0.85 0.9 0.95 1];
+Abfrage_m_Bat = [2]; %[0.25 0.5 0.75 1 1.5 2];  
+% Abfrage_m_Bat = [0.7 0.75 0.8 0.85 0.9 0.95 1];
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           

@@ -37,16 +37,16 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Ergebnis}{section.4.3}% 37
 \BOOKMARK [2][-]{subsection.4.3.2}{Einfluss des Widerstands}{section.4.3}% 38
 \BOOKMARK [2][-]{subsection.4.3.3}{Einfluss der Anzahl der Batteriezellen}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.4}{Einfluss des maximalen Motorstroms}{section.4.3}% 40
-\BOOKMARK [1][-]{section.4.4}{Massenverteilung}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.4.1}{Ergebnisse}{section.4.4}% 42
-\BOOKMARK [1][-]{section.4.5}{Gr\366\337e und Anzahl der Propeller des Flugger\344tes}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.5.1}{Ergebnisse}{section.4.5}% 44
-\BOOKMARK [2][-]{subsection.4.5.2}{Anzahl der Propeller}{section.4.5}% 45
-\BOOKMARK [2][-]{subsection.4.5.3}{Ergebnisse}{section.4.5}% 46
-\BOOKMARK [1][-]{section.4.6}{Verstellpropeller}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.6.1}{Ergebnisse}{section.4.6}% 48
-\BOOKMARK [2][-]{subsection.4.6.2}{Ergebnisse}{section.4.6}% 49
+\BOOKMARK [2][-]{subsection.4.3.4}{Bedeutung des Reglerwirkungsgrades}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.5}{Einfluss des maximalen Motorstroms}{section.4.3}% 41
+\BOOKMARK [1][-]{section.4.4}{Massenverteilung}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.1}{Ergebnisse}{section.4.4}% 43
+\BOOKMARK [1][-]{section.4.5}{Gr\366\337e und Anzahl der Propeller des Flugger\344tes}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.5.1}{Ergebnisse}{section.4.5}% 45
+\BOOKMARK [2][-]{subsection.4.5.2}{Anzahl der Propeller}{section.4.5}% 46
+\BOOKMARK [2][-]{subsection.4.5.3}{Ergebnisse}{section.4.5}% 47
+\BOOKMARK [1][-]{section.4.6}{Verstellpropeller}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.6.1}{Ergebnisse}{section.4.6}% 49
 \BOOKMARK [1][-]{section.4.7}{Stufenloses Getriebe}{chapter.4}% 50
 \BOOKMARK [2][-]{subsection.4.7.1}{Ergebnis}{section.4.7}% 51
 \BOOKMARK [1][-]{section.4.8}{Randbedingungen des Aeromot\137UAV-Projekts}{chapter.4}% 52
@@ -58,8 +58,10 @@
 \BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 58
 \BOOKMARK [0][-]{appendix.A}{Anhang}{}% 59
 \BOOKMARK [1][-]{section.A.1}{Fl\344chenflugzeug}{appendix.A}% 60
-\BOOKMARK [1][-]{section.A.2}{Vergleich von normierter zur originalen Batteriezelle}{appendix.A}% 61
-\BOOKMARK [1][-]{section.A.3}{Steiggeschwindigkeit}{appendix.A}% 62
-\BOOKMARK [1][-]{section.A.4}{Batteriemasse}{appendix.A}% 63
-\BOOKMARK [1][-]{section.A.5}{Verstellpropeller}{appendix.A}% 64
-\BOOKMARK [1][-]{section.A.6}{Getriebe}{appendix.A}% 65
+\BOOKMARK [1][-]{section.A.2}{Batteriekapazit\344t}{appendix.A}% 61
+\BOOKMARK [1][-]{section.A.3}{Vergleich von normierter zur originalen Batteriezelle}{appendix.A}% 62
+\BOOKMARK [1][-]{section.A.4}{Steiggeschwindigkeit}{appendix.A}% 63
+\BOOKMARK [1][-]{section.A.5}{Motorreglerwirkungsgrad}{appendix.A}% 64
+\BOOKMARK [1][-]{section.A.6}{Batteriemasse}{appendix.A}% 65
+\BOOKMARK [1][-]{section.A.7}{Verstellpropeller}{appendix.A}% 66
+\BOOKMARK [1][-]{section.A.8}{Getriebe}{appendix.A}% 67

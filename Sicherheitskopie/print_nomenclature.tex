@@ -24,11 +24,9 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 % ******************************************************************************
 \section*{Akrynome}
 \begin{longtable}{lp{13cm}}
-	FAA & Federal Aviation Administration\\
-	IFF & Institut für Flugführung\\
-	NASA & National Aeronautics and Space Administration\\
-	SISO & Single Input Single Output\\
-	VIM & \texttt{V}i \texttt{IM}proved
+	ESC & Electronic Speed Control (Motorregler)\\
+	PWM & Pulsweitenmodulation\\
+	TOC & Top Of Climb
 \end{longtable}
 % ******************************************************************************
 %
@@ -37,18 +35,54 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 \section*{Lateinische Bezeichnungen}
 \begin{longtable}{lp{2.5cm}p{10.5cm}}
 	\textbf{Notation} & \textbf{Einheit} & \textbf{Beschreibung}\\
-	$\MM{A}, \MM{P}, \MM{Q}$ & - &
-		Positiv definite Matrizen der linearen \textsc{Lyapunov}
-		Matrix-Gleichung\\
-	$F$ & \si{kg.m/s^2} & Kraft\\
-	$\vv{x}$ & - &
-		Zustandsvektor eines Zustandsraummodells, der Form
-		\mbox{
-		    $\dot{\vec{x}} = \vec{f}(\vec{x}) + \vec{g}(\vec{x}) u
-		    \text{,}\quad
-			y = h(\vec{x})$
-		}\\
-	$y$ & - & Ausgangsgröße
+	\ensuremath{a}	& \si{m/s}		& Schallgeschwindigkeit \\
+	\ensuremath{A}	& \si{N}		& Auftriebskraft \\
+	\ensuremath{c}	& -				& Beiwert \\
+	\ensuremath{C}	& \si{As}		& Kapazität \\
+	\ensuremath{\dot{C}} & \si{1/s}	& Entladerate (C-Rate) \\
+	\ensuremath{E}	& -				& Gleitzahl \\
+	\ensuremath{F}	& \si{m^2}		& Fläche \\
+	\ensuremath{g} 	& \si{m/s^2} 	& Erdbeschleunigung \\
+	\ensuremath{H}	& \si{m}		& Höhe \\
+	\ensuremath{\dot{H}} & \si{m/s}	& Höhenänderung (Steiggeschwindigkeit)\\
+	\ensuremath{i}	& -				& Übersetzungsverhältnis \\
+	\ensuremath{i}	& - 			& Zählervariable \\
+	\ensuremath{I}	& \si{A}		& elektr. Strom \\
+	\ensuremath{K}	& -				& Konstante \\
+	\ensuremath{m}	& \si{kg}		& Masse \\
+	\ensuremath{M}	& \si{N/m}		& Drehmoment \\
+	\ensuremath{Ma}	& -				& Machzahl \\
+	\ensuremath{n}	& -				& Anzahl \\
+	\ensuremath{p}	& \si{Pa}		& Druck \\
+	\ensuremath{P}	& \si{W}		& Leistung \\
+	\ensuremath{r}	& \si{m}		& Radius \\
+	\ensuremath{R}	& \si{J/kg.K}	& Gaskonstante der Luft \\
+	\ensuremath{R}	& \si{\Omega}	& Widerstand \\
+	\ensuremath{S}	& \si{N}		& Schubkraft \\
+	\ensuremath{T}	& \si{K}		& Temperatur\\
+	\ensuremath{u}	& \si{m/s}		& Windgeschwindigkeit in x-Richtung \\
+	\ensuremath{U}	& \si{V}		& elektr. Spannung \\
+	\ensuremath{V}	& \si{m/s}		& Fluggeschwindigkeit \\
+	\ensuremath{\dot{V}} & \si{m/s^2} & Ableitung der Geschwindigkeit (Beschleunigung) \\
+	\ensuremath{w}	& \si{m/s}		& Windgeschwindigkeit in z-Richtung \\
+	\ensuremath{W}	& \si{N}		& Widerstandskraft \\
+	\ensuremath{x,X}& -				& in Längsrichtung des Fluggeräts \\
+	\ensuremath{y,Y}& -				& in Seitenrichtung des Fluggeräts \\
+	\ensuremath{z,Z}& -				& in Höhenrichtung des Fluggeräts
+	
+	
+%	$\MM{A}, \MM{P}, \MM{Q}$ & - &
+%		Positiv definite Matrizen der linearen \textsc{Lyapunov}
+%		Matrix-Gleichung\\
+%	$F$ & \si{kg.m/s^2} & Kraft\\
+%	$\vv{x}$ & - &
+%		Zustandsvektor eines Zustandsraummodells, der Form
+%		\mbox{
+%		    $\dot{\vec{x}} = \vec{f}(\vec{x}) + \vec{g}(\vec{x}) u
+%		    \text{,}\quad
+%			y = h(\vec{x})$
+%		}\\
+%	$y$ & - & Ausgangsgröße
 \end{longtable}
 % ******************************************************************************
 %
@@ -57,12 +91,26 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 \section*{Griechische Bezeichnungen}
 \begin{longtable}{lp{2.5cm}p{10.5cm}}
 	\textbf{Notation} & \textbf{Einheit} & \textbf{Beschreibung}\\
-	$\beta, \gamma$ & - & Funktionen bestimmter monotoner Klassen\\
-	$\vv{\nu}_{ad}$ & - & Adaptiver Anteil der Pseudosteuergröße\\
-	$\overline{\sigma}, \underline{\sigma}$ & - &
-		maximaler und minimaler Singulärwert\\
-	$\vv{\xi}$ & - & Teilzustandsvektor der Zustände des transformierten
-		Systems, auch als externe Dynamik bezeichnet
+	\ensuremath{\alpha}	& \si{^\circ}		& Anstellwinkel \\
+	\ensuremath{\gamma}	& \si{^\circ}		& Bahnneigungswinkel (Steigwinkel)\\
+	\ensuremath{\dot{\gamma}}& \si{^\circ /s}& Ableitung des Bahnneigungswinkel (Änderungsrate) \\
+	\ensuremath{\eta}	& \si{\%}			& Wirkungsgrad \\
+	\ensuremath{\Theta} & \si{^\circ}		& Neigungswinkel \\
+	\ensuremath{\kappa}	& -					& Adiabatenexponent \\
+	\ensuremath{\rho}	& \si{kg/m^3}		& Luftdichte \\
+	\ensuremath{\sigma}	& \si{^\circ}		& Schubeinstellwinkel\\
+	\ensuremath{\omega}	& \si{J/kg}			& Energiedichte \\
+	\ensuremath{\Omega}	& \si{1/s}/\si{RPM}	& Drehzahl
+	
+		
+	
+	
+%	$\beta, \gamma$ & - & Funktionen bestimmter monotoner Klassen\\
+%	$\vv{\nu}_{ad}$ & - & Adaptiver Anteil der Pseudosteuergröße\\
+%	$\overline{\sigma}, \underline{\sigma}$ & - &
+%		maximaler und minimaler Singulärwert\\
+%	$\vv{\xi}$ & - & Teilzustandsvektor der Zustände des transformierten
+%		Systems, auch als externe Dynamik bezeichnet
 \end{longtable}
 % ******************************************************************************
 %

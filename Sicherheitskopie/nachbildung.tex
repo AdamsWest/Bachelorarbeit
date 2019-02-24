@@ -5,8 +5,7 @@ Mithilfe des Videos \cite{Anderson.2018} und den in der Beschreibung gemachten A
 \label{sec:komponenten} 
 Im Folgenden sind alle technischen Daten, die im Programm eingebracht wurden aufgelistet. Diese sind aus dem Video und den Beschreibungen zu dem Quadrocopter entnommen worden. Fehlende Daten wurden geschätzt oder sind beim Piloten nachgefragt worden.
 \subsubsection{Motor}
-Der verwendete Motor war ein Cobra C2206/ 30 \SI{1400}{KV} (Die Werte stehen für Statordurchmesser: \SI{22}{mm}, Statordicke: \SI{6}{mm}, Motorwicklung \SI{30}{\ensuremath{\Delta}})
-\todo[inline]{Motorquelle}. Die technischen Spezifikation des Motors sind in Tab.\ref{tab:mot_cobra_parameter} aufgelistet. Es wurden kleine, schnell drehende Brushless DC Motoren verwendet in Bezug auf den \ensuremath{K_V}-Wert und das Motorgewicht (siehe \ref{tab:mot_cobra_parameter}).
+Der verwendete Motor war ein Cobra C2206/ 30 \SI{1400}{KV} \cite{cobramot}. Die technischen Spezifikation des Motors sind in Tab.\ref{tab:mot_cobra_parameter} aufgelistet. Es wurden kleine, schnell drehende Brushless DC Motoren verwendet in Bezug auf den \ensuremath{K_V}-Wert und das Motorgewicht (siehe \ref{tab:mot_cobra_parameter}).
 \begin{center}
 	\captionof{table}{Motorparameter des Cobra C2206/ 30 \SI{1400}{KV}}
 	\begin{tabular}{l l l} \hline
@@ -24,24 +23,25 @@ Der verwendete Motor war ein Cobra C2206/ 30 \SI{1400}{KV} (Die Werte stehen fü
 Als Propeller wurden 4 Gemfan7038-Propeller \todo[inline]{Quelle Propeller} eingesetzt. Das sind Propeller mit einem Durchmesser von \SI{7}{in} und einer Steigung von \SI{3,8}{in}. Für diesen Propeller wurde in der Leistungsberechnung ein äquivalenter Propeller aus der APC Datenbank mit dem gleichen Durchmesser und gleicher Steigung verwendet.
 
 \subsubsection{Batterie}
-Die Batterie ist eine selbst gebaute LiIon Batterie in der Bauform 4s3p. Dies entspricht einer Batterie mit insgesamt 12 Zellen, wobei 4 seriell und 3 Zellen parallel angeschlossen sind. Das Gewicht einer Zelle beträgt ca. \SI{46}{g}. Mit dieser Angabe, kann das Gesamtgewicht der Batterie sehr gut abgeschätzt werden. Die nominale und die minimale Spannung pro Batteriezelle konnten aus den zusätzlichen Angaben berechnet werden. So betrug die Spannung der Batterie zu Beginn des Fluges ca. \SI{15,6}{V} und am Ende ca. \SI{11,5}{V}. Hierbei ergibt sich die nominale Spannung für eine 4-Zellen-Batterie zu \SI{3,9}{V} und eine minimale Spannung einer Zelle zu \SI{2.875}{V}. Alle weiteren notwendigen Spezifikationen sind in Tab.\ref{tab:bat_4s3p_parameter} festgehalten.
+Die Batterie ist eine selbst gebaute LiIon Batterie in der Bauform 4s3p. Das Gewicht einer Zelle beträgt ca. \SI{46}{g} \cite{batteriezelle}. Mit dieser Angabe, kann das Gesamtgewicht der Batterie sehr gut abgeschätzt werden. Für die nominale und minimale Batteriespannung werden die Werte aus Abschn. \ref{subsec:batteriezustand} verwendet. Die nominale Spannung wird in \cite{batteriezelle} ebenfalls mit \SI{3,7}{V} beziffert. Alle weiteren notwendigen Spezifikationen sind in Tab.\ref{tab:bat_4s3p_parameter} festgehalten.
 \begin{center}
 	\captionof{table}{Batterieparameter}
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & Wert \\ \hline		 
 		 Anzahl der Batteriezellen \ensuremath{N_{Bat,cell}} & \texttt{N\_bat\_cell} & \SI{4}{} \\
 		 nominelle Kapazität einer Batteriezelle \ensuremath{C_{Bat,cell}} & \texttt{U\_Bat\_cell} & \SI{3120}{mAh} \\
-		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \SI{3,9}{V} \\
-		 minimale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell,min}} & \texttt{U\_bat\_min} & \SI{2,875}{V} \\
+		 nominale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell}} & \texttt{U\_bat\_nom} & \SI{3,7}{V} \\
+		 minimale Spannung pro Batteriezelle \ensuremath{U_{Bat,cell,min}} & \texttt{U\_bat\_min} & \SI{3,1}{V} \\
 		 Peukert-Konstante \ensuremath{P}& \texttt{P\_bat\_Peukert} & \ensuremath{1,05} \\
 		 Maximale C-Rate \ensuremath{\dot{C_{rate,max}}} & \texttt{C\_Rate\_max} & \SI{30}{} \\
-		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \SI{0,55}{kg} \\ \hline
+		 Batteriemasse \ensuremath{m_{Bat}} & \texttt{m\_bat} & \SI{0,56}{kg} \\ \hline
 	\end{tabular}	
 	\label{tab:bat_4s3p_parameter}
 \end{center}
 
 \subsubsection{Qudrocopterabmaße}
 Die Maße des Rahmens und somit auch die Gesamtmaße konnten nur mit Bildern abgeschätzt werden. An dieser Stelle sind die vier Arme des Quadrocopters auf \SI{12}{cm} x \SI{2}{cm} und der Rumpf auf \SI{15}{cm} x \SI{5}{cm} angenähert worden.
+\todo[inline]{Auf Stirnfläche beziehen}
 
 \subsubsection{Missions und Umgebungsparameter}
 Weitere Startbedingungen und Missionsparameter sind in Tab.\ref{tab:umgebungs_missions_parameter} dargelegt. In dem Video ist deutlich zu erkennen, dass die Steiggeschwindigkeit über der Höhe nicht konstant bleibt sondern zwischen \SI{15}{m/s} und \SI{0}{m/s} schwankt. Der Luftdruck und die Dichte am Abflugtag sind unbekannt und werden hier entsprechend der Standardatmosphäre angenommen.

@@ -17,7 +17,7 @@ stairs(H2,U_Bat_vpp,'LineWidth',1), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
 subplot(627), stairs(H,PWM*100,'LineWidth',1), grid, title('Pulsweitenmodulation'), hold on
 stairs(H,PWM_vpp*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('PWM [%]')
 subplot(628), stairs(H,eta_ges*100,'LineWidth',1), grid, title('Gesamtwirkungsgrad'), hold on
-stairs(H,eta_ges_vpp*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+stairs(H,eta_ges_vpp*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('\eta_{ges} [%]')
 subplot(629), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, hold on
 stairs(H,V_Kg_vpp,'LineWidth',1), xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(6,2,10), stairs(H2,t_Flug,'LineWidth',1), grid, hold on
@@ -35,12 +35,11 @@ stairs(H,pitch_vpp,'LineWidth',1), title('Pitch'), grid, xlabel('Höhe [m]'),ylab
 lgd = legend('fixed pitch','variable pitch','Location','bestoutside'); title(lgd,'Propeller')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-ImageSizeX = 26;
-ImageSizeY = 29.7;
+PaperSizeX = 21;
+PaperSizeY = 29.7;
+
 fig = gcf;
-fig.PaperPositionMode = 'auto';
-set(fig,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]); 
-fig_pos = fig.PaperPosition;
-fig.PaperSize = [ImageSizeX ImageSizeY];
-print(fig,'Verstellpropeller','-dpdf')
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
+saveas(gcf,'Verstellpropeller', 'pdf');
 

@@ -20,6 +20,15 @@ Für jegliche Art von Steigflug (\ensuremath{\gamma \neq 0}) ist dies nicht mehr
 	\frac{V}{V^\star} = \frac{\sqrt{\frac{2\cdot m \cdot g\cdot \cos\gamma}{\rho\cdot S \cdot c_{A}}}}{\sqrt{\frac{2\cdot m\cdot g}{\rho^\star \cdot S \cdot c_{A}}}} = \sqrt{\cos\gamma\cdot\frac{\rho^\star}{\rho}} \eqend{.}
 \end{equation}\\
 
+\section{Batteriekapazität}
+Für die Untersuchungen ist eine Berechnung der Batteriekapazität unabhängig von der Art der Zelle, aber abhängig von der Batteriemasse von Interesse.
+Aus diesem Grund bietet sich die Energiedichte an. 
+Mit dieser berechnet sich die Kapazität wie folgt:
+\begin{equation}
+	C_{Bat}	= \omega\cdot\frac{m_{Bat}}{U_{Bat,nom}} \eqend{.}
+	\label{eq:batteriekapazitaet}
+\end{equation}
+
 \section{Vergleich von normierter zur originalen Batteriezelle}
 Für den Vergleich der Norm- mit der Originalzelle wird das Integral unterhalb der beiden Entladekurven für eine bestimmte Entladerate gebildet. Anschließend werden beide Flächen zu einander in Beziehung gesetzt 
 \begin{equation}
@@ -77,13 +86,63 @@ Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzelle
 \end{figure}
 \end{center}
 
+\section{Motorreglerwirkungsgrad}
+\label{sec:motorreglerwirkungsgrad}
+Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht. Dafür werden zwei Batteriegrößen untersucht, eine mit sechs Zellen und einmal mit acht Zellen. Die Masse und Kapazität bleiben jeweils gleich. 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_6.pdf}
+	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit sechs Zellen}
+	\label{abb:eta_pwm_6_halb}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_1_6.pdf}
+	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (keine Verluste) für eine Batterie mit sechs Zellen}
+	\label{abb:eta_pwm_6_1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_8.pdf}
+	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit acht Zellen}
+	\label{abb:eta_pwm_8_halb}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_1_8.pdf}
+	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (keine Verluste) für eine Batterie mit acht Zellen}
+	\label{abb:eta_pwm_8_1}
+\end{figure}
+
+
+
 \section{Batteriemasse}
 \begin{figure}[H]
 \centering
-	\includegraphics[scale=0.85]{Diagramme/Batteriemasse_genauer.pdf}
+	\includegraphics[scale=0.7]{Diagramme/Batteriemasse_genauer.pdf}
 	\caption{genauere Untersuchung der Batteriemassenabhängigkeit (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
 	\label{abb:batteriemasse_genauer}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Einfluss_eta_ges.pdf}
+	\caption{Leistungsparameter für einen Batteriemassenanteil von 1/3 (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
+	\label{abb:m_bat_eta_ges1/3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Einfluss_eta_ges2.pdf}
+	\caption{Leistungsparameter für einen Batteriemassenanteil von 2/3 (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
+	\label{abb:m_bat_eta_ges2/3}
+\end{figure}
+
+
+
 
 \section{Verstellpropeller}
 
