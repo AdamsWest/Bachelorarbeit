@@ -20,6 +20,11 @@ Für jegliche Art von Steigflug (\ensuremath{\gamma \neq 0}) ist dies nicht mehr
 	\frac{V}{V^\star} = \frac{\sqrt{\frac{2\cdot m \cdot g\cdot \cos\gamma}{\rho\cdot S \cdot c_{A}}}}{\sqrt{\frac{2\cdot m\cdot g}{\rho^\star \cdot S \cdot c_{A}}}} = \sqrt{\cos\gamma\cdot\frac{\rho^\star}{\rho}} \eqend{.}
 \end{equation}\\
 
+\section{Propeller}
+\missingfigure{Propellerkennfeld}
+\section{Motor}
+\missingfigure{Motorwirkungsgrad über den Leistungsparametern}
+
 \section{Batteriekapazität}
 Für die Untersuchungen ist eine Berechnung der Batteriekapazität unabhängig von der Art der Zelle, aber abhängig von der Batteriemasse von Interesse.
 Aus diesem Grund bietet sich die Energiedichte an. 
@@ -28,6 +33,7 @@ Mit dieser berechnet sich die Kapazität wie folgt:
 	C_{Bat}	= \omega\cdot\frac{m_{Bat}}{U_{Bat,nom}} \eqend{.}
 	\label{eq:batteriekapazitaet}
 \end{equation}
+
 
 \section{Vergleich von normierter zur originalen Batteriezelle}
 Für den Vergleich der Norm- mit der Originalzelle wird das Integral unterhalb der beiden Entladekurven für eine bestimmte Entladerate gebildet. Anschließend werden beide Flächen zu einander in Beziehung gesetzt 
@@ -214,6 +220,19 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 \end{figure}
 \end{center}
 
+Der Verlauf des Gesamtwirkungsgrades folgt eindeutig dem Verlauf des Propellerwirkungsgrades. Dieser ist die Ursache für den höheren Gesamtwirkungsgrad des Verstellpropellers (Vgl. Abb.
+
+\missingfigure{realer Verstellpropeller, fraglich}
+
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Verstellprop_eta.pdf}
+	\caption{Einfluss des Verstellpropellers auf die maximal erreichbare Höhe mit besonderem Hinblick auf die Einzelwirkungsgrade}
+	\label{abb:verstellprop_eta}
+\end{figure}
+
+
 
 \section{Getriebe}
 
@@ -272,6 +291,15 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 \end{figure}
 \end{center}
 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Getriebe_wirkungsgrade.pdf}
+	\caption{Einfluss eines Getriebes auf die maximal erreichbare Höhe mit besonderem Hinblick auf die Einzelwirkungsgrade}
+	\label{abb:getriebe_wirkungsgrade}
+\end{figure}
 
+\missingfigure{realistische Werte, keine rosarote Brille}
+
+\missingfigure{anderer Motor mit anderem KV}
 
 \end{appendix}

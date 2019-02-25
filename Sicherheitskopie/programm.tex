@@ -313,13 +313,13 @@ Der Schub für ein Flächenflugzeug berechnet sich aus der Kompensation des Wide
 \end{equation}
 Alle Flugzustände eines Flächenflugzeuges können mit den Grundgleichungen der symmetrischen Flugbahn beschrieben werden. Diese Bewegungsgleichungen \cite[S.77]{Bruning.1986} sind
 \begin{align}
-	m\cdot \dot{V} &= -W + F\cdot\cos(\alpha+\sigma)-m\cdot g\cdot\sin\gamma , \label{eq:widerstandsgleichung} \\ 
-	-m\cdot V\cdot\dot{\gamma} &= -A - F\cdot\sin(\alpha+\sigma)+m\cdot g\cdot\cos\gamma , \label{eq:auftriebsgleichung} \\ 
+	m\cdot \dot{V} &= -W + S\cdot\cos(\alpha+\sigma)-m\cdot g\cdot\sin\gamma , \label{eq:widerstandsgleichung} \\ 
+	-m\cdot V\cdot\dot{\gamma} &= -A - S\cdot\sin(\alpha+\sigma)+m\cdot g\cdot\cos\gamma , \label{eq:auftriebsgleichung} \\ 
 	V\cdot\sin\gamma &= \dot{H}. \label{eq:steiggleichung}
 \end{align}	
 Für einen stationäre Flug, der im weiteren ausschließlich betrachtet werden soll, gilt \ensuremath{\dot{V} = 0} und \ensuremath{\dot{\gamma} = 0}. Außerdem ist der Winkel \ensuremath{\alpha + \sigma} klein, sodass sich mit hinreichender Genauigkeit die Gleichungen \ref{eq:widerstandsgleichung} und \ref{eq:auftriebsgleichung} zu
 \begin{equation}
-	F = W + \sin\gamma\cdot G, 
+	S = W + \sin\gamma\cdot G, 
 	\label{eq:widerstandsgleichung_vereinfacht}
 \end{equation}
 und
@@ -363,13 +363,13 @@ Flugzustand\_Flaechenflugzeug = \begin{cases}
 Die Theorie gilt nur für den Bereich kleiner Bahnneigungswinkel. Mit der Variablen \texttt{Flugzustand\_Flaechenflugzeug} wird das Einhalten der Theorie überprüft. Der Fall, dass \ensuremath{W < W_0} beträgt, ist ein Flugzustand, der die Theorie entscheidend verletzt und daher nicht zulässig ist. Ein Flug mit einem Widerstand kleiner als \ensuremath{W_0} ist physikalisch unmöglich.
 Letztlich ergibt sich der Schub aus Gleichung \ref{eq:auftriebsgleichung_vereinfacht} und \ref{eq:widerstandsgleichung_vereinfacht}
 \begin{equation}
-	F = m\cdot g\cdot (\frac{1}{E}\cdot\cos\gamma + \sin\gamma) \label{eq:schub_flaechenflugzeug}
+	S = m\cdot g\cdot (\frac{1}{E}\cdot\cos\gamma + \sin\gamma) \label{eq:schub_flaechenflugzeug}
 \end{equation}
 mit dem Gewicht und Steigwinkel als Variable.
 Für \ensuremath{\gamma = 90^\circ} besitzt Gleichung \ref{eq:schub_flaechenflugzeug} eine Definitionslücke. Bei diesem Bahnneigungswinkel müsste der benötigte Schub gerade einmal das Gewicht des Fluggerätes kompensieren. Dabei wird jedoch der Luftwiderstand, der sich aus einer Fluggeschwindigkeit ergibt, vernachlässigt. 
 Für den unbeschleunigten, vertikalen Steigflug vereinfachen sich die Widerstandsgleichung \ref{eq:widerstandsgleichung} und die Auftriebsgleichung \ref{eq:auftriebsgleichung} mit den Bedingungen \ensuremath{\dot{V} = 0}, \ensuremath{\dot{\gamma} = 0}, \ensuremath{\gamma = 90^\circ} und \ensuremath{\alpha + \sigma \approx 0} zu 
 \begin{equation}
-	F = W + G , 
+	S = W + G , 
 \end{equation}
 \begin{equation}
 	A = 0 .
@@ -380,7 +380,7 @@ Da der Auftrieb Null ist, erfolgt der unbeschleunigte, vertikale Steigflug mit d
 \end{equation}
 Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = vertikaler Steigflug). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Maximum der Geschwindigkeitsuntersuchung für einen vertikalen Steigflug ist die Auslegungsgeschwindigkeit \ensuremath{V^\star}. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
 \begin{equation}
-	\sigma = \Delta C_{Bat}\cdot U_{Bat}.
+	\Delta = \Delta C_{Bat}\cdot U_{Bat}.
 \end{equation}
 Die minimal aufgebrachte Energie legt am Ende den besten Steigwinkel fest.
 Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale Winde haben keinen Einfluss auf die Steigzeit oder die zum Steigen benötigte Energiemenge. Jedoch verändern die Winde die zurückglegte Strecke über Grund für eine gewisse Höhendistanz (Vgl. \cite[S.241-242]{Scheiderer.2008}). Diese ist für eine Betrachtung Flächenflugzeuges vorerst ohne Belang. 
@@ -403,10 +403,11 @@ Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab
 	\label{tab:prop_parameter}
 \end{center}
 
-In der Propellerdatenbank vom Propellerhersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt \todo[inline]{fucking source is missing, Kennfelder}. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
+In der Propellerdatenbank vom Propellerhersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt \todo[inline]{fucking source is missing, Kennfelder, wie wurden sie bestimmt?}. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
 Die Kennfelder wurden in Versuchen ermittelt, die keine ändernde Dichte berücksichtigen. Um den Einfluss der sich verringernden Dicht mit zunehmender Flughöhe trotzdem zu beachten, müssen die Kennfelder angepasst werden. Gemäß der Strahltheorie setzt sich der Schub aus dem Massenstrom und der Geschwindigkeit im voll ausgebildeten Abstromzylinder 
 \begin{equation}
 	S =  \dot{m}\cdot v_{\infty} = \rho\cdot A_{Propeller}\cdot v_i\cdot v_{\infty}
+	\label{eq:propellerschub}
 \end{equation}
 zusammen. Unter der Annahme vernachlässigbar kleiner Differenzen von  induzierten Geschwindigkeiten $v_i$ und Geschwindigkeiten im voll ausgebildeten Abstrom $v_{\infty}$ kann das Schubkennfeld des Propellers an den Höheneinfluss 
 \begin{equation}
@@ -428,7 +429,7 @@ Die Strahlleistung
 	P_{Strahl} = S\cdot (v_i + V_c)
 	\label{eq:strahlleistung}
 \end{equation}
-setzt sich aus dem Schub \ensuremath{T}, der induzierten Geschwindigkeit \ensuremath{v_i} und der Steiggeschwindigkeit \ensuremath{V_c} zusammen. 
+setzt sich aus dem Schub \ensuremath{S}, der induzierten Geschwindigkeit \ensuremath{v_i} und der Steiggeschwindigkeit \ensuremath{V_c} zusammen. 
 
 Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}:
 \todo[inline]{Schau dir hier nochmal die Indizes an}
@@ -656,7 +657,7 @@ Zur Berechnung des Wirkungsgrads kann das Verhältnis der Leistung, die in Schub
 Dies schließt den Wirkungsgrad der Batterie aus.
 Die Strahlleistung 
 \begin{equation}
-	P_{Strahl} = T\cdot (v_i + V_c)
+	P_{Strahl} = S\cdot (v_i + V_c)
 \end{equation}
 setzt sich aus dem Schub \ensuremath{T}, der induzierten Geschwindigkeit \ensuremath{v_i} und der Steiggeschwindigkeit \ensuremath{V_c} zusammen.
 Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}:
@@ -708,19 +709,19 @@ Eine exakte Auslegung kann deshalb nur im Anschluss vorgenommen werden. Diese Ve
 
 \subsection{Vereinfachungen}
 \subsubsection{Schub}
-Der Schub wird innerhalb eines sehr einfachen Modells berechnet. Das gilt sowohl für den Multicopter als auch für das Flächenflugzeug. Der Multicopter ist als eine Art Rotationsellipsoid und das Flächenflugzeug als Punktmasse vereinfacht.
+Der Schub wird innerhalb eines sehr einfachen Modells berechnet. Das gilt sowohl für den Multicopter als auch für das Flächenflugzeug. Der Multicopter ist als eine Art Rotationsellipsoid und das Flächenflugzeug als Punktmasse vereinfacht. Die Annahme so hoher Gleitzahlen von ca. 20 oder mehr, ist für ein unbemanntes Fluggerät ein sehr hoher Wert. Diese hohen Werte gehen mit einer entsprechend dafür ausgelegten Struktur insbesondere der Flügefläche einher. Dies erhöht weiterhin die Abmaße und die Strukturmasse.
 \todo[inline]{auf Gleitzahl verweisen}
 
 \subsubsection{Propeller und Kennfeld}
-Bei der Transformation der Propellerkennfelder auf äquidistante Geschwindigkeitsabstände ist der Bereich von \SI{-10}{m/s} bis \SI{0}{m/s} extrapoliert. Ein analoges Vorgehen wird zur Erweiterung des ursprünglichen Kennfeldes in den Bereich noch größerer Anströmgeschwindigkeiten angewandt. Das reale Verhalten der Propeller kann folglich von dem errechneten abweichen. Weiterhin beziehen sich alle Auslegungen auf die Datenbank von APC. 
+Bei der Transformation der Propellerkennfelder auf äquidistante Geschwindigkeitsabstände ist der Bereich von \SI{-10}{m/s} bis \SI{0}{m/s} extrapoliert. Ein analoges Vorgehen wird zur Erweiterung des ursprünglichen Kennfeldes in den Bereich noch größerer Anströmgeschwindigkeiten angewandt. Das reale Verhalten der Propeller kann folglich von dem errechneten abweichen. Weiterhin beziehen sich alle Auslegungen auf die Datenbank von APC (Abschn. \ref{subsec:propellerzustand}). 
 \todo[inline]{APC Quelle angeben}
 Die Modellierung eines Propellers mit gleichem Durchmesser und gleicher Steigung eines anderen Herstellers kann aus diesem Grund abweichen. Gründe dafür können eine unterschiedliche Profilierung, Verwindung oder Profiltiefenverteilung sein. Insgesamt wird ein vereinfachtes Luftdichtemodell verwendet, das z.B. Reynoldszahl- oder Machzahleffekte nicht mit einbezieht.
 
 \subsubsection{Motor}
-Jeglicher Einfluss der Temperatur auf die Leistung des Motors bleibt in dem einfachen Motormodell unberücksichtigt. Außerdem werden der Motorstrom und der der Innenwiderstand als konstant angenommen.
+Jeglicher Einfluss der Temperatur auf die Leistung des Motors bleibt in dem einfachen Motormodell unberücksichtigt (Gleichung \ref{eq:motorstrom} und \ref{eq:motorspannung}). Außerdem werden der Leerlaufmotorstrom und der der Innenwiderstand als konstant angenommen (Vgk. Tab. \ref{tab:mot_parameter}).
 
 \subsubsection{Motorregler}
-Für den Motorregler wurde ein sehr einfaches Modell verwendet, in dem der Wirkungsgrad ausschließlich eine Funktion der PWM ist.
+Für den Motorregler wurde ein sehr einfaches Modell verwendet, in dem der Wirkungsgrad ausschließlich eine Funktion der PWM ist (Vgl. Gleichung \ref{eq:eta_pwm}).
 
 \subsubsection{Batterie}
 Die Berechnung der Batterie vernachlässigt zwei wichtige Einflussfaktoren. Das ist der Temperatureinfluss und der Einfluss der Alterung auf die Kapazität. Dies kann jedoch durch eine Anpassung der Peukert-Konstante kompensiert werden.\\
@@ -735,6 +736,6 @@ Zusätzlich unterliegt die Batteriespannung im Rahmen des Modells Abweichungen. 
 Die Zuverlässigkeit des Batteriemodells nimmt daher mit hohen C-Raten ab. Außerdem ist zu berücksichtigen, dass im Durchschnitt der Spannungsverlauf der normierten Zelle unterhalb der Normalzelle liegt. Dies bedeutet, dass die Spannung der Originalzelle unter Last geringer einbricht, als die der normierten Zelle.  
 
 \subsubsection{Wirkungsgrad}
-Die Berechnung der Strahlleistung beruht auf der Berechnung der induzierten Geschwindigkeit innerhalb der Strahltheorie. Hier wird ein idealer Rotor zugrunde gelegt.
+Die Berechnung der Strahlleistung beruht auf der Berechnung der induzierten Geschwindigkeit innerhalb der Strahltheorie (Vgl. Gleichung \ref{eq:propellerschub} o. ä.). Hier wird ein idealer Rotor zugrunde gelegt.
 Beruhend auf dieser Annahme bleiben viele Effekte wie Blattspitzeffekte an der Rotorblattspitze und im Bereich der Blattwurzel, Strömungsablösungen, Blattwirbelinteraktionen usw. unberücksichtigt.  Zudem wird eine über den Radius konstante induzierte Geschwindigkeit in der Rotorebene angenommen. Dies ist im Vorwärtsflug und bei Schräganströmung zu relativieren \cite[S.226]{Wall.2015}.
 

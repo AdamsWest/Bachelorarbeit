@@ -1,5 +1,7 @@
 close all
-figure
+figure_vpp = figure;
+
+figure(figure_vpp);
 
 subplot(621), stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), hold on
 stairs(H,C_Rest_V_vpp*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
@@ -35,6 +37,7 @@ stairs(H,pitch_vpp,'LineWidth',1), title('Pitch'), grid, xlabel('Höhe [m]'),ylab
 lgd = legend('fixed pitch','variable pitch','Location','bestoutside'); title(lgd,'Propeller')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(figure_vpp)
 PaperSizeX = 21;
 PaperSizeY = 29.7;
 

@@ -32,7 +32,7 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % Getriebe
 ue_min = 0.8;           % minimale Übersetzung
 ue_Delta = 0.05;         % Schrittweite der Über
-ue_max = 1.4;            % maximale Übersetzung
+ue_max = 1.5;            % maximale Übersetzung
 % Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
 m_getriebe = 0.0;       % Getriebegewicht
 eta_getriebe = 1;     % Wirkungsgrad des Getriebes

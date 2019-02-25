@@ -123,11 +123,14 @@ Omega = zeros(lengthi,1);
 tau = zeros(lengthi,1);
 M_tip = zeros(lengthi,1);
 pitch = zeros(lengthi,1);
+eta_prop = zeros(lengthi,1);
 % Motor
 U_mot = zeros(lengthi,1);
 I_mot = zeros(lengthi,1);
+eta_mot = zeros(lengthi,1);
 % ESC
 PWM = zeros(lengthi,1);
+eta_PWM = zeros(lengthi,1);
 % Batterie
 C_Rate = zeros(lengthi,1);
 C_Rest_V = zeros(lengthi,1);
@@ -138,7 +141,6 @@ P_Bat = zeros(lengthi,1);
 Delta_C_Bat = zeros(lengthi+1,1);
 i_int = zeros(lengthi+1,1);
 % Gesamtsystem
-eta_prop = zeros(lengthi,1);
 eta_ges = zeros(lengthi,1);
 
 
@@ -222,11 +224,14 @@ for h_variabel = H_0:Delta_H:H_max
     tau_inter = zeros(lengthvkg, 1);
     M_tip_inter = zeros(lengthvkg, 1);
     pitch_inter = zeros(lengthvkg, 1);
+    eta_prop_inter = zeros(lengthvkg,1);
     % Motor
     I_mot_inter = zeros(lengthvkg, 1);
     U_mot_inter = zeros(lengthvkg, 1);
+    eta_mot_inter = zeros(lengthvkg,1);
     % ESC
     PWM_inter = zeros(lengthvkg, 1);
+    eta_PWM_inter = zeros(lengthvkg,1);
     % Batterie
     I_Bat_inter = zeros(lengthvkg, 1);
     U_Bat_inter = zeros(lengthvkg, 1);
@@ -264,11 +269,14 @@ for h_variabel = H_0:Delta_H:H_max
         tau_vprop = zeros(counter, 1);
         M_tip_vprop = zeros(counter, 1);
         pitch_vprop = zeros(counter,1);
+        eta_prop_vprop = zeros(counter,1);
         % Motor
         I_mot_vprop = zeros(counter, 1);
         U_mot_vprop = zeros(counter, 1);
+        eta_mot_vprop = zeros(counter,1);
         % ESC
         PWM_vprop = zeros(counter, 1);
+        eta_PWM_vprop = zeros(counter,1);
         % Batterie
         I_Bat_vprop = zeros(counter, 1);
         U_Bat_vprop = zeros(counter, 1);
@@ -318,11 +326,11 @@ for h_variabel = H_0:Delta_H:H_max
                 
                 
                 % Motorzustand berechnen
-                [U_mot_vprop(n),I_mot_vprop(n)] = Motor(tau_vprop(n),K_V,I_0,R_i,Omega_vprop(n));
+                [U_mot_vprop(n),I_mot_vprop(n),eta_mot_vprop(n)] = Motor(tau_vprop(n),K_V,I_0,R_i,Omega_vprop(n));
                 
                 
                 % Zustand der Motorregler berechnen
-                [PWM_vprop(n),eta_PWM] = ESC(U_mot_vprop(n),U_Bat(x));         % <-- hier U_bat_inter
+                [PWM_vprop(n),eta_PWM_vprop(n)] = ESC(U_mot_vprop(n),U_Bat(x));         % <-- hier U_bat_inter
 
                 
                 % Batteriezustand berechnen
@@ -330,7 +338,7 @@ for h_variabel = H_0:Delta_H:H_max
                 i_int_vprop(n) = i_int(x);                                     % Übergabe des Integrals der Spannung vom letzten Schritt
                 
                 [I_Bat_vprop(n),U_Bat_vprop(n),C_Rate_vprop(n),Delta_C_Bat_vprop(n),C_Rest_V_vprop(n),i_int_vprop(n)] = Batterie(Batterie_data,...
-                    Cnom,PWM_vprop(n),eta_PWM,n_Prop,i_int_vprop(n),U_Bat_vprop(n),C_Bat,Delta_C_Bat_vprop(n),I_mot_vprop(n),N_Bat_cell,P_Bat_Peukert,t_Flug_inter(z));
+                    Cnom,PWM_vprop(n),eta_PWM_vprop(n),n_Prop,i_int_vprop(n),U_Bat_vprop(n),C_Bat,Delta_C_Bat_vprop(n),I_mot_vprop(n),N_Bat_cell,P_Bat_Peukert,t_Flug_inter(z));
                 
                 
                 %% Gesamtwirkungsgrad
@@ -354,7 +362,7 @@ for h_variabel = H_0:Delta_H:H_max
                 vi = vi0 * vi_vi0;                                                  % induzierte Geschwindigkeit im stationaeren Steigflug
                 
                 % Figure of Merit des Rotors, Bezug auf van der Wall (Grundlagen der Hubschrauber-Aerodynamik) (2015) (S.122)
-                %        	eta_prop(x) = (Thrust(x) * (V_A + vi))/(tau(x) .* Omega(x));
+                eta_prop_vprop(n) = (Thrust_vprop(n) * (mu_z + vi))/(tau_vprop(n) * Omega_vprop(n));
                 
                 eta_ges_vprop(n) = (n_Prop * Thrust_vprop(n) * (mu_z + vi))/(I_Bat_vprop(n) * U_Bat_vprop(n));         % Leistung, die in Schub umgesetzt wird im Verhältnis zur aufgebrachten Leistung
 
@@ -431,11 +439,14 @@ for h_variabel = H_0:Delta_H:H_max
             tau_inter(z) = tau_vprop(ind_opt);
             M_tip_inter(z) = M_tip_vprop(ind_opt);
             pitch_inter(z) = pitch_vprop(ind_opt);
+            eta_prop_inter(z) = eta_prop_vprop(ind_opt);
             % Motor
             I_mot_inter(z) = I_mot_vprop(ind_opt);
             U_mot_inter(z) = U_mot_vprop(ind_opt);
+            eta_mot_inter(z) = eta_mot_vprop(ind_opt);
             % ESC
             PWM_inter(z) = PWM_vprop(ind_opt);
+            eta_PWM_inter(z) = eta_PWM_vprop(ind_opt);
             % Batterie
             I_Bat_inter(z) = I_Bat_vprop(ind_opt);
             U_Bat_inter(z) = U_Bat_vprop(ind_opt);   
@@ -459,11 +470,14 @@ for h_variabel = H_0:Delta_H:H_max
             tau_inter(z) = NaN;
             M_tip_inter(z) = NaN;
             pitch_inter(z) = NaN;
+            eta_prop_inter(z) = NaN;
             % Motor
             I_mot_inter(z) = NaN;
             U_mot_inter(z) = NaN;
+            eta_mot_inter(z) = NaN;
             % ESC
             PWM_inter(z) = NaN;
+            eta_PWM_inter(z) = NaN;
             % Batterie
             I_Bat_inter(z) = NaN;
             U_Bat_inter(z) = NaN;          
@@ -520,11 +534,14 @@ for h_variabel = H_0:Delta_H:H_max
         tau(x) = tau_inter(ind_opt2);
         M_tip(x) = M_tip_inter(ind_opt2);
         pitch(x) = pitch_inter(ind_opt2);
+        eta_prop(x) = eta_prop_inter(ind_opt2);
         % Motor
         I_mot(x) = I_mot_inter(ind_opt2);
         U_mot(x) = U_mot_inter(ind_opt2);
+        eta_mot(x) = eta_mot_inter(ind_opt2);
         % ESC
         PWM(x) = PWM_inter(ind_opt2);
+        eta_PWM(x) = eta_PWM_inter(ind_opt2);
         % Batterie
         I_Bat(x) = I_Bat_inter(ind_opt2);
         U_Bat(x+1) = U_Bat_inter(ind_opt2);
@@ -549,11 +566,14 @@ for h_variabel = H_0:Delta_H:H_max
         tau(x) = NaN;
         M_tip(x) = NaN;
         pitch(x) = NaN;
+        eta_prop(x) = NaN;
         % Motor
         I_mot(x) = NaN;
         U_mot(x) = NaN;
+        eta_mot(x) = NaN;
         % ESC
         PWM(x) = NaN;
+        eta_PWM(x) = NaN;
         % Batterie
         I_Bat(x) = NaN;
         U_Bat(x+1) = NaN;
@@ -590,22 +610,25 @@ subplot(625), plot(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel(
 H2 = [0;H];
 subplot(626), plot(H2,U_Bat,'LineWidth',1), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
 subplot(627), plot(H,PWM*100,'LineWidth',1), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
-subplot(628), plot(H,eta_ges*100,'LineWidth',1), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+subplot(628), stairs(H,eta_ges*100,'LineWidth',1)
+hold on
+stairs(H,eta_prop*100,'LineWidth',1)
+stairs(H,eta_mot*100,'LineWidth',1)
+stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta [%]')
+legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', 'Location', 'bestoutside')
+hold off
 subplot(629), plot(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(6,2,10), plot(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 subplot(6,2,11), plot(H,pitch,'LineWidth',1), title('Pitch'), grid, xlabel('Höhe [m]'),ylabel('Pitch [in]')
+
+
 % Anpassung und Abspeichern der Diagramme
-% ImageSizeX = 14;
-% ImageSizeY = 24;
-% figure(figure_ges)
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [0 0 ImageSizeX ImageSizeY]);
-% set(gcf,'Units','centimeters', 'PaperSize', [ImageSizeX ImageSizeY]);
-% saveas(gcf,Dateiname, 'pdf');
+
 
 PaperSizeX = 21;
 PaperSizeY = 29.7;
 
 fig = gcf;
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');

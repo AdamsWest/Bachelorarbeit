@@ -1,6 +1,41 @@
 \chapter{Zusammenfassung und Ausblick}
 
 \section{Zusammenfassung}
+\begin{itemize}
+	\item viele Werte für den Multicopter sind reine Schätzwerte und bedürfen einer Validierung durch Messungen und Testflügen
+	\item insgesamt beinhaltet das Programm viele einfach Modelle, so z.B. das des Motors, die viele Effekte nicht berücksichtigen
+	\item dies umfasst die Strahltheorie, das Motormodell, den Regler
+	\item beim Motor werden die Verlustgrößen (\ensuremath{R_i} und \ensuremath{I_0}) als konstant angenommen und kein Einfluss der Temperatur berücksichtigt.
+	\item dies gilt auch für das Batteriemodell, auch hier keine Berücksichtigung von Temperatureinflüssen, die bei den hier angesetzten Flughöhen definitiv zu erwarten sind 
+	\item das Modell des Flächenflugzeuges ist sehr einfach gewählt und berücksichtigt nicht die realen Gegebenheiten
+	\item es wurden viele grenzen innerhalb der flugenvelloppe vernachlässigt, die mit dem einfachen Modell nicht behandelt werden können. Das sind die Auftriebsgrenze, die Festigkeitsgrenze und die Wärme u. Temperaturgrenze. Vor allem die Auftriebsgrenze kann noch eine wichtige Rolle spielen. 
+	\item Durch die oben genannten Eigenschaften des Flächenflugzeugmodells sind auch viele Widerstände vorhanden, die nicht in das Modell mit einfließen. Diese können nur durch exakte Kenntnis der aerodynamischen Gegebenheiten, welche in Flugversuchen ermittelt werden können wie dies in \cite{Ostler.2006} der fall ist, berechnet werden (Nullwiderstand, Wellenwiderstand, etc.)
+	\item diese können nur drch Kenntnis über das Flügelprofil bestimmt werden
+	\item Es ist ein sehr einfaches Luftmodell verwendet worden, dass Reynolds oder Machzahleffekte nicht berücksichtigt. 
+	\item das sind unter anderem Einstellungen, die den Throttle betreffen (Abriegelung nach oben, um das Fluggerät handbar zu halten, oder der Modus position hold, der zur Positionshaltung wieder zusätzlich Energie benötigt)
+	\item insgesamt handelt es sich hier auch um ein statisches Modell, dynamische Effekt bleiben hierbei unberücksichtigt, z.b. Ausgleich durch Böen
+	\item Optimierungen in Richtung einer Rechenleistungserhöhung können durch die Verwendung alternativer Algorithmen (z.B. divide and conquer) erzielt werden, anstatt der hier verwendeten Brute Force Methode.
+	\item insgs sind sehr positive Grundvoraussetzungen getroffen worden, die die Umgebungsparameter betreffen. Die Winde wurden mit einer konstanten Windgeschwindigkeit von \SI{10}{m/s} mit einbezogen. Dies ist für einen Multicopter vom Vorteil, weil es einem langsamen Vorwärtsflug gleichkommt, der den Leistungsüberschuss erhöht. Durch den Vorwärtsflug wird die induzierte Leistung verringert \cite[S.329]{Wall.2015}. Schlechtere Ergebnisse sind mit größeren oder geringeren Windgeschwindigkeiten zu erwarten.
+	\item mit den im AEROMET UAV angenommenen Umgebungsbedingungen, die eine zusätzliche Nutzlast und sehr hohe, wechselnde Windstärken annehmen, liegen die zu erwartenden Leistungen nochmal um \SI{1000}{\%} unter den hier errechneten. 
+	
+	\item es zeigt sich, dass es viele verschiedene Ansatzpunkte für die Optimierung eines Fluggerätes zum effizienten Aufstieg in die untere Stratosphäre gibt. 
+	\item für diese Mission erweist sich ein Multicopter als effizienter und mit Berücksichtigung der Rahmenbedingungen einfacher zu händeln. 
+	\item hier sei wieder auf das einfache Modell des Flächenlfugzeugs verwiesen
+	\item Die Gestaltung des Copters sollte mglst. aerodynamisch sein, eine große Batterie besitzen.
+	\item Alle Komponenten sollten gut aufeinander abgestimmt sein, das betrifft vor allem die Batteriemassenverteilung, die Anzahl der Propeller
+	\item für einen Multicopter ergibt sich eine optimale Anzahl von vier Rotoren.
+	\item Bei ebendiesem Fluggerät würde sich der Einbau eines Getriebes auszahlen, wenn dieses effizient und leicht gestaltet ist.
+	\item für einen reinen Quadrocopter werden die Vorteile von einem getriebe oder einem Verstellpropeller durch dessen Nachteile überkompensiert, sodass sich Einsatz nicht auszahlt sondern eher die Flugleistungen verschlechtert. Deshalb ist umso mehr auf die vorangegangenen Punkte zu achten
+	\item der Quadrocopter aus \cite{Anderson.2018} kann als die Richtung des Designs aufgefasst werden, die für die Konstruktion eines Multicopters die besten Ergebnisse liefert.
+\end{itemize}
+
 
 \section{Ausblick}
 
+\begin{itemize}
+	\item die aufgestellten Ergebnisse sollten validiert werden und sie auf Korrektheit zu überprüfen. 
+	\item die besten Eigenschaften aus beiden Konstellationen, dem Multicopter und Flächenflugzeug, liefert das Design eines VTOL-UAV's.
+	\item die Senkrecht start und landefähigkeit verringert den Platz für den Start- und Landeplatz, was im Rahmen dieses Projektes einen entscheidenden Vorteil bietet. 
+	\item die Tragflächen ermöglichen zudem ein Sinkflug, der wenig Energie benötigt, sodass noch mehr Batteriekapazität in den Steigflug gesteckt werden kann und die Höhe weiter steigt. 
+	\item Hier ist der Einsatz eines Verstellpropellers durchaus denkbar, da bei einem voraussichtlichen und effektiven Designs mit nur 2 Propellern das Gewicht des Verstellmechanismus nicht so schwerwiegende Einflüsse hat.
+\end{itemize}

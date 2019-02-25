@@ -102,7 +102,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 17000;                              % Maximalhöhe in m
+H_max = 18000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -117,7 +117,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms.pdf'];
 
-Dateiname = 'Einfluss_eta_ges2';
+Dateiname = 'Ausgangskonstellation';
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
 run('Leistungsberechnung'); % _Var_m_Bat
