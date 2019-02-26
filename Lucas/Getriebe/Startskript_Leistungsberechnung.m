@@ -30,12 +30,12 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Getriebe
-ue_min = 0.8;           % minimale Übersetzung
+ue_min = 0.5;           % minimale Übersetzung
 ue_Delta = 0.05;         % Schrittweite der Über
 ue_max = 1.5;            % maximale Übersetzung
 % Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
-m_getriebe = 0.0;       % Getriebegewicht
-eta_getriebe = 1;     % Wirkungsgrad des Getriebes
+m_getriebe = 0.5;       % Getriebegewicht
+eta_getriebe = 0.8;     % Wirkungsgrad des Getriebes
 
 % Propeller
 prop_name = '10x3';    % Propellerbezeichnung
@@ -110,7 +110,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, m_getriebe = ' num2str(m_getriebe) ...
 %     ', eta_getriebe = ' num2str(eta_getriebe) '.pdf'];
-Dateiname = 'Getriebe';
+Dateiname = 'Getriebe_realistisch';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

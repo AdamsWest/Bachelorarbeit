@@ -45,6 +45,7 @@ D = 10;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
+m_prop_mech = 0.00;      % Gewicht des Verstellmechanismus
 
 % Batterie
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
@@ -106,7 +107,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 %% Festlegung des Dateinamen
     
-Dateiname = 'Verstellprop';
+Dateiname = 'Verstellprop_real';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

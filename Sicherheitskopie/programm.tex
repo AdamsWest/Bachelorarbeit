@@ -254,6 +254,7 @@ berechnet. Auf diese folgt die Berechnung der aerodynamischen Kräfte
 \end{equation}
 \begin{equation}
 	A = c_A\cdot \frac{\rho}{2}\cdot A_{copter,oben}\cdot V_A^2.
+	\label{eq:auftrieb}
 \end{equation}
 Die aerodynamischen Kräfte werden dann vom aerodynamischen Koordinatensystem in das geodätische Koordinatensystem transformiert:
 \begin{equation}
@@ -389,7 +390,7 @@ Der Windeinfluss kann in diesem Modell vorerst vernachlässigt werden. Laterale 
 \subsection{Propellerzustand}
 \label{subsec:propellerzustand}
 
-Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab. \ref{tab:prop_parameter}). Der Name ist wichtig, um das Propellerkennfeld aus der Propellerdatenbank von APC \cite{https:www.facebook.comapcprop.} zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter dienen zur Bestimmung der Effekte einer Anströmung und damit der Berücksichtigung der Blattelemententheorie.
+Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab. \ref{tab:prop_parameter}). Der Name ist wichtig, um das Propellerkennfeld aus der Propellerdatenbank von APC \cite{apc} zu entnehmen. Die Anzahl der Propeller beeinflusst entscheidend die Geometrie des Fluggerätes. Weiterhin wird damit der benötigte Schub auf die Anzahl der Propeller aufgeteilt. Die letzten Parameter dienen zur Bestimmung der Effekte einer Anströmung und damit der Berücksichtigung der Blattelemententheorie.
 \todo[inline]{Berechnung der Blattspitzengeschwindigkeit}
 \begin{center}
 	\captionof{table}{Propellerparameter für Schub, aerodynamische und technische Grenzen}
@@ -403,7 +404,7 @@ Der Propellername wird in der Form 'Durchmesser x Steigung' angegeben (siehe Tab
 	\label{tab:prop_parameter}
 \end{center}
 
-In der Propellerdatenbank vom Propellerhersteller APC sind zu jedem Propeller dieser Marke die Kennfelder aus Standschubversuchen aufgeführt \todo[inline]{fucking source is missing, Kennfelder, wie wurden sie bestimmt?}. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
+In der Propellerdatenbank vom Propellerhersteller APC sind zu jedem Propeller dieser Marke die Kennfelder angegeben. Diese Kennfelder enthalten für eine Drehzahl die Geschwindigkeiten, Fortschrittsgrade, Schub- und Leistungsbeiwerte, Schub und Leistung sowie weitere Kenngrößen, die innerhalb des "`NASA Transonic Airfoil Analysis Computer Program"\; numerisch berechnet wurden \cite{apc.theory}. Die Art der Aufführung lässt allerdings keine Interpolation der Drehzahl bzw. des Drehmomentes in Abhängigkeit des Schubes und der absoluten Fluggeschwindigkeit zu. Aus diesem Grund muss das Kennfeld auf äquidistante Geschwindigkeitsabstände transformiert werden. Dazu wird ein Geschwindigkeitsvektor mit Abständen von \SI{1}{m/s} gebildet. Die Funktion \texttt{Propeller\_map} (entommen aus Beyer, Y. (2016)) interpoliert danach das Schub- und Leistungskennfeld neu über der Geschwindigkeit und Drehzahl. Mit dem zuvor berechneten Schub und der absoluten Fluggeschwindikeit kann schließlich mit der Funktion \texttt{Propeller} die Drehzahl und das Drehmoment mittels linearer Interpolation ermittelt werden.
 Die Kennfelder wurden in Versuchen ermittelt, die keine ändernde Dichte berücksichtigen. Um den Einfluss der sich verringernden Dicht mit zunehmender Flughöhe trotzdem zu beachten, müssen die Kennfelder angepasst werden. Gemäß der Strahltheorie setzt sich der Schub aus dem Massenstrom und der Geschwindigkeit im voll ausgebildeten Abstromzylinder 
 \begin{equation}
 	S =  \dot{m}\cdot v_{\infty} = \rho\cdot A_{Propeller}\cdot v_i\cdot v_{\infty}
@@ -423,26 +424,51 @@ Der Propellerwirkungsgrad \ensuremath{\eta_{Prop}}
 \begin{equation}
 	\eta_{Prop} = \frac{P_{Strahl}}{P_{Welle}}
 \end{equation}
-setzt die erzeugte Strahlleistung in Bezug zur Wellenleistung.
-Die Strahlleistung 
+setzt die erzeugte Strahlleistung 
 \begin{equation}
-	P_{Strahl} = S\cdot (v_i + V_c)
+	P_{Strahl} = S\cdot (w_{i,f}+ w_{Af})
 	\label{eq:strahlleistung}
 \end{equation}
-setzt sich aus dem Schub \ensuremath{S}, der induzierten Geschwindigkeit \ensuremath{v_i} und der Steiggeschwindigkeit \ensuremath{V_c} zusammen. 
+in Bezug zur Wellenleistung
+\begin{equation}
+	P_{Welle} = \Omega \cdot M \eqend{.}
+\end{equation} 
+Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}. Im Gegensatz zu van der Wall wird an dieser Stelle mit den senkrecht durch die Propellerebene gehenden Geschwindigkeiten \ensuremath{w_{ges,f} = w_{i,f} + w_{Af}} gerechnet:
+\begin{equation}
+	(w_{i,f} + w_{Af})_{n+1} = w_{i,f,n} - \frac{w_{i,f,n}}{wi,f,n-1}, \;\;\; n = 0,1,2,\dots
+\end{equation}
+mit 
+\begin{equation}
+	f = w_{i,f,n} - w_{Af} - \frac{w_{i0,f}}{\sqrt{u_{A,f}+w_{i,f,n}}} \;\;\; und \;\;\; f'=1 + w_{i,f,n}\cdot\frac{w_{i0,f}}{\sqrt[3]{u_{Af}+w_{i,f,n}}} \eqend{.}
+\end{equation}
+Dabei ist 
+\begin{equation}
+	u_{Af} = V_{A}\cdot\cos\alpha_{M}
+\end{equation}
+die laterale Komponente entlang der Propellerebene und 
+\begin{equation}
+	w_{Af} = - V_{A}\cdot\sin\alpha_{M}
+\end{equation}
+und die vertikale Komponente der Propelleranströmung durch die Rotorebene. Den Startwert der Iteration stellt die induzierte geschwindigkeit im Schwebeflug \ensuremath{(w_{i,f}+w_{Af})_{0} = w_{i0,f}} dar. Hierbei ist darauf hinzuweisen, dass die sich die Vorzeichen
+\todo[inline]{auf die andere Vorzeichenkonvention zur LN9300 hinweisen}
+\todo[inline]{Einschränken für Sinkflug vornehmen}
 
-Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}:
-\todo[inline]{Schau dir hier nochmal die Indizes an}
-\begin{equation}
-	f(v) = v-\mu_z-\frac{{v_h}^2}{\sqrt{\mu^2+v^2}}
-\end{equation}
-\begin{equation}
-	f'(v) = 1 + v\cdot\frac{{v_h}^2}{\sqrt{\mu^2+v^2}^3}
-\end{equation}
-\begin{equation}
-	v_{n+1} = v_n - \frac{f(v_n)}{f'(v_n)}\qquad n = 0,1,2,\dots
-\end{equation}
-An dieser Stelle sei angemerkt, dass van der Wall mit dimensionslosen Durchflussgraden \ensuremath{\lambda} rechnet. In dieser Arbeit wird aber mit den dimensionsbehafteten Geschwindigkeiten gerechnet.
+
+%\begin{equation}
+%	f(v) = v-\mu_z-\frac{{v_h}^2}{\sqrt{\mu^2+v^2}}
+%\end{equation}
+%\begin{equation}
+%	f'(v) = 1 + v\cdot\frac{{v_h}^2}{\sqrt{\mu^2+v^2}^3}
+%\end{equation}
+%\begin{equation}
+%	v_{n+1} = v_n - \frac{f(v_n)}{f'(v_n)}\qquad n = 0,1,2,\dots
+%\end{equation}
+%An dieser Stelle sei angemerkt, dass van der Wall mit dimensionslosen Durchflussgraden \ensuremath{\lambda} rechnet. In dieser Arbeit wird aber mit den dimensionsbehafteten Geschwindigkeiten gerechnet.
+
+
+
+
+
 
 
 

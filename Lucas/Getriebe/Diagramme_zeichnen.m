@@ -49,18 +49,18 @@ saveas(gcf,'Getriebe', 'pdf');
 %%
 figure_dud = figure;
 figure(figure_dud);
-subplot(211), stairs(H,Omega_g/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+subplot(211), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
     hold on 
-    stairs(H,Omega_g/(2*pi)*60./Uebersetzung,'LineWidth',1)
+    stairs(H,Omega/(2*pi)*60./Uebersetzung,'LineWidth',1)
     legend('Motordrehzahl', 'Propellerdrehzahl','Location','southeast')
-subplot(212), stairs(H,tau_g,'LineWidth',1), grid, title('Drehmoment'), xlabel('Höhe [m]'),ylabel('Drehmoment [Nm]')
+subplot(212), stairs(H,tau,'LineWidth',1), grid, title('Drehmoment'), xlabel('Höhe [m]'),ylabel('Drehmoment [Nm]')
     hold on 
-    stairs(H,tau_g .* Uebersetzung,'LineWidth',1), legend('Motordrehmoment','Propellerdrehmoment','Location','southeast');
+    stairs(H,tau .* Uebersetzung,'LineWidth',1), legend('Motordrehmoment','Propellerdrehmoment','Location','southeast');
 
 PaperSizeX = 14.8;
 PaperSizeY = 21;
 
 fig = gcf;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
-saveas(gcf,'DuD', 'pdf');
+saveas(gcf,'DuD_KV', 'pdf');

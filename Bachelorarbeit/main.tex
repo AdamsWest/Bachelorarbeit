@@ -4,15 +4,8 @@
 % ******************************************************************************
 \input{preamble}
 %
-% Einbinden der Nomenklatur, bestehend aus einem Glossar, einem
-% Abkuerzungsverzeichnisses, sowie Formelverzeichnisses. Das Formelverzeichnis
-% besteht aus lateinischen, grichischen Bezeichnungen, sowie tief- und
-% hochgestellte Indizes. Informationen zur Kompilierung, bei die Einträge
-% innerhalb der einzelnen Nomenklaturkategorien alphabetisch sortiert werden,
-% können aus der entsprechenden Datei entnommen werden. Eine Verwendung des
-% Makefiles wird für die Erstellung des Dokumentes empfohlen.
-\input{nomenclature}
 % ******************************************************************************
+%
 % Aendern der Nummerierung von arabisch auf roemisch
 \pagenumbering{Roman}
 %
@@ -54,13 +47,13 @@
     \include{title_page_thesis}
 %    \tikzexternaldisable
     %
-    \includepdf[pages=-]{BA_Lucas_Schreer_Aufgabenstellung} 			% Hier die Aufgabenstellung einfügen
+    \includepdf[pages=-]{BA_Lucas_Schreer_Aufgabenstellung}
     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 	% Remove after finished !!!!!!!!!!!!!!!!!!!!!!!!!
 	\todototoc  
     \listoftodos
-%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Einbinden des Eids.
     \include{oath}
     %
@@ -92,18 +85,12 @@
     %
     % Einbinden der einzelnen Kapitel
     \include{introduction}
-    % \include{chapter_n}
-    \include{programm2}
+    \include{programm}
     \include{nachbildung}
     \include{parameteruntersuchung}
     \include{conclusion}
     \include{projektmanagement}
 % ******************************************************************************
-    %
-    % Fuege alle definierten Nomenklatureintraege hinzu.
-    \glsaddall
-    % Fuege nur bestimmte Nomenklaturlisten hinzu.
-    %\glsaddall[types={latin,greek,indices}]
     %
     % Einfuegen des Literaturverzeichnisses.
     \printbibliography

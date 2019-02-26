@@ -17,34 +17,10 @@ $pdflatex = 'pdflatex -extra-mem-top=20000000';
 $bibtex_use = 2;
 # turn off the recorder
 $recorder = 0;
-# Commmand for creating nomenclature
-add_cus_dep('glo', 'gls', 0, 'makeglo2gls');
-add_cus_dep('acn', 'acr', 0, 'makeglo2gls');
-add_cus_dep('lyi', 'lyg', 0, 'makeglo2gls');
-add_cus_dep('gyi', 'gyg', 0, 'makeglo2gls');
-add_cus_dep('iyi', 'iyg', 0, 'makeglo2gls');
-
-sub makeglo2gls {
-  my ($base_name, $path) = fileparse( $_[0] );
-  pushd($path);
-  system("makeglossaries $base_name");
-  popd;
-}
 #
 # Setup cleaning for 'latexmk -c' respectively 'latexmk -C' command
 #
 # Cleanup before build the document
-#@generated_exts = qw(acn acr alg bbl fls glg glo gls gyg gyi ist iyg iyi llg lyg
-#		lyi mlg mw myg myi out pdf slg syg syi synctex.gz toc dpth md5 idx ind lof lot);
-#
-# Setup cleaning glossaries output files
-push @generated_exts, 'glg', 'gls', 'glo';
-push @generated_exts, 'alg', 'acr', 'acn';
-push @generated_exts, 'llg', 'lyi', 'lyg';
-push @generated_exts, 'glg', 'gyi', 'gyg';
-push @generated_exts, 'ilg', 'iyi', 'iyg';
-push @generated_exts, 'ist';
-#
 @generated_exts = (@generated_exts, 'synctex.gz');
 # Add some additional filetypes
 $clean_ext = 'fls synctex.gz mw auxlock %R.%R.gnuplot %R*.synctex.gz';

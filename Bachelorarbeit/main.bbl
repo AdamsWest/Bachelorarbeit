@@ -19,6 +19,21 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{amazon}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Online shopping from a great selection at Prime Air Store.}
+      \field{title}{Amazon.com: Prime Air}
+      \verb{urlraw}
+      \verb https://www.amazon.com/b?node=8037720011
+      \endverb
+      \verb{url}
+      \verb https://www.amazon.com/b?node=8037720011
+      \endverb
+      \keyw{Amazon.com;Prime Air}
+      \warn{\item Entry 'amazon' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Anderson.2018}{misc}{}
       \name{author}{2}{}{%
         {{hash=11678ce95e887bbc1825004ad38c3c92}{%
@@ -51,6 +66,21 @@
       \verb https://diydrones.com/profiles/blogs/10-km-high-flight-with-a-1kg-quadcopter
       \endverb
       \warn{\item Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{polizei}{misc}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeltitlesource}{title}
+      \field{title}{Beantwortung der M{ü}ndl. Anfrage der FDP zum Drohneneinsatz der Polizei | Nds. Ministerium f{ü}r Inneres und Sport}
+      \field{year}{23.08.2018}
+      \verb{urlraw}
+      \verb http://www.mi.niedersachsen.de/startseite/aktuelles/aus_landtag/beantwortung-der-muendl-anfrage-der-fdp-zum-drohneneinsatz-der-polizei-168086.html
+      \endverb
+      \verb{url}
+      \verb http://www.mi.niedersachsen.de/startseite/aktuelles/aus_landtag/beantwortung-der-muendl-anfrage-der-fdp-zum-drohneneinsatz-der-polizei-168086.html
+      \endverb
+      \keyw{Drohnen;Landtag;Pistorius;Polizei}
+      \warn{\item Entry 'polizei' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{Bruning.1986}{book}{}
       \name{author}{3}{}{%
@@ -132,6 +162,36 @@
       \field{title}{Brushless-Motoren und -Regler: Grundlagen - Technik - Praxis}
       \field{year}{2013}
     \endentry
+    \entry{cobramot}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labeltitlesource}{title}
+      \field{abstract}{CobraMotorsUSA.com - Cobra Brushless Motors, ESC's and Motor Parts}
+      \field{title}{CobraMotorsUSA.com - Cobra CM-2206/30}
+      \field{year}{01.12.2017}
+      \verb{urlraw}
+      \verb http://www.cobramotorsusa.com/multirotor-2206-30.html
+      \endverb
+      \verb{url}
+      \verb http://www.cobramotorsusa.com/multirotor-2206-30.html
+      \endverb
+      \keyw{Cobra Brushless Motors}
+      \warn{\item Entry 'cobramot' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{arducopter.clav}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labeltitlesource}{title}
+      \field{title}{Current Limiting and Voltage Scaling --- Copter documentation}
+      \field{year}{26.02.2019}
+      \verb{urlraw}
+      \verb http://ardupilot.org/copter/docs/current-limiting-and-voltage-scaling.html
+      \endverb
+      \verb{url}
+      \verb http://ardupilot.org/copter/docs/current-limiting-and-voltage-scaling.html
+      \endverb
+      \warn{\item Entry 'arducopter.clav' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Drivecalc}{misc}{}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
@@ -146,6 +206,21 @@
       \endverb
       \keyw{BL;brushless;DC motor;e-flight;elektroantrieb;elektroflug;eletric flight;modellflug;motor analysis;motor analyzer;motoranalyse;performance prediction;propeller calculator;reconfigurator;rotor calculator;wire calculator}
       \warn{\item Entry 'Drivecalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{landwirtschaft}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Schadenserfassung aus der Vogelperspektive. Drohnen leisten in der heutigen smarten Landwirtschaft wertvolle Dienste. Sie helfen, Tiere vor dem M{ä}hen im Feld zu orten, gr{ö}{ß}ere Unkrautnester von oben zu entdecken oder Sch{ä}dlinge biologisch zu bek{ä}mpfen.}
+      \field{title}{Drohnen f{ü}r die Landwirtschaft: Innovativer Pflanzenschutz}
+      \verb{urlraw}
+      \verb https://www.moderne-landwirtschaft.de/drohnen-fuer-die-landwirtschaft-innovativer-pflanzenschutz
+      \endverb
+      \verb{url}
+      \verb https://www.moderne-landwirtschaft.de/drohnen-fuer-die-landwirtschaft-innovativer-pflanzenschutz
+      \endverb
+      \keyw{Drohne;Ernteversicherung;Landwirtschaft}
+      \warn{\item Entry 'landwirtschaft' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{eCalc}{misc}{}
       \field{sortinit}{e}
@@ -163,6 +238,33 @@
       \keyw{Accu;Airplane;Akku;Antrieb;Auto;Batterie;Battery;BEV;Calc;Calculator;Car;Consumption;Drive;Ducted Fan;eAuto;e-calc;eCalc;eCar;EDF;eflight;electric;Electric Vehicle;eMobilit{ä}t;eMobility;Energie;Energy;ESC;EV;Fahrzeug;fanCalc;Flugzeug;heliCalc;Helicopter;Helikopter;Impeller;Jet;Luftschraube;Modellbau;MotoCalc;Motor;Multicopter;Multikopter;Multirotor Elektro;Plane;propCalc;Propeller;Range;RC;Rechner;Regler;Reichweite;Remote Control;Setup;Simulate;Simulation;Verbrauch;xCalc;xcopterCalc}
       \warn{\item Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
     \endentry
+    \entry{elektromodellflug}{misc}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{title}{Elektromodellflug - Datenbank}
+      \field{year}{05.06.2012}
+      \verb{urlraw}
+      \verb https://www.elektromodellflug.de/oldpage/datenbank.htm
+      \endverb
+      \verb{url}
+      \verb https://www.elektromodellflug.de/oldpage/datenbank.htm
+      \endverb
+      \warn{\item Entry 'elektromodellflug' (Literatur.bib): Invalid format '20.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{apc.theory}{misc}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{title}{Engineering | APC Propellers}
+      \verb{urlraw}
+      \verb https://www.apcprop.com/technical-information/engineering/#aero
+      \endverb
+      \verb{url}
+      \verb https://www.apcprop.com/technical-information/engineering/#aero
+      \endverb
+      \warn{\item Entry 'apc.theory' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Flyeval}{misc}{}
       \field{sortinit}{f}
       \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
@@ -178,6 +280,21 @@
       \endverb
       \keyw{Battery;Calc;calculation;copter;electric;ESC;evaluation;flyeval;flying;Model;Motor;Multicopter;multirotor;performance;Propeller;quadcopter;quadrotor;rotor;test;UAV}
       \warn{\item Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{gemfan}{misc}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Buy GemFan-Acc-7038-ABS-BK / GemFan 7038 ABS Propeller (M6 / Black / CW and CCW) online at the lowest price. HeliPal is famous for their Fast Shipping, Low Price and Good Service. HeliPal is the best and the biggest rc helicopter online store. We have full range of Walkera rc helicopters, walkera parts and accessories, align rc helicopter, part and accessory, nine eagles helicopter, nineeagles parts and accessories, HSP rc cars and HSP parts.}
+      \field{title}{GemFan 7038 ABS Propeller (M6 / Black / CW and CCW)}
+      \verb{urlraw}
+      \verb http://www.helipal.com/gemfan-7038-abs-propeller-m6-black-cw-and-ccw.html
+      \endverb
+      \verb{url}
+      \verb http://www.helipal.com/gemfan-7038-abs-propeller-m6-black-cw-and-ccw.html
+      \endverb
+      \keyw{Align Parts;Align TRex Helicopter;esky parts;GemFan 7038 ABS Propeller (M6 / Black / CW and CCW);Gemfan Plastic Propellers;Gemfan Propellers;GemFan-Acc-7038-ABS-BK;nine eagles;nine eagles parts;rc helicopter;Walkera;Walkera helicopter;Walkera parts}
+      \warn{\item Entry 'gemfan' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{Ostler.2006}{thesis}{}
       \name{author}{1}{}{%
@@ -275,6 +392,32 @@
       \field{year}{2013}
       \keyw{Endurance,MAV}
     \endentry
+    \entry{batteriezelle}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e489dbd3f86907c401f5f9e84bdcefee}{%
+           family={{Luxtrim GmbH}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{fullhash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{bibnamehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{authorbibnamehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{authornamehash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \strng{authorfullhash}{e489dbd3f86907c401f5f9e84bdcefee}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Murata / Sony Konion US18650VTC6 - 3120mAh, 3,6V - 3,7V (Flat Top) Lithium-Ionen Akkus 18650}
+      \verb{urlraw}
+      \verb https://www.akkuteile.de/lithium-ionen-akkus/18650/sony-konion-us18650vtc6-3120mah-3-6v-3-7v-flat-top-max-30a/a-100680/
+      \endverb
+      \verb{url}
+      \verb https://www.akkuteile.de/lithium-ionen-akkus/18650/sony-konion-us18650vtc6-3120mah-3-6v-3-7v-flat-top-max-30a/a-100680/
+      \endverb
+      \keyw{3;6V 3;7V ungesch{ü}tzt vtc6 us 18650 3120mah VTC6;Sony Konion US18650VTC6 - 3000mAh}
+      \warn{\item Entry 'batteriezelle' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Drela.2007}{article}{}
       \name{author}{1}{}{%
         {{hash=8843a019dd382ada5b62357cea5cc6e9}{%
@@ -293,6 +436,47 @@
       \field{labeltitlesource}{title}
       \field{title}{First-Order DC Electric Motor Model}
       \field{year}{2007}
+    \endentry
+    \entry{arducopter.mts}{misc}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labeltitlesource}{title}
+      \field{title}{Motor Thrust Scaling --- Copter documentation}
+      \field{year}{26.02.2019}
+      \verb{urlraw}
+      \verb http://ardupilot.org/copter/docs/motor-thrust-scaling.html
+      \endverb
+      \verb{url}
+      \verb http://ardupilot.org/copter/docs/motor-thrust-scaling.html
+      \endverb
+      \warn{\item Entry 'arducopter.mts' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{axi}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dff8a20826a79ddd96ce5b2c126f84cb}{%
+           family={o},
+           familyi={o\bibinitperiod},
+           given={JIROUT\bibnamedelimb REKLAMY\bibnamedelimb s.\bibnamedelimi r.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim s\bibinitperiod\bibinitdelim r\bibinitperiod}}}%
+      }
+      \strng{namehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{fullhash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{bibnamehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{authorbibnamehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{authornamehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{authorfullhash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \field{sortinit}{o}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AXI MODEL MOTORS | AXI MODEL MOTORS s. r. o.}
+      \verb{urlraw}
+      \verb https://www.modelmotors.cz/
+      \endverb
+      \verb{url}
+      \verb https://www.modelmotors.cz/
+      \endverb
+      \warn{\item Entry 'axi' (Literatur.bib): Invalid format '24.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{PCUP.2017}{inproceedings}{}
       \name{author}{4}{}{%
@@ -339,6 +523,19 @@
       \verb{doi}
       \verb 10.1109/COASE.2017.8256340
       \endverb
+    \endentry
+    \entry{apc}{misc}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labeltitlesource}{title}
+      \field{title}{Performance Data | APC Propellers}
+      \verb{urlraw}
+      \verb https://www.apcprop.com/technical-information/performance-data/
+      \endverb
+      \verb{url}
+      \verb https://www.apcprop.com/technical-information/performance-data/
+      \endverb
+      \warn{\item Entry 'apc' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{Quan.2017}{book}{}
       \name{author}{1}{}{%
@@ -487,6 +684,50 @@
       \verb 10.2514/1.38409
       \endverb
     \endentry
+    \entry{betaflight}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labeltitlesource}{title}
+      \field{abstract}{~Introduction Update: This is relevant for all versions of betaflight 3.4.0 and up. One of the new {"}minor features{"} in betaflight that I'm very excited about is throttle limit. Previously throttle...}
+      \field{title}{THROTTLE LIMIT IN BETAFLIGHT 3.4 and Up: Longer battery life and cooler motors}
+      \verb{urlraw}
+      \verb https://www.quadifyrc.com/tips-and-tricks/throttle-limit-in-betaflight-340-longer-battery-life-and-cooler-motors
+      \endverb
+      \verb{url}
+      \verb https://www.quadifyrc.com/tips-and-tricks/throttle-limit-in-betaflight-340-longer-battery-life-and-cooler-motors
+      \endverb
+      \keyw{bang for buck;betaflight;cheap mods;hawk5;mobula7;modifications;mods;tips;tricks}
+      \warn{\item Entry 'betaflight' (Literatur.bib): Invalid format '25.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Traub.2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e7e2ae6688e3dd41907acd5e7088a7c0}{%
+           family={Traub},
+           familyi={T\bibinitperiod},
+           given={Lance},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{fullhash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{bibnamehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{authorbibnamehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{authornamehash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \strng{authorfullhash}{e7e2ae6688e3dd41907acd5e7088a7c0}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Batteries}
+      \field{number}{2}
+      \field{title}{Calculation of Constant Power Lithium Battery Discharge Curves}
+      \field{volume}{2}
+      \field{year}{2016}
+      \field{pages}{17}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/batteries2020017
+      \endverb
+    \endentry
     \entry{Tremblay.2009}{article}{}
       \name{author}{2}{}{%
         {{hash=72def2f1f27c93ed98db49f4e7d76789}{%
@@ -552,7 +793,23 @@
       \verb 10.1007/978-3-662-44400-9
       \endverb
     \endentry
+    \entry{dwd}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Das Wetterlexikon des DWD erl{ä}utert die wichtigsten meteorologischen Begriffe und wird st{ä}ndig ausgebaut.}
+      \field{title}{Wetter und Klima - Deutscher Wetterdienst - Glossar - R - Radiosonde}
+      \verb{urlraw}
+      \verb https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=102134&lv3=102176
+      \endverb
+      \verb{url}
+      \verb https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=102134&lv3=102176
+      \endverb
+      \warn{\item Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring}
+    \endentry
   \enddatalist
+  \missing{Ostler.2007}
+  \missing{PCUP}
 \endrefsection
 \endinput
 

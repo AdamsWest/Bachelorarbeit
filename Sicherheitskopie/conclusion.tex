@@ -1,6 +1,18 @@
 \chapter{Zusammenfassung und Ausblick}
 
 \section{Zusammenfassung}
+Zusammengenommen gibt es viele Einflüsse auf das Flugleistungsverhalten von elektrisch, propellergetriebenen Fluggeräten. 
+Im Rahmen der Genauigkeit des Programms erweist sich ein Multicopter als geeigneter für einen Steigflug auf \SI{10000}{m} oder sogar \SI{15000}{m} Höhe. In diesem Zusammenhang sollte das Flächenflugzeug nicht vernachlässigt werden. Wie in Abschn. \ref{subsubsec:anz_mot_flaechenflzg} beschrieben wurde, ist der günstigste Flugzustand für ein Flächenflugzeug mit mehr als einem Motor der Vertikalflug. Dies legt die Verwendung eines VTOL-Fluggerätes nahe. Ein derartiges Fluggerät verbindet die Vorteile eines Multicopters, die da wären: Senkrechtstarterfähigkeiten (und Landung)und kleine Abmaße, mit denen des Flächenflugzeugs, was hauptsächlich den antriebslosen Gleitflug beinhaltet. Ein möglicher Flug sähe dann den vertikalen Steigflug bis zum Erreichen der vorgesehenen Dienstgipfelhöhe vor und einen anschließenden Sinklug im Gleiten. \\
+Ein sehr großen Einfluss auf die Flugleistungen hat die Motor-Propeller-Kombination (Kap. \ref{subsubsec:mot_prop_kombi}. Prinzipiell ist ein Motor mit hohem \ensuremath{K_V}-Wert zu verwenden, der zusätzlich mit einen hohen, dauerhaften Motorstrom belastet werden kann. Der Propeller ist in Bezug auf den Motor anzupassen. \\
+Die Verlustleistungen kann durch eine aerodynamisch günstige Verkleidung aller Fluggeräteinheiten minimiert werden (Kap. \ref{subsec:widerstandseinfluss}. Dies würde auch die Verstellvorrichtungen für einen Verstellpropeller oder ein Getriebe betreffen. Den mitunter signifikantesten auf die erreichbare Höhe hat die Wahl der Batterie (Kap. \ref{subsec:einfluss_n_bat} sowie \ref{sec:massenverteilung}). Als ertes sollte diese eine hohe Kapazität besitzen, da dies häufig das Kriterium für erreichbare Höhe darstellt. Weiterhin ist eine hohe Batteriespannung durch die Batteriezellenanzahl zu erreichen. Dies ist jedoch mit Rücksicht auf den Motor und mit Bedacht zu wählen, da eine hohe Batteriespannung eine Reduktion der Kapazität bewirkt (Kap. \ref{subsec:einfluss_n_bat}). Auch die Batteriemasse hat Einfluss auf die Flugleistungen. Ein Verhältnis zwischen \SI{50}{\%} und \SI{60}{\%} liefert die besten Ergebnisse (Kap. \ref{sec:massenverteilung}). Die Anzahl der Propeller oder die Größe hat bei einer äquivalenten Skalierung des Systems weiterhin einen vernachlässigbar kleinen Einfluss auf die Kostenfunktion (Kap. \ref{sec:groesse}. \\
+Es stellte sich heraus, dass vor allem die maximale Motordrehzahl durch die Batteriespannung die Drehzahl des Propellers und damit die Höhe begrenzt. Ein Verstellpropeller (Kap. \ref{sec:verstellprop}) erzielt einen zusätzlichen Höhengewinn. Dies ist aber nur der Fall, wenn der Verstellmechanismus und die Aktuatorik kein zusätzliches Gewicht besitzen. Das gleiche gilt für ein Getriebe. Auch hier sind nur Höhengewinne zu erreichen, wenn das Getriebe als ideal betrachtet wird, d.h. kein Eigengewicht u. keine Verluste. Dies ergibt zusammengenommen, dass sich der Einbau eines Vertellpropellers oder eines Getriebes nicht lohnt. Für größere und schwerere Multicopter fällt das Eigengewicht nicht so sehr ins Gewicht. 
+
+
+
+
+
+In Bezug auf die Ergebnisse sind auch viele Einschränkungen vorzunehmen
+
 \begin{itemize}
 	\item viele Werte für den Multicopter sind reine Schätzwerte und bedürfen einer Validierung durch Messungen und Testflügen
 	\item insgesamt beinhaltet das Programm viele einfach Modelle, so z.B. das des Motors, die viele Effekte nicht berücksichtigen
@@ -31,6 +43,8 @@
 
 
 \section{Ausblick}
+Der nächste Schritt ist die Validierung der in dieser aufgestellten Arbeit. Dies sollte möglichst in praktischen Versuchen geschehen wie dies in \cite{Ostler.2007},\cite{PCUP}. Mit der fortschreitenden Entwicklung von Batterien steigt auch die Leistungsfähigkeit und die Reichweite der UAVs. Das immer größer werdende Anwendungsfeld der unbemannten Flugeräte steigt zusätzlich, was die Weiterentwicklung nochmals beschleunigt.
+Die UAVs stellen eine gute Alternative zu den Wetterballonen dar. Auch wenn sie nicht ganz über die Höhe verfügen wie sie Wetterballone erreichen. Nichtsdestotrotz stellen sie eine sichere und wiederverwendbare Lösung dar.
 
 \begin{itemize}
 	\item die aufgestellten Ergebnisse sollten validiert werden und sie auf Korrektheit zu überprüfen. 

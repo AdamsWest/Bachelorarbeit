@@ -69,7 +69,6 @@
 %    bibencoding=utf8,safeinputenc=true
 %]{biblatex}
 \addbibresource{Literatur.bib}
-% \bibliography{Literatur}
 % ******************************************************************************
 %
 % Textsatz
@@ -162,19 +161,6 @@
 % Laden von Abkuerzungen
 \sisetup{load-configurations = abbreviations}
 %\sisetup{load=prefixed}
-% ******************************************************************************
-%
-% Das Paket ermoeglicht das erstellen von Glossaries und Abkuerzungen, sowie
-% Abkuerzungen von Formelzeichen.
-\usepackage[
-    nonumberlist,   % keine Seitenzahlen anzeigen
-    acronym,        % ein Abkuerzungsverzeichnis erstellen
-    %toc,           % Eintraege im Inhaltsverzeichnis
-    %nottoc,
-    section,        % Im Inhaltsverzeichnis auf section-Ebene erscheinen
-    %footnote        % Erklaerungen und ausgeschriebene Abkürzungen beim ersten
-                    % erscheinen als Fußnote
-]{glossaries}
 % ******************************************************************************
 %
 % Sonderzeichen
@@ -492,7 +478,7 @@
 %\usepackage{csvsimple}
 %
 % Ermoeglicht das Erstellen von Tabellen ueber mehrere Seiten.
-%\usepackage{longtable}
+\usepackage{longtable}
 %
 % Erstellen von Tabellen mit PGF
 %\usepackage{pgfplotstable}
@@ -550,6 +536,7 @@
 \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 \DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
 % ******************************************************************************
+%******************************************************************************
 %
 % Packages zum Erstellen von Struktogrammen
 \usepackage{struktex}

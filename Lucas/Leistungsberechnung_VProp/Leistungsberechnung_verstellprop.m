@@ -255,7 +255,7 @@ for h_variabel = H_0:Delta_H:H_max
         
         % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
+        m = m_copter + m_Bat + (m_prop_mech + m_Mot) * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
         t_Flug_inter(z) = Delta_H / V_Kg_inter(z);                                            % Flugzeit
         
         % Initialisierungen für den Verstellpropeller
@@ -629,6 +629,6 @@ PaperSizeX = 21;
 PaperSizeY = 29.7;
 
 fig = gcf;
-% set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');

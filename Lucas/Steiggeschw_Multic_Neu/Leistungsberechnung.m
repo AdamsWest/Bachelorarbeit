@@ -330,7 +330,7 @@ for h_variabel = H_0:Delta_H:H_max
         
         % Kriterium für optimalen Steigwinkel
         y = 1;
-        while y < length(Bestimmung_V_Kg)                             % Suche und finde optimalen Steiggeschwindigkeit
+        while y <= length(Bestimmung_V_Kg)                             % Suche und finde optimalen Steiggeschwindigkeit
             A = Bestimmung_V_Kg;
             A = sort(A);
             ind_opt = find(Bestimmung_V_Kg == A(y));
@@ -448,8 +448,8 @@ stairs(H,eta_mot*100,'LineWidth',1)
 stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta [%]')
 legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestoutside')
 hold off
-subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
-subplot(5,2,10), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
+% subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
+subplot(5,2,9), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 
 PaperSizeX = 21;
 PaperSizeY = 29.7;

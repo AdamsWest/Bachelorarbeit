@@ -18,11 +18,11 @@ for i = 2:1:C_Rate_max+1
 end
 
 figure(figure_durchschn_abweichung)
-subplot(2,1,1)
+subplot(121)
 plot(1:C_Rate_max,Durchschnitt,'LineWidth',2)
 grid on
-xlabel('C-Rate');
-ylabel('durchschn. Abweichung [%]');
+xlabel('Entladerate [1/h]');
+ylabel('Ø Batteriezellenabweichung [%]');
 % flaeche = trapz(abs(Durchschnitt));
 % figure
 % plot(1:C_Rate_max,abs(Durchschnitt))
@@ -51,7 +51,7 @@ ylabel('durchschn. Abweichung [%]');
 %% Copy and Paste Beispiel für eine C-Rate und alle Batterieabweichung
 
 % quick and dirty copy and paste Bespiel Abweichung von C-Rate bei 20
-subplot(2,1,2)
+subplot(122)
 plot(1:length(DATA),tolerance_crate(1:end,21),'bx','LineWidth',1.5)
 grid on
 hold on 
@@ -59,10 +59,11 @@ bar = zeros(length(DATA),1);
 for i = 1:length(DATA)
     bar(i) = nanmean(tolerance_crate(1:end,21));
 end
-plot(1:length(DATA),bar,'r') 
-xlabel('Batterienummer (id\_bat)','LineWidth',2)
+plot(1:length(DATA),bar,'r', 'LineWidth',1.5) 
+xlabel('Batterienummer','LineWidth',2)
 ylabel('Abweichung der Zellenspannung [%]')
-legend('? Following','Durchschnittliche Abweichung')
+lgd = legend('Abweichung einer Batteriezelle','Durchschnittliche Abweichung'); title(lgd,'Spannungsabweichung')
+
 % ImagesizeX
 % ImagesizeY
 % print('-bestfit','Abweichungen','-dpdf')

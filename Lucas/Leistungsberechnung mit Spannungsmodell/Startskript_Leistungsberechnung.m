@@ -1,6 +1,6 @@
 clc
 clear  
-% close all
+close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -49,10 +49,10 @@ alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, 
 
 % Batterie
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 8;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
+U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
@@ -131,7 +131,7 @@ if Abfrage_Flugsystem == 0
     
 %     Dateiname = ['Flächenflzg, m_Mot = ' num2str(m_Mot) ', f_p = ' num2str(f_p) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', E = ' ...
 %     num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh.pdf'];
-    Dateiname = 'Ausgangskonstellation2';
+    Dateiname = 'Ausgangskonstellation';
 
 else
     

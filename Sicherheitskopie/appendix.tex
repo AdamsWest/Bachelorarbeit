@@ -21,9 +21,23 @@ Für jegliche Art von Steigflug (\ensuremath{\gamma \neq 0}) ist dies nicht mehr
 \end{equation}\\
 
 \section{Propeller}
-\missingfigure{Propellerkennfeld}
+In Abb. \ref{abb:propellerkennfeld} ist ein Kennfeld von einem APC 10x3 Propeller dargestellt. 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Propellerkennfeld.pdf}
+	\caption{beispielhaftes Propellerkennfeld für einen APC 10x3 Propeller}
+	\label{abb:propellerkennfeld}
+\end{figure}
+
 \section{Motor}
-\missingfigure{Motorwirkungsgrad über den Leistungsparametern}
+Das Motormodell weist eine über das ganze Spektrum der möglichen Betriebspunkte konsistente Verteilung des Motorwirkungsgrades auf (Vgl. Abb. \ref{abb:motormodell}). Der maximale Motorwirkungsgrad wird bei maximaler Spannung und bei maximalen Strom erreicht. Der errechnete Wert stimmt mit einer Genauigkeit von \ensuremath{\pm \SI{2}{\%}} mit den Angaben vom Hersteller überein \cite{axi}.
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Motormodell.pdf}
+	\caption{Wirkungsgrad aufgetragen über verschiedenen Betriebspunkten des Motors}
+	\label{abb:motormodell}
+\end{figure}
 
 \section{Batteriekapazität}
 Für die Untersuchungen ist eine Berechnung der Batteriekapazität unabhängig von der Art der Zelle, aber abhängig von der Batteriemasse von Interesse.
@@ -225,6 +239,7 @@ Der Verlauf des Gesamtwirkungsgrades folgt eindeutig dem Verlauf des Propellerwi
 \missingfigure{realer Verstellpropeller, fraglich}
 
 
+hier nur Wirkungsgrad
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Verstellprop_eta.pdf}
@@ -232,6 +247,12 @@ Der Verlauf des Gesamtwirkungsgrades folgt eindeutig dem Verlauf des Propellerwi
 	\label{abb:verstellprop_eta}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Verstellprop_real.pdf}
+	\caption{Einfluss des Verstellpropellers auf die maximal erreichbare Höhe mit einem Verstellmechanismusgewicht von 75g pro Propeller}
+	\label{abb:verstellprop_real}
+\end{figure}
 
 
 \section{Getriebe}

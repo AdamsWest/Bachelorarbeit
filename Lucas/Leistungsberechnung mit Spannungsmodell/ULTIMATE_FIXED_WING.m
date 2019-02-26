@@ -13,12 +13,12 @@ Dateiname = 'Flaechenflzg_Vstern';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % *************************************************************************
-Abfrage_mot = [24];
-Abfrage_prop = {'9x7','6x4'};
+Abfrage_mot = [23 22 21 20 24];
+Abfrage_prop = {'9x7', '9x7', '9x7', '9x7', '9x7'};
 Abfrage_n_prop = [1 2 4 6];
-Abfrage_E = [4 6 10 20 50];
-Abfrage_fp = [1 1.2 1.5 2];
-Abfrage_V = [25 75 100 125];
+% Abfrage_E = [4 6 10 20 50];
+% Abfrage_fp = [1 1.2 1.5 2];
+% Abfrage_V = [25 75 100 125];
 
 %**************************************************************************
 Abfrage_Flugsystem = 0; % HANDS OFF
@@ -95,8 +95,8 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
-% lengthj = length(Abfrage_mot);
-lengthj = length(Abfrage_prop);
+lengthj = length(Abfrage_mot);
+% lengthj = length(Abfrage_prop);
 % lengthj = length(Abfrage_E);
 % lengthj = length(Abfrage_fp);
 % lengthj = length(Abfrage_V);
@@ -137,7 +137,7 @@ for j = 1:length(Abfrage_prop)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % Motor
-    motor_name = axi_motor_db{Abfrage_mot(1),1}; % Motorname
+    motor_name = axi_motor_db{Abfrage_mot(j),1}; % Motorname
     [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
     K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
     % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -160,7 +160,7 @@ for j = 1:length(Abfrage_prop)
     N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
     N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
     C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-    U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
+    U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
     U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
     P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)
     C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
@@ -725,8 +725,8 @@ if Abfrage_Flugsystem == 1
     hold on
     stairs(H,eta_prop*100,'LineWidth',1)
     stairs(H,eta_mot*100,'LineWidth',1)
-    stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta [%]')
-    legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestoutside')
+    stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta [%]')
+    legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', 'Location', 'bestoutside')
     hold off
     
 else

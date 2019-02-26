@@ -4,21 +4,166 @@
 % Fuege das Kapitel als Nomenklatur hinzu.
 \addcontentsline{toc}{chapter}{Nomenklatur}
 \chapter*{Nomenklatur}
+% ******************************************************************************
 %
-% Ausgabe des Glossars
-\printglossary[style=altlist,title=Glossar]
+% Glossareintraege
+% ******************************************************************************
+\section*{Glossar}
+\paragraph{Single Input Single Output}
+Eingrößensystem
+\paragraph{Software Deployment}
+Das Software Deployment umfasst die gesamten
+Entwicklungsaktivitäten die den Einsatz der Software ermöglichen.
+\paragraph{\texttt{V}i \texttt{IM}proved}
+Einer der essenziell wichtigsten Texteditoren des Universums.
+\texttt{V}i \texttt{IM}prove dist eine Weiterentwicklung des Texteditors
+vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
+% ******************************************************************************
 %
-% Ausgabe der Abkuerzungen
-\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
-\printglossary[type=\acronymtype,style=long]
+% Abkuerzungen
+% ******************************************************************************
+\section*{Akrynome}
+\begin{longtable}{lp{13cm}}
+	CVT & Continuously Variable Transmission \\
+	DFS & Deutsche Flugsicherung \\
+	DWD & Deutscher Wetterdienst \\
+	ESC & Electronic Speed Control (Motorregler)\\
+	PWM & Pulsweitenmodulation\\
+	TOC & Top Of Climb\\
+	UAV & Unmanned Aerial Vehicle\\
+	VTOL & Vertical Take Off and Landing
+\end{longtable}
+% ******************************************************************************
 %
-% Ausgabe des Symbolverzeichnisses
-\printglossary[type=latin,style=symbol]
-\printglossary[type=greek,style=symbol]
-\printglossary[type=indices,style=indice_symbol]
+% Lateinische Bezeichnungen
+% ******************************************************************************
+\section*{Lateinische Bezeichnungen}
+\begin{longtable}{lp{2.5cm}p{10.5cm}}
+	\textbf{Notation} & \textbf{Einheit} & \textbf{Beschreibung}\\
+	\ensuremath{a}	& \si{m/s}		& Schallgeschwindigkeit \\
+	\ensuremath{A}	& \si{N}		& aerodyn. Auftriebskraft \\
+	\ensuremath{c}	& -				& Beiwert \\
+	\ensuremath{C}	& \si{As}		& Kapazität \\
+	\ensuremath{\dot{C}} & \si{1/s}	& Entladerate (C-Rate) \\
+	\ensuremath{E}	& -				& Gleitzahl \\
+	\ensuremath{F}	& \si{m^2}		& Fläche \\
+	\ensuremath{g} 	& \si{m/s^2} 	& Erdbeschleunigung \\
+	\ensuremath{H}	& \si{m}		& Höhe \\
+	\ensuremath{\dot{H}} & \si{m/s}	& Höhenänderung (Steiggeschwindigkeit)\\
+	\ensuremath{i}	& -				& Übersetzungsverhältnis \\
+	\ensuremath{i}	& - 			& Zählervariable \\
+	\ensuremath{I}	& \si{A}		& elektr. Strom \\
+	\ensuremath{K}	& -				& Konstante \\
+	\ensuremath{m}	& \si{kg}		& Masse \\
+	\ensuremath{M}	& \si{N/m}		& Drehmoment \\
+	\ensuremath{Ma}	& -				& Machzahl \\
+	\ensuremath{n}	& -				& Anzahl \\
+	\ensuremath{p}	& \si{Pa}		& Druck \\
+	\ensuremath{P}	& \si{W}		& Leistung \\
+	\ensuremath{r}	& \si{m}		& Radius \\
+	\ensuremath{R}	& \si{J/(kg.K)}	& Gaskonstante der Luft \\
+	\ensuremath{R}	& \si{\ohm}		& elektr. Widerstand \\
+	\ensuremath{S}	& \si{N}		& Schubkraft \\
+	\ensuremath{T}	& \si{K}		& Temperatur\\
+	\ensuremath{u}	& \si{m/s}		& Windgeschwindigkeit in x-Richtung \\
+	\ensuremath{U}	& \si{V}		& elektr. Spannung \\
+	\ensuremath{V}	& \si{m/s}		& Fluggeschwindigkeit \\
+	\ensuremath{\dot{V}} & \si{m/s^2} & Ableitung der Geschwindigkeit (Beschleunigung) \\
+	\ensuremath{w}	& \si{m/s}		& Windgeschwindigkeit in z-Richtung \\
+	\ensuremath{W}	& \si{N}		& aerodyn. Widerstandskraft \\
+	\ensuremath{x,X}& -				& in Längsrichtung des Fluggeräts \\
+	\ensuremath{y,Y}& -				& in Seitenrichtung des Fluggeräts \\
+	\ensuremath{z,Z}& -				& in Höhenrichtung des Fluggeräts
+	
+	
+%	$\MM{A}, \MM{P}, \MM{Q}$ & - &
+%		Positiv definite Matrizen der linearen \textsc{Lyapunov}
+%		Matrix-Gleichung\\
+%	$F$ & \si{kg.m/s^2} & Kraft\\
+%	$\vv{x}$ & - &
+%		Zustandsvektor eines Zustandsraummodells, der Form
+%		\mbox{
+%		    $\dot{\vec{x}} = \vec{f}(\vec{x}) + \vec{g}(\vec{x}) u
+%		    \text{,}\quad
+%			y = h(\vec{x})$
+%		}\\
+%	$y$ & - & Ausgangsgröße
+\end{longtable}
+% ******************************************************************************
+%
+% Griechische Bezeichnungen
+% ******************************************************************************
+\section*{Griechische Bezeichnungen}
+\begin{longtable}{lp{2.5cm}p{10.5cm}}
+	\textbf{Notation} & \textbf{Einheit} & \textbf{Beschreibung}\\
+	\ensuremath{\alpha}	& \si{^\circ}		& Anstellwinkel \\
+	\ensuremath{\gamma}	& \si{^\circ}		& Bahnneigungswinkel (Steigwinkel)\\
+	\ensuremath{\dot{\gamma}}& \si{^\circ /s}& Ableitung des Bahnneigungswinkel (Änderungsrate) \\
+	\ensuremath{\eta}	& \si{\%}			& Wirkungsgrad \\
+	\ensuremath{\Theta} & \si{^\circ}		& Neigungswinkel \\
+	\ensuremath{\kappa}	& -					& Adiabatenexponent \\
+	\ensuremath{\rho}	& \si{kg/m^3}		& Luftdichte \\
+	\ensuremath{\sigma}	& \si{^\circ}		& Schubeinstellwinkel\\
+	\ensuremath{\omega}	& \si{J/kg}			& Energiedichte \\
+	\ensuremath{\Omega}	& \si{1/s} o. \si{RPM}	& Drehzahl
+	
+		
+	
+	
+%	$\beta, \gamma$ & - & Funktionen bestimmter monotoner Klassen\\
+%	$\vv{\nu}_{ad}$ & - & Adaptiver Anteil der Pseudosteuergröße\\
+%	$\overline{\sigma}, \underline{\sigma}$ & - &
+%		maximaler und minimaler Singulärwert\\
+%	$\vv{\xi}$ & - & Teilzustandsvektor der Zustände des transformierten
+%		Systems, auch als externe Dynamik bezeichnet
+\end{longtable}
+% ******************************************************************************
+%
+% Indizes
+% ******************************************************************************
+\section*{Indizes}
+\begin{longtable}{lp{13cm}}
+	\textbf{Notation} & \textbf{Beschreibung}\\
+	\ensuremath{a}			& Kennzeichnung aerodynamischen Systems \\
+	\ensuremath{A}			& 
+	\ensuremath{Bat}		& Batterie \\
+	\ensuremath{copter}
+	\ensuremath{i}			&	innen \\
+	\ensuremath{max/min}	& maximal / minimal \\
+	\ensuremath{Mot}		& Motor \\
+	\ensuremath{Prop}		& Propeller \\
+	
+	
+	
+	
+	
+	
+	$i, j, k, l$ & Bezeichnen mit dem Index eine Komponente eines Tensors,
+		während bei doppelten Index eine Summation der Komponenten nach
+		der textsc{Einstein}schen Summenkonvention erfolgt.\\
+    $\alpha , \beta , \gamma$ & Bezeichnen mit dem Index eine Komponente eines
+    	Tensors, auch wenn ein doppelter Index vorliegt.
+\end{longtable}
+% ******************************************************************************
+%
+% Hochgestellte Indizes
+% ******************************************************************************
+\section*{Hochgestellte Indizes}
+\begin{longtable}{lp{13cm}}
+	\textbf{Notation} & \textbf{Beschreibung}\\
+	$(\Delta )$ & Beschreibt die jeweilige Größe im Hauptachsensystem\\
+	$(r)$ & Bezeichnet den schnellen Anteil der Druck-Scher-Korrelation
+	        (engl.: rapid $=r$)\\
+	$(s)$ & Bezeichnet den langsamen Anteil der Druck-Scher-Korrelation
+        (engl.: slow $=s$)\\
+	$\left(\widetilde{b}_{ij}\right)$ & Beschreibt Größen, die zu dem
+		gemittelten Anisotropietensor der
+		\textsc{Reynolds}-Spannungungen $\widetilde{\MM{b}}_{ij}$
+		bestimmt wurden.
+\end{longtable}
 %
 % Korrektur des Tabellenzaehlers, da für die Darstellung der
 % Symbolverzeichnisses Tabellen verwendet werden, die jedoch nicht zu dem Inhalt
 % der Arbeit gehoeren.
-\addtocounter{table}{-4}
+\addtocounter{table}{-5}
 % ******************************************************************************
