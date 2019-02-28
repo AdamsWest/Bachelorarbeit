@@ -434,7 +434,7 @@ figure(figure_ges)
 % set(q, 'Units', 'normalized', 'Position',[0.1, 0.1, 0.8, 0.8] );
 % AxesH = axes('Units', 'normalized', 'Position', [0.082,0.25, 0.81, 0.74]);
 subplot(521), stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
 subplot(523), stairs(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
 subplot(524), stairs(H,U_mot,'LineWidth',1), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
 subplot(525), stairs(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
@@ -445,8 +445,8 @@ subplot(528), stairs(H,eta_ges*100,'LineWidth',1)
 hold on
 stairs(H,eta_prop*100,'LineWidth',1)
 stairs(H,eta_mot*100,'LineWidth',1)
-stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta [%]')
-legend( 'eta_{ges}', 'eta_{Prop}', 'eta_{Mot}', 'eta_{PWM}', 'Location', 'bestoutside')
+stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta [%]')
+legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', 'Location', 'bestoutside')
 hold off
 % subplot(529), stairs(H,V_Kg,'LineWidth',1), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(5,2,9), stairs(H2,t_Flug,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')

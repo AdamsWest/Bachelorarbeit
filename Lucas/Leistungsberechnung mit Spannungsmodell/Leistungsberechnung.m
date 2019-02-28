@@ -498,10 +498,10 @@ figure(figure_ges)
 if Abfrage_Flugsystem == 1
     % MULICOPTER
     subplot(421), stairs(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-    subplot(422), stairs(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+    subplot(422), stairs(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
     subplot(423), stairs(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
     subplot(424), stairs(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-    subplot(423), stairs(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    subplot(423), stairs(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
     H2 = [0;H];
     subplot(426), stairs(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
     subplot(427), stairs(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
@@ -516,10 +516,10 @@ if Abfrage_Flugsystem == 1
 else   
     % FLAECHENFLUGZEUG
     subplot(521), stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-    subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+    subplot(522), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
     subplot(523), stairs(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
     subplot(524), stairs(H,U_mot,'LineWidth',1), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-    subplot(525), stairs(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    subplot(525), stairs(H,I_Bat,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
     H2 = [0;H];
     subplot(526), stairs(H2,U_Bat,'LineWidth',1), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
     subplot(527), stairs(H,PWM*100,'LineWidth',1), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
@@ -531,7 +531,7 @@ else
     legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', 'Location', 'bestoutside')
     hold off
     subplot(529), stairs(H,gamma_Flaechenflzg,'LineWidth',1), title('Bahnneigungswinkel'), grid, xlabel('Höhe [m]'),ylabel('\gamma [°]')
-    subplot(5,2,10), stairs(H,V_Flaechenflugzeug,'LineWidth',1), title('absolute Fluggeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_A [m/s]')
+    subplot(5,2,10), stairs(H,V_Flaechenflugzeug,'LineWidth',1), title('Fluggeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_A [m/s]')
     
 end
 ImageSizeX = 21;

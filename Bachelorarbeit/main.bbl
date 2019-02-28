@@ -24,6 +24,7 @@
       \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
       \field{labeltitlesource}{title}
       \field{abstract}{Online shopping from a great selection at Prime Air Store.}
+      \field{note}{Abgerufen am 19.02.2019}
       \field{title}{Amazon.com: Prime Air}
       \verb{urlraw}
       \verb https://www.amazon.com/b?node=8037720011
@@ -265,6 +266,61 @@
       \endverb
       \warn{\item Entry 'apc.theory' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
     \endentry
+    \entry{Fischer.2016}{book}{}
+      \name{author}{4}{}{%
+        {{hash=9e8a8c258b303cd800b2badf8fdab88a}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0fa11f316c3cbd589c82690994c385cb}{%
+           family={K{ü}c{ü}kay},
+           familyi={K\bibinitperiod},
+           given={Ferit},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e6ac0cc2fcc27ab52e492ef3d5c7beeb}{%
+           family={J{ü}rgens},
+           familyi={J\bibinitperiod},
+           given={Gunter},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5bbc4d9aaa718aa3afd5801fd352bb38}{%
+           family={Pollak},
+           familyi={P\bibinitperiod},
+           given={Burkhard},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Wiesbaden}%
+      }
+      \list{publisher}{1}{%
+        {Springer Vieweg}%
+      }
+      \strng{namehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{fullhash}{5cf3ca201640d8957f8f7e56c3b7f08c}
+      \strng{bibnamehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{authorbibnamehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{authornamehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{authorfullhash}{5cf3ca201640d8957f8f7e56c3b7f08c}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Die Getriebetechnik hat einen bedeutenden Einfluss auf Verbrauch, Fahrbarkeit, Gewicht und Kosten von Fahrzeugen. Die Relevanz dieser Eigenschaften hat in der j{ü}ngeren Vergangenheit wesentlich zugenommen, und in der Wechselwirkung mit dem gesamten Antriebsstrang bzw. dem Gesamtfahrzeug werden Getriebe zunehmend wichtiger. Mit dem Auftreten der Hybridtechnik ist noch mehr Leben in die Getriebewelt gekommen. Die Freiheitsgrade nehmen weiter zu und vielf{ä}ltige Kombinationen aus Getriebe, Verbrennungsmotor und E-Motor sind machbar. Das Getriebebuch hat zum Ziel, das System- und Methodenwissen zur Getriebetechnologie darzustellen sowie Funktionen und Wechselwirkungen kennen zu lernen. Abstrahierend werden die zahlreichen Komponenten und Sub-Systeme eingef{ü}hrt, so dass eine zeitlose Kompetenz vermittelt wird. Mit dem Wissen dieses Buches k{ö}nnen auch neue Getriebekonzepte bewertet und entwickelt werden. Der Inhalt Kernaufgabe der Fahrzeuggetriebe. - Schaltdynamik und Komfort.- Elemente der Leistungs{ü}bertragung. - Bet{ä}tigungs- und Hilfssysteme. - Steuerung und Regelung. - Getriebekonstruktion f{ü}r PKW- Anwendungen. - Elektrifizierung des Antriebsstrangs. - Getriebeanwendungen au{ß}erhalb des PKW-Bereichs. Die Zielgruppen Studierende technischer Studieng{ä}nge an Universit{ä}ten und Hochschulen Getriebe- und Antriebsstrang-Entwickler in der Fahrzeugindustrie und der Zulieferindustrie Software- und Applikationsingenieure, die sich mit dem Antriebsstrang besch{ä}ftigen {Ü}ber die Autoren Dr. Robert Fischer, AVL List GmbH, Graz, {Ö}sterreich Prof. Dr.-Ing. Ferit K{ü}c{ü}kay, Institut f{ü}r Fahrzeugtechnik, Technische Universit{ä}t Braunschweig, Deutschland Prof. Dr. Gunter J{ü}rgens, Institut f{ü}r Maschinenelemente, Technische Universit{ä}t Graz, {Ö}sterreich Dr.-Ing. Burkhard Pollak, pi3 GmbH, Weinheim, Deutschland}
+      \field{edition}{2. {ü}berarbeitete Auflage}
+      \field{isbn}{978-3-658-13103-6}
+      \field{series}{Der Fahrzeugantrieb}
+      \field{title}{Das Getriebebuch}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1007/978-3-658-13104-3
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/978-3-658-13104-3
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-658-13104-3
+      \endverb
+    \endentry
     \entry{Flyeval}{misc}{}
       \field{sortinit}{f}
       \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
@@ -329,47 +385,6 @@
       \endverb
       \verb{url}
       \verb http://hdl.lib.byu.edu/1877/etd1223
-      \endverb
-    \endentry
-    \entry{KARI.2017}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=7beb6096a07ed11e6db1ae7b7c747ef2}{%
-           family={Kim},
-           familyi={K\bibinitperiod},
-           given={Minwoo},
-           giveni={M\bibinitperiod}}}%
-        {{hash=f6394e99d18fd43f919a6f4b2e85fe36}{%
-           family={Joo},
-           familyi={J\bibinitperiod},
-           given={Heejin},
-           giveni={H\bibinitperiod}}}%
-        {{hash=bff17e6c66368ceef59d49e71a2739ab}{%
-           family={Jang},
-           familyi={J\bibinitperiod},
-           given={Byungwook},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{8eda0980b8e570fcc455b4651033fb35}
-      \strng{fullhash}{8eda0980b8e570fcc455b4651033fb35}
-      \strng{bibnamehash}{8eda0980b8e570fcc455b4651033fb35}
-      \strng{authorbibnamehash}{8eda0980b8e570fcc455b4651033fb35}
-      \strng{authornamehash}{8eda0980b8e570fcc455b4651033fb35}
-      \strng{authorfullhash}{8eda0980b8e570fcc455b4651033fb35}
-      \field{sortinit}{K}
-      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2017 Ninth International Conference on Ubiquitous and Future Networks (ICUFN)}
-      \field{isbn}{978-1-5090-4749-9}
-      \field{title}{Conceptual multicopter sizing and performance analysis via component database}
-      \field{year}{04.07.2017 - 07.07.2017}
-      \field{pages}{105\bibrangedash 109}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.1109/ICUFN.2017.7993756
       \endverb
     \endentry
     \entry{Neitzke.2013}{article}{}
@@ -597,6 +612,51 @@
       \field{title}{Angewandte Flugleistung: Eine Einf{ü}hrung in die operationelle Flugleistung vom Start bis zur Landung}
       \field{year}{2008}
     \endentry
+    \entry{Seidel.2011}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3a9bb8c27261d457eb86abd3d539f7c3}{%
+           family={Seidel},
+           familyi={S\bibinitperiod},
+           given={Dian\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c62faa041004ab46609e817c8635c40e}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Bomin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e6839b57b5a78da216331f766d26b963}{%
+           family={Pettey},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7fba5ba3fae51feff8b52efcd83bfac0}{%
+           family={Reale},
+           familyi={R\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{fullhash}{4d6de662651cfec546701aa2b79fbc89}
+      \strng{bibnamehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{authorbibnamehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{authornamehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{authorfullhash}{4d6de662651cfec546701aa2b79fbc89}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0148-0227}
+      \field{journaltitle}{Journal of Geophysical Research}
+      \field{number}{D7}
+      \field{title}{Global radiosonde balloon drift statistics}
+      \field{volume}{116}
+      \field{year}{2011}
+      \field{pages}{D22123}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1029/2010JD014891
+      \endverb
+    \endentry
     \entry{Shi.2017}{article}{}
       \name{author}{4}{}{%
         {{hash=6ce5cb6405153cd7575ecddc41cb82e8}{%
@@ -808,6 +868,7 @@
       \warn{\item Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring}
     \endentry
   \enddatalist
+  \missing{KAR-I.2017}
   \missing{Ostler.2007}
   \missing{PCUP}
 \endrefsection
