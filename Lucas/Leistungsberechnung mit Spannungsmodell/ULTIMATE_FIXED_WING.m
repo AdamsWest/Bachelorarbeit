@@ -9,16 +9,16 @@ load('Elektromodellflug');
 load('axi_motor_db.mat');
 
 %% Festlegung des Dateinamen
-Dateiname = 'Flaechenflzg_Vstern';
+Dateiname = 'Flaechenflzg_E';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % *************************************************************************
 Abfrage_mot = [23 22 21 20 24];
 Abfrage_prop = {'9x7', '9x7', '9x7', '9x7', '9x7'};
 Abfrage_n_prop = [1 2 4 6];
-% Abfrage_E = [4 6 10 20 50];
-% Abfrage_fp = [1 1.2 1.5 2];
-% Abfrage_V = [25 75 100 125];
+Abfrage_E = [4 6 10 20 50];
+Abfrage_fp = [1 1.2 1.5 2];
+Abfrage_V = [25 75 100 125];
 
 %**************************************************************************
 Abfrage_Flugsystem = 0; % HANDS OFF
@@ -49,7 +49,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m
-H_max = 16500;                              % Maximalhöhe in m
+H_max = 18000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -95,11 +95,12 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
-lengthj = length(Abfrage_mot);
+% lengthj = length(Abfrage_mot);
+% lengthj = length(Abfrage_n_prop);
 % lengthj = length(Abfrage_prop);
 % lengthj = length(Abfrage_E);
 % lengthj = length(Abfrage_fp);
-% lengthj = length(Abfrage_V);
+lengthj = length(Abfrage_V);
 
 
 %% Initialisierungen
@@ -121,7 +122,7 @@ l10 = zeros(lengthj,1);
 
 
 
-for j = 1:length(Abfrage_prop)
+for j = 1:length(Abfrage_V)
     
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -129,7 +130,7 @@ for j = 1:length(Abfrage_prop)
     E_stern = Abfrage_E(1);
     E = E_stern;
     m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
-    V_stern = Abfrage_V(3)/3.6;
+    V_stern = Abfrage_V(j)/3.6;
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     v_ver_max = ceil(V_stern);
@@ -137,7 +138,7 @@ for j = 1:length(Abfrage_prop)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % Motor
-    motor_name = axi_motor_db{Abfrage_mot(j),1}; % Motorname
+    motor_name = axi_motor_db{Abfrage_mot(3),1}; % Motorname
     [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
     K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
     % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -147,7 +148,7 @@ for j = 1:length(Abfrage_prop)
     % m_Mot = 0.0365;         % Motorgewicht in kg
     
     % Propeller
-    prop_name = Abfrage_prop{j};    % Propellerbezeichnung
+    prop_name = Abfrage_prop{3};    % Propellerbezeichnung
     n_Prop = Abfrage_n_prop(1);             % Anzahl der Propeller
     %D = 14;                % Propellerdurchmesser in inch
     %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -157,10 +158,10 @@ for j = 1:length(Abfrage_prop)
     
     % Batterie
     E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
-    N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
+    N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
     N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
     C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-    U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
+    U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
     U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
     P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)
     C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
@@ -691,7 +692,7 @@ for j = 1:length(Abfrage_prop)
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
     subplot(529), l9(j) = stairs(H,gamma_Flaechenflzg,'LineWidth',1); grid on, hold on
     subplot(5,2,10), l10(j) = stairs(H,V_Flaechenflugzeug,'LineWidth',1); grid on, hold on   
-    l10_Info{j} = [prop_name]; grid on, hold on
+    l10_Info{j} = [num2str(Abfrage_E(j))]; grid on, hold on
     % m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name
     
     %   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]
@@ -714,10 +715,10 @@ figure(figure_ges)
 if Abfrage_Flugsystem == 1
     % MULICOPTER
     subplot(421), stairs(H,C_Rest_V*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-    subplot(422), stairs(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+    subplot(422), stairs(H,Omega/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
     subplot(423), stairs(H,I_mot,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
     subplot(424), stairs(H,U_mot,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-    subplot(423), stairs(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    subplot(423), stairs(H,I_Bat,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
     H2 = [0;H];
     subplot(426), stairs(H2,U_Bat,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
     subplot(427), stairs(H,PWM*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
@@ -731,24 +732,24 @@ if Abfrage_Flugsystem == 1
     
 else
     % FLAECHENFLUGZEUG
-    subplot(521), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-    subplot(522), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
-    subplot(523), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
-    subplot(524), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
-    subplot(525), xlabel('Höhe [m]'),ylabel('I_{Bat} [%]')
+    subplot(521), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]'), title('Restladung')
+    subplot(522), xlabel('Höhe [m]'),ylabel('\Omega [RPM]'), title('Drehzahl')
+    subplot(523), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]'), title('Motorstrom')
+    subplot(524), xlabel('Höhe [m]'),ylabel('U_{mot} [V]'), title('Motorspannung')
+    subplot(525), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]'), title('Batteriestrom')
     H2 = [0;H];
-    subplot(526), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]')
-    subplot(527), xlabel('Höhe [m]'),ylabel('PWM [%]')
-    subplot(528), xlabel('Höhe [m]'),ylabel('\eta_{ges} [%]')
+    subplot(526), xlabel('Höhe [m]'),ylabel('U_{Bat} [A]'), title('Batteriespannung')
+    subplot(527), xlabel('Höhe [m]'),ylabel('PWM [%]'), title('Pulsweitenmodulation')
+    subplot(528), xlabel('Höhe [m]'),ylabel('\eta_{ges} [%]'), title('Wirkungsgrad')
 %     hold on
 %     stairs(H,eta_prop*100,'LineWidth',1)
 %     stairs(H,eta_mot*100,'LineWidth',1)
 %     stairs(H,eta_PWM*100,'LineWidth',1), grid, title('Wirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta [%]')
 %     legend( '\eta_{ges}', '\eta_{Prop}', '\eta_{Mot}', '\eta_{PWM}', 'Location', 'bestoutside')
 %     hold off
-    subplot(529), xlabel('Höhe [m]'),ylabel('\gamma [°]')
-    subplot(5,2,10), xlabel('Höhe [m]'),ylabel('V_A [m/s]')
-    lgd = legend([l10], l10_Info, 'Location','bestoutside'); title(lgd,'Propeller') % 
+    subplot(529), xlabel('Höhe [m]'),ylabel('\gamma [°]'), title('Bahnneigungswinkel')
+    subplot(5,2,10), xlabel('Höhe [m]'),ylabel('V_A [m/s]'), title('Fluggeschwindigkeit')
+    lgd = legend([l10], l10_Info, 'Location','bestoutside'); title(lgd,'E = ') % 
     
 end
 

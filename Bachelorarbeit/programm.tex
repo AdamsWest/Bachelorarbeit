@@ -126,18 +126,18 @@ Für Leistungsuntersuchung wird die Internationale Standardatmosphäre vorausges
 \begin{center}
 	\captionof{table}{Umgebungsparameter}
 	\begin{tabular}{l l l} \hline
-		 Parameter & Variablenname & Einheit \\ \hline
-		 Erdbeschleunigung \ensuremath{g} & \texttt{g} & 9,81 \ensuremath{m/s^2} \\
-		 Starthöhe \ensuremath{H_0} & \texttt{H\_0} & \ensuremath{m} \\
-		 Schrittweite der Höhe  \ensuremath{\Delta H} & \texttt{Delta\_H} & \ensuremath{m} \\
-		 maximale Höhe \ensuremath{H_{max}} & \texttt{H\_max} & \ensuremath{m} \\
-		 Umgebungstemperatur am Start \ensuremath{T_0} & \texttt{T\_0} & \ensuremath{K} \\
-		 Luftdruck am Start \ensuremath{p_0} & \texttt{p\_0} & \ensuremath{N/m^2} \\
-		 Dichte am Start \ensuremath{\rho_0} & \texttt{rho\_0} & \ensuremath{kg/m^3} \\
+		 Parameter & Variablenname & verwendete Größe \\ \hline
+		 Erdbeschleunigung \ensuremath{g} & \texttt{g} & \SI{9,81}{m/s^2}  \\
+		 Starthöhe \ensuremath{H_0} & \texttt{H\_0} & \si{m} \\
+		 Schrittweite der Höhe  \ensuremath{\Delta H} & \texttt{Delta\_H} & \si{m} \\
+		 maximale Höhe \ensuremath{H_{max}} & \texttt{H\_max} & \si{m} \\
+		 Umgebungstemperatur am Start \ensuremath{T_0} & \texttt{T\_0} & \si{K} \\
+		 Luftdruck am Start \ensuremath{p_0} & \texttt{p\_0} & \si{N/m^2} \\
+		 Dichte am Start \ensuremath{\rho_0} & \texttt{rho\_0} & \si{kg/m^3} \\
 		 Adiabatenexponent \ensuremath{\kappa} & \texttt{kappa} & \SI{1,4}{} \\
 		 Gaskonstante der Luft \ensuremath{R} & \texttt{R} & \SI{287}{J/(kg K)} \\
-		 Windgeschwindigkeit \ensuremath{u_{Wg}} & \texttt{u\_Wg} & \ensuremath{m/s} \\ 
-		 Schallgeschwindigkeit \ensuremath{a} & \texttt{a} & \SI{}{m/s} \\
+		 Windgeschwindigkeit \ensuremath{u_{Wg}} & \texttt{u\_Wg} & \si{m/s} \\ 
+		 Schallgeschwindigkeit \ensuremath{a} & \texttt{a} & \si{m/s} \\
 		 Temperatur in \SI{11}{km} Höhe & \texttt{T\_11} & \ensuremath{T_{11} = T_0 - 0.0065\cdot(11000-H_0)} \\
 		 Dichte in \SI{11}{km} Höhe & \texttt{rho\_11} & \ensuremath{\rho_{11} = \rho_0\cdot\Big(1 - 0.0065\cdot\frac{11000}{T_0}\Big)^{4.256}} \\
 		 Druck in \SI{11}{km} Höhe & \texttt{p\_11} & \ensuremath{p_{11} = p_0\cdot\Big(1 - 0.0065\cdot\frac{11000}{T_0}\Big)^{5.256}} \\ \hline
@@ -188,7 +188,7 @@ Die Parameter für den Multicopter sind in Tab. \ref{tab:multicop_parameter} auf
 \begin{center}
 	\captionof{table}{Parameter des Multicopters}
 	\begin{tabular}{l l l} \hline
-		 Parameter & Variablenname & Einheit \\ \hline
+		 Parameter & Variablenname & verwendete Größe \\ \hline
 		 Leermasse des Multicopters \ensuremath{m_{Copter}} & \texttt{m\_copter} & \si{kg}\\
 		 Obere Stirnfläche \ensuremath{F_{copter,oben}} & \texttt{F\_copter} & \si{m^2}\\
 		 seitliche Stirnfläche \ensuremath{F_{copter,seitlich}} & \texttt{F\_copter\_seitlich} & \si{m^2}\\
@@ -282,11 +282,11 @@ Mit der Leermasse wird analog zum Multicopter der Schub berechnet (Vgl. Tab. \re
 \begin{center}
 	\captionof{table}{Parameter des Flächenflugzeug}
 	\begin{tabular}{l l l} \hline
-		 Parameter & Variablenname & Einheit \\ \hline	 
-		 Leermasse des Flächenflugzeug \ensuremath{m_{Flugzeug}}& \texttt{m\_Flugzeug} & \SI{}{kg}\\ 
-		 Gleitzahl \ensuremath{E} & \texttt{E} & \ensuremath{-}\\	
+		 Parameter & Variablenname & verwendete Größe \\ \hline	 
+		 Leermasse des Flächenflugzeug \ensuremath{m_{Flugzeug}}& \texttt{m\_Flugzeug} & \si{kg}\\ 
+		 Gleitzahl \ensuremath{E} & \texttt{E} & -\\	
 		 Auslegungsgleitzahl \ensuremath{E^\star} & \texttt{E\_stern} & - \\
-		 Auslegungsgeschwindigkeit \ensuremath{V^\star} & \texttt{V\_stern} & \SI{}{m/s}\\
+		 Auslegungsgeschwindigkeit \ensuremath{V^\star} & \texttt{V\_stern} & \si{m/s}\\
 		 Auslegungshöhe \ensuremath{\rho^\star} & \texttt{rho\_stern} & \SI{1,225}{kg/m^3}\\ \hline
 	\end{tabular}	
 	\label{tab:flugzeug_parameter}
@@ -296,7 +296,7 @@ Zusätzlich wird noch der Bahnneigungswinkel \ensuremath{\gamma} für jeden Höh
 \begin{center}
 	\captionof{table}{Diskretisierung des Bahnneigungswinkels}
 	\begin{tabular}{l l l} \hline
-		 Parameter & Variablenname & Einheit \\ \hline	  
+		 Parameter & Variablenname & verwendete Größe \\ \hline	  
 		 Kleinster Bahnneigungswinkel \ensuremath{\gamma_{min}} & \texttt{gamma\_min} & \SI{1}{^\circ}\\	
 		 Schrittweite des Bahnneigungsw. \ensuremath{\Delta\gamma} & \texttt{gamma\_Delta} & \SI{1}{^\circ}\\
 		 Größter Bahnneigungswinkel \ensuremath{\gamma_{max}} & \texttt{gamma\_max} & \SI{90}{^\circ}\\ \hline
@@ -331,6 +331,7 @@ vereinfachen. Der Auslegungspunkt (mit * gekennzeichnet) des Flächenflugzeugs i
 Über die Definition der Gleitzahl \cite[S.49]{Bruning.1986}
 \begin{equation}
 	E = \frac{A}{W}
+	\label{eq:gleitzahl}
 \end{equation}
 berechnet sich der Widerstand mit
 \begin{equation}

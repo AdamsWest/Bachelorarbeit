@@ -49,42 +49,42 @@
 \contentsline {subsection}{\numberline {4.2.1}Erste Untersuchung}{31}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Einflussfaktoren auf das Fl\IeC {\"a}chenflugzeug}{34}{subsection.4.2.2}
 \contentsline {subsubsection}{Motor-Propeller Kombination}{34}{subsubsection*.31}
-\contentsline {subsubsection}{Anzahl der Motoren und Propeller}{36}{subsubsection*.33}
-\contentsline {subsubsection}{Gleitzahl}{39}{subsubsection*.35}
-\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{41}{subsubsection*.37}
-\contentsline {subsubsection}{Penaltyfaktor}{43}{subsubsection*.39}
-\contentsline {subsection}{\numberline {4.2.3}Ergebnisse des Vergleichs}{45}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Steiggeschwindigkeit}{46}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Ergebnis}{46}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Einfluss des Widerstands}{48}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Einfluss der Anzahl der Batteriezellen}{50}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Bedeutung des Reglerwirkungsgrades}{52}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Einfluss des maximalen Motorstroms}{52}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Massenverteilung}{52}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Ergebnisse}{52}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Gr\IeC {\"o}\IeC {\ss }e und Anzahl der Propeller des Flugger\IeC {\"a}tes}{55}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Ergebnisse}{56}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Anzahl der Propeller}{57}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Ergebnisse}{59}{subsection.4.5.3}
-\contentsline {section}{\numberline {4.6}Verstellpropeller}{60}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Ergebnisse}{62}{subsection.4.6.1}
-\contentsline {section}{\numberline {4.7}Stufenloses Getriebe}{64}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Ergebnisse}{66}{subsection.4.7.1}
-\contentsline {section}{\numberline {4.8}Randbedingungen des Aeromot\_UAV-Projekts}{68}{section.4.8}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{69}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{69}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ausblick}{70}{section.5.2}
-\contentsline {chapter}{\numberline {6}Projektmanagement}{71}{chapter.6}
-\contentsline {section}{\numberline {6.1}Projektstrukturplan}{72}{section.6.1}
-\contentsline {section}{\numberline {6.2}Zeitplan}{74}{section.6.2}
-\contentsline {chapter}{\numberline {A}Anhang}{89}{appendix.A}
-\contentsline {section}{\numberline {A.1}Fl\IeC {\"a}chenflugzeug}{89}{section.A.1}
-\contentsline {section}{\numberline {A.2}Propeller}{89}{section.A.2}
-\contentsline {section}{\numberline {A.3}Motor}{90}{section.A.3}
-\contentsline {section}{\numberline {A.4}Batteriekapazit\IeC {\"a}t}{91}{section.A.4}
-\contentsline {section}{\numberline {A.5}Vergleich von normierter zur originalen Batteriezelle}{91}{section.A.5}
-\contentsline {section}{\numberline {A.6}Steiggeschwindigkeit}{93}{section.A.6}
-\contentsline {section}{\numberline {A.7}Motorreglerwirkungsgrad}{94}{section.A.7}
-\contentsline {section}{\numberline {A.8}Batteriemasse}{100}{section.A.8}
-\contentsline {section}{\numberline {A.9}Verstellpropeller}{103}{section.A.9}
-\contentsline {section}{\numberline {A.10}Getriebe}{106}{section.A.10}
+\contentsline {subsubsection}{Anzahl der Motoren und Propeller}{38}{subsubsection*.34}
+\contentsline {subsubsection}{Gleitzahl}{41}{subsubsection*.36}
+\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{43}{subsubsection*.38}
+\contentsline {subsubsection}{Penaltyfaktor}{45}{subsubsection*.40}
+\contentsline {subsection}{\numberline {4.2.3}Ergebnisse des Vergleichs}{47}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Steiggeschwindigkeit}{48}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Ergebnis}{48}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Einfluss des Widerstands}{50}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Einfluss der Anzahl der Batteriezellen}{52}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Bedeutung des Reglerwirkungsgrades}{54}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Einfluss des maximalen Motorstroms}{54}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Massenverteilung}{54}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Ergebnisse}{54}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Gr\IeC {\"o}\IeC {\ss }e und Anzahl der Propeller des Flugger\IeC {\"a}tes}{57}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Ergebnisse}{58}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Anzahl der Propeller}{59}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Ergebnisse}{61}{subsection.4.5.3}
+\contentsline {section}{\numberline {4.6}Verstellpropeller}{62}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Ergebnisse}{64}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Stufenloses Getriebe}{66}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Ergebnisse}{68}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Randbedingungen des Aeromot\_UAV-Projekts}{70}{section.4.8}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{71}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{71}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ausblick}{72}{section.5.2}
+\contentsline {chapter}{\numberline {6}Projektmanagement}{73}{chapter.6}
+\contentsline {section}{\numberline {6.1}Projektstrukturplan}{74}{section.6.1}
+\contentsline {section}{\numberline {6.2}Zeitplan}{76}{section.6.2}
+\contentsline {chapter}{\numberline {A}Anhang}{91}{appendix.A}
+\contentsline {section}{\numberline {A.1}Fl\IeC {\"a}chenflugzeug}{91}{section.A.1}
+\contentsline {section}{\numberline {A.2}Propeller}{91}{section.A.2}
+\contentsline {section}{\numberline {A.3}Motor}{92}{section.A.3}
+\contentsline {section}{\numberline {A.4}Batteriekapazit\IeC {\"a}t}{93}{section.A.4}
+\contentsline {section}{\numberline {A.5}Vergleich von normierter zur originalen Batteriezelle}{93}{section.A.5}
+\contentsline {section}{\numberline {A.6}Steiggeschwindigkeit}{95}{section.A.6}
+\contentsline {section}{\numberline {A.7}Motorreglerwirkungsgrad}{96}{section.A.7}
+\contentsline {section}{\numberline {A.8}Batteriemasse}{102}{section.A.8}
+\contentsline {section}{\numberline {A.9}Verstellpropeller}{105}{section.A.9}
+\contentsline {section}{\numberline {A.10}Getriebe}{108}{section.A.10}
