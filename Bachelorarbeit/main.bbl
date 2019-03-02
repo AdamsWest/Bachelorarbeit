@@ -387,6 +387,47 @@
       \verb http://hdl.lib.byu.edu/1877/etd1223
       \endverb
     \endentry
+    \entry{KARI.2017}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=7beb6096a07ed11e6db1ae7b7c747ef2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Minwoo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f6394e99d18fd43f919a6f4b2e85fe36}{%
+           family={Joo},
+           familyi={J\bibinitperiod},
+           given={Heejin},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bff17e6c66368ceef59d49e71a2739ab}{%
+           family={Jang},
+           familyi={J\bibinitperiod},
+           given={Byungwook},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{fullhash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{bibnamehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{authorbibnamehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{authornamehash}{8eda0980b8e570fcc455b4651033fb35}
+      \strng{authorfullhash}{8eda0980b8e570fcc455b4651033fb35}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 Ninth International Conference on Ubiquitous and Future Networks (ICUFN)}
+      \field{isbn}{978-1-5090-4749-9}
+      \field{title}{Conceptual multicopter sizing and performance analysis via component database}
+      \field{year}{04.07.2017 - 07.07.2017}
+      \field{pages}{105\bibrangedash 109}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICUFN.2017.7993756
+      \endverb
+    \endentry
     \entry{Neitzke.2013}{article}{}
       \name{author}{1}{}{%
         {{hash=1d305ac43c7a838dae81ee5ad39140d0}{%
@@ -432,6 +473,46 @@
       \endverb
       \keyw{3;6V 3;7V ungesch{ü}tzt vtc6 us 18650 3120mah VTC6;Sony Konion US18650VTC6 - 3000mAh}
       \warn{\item Entry 'batteriezelle' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Magnussen.2015}{article}{}
+      \name{author}{3}{}{%
+        {{hash=379e5625aaca342ab878b2bbea5a50ee}{%
+           family={Magnussen},
+           familyi={M\bibinitperiod},
+           given={{Ø}yvind},
+           giveni={Ø\bibinitperiod}}}%
+        {{hash=50cb7707edc3ad436196945f2789dd5e}{%
+           family={Ottestad},
+           familyi={O\bibinitperiod},
+           given={Morten},
+           giveni={M\bibinitperiod}}}%
+        {{hash=84ec48e30ec8b25dec5a9c344a86a90f}{%
+           family={Hovland},
+           familyi={H\bibinitperiod},
+           given={Geir},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{fullhash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{bibnamehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{authorbibnamehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{authornamehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{authorfullhash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0332-7353}
+      \field{journaltitle}{Modeling, Identification and Control: A Norwegian Research Bulletin}
+      \field{number}{2}
+      \field{title}{Multicopter Design Optimization and Validation}
+      \field{volume}{36}
+      \field{year}{2015}
+      \field{pages}{67\bibrangedash 79}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.4173/mic.2015.2.1
+      \endverb
     \endentry
     \entry{Drela.2007}{article}{}
       \name{author}{1}{}{%
@@ -868,7 +949,6 @@
       \warn{\item Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring}
     \endentry
   \enddatalist
-  \missing{KAR-I.2017}
   \missing{Ostler.2007}
   \missing{PCUP}
 \endrefsection

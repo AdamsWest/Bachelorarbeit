@@ -1,6 +1,6 @@
 clc
-% clear  
-% close all
+clear  
+close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -85,9 +85,9 @@ c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Wid
 c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
 
 % Diskretisierung der Steiggeschwindigkeit
-V_Kg_min = 10;			% kleinster Bahnneigungswinkel
+V_Kg_min = 1;			% kleinster Bahnneigungswinkel
 V_Kg_Delta = 1;		% Schrittweite Batteriemasse
-V_Kg_max = 10;			% größter Bahnneigungswinkel
+V_Kg_max = 40;			% größter Bahnneigungswinkel
 
 %% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -117,7 +117,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms.pdf'];
 
-Dateiname = 'Russland';
+Dateiname = 'Russland_vvar';
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
 run('Leistungsberechnung'); % _Var_m_Bat

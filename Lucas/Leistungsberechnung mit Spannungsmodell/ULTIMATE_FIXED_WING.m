@@ -9,7 +9,7 @@ load('Elektromodellflug');
 load('axi_motor_db.mat');
 
 %% Festlegung des Dateinamen
-Dateiname = 'Flaechenflzg_E';
+Dateiname = 'Flaechenflzg_Vstern';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % *************************************************************************
@@ -18,7 +18,7 @@ Abfrage_prop = {'9x7', '9x7', '9x7', '9x7', '9x7'};
 Abfrage_n_prop = [1 2 4 6];
 Abfrage_E = [4 6 10 20 50];
 Abfrage_fp = [1 1.2 1.5 2];
-Abfrage_V = [25 75 100 125];
+Abfrage_V = [25 50 75 100 125];
 
 %**************************************************************************
 Abfrage_Flugsystem = 0; % HANDS OFF
@@ -99,8 +99,8 @@ lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 % lengthj = length(Abfrage_n_prop);
 % lengthj = length(Abfrage_prop);
 % lengthj = length(Abfrage_E);
-% lengthj = length(Abfrage_fp);
-lengthj = length(Abfrage_V);
+lengthj = length(Abfrage_fp);
+% lengthj = length(Abfrage_V);
 
 
 %% Initialisierungen
@@ -122,7 +122,7 @@ l10 = zeros(lengthj,1);
 
 
 
-for j = 1:length(Abfrage_V)
+for j = 1:length(Abfrage_fp)
     
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -130,7 +130,7 @@ for j = 1:length(Abfrage_V)
     E_stern = Abfrage_E(1);
     E = E_stern;
     m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
-    V_stern = Abfrage_V(j)/3.6;
+    V_stern = Abfrage_V(4)/3.6;
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     v_ver_max = ceil(V_stern);
@@ -213,7 +213,7 @@ for j = 1:length(Abfrage_V)
         
         m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
         
-        f_p = Abfrage_fp(1);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+        f_p = Abfrage_fp(j);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
         
         m_flugzeug = f_p * m_copter;
         
@@ -692,7 +692,7 @@ for j = 1:length(Abfrage_V)
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
     subplot(529), l9(j) = stairs(H,gamma_Flaechenflzg,'LineWidth',1); grid on, hold on
     subplot(5,2,10), l10(j) = stairs(H,V_Flaechenflugzeug,'LineWidth',1); grid on, hold on   
-    l10_Info{j} = [num2str(Abfrage_E(j))]; grid on, hold on
+    l10_Info{j} = [num2str(Abfrage_fp(j))]; grid on, hold on
     % m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name
     
     %   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]
@@ -749,7 +749,7 @@ else
 %     hold off
     subplot(529), xlabel('Höhe [m]'),ylabel('\gamma [°]'), title('Bahnneigungswinkel')
     subplot(5,2,10), xlabel('Höhe [m]'),ylabel('V_A [m/s]'), title('Fluggeschwindigkeit')
-    lgd = legend([l10], l10_Info, 'Location','bestoutside'); title(lgd,'E = ') % 
+    lgd = legend([l10], l10_Info, 'Location','bestoutside'); title(lgd,'f_P = ') % 
     
 end
 

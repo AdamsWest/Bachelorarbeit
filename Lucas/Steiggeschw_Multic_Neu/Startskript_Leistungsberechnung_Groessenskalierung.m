@@ -39,9 +39,9 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '10x3';    % Propellerbezeichnung
+prop_name = '11x3';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 10;                % Propellerdurchmesser in inch
+D = 11;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
@@ -54,11 +54,12 @@ m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 % Batterie
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
-% Abfrage_N_Bat = [2 4 6 8];
+% N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
+% Abfrage_N_Bat = [4 4 4 6 4 6];
+Abfrage_N_Bat = [6 6 6 6 6 6];
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazit‰t einer Zelle in Ah
-U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
+U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
@@ -68,8 +69,8 @@ C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit 
 m_Bat_min = 0.49;
 m_Bat_Delta = 0.01;
 m_Bat_max = 0.55;
-Abfrage_m_Bat = [2]; %[0.25 0.5 0.75 1 1.5 2];  
-% Abfrage_m_Bat = [0.7 0.75 0.8 0.85 0.9 0.95 1];
+Abfrage_m_Bat = [0.25 0.5 1 1 2 2];  
+Abfrage_m_Bat = [1.5 1.75 2 2.25 2.5];
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           
@@ -119,7 +120,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
     
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, method = groﬂe Schritte'];
-Dateiname = 'Batteriemasse_genau';
+Dateiname = 'Batteriemasse';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

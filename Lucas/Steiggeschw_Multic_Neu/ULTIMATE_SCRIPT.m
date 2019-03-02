@@ -9,15 +9,15 @@ load('Elektromodellflug');
 load('axi_motor_db.mat');
 
 %% Festlegung des Dateinamen
-Dateiname = 'Groessenskalierung';
+Dateiname = 'Anz_Prop';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % *************************************************************************
 Abfrage_mot = [10 21 28 31];
-Abfrage_prop = {'9x4','10x3','11x3','11x3'};
+Abfrage_prop = {'9x4','11x3','11x3','11x3'};
 Abfrage_n_prop = [1 2 4 6 8];
 Abfrage_c_W = [0.1 0.5 1 1.5 2];
-Abfrage_n_bat = [2 4 6 8];
+Abfrage_n_bat = [2 4 5 6 8];
 
 % figures definieren
 figure_ges = figure;
@@ -83,7 +83,7 @@ lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 % lengthj = length(Abfrage_mot);
 % lengthj = length(Abfrage_c_W);
 lengthj = length(Abfrage_n_prop);
-% lengthj = length(Abfrage_N_Bat);
+% lengthj = length(Abfrage_n_bat);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
 
 
@@ -148,10 +148,10 @@ for j = 1:length(Abfrage_n_prop)
     
     % Batterie
     E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
-    N_Bat_cell = Abfrage_n_bat(2);         % Anzahl der Batteriezellen in Reihe
+    N_Bat_cell = Abfrage_n_bat(4);         % Anzahl der Batteriezellen in Reihe
     N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
     C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-    U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
+    U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
     U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
     P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)
     C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
@@ -180,7 +180,7 @@ for j = 1:length(Abfrage_n_prop)
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    U_Bat_nom = N_Bat_cell * 4;        % nominale Batteriespannung
+    U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
     U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung   
     C_Bat = E_Dichte * m_Bat / U_Bat_nom;                               % Kapazitaet der Batterie in As
     Cnom = C_Bat/1000;                                            % Nominelle Kapazität
@@ -534,7 +534,7 @@ for j = 1:length(Abfrage_n_prop)
     l9_Info{j} = ['n_{Prop} =' num2str(Abfrage_n_prop(j))]; grid on, hold on
     
     
-%     'm_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name
+%     'm_{Mot}= ' num2str(m_Mot) ', K_V= ' num2str(K_V*60/(2*pi)) ', Prop= ' prop_name ', n_{Bat,cell}= ' num2str(N_Bat_cell)
 %   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]  
     
     
@@ -555,7 +555,7 @@ figure(figure_ges)
 subplot(521), title('Restladung'), xlabel('Höhe [m]'),
 ylabel('C_{Bat,Rest} [%]'),% legend([l1], l1_Info,'Location','northeastoutside')
 subplot(522), title('Drehzahl'), xlabel('Höhe [m]'),
-ylabel('Drehzahl [RPM]'), %legend([l2], l2_Info)
+ylabel('\Omega [RPM]'), %legend([l2], l2_Info)
 subplot(523), title('Motorstrom'), xlabel('Höhe [m]'),
 ylabel('I_{Mot} [A]'),% legend([l3], l3_Info)
 subplot(524), title('Motorspannung'), xlabel('Höhe [m]'),

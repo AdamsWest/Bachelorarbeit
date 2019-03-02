@@ -1981,7 +1981,7 @@
     <bcf:citekey order="7">polizei</bcf:citekey>
     <bcf:citekey order="8">landwirtschaft</bcf:citekey>
     <bcf:citekey order="9">Ostler.2006</bcf:citekey>
-    <bcf:citekey order="10">KAR-I.2017</bcf:citekey>
+    <bcf:citekey order="10">KARI.2017</bcf:citekey>
     <bcf:citekey order="11">Drivecalc</bcf:citekey>
     <bcf:citekey order="11">eCalc</bcf:citekey>
     <bcf:citekey order="11">Flyeval</bcf:citekey>
@@ -2029,15 +2029,16 @@
     <bcf:citekey order="49">Scheiderer.2008</bcf:citekey>
     <bcf:citekey order="50">Anderson.2018</bcf:citekey>
     <bcf:citekey order="51">Anderson.2018</bcf:citekey>
-    <bcf:citekey order="52">Neitzke.2013</bcf:citekey>
-    <bcf:citekey order="53">Anderson.2018</bcf:citekey>
+    <bcf:citekey order="52">Wall.2015</bcf:citekey>
+    <bcf:citekey order="53">Neitzke.2013</bcf:citekey>
     <bcf:citekey order="54">Seidel.2011</bcf:citekey>
     <bcf:citekey order="55">Wall.2015</bcf:citekey>
     <bcf:citekey order="56">Wall.2015</bcf:citekey>
     <bcf:citekey order="57">Fischer.2016</bcf:citekey>
     <bcf:citekey order="58">Ostler.2007</bcf:citekey>
     <bcf:citekey order="59">PCUP</bcf:citekey>
-    <bcf:citekey order="60">axi</bcf:citekey>
+    <bcf:citekey order="60">Magnussen.2015</bcf:citekey>
+    <bcf:citekey order="61">axi</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

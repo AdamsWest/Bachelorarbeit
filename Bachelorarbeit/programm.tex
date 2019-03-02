@@ -189,8 +189,8 @@ Die Parameter für den Multicopter sind in Tab. \ref{tab:multicop_parameter} auf
 	\captionof{table}{Parameter des Multicopters}
 	\begin{tabular}{l l l} \hline
 		 Parameter & Variablenname & verwendete Größe \\ \hline
-		 Leermasse des Multicopters \ensuremath{m_{Copter}} & \texttt{m\_copter} & \si{kg}\\
-		 Obere Stirnfläche \ensuremath{F_{copter,oben}} & \texttt{F\_copter} & \si{m^2}\\
+		 Leermasse des Multicopters \ensuremath{m_{copter}} & \texttt{m\_copter} & \si{kg}\\
+		 Obere Stirnfläche \ensuremath{F_{copter,oben}} & \texttt{F\_copter\_oben} & \si{m^2}\\
 		 seitliche Stirnfläche \ensuremath{F_{copter,seitlich}} & \texttt{F\_copter\_seitlich} & \si{m^2}\\
 		 Oberer Widerstandsbeiwert \ensuremath{c_{W,copter,oben}} & \texttt{c\_W\_copter\_oben} & -\\
 		 Seitlicher Widerstandsbeiwert \ensuremath{c_{W,copter,seitlich}} & \texttt{c\_W\_copter\_seitlich} & -\\
@@ -335,11 +335,11 @@ vereinfachen. Der Auslegungspunkt (mit * gekennzeichnet) des Flächenflugzeugs i
 \end{equation}
 berechnet sich der Widerstand mit
 \begin{equation}
-	W^\star = \frac{A^\star}{E^\star} .
+	W^\star = \frac{A^\star}{E^\star} \eqend{.}
 \end{equation}
 Unter Annahme eines Fluges im optimalen Operationspunkt, i.e. bei Auslegungsgleitzahl, ist der Nullwiderstand genau die Hälfte des Gesamtwiderstandes \cite[S.82-S.83]{Bruning.1986}
 \begin{equation}
-	W_0^\star = 0,5\cdot W^\star .
+	W_0^\star = 0,5\cdot W^\star \eqend{.}
 \end{equation}
 Es wird vorausgesetzt, dass für jeden Bahnneigungswinkel \ensuremath{\gamma} der Auftriebsbeiwert und folglich der Anstellwinkel konstant bleibt. Dies setzt voraus, dass sich mit ändernder Höhe die Dichte und die Geschwindigkeit ändert, um die obige Voraussetzung zu gewährleisten. Dadurch verringert sich die Geschwindigkeit
 \begin{equation}
@@ -367,14 +367,15 @@ mit dem Gewicht und Steigwinkel als Variable.
 Für \ensuremath{\gamma = 90^\circ} besitzt Gleichung \ref{eq:schub_flaechenflugzeug} eine Definitionslücke. Bei diesem Bahnneigungswinkel müsste der benötigte Schub gerade einmal das Gewicht des Fluggerätes kompensieren. Dabei wird jedoch der Luftwiderstand, der sich aus einer Fluggeschwindigkeit ergibt, vernachlässigt. 
 Für den unbeschleunigten, vertikalen Steigflug vereinfachen sich die Widerstandsgleichung \ref{eq:widerstandsgleichung} und die Auftriebsgleichung \ref{eq:auftriebsgleichung} mit den Bedingungen \ensuremath{\dot{V} = 0}, \ensuremath{\dot{\gamma} = 0}, \ensuremath{\gamma = 90^\circ} und \ensuremath{(\alpha + \sigma) \approx 0} zu 
 \begin{equation}
-	S = W + G , 
+	S = W + G \eqend{,} 
 \end{equation}
 \begin{equation}
-	A = 0 .
+	A = 0 \eqend{.}
 \end{equation}
 Da der Auftrieb Null ist, erfolgt der unbeschleunigte, vertikale Steigflug mit dem Nullwiderstand
 \begin{equation}
-	W = W_0 .
+	W = W_0 \eqend{.}
+	\label{eq:widerstand_vertikalflug}
 \end{equation}
 Den Bahnneigungswinkel \ensuremath{\gamma} gilt es in jedem Höhenschritt zu optimieren, in dem die Theorie nicht verletzt wird (\texttt{Flugzustand\_Flaechenflzg} = vertikaler Steigflug). Im Falle des vertikalen Steigflugs ist eine Variation der Steiggeschwindigkeit von Interesse. Deshalb werden beide in Abhängigkeit des Flugzustandes für einen Höhenschritt variiert. Maximum der Geschwindigkeitsuntersuchung für einen vertikalen Steigflug ist die Auslegungsgeschwindigkeit \ensuremath{V^\star}. Das Auswahlkriterium ist die für den Höhengewinn benötigte Energiemenge, die sich aus dem Produkt der entnommenen Batteriekapazität und der Batteriespannung zusammensetzt
 \begin{equation}
@@ -432,7 +433,7 @@ in Bezug zur Wellenleistung
 \end{equation} 
 Zur Berechnung der induzierten Geschwindigkeit im Steigflug wird das Newton-Raphson-Verfahren herangezogen. Mit diesem lässt sich innerhalb weniger Iterationsschritte die induzierte Geschwindigkeit im Steigflug ermitteln \cite[S.153]{Wall.2015}. Im Gegensatz zu van der Wall wird an dieser Stelle mit den senkrecht durch die Propellerebene gehenden Geschwindigkeiten \ensuremath{w_{ges,f} = w_{i,f} + w_{Af}} gerechnet:
 \begin{equation}
-	(w_{i,f} + w_{Af})_{n+1} = w_{i,f,n} - \frac{w_{i,f,n}}{wi,f,n-1}, \;\;\; n = 0,1,2,\dots
+	(w_{i,f} + w_{Af})_{n+1} = w_{i,f,n} - \frac{w_{i,f,n}}{w_{i,f,n-1}}, \;\;\; n = 0,1,2,\dots
 \end{equation}
 mit 
 \begin{equation}
@@ -451,7 +452,7 @@ und die vertikale Komponente der Propelleranströmung durch die Rotorebene. Den 
 
 \subsection{Motorzustand}
 \label{subsec:motorzustand}
-Motorbezeichnungen werden nach der Form "`AXI 2814/20 GOLD LINE"\; (Die Werte stehen für Statordurchmesser: \SI{28}{mm}, Statordicke: \SI{14}{mm}, \textcolor{red}{Motorwicklung 20}) 
+Manche Motorbezeichnungen erfolgen nach der Form "`AXI 2814/20 GOLD LINE"\; (Die Werte stehen für Statordurchmesser: \SI{28}{mm}, Statordicke: \SI{14}{mm}, Windungszahl: 20). 
 Die ersten drei Motorparameter in Tab. \ref{tab:mot_parameter} sind notwendig, um den Motorzustand zu berechnen. Der vorletzte Parameter dient als technische Grenze, die für ein gut ausgelegtes System nicht überschritten wird. Die Motormasse fließt in Kombination mit der Anzahl der Propeller in die Gesamtmasse des Fluggerätes mit ein. Die vorrangige technische Leistungsgrenze ist ist die maximale Motorleistung, die durch den maximalen Motorstrom \ensuremath{I_{max}} repräsentiert wird \cite{axi}. 
 
 \begin{center}

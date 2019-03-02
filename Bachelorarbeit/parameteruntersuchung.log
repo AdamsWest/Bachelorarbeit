@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  17 FEB 2019 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.2)  1 MAR 2019 15:20
 entering extended mode
 **./parameteruntersuchung.tex
 (parameteruntersuchung.tex
 LaTeX2e <2018-04-01> patch level 5
 ! Undefined control sequence.
 l.1 \chapter
-            {Parameteruntersuchung}
+            {Optimierung einzelner Parameter}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -19,11 +19,31 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1 \chapter{P
-              arameteruntersuchung}
+l.1 \chapter{O
+              ptimierung einzelner Parameter}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+Missing character: There is no O in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no P in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -33,18 +53,6 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 1--3
 []
@@ -723,9 +731,9 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-<write> ...:leistungsberechnung' on page \thepage 
+<write> ...gleistungsberechnung' on page \thepage 
                                                   \space undefined\on@line .
-l.7 ...ersteht (Kap. \ref{sec:leistungsberechnung}
+l.7 ...eht (Kap. \ref{sec:flugleistungsberechnung}
                                                   ).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -734,64 +742,184 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:leistungsberechnung' on page  undefined on input 
-line 7.
+LaTeX Warning: Reference `sec:flugleistungsberechnung' on page  undefined on in
+put line 7.
 
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+l.8 \todo
+         [inline]{Hinweis, auf die Umgebungsbedingungen und dass mit 10ms wi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 4--8
+Missing character: There is no [ in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--9
 []
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 4--8
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--8
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 4--9
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--8
-[] 
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--9
+[]
  []
 
 ! Undefined control sequence.
-l.9 \section
-            {Multicopter im Vergleich zu einem Flächenflugzeug}
+l.10 \section
+             {Multicopter im Vergleich zu einem Flächenflugzeug}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -805,8 +933,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 \section{M
-              ulticopter im Vergleich zu einem Flächenflugzeug}
+l.10 \section{M
+               ulticopter im Vergleich zu einem Flächenflugzeug}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -853,64 +981,6 @@ Missing character: There is no z in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no g in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 9--11
-[]
- []
-
-
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 9--11
-\/cmr/m/n/10 a
- []
-
-! Undefined control sequence.
-l.13 \subsection
-                {Vorgehensweise beim Vergleich}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \subsection{V
-                  orgehensweise beim Vergleich}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no V in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no V in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no h in font nullfont!
 Missing character: There is no J in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -1073,19 +1143,18 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no L in font nullfont!
 Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -1403,8 +1472,8 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.15 ...ticopters auf das aus \cite{Anderson.2018}
-                                                   festgelegt, was genauer i...
+l.12 ...ticopters auf das aus \cite{Anderson.2018}
+                                                   festgelegt, welches genau...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1412,7 +1481,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 15.
+LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 12.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no f in font nullfont!
@@ -1427,7 +1496,11 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no w in font nullfont!
-Missing character: There is no a in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -1448,7 +1521,7 @@ Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
 <write> ...nce `sec:komponenten' on page \thepage 
                                                   \space undefined\on@line .
-l.15 ...s genauer in Kapitel \ref{sec:komponenten}
+l.12 ...s genauer in Kapitel \ref{sec:komponenten}
                                                    beschrieben ist. Da die F...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1457,7 +1530,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:komponenten' on page  undefined on input line 15.
+LaTeX Warning: Reference `sec:komponenten' on page  undefined on input line 12.
 
 
 Missing character: There is no b in font nullfont!
@@ -1502,7 +1575,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.15 ...ie Flugleistungen von \cite{Anderson.2018}
+l.12 ...ie Flugleistungen von \cite{Anderson.2018}
                                                    bekannt sind und der Quad...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1511,7 +1584,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 15.
+LaTeX Warning: Citation `Anderson.2018' on page  undefined on input line 12.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no b in font nullfont!
@@ -1837,19 +1910,19 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no t in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 15.
+(Font)              <7> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 15.
+(Font)              <5> on input line 12.
 
-LaTeX Warning: Command \" invalid in math mode on input line 15.
+LaTeX Warning: Command \" invalid in math mode on input line 12.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 15.
+LaTeX Warning: Command \" invalid in math mode on input line 12.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.12 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 I'm changing \accent to \mathaccent here; wish me luck.
 (Accents are not the same in formulas as they are in text.)
@@ -1857,7 +1930,7 @@ I'm changing \accent to \mathaccent here; wish me luck.
 ! Missing { inserted.
 <to be read again> 
                    \edef 
-l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.12 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1867,7 +1940,7 @@ so that I will find a matching right brace soon.
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.12 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1877,7 +1950,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.15 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
+l.12 ...,Quadrocopter} = m_{ges,Flächenflugzeug}}
                                                   . Dabei setzt sich die Mas...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1935,102 +2008,107 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 13--16
+Overfull \hbox (20.0pt too wide) in paragraph at lines 10--13
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
-\/cmr/m/n/10 u
- []
-
-
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
-\/cmr/m/n/10 u
- []
-
-
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (10.00003pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 10--13
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (10.00003pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 o
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 10--13
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 13--16
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 10--13
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 10--13
 []
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (83.71988pt too wide) in paragraph at lines 13--16
+Overfull \hbox (83.71988pt too wide) in paragraph at lines 10--13
 \OML/cmm/m/it/10 m[] \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (86.34036pt too wide) in paragraph at lines 13--16
+Overfull \hbox (86.34036pt too wide) in paragraph at lines 10--13
 \OML/cmm/m/it/10 m[]$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 13--16
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 10--13
 \/cmr/m/n/10 a 
  []
 
 
-Overfull \hbox (357.31294pt too wide) detected at line 18
+Overfull \hbox (357.31294pt too wide) detected at line 15
 \OML/cmm/m/it/10 m[] \/cmr/m/n/10 = \OML/cmm/m/it/10 m[] \/cmr/m/n/10 + (\OML/c
 mm/m/it/10 m[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10   \OML/
 cmm/m/it/10 m[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 n[]\/cmr/m/n/10 ) \OMS/cmsy
@@ -2121,7 +2199,8 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no y in font nullfont!
-Missing character: There is no f in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no k in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -2258,79 +2337,42 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--17
     \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (11.56357pt too wide) in paragraph at lines 18--20
+Overfull \hbox (11.56357pt too wide) in paragraph at lines 15--17
 \OML/cmm/m/it/10 f[]$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--17
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 15--17
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 18--20
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 15--17
 \/cmr/m/n/10 u 
  []
 
+! Undefined control sequence.
+l.18 	f_P = \frac{m_{Flugzeug}}{m_{Quad}} \eqend
+                                                {.}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Command \" invalid in math mode on input line 21.
 
-
-LaTeX Warning: Command \" invalid in math mode on input line 21.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ...@spacefactor \spacefactor }\accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
-                                                 .
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! Missing { inserted.
-<to be read again> 
-                   \edef 
-l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
-                                                 .
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-! You can't use `\spacefactor' in math mode.
-\add@accent ...}\accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
-                                                 .
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.21 	f_P = \frac{m_{Flächenflugzeug}}{m_{Quad}}
-                                                 .
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-Missing character: There is no � in font cmex10!
-
-Overfull \hbox (102.31905pt too wide) detected at line 22
-\OML/cmm/m/it/10 f[] \/cmr/m/n/10 = []\OML/cmm/m/it/10 :
+Overfull \hbox (73.73492pt too wide) detected at line 20
+\OML/cmm/m/it/10 f[] \/cmr/m/n/10 = []\OML/cmm/m/it/10 :[]
  []
 
 Missing character: There is no F in font nullfont!
@@ -2354,10 +2396,10 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -2368,7 +2410,8 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no y in font nullfont!
-Missing character: There is no f in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no F in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no k in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -2385,12 +2428,6 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no D in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -3073,63 +3110,66 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 o
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 o
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 22--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--22
 \/cmr/m/n/10 
  []
 
 ! Undefined control sequence.
-l.26 \subsection
+l.24 \subsection
                 {Erste Untersuchung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3144,7 +3184,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26 \subsection{E
+l.24 \subsection{E
                   rste Untersuchung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3171,23 +3211,24 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no b in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+<write> ...arning: Reference `s' on page \thepage 
+                                                  \space undefined\on@line .
+l.26 In der Tab. \ref s
+                       ind wichtige Parameter der Ausgangskonstellation für...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `s' on page  undefined on input line 26.
+
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -3266,40 +3307,28 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 26--29
+Overfull \hbox (20.0pt too wide) in paragraph at lines 24--27
 []
  []
 
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 26--29
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 24--27
+[]
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 24--27
 \/cmr/m/n/10 u
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 26--29
-\/cmr/m/n/10 a
- []
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 \begin{center}
-                   
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 30--30
-[] 
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 24--27
+\/cmr/m/n/10 a 
  []
 
 ! Undefined control sequence.
-l.31 	\captionof
-                {table}{wichtige Parameter des Flächenflugzeugs}
+l.28 	\captionof
+                {table}{wichtige Parameter der Flächenflugzeug-Referenzkonf...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3330,7 +3359,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no F in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no c in font nullfont!
@@ -3345,7 +3374,28 @@ Missing character: There is no z in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no g in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no P in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -3368,10 +3418,89 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no W in font nullfont!
+Missing character: There is no v in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+! Undefined control sequence.
+l.31 ...{m_{Flugzeug}}& \texttt{m\_Flugzeug} & \SI
+                                                  {0,354}{kg} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+l.32 ...nsuremath{m_{Bat}} & \texttt{m\_Bat} & \SI
+                                                  {0,56}{kg} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no g in font nullfont!
 Missing character: There is no M in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -3383,7 +3512,7 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.34 ...ensuremath{m_{Mot}}& \texttt{m\_Mot} & \SI
+l.33 ...ensuremath{m_{Mot}}& \texttt{m\_Mot} & \SI
                                                   {106}{g} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3421,8 +3550,8 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.35 ...nte \ensuremath{K_V} & \texttt{K\_V} & \SI
-                                                  {1390}{1/(V\cdot s)} \\
+l.34 ...nte \ensuremath{K_V} & \texttt{K\_V} & \SI
+                                                  {1390}{RPM/V} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3433,980 +3562,1836 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no 3 in font nullfont!
 Missing character: There is no 9 in font nullfont!
 Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no M in font nullfont!
 Missing character: There is no / in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+! Undefined control sequence.
+l.35 ...nsuremath{I_{max}} & \texttt{I\_max} & \SI
+                                                  {25}{A} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no 9 in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no 7 in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+! Undefined control sequence.
+l.37 ...uremath{n_{Prop}} & \texttt{n\_prop} & \SI
+                                                  {1}{} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+! Undefined control sequence.
+l.38 ...emath{E^{\star}} & \texttt{E\_stern} & \SI
+                                                  {4}{} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+! Undefined control sequence.
+l.39 ...emath{V^{\star}} & \texttt{V\_stern} & \SI
+                                                  {100}{km/h} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+! Undefined control sequence.
+l.40 		Gleitzahl \ensuremath{E} & \texttt{E} & \SI
+                                                  {4}{} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no 1 in font nullfont!
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 28--45
+ \/cmr/m/n/10 a 
+ []
+
+
+Overfull \hbox (109.68999pt too wide) in paragraph at lines 28--45
+ [] 
+ []
+
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 46--47
+         \/cmr/m/n/10 a
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \begin{figure}
+                   [H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.52 	\includegraphics
+                      [scale=0.7]{Diagramme/Ausgangskonstellation.pdf}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 7 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no f in font nullfont!
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53 	\caption
+              {Verlauf der Leistungsparameter über der Höhe für die Refer...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no V in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+<write> ...eferenzkonfiguration' on page \thepage 
+                                                  \space undefined\on@line .
+l.53 ...n aus Tab. \ref{tab:referenzkonfiguration}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `tab:referenzkonfiguration' on page  undefined on inpu
+t line 53.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 50--56
+[]
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 50--56
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 50--56
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 50--56
+\/cmr/m/n/10 u
+ []
+
+
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 50--56
+[]
+ []
+
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+! Undefined control sequence.
+l.57 ...ählte Konstellation erreicht mehr als \SI
+                                                  {13000}{m} Höhe (Vgl. Abb...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no ( in font nullfont!
 Missing character: There is no V in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+<write> ...usgangskonstellation' on page \thepage 
+                                                  \space undefined\on@line .
+l.57 ...(Vgl. Abb. \ref{abb:ausgangskonstellation}
+                                                  ). Der die Höhe begrenzen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `abb:ausgangskonstellation' on page  undefined on inpu
+t line 57.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no Z in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+l.57 ...n optimaler Bahnneigungswinkel von ca. \SI
+                                                  {31}{^\circ} bis \SI{33}{^...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 1 in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.35 ...K_V} & \texttt{K\_V} & \SI{1390}{1/(V\cdot
-                                                   s)} \\
+l.57 ...maler Bahnneigungswinkel von ca. \SI{31}{^
+                                                  \circ} bis \SI{33}{^\star}...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.35 ... & \texttt{K\_V} & \SI{1390}{1/(V\cdot s)}
-                                                   \\
+l.57 ...Bahnneigungswinkel von ca. \SI{31}{^\circ}
+                                                   bis \SI{33}{^\star} ein. ...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Extra }, or forgotten $.
-<inserted text> }
-                 
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.36 		m
-        aximaler Dauerstrom \ensuremath{I_{max}} & \texttt{I\_max} & \SI{25}...
+! Undefined control sequence.
+l.57 ...ungswinkel von ca. \SI{31}{^\circ} bis \SI
+                                                  {33}{^\star} ein. Dieser W...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...} ein. Dieser Winkel kann bis zu einer Hö
+                                                  he \SI{9800}{m} gehalten w...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! Missing { inserted.
+<to be read again> 
+                   \edef 
+l.57 ...} ein. Dieser Winkel kann bis zu einer Hö
+                                                  he \SI{9800}{m} gehalten w...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...} ein. Dieser Winkel kann bis zu einer Hö
+                                                  he \SI{9800}{m} gehalten w...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.57 ... Dieser Winkel kann bis zu einer Höhe \SI
+                                                  {9800}{m} gehalten werden....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...chw_flaechenflugzeug' on page \thepage 
+                                                  \space undefined\on@line .
+l.57 ...Gleichung \ref{eq:geschw_flaechenflugzeug}
+                                                  ). Zu Beginn des Steigflug...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:geschw_flaechenflugzeug' on page  undefined on inp
+ut line 57.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...nflugzeug}). Zu Beginn des Steigfluges wä
+                                                  ren größere Steigwinkel ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...nflugzeug}). Zu Beginn des Steigfluges wä
+                                                  ren größere Steigwinkel ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...g}). Zu Beginn des Steigfluges wären grö
+                                                  ßere Steigwinkel effizien...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...g}). Zu Beginn des Steigfluges wären grö
+                                                  ßere Steigwinkel effizien...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 57.
+
+! Undefined control sequence.
+<argument> I_{max} = \SI 
+                         {35}{A}
+l.57 ...orstrom (\ensuremath{I_{max} = \SI{35}{A}}
+                                                  ) begrenzt. Ohne diesen w�...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...} = \SI{35}{A}}) begrenzt. Ohne diesen wü
+                                                  rde der Bahnneigungswinkel...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...} = \SI{35}{A}}) begrenzt. Ohne diesen wü
+                                                  rde der Bahnneigungswinkel...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...ug mit maximalem Motorstrom im unteren Hö
+                                                  henbereich am effizientest...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...ug mit maximalem Motorstrom im unteren Hö
+                                                  henbereich am effizientest...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...�henbereich am effizientesten ist. Der sä
+                                                  gezahnartige Verlauf des M...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...�henbereich am effizientesten ist. Der sä
+                                                  gezahnartige Verlauf des M...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...ägezahnartige Verlauf des Motorstroms hä
+                                                  ngt mit der gewählten Dis...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...ägezahnartige Verlauf des Motorstroms hä
+                                                  ngt mit der gewählten Dis...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...rlauf des Motorstroms hängt mit der gewä
+                                                  hlten Diskretisierung und ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...rlauf des Motorstroms hängt mit der gewä
+                                                  hlten Diskretisierung und ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...gewählten Diskretisierung und dadurch rü
+                                                  ckwirkend mit der Genauigk...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...gewählten Diskretisierung und dadurch rü
+                                                  ckwirkend mit der Genauigk...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...chung dieser Punkte und deren Umgebung wü
+                                                  rde zu einem glatten Verla...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...chung dieser Punkte und deren Umgebung wü
+                                                  rde zu einem glatten Verla...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...s Motorstroms bei \ensuremath{I_{max}} fü
+                                                  hren. Ebenso würden sich ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...s Motorstroms bei \ensuremath{I_{max}} fü
+                                                  hren. Ebenso würden sich ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...i \ensuremath{I_{max}} führen. Ebenso wü
+                                                  rden sich die Verläufe al...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...i \ensuremath{I_{max}} führen. Ebenso wü
+                                                  rden sich die Verläufe al...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...}} führen. Ebenso würden sich die Verlä
+                                                  ufe aller anderen Leistung...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...}} führen. Ebenso würden sich die Verlä
+                                                  ufe aller anderen Leistung...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...läufe aller anderen Leistungsparameter ü
+                                                  ber der Höhe glätten. Gl...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...läufe aller anderen Leistungsparameter ü
+                                                  ber der Höhe glätten. Gl...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...r anderen Leistungsparameter über der Hö
+                                                  he glätten. Gleichzeitig ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...r anderen Leistungsparameter über der Hö
+                                                  he glätten. Gleichzeitig ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...en Leistungsparameter über der Höhe glä
+                                                  tten. Gleichzeitig zum kon...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...en Leistungsparameter über der Höhe glä
+                                                  tten. Gleichzeitig zum kon...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...Gleichzeitig zum konstanten Motorstrom wä
+                                                  chst die Motorspannung lin...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...Gleichzeitig zum konstanten Motorstrom wä
+                                                  chst die Motorspannung lin...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.57 ... Motorspannung linear an, bis diese ab \SI
+                                                  {98000}{m} das Niveau der ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...riespannung erreicht. Damit ist das Verhä
+                                                  ltnis von \ensuremath{U_{M...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...riespannung erreicht. Damit ist das Verhä
+                                                  ltnis von \ensuremath{U_{M...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.57 ...{Bat}} gleich 1 und  die PWM liegt bei \SI
+                                                  {100}{\%}. Ab diesem Zeitp...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ... Ab diesem Zeitpunkt kann die Leistung fü
+                                                  r die Geschwindigkeit und ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ... Ab diesem Zeitpunkt kann die Leistung fü
+                                                  r die Geschwindigkeit und ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...dass mit dem Bahnanstellwinkel und der Hö
+                                                  he (indirekt durch die Dic...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...dass mit dem Bahnanstellwinkel und der Hö
+                                                  he (indirekt durch die Dic...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+<write> ...hub_flaechenflugzeug' on page \thepage 
+                                                  \space undefined\on@line .
+l.57 ... Gleichung \ref{eq:schub_flaechenflugzeug}
+                                                   und \ref{eq:schub_flaeche...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:schub_flaechenflugzeug' on page  undefined on inpu
+t line 57.
+
+! Undefined control sequence.
+<write> ...hub_flaechenflugzeug' on page \thepage 
+                                                  \space undefined\on@line .
+l.57 ...gzeug} und \ref{eq:schub_flaechenflugzeug}
+                                                  ). Außerdem wird der Moto...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:schub_flaechenflugzeug' on page  undefined on inpu
+t line 57.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 57.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...eriespannung, die durch die Last von anfä
+                                                  nglich \SI{15,6}{V} auf ca...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...eriespannung, die durch die Last von anfä
+                                                  nglich \SI{15,6}{V} auf ca...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.57 ...ng, die durch die Last von anfänglich \SI
+                                                  {15,6}{V} auf ca. \SI{14.4...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.57 ...t von anfänglich \SI{15,6}{V} auf ca. \SI
+                                                  {14.4}{V} einbricht. Der V...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...ce `eq:batteriestrom' on page \thepage 
+                                                  \space undefined\on@line .
+l.57 ... wird aus Gleichung \ref{eq:batteriestrom}
+                                                   ersichtlich. Bei einem ko...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:batteriestrom' on page  undefined on input line 57
+.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ..._{Bat}} nur von \ensuremath{U_{Mot}} abhä
+                                                  ngig. Daher der gleiche Ve...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ..._{Bat}} nur von \ensuremath{U_{Mot}} abhä
+                                                  ngig. Daher der gleiche Ve...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...nahe konstant und \ensuremath{I_{Bat}} hä
+                                                  ngt nur noch von \ensurema...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...nahe konstant und \ensuremath{I_{Bat}} hä
+                                                  ngt nur noch von \ensurema...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 57.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.57 ...rlauf der Drehzahl ist ausschlaggebend fü
+                                                  r den des Motorspannung. D...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.57 ...rlauf der Drehzahl ist ausschlaggebend fü
+                                                  r den des Motorspannung. D...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+<write> ...ce `eq:motorspannung' on page \thepage 
+                                                  \space undefined\on@line .
+l.57 ...gen (Vgl. Gleichung \ref{eq:motorspannung}
+                                                  ). Die Maximaldrehzahl kan...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:motorspannung' on page  undefined on input line 57
+.
+
+! Undefined control sequence.
+l.57 ...rehzahl kann damit nur noch leicht auf \SI
+                                                  {19000}{RPM} steigen.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 58.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.58 Die Restladung nimmt mit der Hö
+                                     he linear ab. Erst ab dem Flugzustand m...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.58 Die Restladung nimmt mit der Hö
+                                     he linear ab. Erst ab dem Flugzustand m...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.58 ...linear ab. Erst ab dem Flugzustand mit \SI
+                                                  {100}{\%} PWM nimmt die Re...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 58.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.58 ...der Batterie deutlich schneller ab. Am hö
+                                                  chsten Punkt des Aufstiegs...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.58 ...der Batterie deutlich schneller ab. Am hö
+                                                  chsten Punkt des Aufstiegs...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 58.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.58 ...r ab. Am höchsten Punkt des Aufstiegs kö
+                                                  nnen noch min. \SI{20}{\%}...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.58 ...r ab. Am höchsten Punkt des Aufstiegs kö
+                                                  nnen noch min. \SI{20}{\%}...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.58 ... Punkt des Aufstiegs können noch min. \SI
+                                                  {20}{\%} Restladung verzei...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...ence `subsec:eta_ges' on page \thepage 
+                                                  \space undefined\on@line .
+l.59 ...dert sich wie in Kap. \ref{subsec:eta_ges}
+                                                   dargelegt in den Propelle...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `subsec:eta_ges' on page  undefined on input line 59.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 59.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.59 ...r Propellerwirkungsgrad steigt mit der Hö
+                                                  he an. Ausschlaggebend hie...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.59 ...r Propellerwirkungsgrad steigt mit der Hö
+                                                  he an. Ausschlaggebend hie...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 59.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.59 ... mit der Höhe an. Ausschlaggebend hierfü
+                                                  r ist die steigende Geschw...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.59 ... mit der Höhe an. Ausschlaggebend hierfü
+                                                  r ist die steigende Geschw...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+<write> ...ference `eq:eta_prop' on page \thepage 
+                                                  \space undefined\on@line .
+l.59 ...Drehzahl (Vgl. Gleichung \ref{eq:eta_prop}
+                                                  ). Während der noch flugl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:eta_prop' on page  undefined on input line 59.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 59.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.59 ...hl (Vgl. Gleichung \ref{eq:eta_prop}). Wä
+                                                  hrend der noch flugleistun...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.59 ...hl (Vgl. Gleichung \ref{eq:eta_prop}). Wä
+                                                  hrend der noch flugleistun...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 59.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.59 ...nisch erreichbare Bahnneigungswinkel abfä
+                                                  llt, steigt die Bahngeschw...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.59 ...nisch erreichbare Bahnneigungswinkel abfä
+                                                  llt, steigt die Bahngeschw...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 59.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.59 ...ndigkeit und der Propellerwirkungsgrad. Ü
+                                                  ber Gleichung \ref{eq:gesc...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.59 ...ndigkeit und der Propellerwirkungsgrad. Ü
+                                                  ber Gleichung \ref{eq:gesc...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+<write> ...chw_flaechenflugzeug' on page \thepage 
+                                                  \space undefined\on@line .
+l.59 ...Gleichung \ref{eq:geschw_flaechenflugzeug}
+                                                   nimmt mit steigendem Bahn...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:geschw_flaechenflugzeug' on page  undefined on inp
+ut line 59.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 59.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.59 ...d somit geringer werdenden Widerstandskrä
+                                                  ften ansteigen (Vgl. Gleic...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.59 ...d somit geringer werdenden Widerstandskrä
+                                                  ften ansteigen (Vgl. Gleic...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+<write> ...ce `eq:motorspannung' on page \thepage 
+                                                  \space undefined\on@line .
+l.59 ...gen (Vgl. Gleichung \ref{eq:motorspannung}
+                                                  ). Dabei nimmt auch das Pr...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:motorspannung' on page  undefined on input line 59
+.
+
+! Undefined control sequence.
+<write> ...rence `eq:motorstrom' on page \thepage 
+                                                  \space undefined\on@line .
+l.59 ...Ergebnis aus Gleichung \ref{eq:motorstrom}
+                                                  ). Bei einer gleichermaße...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:motorstrom' on page  undefined on input line 59.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 59.
+
+! Undefined control sequence.
+<write> ...e `eq:strahlleistung' on page \thepage 
+                                                  \space undefined\on@line .
+l.59 ...rs (Vgl. Gleichung \ref{eq:strahlleistung}
+                                                  ). Als Konsequenz steigt d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:strahlleistung' on page  undefined on input line 5
+9.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 60.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.60 Dies gilt auch fü
+                       r den Motorwirkungsgrad. Dieser steigt mit einer anwa...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.60 Dies gilt auch fü
+                       r den Motorwirkungsgrad. Dieser steigt mit einer anwa...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+<write> ...eference `eq:eta_mot' on page \thepage 
+                                                  \space undefined\on@line .
+l.60 ...rehmoment (Vgl. Gleichung \ref{eq:eta_mot}
+                                                  ). Außerdem nehmen die du...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:eta_mot' on page  undefined on input line 60.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 60.
+
+! Undefined control sequence.
+<write> ...rence `eq:motorstrom' on page \thepage 
+                                                  \space undefined\on@line .
+l.60 ...ung ab (Vgl. Gleichung \ref{eq:motorstrom}
+                                                   und \ref{eq:motorspannung...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:motorstrom' on page  undefined on input line 60.
+
+! Undefined control sequence.
+<write> ...ce `eq:motorspannung' on page \thepage 
+                                                  \space undefined\on@line .
+l.60 ...{eq:motorstrom} und \ref{eq:motorspannung}
+                                                  ), die mit zunehmender Hö...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:motorspannung' on page  undefined on input line 60
+.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 60.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.60 ...q:motorspannung}), die mit zunehmender Hö
+                                                  he auch zunehmen. Der Grun...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.60 ...q:motorspannung}), die mit zunehmender Hö
+                                                  he auch zunehmen. Der Grun...
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 27 strings out of 492970
- 446 string characters out of 3142029
- 59617 words of memory out of 3000000
- 3997 multiletter control sequences out of 15000+200000
+ 44 strings out of 492970
+ 724 string characters out of 3142029
+ 75617 words of memory out of 3000000
+ 4014 multiletter control sequences out of 15000+200000
  4116 words of font info for 16 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 19i,8n,22p,1279b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 19i,8n,22p,3031b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 !  ==> Fatal error occurred, no output PDF file produced!

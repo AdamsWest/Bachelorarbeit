@@ -34,7 +34,7 @@ In Abb. \ref{abb:propellerkennfeld} ist ein Kennfeld von einem APC 10x3 Propelle
 \section{Motor}
 \label{sec:motormodell}
 Das Motormodell weist eine über das ganze Spektrum der möglichen Betriebspunkte konsistente Verteilung des Motorwirkungsgrades auf (Vgl. Abb. \ref{abb:motormodell}). Der maximale Motorwirkungsgrad wird bei maximaler Spannung und bei maximalen Strom erreicht. Der errechnete Wert stimmt mit einer Genauigkeit von \ensuremath{\pm \SI{2}{\%}} mit den Angaben vom Hersteller überein \cite{axi}.
-
+\missingfigure{2D Darstellungen des Motormodells}
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Motormodell.pdf}
@@ -69,6 +69,7 @@ Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzelle
 
 
 \section{Steiggeschwindigkeit}
+\label{sec:vvar_vorgehen}
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,160)
@@ -118,6 +119,14 @@ Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzelle
 \section{Motorreglerwirkungsgrad}
 \label{sec:motorreglerwirkungsgrad}
 Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht. Dafür werden zwei Batteriegrößen untersucht, eine mit sechs Zellen und einmal mit acht Zellen. Die Masse und Kapazität bleiben jeweils gleich. 
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_normal_6.pdf}
+	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit sechs Zellen}
+	\label{abb:eta_pwm_6_normal}
+\end{figure}
+
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_6.pdf}
@@ -132,42 +141,14 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 	\label{abb:eta_pwm_6_1}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_8.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit acht Zellen}
-	\label{abb:eta_pwm_8_halb}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_1_8.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (keine Verluste) für eine Batterie mit acht Zellen}
-	\label{abb:eta_pwm_8_1}
-\end{figure}
-
-
 
 \section{Batteriemasse}
+Es zeigt sich, dass das Optimum des Batteriemassenanteils bei \SI{66.66}{\%} oder leicht darunter liegt. Eine Erhöhung führt zu schlechteren Flugleistungen und einem schnelleren Absinken der Restkapazität gegen Null. Deutlich ist zudem der Einfluss der Batteriemasse auf die Bahngeschwindigkeit gegeben. Mit der Masse sinkt die optimale Bahngeschwindigkeit. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Batteriemasse_genauer.pdf}
 	\caption{genauere Untersuchung der Batteriemassenabhängigkeit (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
 	\label{abb:batteriemasse_genauer}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Einfluss_eta_ges.pdf}
-	\caption{Leistungsparameter für einen Batteriemassenanteil von 1/3 (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
-	\label{abb:m_bat_eta_ges1/3}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Einfluss_eta_ges2.pdf}
-	\caption{Leistungsparameter für einen Batteriemassenanteil von 2/3 (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
-	\label{abb:m_bat_eta_ges2/3}
 \end{figure}
 
 

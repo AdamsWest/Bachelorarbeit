@@ -1,47 +1,47 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[30] biber-MSWIN64:313> INFO - === 
-[62] Biber.pm:371> INFO - Reading 'main.bcf'
-[152] Biber.pm:857> INFO - Found 36 citekeys in bib section 0
-[167] Biber.pm:3976> INFO - Processing section 0
-[181] Biber.pm:4136> INFO - Looking for bibtex format file 'Literatur.bib' for section 0
-[190] bibtex.pm:1500> INFO - LaTeX decoding ...
-[252] bibtex.pm:1316> INFO - Found BibTeX data source 'Literatur.bib'
-[258] Utils.pm:193> WARN - Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring
-[263] Utils.pm:193> WARN - Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring
-[264] Utils.pm:193> WARN - Entry 'amazon' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
-[264] Utils.pm:193> WARN - year field '23.08.2018' in entry 'polizei' is not an integer - this will probably not sort properly.
-[265] Utils.pm:193> WARN - Entry 'polizei' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
-[265] Utils.pm:193> WARN - Entry 'landwirtschaft' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
-[269] Utils.pm:193> WARN - year field '17.03.2006' in entry 'Ostler.2006' is not an integer - this will probably not sort properly.
-[270] Utils.pm:193> WARN - year field '07.05.2018' in entry 'Drivecalc' is not an integer - this will probably not sort properly.
-[270] Utils.pm:193> WARN - Entry 'Drivecalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
-[271] Utils.pm:193> WARN - year field '23.12.2018' in entry 'eCalc' is not an integer - this will probably not sort properly.
-[271] Utils.pm:193> WARN - Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
-[272] Utils.pm:193> WARN - year field '07.12.2018' in entry 'Flyeval' is not an integer - this will probably not sort properly.
-[272] Utils.pm:193> WARN - Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
-[298] Utils.pm:193> WARN - year field '20.08.2017 - 23.08.2017' in entry 'PCUP.2017' is not an integer - this will probably not sort properly.
-[324] Utils.pm:193> WARN - Entry 'apc' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
-[325] Utils.pm:193> WARN - Entry 'apc.theory' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
-[334] Utils.pm:193> WARN - Entry 'axi' (Literatur.bib): Invalid format '24.02.2019' of date field 'urldate' - ignoring
-[341] Utils.pm:193> WARN - Entry 'batteriezelle' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
-[349] Utils.pm:193> WARN - year field '05.06.2012' in entry 'elektromodellflug' is not an integer - this will probably not sort properly.
-[350] Utils.pm:193> WARN - Entry 'elektromodellflug' (Literatur.bib): Invalid format '20.02.2019' of date field 'urldate' - ignoring
-[357] Utils.pm:193> WARN - year field '01.12.2017' in entry 'cobramot' is not an integer - this will probably not sort properly.
-[358] Utils.pm:193> WARN - Entry 'cobramot' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
-[359] Utils.pm:193> WARN - Entry 'gemfan' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
-[360] Utils.pm:193> WARN - year field '26.02.2019' in entry 'arducopter.clav' is not an integer - this will probably not sort properly.
-[360] Utils.pm:193> WARN - Entry 'arducopter.clav' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
-[360] Utils.pm:193> WARN - year field '26.02.2019' in entry 'arducopter.mts' is not an integer - this will probably not sort properly.
-[361] Utils.pm:193> WARN - Entry 'arducopter.mts' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
-[362] Utils.pm:193> WARN - Entry 'betaflight' (Literatur.bib): Invalid format '25.02.2019' of date field 'urldate' - ignoring
-[381] Utils.pm:193> WARN - I didn't find a database entry for 'KAR-I.2017' (section 0)
-[381] Utils.pm:193> WARN - I didn't find a database entry for 'Ostler.2007' (section 0)
-[381] Utils.pm:193> WARN - I didn't find a database entry for 'PCUP' (section 0)
-[415] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[415] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[415] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[416] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[450] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[460] bbl.pm:720> INFO - Output to main.bbl
-[466] Biber.pm:110> INFO - WARNINGS: 31
+[42] biber-MSWIN64:313> INFO - === 
+[74] Biber.pm:371> INFO - Reading 'main.bcf'
+[178] Biber.pm:857> INFO - Found 37 citekeys in bib section 0
+[204] Biber.pm:3976> INFO - Processing section 0
+[220] Biber.pm:4136> INFO - Looking for bibtex format file 'Literatur.bib' for section 0
+[229] bibtex.pm:1500> INFO - LaTeX decoding ...
+[293] bibtex.pm:1316> INFO - Found BibTeX data source 'Literatur.bib'
+[298] Utils.pm:193> WARN - Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring
+[303] Utils.pm:193> WARN - Entry 'Anderson.2018' (Literatur.bib): Invalid format '04.01.2019' of date field 'urldate' - ignoring
+[304] Utils.pm:193> WARN - Entry 'amazon' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
+[305] Utils.pm:193> WARN - year field '23.08.2018' in entry 'polizei' is not an integer - this will probably not sort properly.
+[305] Utils.pm:193> WARN - Entry 'polizei' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
+[306] Utils.pm:193> WARN - Entry 'landwirtschaft' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
+[309] Utils.pm:193> WARN - year field '17.03.2006' in entry 'Ostler.2006' is not an integer - this will probably not sort properly.
+[340] Utils.pm:193> WARN - year field '04.07.2017 - 07.07.2017' in entry 'KARI.2017' is not an integer - this will probably not sort properly.
+[342] Utils.pm:193> WARN - year field '07.05.2018' in entry 'Drivecalc' is not an integer - this will probably not sort properly.
+[343] Utils.pm:193> WARN - Entry 'Drivecalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
+[344] Utils.pm:193> WARN - year field '23.12.2018' in entry 'eCalc' is not an integer - this will probably not sort properly.
+[344] Utils.pm:193> WARN - Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
+[345] Utils.pm:193> WARN - year field '07.12.2018' in entry 'Flyeval' is not an integer - this will probably not sort properly.
+[345] Utils.pm:193> WARN - Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring
+[352] Utils.pm:193> WARN - year field '20.08.2017 - 23.08.2017' in entry 'PCUP.2017' is not an integer - this will probably not sort properly.
+[388] Utils.pm:193> WARN - Entry 'apc' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
+[389] Utils.pm:193> WARN - Entry 'apc.theory' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
+[395] Utils.pm:193> WARN - Entry 'axi' (Literatur.bib): Invalid format '24.02.2019' of date field 'urldate' - ignoring
+[401] Utils.pm:193> WARN - Entry 'batteriezelle' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring
+[408] Utils.pm:193> WARN - year field '05.06.2012' in entry 'elektromodellflug' is not an integer - this will probably not sort properly.
+[409] Utils.pm:193> WARN - Entry 'elektromodellflug' (Literatur.bib): Invalid format '20.02.2019' of date field 'urldate' - ignoring
+[422] Utils.pm:193> WARN - year field '01.12.2017' in entry 'cobramot' is not an integer - this will probably not sort properly.
+[423] Utils.pm:193> WARN - Entry 'cobramot' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
+[424] Utils.pm:193> WARN - Entry 'gemfan' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
+[424] Utils.pm:193> WARN - year field '26.02.2019' in entry 'arducopter.clav' is not an integer - this will probably not sort properly.
+[425] Utils.pm:193> WARN - Entry 'arducopter.clav' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
+[426] Utils.pm:193> WARN - year field '26.02.2019' in entry 'arducopter.mts' is not an integer - this will probably not sort properly.
+[427] Utils.pm:193> WARN - Entry 'arducopter.mts' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring
+[429] Utils.pm:193> WARN - Entry 'betaflight' (Literatur.bib): Invalid format '25.02.2019' of date field 'urldate' - ignoring
+[460] Utils.pm:193> WARN - I didn't find a database entry for 'Ostler.2007' (section 0)
+[460] Utils.pm:193> WARN - I didn't find a database entry for 'PCUP' (section 0)
+[506] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[506] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[506] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[506] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[543] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[554] bbl.pm:720> INFO - Output to main.bbl
+[560] Biber.pm:110> INFO - WARNINGS: 31

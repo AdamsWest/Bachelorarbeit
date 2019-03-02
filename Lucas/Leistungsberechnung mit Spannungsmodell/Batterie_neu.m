@@ -60,8 +60,8 @@ B = 3/Qexp;
 % Berechnung weiterer Parameter für die Normzelle
 
 I_bat = PWM * I_mot / eta_PWM * n_Prop;                     % Batteriestrom
-I_bat = I_bat/Cnom;                                         % Normierung
 C_rate = I_bat / (C_bat/3600);                              % C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
+I_bat = I_bat/Cnom;                                         % Normierung
 R = 0.1077 / (Q*(0.1555*Q+0.9825*C_rate)^0.5485);           % Modell für den Innenwiderstand, Parameter nach geringster Fläche ausgewählt
 
 Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i R];        % Zwischenbelegung

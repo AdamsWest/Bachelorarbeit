@@ -1,6 +1,6 @@
 clc
 clear  
-% close all
+close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -29,7 +29,7 @@ figure_ges = figure;
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Motor
-motor_name = axi_motor_db{23,1}; % Motorname
+motor_name = axi_motor_db{21,1}; % Motorname
 [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
 K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % R_i = 0.123;            % Innenwiderstand in Ohm
@@ -39,7 +39,7 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '6x4';    % Propellerbezeichnung
+prop_name = '9x7';    % Propellerbezeichnung
 n_Prop = 1;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
@@ -131,7 +131,7 @@ if Abfrage_Flugsystem == 0
     
 %     Dateiname = ['Flächenflzg, m_Mot = ' num2str(m_Mot) ', f_p = ' num2str(f_p) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ', E = ' ...
 %     num2str(E) ', E_stern = ' num2str(E_stern) ', V_stern = ' num2str(V_stern*3.6) 'kmh.pdf'];
-    Dateiname = 'Flaechenflzg_mot_kv';
+    Dateiname = 'Flaechenflzg';
 
 else
     

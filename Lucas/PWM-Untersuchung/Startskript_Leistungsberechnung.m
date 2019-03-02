@@ -39,9 +39,9 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '10x3';    % Propellerbezeichnung
+prop_name = '11x3';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 10;                % Propellerdurchmesser in inch
+D = 11;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
@@ -52,7 +52,7 @@ E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-U_Bat_cell = 3.7;       % nominale Spannung pro Batteriezelle
+U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
@@ -115,6 +115,7 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', eta_PWM = normal, u_Wg = ' num2str(u_Wg) 'ms.pdf'];
 
 Dateiname = 'Untersuchung_eta_1_6';
+% Dateiname = 'Untersuchung_eta_normal_6';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 

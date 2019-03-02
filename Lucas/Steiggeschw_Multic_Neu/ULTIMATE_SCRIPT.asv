@@ -1,7 +1,49 @@
 %% Leistungsberechnung für Flugsysteme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+clc
+close all
+clear
 % *************************************************************************
 
+load('DATA_APC.mat');
+load('Elektromodellflug');
+load('axi_motor_db.mat');
+
+%% Festlegung des Dateinamen
+Dateiname = 'Groessenskalierung';
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% *************************************************************************
+Abfrage_mot = [10 21 28 31];
+Abfrage_prop = {'9x4','11x3','11x3','11x3'};
+Abfrage_n_prop = [1 2 4 6 8];
+Abfrage_c_W = [0.1 0.5 1 1.5 2];
+Abfrage_n_bat = [2 4 5 6 8];
+
+% figures definieren
+figure_ges = figure;
+
+% Diskretisierung der Steiggeschwindigkeit
+V_Kg_min = 1;			% kleinster Bahnneigungswinkel
+V_Kg_Delta = 1;		% Schrittweite Batteriemasse
+V_Kg_max = 40;			% größter Bahnneigungswinkel
+
+%% Flugparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+gamma_copter = 90 * pi/180;                 % Bahnanstellwinkel für den Multicopter    
+
+%% Umgebungsparameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+g = 9.81;                                   % Erdbeschleunigung in m/s^2
+
+H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
+Delta_H = 100;                              % Inkrementweite in m 
+H_max = 20000;                              % Maximalhöhe in m
+
+T_0 = 288.15;                               % Temperatur in K am Flugplatz
+p_0 = 101325;                               % Druck am Abflugplatz in Pa
+rho_0 = 1.225;                              % Dichte am Startort in kg/m^3
+kappa = 1.4;                                % Adiabatenexponent
+
+u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 %% Initialisierungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -25,25 +67,6 @@ DATA(38,:) = [];       % id_bat = 38
 [Q,Qnom,Qexp,Vfull,Vexp,Vnom,i] = Normcell(DATA);             % Normzelle generieren
 Batterie_data = [Q Qnom Qexp Vfull Vexp Vnom i 0];            % Zwischenbelegung
 
-
-%% Propeller
-
-%Entnahme des Durchmessers und des Pitches aus dem Propellernahmen
-D = str2double(prop_name(1:strfind(prop_name,'x')-1));      % Durchmesser extrahieren
-P_75 = prop_name(strfind(prop_name,'x')+1:end);             % Pitch extrahieren
-while isnan(str2double(P_75)) == 1
-    P_75(end) = [];
-end
-P_75 = str2double(P_75);                    % Pitch festlegen
-R = D * 0.0254 / 2;                         % Propellerradius in Meter
-F = pi * R^2;                               % Fläche eines Propellers in Quadratmeter
-Theta_75 = atan( 4*P_75 / (3*pi * D) );     % geometrischer Anstellwinkel des Propellers bei 75% des Radius
-
-
-
-
-
-
 %% Umgebungsparameter
 
 T_11 = T_0 - 0.0065 *(11000-H_0);                   % T in 11000m Höhe
@@ -57,9 +80,10 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
-lengthj = length(Abfrage_m_Bat);
+% lengthj = length(Abfrage_mot);
 % lengthj = length(Abfrage_c_W);
-% lengthj = length(Abfrage_N_Bat);
+lengthj = length(Abfrage_n_prop);
+% lengthj = length(Abfrage_n_bat);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
 
 
@@ -81,19 +105,85 @@ l9 = zeros(lengthj,1);
 
 % j = 1;
 % for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
-for j = 1:length(Abfrage_m_Bat)
-
-    m_Bat = Abfrage_m_Bat(j)*(m_copter+m_Mot*n_Prop);
-%     m_Bat = m_Bat_variabel * m_ges;
-%     c_W_copter_oben = Abfrage_c_W(j);
-    N_Bat_cell = Abfrage_N_Bat(j);
-    U_Bat_nom = N_Bat_cell * U_Bat_cell;%Batterie_data(4);        % nominale Batteriespannung
-    U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung
+for j = 1:length(Abfrage_n_prop)
     
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    % Motor
+    motor_name = axi_motor_db{Abfrage_mot(2),1}; % Motorname
+    [K_V, I_0, R_i, m_Mot, S_max, I_max] = Motordata('axi_motor_db',motor_name);
+    K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
+    % R_i = 0.123;            % Innenwiderstand in Ohm
+    % K_V = 1400*2*pi/60;     % K_V Wert in 1/(V*s)
+    % I_0 = 0.56;             % Leerlaufstrom in Ampere
+    % I_max = 30;             % Max Continuous Current
+    % m_Mot = 0.0365;         % Motorgewicht in kg
+    
+    % Propeller
+    prop_name = Abfrage_prop{2};    % Propellerbezeichnung
+    n_Prop = Abfrage_n_prop(j);             % Anzahl der Propeller
+    c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
+    a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
+    alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
+    
+    %Entnahme des Durchmessers und des Pitches aus dem Propellernahmen
+    [RPM_map, V_map, T_map, P_map, TAU_map] = Propeller_map(DATA_APC,prop_name);    % Aufbau des Kennfeldes
+    D = str2double(prop_name(1:strfind(prop_name,'x')-1));      % Durchmesser extrahieren
+    P_75 = prop_name(strfind(prop_name,'x')+1:end);             % Pitch extrahieren
+    while isnan(str2double(P_75)) == 1
+        P_75(end) = [];
+    end
+    P_75 = str2double(P_75);                    % Pitch festlegen
+    R = D * 0.0254 / 2;                         % Propellerradius in Meter
+    F = pi * R^2;                               % Fläche eines Propellers in Quadratmeter
+    Theta_75 = atan( 4*P_75 / (3*pi * D) );     % geometrischer Anstellwinkel des Propellers bei 75% des Radius
 
+    % Skalierungsfaktor
+    m_ges = (n_Prop * m_Mot)/(4*0.0365/1.06);     % Gesamtmasse
+    m_Bat = m_ges * (0.56/1.06);              % Batteriemasse
+    m_copter = m_ges * (0.354/1.06);           % Leermasse
+    
+    % Batterie
+    E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
+    N_Bat_cell = Abfrage_n_bat(4);         % Anzahl der Batteriezellen in Reihe
+    N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
+    C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
+    U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
+    U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
+    P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)
+    C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde
+    % m_Bat = 0.56;           % Batteriemasse in kg
+    
+    % Batteriemassendiskreitisierung
+    m_Bat_min = 0.49;
+    m_Bat_Delta = 0.01;
+    m_Bat_max = 0.55;
+    Abfrage_m_Bat = [0.25 0.5 0.75 1 1.5 2];
+    
+    % Missionsparameter
+    m_nutz = 0.0;          % Nutzlast in kg
+    
+    
+    %% Parameter Multicopter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    % Gesamtsystem
+    % m_copter = 0.354;                       % Multicopter Leermasse in kg
+    % A_copter = 0.15*0.05 + 0.12*0.02*n_Prop;     % obere Stirnflaeche des Multicopter in m^2
+    A_copter = 0.15*0.05 + (D/2*0.0254)*1.2*0.02* n_Prop;     % obere Stirnflaeche des Multicopter in m^2
+    A_copter_seitlich = 1.5 * A_copter;     % seitliche Stirnflaeche des Multicopter in m^2
+    c_W_copter_oben = Abfrage_c_W(3);                    % Widerstandsbeiwert des Multicopters
+    c_W_copter_seitlich = 1 * A_copter_seitlich / A_copter;         % seitlicher Widerstandsbeiwert  des Multicopters
+    c_A_copter_max = 0.3;                   % maximaler Auftriebsbeiwert des Multicopters (bei +/-45° Anstellwinkel)
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    U_Bat_nom = N_Bat_cell * U_Bat_cell;        % nominale Batteriespannung
+    U_Bat_min = N_Bat_cell * U_Bat_cell_min;    % minimale Batteriespannung   
     C_Bat = E_Dichte * m_Bat / U_Bat_nom;                               % Kapazitaet der Batterie in As
     Cnom = C_Bat/1000;                                            % Nominelle Kapazität
-    [RPM_map, V_map, T_map, P_map, TAU_map] = Propeller_map(DATA_APC,prop_name);    % Aufbau des Kennfeldes
     
     % Umgebung
     H = zeros(lengthi,1);
@@ -218,13 +308,13 @@ for j = 1:length(Abfrage_m_Bat)
         Thrust_inter = zeros(lengthvkg, 1);
         eta_ges_inter = zeros(lengthvkg, 1);
         
-        z = 1;    
+        z = 1;
         for V_Kg_variabel = V_Kg_min:V_Kg_Delta:V_Kg_max	    % Variation des Bahnneigungswinkel für das Flächenflugzeug
             
             V_Kg_inter(z) = V_Kg_variabel;
             
             % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters           
+            m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
             t_Flug = Delta_H / V_Kg_inter(z);                                            % Flugzeit
             
             % Aerodynamik
@@ -323,8 +413,8 @@ for j = 1:length(Abfrage_m_Bat)
                     eta_ges_inter(z) = NaN;
                     V_Kg_inter(z) = NaN;
                 end
-            end           
-                        
+            end
+            
             Bestimmung_V_Kg(z) = Delta_C_Bat_inter(z) * U_Bat_inter(z);        % Berechnung der aufgebrachten Energiemenge
             
             z = z+1;			% Erhöhung der Zählervariablen für die gamma-Schleife
@@ -338,7 +428,7 @@ for j = 1:length(Abfrage_m_Bat)
             % Kriterium für optimalen Steigwinkel
             y = 1;
             while y < length(Bestimmung_V_Kg)                           % Suche und finde optimalen Steiggeschwindigkeit
-                A = Bestimmung_V_Kg;                                    
+                A = Bestimmung_V_Kg;
                 A = sort(A);                                            % Belegung A mit dem sortierten Werten
                 ind_opt = find(Bestimmung_V_Kg == A(y));                % Index mit optimalen Flugzustand
                 
@@ -420,17 +510,17 @@ for j = 1:length(Abfrage_m_Bat)
     % Darstellung der Ergenisse in Diagrammen
     figure(figure_ges)
     
-%     subplot(521), l1(j) = plot(H,C_Rest_V*100,'LineWidth',2); l1_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(522), l2(j) = plot(H,Omega/(2*pi)*60,'LineWidth',2); l2_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(523), l3(j) = plot(H,I_mot,'LineWidth',2); l3_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(524), l4(j) = plot(H,U_mot,'LineWidth',2); l4_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(525), l5(j) = plot(H,I_Bat,'LineWidth',2); l5_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     H2 = [0;H];
-%     subplot(526), l6(j) = plot(H2,U_Bat,'LineWidth',2); l6_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(527), l7(j) = plot(H,PWM*100,'LineWidth',2); l7_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',2); l8_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-%     subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
-   
+    %     subplot(521), l1(j) = plot(H,C_Rest_V*100,'LineWidth',2); l1_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(522), l2(j) = plot(H,Omega/(2*pi)*60,'LineWidth',2); l2_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(523), l3(j) = plot(H,I_mot,'LineWidth',2); l3_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(524), l4(j) = plot(H,U_mot,'LineWidth',2); l4_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(525), l5(j) = plot(H,I_Bat,'LineWidth',2); l5_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     H2 = [0;H];
+    %     subplot(526), l6(j) = plot(H2,U_Bat,'LineWidth',2); l6_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(527), l7(j) = plot(H,PWM*100,'LineWidth',2); l7_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(528), l8(j) = plot(H,eta_ges*100,'LineWidth',2); l8_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    %     subplot(529), l9(j) = plot(H,V_Kg,'LineWidth',2); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat) ' kg']; grid on, hold on
+    
     subplot(521), l1(j) = stairs(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
     subplot(522), l2(j) = stairs(H,Omega/(2*pi)*60,'LineWidth',1); grid on, hold on
     subplot(523), l3(j) = stairs(H,I_mot,'LineWidth',1); grid on, hold on
@@ -440,15 +530,18 @@ for j = 1:length(Abfrage_m_Bat)
     subplot(526), l6(j) = stairs(H2,U_Bat,'LineWidth',1); grid on, hold on
     subplot(527), l7(j) = stairs(H,PWM*100,'LineWidth',1); grid on, hold on
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
-    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat/m*100) ' %, N_{Bat,cell} = ' num2str(Abfrage_N_Bat(j))]; grid on, hold on
-
-
-
-
-
-    j = j + 1;
+    subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); 
+    l9_Info{j} = []; grid on, hold on
+    
+    
+%     'm_{Mot}= ' num2str(m_Mot) ', K_V= ' num2str(K_V*60/(2*pi)) ', Prop= ' prop_name ', n_{Bat,cell}= ' num2str(N_Bat_cell)
+%   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]  
+    
+    
+    
+%     j = j + 1;
     %% Spielereien
-    disp([num2str((j-1)*100/lengthj) ' %']); %(Abfrage_m_Bat)) ' %']);
+    disp([num2str((j)*100/lengthj) ' %']); %(Abfrage_m_Bat)) ' %']);
 end
 
 
@@ -460,25 +553,29 @@ end
 figure(figure_ges)
 
 subplot(521), title('Restladung'), xlabel('Höhe [m]'),
-    ylabel('C_{Bat,Rest} [%]'),% legend([l1], l1_Info,'Location','northeastoutside')
+ylabel('C_{Bat,Rest} [%]'),% legend([l1], l1_Info,'Location','northeastoutside')
 subplot(522), title('Drehzahl'), xlabel('Höhe [m]'),
-    ylabel('\Omega [RPM]'), %legend([l2], l2_Info)
+ylabel('\Omega [RPM]'), %legend([l2], l2_Info)
 subplot(523), title('Motorstrom'), xlabel('Höhe [m]'),
-    ylabel('I_{Mot} [A]'),% legend([l3], l3_Info)
+ylabel('I_{Mot} [A]'),% legend([l3], l3_Info)
 subplot(524), title('Motorspannung'), xlabel('Höhe [m]'),
-    ylabel('U_{mot} [V]'),% legend([l4], l4_Info)
+ylabel('U_{mot} [V]'),% legend([l4], l4_Info)
 subplot(525), title('Batteriestrom'), xlabel('Höhe [m]'),
-    ylabel('I_{Bat} [A]'), %legend([l5], l5_Info)
+ylabel('I_{Bat} [A]'), %legend([l5], l5_Info)
 H2 = [0;H];
 subplot(526), title('Batteriespannung'), xlabel('Höhe [m]'),
-    ylabel('U_{Bat} [A]'), %legend([l6], l6_Info)
+ylabel('U_{Bat} [A]'), %legend([l6], l6_Info)
 subplot(527), title('Pulsweitenmodulation'), xlabel('Höhe [m]'),
-    ylabel('PWM [%]'),% legend([l7], l7_Info)
+ylabel('PWM [%]'),% legend([l7], l7_Info)
 subplot(528), title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),
-    ylabel('\eta_{ges} [%]'), %legend([l8], l8_Info)
+ylabel('\eta_{ges} [%]'), %legend([l8], l8_Info)
 subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
-    ylabel('V_{Kg} [m/s]'), 
-lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Anteil m_{Bat} an m_{ges}')
+ylabel('V_{Kg} [m/s]'),
+lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Größenskalierung')  
+% 
+% newPosition = [10 20 0.2 0.2];
+% newUnits = 'centimeters';
+% set(hL,'Position', newPosition,'Units', newUnits);
 
 % Anpassung und Abspeichern der Diagramme
 PaperSizeX = 21;
