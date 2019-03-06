@@ -9,7 +9,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Die Flugleistungsgr\IeC {\"o}\IeC {\ss }en im Programm des Quadrocopterfluges in Russland aufgetragen \IeC {\"u}ber der H\IeC {\"o}he\relax }}{27}{figure.caption.27}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Flugleistungen des Quadrocopter aus \cite {Anderson.2018} mit variabler Steiggeschwindigkeit\relax }}{32}{figure.caption.28}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Flugleistungen des Quadrocopter aus \cite {Anderson.2018} mit variabler Bahngeschwindigkeit\relax }}{32}{figure.caption.28}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Verlauf der Leistungsparameter \IeC {\"u}ber der H\IeC {\"o}he f\IeC {\"u}r die Fl\IeC {\"a}chenflugzeug-Referenzkonfiguration (Tab. \ref {tab:referenzkonfiguration})\relax }}{34}{figure.caption.29}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Einfluss der Motor-Propeller-Kombination auf die Flugleistungen der Fl\IeC {\"a}chenflugzeug-Referenzkonfiguration (Tab. \ref {tab:referenzkonfiguration})\relax }}{38}{figure.caption.30}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Einfluss der Propelleranzahl auf die Flugleistungen der Fl\IeC {\"a}chenflugzeug-Referenzkonfiguration (Tab. \ref {tab:referenzkonfiguration})\relax }}{41}{figure.caption.31}
@@ -29,19 +29,19 @@
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Einfluss der AEROMET\_UAV-Randbedingungen auf die bestm\IeC {\"o}gliche Konfiguration (Tab. \ref {tab:optimale_konfiguration})\relax }}{76}{figure.caption.44}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces beispielhaftes Propellerkennfeld f\IeC {\"u}r einen APC 10x3 Propeller\relax }}{84}{figure.caption.46}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Wirkungsgrad aufgetragen \IeC {\"u}ber verschiedenen Betriebspunkten des Motors\relax }}{85}{figure.caption.47}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Wirkungsgrad des Motorreglers aufgetragen \IeC {\"u}ber der PWM\relax }}{86}{figure.caption.48}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces links: Durchschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abh\IeC {\"a}ngigkeit von der C-Rate, rechts: Beispiel f\IeC {\"u}r die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle f\IeC {\"u}r eine Entladerate von \SI {20}{1/h} \relax }}{87}{figure.caption.49}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Programmstruktur zur Ermittlung der optimalen Steiggeschwindigkeit\relax }}{88}{figure.caption.50}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Leistungsparameter der Multicopter-Referenzkonfiguration (vgl. Tab. \ref {tab:referenzkonfiguration_mulitcopter}) f\IeC {\"u}r den Motorreglerwirkungsgrades f\IeC {\"u}r eine Batterie mit sechs Zellen\relax }}{90}{figure.caption.51}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Leistungsparameter der Multicopter-Referenzkonfiguration (vgl. Tab. \ref {tab:referenzkonfiguration_mulitcopter}) f\IeC {\"u}r eine Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) f\IeC {\"u}r eine Batterie mit sechs Zellen\relax }}{91}{figure.caption.52}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Leistungsparameter der Multicopter-Referenzkonfiguration (vgl. Tab. \ref {tab:referenzkonfiguration_mulitcopter}) f\IeC {\"u}r eine Verbesserung des Motorreglerwirkungsgrades (keine Verluste) f\IeC {\"u}r eine Batterie mit sechs Zellen\relax }}{92}{figure.caption.53}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces genauere Untersuchung der Batteriemassenabh\IeC {\"a}ngigkeit (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{94}{figure.caption.54}
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Programmstruktur f\IeC {\"u}r die Entnahme aller Propellerkennfelder mit dem zu untersuchenden Durchmesser\relax }}{95}{figure.caption.55}
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Programmstruktur f\IeC {\"u}r die Untersuchung des Nutzens eines Verstellpropellers\relax }}{96}{figure.caption.56}
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Einfluss des Verstellpropellers auf die maximal erreichbare H\IeC {\"o}he mit besonderem Hinblick auf die Einzelwirkungsgrade\relax }}{98}{figure.caption.57}
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Einfluss des Verstellpropellers auf die Flugleistungen der Referenzkonfiguration des Multicopters mit einem Gewicht von \SI {85}{g} pro Verstelleinrichtung\relax }}{100}{figure.caption.58}
+\contentsline {figure}{\numberline {A.14}{\ignorespaces Programmstruktur die Untersuchung des Nutzens eines Getriebes\relax }}{101}{figure.caption.59}
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Einfluss der Batteriemassenreduzierung durch die Nutzlast auf die Flugleistungen der optimalen L\IeC {\"o}sung (vgl. Tab. \ref {tab:optimale_konfiguration})\relax }}{103}{figure.caption.60}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces beispielhaftes Propellerkennfeld f\IeC {\"u}r einen APC 10x3 Propeller\relax }}{99}{figure.caption.57}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Wirkungsgrad aufgetragen \IeC {\"u}ber verschiedenen Betriebspunkten des Motors\relax }}{100}{figure.caption.58}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Wirkungsgrad des Motorreglers aufgetragen \IeC {\"u}ber der PWM\relax }}{101}{figure.caption.59}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces links: Durschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abh\IeC {\"a}ngigkeit von der C-Rate, rechts: Beispiel f\IeC {\"u}r die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle f\IeC {\"u}r eine Entladerate von \SI {20}{1/h} \relax }}{102}{figure.caption.60}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Programmstruktur zur Ermittlung der optimalen Steiggeschwindigkeit\relax }}{103}{figure.caption.61}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Leistungsparameter f\IeC {\"u}r einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) f\IeC {\"u}r eine Batterie mit sechs Zellen\relax }}{105}{figure.caption.62}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Leistungsparameter f\IeC {\"u}r einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) f\IeC {\"u}r eine Batterie mit sechs Zellen\relax }}{106}{figure.caption.63}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Leistungsparameter f\IeC {\"u}r einer Verbesserung des Motorreglerwirkungsgrades (keine Verluste) f\IeC {\"u}r eine Batterie mit sechs Zellen\relax }}{107}{figure.caption.64}
-\contentsline {figure}{\numberline {A.9}{\ignorespaces genauere Untersuchung der Batteriemassenabh\IeC {\"a}ngigkeit (\ensuremath {m_{Mot}=\SI {106}{g}}, \ensuremath {K_V=\SI {1390}{RPM/V}}, \ensuremath {n_{Prop}=4}, \ensuremath {Propeller=\SI {10x3}{}}, \ensuremath {n_{Bat,cell}=4}, \ensuremath {u_{Wg}=\SI {10}{m/s}})\relax }}{109}{figure.caption.65}
-\contentsline {figure}{\numberline {A.10}{\ignorespaces Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers\relax }}{110}{figure.caption.66}
-\contentsline {figure}{\numberline {A.11}{\ignorespaces Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers\relax }}{111}{figure.caption.67}
-\contentsline {figure}{\numberline {A.12}{\ignorespaces Einfluss des Verstellpropellers auf die maximal erreichbare H\IeC {\"o}he mit besonderem Hinblick auf die Einzelwirkungsgrade\relax }}{113}{figure.caption.68}
-\contentsline {figure}{\numberline {A.13}{\ignorespaces Einfluss des Verstellpropellers auf die Flugleistungen der Referenzkonfiguration des Multicopters mit einem Gewicht von \SI {85}{g} pro Verstelleinrichtung\relax }}{115}{figure.caption.69}
-\contentsline {figure}{\numberline {A.14}{\ignorespaces Programmstruktur die Untersuchung des Nutzens eines Getriebes\relax }}{116}{figure.caption.70}
-\contentsline {figure}{\numberline {A.15}{\ignorespaces Einfluss der Batteriemassenreduzierung durch die Nutzlast auf die Flugleistungen der optimalen L\IeC {\"o}sung (vgl. Tab. \ref {tab:optimale_konfiguration})\relax }}{118}{figure.caption.71}

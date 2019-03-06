@@ -16,14 +16,14 @@ Im Horizontalflug (\ensuremath{\gamma = 0}) kompensiert der Auftrieb lediglich d
 \begin{equation}
 	A = G \eqend{.}
 \end{equation}
-Für jegliche Art von Steigflug (\ensuremath{\gamma \neq 0}) ist dies nicht mehr der Fall. Unter der Voraussetzung einer gleichen Gewichtskraft \ensuremath{m\cdot g}, gleicher Flügelfläche \ensuremath{S} und einem konstanten Auftriebsbeiwerts \ensuremath{c_{A}} ergibt sich für das Verhältnis der Geschwindigkeiten \ensuremath{V/V^\star}
+Für jegliche Art von Steigflug (\ensuremath{\gamma \neq 0}) ist dies nicht mehr der Fall. Unter der Voraussetzung einer gleichen Gewichtskraft \ensuremath{m\cdot g}, gleicher Flügelfläche \ensuremath{S} und einem konstanten Auftriebsbeiwert \ensuremath{c_{A}} ergibt sich für das Verhältnis der Geschwindigkeiten \ensuremath{V/V^\star}
 \begin{equation}
 	\frac{V}{V^\star} = \frac{\sqrt{\frac{2\cdot m \cdot g\cdot \cos\gamma}{\rho\cdot S \cdot c_{A}}}}{\sqrt{\frac{2\cdot m\cdot g}{\rho^\star \cdot S \cdot c_{A}}}} = \sqrt{\cos\gamma\cdot\frac{\rho^\star}{\rho}} \eqend{.}
 \end{equation}\\
 
 \section{Propeller}
 \label{sec:propellerkennfeld}
-In Abb. \ref{abb:propellerkennfeld} ist ein Kennfeld von einem APC 10x3 Propeller dargestellt. 
+In Abb. \ref{abb:propellerkennfeld} ist beispielhaft das Kennfeld von einem APC 10x3 Propeller dargestellt. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Propellerkennfeld.pdf}
@@ -65,15 +65,15 @@ Mit dieser berechnet sich die Kapazität wie folgt:
 
 \section{Vergleich von normierter zur originalen Batteriezelle}
 \label{sec:norm_vs_orig}
-Für den Vergleich der Norm- mit der Originalzelle wird das Integral unterhalb der beiden Entladekurven für eine bestimmte Entladerate gebildet. Anschließend werden beide Flächen zu einander in Beziehung gesetzt 
+Für den Vergleich der Norm- mit der Originalzelle wird das Integral unterhalb der beiden Entladekurven für eine bestimmte Entladerate gebildet. Anschließend werden beide Flächen zueinander in Beziehung gesetzt 
 \begin{equation}
 	\text{Toleranz} = \frac{\text{F}_{Orig.}-\text{F}_{Norm}}{\text{F}_{Norm}} \eqend{.}
 \end{equation} 
-Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzellenberechnung nicht berücksichtigt, deren individuelle Abweichung eine große Diskrepanz zur Standardabweichung aufweist. Der Vergleich zeigt, dass es starke Abweichungen der Batterie gibt. Die durchschnittliche Abweichung liegt für Entladeraten bis \SI{45}{1/h} deutlich über Null und steigt mit der Entladerate von \SI{8}{\%} auf \SI{17}{\%} bei \SI{45}{1/h}. Die Spannung der Normzelle ist somit im Durchschnitt kleiner als die der originalen Batteriezelle (Vgl. Abb. \ref{abb:batterie_abweichungen}). Ab der Entladerate von \SI{50}{1/h} fällt die Abweichung drastisch auf \SI{-18}{\%} ab. 
+Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzellenberechnung nicht berücksichtigt, deren individuelle Abweichung eine große Diskrepanz zur Standardabweichung aufweist. Der Vergleich zeigt, dass es starke Abweichungen bei den Batterien gibt. Die durchschnittliche Abweichung liegt für Entladeraten bis \SI{45}{1/h} deutlich über Null und steigt mit der Entladerate von \SI{8}{\%} auf \SI{17}{\%} bei \SI{45}{1/h}. Die Spannung der Normzelle ist somit im Durchschnitt kleiner als die der originalen Batteriezelle (Vgl. Abb. \ref{abb:batterie_abweichungen}). Ab der Entladerate von \SI{50}{1/h} fällt die Abweichung drastisch auf \SI{-18}{\%} ab. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Abweichungen.pdf}
-	\caption{links: Durschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abhängigkeit von der C-Rate,\\ rechts: Beispiel für die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle für eine Entladerate von \SI{20}{1/h}
+	\caption{links: Durchschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abhängigkeit von der C-Rate,\\ rechts: Beispiel für die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle für eine Entladerate von \SI{20}{1/h}
 	 }
 	\label{abb:batterie_abweichungen}
 \end{figure}
@@ -81,6 +81,7 @@ Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzelle
 
 \section{Steiggeschwindigkeit}
 \label{sec:vvar_vorgehen}
+
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,160)
@@ -129,26 +130,27 @@ Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzelle
 
 \section{Motorreglerwirkungsgrad}
 \label{sec:motorreglerwirkungsgrad}
+
 Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht. Dafür werden zwei Batteriegrößen untersucht, eine mit sechs Zellen und einmal mit acht Zellen. Die Masse und Kapazität bleiben jeweils gleich. 
 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_normal_6.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit sechs Zellen}
+	\caption{Leistungsparameter der Multicopter-Referenzkonfiguration (vgl. Tab. \ref{tab:referenzkonfiguration_mulitcopter}) für den Motorreglerwirkungsgrades für eine Batterie mit sechs Zellen}
 	\label{abb:eta_pwm_6_normal}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_6.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit sechs Zellen}
+	\caption{Leistungsparameter der Multicopter-Referenzkonfiguration (vgl. Tab. \ref{tab:referenzkonfiguration_mulitcopter}) für eine Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit sechs Zellen}
 	\label{abb:eta_pwm_6_halb}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_1_6.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (keine Verluste) für eine Batterie mit sechs Zellen}
+	\caption{Leistungsparameter der Multicopter-Referenzkonfiguration (vgl. Tab. \ref{tab:referenzkonfiguration_mulitcopter}) für eine Verbesserung des Motorreglerwirkungsgrades (keine Verluste) für eine Batterie mit sechs Zellen}
 	\label{abb:eta_pwm_6_1}
 \end{figure}
 
@@ -163,11 +165,9 @@ Es zeigt sich, dass das Optimum des Batteriemassenanteils bei \SI{66.66}{\%} ode
 	\label{abb:batteriemasse_genauer}
 \end{figure}
 
-
-
-
 \section{Verstellpropeller}
 \label{sec:vprop_vorgehen}
+In Abb. \ref{abb:vpp_vorberechnung} ist die Entnahme aller Kennfelder mit dem vorgegeben Durchmesser dargelegt. Im Anschluss folgt die Flugleistungsberechnung für einen Multicopter mit Verstellpropeller in Abb. \ref{abb:vpp_flugleistungsberechnung}.
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,70)
@@ -187,7 +187,7 @@ Es zeigt sich, dass das Optimum des Batteriemassenanteils bei \SI{66.66}{\%} ode
 	\assign[2]{Erhöhe Propellerzähler}
 \whileend
 \end{struktogramm}
-\caption{Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers}
+\caption{Programmstruktur für die Entnahme aller Propellerkennfelder mit dem zu untersuchenden Durchmesser}
 \label{abb:vpp_vorberechnung}
 \end{figure}
 \end{center}
@@ -240,7 +240,7 @@ Es zeigt sich, dass das Optimum des Batteriemassenanteils bei \SI{66.66}{\%} ode
 \assign[2]{Ergebnisse der Leistungsparameter in Diagrammen speichern}
 \assign[2]{Speichern der Diagramme in .pdf-Datei}
 \end{struktogramm}
-\caption{Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers}
+\caption{Programmstruktur für die Untersuchung des Nutzens eines Verstellpropellers}
 \label{abb:vpp_flugleistungsberechnung}
 \end{figure}
 \end{center}
@@ -254,7 +254,7 @@ Der Verlauf des Gesamtwirkungsgrades folgt eindeutig dem Verlauf des Propellerwi
 	\label{abb:verstellprop_eta}
 \end{figure}
 
-In Abb. \ref{abb:verstellprop_real} ist der Gewichtseinfluss auf die Flugleistungen eines Multicopters mit Verstellpropeller dargestellt. Das Gewicht verringert die Flugleistungen deutlich. Außerdem kann für die Referenzkonfiguration festgehalten werden, dass der Vorteil des Verstellpropellers bei einem Gewicht des Verstellmechanismus von \SI{85}{g} pro Propeller kompensiert wird. Insgesamt ergibt dies einen Anteil von ca. \SI{10}{\%} am Gesamtgewicht. Wird dieser Anteil überschritten, ist der Nutzen des Verstellpropeller nichtig. Alle Anteile darunter ergeben einen Nutzen. 
+In Abb. \ref{abb:verstellprop_real} ist der Gewichtseinfluss auf die Flugleistungen eines Multicopters mit Verstellpropeller dargestellt. Das Gewicht verringert die Flugleistungen deutlich. Außerdem kann für die Referenzkonfiguration festgehalten werden, dass der Vorteil des Verstellpropellers bei einem Gewicht des Verstellmechanismus von \SI{85}{g} pro Propeller kompensiert wird. Insgesamt ergibt dies einen Anteil von ca. \SI{10}{\%} am Gesamtgewicht. Wird dieser Anteil überschritten, ist der Nutzen des Verstellpropeller nichtig. Alle Gewichtsanteile darunter ergeben einen Nutzen. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Verstellprop_real.pdf}
@@ -322,7 +322,7 @@ In Abb. \ref{abb:verstellprop_real} ist der Gewichtseinfluss auf die Flugleistun
 
 \section{Einfluss der Nutzlast}
 \label{sec:einfluss_nutzlast}
-Auf eine Reduzierung der Batteriemasse durch die zusätzliche Nutzlast wird hier bewusst verzichtet. Der Vergleich von Abb. \ref{abb:aeromet_rb} mit Abb. \ref{abb:aeromet_rb_batterie_redu} zeigt auf, dass eine Reduzierung der Gesamtmasse im Sinne einer Schubsenkung wenig Einfluss auf die Flugleistungen hat. Dies bestätigt die Aussage aus Abschn. \ref{subsec:groesse}. Der Einfluss der Nutzlast mit konstanten \SI{250}{g} nimmt ab, je kleiner deren Anteil an der Gesamtmasse ist.  
+Auf eine Reduzierung der Batteriemasse durch die zusätzliche Nutzlast wird in Kap. \ref{subsec:aeromet_rb} bewusst verzichtet. Der Vergleich von Abb. \ref{abb:aeromet_rb} mit Abb. \ref{abb:aeromet_rb_batterie_redu} zeigt auf, dass eine Reduzierung der Gesamtmasse im Sinne einer Schubsenkung wenig Einfluss auf die Flugleistungen hat. Dies bestätigt die Aussage aus Abschn. \ref{subsec:groesse}. Der Einfluss der Nutzlast mit konstanten \SI{250}{g} nimmt ab, je kleiner deren Anteil an der Gesamtmasse ist.  
 
 \begin{figure}[H]
 \centering

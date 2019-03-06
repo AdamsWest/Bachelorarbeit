@@ -1,9 +1,8 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax
 \babel@toc {ngerman}{}
-\contentsline {chapter}{Todo list}{IV}{Doc-Start}
-\contentsline {chapter}{Abbildungsverzeichnis}{X}{chapter*.5}
-\contentsline {chapter}{Tabellenverzeichnis}{XIII}{chapter*.6}
-\contentsline {chapter}{Nomenklatur}{XIV}{chapter*.6}
+\contentsline {chapter}{Abbildungsverzeichnis}{IX}{chapter*.5}
+\contentsline {chapter}{Tabellenverzeichnis}{XII}{chapter*.6}
+\contentsline {chapter}{Nomenklatur}{XIII}{chapter*.6}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Stand der Technik}{1}{section.1.2}
@@ -44,7 +43,7 @@
 \contentsline {section}{\numberline {3.2}Ergebnis der Flugleistungsberechnung}{26}{section.3.2}
 \contentsline {section}{\numberline {3.3}Diskussion}{28}{section.3.3}
 \contentsline {chapter}{\numberline {4}Vergleich eines Fl\IeC {\"a}chenflugzeugs mit dem Quadrocopter}{30}{chapter.4}
-\contentsline {section}{\numberline {4.1}Einfluss der Steiggeschwindigkeit auf den Quadrocopterflug}{31}{section.4.1}
+\contentsline {section}{\numberline {4.1}Einfluss der Bahngeschwindigkeit auf den Quadrocopterflug}{31}{section.4.1}
 \contentsline {section}{\numberline {4.2}Fl\IeC {\"a}chenflugzeug-Referenzkonfiguration}{33}{section.4.2}
 \contentsline {section}{\numberline {4.3}Einflussfaktoren auf das Fl\IeC {\"a}chenflugzeug}{36}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Propeller}{36}{subsection.4.3.1}
@@ -58,10 +57,10 @@
 \contentsline {chapter}{\numberline {5}Optimierung weiterer Parameter}{50}{chapter.5}
 \contentsline {section}{\numberline {5.1}Multicopter-Referenzkonfiguration}{50}{section.5.1}
 \contentsline {section}{\numberline {5.2}Einflussfaktoren auf die Multicopter-Referenzkonfiguration}{51}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Einfluss des Widerstands}{51}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Einfluss des Luftwiderstands}{51}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Einfluss der Batteriespannung}{53}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Einfluss des Motorreglerwirkungsgrades}{56}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Einfluss des maximalen Motorstroms}{56}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.3}Einfluss des Motorreglerwirkungsgrades}{54}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Einfluss des maximalen Motorstroms}{54}{subsection.5.2.4}
 \contentsline {subsection}{\numberline {5.2.5}Massenanteile der Komponenten}{56}{subsection.5.2.5}
 \contentsline {subsection}{\numberline {5.2.6}Einfluss der Gr\IeC {\"o}\IeC {\ss }e}{59}{subsection.5.2.6}
 \contentsline {subsection}{\numberline {5.2.7}Anzahl der Propeller}{61}{subsection.5.2.7}
@@ -71,23 +70,23 @@
 \contentsline {subsection}{\numberline {5.3.1}Vor\IeC {\"u}berlegungen}{71}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Ideale Randbedingungen}{72}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}AEROMET\_UAV Randbedingungen}{75}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Ergebnisse}{77}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.4}Zusammenfassung}{77}{subsection.5.3.4}
 \contentsline {chapter}{\numberline {6}Zusammenfassung und Ausblick}{78}{chapter.6}
 \contentsline {section}{\numberline {6.1}Zusammenfassung}{78}{section.6.1}
 \contentsline {section}{\numberline {6.2}Ausblick}{79}{section.6.2}
-\contentsline {chapter}{\numberline {7}Projektmanagement}{80}{chapter.7}
-\contentsline {section}{\numberline {7.1}Projektstrukturplan}{81}{section.7.1}
-\contentsline {section}{\numberline {7.2}Zeitplan}{83}{section.7.2}
-\contentsline {chapter}{\numberline {A}Anhang}{98}{appendix.A}
-\contentsline {section}{\numberline {A.1}Fl\IeC {\"a}chenflugzeug}{98}{section.A.1}
-\contentsline {section}{\numberline {A.2}Propeller}{98}{section.A.2}
-\contentsline {section}{\numberline {A.3}Motor}{99}{section.A.3}
-\contentsline {section}{\numberline {A.4}Motorregler}{100}{section.A.4}
-\contentsline {section}{\numberline {A.5}Batteriekapazit\IeC {\"a}t}{101}{section.A.5}
-\contentsline {section}{\numberline {A.6}Vergleich von normierter zur originalen Batteriezelle}{101}{section.A.6}
-\contentsline {section}{\numberline {A.7}Steiggeschwindigkeit}{103}{section.A.7}
-\contentsline {section}{\numberline {A.8}Motorreglerwirkungsgrad}{104}{section.A.8}
-\contentsline {section}{\numberline {A.9}Batteriemasse}{108}{section.A.9}
-\contentsline {section}{\numberline {A.10}Verstellpropeller}{110}{section.A.10}
-\contentsline {section}{\numberline {A.11}Getriebe}{116}{section.A.11}
-\contentsline {section}{\numberline {A.12}Einfluss der Nutzlast}{117}{section.A.12}
+\contentsline {chapter}{\numberline {A}Anhang}{83}{appendix.A}
+\contentsline {section}{\numberline {A.1}Fl\IeC {\"a}chenflugzeug}{83}{section.A.1}
+\contentsline {section}{\numberline {A.2}Propeller}{83}{section.A.2}
+\contentsline {section}{\numberline {A.3}Motor}{84}{section.A.3}
+\contentsline {section}{\numberline {A.4}Motorregler}{85}{section.A.4}
+\contentsline {section}{\numberline {A.5}Batteriekapazit\IeC {\"a}t}{86}{section.A.5}
+\contentsline {section}{\numberline {A.6}Vergleich von normierter zur originalen Batteriezelle}{86}{section.A.6}
+\contentsline {section}{\numberline {A.7}Steiggeschwindigkeit}{88}{section.A.7}
+\contentsline {section}{\numberline {A.8}Motorreglerwirkungsgrad}{89}{section.A.8}
+\contentsline {section}{\numberline {A.9}Batteriemasse}{93}{section.A.9}
+\contentsline {section}{\numberline {A.10}Verstellpropeller}{95}{section.A.10}
+\contentsline {section}{\numberline {A.11}Getriebe}{101}{section.A.11}
+\contentsline {section}{\numberline {A.12}Einfluss der Nutzlast}{102}{section.A.12}
+\contentsline {chapter}{\numberline {A}Projektmanagement}{104}{appendix.A}
+\contentsline {section}{\numberline {A.1}Projektstrukturplan}{105}{section.A.1}
+\contentsline {section}{\numberline {A.2}Zeitplan}{107}{section.A.2}
