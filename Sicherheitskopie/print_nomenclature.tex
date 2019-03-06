@@ -8,16 +8,16 @@
 %
 % Glossareintraege
 % ******************************************************************************
-\section*{Glossar}
-\paragraph{Single Input Single Output}
-Eingrößensystem
-\paragraph{Software Deployment}
-Das Software Deployment umfasst die gesamten
-Entwicklungsaktivitäten die den Einsatz der Software ermöglichen.
-\paragraph{\texttt{V}i \texttt{IM}proved}
-Einer der essenziell wichtigsten Texteditoren des Universums.
-\texttt{V}i \texttt{IM}prove dist eine Weiterentwicklung des Texteditors
-vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
+%\section*{Glossar}
+%\paragraph{Single Input Single Output}
+%Eingrößensystem
+%\paragraph{Software Deployment}
+%Das Software Deployment umfasst die gesamten
+%Entwicklungsaktivitäten die den Einsatz der Software ermöglichen.
+%\paragraph{\texttt{V}i \texttt{IM}proved}
+%Einer der essenziell wichtigsten Texteditoren des Universums.
+%\texttt{V}i \texttt{IM}prove dist eine Weiterentwicklung des Texteditors
+%vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 % ******************************************************************************
 %
 % Abkuerzungen
@@ -28,7 +28,8 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 	DFS & Deutsche Flugsicherung \\
 	DWD & Deutscher Wetterdienst \\
 	ESC & Electronic Speed Control (Motorregler)\\
-	PWM & Pulsweitenmodulation\\
+	PWM & Pulsweitenmodulation \\
+	QNH & Query: Nautical Height\\
 	TOC & Top Of Climb\\
 	UAV & Unmanned Aerial Vehicle\\
 	VTOL & Vertical Take Off and Landing
@@ -52,7 +53,7 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 	\ensuremath{\dot{H}} & \si{m/s}	& Höhenänderung (Steiggeschwindigkeit)\\
 	\ensuremath{i}	& -				& Übersetzungsverhältnis \\
 	\ensuremath{i}	& - 			& Zählervariable \\
-	\ensuremath{I}	& \si{A}		& elektr. Strom \\
+	\ensuremath{I}	& \si{A}		& elektr. Stromstärke \\
 	\ensuremath{K}	& -				& Konstante \\
 	\ensuremath{m}	& \si{kg}		& Masse \\
 	\ensuremath{M}	& \si{N/m}		& Drehmoment \\
@@ -61,15 +62,15 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 	\ensuremath{p}	& \si{Pa}		& Druck \\
 	\ensuremath{P}	& \si{W}		& Leistung \\
 	\ensuremath{r}	& \si{m}		& Radius \\
-	\ensuremath{R}	& \si{J/(kg.K)}	& Gaskonstante der Luft \\
+	\ensuremath{R}	& \si{J/(kg.K)}	& spez. Gaskonstante der Luft \\
 	\ensuremath{R}	& \si{\ohm}		& elektr. Widerstand \\
 	\ensuremath{S}	& \si{N}		& Schubkraft \\
 	\ensuremath{T}	& \si{K}		& Temperatur\\
-	\ensuremath{u}	& \si{m/s}		& Windgeschwindigkeit in x-Richtung \\
+	\ensuremath{u}	& \si{m/s}		& Geschwindigkeit in x-Richtung \\
 	\ensuremath{U}	& \si{V}		& elektr. Spannung \\
 	\ensuremath{V}	& \si{m/s}		& Fluggeschwindigkeit \\
 	\ensuremath{\dot{V}} & \si{m/s^2} & Ableitung der Geschwindigkeit (Beschleunigung) \\
-	\ensuremath{w}	& \si{m/s}		& Windgeschwindigkeit in z-Richtung \\
+	\ensuremath{w}	& \si{m/s}		& Geschwindigkeit in z-Richtung \\
 	\ensuremath{W}	& \si{N}		& aerodyn. Widerstandskraft \\
 	\ensuremath{x,X}& -				& in Längsrichtung des Fluggeräts \\
 	\ensuremath{y,Y}& -				& in Seitenrichtung des Fluggeräts \\
@@ -98,14 +99,14 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 	\textbf{Notation} & \textbf{Einheit} & \textbf{Beschreibung}\\
 	\ensuremath{\alpha}	& \si{^\circ}		& Anstellwinkel \\
 	\ensuremath{\gamma}	& \si{^\circ}		& Bahnneigungswinkel (Steigwinkel)\\
-	\ensuremath{\dot{\gamma}}& \si{^\circ /s}& Ableitung des Bahnneigungswinkel (Änderungsrate) \\
+	\ensuremath{\dot{\gamma}}& \si{^\circ /s}& Ableitung des Bahnneigungswinkels (Änderungsrate) \\
 	\ensuremath{\eta}	& \si{\%}			& Wirkungsgrad \\
 	\ensuremath{\Theta} & \si{^\circ}		& Neigungswinkel \\
 	\ensuremath{\kappa}	& -					& Adiabatenexponent \\
 	\ensuremath{\rho}	& \si{kg/m^3}		& Luftdichte \\
 	\ensuremath{\sigma}	& \si{^\circ}		& Schubeinstellwinkel\\
 	\ensuremath{\omega}	& \si{J/kg}			& Energiedichte \\
-	\ensuremath{\Omega}	& \si{1/s} o. \si{RPM}	& Drehzahl
+	\ensuremath{\Omega}	& \si{1/s}			& Drehzahl
 	
 		
 	
@@ -124,11 +125,46 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 \section*{Indizes}
 \begin{longtable}{lp{13cm}}
 	\textbf{Notation} & \textbf{Beschreibung}\\
-	$i, j, k, l$ & Bezeichnen mit dem Index eine Komponente eines Tensors,
-		während bei doppelten Index eine Summation der Komponenten nach
-		der textsc{Einstein}schen Summenkonvention erfolgt.\\
-    $\alpha , \beta , \gamma$ & Bezeichnen mit dem Index eine Komponente eines
-    	Tensors, auch wenn ein doppelter Index vorliegt.
+	\ensuremath{0}			& Startwert \\
+	\ensuremath{11}			& in \SI{11}{km} Höhe MSL \\
+	\ensuremath{\infty}		& im Unendlichen \\
+	\ensuremath{a}			& aerodynamisches Achsensystem\\
+	\ensuremath{ab}			& abgehend \\
+	\ensuremath{an}			& anliegend \\
+	\ensuremath{A}			& aerodynamisch \\
+	\ensuremath{A}			& Auftrieb \\
+	\ensuremath{Bat}		& Batterie \\
+	\ensuremath{cell}		& Zelle \\
+	\ensuremath{copter}		& Multicopter \\
+	\ensuremath{f}			& fluggerätefestes Achsensytem \\
+	\ensuremath{Flug}		& Flug \\
+	\ensuremath{Flugzeug}	& Flächenflugzeug \\
+	\ensuremath{g}			& geodätisches Achsensystem \\
+	\ensuremath{ges}		& gesamt \\
+	\ensuremath{Getriebe}	& Getriebe \\
+	\ensuremath{i}			& innen \\
+	\ensuremath{i}			& induziert \\
+	\ensuremath{K}			& flugbahnfestes Achsensystem \\
+	\ensuremath{max/min}	& maximal / minimal \\
+	\ensuremath{M}			& modifiziert \\
+	\ensuremath{Mot}		& Motor \\
+	\ensuremath{nom}		& nominal \\
+	\ensuremath{normiert}	& normiert \\
+	\ensuremath{Prop}		& Propeller \\
+	\ensuremath{PWM}		& Pulsweitenmodulation \\
+	\ensuremath{Rest}		& Rest \\
+	\ensuremath{Strahl}		& bezogen auf den Strahl des Propellers \\
+	\ensuremath{tip}		& auf die Blattspitze bezogen \\
+	\ensuremath{V}			& Volt \\
+	\ensuremath{W}			& Widerstand \\
+	\ensuremath{W}			& auf den Wind bezogen \\
+	\ensuremath{Welle}		& bezogen auf die Welle des Propellers 	
+	
+%	$i, j, k, l$ & Bezeichnen mit dem Index eine Komponente eines Tensors,
+%		während bei doppelten Index eine Summation der Komponenten nach
+%		der textsc{Einstein}schen Summenkonvention erfolgt.\\
+ %   $\alpha , \beta , \gamma$ & Bezeichnen mit dem Index eine Komponente eines
+%    	Tensors, auch wenn ein doppelter Index vorliegt.
 \end{longtable}
 % ******************************************************************************
 %
@@ -137,19 +173,24 @@ vi und funktioniert wie der vi-Editor im Textmodus auf jedem Terminal!
 \section*{Hochgestellte Indizes}
 \begin{longtable}{lp{13cm}}
 	\textbf{Notation} & \textbf{Beschreibung}\\
-	$(\Delta )$ & Beschreibt die jeweilige Größe im Hauptachsensystem\\
-	$(r)$ & Bezeichnet den schnellen Anteil der Druck-Scher-Korrelation
-	        (engl.: rapid $=r$)\\
-	$(s)$ & Bezeichnet den langsamen Anteil der Druck-Scher-Korrelation
-        (engl.: slow $=s$)\\
-	$\left(\widetilde{b}_{ij}\right)$ & Beschreibt Größen, die zu dem
-		gemittelten Anisotropietensor der
-		\textsc{Reynolds}-Spannungungen $\widetilde{\MM{b}}_{ij}$
-		bestimmt wurden.
+	\ensuremath{(A)}			& aerodynamisch \\
+	\ensuremath{(\star)}		& Auslegungszustand 
+	
+	
+	
+%	$(\Delta )$ & Beschreibt die jeweilige Größe im Hauptachsensystem\\
+%	$(r)$ & Bezeichnet den schnellen Anteil der Druck-Scher-Korrelation
+%	        (engl.: rapid $=r$)\\
+%	$(s)$ & Bezeichnet den langsamen Anteil der Druck-Scher-Korrelation
+ %       (engl.: slow $=s$)\\
+%	$\left(\widetilde{b}_{ij}\right)$ & Beschreibt Größen, die zu dem
+%		gemittelten Anisotropietensor der
+%		\textsc{Reynolds}-Spannungungen $\widetilde{\MM{b}}_{ij}$
+%		bestimmt wurden.
 \end{longtable}
 %
 % Korrektur des Tabellenzaehlers, da für die Darstellung der
 % Symbolverzeichnisses Tabellen verwendet werden, die jedoch nicht zu dem Inhalt
 % der Arbeit gehoeren.
-\addtocounter{table}{-5}
+\addtocounter{table}{-4}
 % ******************************************************************************

@@ -1,6 +1,6 @@
 \begin{appendix}
-\chapter{Anhang}
-\label{chap:anhang}
+\chapter{Anhang A}
+\label{chap:anhang_a}
 
 \section{Flächenflugzeug}
 \label{sec:herleitung_geschw_bez}
@@ -34,13 +34,24 @@ In Abb. \ref{abb:propellerkennfeld} ist ein Kennfeld von einem APC 10x3 Propelle
 \section{Motor}
 \label{sec:motormodell}
 Das Motormodell weist eine über das ganze Spektrum der möglichen Betriebspunkte konsistente Verteilung des Motorwirkungsgrades auf (Vgl. Abb. \ref{abb:motormodell}). Der maximale Motorwirkungsgrad wird bei maximaler Spannung und bei maximalen Strom erreicht. Der errechnete Wert stimmt mit einer Genauigkeit von \ensuremath{\pm \SI{2}{\%}} mit den Angaben vom Hersteller überein \cite{axi}.
-\missingfigure{2D Darstellungen des Motormodells}
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Motormodell.pdf}
 	\caption{Wirkungsgrad aufgetragen über verschiedenen Betriebspunkten des Motors}
 	\label{abb:motormodell}
 \end{figure}
+
+\section{Motorregler}
+\label{sec:motorreglermodell}
+Das Modell des Motorreglerwirkungsgrades ist in Abb. \ref{abb:motorreglermodell} dargestellt. Es zeigt den Wirkungsgrad des Motorreglers in Abhängigkeit der PWM. An dieser Stelle ist die ausschließliche Abhängigkeit des Modells von der PWM ersichtlich.
+ 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Motorreglermodell.pdf}
+	\caption{Wirkungsgrad des Motorreglers aufgetragen über der PWM}
+	\label{abb:motorreglermodell}
+\end{figure}
+
 
 \section{Batteriekapazität}
 Für die Untersuchungen ist eine Berechnung der Batteriekapazität unabhängig von der Art der Zelle, aber abhängig von der Batteriemasse von Interesse.
@@ -235,10 +246,11 @@ hier nur Wirkungsgrad
 	\label{abb:verstellprop_eta}
 \end{figure}
 
+In Abb. \ref{abb:verstellprop_real} ist der Gewichtseinfluss auf die Flugleistungen eines Multicopters mit Verstellpropeller dargestellt. Das Gewicht verringert die Flugleistungen deutlich. Außerdem kann für die Referenzkonfiguration festgehalten werden, dass der Vorteil des Verstellpropellers bei einem Gewicht des Verstellmechanismus von \SI{85}{g} pro Propeller kompensiert wird. Insgesamt ergibt dies einen Anteil von ca. \SI{10}{\%} am Gesamtgewicht. Wird dieser Anteil überschritten, ist der Nutzen des Verstellpropeller nichtig. Alle Anteile darunter ergeben einen Nutzen. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Verstellprop_real.pdf}
-	\caption{Einfluss des Verstellpropellers auf die maximal erreichbare Höhe mit einem Verstellmechanismusgewicht von 75g pro Propeller}
+	\caption{Einfluss des Verstellpropellers auf die Flugleistungen der Referenzkonfiguration des Multicopters mit einem Gewicht von \SI{85}{g} pro Verstelleinrichtung}
 	\label{abb:verstellprop_real}
 \end{figure}
 
@@ -296,32 +308,8 @@ hier nur Wirkungsgrad
 \assign[2]{Speichern der Diagramme in .pdf-Datei}
 \end{struktogramm}
 \caption{Programmstruktur die Untersuchung des Nutzens eines Getriebes}
-\label{abb:getriebe}
+\label{abb:getriebe_struktogramm}
 \end{figure}
 \end{center}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Getriebe_wirkungsgrade.pdf}
-	\caption{Einfluss eines Getriebes auf die maximal erreichbare Höhe mit besonderem Hinblick auf die Einzelwirkungsgrade}
-	\label{abb:getriebe_wirkungsgrade}
-\end{figure}
-
-\missingfigure{realistische Werte, keine rosarote Brille}
-
-\missingfigure{anderer Motor mit anderem KV}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Getriebe_KV.pdf}
-	\caption{Einfluss des Motors in Kombination eines Getriebes auf die maximal erreichbare Höhe}
-	\label{abb:getriebe_wirkungsgrade}
-\end{figure}
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Dud_KV.pdf}
-	\caption{Übersetzung für ein Getriebe}
-	\label{abb:getriebe_wirkungsgrade}
-\end{figure}
 
 \end{appendix}

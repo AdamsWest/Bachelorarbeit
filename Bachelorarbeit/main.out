@@ -27,42 +27,42 @@
 \BOOKMARK [1][-]{section.3.2}{Ergebnis der Flugleistungsberechnung}{chapter.3}% 27
 \BOOKMARK [1][-]{section.3.3}{Diskussion}{chapter.3}% 28
 \BOOKMARK [0][-]{chapter.4}{Optimierung einzelner Parameter}{}% 29
-\BOOKMARK [1][-]{section.4.1}{Einleitung und Vorgehensweise}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.2}{Multicopter im Vergleich zu einem Fl\344chenflugzeug}{chapter.4}% 31
-\BOOKMARK [2][-]{subsection.4.2.1}{Erste Untersuchung}{section.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.2.2}{Einflussfaktoren auf das Fl\344chenflugzeug}{section.4.2}% 33
-\BOOKMARK [2][-]{subsection.4.2.3}{Ergebnisse des Vergleichs}{section.4.2}% 34
-\BOOKMARK [1][-]{section.4.3}{Steiggeschwindigkeit}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.3.1}{Ergebnis}{section.4.3}% 36
-\BOOKMARK [2][-]{subsection.4.3.2}{Einfluss des Widerstands}{section.4.3}% 37
-\BOOKMARK [2][-]{subsection.4.3.3}{Einfluss der Anzahl der Batteriezellen}{section.4.3}% 38
-\BOOKMARK [2][-]{subsection.4.3.4}{Bedeutung des Reglerwirkungsgrades}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.5}{Einfluss des maximalen Motorstroms}{section.4.3}% 40
-\BOOKMARK [1][-]{section.4.4}{Massenverteilung}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.4.1}{Ergebnisse}{section.4.4}% 42
-\BOOKMARK [1][-]{section.4.5}{Gr\366\337e und Anzahl der Propeller des Flugger\344tes}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.5.1}{Ergebnisse}{section.4.5}% 44
-\BOOKMARK [2][-]{subsection.4.5.2}{Anzahl der Propeller}{section.4.5}% 45
-\BOOKMARK [2][-]{subsection.4.5.3}{Ergebnisse}{section.4.5}% 46
-\BOOKMARK [1][-]{section.4.6}{Verstellpropeller}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.6.1}{Ergebnisse}{section.4.6}% 48
-\BOOKMARK [1][-]{section.4.7}{Stufenloses Getriebe}{chapter.4}% 49
-\BOOKMARK [2][-]{subsection.4.7.1}{Ergebnisse}{section.4.7}% 50
-\BOOKMARK [1][-]{section.4.8}{Randbedingungen des Aeromot\137UAV-Projekts}{chapter.4}% 51
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 52
-\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 54
-\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 57
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 58
-\BOOKMARK [1][-]{section.A.1}{Fl\344chenflugzeug}{appendix.A}% 59
-\BOOKMARK [1][-]{section.A.2}{Propeller}{appendix.A}% 60
-\BOOKMARK [1][-]{section.A.3}{Motor}{appendix.A}% 61
-\BOOKMARK [1][-]{section.A.4}{Batteriekapazit\344t}{appendix.A}% 62
-\BOOKMARK [1][-]{section.A.5}{Vergleich von normierter zur originalen Batteriezelle}{appendix.A}% 63
-\BOOKMARK [1][-]{section.A.6}{Steiggeschwindigkeit}{appendix.A}% 64
-\BOOKMARK [1][-]{section.A.7}{Motorreglerwirkungsgrad}{appendix.A}% 65
-\BOOKMARK [1][-]{section.A.8}{Batteriemasse}{appendix.A}% 66
-\BOOKMARK [1][-]{section.A.9}{Verstellpropeller}{appendix.A}% 67
-\BOOKMARK [1][-]{section.A.10}{Getriebe}{appendix.A}% 68
+\BOOKMARK [1][-]{section.4.1}{Multicopter im Vergleich zu einem Fl\344chenflugzeug}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Einflussfaktoren auf das Fl\344chenflugzeug}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.2.1}{Motor-Propeller Kombination}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.2}{Anzahl der Motoren und Propeller}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.3}{Gleitzahl}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.4}{Auslegungsgeschwindigkeit}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.5}{Penalty-Faktor}{section.4.2}% 36
+\BOOKMARK [2][-]{subsection.4.2.6}{Zusammenfassung}{section.4.2}% 37
+\BOOKMARK [1][-]{section.4.3}{Ergebnisse des Vergleichs}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.4}{Einflussfaktoren auf den Quadrocopter}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.4.1}{Einfluss der Steiggeschwindigkeit auf den Quadrocopterflug}{section.4.4}% 40
+\BOOKMARK [2][-]{subsection.4.4.2}{Einfluss des Widerstands}{section.4.4}% 41
+\BOOKMARK [2][-]{subsection.4.4.3}{Einfluss der Batteriespannung}{section.4.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.4}{Bedeutung des Motorreglerwirkungsgrades}{section.4.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.5}{Einfluss des maximalen Motorstroms}{section.4.4}% 44
+\BOOKMARK [1][-]{section.4.5}{Massenanteile der Komponenten}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.6}{Gr\366\337e und Anzahl der Propeller des Flugger\344tes}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.7}{Verstellpropeller}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.8}{Stufenloses Getriebe}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.9}{Endergebnis}{chapter.4}% 49
+\BOOKMARK [1][-]{section.4.10}{Randbedingungen des AEROMET\137UAV-Projekts}{chapter.4}% 50
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{}% 51
+\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.2}{Ausblick}{chapter.5}% 53
+\BOOKMARK [0][-]{chapter.6}{Projektmanagement}{}% 54
+\BOOKMARK [1][-]{section.6.1}{Projektstrukturplan}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.2}{Zeitplan}{chapter.6}% 56
+\BOOKMARK [0][-]{appendix.A}{Anhang A}{}% 57
+\BOOKMARK [1][-]{section.A.1}{Fl\344chenflugzeug}{appendix.A}% 58
+\BOOKMARK [1][-]{section.A.2}{Propeller}{appendix.A}% 59
+\BOOKMARK [1][-]{section.A.3}{Motor}{appendix.A}% 60
+\BOOKMARK [1][-]{section.A.4}{Motorregler}{appendix.A}% 61
+\BOOKMARK [1][-]{section.A.5}{Batteriekapazit\344t}{appendix.A}% 62
+\BOOKMARK [1][-]{section.A.6}{Vergleich von normierter zur originalen Batteriezelle}{appendix.A}% 63
+\BOOKMARK [1][-]{section.A.7}{Steiggeschwindigkeit}{appendix.A}% 64
+\BOOKMARK [1][-]{section.A.8}{Motorreglerwirkungsgrad}{appendix.A}% 65
+\BOOKMARK [1][-]{section.A.9}{Batteriemasse}{appendix.A}% 66
+\BOOKMARK [1][-]{section.A.10}{Verstellpropeller}{appendix.A}% 67
+\BOOKMARK [1][-]{section.A.11}{Getriebe}{appendix.A}% 68

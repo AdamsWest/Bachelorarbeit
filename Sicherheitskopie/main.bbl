@@ -82,6 +82,37 @@
       \keyw{Drohnen;Landtag;Pistorius;Polizei}
       \warn{\item Entry 'polizei' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
+    \entry{Beyer.2016}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=62444890b487962d21e1db7976640e30}{%
+           family={Beyer},
+           familyi={B\bibinitperiod},
+           given={Yannic},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {TU Braunschweig}%
+      }
+      \list{location}{1}{%
+        {Braunschweig}%
+      }
+      \list{publisher}{1}{%
+        {Institut f{ü}r Flugf{ü}hrung}%
+      }
+      \strng{namehash}{62444890b487962d21e1db7976640e30}
+      \strng{fullhash}{62444890b487962d21e1db7976640e30}
+      \strng{bibnamehash}{62444890b487962d21e1db7976640e30}
+      \strng{authorbibnamehash}{62444890b487962d21e1db7976640e30}
+      \strng{authornamehash}{62444890b487962d21e1db7976640e30}
+      \strng{authorfullhash}{62444890b487962d21e1db7976640e30}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Flugmechanische Modellierung von Multicopter-Systemen in MATLAB/-Simulink}
+      \field{type}{Studienarbeit}
+      \field{year}{2016}
+    \endentry
     \entry{Bruning.1986}{book}{}
       \name{author}{3}{}{%
         {{hash=48c844e9fe56361d091a404d13f505f7}{%
@@ -162,6 +193,36 @@
       \field{title}{Brushless-Motoren und -Regler: Grundlagen - Technik - Praxis}
       \field{year}{2013}
     \endentry
+    \entry{cobramot}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labeltitlesource}{title}
+      \field{abstract}{CobraMotorsUSA.com - Cobra Brushless Motors, ESC's and Motor Parts}
+      \field{title}{CobraMotorsUSA.com - Cobra CM-2206/30}
+      \field{year}{01.12.2017}
+      \verb{urlraw}
+      \verb http://www.cobramotorsusa.com/multirotor-2206-30.html
+      \endverb
+      \verb{url}
+      \verb http://www.cobramotorsusa.com/multirotor-2206-30.html
+      \endverb
+      \keyw{Cobra Brushless Motors}
+      \warn{\item Entry 'cobramot' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{arducopter.clav}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labeltitlesource}{title}
+      \field{title}{Current Limiting and Voltage Scaling --- Copter documentation}
+      \field{year}{26.02.2019}
+      \verb{urlraw}
+      \verb http://ardupilot.org/copter/docs/current-limiting-and-voltage-scaling.html
+      \endverb
+      \verb{url}
+      \verb http://ardupilot.org/copter/docs/current-limiting-and-voltage-scaling.html
+      \endverb
+      \warn{\item Entry 'arducopter.clav' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Drivecalc}{misc}{}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
@@ -192,20 +253,6 @@
       \keyw{Drohne;Ernteversicherung;Landwirtschaft}
       \warn{\item Entry 'landwirtschaft' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
-    \entry{cobramot}{misc}{}
-      \field{sortinit}{D}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
-      \field{labeltitlesource}{title}
-      \field{title}{Drone Matters - Cobra CM2206/1400 Multirotor Motors}
-      \verb{urlraw}
-      \verb https://www.dronematters.com/cm2206-1400-multirotor-motors.html
-      \endverb
-      \verb{url}
-      \verb https://www.dronematters.com/cm2206-1400-multirotor-motors.html
-      \endverb
-      \keyw{Batteries;Drone Matters;ESCs;Frames;Hexacopter;Hexes;Kits;Motors;Multirotors;Propellers;quadcopter;Quads}
-      \warn{\item Entry 'cobramot' (Literatur.bib): Invalid format '20.02.2019' of date field 'urldate' - ignoring}
-    \endentry
     \entry{eCalc}{misc}{}
       \field{sortinit}{e}
       \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
@@ -222,6 +269,88 @@
       \keyw{Accu;Airplane;Akku;Antrieb;Auto;Batterie;Battery;BEV;Calc;Calculator;Car;Consumption;Drive;Ducted Fan;eAuto;e-calc;eCalc;eCar;EDF;eflight;electric;Electric Vehicle;eMobilit{ä}t;eMobility;Energie;Energy;ESC;EV;Fahrzeug;fanCalc;Flugzeug;heliCalc;Helicopter;Helikopter;Impeller;Jet;Luftschraube;Modellbau;MotoCalc;Motor;Multicopter;Multikopter;Multirotor Elektro;Plane;propCalc;Propeller;Range;RC;Rechner;Regler;Reichweite;Remote Control;Setup;Simulate;Simulation;Verbrauch;xCalc;xcopterCalc}
       \warn{\item Entry 'eCalc' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
     \endentry
+    \entry{elektromodellflug}{misc}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{title}{Elektromodellflug - Datenbank}
+      \field{year}{05.06.2012}
+      \verb{urlraw}
+      \verb https://www.elektromodellflug.de/oldpage/datenbank.htm
+      \endverb
+      \verb{url}
+      \verb https://www.elektromodellflug.de/oldpage/datenbank.htm
+      \endverb
+      \warn{\item Entry 'elektromodellflug' (Literatur.bib): Invalid format '20.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{apc.theory}{misc}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{title}{Engineering | APC Propellers}
+      \verb{urlraw}
+      \verb https://www.apcprop.com/technical-information/engineering/#aero
+      \endverb
+      \verb{url}
+      \verb https://www.apcprop.com/technical-information/engineering/#aero
+      \endverb
+      \warn{\item Entry 'apc.theory' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Fischer.2016}{book}{}
+      \name{author}{4}{}{%
+        {{hash=9e8a8c258b303cd800b2badf8fdab88a}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0fa11f316c3cbd589c82690994c385cb}{%
+           family={K{ü}c{ü}kay},
+           familyi={K\bibinitperiod},
+           given={Ferit},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e6ac0cc2fcc27ab52e492ef3d5c7beeb}{%
+           family={J{ü}rgens},
+           familyi={J\bibinitperiod},
+           given={Gunter},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5bbc4d9aaa718aa3afd5801fd352bb38}{%
+           family={Pollak},
+           familyi={P\bibinitperiod},
+           given={Burkhard},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Wiesbaden}%
+      }
+      \list{publisher}{1}{%
+        {Springer Vieweg}%
+      }
+      \strng{namehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{fullhash}{5cf3ca201640d8957f8f7e56c3b7f08c}
+      \strng{bibnamehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{authorbibnamehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{authornamehash}{8de7e11fb8f3e2da0ea67c01f0182c65}
+      \strng{authorfullhash}{5cf3ca201640d8957f8f7e56c3b7f08c}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Die Getriebetechnik hat einen bedeutenden Einfluss auf Verbrauch, Fahrbarkeit, Gewicht und Kosten von Fahrzeugen. Die Relevanz dieser Eigenschaften hat in der j{ü}ngeren Vergangenheit wesentlich zugenommen, und in der Wechselwirkung mit dem gesamten Antriebsstrang bzw. dem Gesamtfahrzeug werden Getriebe zunehmend wichtiger. Mit dem Auftreten der Hybridtechnik ist noch mehr Leben in die Getriebewelt gekommen. Die Freiheitsgrade nehmen weiter zu und vielf{ä}ltige Kombinationen aus Getriebe, Verbrennungsmotor und E-Motor sind machbar. Das Getriebebuch hat zum Ziel, das System- und Methodenwissen zur Getriebetechnologie darzustellen sowie Funktionen und Wechselwirkungen kennen zu lernen. Abstrahierend werden die zahlreichen Komponenten und Sub-Systeme eingef{ü}hrt, so dass eine zeitlose Kompetenz vermittelt wird. Mit dem Wissen dieses Buches k{ö}nnen auch neue Getriebekonzepte bewertet und entwickelt werden. Der Inhalt Kernaufgabe der Fahrzeuggetriebe. - Schaltdynamik und Komfort.- Elemente der Leistungs{ü}bertragung. - Bet{ä}tigungs- und Hilfssysteme. - Steuerung und Regelung. - Getriebekonstruktion f{ü}r PKW- Anwendungen. - Elektrifizierung des Antriebsstrangs. - Getriebeanwendungen au{ß}erhalb des PKW-Bereichs. Die Zielgruppen Studierende technischer Studieng{ä}nge an Universit{ä}ten und Hochschulen Getriebe- und Antriebsstrang-Entwickler in der Fahrzeugindustrie und der Zulieferindustrie Software- und Applikationsingenieure, die sich mit dem Antriebsstrang besch{ä}ftigen {Ü}ber die Autoren Dr. Robert Fischer, AVL List GmbH, Graz, {Ö}sterreich Prof. Dr.-Ing. Ferit K{ü}c{ü}kay, Institut f{ü}r Fahrzeugtechnik, Technische Universit{ä}t Braunschweig, Deutschland Prof. Dr. Gunter J{ü}rgens, Institut f{ü}r Maschinenelemente, Technische Universit{ä}t Graz, {Ö}sterreich Dr.-Ing. Burkhard Pollak, pi3 GmbH, Weinheim, Deutschland}
+      \field{edition}{2. {ü}berarbeitete Auflage}
+      \field{isbn}{978-3-658-13103-6}
+      \field{series}{Der Fahrzeugantrieb}
+      \field{title}{Das Getriebebuch}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1007/978-3-658-13104-3
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/978-3-658-13104-3
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-658-13104-3
+      \endverb
+    \endentry
     \entry{Flyeval}{misc}{}
       \field{sortinit}{f}
       \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
@@ -237,6 +366,21 @@
       \endverb
       \keyw{Battery;Calc;calculation;copter;electric;ESC;evaluation;flyeval;flying;Model;Motor;Multicopter;multirotor;performance;Propeller;quadcopter;quadrotor;rotor;test;UAV}
       \warn{\item Entry 'Flyeval' (Literatur.bib): Invalid format '27.12.2018' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{gemfan}{misc}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Buy GemFan-Acc-7038-ABS-BK / GemFan 7038 ABS Propeller (M6 / Black / CW and CCW) online at the lowest price. HeliPal is famous for their Fast Shipping, Low Price and Good Service. HeliPal is the best and the biggest rc helicopter online store. We have full range of Walkera rc helicopters, walkera parts and accessories, align rc helicopter, part and accessory, nine eagles helicopter, nineeagles parts and accessories, HSP rc cars and HSP parts.}
+      \field{title}{GemFan 7038 ABS Propeller (M6 / Black / CW and CCW)}
+      \verb{urlraw}
+      \verb http://www.helipal.com/gemfan-7038-abs-propeller-m6-black-cw-and-ccw.html
+      \endverb
+      \verb{url}
+      \verb http://www.helipal.com/gemfan-7038-abs-propeller-m6-black-cw-and-ccw.html
+      \endverb
+      \keyw{Align Parts;Align TRex Helicopter;esky parts;GemFan 7038 ABS Propeller (M6 / Black / CW and CCW);Gemfan Plastic Propellers;Gemfan Propellers;GemFan-Acc-7038-ABS-BK;nine eagles;nine eagles parts;rc helicopter;Walkera;Walkera helicopter;Walkera parts}
+      \warn{\item Entry 'gemfan' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{Ostler.2006}{thesis}{}
       \name{author}{1}{}{%
@@ -334,6 +478,31 @@
       \field{year}{2013}
       \keyw{Endurance,MAV}
     \endentry
+    \entry{Lubrano.2016}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=f94b4d2f50bd1c5155d9736d19920748}{%
+           family={Lubrano},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ISAE-SUPAERO}%
+      }
+      \strng{namehash}{f94b4d2f50bd1c5155d9736d19920748}
+      \strng{fullhash}{f94b4d2f50bd1c5155d9736d19920748}
+      \strng{bibnamehash}{f94b4d2f50bd1c5155d9736d19920748}
+      \strng{authorbibnamehash}{f94b4d2f50bd1c5155d9736d19920748}
+      \strng{authornamehash}{f94b4d2f50bd1c5155d9736d19920748}
+      \strng{authorfullhash}{f94b4d2f50bd1c5155d9736d19920748}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimisation de la cha{î}ne propulsive d'un micro drone avion ou VTOL}
+      \field{type}{student research project}
+      \field{year}{2016}
+    \endentry
     \entry{batteriezelle}{misc}{}
       \name{author}{1}{}{%
         {{hash=e489dbd3f86907c401f5f9e84bdcefee}{%
@@ -360,6 +529,46 @@
       \keyw{3;6V 3;7V ungesch{ü}tzt vtc6 us 18650 3120mah VTC6;Sony Konion US18650VTC6 - 3000mAh}
       \warn{\item Entry 'batteriezelle' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
+    \entry{Magnussen.2015}{article}{}
+      \name{author}{3}{}{%
+        {{hash=379e5625aaca342ab878b2bbea5a50ee}{%
+           family={Magnussen},
+           familyi={M\bibinitperiod},
+           given={{Ø}yvind},
+           giveni={Ø\bibinitperiod}}}%
+        {{hash=50cb7707edc3ad436196945f2789dd5e}{%
+           family={Ottestad},
+           familyi={O\bibinitperiod},
+           given={Morten},
+           giveni={M\bibinitperiod}}}%
+        {{hash=84ec48e30ec8b25dec5a9c344a86a90f}{%
+           family={Hovland},
+           familyi={H\bibinitperiod},
+           given={Geir},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{fullhash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{bibnamehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{authorbibnamehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{authornamehash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \strng{authorfullhash}{79577bcbe66c646c66bd0cb7cfd35fd2}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0332-7353}
+      \field{journaltitle}{Modeling, Identification and Control: A Norwegian Research Bulletin}
+      \field{number}{2}
+      \field{title}{Multicopter Design Optimization and Validation}
+      \field{volume}{36}
+      \field{year}{2015}
+      \field{pages}{67\bibrangedash 79}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.4173/mic.2015.2.1
+      \endverb
+    \endentry
     \entry{Drela.2007}{article}{}
       \name{author}{1}{}{%
         {{hash=8843a019dd382ada5b62357cea5cc6e9}{%
@@ -378,6 +587,47 @@
       \field{labeltitlesource}{title}
       \field{title}{First-Order DC Electric Motor Model}
       \field{year}{2007}
+    \endentry
+    \entry{arducopter.mts}{misc}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labeltitlesource}{title}
+      \field{title}{Motor Thrust Scaling --- Copter documentation}
+      \field{year}{26.02.2019}
+      \verb{urlraw}
+      \verb http://ardupilot.org/copter/docs/motor-thrust-scaling.html
+      \endverb
+      \verb{url}
+      \verb http://ardupilot.org/copter/docs/motor-thrust-scaling.html
+      \endverb
+      \warn{\item Entry 'arducopter.mts' (Literatur.bib): Invalid format '26.02.2019' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{axi}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dff8a20826a79ddd96ce5b2c126f84cb}{%
+           family={o},
+           familyi={o\bibinitperiod},
+           given={JIROUT\bibnamedelimb REKLAMY\bibnamedelimb s.\bibnamedelimi r.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim s\bibinitperiod\bibinitdelim r\bibinitperiod}}}%
+      }
+      \strng{namehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{fullhash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{bibnamehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{authorbibnamehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{authornamehash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \strng{authorfullhash}{dff8a20826a79ddd96ce5b2c126f84cb}
+      \field{sortinit}{o}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AXI MODEL MOTORS | AXI MODEL MOTORS s. r. o.}
+      \verb{urlraw}
+      \verb https://www.modelmotors.cz/
+      \endverb
+      \verb{url}
+      \verb https://www.modelmotors.cz/
+      \endverb
+      \warn{\item Entry 'axi' (Literatur.bib): Invalid format '24.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{PCUP.2017}{inproceedings}{}
       \name{author}{4}{}{%
@@ -425,7 +675,7 @@
       \verb 10.1109/COASE.2017.8256340
       \endverb
     \endentry
-    \entry{https:www.facebook.comapcprop.}{misc}{}
+    \entry{apc}{misc}{}
       \field{sortinit}{P}
       \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
       \field{labeltitlesource}{title}
@@ -436,7 +686,7 @@
       \verb{url}
       \verb https://www.apcprop.com/technical-information/performance-data/
       \endverb
-      \warn{\item Entry 'https:www.facebook.comapcprop.' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
+      \warn{\item Entry 'apc' (Literatur.bib): Invalid format '19.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{Quan.2017}{book}{}
       \name{author}{1}{}{%
@@ -469,6 +719,19 @@
       \verb 10.1007/978-981-10-3382-7
       \endverb
     \endentry
+    \entry{cvt}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labeltitlesource}{title}
+      \field{title}{Reality CVT Automatic Transmission for Tamiya 1/14 Tractor Truck - Rigidrc Shop}
+      \verb{urlraw}
+      \verb http://www.rigidrc.com/shop/transmission/670-reality-cvt-automatic-transmission-for-tamiya-114-tractor-truck.html
+      \endverb
+      \verb{url}
+      \verb http://www.rigidrc.com/shop/transmission/670-reality-cvt-automatic-transmission-for-tamiya-114-tractor-truck.html
+      \endverb
+      \warn{\item Entry 'cvt' (Literatur.bib): Invalid format '04.03.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Scheiderer.2008}{book}{}
       \name{author}{1}{}{%
         {{hash=594bad86b0b63327c8244f31caac7160}{%
@@ -497,6 +760,51 @@
       \field{isbn}{978-3-540-72724-8}
       \field{title}{Angewandte Flugleistung: Eine Einf{ü}hrung in die operationelle Flugleistung vom Start bis zur Landung}
       \field{year}{2008}
+    \endentry
+    \entry{Seidel.2011}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3a9bb8c27261d457eb86abd3d539f7c3}{%
+           family={Seidel},
+           familyi={S\bibinitperiod},
+           given={Dian\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c62faa041004ab46609e817c8635c40e}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Bomin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e6839b57b5a78da216331f766d26b963}{%
+           family={Pettey},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7fba5ba3fae51feff8b52efcd83bfac0}{%
+           family={Reale},
+           familyi={R\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{fullhash}{4d6de662651cfec546701aa2b79fbc89}
+      \strng{bibnamehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{authorbibnamehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{authornamehash}{d2ad691b2a8b1dfddbc37a7c07472918}
+      \strng{authorfullhash}{4d6de662651cfec546701aa2b79fbc89}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0148-0227}
+      \field{journaltitle}{Journal of Geophysical Research}
+      \field{number}{D7}
+      \field{title}{Global radiosonde balloon drift statistics}
+      \field{volume}{116}
+      \field{year}{2011}
+      \field{pages}{D22123}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1029/2010JD014891
+      \endverb
     \endentry
     \entry{Shi.2017}{article}{}
       \name{author}{4}{}{%
@@ -584,6 +892,21 @@
       \verb{doi}
       \verb 10.2514/1.38409
       \endverb
+    \endentry
+    \entry{betaflight}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labeltitlesource}{title}
+      \field{abstract}{~Introduction Update: This is relevant for all versions of betaflight 3.4.0 and up. One of the new {"}minor features{"} in betaflight that I'm very excited about is throttle limit. Previously throttle...}
+      \field{title}{THROTTLE LIMIT IN BETAFLIGHT 3.4 and Up: Longer battery life and cooler motors}
+      \verb{urlraw}
+      \verb https://www.quadifyrc.com/tips-and-tricks/throttle-limit-in-betaflight-340-longer-battery-life-and-cooler-motors
+      \endverb
+      \verb{url}
+      \verb https://www.quadifyrc.com/tips-and-tricks/throttle-limit-in-betaflight-340-longer-battery-life-and-cooler-motors
+      \endverb
+      \keyw{bang for buck;betaflight;cheap mods;hawk5;mobula7;modifications;mods;tips;tricks}
+      \warn{\item Entry 'betaflight' (Literatur.bib): Invalid format '25.02.2019' of date field 'urldate' - ignoring}
     \endentry
     \entry{Traub.2016}{article}{}
       \name{author}{1}{}{%

@@ -30,17 +30,17 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Getriebe
-ue_min = 0.5;           % minimale Übersetzung
+ue_min = 0.9;           % minimale Übersetzung
 ue_Delta = 0.05;         % Schrittweite der Über
-ue_max = 1.5;            % maximale Übersetzung
+ue_max = 2.1;            % maximale Übersetzung
 % Abfrage_getriebe = [0 0.25 0.5 0.75];   % Variation der Getriebemasse
-m_getriebe = 0.5;       % Getriebegewicht
-eta_getriebe = 0.8;     % Wirkungsgrad des Getriebes
+m_getriebe = 0;       % Getriebegewicht
+eta_getriebe = 1;     % Wirkungsgrad des Getriebes
 
 % Propeller
-prop_name = '10x3';    % Propellerbezeichnung
+prop_name = '11x3';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 10;                % Propellerdurchmesser in inch
+D = 11;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
@@ -53,7 +53,7 @@ m_copter = m_ges * (0.354/1.06);           % Leermasse
 
 % Batterie
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 5;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
@@ -95,7 +95,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 18000;                              % Maximalhöhe in m
+H_max = 19000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -110,8 +110,8 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 % Dateiname = ['Multicopter, m_Mot = ' num2str(m_Mot) ', n_Prop = ' num2str(n_Prop) ', K_V = ' num2str(K_V*60/(2*pi)) ', Prop = ' prop_name ...
 %     ', n_Bat_cell = ' num2str(N_Bat_cell) ', c_W = ' num2str(c_W_copter_oben) ', u_Wg = ' num2str(u_Wg) 'ms, m_getriebe = ' num2str(m_getriebe) ...
 %     ', eta_getriebe = ' num2str(eta_getriebe) '.pdf'];
-Dateiname = 'Getriebe_realistisch';
+Dateiname = 'Getriebe_richtig';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Ueberpruefung'); 
+run('Diagramme_erstellen'); 

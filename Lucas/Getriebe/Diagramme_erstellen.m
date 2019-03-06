@@ -57,7 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
-lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1) + 1;
+lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1);
 
 % Umgebung
 H = zeros(lengthi,1);
@@ -604,7 +604,7 @@ end
 figure(figure_ges)
 
 subplot(621), stairs(H,C_Rest_V_g*100,'LineWidth',1), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-subplot(622), stairs(H,Omega_g/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+subplot(622), stairs(H,Omega_g/(2*pi)*60./Uebersetzung,'LineWidth',1), grid, title('Propellerdrehzahl'), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
 subplot(623), stairs(H,I_mot_g,'LineWidth',1), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
 subplot(624), stairs(H,U_mot_g,'LineWidth',1), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
 subplot(625), stairs(H,I_Bat_g,'LineWidth',1), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')

@@ -57,7 +57,7 @@ p_11 = p_0 * (1 - 0.0065*(11000/T_0))^5.256;        % Druck in 11000m Höhe
 % Matrixlängen
 lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthvkg = floor(abs(V_Kg_max - V_Kg_min) / V_Kg_Delta + 1);
-lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1) + 1;
+lengthueber = floor(abs(ue_max - ue_min) / ue_Delta + 1);
 
 % Umgebung
 H = zeros(lengthi,1);
@@ -627,7 +627,7 @@ PaperSizeX = 21;
 PaperSizeY = 29.7;
 
 fig = gcf;
-set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
+set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]); %[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');
 

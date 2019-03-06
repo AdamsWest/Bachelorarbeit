@@ -6,7 +6,7 @@ figure(figure_vpp);
 subplot(621), stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), hold on
 stairs(H,C_Rest_V_vpp*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
 subplot(622), stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), hold on
-stairs(H,Omega_vpp/(2*pi)*60,'LineWidth',1), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+stairs(H,Omega_vpp/(2*pi)*60,'LineWidth',1), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
 subplot(623), stairs(H,I_mot,'LineWidth',1), grid, title('Motorstrom'), hold on
 stairs(H,I_mot_vpp,'LineWidth',1), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
 subplot(624), stairs(H,U_mot,'LineWidth',1), grid,  title('Motorspannung'), hold on
@@ -26,14 +26,14 @@ subplot(6,2,10), stairs(H2,t_Flug,'LineWidth',1), grid, hold on
 stairs(H2,t_Flug_vpp,'LineWidth',1), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 pitch = zeros(length(pitch_vpp),1);
 for i = 1:length(pitch_vpp)
-    if i <= 147
+    if i <= 166
         pitch(i) = 3;
     else
         pitch(i) = NaN;
     end
 end
 subplot(6,2,11), stairs(H,pitch,'LineWidth',1), hold on
-stairs(H,pitch_vpp,'LineWidth',1), title('Pitch'), grid, xlabel('Höhe [m]'),ylabel('Pitch [in]')
+stairs(H,pitch_vpp,'LineWidth',1), title('Propellersteigung'), grid, xlabel('Höhe [m]'),ylabel('Steigung [in]')
 lgd = legend('fixed pitch','variable pitch','Location','bestoutside'); title(lgd,'Propeller')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -44,5 +44,5 @@ PaperSizeY = 29.7;
 fig = gcf;
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
-saveas(gcf,'Verstellpropeller', 'pdf');
+saveas(gcf,'Verstellpropeller_real', 'pdf');
 

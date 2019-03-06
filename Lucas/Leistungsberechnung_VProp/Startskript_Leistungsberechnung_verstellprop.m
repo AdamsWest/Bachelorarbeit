@@ -41,15 +41,15 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % Propeller
 % prop_name = '6x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 10;                  % Propellerdurchmesser in inch
+D = 11;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
-m_prop_mech = 0.00;      % Gewicht des Verstellmechanismus
+m_prop_mech = 0.085;      % Gewicht des Verstellmechanismus
 
 % Batterie
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
-N_Bat_cell = 4;         % Anzahl der Batteriezellen in Reihe
+N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
@@ -95,7 +95,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m 
-H_max = 17000;                              % Maximalhöhe in m
+H_max = 19000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -107,8 +107,8 @@ u_Wg = 10;                                  % Seitenwindgeschwindigkeit in m/s
 
 %% Festlegung des Dateinamen
     
-Dateiname = 'Verstellprop_real';
+Dateiname = 'Verstellpropeller';
 
 %% Aufruf des Hauptskripts: Leistungsberechnung starten %%%%%%%%%%%%%%%%%%%
 
-run('Leistungsberechnung_verstellprop'); 
+run('Diagramm_vpp'); 

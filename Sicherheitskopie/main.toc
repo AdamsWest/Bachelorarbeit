@@ -4,91 +4,90 @@
 \contentsline {chapter}{Abbildungsverzeichnis}{X}{chapter*.5}
 \contentsline {chapter}{Tabellenverzeichnis}{XIII}{chapter*.6}
 \contentsline {chapter}{Nomenklatur}{XIV}{chapter*.6}
-\contentsline {paragraph}{Single Input Single Output}{XIV}{paragraph*.8}
-\contentsline {paragraph}{Software Deployment}{XIV}{paragraph*.9}
-\contentsline {paragraph}{\texttt {V}i \texttt {IM}proved}{XIV}{paragraph*.10}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Stand der Technik}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Ziel der Arbeit}{3}{section.1.3}
-\contentsline {chapter}{\numberline {2}Programmbeschreibung}{4}{chapter.2}
+\contentsline {section}{\numberline {1.3}Ziel der Arbeit}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}Programmbeschreibung zur Flugleistungsberechnung}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Aufbau des Programms}{4}{section.2.1}
 \contentsline {section}{\numberline {2.2}Flugleistungsberechnung}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Flugger\IeC {\"a}t}{7}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Missionsparameter}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Umgebungsparameter und Diskretisierung variabler Umgebungsparameter}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Umgebungsparameter und Diskretisierung variabler Umgebungsparameter}{7}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Schubberechnung}{9}{subsection.2.2.4}
-\contentsline {subsubsection}{Multicopter}{9}{subsubsection*.18}
-\contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{11}{subsubsection*.20}
+\contentsline {subsubsection}{Multicopter}{9}{subsubsection*.10}
+\contentsline {subsubsection}{Fl\IeC {\"a}chenflugzeug}{11}{subsubsection*.12}
 \contentsline {subsection}{\numberline {2.2.5}Propellerzustand}{14}{subsection.2.2.5}
 \contentsline {subsection}{\numberline {2.2.6}Motorzustand}{16}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Zustand der Motorregler}{17}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.7}Zustand der Motorregler}{16}{subsection.2.2.7}
 \contentsline {subsection}{\numberline {2.2.8}Batteriezustand}{17}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}Batterie}{18}{subsection.2.2.9}
-\contentsline {subsubsection}{Normzelle}{18}{subsubsection*.27}
-\contentsline {subsubsection}{Batteriezustand}{20}{subsubsection*.31}
-\contentsline {subsection}{\numberline {2.2.10}Wirkungsgrad \IeC {\"u}ber das Gesamtsystem}{21}{subsection.2.2.10}
-\contentsline {subsection}{\numberline {2.2.11}Einhaltung leistungsbezogener Grenzen}{22}{subsection.2.2.11}
-\contentsline {section}{\numberline {2.3}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{23}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Einschr\IeC {\"a}nkungen}{23}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Vereinfachungen}{23}{subsection.2.3.2}
-\contentsline {subsubsection}{Schub}{23}{subsubsection*.33}
-\contentsline {subsubsection}{Propeller und Kennfeld}{24}{subsubsection*.35}
-\contentsline {subsubsection}{Motor}{24}{subsubsection*.37}
-\contentsline {subsubsection}{Motorregler}{24}{subsubsection*.38}
-\contentsline {subsubsection}{Batterie}{24}{subsubsection*.39}
-\contentsline {subsubsection}{Wirkungsgrad}{27}{subsubsection*.41}
-\contentsline {chapter}{\numberline {3}Nachbildung des Quadrocopterflugs auf \SI {10}{km} H\IeC {\"o}he}{28}{chapter.3}
-\contentsline {section}{\numberline {3.1}Komponenten des Quadrocopters und Umgebungsbedingungen}{28}{section.3.1}
-\contentsline {subsubsection}{Motor}{28}{subsubsection*.42}
-\contentsline {subsubsection}{Propeller}{28}{subsubsection*.43}
-\contentsline {subsubsection}{Batterie}{29}{subsubsection*.45}
-\contentsline {subsubsection}{Qudrocopterabma\IeC {\ss }e}{29}{subsubsection*.46}
-\contentsline {subsubsection}{Missions und Umgebungsparameter}{29}{subsubsection*.47}
-\contentsline {section}{\numberline {3.2}Ergebnisse}{30}{section.3.2}
-\contentsline {section}{\numberline {3.3}Diskussion}{32}{section.3.3}
-\contentsline {chapter}{\numberline {4}Parameteruntersuchung}{34}{chapter.4}
-\contentsline {section}{\numberline {4.1}Einleitung und Vorgehensweise}{34}{section.4.1}
-\contentsline {section}{\numberline {4.2}Multicopter im Vergleich zu einem Fl\IeC {\"a}chenflugzeug}{34}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Erste Untersuchung}{35}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Einflussfaktoren auf das Fl\IeC {\"a}chenflugzeug}{38}{subsection.4.2.2}
-\contentsline {subsubsection}{Motor-Propeller Kombination}{38}{subsubsection*.51}
-\contentsline {subsubsection}{Anzahl der Motoren und Propeller}{40}{subsubsection*.53}
-\contentsline {subsubsection}{Gleitzahl}{43}{subsubsection*.55}
-\contentsline {subsubsection}{Auslegungsgeschwindigkeit}{45}{subsubsection*.57}
-\contentsline {subsubsection}{Penaltyfaktor}{47}{subsubsection*.59}
-\contentsline {subsection}{\numberline {4.2.3}Ergebnisse des Vergleichs}{49}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Steiggeschwindigkeit}{50}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Ergebnis}{50}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Einfluss des Widerstands}{52}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Einfluss der Anzahl der Batteriezellen}{54}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Bedeutung des Reglerwirkungsgrades}{56}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Einfluss des maximalen Motorstroms}{56}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Massenverteilung}{56}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Ergebnisse}{56}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Gr\IeC {\"o}\IeC {\ss }e und Anzahl der Propeller des Flugger\IeC {\"a}tes}{58}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Ergebnisse}{60}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Anzahl der Propeller}{61}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Ergebnisse}{63}{subsection.4.5.3}
-\contentsline {section}{\numberline {4.6}Verstellpropeller}{64}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Ergebnisse}{66}{subsection.4.6.1}
-\contentsline {section}{\numberline {4.7}Stufenloses Getriebe}{68}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Ergebnisse}{71}{subsection.4.7.1}
-\contentsline {section}{\numberline {4.8}Randbedingungen des Aeromot\_UAV-Projekts}{73}{section.4.8}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{74}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{74}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ausblick}{77}{section.5.2}
-\contentsline {chapter}{\numberline {6}Projektmanagement}{78}{chapter.6}
-\contentsline {section}{\numberline {6.1}Projektstrukturplan}{79}{section.6.1}
-\contentsline {section}{\numberline {6.2}Zeitplan}{81}{section.6.2}
-\contentsline {chapter}{\numberline {A}Anhang}{95}{appendix.A}
-\contentsline {section}{\numberline {A.1}Fl\IeC {\"a}chenflugzeug}{95}{section.A.1}
-\contentsline {section}{\numberline {A.2}Propeller}{95}{section.A.2}
-\contentsline {section}{\numberline {A.3}Motor}{96}{section.A.3}
-\contentsline {section}{\numberline {A.4}Batteriekapazit\IeC {\"a}t}{97}{section.A.4}
-\contentsline {section}{\numberline {A.5}Vergleich von normierter zur originalen Batteriezelle}{97}{section.A.5}
-\contentsline {section}{\numberline {A.6}Steiggeschwindigkeit}{99}{section.A.6}
-\contentsline {section}{\numberline {A.7}Motorreglerwirkungsgrad}{100}{section.A.7}
-\contentsline {section}{\numberline {A.8}Batteriemasse}{106}{section.A.8}
-\contentsline {section}{\numberline {A.9}Verstellpropeller}{109}{section.A.9}
-\contentsline {section}{\numberline {A.10}Getriebe}{113}{section.A.10}
+\contentsline {subsubsection}{Normzelle}{17}{subsubsection*.13}
+\contentsline {subsubsection}{Batteriezustand}{20}{subsubsection*.15}
+\contentsline {subsection}{\numberline {2.2.9}Wirkungsgrad \IeC {\"u}ber das Gesamtsystem}{20}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.10}Einhaltung technischer Grenzen}{21}{subsection.2.2.10}
+\contentsline {section}{\numberline {2.3}Vernachl\IeC {\"a}ssigungen und Vereinfachungen}{21}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Einschr\IeC {\"a}nkungen}{21}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Vereinfachungen}{22}{subsection.2.3.2}
+\contentsline {subsubsection}{Schub}{22}{subsubsection*.16}
+\contentsline {subsubsection}{Propeller und Kennfeld}{22}{subsubsection*.17}
+\contentsline {subsubsection}{Motor}{22}{subsubsection*.18}
+\contentsline {subsubsection}{Motorregler}{23}{subsubsection*.19}
+\contentsline {subsubsection}{Batterie}{23}{subsubsection*.20}
+\contentsline {subsubsection}{Wirkungsgrad}{23}{subsubsection*.21}
+\contentsline {chapter}{\numberline {3}Nachbildung des Quadrocopterflugs auf 10 km H\IeC {\"o}he}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}Komponenten des Quadrocopters und Umgebungsbedingungen}{24}{section.3.1}
+\contentsline {subsubsection}{Motor}{24}{subsubsection*.22}
+\contentsline {subsubsection}{Propeller}{24}{subsubsection*.23}
+\contentsline {subsubsection}{Batterie}{25}{subsubsection*.24}
+\contentsline {subsubsection}{Quadrocopterabma\IeC {\ss }e}{25}{subsubsection*.25}
+\contentsline {subsubsection}{Missions und Umgebungsparameter}{25}{subsubsection*.26}
+\contentsline {section}{\numberline {3.2}Ergebnis der Flugleistungsberechnung}{26}{section.3.2}
+\contentsline {section}{\numberline {3.3}Diskussion}{28}{section.3.3}
+\contentsline {chapter}{\numberline {4}Vergleich eines Fl\IeC {\"a}chenflugzeugs mit dem Quadrocopter}{30}{chapter.4}
+\contentsline {section}{\numberline {4.1}Einfluss der Steiggeschwindigkeit auf den Quadrocopterflug}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Fl\IeC {\"a}chenflugzeug-Referenzkonfiguration}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Einflussfaktoren auf das Fl\IeC {\"a}chenflugzeug}{36}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Propeller}{36}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Motor-Propeller Kombination}{37}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Anzahl der Motoren und Propeller}{39}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Gleitzahl}{42}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Auslegungsgeschwindigkeit}{44}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Penalty-Faktor}{46}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.7}Zusammenfassung}{48}{subsection.4.3.7}
+\contentsline {section}{\numberline {4.4}Ergebnisse des Vergleichs}{48}{section.4.4}
+\contentsline {chapter}{\numberline {5}Optimierung weiterer Parameter}{50}{chapter.5}
+\contentsline {section}{\numberline {5.1}Multicopter-Referenzkonfiguration}{50}{section.5.1}
+\contentsline {section}{\numberline {5.2}Einflussfaktoren auf die Multicopter-Referenzkonfiguration}{51}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Einfluss des Widerstands}{51}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Einfluss der Batteriespannung}{53}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Einfluss des Motorreglerwirkungsgrades}{56}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Einfluss des maximalen Motorstroms}{56}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Massenanteile der Komponenten}{56}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}Einfluss der Gr\IeC {\"o}\IeC {\ss }e}{59}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}Anzahl der Propeller}{61}{subsection.5.2.7}
+\contentsline {subsection}{\numberline {5.2.8}Einfluss eines Verstellpropellers}{63}{subsection.5.2.8}
+\contentsline {subsection}{\numberline {5.2.9}Einfluss eines stufenlosen Getriebes}{67}{subsection.5.2.9}
+\contentsline {section}{\numberline {5.3}Vorschlag einer optimalen L\IeC {\"o}sung}{71}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Vor\IeC {\"u}berlegungen}{71}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Ideale Randbedingungen}{72}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}AEROMET\_UAV Randbedingungen}{75}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Ergebnisse}{77}{subsection.5.3.4}
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Ausblick}{78}{chapter.6}
+\contentsline {section}{\numberline {6.1}Zusammenfassung}{78}{section.6.1}
+\contentsline {section}{\numberline {6.2}Ausblick}{79}{section.6.2}
+\contentsline {chapter}{\numberline {7}Projektmanagement}{80}{chapter.7}
+\contentsline {section}{\numberline {7.1}Projektstrukturplan}{81}{section.7.1}
+\contentsline {section}{\numberline {7.2}Zeitplan}{83}{section.7.2}
+\contentsline {chapter}{\numberline {A}Anhang}{98}{appendix.A}
+\contentsline {section}{\numberline {A.1}Fl\IeC {\"a}chenflugzeug}{98}{section.A.1}
+\contentsline {section}{\numberline {A.2}Propeller}{98}{section.A.2}
+\contentsline {section}{\numberline {A.3}Motor}{99}{section.A.3}
+\contentsline {section}{\numberline {A.4}Motorregler}{100}{section.A.4}
+\contentsline {section}{\numberline {A.5}Batteriekapazit\IeC {\"a}t}{101}{section.A.5}
+\contentsline {section}{\numberline {A.6}Vergleich von normierter zur originalen Batteriezelle}{101}{section.A.6}
+\contentsline {section}{\numberline {A.7}Steiggeschwindigkeit}{103}{section.A.7}
+\contentsline {section}{\numberline {A.8}Motorreglerwirkungsgrad}{104}{section.A.8}
+\contentsline {section}{\numberline {A.9}Batteriemasse}{108}{section.A.9}
+\contentsline {section}{\numberline {A.10}Verstellpropeller}{110}{section.A.10}
+\contentsline {section}{\numberline {A.11}Getriebe}{116}{section.A.11}
+\contentsline {section}{\numberline {A.12}Einfluss der Nutzlast}{117}{section.A.12}

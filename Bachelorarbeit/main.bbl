@@ -24,7 +24,6 @@
       \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
       \field{labeltitlesource}{title}
       \field{abstract}{Online shopping from a great selection at Prime Air Store.}
-      \field{note}{Abgerufen am 19.02.2019}
       \field{title}{Amazon.com: Prime Air}
       \verb{urlraw}
       \verb https://www.amazon.com/b?node=8037720011
@@ -664,6 +663,19 @@
       \verb 10.1007/978-981-10-3382-7
       \endverb
     \endentry
+    \entry{cvt}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labeltitlesource}{title}
+      \field{title}{Reality CVT Automatic Transmission for Tamiya 1/14 Tractor Truck - Rigidrc Shop}
+      \verb{urlraw}
+      \verb http://www.rigidrc.com/shop/transmission/670-reality-cvt-automatic-transmission-for-tamiya-114-tractor-truck.html
+      \endverb
+      \verb{url}
+      \verb http://www.rigidrc.com/shop/transmission/670-reality-cvt-automatic-transmission-for-tamiya-114-tractor-truck.html
+      \endverb
+      \warn{\item Entry 'cvt' (Literatur.bib): Invalid format '04.03.2019' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Scheiderer.2008}{book}{}
       \name{author}{1}{}{%
         {{hash=594bad86b0b63327c8244f31caac7160}{%
@@ -949,8 +961,6 @@
       \warn{\item Entry 'dwd' (Literatur.bib): Invalid format '22.02.2019' of date field 'urldate' - ignoring}
     \endentry
   \enddatalist
-  \missing{Ostler.2007}
-  \missing{PCUP}
 \endrefsection
 \endinput
 

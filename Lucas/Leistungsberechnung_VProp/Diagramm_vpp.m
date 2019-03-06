@@ -250,7 +250,7 @@ for h_variabel = H_0:Delta_H:H_max
         
         % MULTICOPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        m = m_copter + m_Bat + m_Mot * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
+        m = m_copter + m_Bat + (m_prop_mech + m_Mot) * n_Prop + m_nutz;                     % Gesamtmasse des Quadrocopters
         t_Flug_inter(z) = Delta_H / V_Kg_inter(z);                                            % Flugzeit
         
         % Initialisierungen für den Verstellpropeller
@@ -583,14 +583,14 @@ end
 figure(figure_ges)
 
 subplot(621), plot(H,C_Rest_V_vpp*100,'LineWidth',2), grid, title('Restladung'), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
-subplot(622), plot(H,Omega_vpp/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('Drehzahl [RPM]')
+subplot(622), plot(H,Omega_vpp/(2*pi)*60,'LineWidth',2), grid, title('Drehzahl'), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
 subplot(623), plot(H,I_mot_vpp,'LineWidth',2), grid, title('Motorstrom'), xlabel('Höhe [m]'),ylabel('I_{Mot} [A]')
 subplot(624), plot(H,U_mot_vpp,'LineWidth',2), grid,  title('Motorspannung'), xlabel('Höhe [m]'),ylabel('U_{mot} [V]')
 subplot(625), plot(H,I_Bat_vpp,'LineWidth',2), grid, title('Batteriestrom'), xlabel('Höhe [m]'),ylabel('I_{Bat} [A]')
 H2 = [0;H];
 subplot(626), plot(H2,U_Bat_vpp,'LineWidth',2), grid, title('Batteriespannung'), xlabel('Höhe [m]'),ylabel('U_{Bat} [V]')
 subplot(627), plot(H,PWM_vpp*100,'LineWidth',2), grid, title('Pulsweitenmodulation'), xlabel('Höhe [m]'),ylabel('PWM [%]')
-subplot(628), plot(H,eta_ges_vpp*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('eta_{ges} [%]')
+subplot(628), plot(H,eta_ges_vpp*100,'LineWidth',2), grid, title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),ylabel('\eta_{ges} [%]')
 subplot(629), plot(H,V_Kg_vpp,'LineWidth',2), title('Bahngeschwindigkeit'), grid, xlabel('Höhe [m]'),ylabel('V_{Kg} [m/s]')
 subplot(6,2,10), plot(H2,t_Flug_vpp,'LineWidth',2), title('Flugzeit'), grid, xlabel('Höhe [m]'),ylabel('t_{Flug} [s]')
 subplot(6,2,11), plot(H,pitch_vpp,'LineWidth',2), title('Pitch'), grid, xlabel('Höhe [m]'),ylabel('Pitch [in]')

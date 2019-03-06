@@ -3,6 +3,7 @@
 \label{chap:anhang}
 
 \section{Flächenflugzeug}
+\label{sec:herleitung_geschw_bez}
 Der in Gleichung \ref{eq:geschw_flaechenflugzeug} aufgeführte Zusammenhang entsteht aus dem Verhältnis der Fluggeschwindigkeiten bei konstanten Auftriebsbeiwert. Aus der Definition des Auftriebsbeiwertes
 \begin{equation}
 	c_{A} = \frac{A}{\rho/2\cdot V^2\cdot S}
@@ -21,6 +22,7 @@ Für jegliche Art von Steigflug (\ensuremath{\gamma \neq 0}) ist dies nicht mehr
 \end{equation}\\
 
 \section{Propeller}
+\label{sec:propellerkennfeld}
 In Abb. \ref{abb:propellerkennfeld} ist ein Kennfeld von einem APC 10x3 Propeller dargestellt. 
 \begin{figure}[H]
 \centering
@@ -30,14 +32,26 @@ In Abb. \ref{abb:propellerkennfeld} ist ein Kennfeld von einem APC 10x3 Propelle
 \end{figure}
 
 \section{Motor}
+\label{sec:motormodell}
 Das Motormodell weist eine über das ganze Spektrum der möglichen Betriebspunkte konsistente Verteilung des Motorwirkungsgrades auf (Vgl. Abb. \ref{abb:motormodell}). Der maximale Motorwirkungsgrad wird bei maximaler Spannung und bei maximalen Strom erreicht. Der errechnete Wert stimmt mit einer Genauigkeit von \ensuremath{\pm \SI{2}{\%}} mit den Angaben vom Hersteller überein \cite{axi}.
-
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Motormodell.pdf}
 	\caption{Wirkungsgrad aufgetragen über verschiedenen Betriebspunkten des Motors}
 	\label{abb:motormodell}
 \end{figure}
+
+\section{Motorregler}
+\label{sec:motorreglermodell}
+Das Modell des Motorreglerwirkungsgrades ist in Abb. \ref{abb:motorreglermodell} dargestellt. Es zeigt den Wirkungsgrad des Motorreglers in Abhängigkeit der PWM. An dieser Stelle ist die ausschließliche Abhängigkeit des Modells von der PWM ersichtlich.
+ 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Motorreglermodell.pdf}
+	\caption{Wirkungsgrad des Motorreglers aufgetragen über der PWM}
+	\label{abb:motorreglermodell}
+\end{figure}
+
 
 \section{Batteriekapazität}
 Für die Untersuchungen ist eine Berechnung der Batteriekapazität unabhängig von der Art der Zelle, aber abhängig von der Batteriemasse von Interesse.
@@ -50,16 +64,23 @@ Mit dieser berechnet sich die Kapazität wie folgt:
 
 
 \section{Vergleich von normierter zur originalen Batteriezelle}
+\label{sec:norm_vs_orig}
 Für den Vergleich der Norm- mit der Originalzelle wird das Integral unterhalb der beiden Entladekurven für eine bestimmte Entladerate gebildet. Anschließend werden beide Flächen zu einander in Beziehung gesetzt 
 \begin{equation}
 	\text{Toleranz} = \frac{\text{F}_{Orig.}-\text{F}_{Norm}}{\text{F}_{Norm}} \eqend{.}
 \end{equation} 
-Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzellenberechnung nicht berücksichtigt, deren individuelle Abweichung eine große Diskrepanz zur Standardabweichung aufweist. Der Vergleich zeigt, dass es starke Abweichungen der Batterie gibt. Die durchschnittliche Abweichung liegt für Entladeraten bis \SI{45}{1/h} deutlich über Null und steigt mit der Entladerate von \SI{8}{\%} auf \SI{17}{\%} bei \SI{45}{1/h}. Die Spannung der Normzelle ist somit im Durchschnitt kleiner als die der originalen Batteriezelle. Ab der Entladerate von \SI{50}{1/h} fällt die Abweichung drastisch auf \SI{-18}{\%} ab. 
-\missingfigure{Abweichungsbilder}
-
+Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzellenberechnung nicht berücksichtigt, deren individuelle Abweichung eine große Diskrepanz zur Standardabweichung aufweist. Der Vergleich zeigt, dass es starke Abweichungen der Batterie gibt. Die durchschnittliche Abweichung liegt für Entladeraten bis \SI{45}{1/h} deutlich über Null und steigt mit der Entladerate von \SI{8}{\%} auf \SI{17}{\%} bei \SI{45}{1/h}. Die Spannung der Normzelle ist somit im Durchschnitt kleiner als die der originalen Batteriezelle (Vgl. Abb. \ref{abb:batterie_abweichungen}). Ab der Entladerate von \SI{50}{1/h} fällt die Abweichung drastisch auf \SI{-18}{\%} ab. 
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Abweichungen.pdf}
+	\caption{links: Durschnittliche Spannungsabweichungen der Normzelle von den Zellen aus der Batteriedatenbank in Abhängigkeit von der C-Rate,\\ rechts: Beispiel für die Spannungsabweichungen jeder Normzelle im Vergleich zur Originalzelle für eine Entladerate von \SI{20}{1/h}
+	 }
+	\label{abb:batterie_abweichungen}
+\end{figure}
 
 
 \section{Steiggeschwindigkeit}
+\label{sec:vvar_vorgehen}
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,160)
@@ -109,6 +130,14 @@ Im Sinne einer Genauigkeitssteigerung werden alle die Batterien in der Normzelle
 \section{Motorreglerwirkungsgrad}
 \label{sec:motorreglerwirkungsgrad}
 Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht. Dafür werden zwei Batteriegrößen untersucht, eine mit sechs Zellen und einmal mit acht Zellen. Die Masse und Kapazität bleiben jeweils gleich. 
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_normal_6.pdf}
+	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit sechs Zellen}
+	\label{abb:eta_pwm_6_normal}
+\end{figure}
+
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_6.pdf}
@@ -123,23 +152,10 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 	\label{abb:eta_pwm_6_1}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_halbierung_8.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (Halbierung der Verluste) für eine Batterie mit acht Zellen}
-	\label{abb:eta_pwm_8_halb}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Untersuchung_eta_pwm_1_8.pdf}
-	\caption{Leistungsparameter für einer Verbesserung des Motorreglerwirkungsgrades (keine Verluste) für eine Batterie mit acht Zellen}
-	\label{abb:eta_pwm_8_1}
-\end{figure}
-
-
 
 \section{Batteriemasse}
+\label{sec:batteriemasse}
+Es zeigt sich, dass das Optimum des Batteriemassenanteils bei \SI{66.66}{\%} oder leicht darunter liegt. Eine Erhöhung führt zu schlechteren Flugleistungen und einem schnelleren Absinken der Restkapazität gegen Null (vgl. Abb. \ref{abb:batteriemasse_genauer}). Deutlich ist zudem der Einfluss der Batteriemasse auf die Bahngeschwindigkeit gegeben. Mit der Masse sinkt die optimale Bahngeschwindigkeit. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Batteriemasse_genauer.pdf}
@@ -147,28 +163,14 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 	\label{abb:batteriemasse_genauer}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Einfluss_eta_ges.pdf}
-	\caption{Leistungsparameter für einen Batteriemassenanteil von 1/3 (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
-	\label{abb:m_bat_eta_ges1/3}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[scale=0.7]{Diagramme/Einfluss_eta_ges2.pdf}
-	\caption{Leistungsparameter für einen Batteriemassenanteil von 2/3 (\ensuremath{m_{Mot}=\SI{106}{g}}, \ensuremath{K_V=\SI{1390}{RPM/V}}, \ensuremath{n_{Prop}=4}, \ensuremath{Propeller=\SI{10x3}{}}, \ensuremath{n_{Bat,cell}=4}, \ensuremath{u_{Wg}=\SI{10}{m/s}})}
-	\label{abb:m_bat_eta_ges2/3}
-\end{figure}
-
 
 
 
 \section{Verstellpropeller}
-
+\label{sec:vprop_vorgehen}
 \begin{center}
 \begin{figure}[H]
-\begin{struktogramm}(163,160)
+\begin{struktogramm}(163,70)
 \assign[1]{Multicopter- und Umgebungsparameter festlegen (im Startskript)}
 \assign[1]{Diskretisierungen (Geschwindigkeit, Höhe) festlegen}
 \assign[1]{Aufruf des Hauptskripts: Leistungsberechnung starten}
@@ -184,10 +186,19 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 	\assign[2]{Speicher das Ergebnis unter fortlaufenden Nummern}
 	\assign[2]{Erhöhe Propellerzähler}
 \whileend
+\end{struktogramm}
+\caption{Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers}
+\label{abb:vpp_vorberechnung}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[H]
+\begin{struktogramm}(163,210)
 \assign[1]{Initialisierung der Parameterberechnung}
 \while[5]{F\"ur alle Höhenabschnitte}
 	\assign[1]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
-	\assign[1]{arithmetische Mittelwert berechnen}
+	\assign[1]{Berechnung des arithmetischen Mittelwertes}
 	\assign[1]{Schub- und Leistungskennfeld anpassen}
 	\assign[2]{Initialisierung der Leistungsberechnung}
 	\while[5]{Für alle Bahngeschwindigkeiten}
@@ -230,16 +241,12 @@ Im Folgenden ist der Einfluss des ESC-Wirkungsgrades auf den TOC veranschaulicht
 \assign[2]{Speichern der Diagramme in .pdf-Datei}
 \end{struktogramm}
 \caption{Programmstruktur die Untersuchung des Nutzens eines Verstellpropellers}
-\label{abb:vpp}
+\label{abb:vpp_flugleistungsberechnung}
 \end{figure}
 \end{center}
 
-Der Verlauf des Gesamtwirkungsgrades folgt eindeutig dem Verlauf des Propellerwirkungsgrades. Dieser ist die Ursache für den höheren Gesamtwirkungsgrad des Verstellpropellers (Vgl. Abb.
+Der Verlauf des Gesamtwirkungsgrades folgt eindeutig dem Verlauf des Propellerwirkungsgrades. Dieser ist die Ursache für den höheren Gesamtwirkungsgrad des Verstellpropellers (Vgl. Abb. \ref{abb:verstellprop_eta}).
 
-\missingfigure{realer Verstellpropeller, fraglich}
-
-
-hier nur Wirkungsgrad
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Verstellprop_eta.pdf}
@@ -247,16 +254,17 @@ hier nur Wirkungsgrad
 	\label{abb:verstellprop_eta}
 \end{figure}
 
+In Abb. \ref{abb:verstellprop_real} ist der Gewichtseinfluss auf die Flugleistungen eines Multicopters mit Verstellpropeller dargestellt. Das Gewicht verringert die Flugleistungen deutlich. Außerdem kann für die Referenzkonfiguration festgehalten werden, dass der Vorteil des Verstellpropellers bei einem Gewicht des Verstellmechanismus von \SI{85}{g} pro Propeller kompensiert wird. Insgesamt ergibt dies einen Anteil von ca. \SI{10}{\%} am Gesamtgewicht. Wird dieser Anteil überschritten, ist der Nutzen des Verstellpropeller nichtig. Alle Anteile darunter ergeben einen Nutzen. 
 \begin{figure}[H]
 \centering
 	\includegraphics[scale=0.7]{Diagramme/Verstellprop_real.pdf}
-	\caption{Einfluss des Verstellpropellers auf die maximal erreichbare Höhe mit einem Verstellmechanismusgewicht von 75g pro Propeller}
+	\caption{Einfluss des Verstellpropellers auf die Flugleistungen der Referenzkonfiguration des Multicopters mit einem Gewicht von \SI{85}{g} pro Verstelleinrichtung}
 	\label{abb:verstellprop_real}
 \end{figure}
 
 
 \section{Getriebe}
-
+\label{sec:getriebe_vorgehen}
 \begin{center}
 \begin{figure}[H]
 \begin{struktogramm}(163,210)
@@ -266,7 +274,7 @@ hier nur Wirkungsgrad
 \assign[1]{Initialisierung der Parameterberechnung}
 \while[5]{F\"ur alle Höhenabschnitte}
 	\assign[1]{H\"ohe, Dichte, Luftdruck Temperatur berechnen}
-	\assign[1]{arithmetische Mittelwert berechnen}
+	\assign[1]{Berechnung des arithmetischen Mittelwertes}
 	\assign[1]{Schub- und Leistungskennfeld anpassen}
 	\assign[2]{Initialisierung der Leistungsberechnung}
 	\while[5]{Für alle Bahngeschwindigkeiten}
@@ -277,7 +285,7 @@ hier nur Wirkungsgrad
 		\ifthenelse[10]{4}{1}{Sind die Werte NaN?}{nein}{ja}
 			\while[5]{Solange Abbruchkriterium nicht erreicht}		
 				\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
-				\ifthenelse[10]{1}{1}{Werte innerhalb Leistungsgrenzen?}{ja}{nein}
+				\ifthenelse[10]{1}{1}{Grenzen überschritten?}{nein}{ja}
 				\assign[2]{Verlasse Schleife}
 				\change
 				\assign[2]{Suche nächst kleineren Energiemenge}
@@ -292,7 +300,7 @@ hier nur Wirkungsgrad
 	\ifthenelse[10]{4}{1}{Sind die Werte NaN?}{nein}{ja}
 		\while[5]{Solange Abbruchkriterium nicht erreicht}		
 			\assign[2]{Finde den Index mit der geringsten verbrauchten Energiemenge}
-			\ifthenelse[10]{1}{1}{Werte innerhalb Leistungsgrenzen?}{ja}{nein}
+			\ifthenelse[10]{1}{1}{Grenzen überschritten?}{nein}{ja}
 			\assign[2]{Verlasse Schleife}
 			\change
 			\assign[2]{Suche nächst kleinere Energiemenge}
@@ -308,19 +316,21 @@ hier nur Wirkungsgrad
 \assign[2]{Speichern der Diagramme in .pdf-Datei}
 \end{struktogramm}
 \caption{Programmstruktur die Untersuchung des Nutzens eines Getriebes}
-\label{abb:getriebe}
+\label{abb:getriebe_struktogramm}
 \end{figure}
 \end{center}
 
+\section{Einfluss der Nutzlast}
+\label{sec:einfluss_nutzlast}
+Auf eine Reduzierung der Batteriemasse durch die zusätzliche Nutzlast wird hier bewusst verzichtet. Der Vergleich von Abb. \ref{abb:aeromet_rb} mit Abb. \ref{abb:aeromet_rb_batterie_redu} zeigt auf, dass eine Reduzierung der Gesamtmasse im Sinne einer Schubsenkung wenig Einfluss auf die Flugleistungen hat. Dies bestätigt die Aussage aus Abschn. \ref{subsec:groesse}. Der Einfluss der Nutzlast mit konstanten \SI{250}{g} nimmt ab, je kleiner deren Anteil an der Gesamtmasse ist.  
+
 \begin{figure}[H]
 \centering
-	\includegraphics[scale=0.7]{Diagramme/Getriebe_wirkungsgrade.pdf}
-	\caption{Einfluss eines Getriebes auf die maximal erreichbare Höhe mit besonderem Hinblick auf die Einzelwirkungsgrade}
-	\label{abb:getriebe_wirkungsgrade}
+	\includegraphics[scale=0.7]{Diagramme/aeromet_nutzlast_redu.pdf}
+	\caption{Einfluss der Batteriemassenreduzierung durch die Nutzlast auf die Flugleistungen der optimalen Lösung (vgl. Tab. \ref{tab:optimale_konfiguration})}
+	\label{abb:aeromet_rb_batterie_redu}
 \end{figure}
 
-\missingfigure{realistische Werte, keine rosarote Brille}
 
-\missingfigure{anderer Motor mit anderem KV}
 
 \end{appendix}
