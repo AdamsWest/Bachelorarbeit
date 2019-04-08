@@ -19,7 +19,7 @@ function [Eo, A, K] = batteryDischargeParams( points )
 % See also: batteryAverageParams
 %
 %   Copyright 2019 TU Braunschweig
-% ******************************************************************************
+% *************************************************************************
 
 % the experimental points on the discharge curve
 SoC_full = points(1);

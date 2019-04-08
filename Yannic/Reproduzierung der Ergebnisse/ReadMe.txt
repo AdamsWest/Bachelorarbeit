@@ -22,3 +22,6 @@ Datenbanken:
 - axi_motor_db: Motordatenbank
 - DATA_APC: Propellerkennfelddatenbank
 - Elektromodellflug: Batteriedatenbank
+
+
+Eine ausführliche Dokumentation der Funktionen und des Programmablaufs wird in ForceCalc vorgenommen.

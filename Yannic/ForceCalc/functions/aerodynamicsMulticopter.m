@@ -38,7 +38,7 @@ function [ Thrust, Theta_1, V_A, alpha ] = aerodynamicsMulticopter( ...
 %
 % See also: propellerOp,  motorOp
 %
-%   Copyright 2018 TU Braunschweig
+%   Copyright 2019 TU Braunschweig
 % *************************************************************************
 
 % If the lateral wind component is zero ...

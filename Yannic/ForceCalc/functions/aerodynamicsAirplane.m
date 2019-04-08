@@ -93,7 +93,8 @@ end
 % Necessary Thrust
 Thrust = m*g * ( sin(gamma) + 1/E_star *cos(gamma));	
 
-% Actual airspeed matches current airspeed
+% Absolute velocity of the airplane relative to the air matches current 
+% airspeed
 V_A = V;		
 
 

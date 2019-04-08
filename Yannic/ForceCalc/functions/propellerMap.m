@@ -1,5 +1,6 @@
 function [RPM, V, T, P, Tau] = propellerMap(DATA_APC,prop_name)
 %propellerMap   computes regressions of given original APC propeller maps.
+%
 %   The function Propeller_map transforms the given propeller map with
 %   non-uniformly velocity breakpoint vectors to a propeller map where the 
 %   breakpoint vector is uniformly. This is done by polynomial regression.
@@ -88,18 +89,24 @@ for k = 1:rows-1
     z = DATAp{k+1,5};   % one row of the power matrix (vector)
     
     % definition of special V breakpoints
-    x_12 = interp1(V,V,x(2),'nearest') + 1;     % second element (round)
-    x_23 = interp1(V,V,x(end-1),'nearest') - 1; % second last element (round)
+    % second element (round)
+    x_12 = interp1(V,V,x(2),'nearest') + 1;     
+    % second last element (round)
+    x_23 = interp1(V,V,x(end-1),'nearest') - 1; 
     if isnan(x_23)
         x_23 = V(end-1);
     end
 
     % interpolation of the thrust and power vector with a 5th degree
     % (order) polynomial
-    coeff = polyfit(x , y, order);     % calculate the parameters of the thrust interpolation
-    coeffz = polyfit(x , z, order);    % calculate the parameters of the power interpolation    
-    yp_2 = polyval(coeff,x_12:delta_x:x_23);    % calculation of the thrust polynomials
-    zp_2 = polyval(coeffz,x_12:delta_x:x_23);   % calculation of the power polynomials
+    % calculate the parameters of the thrust interpolation
+    coeff = polyfit(x , y, order);     
+    % calculate the parameters of the power interpolation
+    coeffz = polyfit(x , z, order);        
+    % calculation of the thrust polynomials
+    yp_2 = polyval(coeff,x_12:delta_x:x_23);   
+    % calculation of the power polynomials
+    zp_2 = polyval(coeffz,x_12:delta_x:x_23);   
 
     % calculate the parameters of the derivative of the interpolation
     % polynomials (the derivative is needed for the extrapolation)
@@ -109,10 +116,14 @@ for k = 1:rows-1
     % calculation of the linear extrapolation functions in both
     % directions (the slope of the linear extrapolation function is
     % calculated with the derivative of the interpolation polynomial)
-    yp_1 = sum(x(2).^(0:length(coeff2)-1).*coeff2(end:-1:1)) * ([x_beg:delta_x:x_12-delta_x] - x_12) + yp_2(1);
-    yp_3 = sum(x(end-1).^(0:length(coeff2)-1).*coeff2(end:-1:1)) * ([x_23+delta_x:delta_x:x_end] - x_23) + yp_2(end);
-    zp_1 = sum(x(2).^(0:length(coeffz2)-1).*coeffz2(end:-1:1)) * ([x_beg:delta_x:x_12-delta_x] - x_12) + zp_2(1);
-    zp_3 = sum(x(end-1).^(0:length(coeffz2)-1).*coeffz2(end:-1:1)) * ([x_23+delta_x:delta_x:x_end] - x_23) + zp_2(end);
+    yp_1 = sum(x(2).^(0:length(coeff2)-1).*coeff2(end:-1:1)) * ...
+        ([x_beg:delta_x:x_12-delta_x] - x_12) + yp_2(1);
+    yp_3 = sum(x(end-1).^(0:length(coeff2)-1).*coeff2(end:-1:1)) * ...
+        ([x_23+delta_x:delta_x:x_end] - x_23) + yp_2(end);
+    zp_1 = sum(x(2).^(0:length(coeffz2)-1).*coeffz2(end:-1:1)) * ...
+        ([x_beg:delta_x:x_12-delta_x] - x_12) + zp_2(1);
+    zp_3 = sum(x(end-1).^(0:length(coeffz2)-1).*coeffz2(end:-1:1)) * ...
+        ([x_23+delta_x:delta_x:x_end] - x_23) + zp_2(end);
     
     % calculation of the complete thrust and power vector which consists of
     % the interpolation polynomial and the linear extrapolations in both
