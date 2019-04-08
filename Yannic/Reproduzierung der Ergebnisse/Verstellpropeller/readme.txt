@@ -1,0 +1,5 @@
+Vorgehen analog wie vorher beschrieben
+
+Leistungsberechnung_verstellprop: Angepasstes Leistungsberechnungsskript zur Modellierung eines Verstellpropellers
+Leistungsberechnung_verstellprop_alternativ: alternatives Kriterium zur Auswahl der Propellersteigung
+Leistungsberechnung_verstellprop_eta: Propellerwirkungsgrad ist Auswahlkriterium für die Propellersteigung

@@ -1,0 +1,3 @@
+Vorgehen analog wie vorher beschrieben
+
+Leistungsberechnung_getriebe_kurvenschar untersucht zusätzlich den Einfluss des Getriebegewichts auf die Flugleistungen
