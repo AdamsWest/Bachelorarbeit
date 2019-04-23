@@ -39,9 +39,9 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '10x4';    % Propellerbezeichnung
+prop_name = '11x4';    % Propellerbezeichnung
 n_Prop = 4;             % Anzahl der Propeller
-D = 11;                % Propellerdurchmesser in inch
+D = 10;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung

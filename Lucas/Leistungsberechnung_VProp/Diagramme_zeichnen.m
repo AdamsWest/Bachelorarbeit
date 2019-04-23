@@ -46,3 +46,23 @@ set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,'Verstellpropeller_real', 'pdf');
 
+figure_C_Rest_V = figure;
+figure(figure_C_Rest_V);
+stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), hold on
+stairs(H,C_Rest_V_vpp*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+lgd = legend('fixed pitch','variable pitch','Location','northeast'); title(lgd,'Propeller')
+saveas(gcf,'Verstellpropcrest','png')
+
+figure_pitch = figure;
+figure(figure_pitch)
+stairs(H,pitch,'LineWidth',1), hold on
+stairs(H,pitch_vpp,'LineWidth',1), title('Propellersteigung'), grid, xlabel('Höhe [m]'),ylabel('Steigung [in]')
+% lgd = legend('fixed pitch','variable pitch','Location','northwest'); title(lgd,'Propeller')
+saveas(gcf,'Verstellproppitch','png')
+
+figure_omega = figure;
+figure(figure_omega)
+stairs(H,Omega/(2*pi)*60,'LineWidth',1), grid, title('Drehzahl'), hold on
+stairs(H,Omega_vpp/(2*pi)*60,'LineWidth',1), xlabel('Höhe [m]'),ylabel('\Omega [RPM]')
+lgd = legend('fixed pitch','variable pitch','Location','northwest'); title(lgd,'Propeller')
+saveas(gcf,'Verstellpropomega','png')

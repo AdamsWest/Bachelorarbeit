@@ -17,7 +17,7 @@ load('axi_motor_db.mat');
 % Handelt es sich bei dem zu untersuchenden Flugobjekt um einen Multicopter
 % (1) oder um ein Flächenflugzeug (0)?
 
-Abfrage_Flugsystem = 0;
+Abfrage_Flugsystem = 1;
 
 
 %% Initialisierung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,8 +39,8 @@ K_V = K_V*2*pi/60;          % Umrechnung in 1/(V*s)
 % m_Mot = 0.0365;         % Motorgewicht in kg
 
 % Propeller
-prop_name = '9x7';    % Propellerbezeichnung
-n_Prop = 1;             % Anzahl der Propeller
+prop_name = '11x3';    % Propellerbezeichnung
+n_Prop = 4;             % Anzahl der Propeller
 %D = 14;                % Propellerdurchmesser in inch
 %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
@@ -52,7 +52,7 @@ E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
 N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
-U_Bat_cell = 3.9;       % nominale Spannung pro Batteriezelle
+U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
 U_Bat_cell_min = 2.85;  % minimale Spannung pro Batteriezelle
 P_Bat_Peukert = 1.00;   % Peukert-Konstante (Schaetzung)    
 C_Rate_max = 30;        % maximale C-Rate bezogen auf eine nominale Entladezeit von 1 Stunde

@@ -1,6 +1,6 @@
 clc
-clear  
-close all
+% clear  
+% close all
 
 %% Dateinamen eingeben %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -45,7 +45,7 @@ D = 11;                  % Propellerdurchmesser in inch
 c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
 a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
 alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
-m_prop_mech = 0.085;      % Gewicht des Verstellmechanismus
+m_prop_mech = 0.00;      % Gewicht des Verstellmechanismus
 
 % Batterie
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg

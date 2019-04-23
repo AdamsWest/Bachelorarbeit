@@ -24,7 +24,7 @@ load('axi_motor_db.mat');
 
 % figures definieren
 figure_ges = figure;
-
+figure_C_Rest_V = figure;
 
 %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,7 +56,7 @@ m_copter = m_ges * (0.354/1.06);           % Leermasse
 E_Dichte = 890540;      % Energiedichte des LiPos in J/kg
 % N_Bat_cell = 6;         % Anzahl der Batteriezellen in Reihe
 % Abfrage_N_Bat = [4 4 4 6 4 6];
-Abfrage_N_Bat = [6 6 6 6 6 6];
+Abfrage_N_Bat = [4 4 4 6 4 6];
 N_Bat_cell_p = 3;       % Anzahl der Batteriezellen parallel
 C_Bat_cell = 3.120;     % Kapazität einer Zelle in Ah
 U_Bat_cell = 4;       % nominale Spannung pro Batteriezelle
@@ -70,7 +70,7 @@ m_Bat_min = 0.49;
 m_Bat_Delta = 0.01;
 m_Bat_max = 0.55;
 Abfrage_m_Bat = [0.25 0.5 1 1 2 2];  
-Abfrage_m_Bat = [1.5 1.75 2 2.25 2.5];
+% Abfrage_m_Bat = [1.5 1.75 2 2.25 2.5];
 
 % Missionsparameter
 m_nutz = 0.0;          % Nutzlast in kg           

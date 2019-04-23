@@ -26,6 +26,7 @@ Abfrage_Flugsystem = 0; % HANDS OFF
 
 % figures definieren
 figure_ges = figure;
+figure_C_Rest_V = figure;
 
 % Flächenflugzeug definieren 
 m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
@@ -49,7 +50,7 @@ g = 9.81;                                   % Erdbeschleunigung in m/s^2
 
 H_0 = 0;                                    % Höhe des Abflugplatzes über Normalnull in m
 Delta_H = 100;                              % Inkrementweite in m
-H_max = 18000;                              % Maximalhöhe in m
+H_max = 19000;                              % Maximalhöhe in m
 
 T_0 = 288.15;                               % Temperatur in K am Flugplatz
 p_0 = 101325;                               % Druck am Abflugplatz in Pa
@@ -96,10 +97,10 @@ lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
 % lengthj = length(Abfrage_mot);
-lengthj = length(Abfrage_n_prop);
+% lengthj = length(Abfrage_n_prop);
 % lengthj = length(Abfrage_prop);
 % lengthj = length(Abfrage_E);
-% lengthj = length(Abfrage_fp);
+lengthj = length(Abfrage_fp);
 % lengthj = length(Abfrage_V);
 
 
@@ -122,7 +123,7 @@ l10 = zeros(lengthj,1);
 
 
 
-for j = 1:length(Abfrage_n_prop)
+for j = 1:length(Abfrage_fp)
     
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -149,7 +150,7 @@ for j = 1:length(Abfrage_n_prop)
     
     % Propeller
     prop_name = Abfrage_prop{3};    % Propellerbezeichnung
-    n_Prop = Abfrage_n_prop(j);             % Anzahl der Propeller
+    n_Prop = Abfrage_n_prop(1);             % Anzahl der Propeller
     %D = 14;                % Propellerdurchmesser in inch
     %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
     c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
@@ -213,7 +214,7 @@ for j = 1:length(Abfrage_n_prop)
         
         m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
         
-        f_p = Abfrage_fp(1);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+        f_p = Abfrage_fp(j);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
         
         m_flugzeug = f_p * m_copter;
         
@@ -692,12 +693,14 @@ for j = 1:length(Abfrage_n_prop)
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
     subplot(529), l9(j) = stairs(H,gamma_Flaechenflzg,'LineWidth',1); grid on, hold on
     subplot(5,2,10), l10(j) = stairs(H,V_Flaechenflugzeug,'LineWidth',1); grid on, hold on   
-    l10_Info{j} = [num2str(Abfrage_n_prop(j))]; grid on, hold on
+    l10_Info{j} = ['m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name]; grid on, hold on
     % m_{Mot}: ' num2str(m_Mot) ', K_V: ' num2str(K_V*60/(2*pi)) ', Prop: ' prop_name
     
     %   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]
     
-    
+    figure(figure_C_Rest_V)
+    l1(j) = stairs(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
+    l1_Info{j} = [num2str(Abfrage_fp(j))]; grid on, hold on
     
     %     j = j + 1;
     %% Spielereien
@@ -761,3 +764,9 @@ fig = gcf;
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');
+
+
+figure(figure_C_Rest_V)
+title('Restladung'), xlabel('Höhe [m]'), ylabel('C_{Bat,Rest} [%]'), 
+lgd = legend([l1], l1_Info, 'Location','northeast'); title(lgd,'f_P =') 
+saveas(gcf,Dateiname,'png')

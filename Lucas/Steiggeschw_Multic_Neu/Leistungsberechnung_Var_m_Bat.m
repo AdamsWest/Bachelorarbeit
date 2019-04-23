@@ -443,7 +443,9 @@ for j = 1:length(Abfrage_m_Bat)
     subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); l9_Info{j} = ['m_{Bat} = ' num2str(m_Bat/m*100) ' %, N_{Bat,cell} = ' num2str(Abfrage_N_Bat(j))]; grid on, hold on
 
 
-
+    figure(figure_C_Rest_V)
+    l1(j) = stairs(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
+    l1_Info{j} = ['m_{Bat} = ' num2str(m_Bat/m*100) ' %, N_{Bat,cell} = ' num2str(Abfrage_N_Bat(j))]; grid on, hold on
 
 
     j = j + 1;
@@ -488,3 +490,11 @@ fig = gcf;
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,Dateiname, 'pdf');
+
+
+
+
+figure(figure_C_Rest_V)
+title('Restladung'), xlabel('Höhe [m]'), ylabel('C_{Bat,Rest} [%]'), 
+lgd = legend([l1], l1_Info, 'Location','northeast'); title(lgd,'Größenskalierung') 
+saveas(gcf,Dateiname,'png')

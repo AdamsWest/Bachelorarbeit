@@ -9,7 +9,8 @@ load('Elektromodellflug');
 load('axi_motor_db.mat');
 
 %% Festlegung des Dateinamen
-Dateiname = 'Anz_Prop';
+Dateiname = 'nprop';
+figure_C_Rest_V = figure;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % *************************************************************************
@@ -103,9 +104,9 @@ l9 = zeros(lengthj,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Programmanfang
 
-% j = 1;
-% for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
-for j = 1:length(Abfrage_n_prop)
+j = 1;
+for m_Bat_variabel = m_Bat_min:m_Bat_Delta:m_Bat_max
+% for j = 1:length(Abfrage_n_prop)
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,7 +125,7 @@ for j = 1:length(Abfrage_n_prop)
     
     % Propeller
     prop_name = Abfrage_prop{2};    % Propellerbezeichnung
-    n_Prop = Abfrage_n_prop(j);             % Anzahl der Propeller
+    n_Prop = Abfrage_n_prop(3);             % Anzahl der Propeller
     c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
     a_alpha = 5;            % Anstieg des Auftriebsbeiwerts ueber dem Anstellwinkel (Profil), Schaetzung
     alpha_stall = 10;       % Anstellwinkel, bei dem die Strömung abreisst in Grad, Schaetzung
@@ -531,15 +532,18 @@ for j = 1:length(Abfrage_n_prop)
     subplot(527), l7(j) = stairs(H,PWM*100,'LineWidth',1); grid on, hold on
     subplot(528), l8(j) = stairs(H,eta_ges*100,'LineWidth',1); grid on, hold on
     subplot(529), l9(j) = stairs(H,V_Kg,'LineWidth',1); 
-    l9_Info{j} = ['n_{Prop} =' num2str(Abfrage_n_prop(j))]; grid on, hold on
+    l9_Info{j} = ['n_{Prop} = ' num2str(Abfrage_n_prop(j))] ; grid on, hold on
     
     
 %     'm_{Mot}= ' num2str(m_Mot) ', K_V= ' num2str(K_V*60/(2*pi)) ', Prop= ' prop_name ', n_{Bat,cell}= ' num2str(N_Bat_cell)
-%   ['n_{Prop} =' num2str(Abfrage_n_prop(j))]  
+%   ['n_{Prop} = ' num2str(Abfrage_n_prop(j))]  
+    
+    figure(figure_C_Rest_V)
+    l1(j) = stairs(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
+    l1_Info{j} = ['n_{Prop} =' num2str(Abfrage_n_prop(j))]; grid on, hold on
     
     
-    
-%     j = j + 1;
+    j = j + 1;
     %% Spielereien
     disp([num2str((j)*100/lengthj) ' %']); %(Abfrage_m_Bat)) ' %']);
 end
@@ -571,16 +575,21 @@ subplot(528), title('Gesamtwirkungsgrad'), xlabel('Höhe [m]'),
 ylabel('\eta_{ges} [%]'), %legend([l8], l8_Info)
 subplot(529), title('Bahngeschwindigkeit'), xlabel('Höhe [m]'),
 ylabel('V_{Kg} [m/s]'),
-lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'Größenskalierung')  
+lgd = legend([l9], l9_Info, 'Location','bestoutside'); title(lgd,'c_{W}')  
 % 
 % newPosition = [10 20 0.2 0.2];
 % newUnits = 'centimeters';
 % set(hL,'Position', newPosition,'Units', newUnits);
 
+figure(figure_C_Rest_V)
+title('Restladung'), xlabel('Höhe [m]'), ylabel('C_{Bat,Rest} [%]'), 
+lgd = legend([l1], l1_Info, 'Location','northeast'); title(lgd,'Größenskalierung') 
+saveas(gcf,Dateiname,'png')
+
+
 % Anpassung und Abspeichern der Diagramme
 PaperSizeX = 21;
 PaperSizeY = 29.7;
-
 fig = gcf;
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-2 -2.6 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);

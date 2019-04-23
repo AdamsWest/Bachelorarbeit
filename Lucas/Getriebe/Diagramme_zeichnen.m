@@ -64,3 +64,17 @@ fig = gcf;
 set(gcf,'PaperUnits','centimeters', 'PaperPosition', [-1.75 -2.1 24.65 34.45]);%[-1.75 -2.6 24.65 34.45]);
 set(gcf,'Units','centimeters', 'PaperSize', [PaperSizeX PaperSizeY]);
 saveas(gcf,'DuD_KV', 'pdf');
+
+figure_C_Rest_V = figure;
+figure(figure_C_Rest_V)
+stairs(H,C_Rest_V*100,'LineWidth',1), grid, title('Restladung'), hold on
+stairs(H,C_Rest_V_g*100,'LineWidth',1), xlabel('Höhe [m]'),ylabel('C_{Bat,Rest} [%]')
+lgd = legend('ohne','mit','Location','northeast'); title(lgd,'Getriebe')
+saveas(gcf,'Getriebe','png')
+
+figure_uebersetzung = figure;
+figure(figure_uebersetzung)
+stairs(H,ueber,'LineWidth',1), hold on, stairs(H,Uebersetzung,'LineWidth',1), 
+title('Übersetzung'), grid, xlabel('Höhe [m]'),ylabel('Übersetzung i [-]')
+lgd = legend('ohne','mit','Location','northeast'); title(lgd,'Getriebe')
+saveas(gcf,'Getriebe_ueber','png')
