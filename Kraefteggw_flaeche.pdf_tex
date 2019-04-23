@@ -50,17 +50,17 @@
   \makeatother%
   \begin{picture}(1,1.41428571)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{Kraefteggw_flaeche.pdf}}%
-    \put(0.47220378,0.97735648){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_g$}}}%
-    \put(0.63804042,0.81364058){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_g$}}}%
+    \put(0.47390073,0.98278673){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_g$}}}%
+    \put(0.64347067,0.8160163){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_g$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{Kraefteggw_flaeche.pdf}}%
-    \put(0.58316911,0.86662606){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m \cdot g$}}}%
+    \put(0.63984721,0.88732887){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$m \cdot g$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{Kraefteggw_flaeche.pdf}}%
-    \put(0.6652381,1.06937264){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S$}}}%
+    \put(0.66998954,1.07039081){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S$}}}%
     \put(0.67195767,1.01465607){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
     \put(0.70027586,0.96137944){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$W$}}}%
-    \put(0.57116402,0.81978835){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_f$}}}%
-    \put(0.48380952,1.0079365){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_f$}}}%
+    \put(0.57421855,0.81978835){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z_f$}}}%
+    \put(0.48380952,1.0106516){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_f$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{Kraefteggw_flaeche.pdf}}%
-    \put(0.54055242,0.97875067){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\gamma$}}}%
+    \put(0.53851608,0.97332042){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\gamma$}}}%
   \end{picture}%
 \endgroup%
