@@ -27,6 +27,7 @@ Abfrage_Flugsystem = 0; % HANDS OFF
 % figures definieren
 figure_ges = figure;
 figure_C_Rest_V = figure;
+figure_gamma = figure;
 
 % Flächenflugzeug definieren 
 m_flugzeug = 0.354;     % Flächenflugzeug Leermasse in kg
@@ -97,10 +98,10 @@ lengthi = floor(abs(H_max - H_0) / Delta_H + 1);
 lengthgamma = floor(abs(gamma_max - gamma_min) / gamma_Delta + 1);
 % lengthj = floor(abs(m_Bat_max - m_Bat_min) / m_Bat_Delta + 1);
 % lengthj = length(Abfrage_mot);
-% lengthj = length(Abfrage_n_prop);
+lengthj = length(Abfrage_n_prop);
 % lengthj = length(Abfrage_prop);
 % lengthj = length(Abfrage_E);
-lengthj = length(Abfrage_fp);
+% lengthj = length(Abfrage_fp);
 % lengthj = length(Abfrage_V);
 
 
@@ -123,7 +124,7 @@ l10 = zeros(lengthj,1);
 
 
 
-for j = 1:length(Abfrage_fp)
+for j = 1:length(Abfrage_n_prop)
     
     %% allgemeine Parameter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -150,7 +151,7 @@ for j = 1:length(Abfrage_fp)
     
     % Propeller
     prop_name = Abfrage_prop{3};    % Propellerbezeichnung
-    n_Prop = Abfrage_n_prop(1);             % Anzahl der Propeller
+    n_Prop = Abfrage_n_prop(j);             % Anzahl der Propeller
     %D = 14;                % Propellerdurchmesser in inch
     %P_75 = 8;              % Propellersteigung bei 75% des Radius in inch
     c_d0 = 0.05;            % Schaetzung des mittleren Nullwiderstandbeiwerts
@@ -214,7 +215,7 @@ for j = 1:length(Abfrage_fp)
         
         m = m_copter + n_Prop_Quad*m_Mot_Quad + m_nutz + m_Bat;
         
-        f_p = Abfrage_fp(j);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
+        f_p = Abfrage_fp(1);                                    % Penalty-Faktor für das Strukturgewicht des Flugzeugs
         
         m_flugzeug = f_p * m_copter;
         
@@ -702,6 +703,10 @@ for j = 1:length(Abfrage_fp)
     l1(j) = stairs(H,C_Rest_V*100,'LineWidth',1); grid on, hold on
     l1_Info{j} = [num2str(Abfrage_fp(j))]; grid on, hold on
     
+    figure(figure_gamma)
+    l1(j) = stairs(H,gamma_Flaechenflzg,'LineWidth',1); grid on, hold on
+    l1_Info{j} = [num2str(Abfrage_n_prop(j))]; grid on, hold on
+    
     %     j = j + 1;
     %% Spielereien
     disp([num2str((j)*100/lengthj) ' %']); %(Abfrage_m_Bat)) ' %']);
@@ -770,3 +775,8 @@ figure(figure_C_Rest_V)
 title('Restladung'), xlabel('Höhe [m]'), ylabel('C_{Bat,Rest} [%]'), 
 lgd = legend([l1], l1_Info, 'Location','northeast'); title(lgd,'f_P =') 
 saveas(gcf,Dateiname,'png')
+
+figure(figure_gamma)
+title('Bahnneigungswinkel'), xlabel('Höhe [m]'), ylabel('\gamma [°]'), 
+lgd = legend([l1], l1_Info, 'Location','northeast'); title(lgd,'n_{Prop} =') 
+saveas(gcf,'Bahnneigungswinkel','png')
